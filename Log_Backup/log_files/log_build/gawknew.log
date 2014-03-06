@@ -1,0 +1,372 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.1GfFpG
+Patch #1 (gawk-io-fix.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.L3c4dr
+checking for a BSD-compatible install... ../install-sh -c
+checking whether build environment is sane... yes
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for egrep... grep -E
+checking for bison... bison -y
+checking whether ln -s works... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for a BSD-compatible install... ../install-sh -c
+checking whether make sets $(MAKE)... (cached) yes
+checking for special development options... no
+checking for AIX... no
+checking for library containing strerror... none required
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for _LARGE_FILES value needed for large files... no
+checking for AIX compilation hacks... no
+checking for Linux/Alpha compilation hacks... no
+checking for arm-sony-linux-gnueabi-gcc... (cached) arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... (cached) yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... (cached) none needed
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... (cached) gcc3
+checking for function prototypes... yes
+checking for string.h... (cached) yes
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking mcheck.h usability... yes
+checking mcheck.h presence... yes
+checking for mcheck.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking signum.h usability... no
+checking signum.h presence... no
+checking for signum.h... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking for string.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking for memory.h... (cached) yes
+checking for pid_t... yes
+checking return type of signal handlers... void
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for long long... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for ssize_t... yes
+checking for unsigned int... yes
+checking size of unsigned int... 4
+checking for unsigned long... yes
+checking size of unsigned long... 4
+checking for socklen_t... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for stdlib.h... (cached) yes
+checking for strtod... yes
+checking for strtod with C89 semantics... no
+checking for stdlib.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for alarm... yes
+checking for working mktime... no
+checking for fmod in -lm... yes
+checking for fmod... yes
+checking for getgrent... yes
+checking for getgroups... yes
+checking for grantpt... yes
+checking for iswctype... yes
+checking for mbrlen... yes
+checking for memcmp... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for memset... yes
+checking for setlocale... yes
+checking for snprintf... yes
+checking for strchr... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strncasecmp... yes
+checking for strtod... (cached) yes
+checking for strtoul... yes
+checking for system... yes
+checking for tzset... yes
+checking for isascii... yes
+checking for btowc... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcscoll... (cached) yes
+checking for wctype... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for dlopen in -ldl... yes
+checking whether getpgrp requires zero arguments... (cached) yes
+checking for printf %F format... no
+checking for gethostbyname... yes
+checking for connect... yes
+checking where to find the socket library calls... the standard library
+checking for struct stat.st_blksize... yes
+checking whether time.h and sys/time.h may both be included... (cached) yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking whether char is unsigned... yes
+checking for an ANSI C-conforming const... yes
+checking for C/C++ restrict keyword... __restrict
+checking for inline... inline
+checking for preprocessor stringizing operator... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating awklib/Makefile
+config.status: creating doc/Makefile
+config.status: creating po/Makefile.in
+config.status: creating test/Makefile
+config.status: creating version.c
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: fixing Makefile to keep version.c
+make 'CFLAGS=-O2' 'LDFLAGS=-export-dynamic' all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+Making all in .
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT array.o -MD -MP -MF ".deps/array.Tpo" -c -o array.o ../array.c; \
+	then mv -f ".deps/array.Tpo" ".deps/array.Po"; else rm -f ".deps/array.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT awkgram.o -MD -MP -MF ".deps/awkgram.Tpo" -c -o awkgram.o ../awkgram.c; \
+	then mv -f ".deps/awkgram.Tpo" ".deps/awkgram.Po"; else rm -f ".deps/awkgram.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT builtin.o -MD -MP -MF ".deps/builtin.Tpo" -c -o builtin.o ../builtin.c; \
+	then mv -f ".deps/builtin.Tpo" ".deps/builtin.Po"; else rm -f ".deps/builtin.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT dfa.o -MD -MP -MF ".deps/dfa.Tpo" -c -o dfa.o ../dfa.c; \
+	then mv -f ".deps/dfa.Tpo" ".deps/dfa.Po"; else rm -f ".deps/dfa.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT ext.o -MD -MP -MF ".deps/ext.Tpo" -c -o ext.o ../ext.c; \
+	then mv -f ".deps/ext.Tpo" ".deps/ext.Po"; else rm -f ".deps/ext.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT field.o -MD -MP -MF ".deps/field.Tpo" -c -o field.o ../field.c; \
+	then mv -f ".deps/field.Tpo" ".deps/field.Po"; else rm -f ".deps/field.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT gawkmisc.o -MD -MP -MF ".deps/gawkmisc.Tpo" -c -o gawkmisc.o ../gawkmisc.c; \
+	then mv -f ".deps/gawkmisc.Tpo" ".deps/gawkmisc.Po"; else rm -f ".deps/gawkmisc.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT getopt.o -MD -MP -MF ".deps/getopt.Tpo" -c -o getopt.o ../getopt.c; \
+	then mv -f ".deps/getopt.Tpo" ".deps/getopt.Po"; else rm -f ".deps/getopt.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT getopt1.o -MD -MP -MF ".deps/getopt1.Tpo" -c -o getopt1.o ../getopt1.c; \
+	then mv -f ".deps/getopt1.Tpo" ".deps/getopt1.Po"; else rm -f ".deps/getopt1.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT io.o -MD -MP -MF ".deps/io.Tpo" -c -o io.o ../io.c; \
+	then mv -f ".deps/io.Tpo" ".deps/io.Po"; else rm -f ".deps/io.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT main.o -MD -MP -MF ".deps/main.Tpo" -c -o main.o ../main.c; \
+	then mv -f ".deps/main.Tpo" ".deps/main.Po"; else rm -f ".deps/main.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT msg.o -MD -MP -MF ".deps/msg.Tpo" -c -o msg.o ../msg.c; \
+	then mv -f ".deps/msg.Tpo" ".deps/msg.Po"; else rm -f ".deps/msg.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT node.o -MD -MP -MF ".deps/node.Tpo" -c -o node.o ../node.c; \
+	then mv -f ".deps/node.Tpo" ".deps/node.Po"; else rm -f ".deps/node.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT random.o -MD -MP -MF ".deps/random.Tpo" -c -o random.o ../random.c; \
+	then mv -f ".deps/random.Tpo" ".deps/random.Po"; else rm -f ".deps/random.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT re.o -MD -MP -MF ".deps/re.Tpo" -c -o re.o ../re.c; \
+	then mv -f ".deps/re.Tpo" ".deps/re.Po"; else rm -f ".deps/re.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT regex.o -MD -MP -MF ".deps/regex.Tpo" -c -o regex.o ../regex.c; \
+	then mv -f ".deps/regex.Tpo" ".deps/regex.Po"; else rm -f ".deps/regex.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT replace.o -MD -MP -MF ".deps/replace.Tpo" -c -o replace.o ../replace.c; \
+	then mv -f ".deps/replace.Tpo" ".deps/replace.Po"; else rm -f ".deps/replace.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT version.o -MD -MP -MF ".deps/version.Tpo" -c -o version.o version.c; \
+	then mv -f ".deps/version.Tpo" ".deps/version.Po"; else rm -f ".deps/version.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT eval.o -MD -MP -MF ".deps/eval.Tpo" -c -o eval.o ../eval.c; \
+	then mv -f ".deps/eval.Tpo" ".deps/eval.Po"; else rm -f ".deps/eval.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT profile.o -MD -MP -MF ".deps/profile.Tpo" -c -o profile.o ../profile.c; \
+	then mv -f ".deps/profile.Tpo" ".deps/profile.Po"; else rm -f ".deps/profile.Tpo"; exit 1; fi
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2  -export-dynamic -o gawk  array.o awkgram.o builtin.o dfa.o ext.o field.o gawkmisc.o getopt.o getopt1.o io.o main.o msg.o node.o random.o re.o regex.o replace.o version.o eval.o profile.o   -ldl -lm 
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT eval_p.o -MD -MP -MF ".deps/eval_p.Tpo" -c -o eval_p.o ../eval_p.c; \
+	then mv -f ".deps/eval_p.Tpo" ".deps/eval_p.Po"; else rm -f ".deps/eval_p.Tpo"; exit 1; fi
+if arm-sony-linux-gnueabi-gcc -tarmv7a -DDEFPATH="\".:/usr/awk\"" -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR="\"/usr/locale\"" -I. -I.. -I.     -O2 -MT profile_p.o -MD -MP -MF ".deps/profile_p.Tpo" -c -o profile_p.o ../profile_p.c; \
+	then mv -f ".deps/profile_p.Tpo" ".deps/profile_p.Po"; else rm -f ".deps/profile_p.Tpo"; exit 1; fi
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2  -export-dynamic -o pgawk  array.o awkgram.o builtin.o dfa.o ext.o field.o gawkmisc.o getopt.o getopt1.o io.o main.o msg.o node.o random.o re.o regex.o replace.o version.o eval_p.o profile_p.o   -ldl -lm 
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+Making all in awklib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../awklib -I..  -I.. -I../..   -O2 ../../awklib/eg/lib/pwcat.c -export-dynamic -o pwcat
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../awklib -I..  -I.. -I../..   -O2 ../../awklib/eg/lib/grcat.c -export-dynamic -o grcat
+cp ../../awklib/eg/prog/igawk.sh igawk ; chmod 755 igawk
+sed 's;/usr/local/libexec/awk;/usr/lib/awk;' < ../../awklib/eg/lib/passwdawk.in > passwd.awk
+sed 's;/usr/local/libexec/awk;/usr/lib/awk;' < ../../awklib/eg/lib/groupawk.in > group.awk
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+Making all in doc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+Making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/po'
+Making all in test
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.2rdHJb
+Making install in .
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+test -z "/usr/bin" || mkdir -p -- "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  ../install-sh -c 'gawk' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gawk'
+  ../install-sh -c 'pgawk' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/pgawk'
+make 'CFLAGS=-O2' 'LDFLAGS=-export-dynamic' install-exec-hook
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin; \
+	ln gawk gawk-3.1.5 2>/dev/null ; \
+	ln pgawk pgawk-3.1.5 2>/dev/null ; \
+	if [ ! -f awk ]; \
+	then	ln -s gawk awk; \
+	fi; exit 0)
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+Making install in awklib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+test -z "/usr/bin" || mkdir -p -- "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+ ../../install-sh -c 'igawk' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/igawk'
+test -z "/usr/lib/awk" || mkdir -p -- "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/awk"
+  ../../install-sh -c 'pwcat' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/awk/pwcat'
+  ../../install-sh -c 'grcat' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/awk/grcat'
+make  install-exec-hook
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+/bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/awk
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/awk
+for i in passwd.awk group.awk ../../awklib/eg/lib/*.awk ; do \
+		progname=`echo $i | sed 's;.*/;;'` ; \
+		../../install-sh -c -m 644 $i /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/awk/$progname ; \
+	done
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/awklib'
+Making install in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/info" || mkdir -p -- "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info"
+ ../../install-sh -c -m 644 '../../doc/gawk.info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gawk.info'
+ ../../install-sh -c -m 644 '../../doc/gawkinet.info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gawkinet.info'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gawk.info'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gawkinet.info'
+test -z "/usr/man/man1" || mkdir -p -- "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1"
+ ../../install-sh -c -m 644 '../../doc/gawk.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/gawk.1'
+ ../../install-sh -c -m 644 '../../doc/igawk.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/igawk.1'
+make  install-data-hook
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1; \
+	ln gawk.1 pgawk.1 2>/dev/null ; \
+	exit 0)
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/doc'
+Making install in po
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/po'
+if test "gawk" = "gettext-tools"; then \
+	  /bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    ../../install-sh -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/po'
+Making install in test
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir/test'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-gawk-3.1.5-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gawk-3.1.5-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-gawk-3.1.5-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-gawk-3.1.5-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.BBm2Ix

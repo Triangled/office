@@ -1,0 +1,534 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+dwarves : 1.10
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-devtool-dwarves-1.10-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-devtool-dwawarning: group rpmuser does not exist - using root
+                                            (  6%)#                                           (  6%)##                                          (  6%)warning: group rpmuser does not exist - using root
+###                                         ( 68%)####                                        ( 68%)#####                                       ( 68%)######                                      ( 68%)#######                                     ( 68%)########                                    ( 68%)#########                                   ( 68%)##########                                  ( 68%)###########                                 ( 68%)############                                ( 68%)#############                               ( 68%)##############                              ( 68%)###############                             ( 68%)################                            ( 68%)#################                           ( 68%)##################                          ( 68%)###################                         ( 68%)####################                        ( 68%)#####################                       ( 68%)######################                      ( 68%)#######################                     ( 68%)########################                    ( 68%)#########################                   ( 68%)##########################                  ( 68%)###########################                 ( 68%)############################                ( 68%)#############################               ( 68%)##############################              ( 97%)###############################             ( 97%)################################            ( 97%)#################################           ( 97%)##################################          ( 97%)###################################         ( 97%)####################################        ( 97%)#####################################       ( 97%)######################################      ( 97%)#######################################     ( 97%)########################################    ( 97%)#########################################   ( 97%)##########################################  ( 97%)warning: group rpmuser does not exist - using root
+########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-devtool-dwarves.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.99ocr8
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf dwarves-1.10
++ /bin/mkdir -p dwarves-1.10
++ cd dwarves-1.10
++ /bin/tar -xf -
++ /bin/bzip2 -dc /home/rpmuser/rpm/SOURCES/dwarves-1.10.tar.bz2
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.W8bfQl
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd dwarves-1.10
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cp /home/rpmuser/rpm/SOURCES/Makefile.dwarves Makefile
++ sed s/cmakedefine/define/ config.h.cmake
++ make all
+ 
+Build libdwarves.so.1 library
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dwarves.c -o dwarves.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dwarves_fprintf.c -o dwarves_fprintf.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c gobuffer.c -o gobuffer.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c strings.c -o strings.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c ctf_encoder.c -o ctf_encoder.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c ctf_loader.c -o ctf_loader.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c libctf.c -o libctf.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dwarf_loader.c -o dwarf_loader.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dutil.c -o dutil.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c elf_symtab.c -o elf_symtab.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c rbtree.c -o rbtree.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -shared -Wl,-soname,libdwarves.so.1 -o libdwarves.so.1.0.0 dwarves.o dwarves_fprintf.o gobuffer.o strings.o ctf_encoder.o ctf_loader.o libctf.o dwarf_loader.o dutil.o elf_symtab.o rbtree.o -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ln -sf libdwarves.so.1.0.0 libdwarves.so.1
+ln -sf libdwarves.so.1.0.0 libdwarves.so
+ 
+Build codiff binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c codiff.c -o codiff.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g codiff.o  -ocodiff -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build  libdwarves_emit.so.1 library 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_emit_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dwarves_emit.c -o dwarves_emit.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -shared -Wl,-soname,libdwarves_emit.so.1 -o libdwarves_emit.so.1.0.0 dwarves_emit.o -Wl,-Bdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ln -sf libdwarves_emit.so.1.0.0 libdwarves_emit.so.1
+ln -sf libdwarves_emit.so.1.0.0 libdwarves_emit.so
+ 
+Build  libdwarves_reorganize.so.1 library 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -Ddwarves_reorganize_EXPORTS -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dwarves_reorganize.c -o dwarves_reorganize.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -fPIC -shared -Wl,-soname,libdwarves_reorganize.so.1 -o libdwarves_reorganize.so.1.0.0 dwarves_reorganize.o -Wl,-Bdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ln -sf libdwarves_reorganize.so.1.0.0 libdwarves_reorganize.so.1
+ln -sf libdwarves_reorganize.so.1.0.0 libdwarves_reorganize.so
+ 
+Build ctracer binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c ctracer.c -o ctracer.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g ctracer.o  -o ctracer -rdynamic libdwarves.so.1.0.0 libdwarves_emit.so.1.0.0 libdwarves_reorganize.so.1.0.0 libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build dtagnames  binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c dtagnames.c -o dtagnames.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g dtagnames.o  -o dtagnames -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build pahole  binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c pahole.c -o pahole.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g pahole.o  -o pahole -rdynamic libdwarves.so.1.0.0 libdwarves_reorganize.so.1.0.0 libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build pdwtags  binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c pdwtags.c -o pdwtags.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g pdwtags.o  -o pdwtags -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build pfunct binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c pfunct.c -o pfunct.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g pfunct.o  -o pfunct -rdynamic libdwarves.so.1.0.0 libdwarves_emit.so.1.0.0 libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build pglobal binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c pglobal.c -o pglobal.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g pglobal.o  -o pglobal -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build prefcnt binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c prefcnt.c -o prefcnt.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g prefcnt.o  -o prefcnt -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
+ 
+Build syscse binary 
+ 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -D_GNU_SOURCE -DDWARVES_VERSION=\"v1.8pre1\" -I. -c syscse.c -o syscse.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g syscse.o  -o syscse -rdynamic libdwarves.so.1.0.0 -ldw -lelf -Wl,-Bstatic -lebl -Wl,-Bdynamic -lz -Wl,-rpath,/tool/usr/lib
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.4JoZyQ
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd dwarves-1.10
++ rm -Rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ cp -r libdwarves.so libdwarves.so.1 libdwarves.so.1.0.0 libdwarves_emit.so libdwarves_emit.so.1 libdwarves_emit.so.1.0.0 libdwarves_reorganize.so libdwarves_reorganize.so.1 libdwarves_reorganize.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_emit.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_emit.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_emit.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_reorganize.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_reorganize.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libdwarves_reorganize.so.1.0.0
++ cp -r codiff ctracer dtagnames pahole pdwtags pfunct pglobal prefcnt syscse /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ chmod 777 /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/codiff /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/ctracer /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/dtagnames /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/pahole /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/pdwtags /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/pfunct /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/pglobal /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/prefcnt /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/syscse
+Processing files: arm-sony-linux-gnueabi-armv7a-devtool-dwarves-1.10-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-devtool-dwarves-1.10-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-devtool-dwarves-1.10-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.cgOdCl
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd dwarves-1.10
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-dwarves-1.10-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/dwarves-1.10
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/dwarves-1.10 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp......................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/dwarves/test/dwarves-test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 14:57:35 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 15:01:00 UTC 2014
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/dwarves-1.10/
+-bash-3.2# patch -p1 < ../dwarves-test.patch
+patching file Makefile
+patching file tests/dwarves-main-test.sh
+patching file tests/ref/expand_pointers_test.ref.log
+patching file tests/ref/expand_types_test.ref.log
+patching file tests/ref/help_test.ref.log
+patching file tests/ref/hole_size_ge=4_test.ref.log
+patching file tests/ref/nr_definitions_test.ref.log
+patching file tests/ref/nr_members_test.ref.log
+patching file tests/ref/quiet_test.ref.log
+patching file tests/ref/recursive_test.ref.log
+patching file tests/ref/show_decl_info_test.ref.log
+patching file tests/ref/show_first_biggest_size_base_type_member_test.ref.log
+patching file tests/ref/size_test.ref.log
+patching file tests/ref/version_test.ref.log
+patching file tests/test.c
+patching file tests/testlib.sh
+-bash-3.2# make check ARCH=arm DIALECT=armv7a 2>&1 | tee /tmp/dwarves_test.out
+
+          -----------------------------
+          Executing dwarves Test Suite
+          -----------------------------
+
+
+===========================================================
+                 dwarves test                             
+         Board Architecture : armv7l                    
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                     
+         Useland            : Sony CE Linux 11.0.0.0 armv7a                   
+         Date               : Thu Feb 13 15:01:05 UTC 2014                       
+===========================================================
+-------------------------------------------------------------
+v1.8pre1
+version_test : PASS
+-------------------------------------------------------------
+Usage: pahole [OPTION...] FILE
+
+  -a, --anon_include         include anonymous classes
+  -A, --nested_anon_include  include nested (inside other structs) anonymous
+                             classes
+  -B, --bit_holes=NR_HOLES   Show only structs at least NR_HOLES bit holes
+  -c, --cacheline_size=SIZE  set cacheline size to SIZE
+      --classes_as_structs   Use 'struct' when printing classes
+  -C, --class_name=CLASS_NAME   Show just this class
+  -d, --recursive            recursive mode, affects several other flags
+  -D, --decl_exclude=PREFIX  exclude classes declared in files with PREFIX
+  -E, --expand_types         expand class members
+  -f, --find_pointers_to=CLASS_NAME
+                             Find pointers to CLASS_NAME
+      --first_obj_only       Only process the first object file in the binary
+      --fixup_silly_bitfields   Fix silly bitfields such as int foo:32
+      --flat_arrays          Flat arrays
+  -F, --format_path=FORMAT_LIST   List of debugging formats to try
+      --hex                  Print offsets and sizes in hexadecimal
+  -H, --holes=NR_HOLES       show only structs with at least NR_HOLES holes
+  -i, --contains=CLASS_NAME  Show classes that contains CLASS_NAME
+  -I, --show_decl_info       Show the file and line number where the tags were
+                             defined
+  -l, --show_first_biggest_size_base_type_member
+                             show first biggest size base_type member
+  -m, --nr_methods           show number of methods
+  -M, --show_only_data_members   show only the members that use space in the
+                             class layout
+  -n, --nr_members           show number of members
+  -N, --class_name_len       show size of classes
+  -p, --expand_pointers      expand class pointer members
+  -P, --packable             show only structs that has holes that can be
+                             packed
+  -q, --quiet                be quieter
+  -r, --rel_offset           show relative offsets of members in inner structs
+  -R, --reorganize           reorg struct trying to kill holes
+  -s, --sizes                show size of classes
+      --show_private_classes Show classes that are defined inside other classes
+                             or in functions
+  -S, --show_reorg_steps     show the struct layout at each reorganization
+                             step
+  -t, --separator=SEP        use SEP as the field separator
+  -T, --nr_definitions       show how many times struct was defined
+  -u, --defined_in           show CUs where CLASS_NAME (-C) is defined
+  -V, --verbose              be verbose
+  -w, --word_size=WORD_SIZE  change the arch word size to WORD_SIZE
+  -x, --exclude=PREFIX       exclude PREFIXed classes
+  -X, --cu_exclude=PREFIX    exclude PREFIXed compilation units
+  -y, --prefix_filter=PREFIX include PREFIXed classes
+  -z, --hole_size_ge=HOLE_SIZE   show only structs with at least one hole
+                             greater or equal to HOLE_SIZE
+  -Z, --ctf_encode           Encode as CTF
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+      --version              Print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+help_test : PASS
+-------------------------------------------------------------
+struct inner {
+        long int *                 a;                    /*     0     4 */
+
+        /* size: 4, cachelines: 1, members: 1 */
+        /* last cacheline: 4 bytes */
+};
+struct foo {
+        int                        xx;                   /*     0     4 */
+        char                       yy;                   /*     4     1 */
+
+        /* XXX 3 bytes hole, try to pack */
+
+        struct inner               in;                   /*     8     4 */
+        float                      zz;                   /*    12     4 */
+
+        /* size: 16, cachelines: 1, members: 4 */
+        /* sum members: 13, holes: 1, sum holes: 3 */
+        /* last cacheline: 16 bytes */
+};
+struct foo1 {
+        struct foo                 ptr;                  /*     0    16 */
+        unsigned int               xxx;                  /*    16     4 */
+
+        /* XXX 4 bytes hole, try to pack */
+
+        double                     yyy;                  /*    24     8 */
+
+        /* size: 32, cachelines: 1, members: 3 */
+        /* sum members: 28, holes: 1, sum holes: 4 */
+        /* last cacheline: 32 bytes */
+};
+basic_test : PASS
+-------------------------------------------------------------
+inner   4       0
+foo     16      1
+foo1    32      1
+size_option_test : PASS
+-------------------------------------------------------------
+foo1
+hole_test : PASS
+-------------------------------------------------------------
+inner   1
+foo     1
+foo1    1
+N_times_struct_defined_test : PASS
+-------------------------------------------------------------
+inner   1
+foo     4
+foo1    3
+number_of_arguments_test : PASS
+-------------------------------------------------------------
+struct inner {
+        long int *                 a;                    /*     0     4 */
+
+        /* size: 4, cachelines: 1, members: 1 */
+        /* last cacheline: 4 bytes */
+        /* first biggest size base type member: a 0 4 */
+};
+struct foo {
+        int                        xx;                   /*     0     4 */
+        char                       yy;                   /*     4     1 */
+
+        /* XXX 3 bytes hole, try to pack */
+
+        struct inner               in;                   /*     8     4 */
+        float                      zz;                   /*    12     4 */
+
+        /* size: 16, cachelines: 1, members: 4 */
+        /* sum members: 13, holes: 1, sum holes: 3 */
+        /* last cacheline: 16 bytes */
+        /* first biggest size base type member: xx 0 4 */
+};
+struct foo1 {
+        struct foo                 ptr;                  /*     0    16 */
+        unsigned int               xxx;                  /*    16     4 */
+
+        /* XXX 4 bytes hole, try to pack */
+
+        double                     yyy;                  /*    24     8 */
+
+        /* size: 32, cachelines: 1, members: 3 */
+        /* sum members: 28, holes: 1, sum holes: 4 */
+        /* last cacheline: 32 bytes */
+        /* first biggest size base type member: xx 0 4 */
+};
+biggest_member_test : PASS
+-------------------------------------------------------------
+struct inner {
+        long int *                 a;                                                    /*     0     4 */
+
+        /* size: 4, cachelines: 1, members: 1 */
+        /* last cacheline: 4 bytes */
+};
+struct foo {
+        int                        xx;                                                   /*     0     4 */
+        char                       yy;                                                   /*     4     1 */
+
+        /* XXX 3 bytes hole, try to pack */
+
+        struct inner {
+                long int *         a;                                                    /*     8     4 */
+        } in; /*     8     4 */
+        float                      zz;                                                   /*    12     4 */
+
+        /* size: 16, cachelines: 1, members: 4 */
+        /* sum members: 13, holes: 1, sum holes: 3 */
+        /* last cacheline: 16 bytes */
+};
+struct foo1 {
+        struct foo {
+                int                xx;                                                   /*     0     4 */
+                char               yy;                                                   /*     4     1 */
+
+                /* XXX 3 bytes hole, try to pack */
+
+                struct inner {
+                        long int * a;                                                    /*     8     4 */
+                } in; /*     8     4 */
+                float              zz;                                                   /*    12     4 */
+        } ptr; /*     0    16 */
+        unsigned int               xxx;                                                  /*    16     4 */
+
+        /* XXX 4 bytes hole, try to pack */
+
+        double                     yyy;                                                  /*    24     8 */
+
+        /* size: 32, cachelines: 1, members: 3 */
+        /* sum members: 28, holes: 1, sum holes: 4 */
+        /* last cacheline: 32 bytes */
+};
+expanded_structure_test : PASS
+-------------------------------------------------------------
+struct inner {
+        long int *                 a;
+};
+struct foo {
+        int                        xx;
+        char                       yy;
+        struct inner               in;
+        float                      zz;
+};
+struct foo1 {
+        struct foo                 ptr;
+        unsigned int               xxx;
+        double                     yyy;
+};
+quieter_test : PASS
+-------------------------------------------------------------
+struct inner {
+        long int                   *a;                   /*     0     4 */
+
+        /* size: 4, cachelines: 1, members: 1 */
+        /* last cacheline: 4 bytes */
+};
+struct foo {
+        int                        xx;                   /*     0     4 */
+        char                       yy;                   /*     4     1 */
+
+        /* XXX 3 bytes hole, try to pack */
+
+        struct inner               in;                   /*     8     4 */
+        float                      zz;                   /*    12     4 */
+
+        /* size: 16, cachelines: 1, members: 4 */
+        /* sum members: 13, holes: 1, sum holes: 3 */
+        /* last cacheline: 16 bytes */
+};
+struct foo1 {
+        struct foo                 ptr;                  /*     0    16 */
+        unsigned int               xxx;                  /*    16     4 */
+
+        /* XXX 4 bytes hole, try to pack */
+
+        double                     yyy;                  /*    24     8 */
+
+        /* size: 32, cachelines: 1, members: 3 */
+        /* sum members: 28, holes: 1, sum holes: 4 */
+        /* last cacheline: 32 bytes */
+};
+expand_pointers_test : PASS
+-------------------------------------------------------------
+/* <79> /tmp/dwarves-1.10/tests/test.c:6 */
+struct inner {
+        long int *                 a;                    /*     0     4 */
+
+        /* size: 4, cachelines: 1, members: 1 */
+        /* last cacheline: 4 bytes */
+};
+/* <98> /tmp/dwarves-1.10/tests/test.c:3 */
+struct foo {
+        int                        xx;                   /*     0     4 */
+        char                       yy;                   /*     4     1 */
+
+        /* XXX 3 bytes hole, try to pack */
+
+        struct inner               in;                   /*     8     4 */
+        float                      zz;                   /*    12     4 */
+
+        /* size: 16, cachelines: 1, members: 4 */
+        /* sum members: 13, holes: 1, sum holes: 3 */
+        /* last cacheline: 16 bytes */
+};
+/* <e0> /tmp/dwarves-1.10/tests/test.c:12 */
+struct foo1 {
+        struct foo                 ptr;                  /*     0    16 */
+        unsigned int               xxx;                  /*    16     4 */
+
+        /* XXX 4 bytes hole, try to pack */
+
+        double                     yyy;                  /*    24     8 */
+
+        /* size: 32, cachelines: 1, members: 3 */
+        /* sum members: 28, holes: 1, sum holes: 4 */
+        /* last cacheline: 32 bytes */
+};
+show_decl_info_test : PASS
+
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 12
+  ALL TESTS SUCCESSFUL 
+[0m
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/dwarves_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+dwarves : TEST_OK

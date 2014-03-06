@@ -1,0 +1,1335 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.SSJI9B
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/am/
+-rw-r--r-- gray/staff     1119 2009-06-19 17:22 cpio-2.11/am/flushleft.m4
+-rw-r--r-- gray/staff     2692 2009-06-19 17:19 cpio-2.11/am/pack.m4
+-rw-r--r-- gray/staff      255 2010-03-10 14:57 cpio-2.11/am/sysdep.m4
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/build-aux/
+-rwxr-xr-x gray/staff    44959 2010-02-22 14:48 cpio-2.11/build-aux/config.guess
+-rwxr-xr-x gray/staff    18442 2010-02-22 14:48 cpio-2.11/build-aux/config.rpath
+-rwxr-xr-x gray/staff    34597 2010-02-22 14:48 cpio-2.11/build-aux/config.sub
+-rwxr-xr-x gray/staff    18615 2009-08-13 17:17 cpio-2.11/build-aux/depcomp
+-rwxr-xr-x gray/staff    13781 2010-02-22 14:48 cpio-2.11/build-aux/install-sh
+-rwxr-xr-x gray/staff     5644 2010-03-10 14:46 cpio-2.11/build-aux/mdate-sh
+-rwxr-xr-x gray/staff    11419 2009-08-13 17:17 cpio-2.11/build-aux/missing
+-rw-r--r-- gray/staff   295418 2010-03-10 14:46 cpio-2.11/build-aux/texinfo.tex
+-rwxr-xr-x gray/staff     6179 2010-03-10 14:57 cpio-2.11/build-aux/ylwrap
+-rw-r--r-- gray/staff     1314 2010-03-10 14:56 cpio-2.11/build-aux/arg-nonnull.h
+-rw-r--r-- gray/staff     8619 2010-03-10 14:56 cpio-2.11/build-aux/c++defs.h
+-rwxr-xr-x gray/staff     5541 2010-02-22 14:48 cpio-2.11/build-aux/gitlog-to-changelog
+-rw-r--r-- gray/staff     3801 2010-03-10 14:56 cpio-2.11/build-aux/warn-on-use.h
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/m4/
+-rw-r--r-- gray/staff     1362 2010-02-22 14:49 cpio-2.11/m4/00gnulib.m4
+-rw-r--r-- gray/staff     1597 2010-02-22 14:49 cpio-2.11/m4/alloca.m4
+-rw-r--r-- gray/staff      330 2010-02-22 14:49 cpio-2.11/m4/argmatch.m4
+-rw-r--r-- gray/staff     3042 2010-02-22 14:49 cpio-2.11/m4/argp.m4
+-rw-r--r-- gray/staff     1011 2010-02-22 14:49 cpio-2.11/m4/bison.m4
+-rw-r--r-- gray/staff     1250 2010-02-22 14:49 cpio-2.11/m4/chdir-long.m4
+-rw-r--r-- gray/staff     4530 2010-02-22 14:49 cpio-2.11/m4/chown.m4
+-rw-r--r-- gray/staff     1360 2010-02-22 14:49 cpio-2.11/m4/clock_time.m4
+-rw-r--r-- gray/staff      384 2010-02-22 14:49 cpio-2.11/m4/close-stream.m4
+-rw-r--r-- gray/staff      816 2010-02-22 14:49 cpio-2.11/m4/close.m4
+-rw-r--r-- gray/staff      400 2010-02-22 14:49 cpio-2.11/m4/closeout.m4
+-rw-r--r-- gray/staff      779 2010-02-22 14:49 cpio-2.11/m4/codeset.m4
+-rw-r--r-- gray/staff     1326 2010-02-22 14:49 cpio-2.11/m4/d-ino.m4
+-rw-r--r-- gray/staff      362 2010-02-22 14:49 cpio-2.11/m4/dirent-safer.m4
+-rw-r--r-- gray/staff     2087 2010-03-10 14:46 cpio-2.11/m4/dirent_h.m4
+-rw-r--r-- gray/staff     2523 2010-02-22 14:49 cpio-2.11/m4/dirfd.m4
+-rw-r--r-- gray/staff      712 2010-02-22 14:49 cpio-2.11/m4/dirname.m4
+-rw-r--r-- gray/staff     2539 2010-02-22 14:49 cpio-2.11/m4/dos.m4
+-rw-r--r-- gray/staff     1621 2010-02-22 14:49 cpio-2.11/m4/double-slash-root.m4
+-rw-r--r-- gray/staff     1920 2010-02-22 14:49 cpio-2.11/m4/dup2.m4
+-rw-r--r-- gray/staff      980 2010-02-22 14:49 cpio-2.11/m4/eealloc.m4
+-rw-r--r-- gray/staff     1170 2010-02-22 14:49 cpio-2.11/m4/environ.m4
+-rw-r--r-- gray/staff     2917 2010-02-22 14:49 cpio-2.11/m4/errno_h.m4
+-rw-r--r-- gray/staff      557 2010-02-22 14:49 cpio-2.11/m4/error.m4
+-rw-r--r-- gray/staff     4439 2010-02-22 14:49 cpio-2.11/m4/extensions.m4
+-rw-r--r-- gray/staff     1724 2010-02-22 14:49 cpio-2.11/m4/fchdir.m4
+-rw-r--r-- gray/staff      420 2010-02-22 14:49 cpio-2.11/m4/fclose.m4
+-rw-r--r-- gray/staff     2973 2010-02-22 14:49 cpio-2.11/m4/fcntl-o.m4
+-rw-r--r-- gray/staff     2699 2010-02-22 14:49 cpio-2.11/m4/fcntl.m4
+-rw-r--r-- gray/staff     1529 2010-03-10 14:46 cpio-2.11/m4/fcntl_h.m4
+-rw-r--r-- gray/staff     1149 2010-02-22 14:49 cpio-2.11/m4/fdopendir.m4
+-rw-r--r-- gray/staff      617 2010-02-22 14:49 cpio-2.11/m4/fileblocks.m4
+-rw-r--r-- gray/staff      525 2010-02-22 14:49 cpio-2.11/m4/float_h.m4
+-rw-r--r-- gray/staff     5151 2010-02-22 14:49 cpio-2.11/m4/fnmatch.m4
+-rw-r--r-- gray/staff     3987 2010-02-22 14:49 cpio-2.11/m4/fpending.m4
+-rw-r--r-- gray/staff     1075 2010-02-22 14:49 cpio-2.11/m4/fseeko.m4
+-rw-r--r-- gray/staff     3000 2010-02-22 14:49 cpio-2.11/m4/getcwd-abort-bug.m4
+-rw-r--r-- gray/staff     5424 2010-02-22 14:49 cpio-2.11/m4/getcwd-path-max.m4
+-rw-r--r-- gray/staff     2401 2010-02-22 14:49 cpio-2.11/m4/getcwd.m4
+-rw-r--r-- gray/staff     2063 2010-02-22 14:49 cpio-2.11/m4/getdate.m4
+-rw-r--r-- gray/staff      514 2010-02-22 14:49 cpio-2.11/m4/getdtablesize.m4
+-rw-r--r-- gray/staff     8323 2010-02-22 14:49 cpio-2.11/m4/getopt.m4
+-rw-r--r-- gray/staff    14789 2010-03-10 14:57 cpio-2.11/m4/gettext.m4
+-rw-r--r-- gray/staff      488 2010-02-22 14:49 cpio-2.11/m4/gettime.m4
+-rw-r--r-- gray/staff     4326 2010-03-10 14:46 cpio-2.11/m4/gettimeofday.m4
+-rw-r--r-- gray/staff      854 2010-02-22 14:49 cpio-2.11/m4/glibc21.m4
+-rw-r--r-- gray/staff     5447 2010-02-22 14:49 cpio-2.11/m4/gnulib-common.m4
+-rw-r--r-- gray/staff    18148 2010-03-10 14:57 cpio-2.11/m4/gnulib-comp.m4
+-rw-r--r-- gray/staff      409 2010-02-22 14:49 cpio-2.11/m4/hash.m4
+-rw-r--r-- gray/staff     6806 2010-02-22 14:49 cpio-2.11/m4/iconv.m4
+-rw-r--r-- gray/staff     7799 2010-02-22 14:49 cpio-2.11/m4/include_next.m4
+-rw-r--r-- gray/staff     1645 2010-02-22 14:49 cpio-2.11/m4/inline.m4
+-rw-r--r-- gray/staff     2429 2010-02-22 14:49 cpio-2.11/m4/intlmacosx.m4
+-rw-r--r-- gray/staff     2083 2010-02-22 14:49 cpio-2.11/m4/intmax_t.m4
+-rw-r--r-- gray/staff      920 2010-02-22 14:49 cpio-2.11/m4/inttostr.m4
+-rw-r--r-- gray/staff     1153 2010-02-22 14:49 cpio-2.11/m4/inttypes-pri.m4
+-rw-r--r-- gray/staff     9558 2010-02-22 14:49 cpio-2.11/m4/inttypes.m4
+-rw-r--r-- gray/staff      953 2010-02-22 14:49 cpio-2.11/m4/inttypes_h.m4
+-rw-r--r-- gray/staff      910 2010-02-22 14:49 cpio-2.11/m4/lchown.m4
+-rw-r--r-- gray/staff     3459 2010-02-22 14:49 cpio-2.11/m4/lib-ld.m4
+-rw-r--r-- gray/staff    32334 2010-02-22 14:49 cpio-2.11/m4/lib-link.m4
+-rw-r--r-- gray/staff     8466 2010-02-22 14:49 cpio-2.11/m4/lib-prefix.m4
+-rw-r--r-- gray/staff      598 2010-02-22 14:49 cpio-2.11/m4/localcharset.m4
+-rw-r--r-- gray/staff     7446 2010-02-22 14:49 cpio-2.11/m4/locale-fr.m4
+-rw-r--r-- gray/staff     4067 2010-02-22 14:49 cpio-2.11/m4/locale-ja.m4
+-rw-r--r-- gray/staff     3511 2010-02-22 14:49 cpio-2.11/m4/locale-zh.m4
+-rw-r--r-- gray/staff     4477 2010-02-22 14:49 cpio-2.11/m4/longlong.m4
+-rw-r--r-- gray/staff     1654 2010-03-10 14:46 cpio-2.11/m4/lseek.m4
+-rw-r--r-- gray/staff      883 2010-02-22 14:49 cpio-2.11/m4/lstat.m4
+-rw-r--r-- gray/staff     1483 2010-02-22 14:49 cpio-2.11/m4/malloc.m4
+-rw-r--r-- gray/staff      577 2010-02-22 14:49 cpio-2.11/m4/malloca.m4
+-rw-r--r-- gray/staff    11251 2010-02-22 14:49 cpio-2.11/m4/mbrtowc.m4
+-rw-r--r-- gray/staff      785 2010-02-22 14:49 cpio-2.11/m4/mbsinit.m4
+-rw-r--r-- gray/staff     3602 2010-02-22 14:49 cpio-2.11/m4/mbsrtowcs.m4
+-rw-r--r-- gray/staff     1158 2010-02-22 14:49 cpio-2.11/m4/mbstate_t.m4
+-rw-r--r-- gray/staff     2675 2010-02-22 14:49 cpio-2.11/m4/memchr.m4
+-rw-r--r-- gray/staff      766 2010-02-22 14:49 cpio-2.11/m4/mempcpy.m4
+-rw-r--r-- gray/staff      752 2010-02-22 14:49 cpio-2.11/m4/memrchr.m4
+-rw-r--r-- gray/staff     1871 2010-02-22 14:49 cpio-2.11/m4/mkdir.m4
+-rw-r--r-- gray/staff     6356 2010-02-22 14:49 cpio-2.11/m4/mktime.m4
+-rw-r--r-- gray/staff     2122 2010-02-22 14:49 cpio-2.11/m4/mmap-anon.m4
+-rw-r--r-- gray/staff     1250 2010-02-22 14:49 cpio-2.11/m4/mode_t.m4
+-rw-r--r-- gray/staff     2206 2010-02-22 14:49 cpio-2.11/m4/multiarch.m4
+-rw-r--r-- gray/staff     1229 2010-02-22 14:49 cpio-2.11/m4/nls.m4
+-rw-r--r-- gray/staff     2158 2010-02-22 14:49 cpio-2.11/m4/open.m4
+-rw-r--r-- gray/staff     3573 2010-02-22 14:49 cpio-2.11/m4/openat.m4
+-rw-r--r-- gray/staff      124 2010-03-10 14:57 cpio-2.11/m4/paxutils.m4
+-rw-r--r-- gray/staff    18830 2010-02-22 14:49 cpio-2.11/m4/po.m4
+-rw-r--r-- gray/staff    55812 2010-02-22 14:49 cpio-2.11/m4/printf.m4
+-rw-r--r-- gray/staff     2939 2010-02-22 14:49 cpio-2.11/m4/progtest.m4
+-rw-r--r-- gray/staff      400 2010-02-22 14:49 cpio-2.11/m4/quote.m4
+-rw-r--r-- gray/staff      336 2010-02-22 14:49 cpio-2.11/m4/quotearg.m4
+-rw-r--r-- gray/staff      673 2010-02-22 14:49 cpio-2.11/m4/rawmemchr.m4
+-rw-r--r-- gray/staff      796 2010-02-22 14:49 cpio-2.11/m4/realloc.m4
+-rw-r--r-- gray/staff     1713 2010-02-22 14:49 cpio-2.11/m4/rmdir.m4
+-rw-r--r-- gray/staff     2453 2009-03-10 16:39 cpio-2.11/m4/rmt.m4
+-rw-r--r-- gray/staff       88 2009-03-10 16:39 cpio-2.11/m4/rtapelib.m4
+-rw-r--r-- gray/staff      488 2010-02-22 14:49 cpio-2.11/m4/safe-read.m4
+-rw-r--r-- gray/staff      475 2010-02-22 14:49 cpio-2.11/m4/safe-write.m4
+-rw-r--r-- gray/staff      401 2010-02-22 14:49 cpio-2.11/m4/save-cwd.m4
+-rw-r--r-- gray/staff      353 2010-02-22 14:49 cpio-2.11/m4/savedir.m4
+-rw-r--r-- gray/staff     3208 2010-02-22 14:49 cpio-2.11/m4/setenv.m4
+-rw-r--r-- gray/staff     2968 2010-02-22 14:49 cpio-2.11/m4/size_max.m4
+-rw-r--r-- gray/staff     1769 2010-02-22 14:49 cpio-2.11/m4/sleep.m4
+-rw-r--r-- gray/staff      765 2010-02-22 14:49 cpio-2.11/m4/ssize_t.m4
+-rw-r--r-- gray/staff     3175 2010-02-22 14:49 cpio-2.11/m4/stat-time.m4
+-rw-r--r-- gray/staff     2390 2010-02-22 14:49 cpio-2.11/m4/stat.m4
+-rw-r--r-- gray/staff     2621 2010-02-22 14:49 cpio-2.11/m4/stdarg.m4
+-rw-r--r-- gray/staff     4235 2010-02-22 14:49 cpio-2.11/m4/stdbool.m4
+-rw-r--r-- gray/staff     1533 2010-02-22 14:49 cpio-2.11/m4/stddef_h.m4
+-rw-r--r-- gray/staff    15629 2010-02-22 14:49 cpio-2.11/m4/stdint.m4
+-rw-r--r-- gray/staff      929 2010-02-22 14:49 cpio-2.11/m4/stdint_h.m4
+-rw-r--r-- gray/staff     7545 2010-03-10 14:46 cpio-2.11/m4/stdio_h.m4
+-rw-r--r-- gray/staff     4508 2010-03-10 14:46 cpio-2.11/m4/stdlib_h.m4
+-rw-r--r-- gray/staff      742 2010-02-22 14:49 cpio-2.11/m4/stpcpy.m4
+-rw-r--r-- gray/staff     1035 2010-02-22 14:49 cpio-2.11/m4/strcase.m4
+-rw-r--r-- gray/staff      667 2010-02-22 14:49 cpio-2.11/m4/strchrnul.m4
+-rw-r--r-- gray/staff      956 2010-02-22 14:49 cpio-2.11/m4/strdup.m4
+-rw-r--r-- gray/staff     2321 2010-02-22 14:49 cpio-2.11/m4/strerror.m4
+-rw-r--r-- gray/staff     4916 2010-03-10 14:46 cpio-2.11/m4/string_h.m4
+-rw-r--r-- gray/staff     1349 2010-02-22 14:49 cpio-2.11/m4/strings_h.m4
+-rw-r--r-- gray/staff     1592 2010-02-22 14:49 cpio-2.11/m4/strndup.m4
+-rw-r--r-- gray/staff     1046 2010-02-22 14:49 cpio-2.11/m4/strnlen.m4
+-rw-r--r-- gray/staff      355 2010-02-22 14:49 cpio-2.11/m4/strtol.m4
+-rw-r--r-- gray/staff     3322 2010-03-10 14:46 cpio-2.11/m4/sys_stat_h.m4
+-rw-r--r-- gray/staff     2379 2010-03-10 14:46 cpio-2.11/m4/sys_time_h.m4
+-rw-r--r-- gray/staff     1208 2010-02-22 14:49 cpio-2.11/m4/sysexits.m4
+-rw-r--r-- gray/staff      978 2009-08-09 13:09 cpio-2.11/m4/system.m4
+-rw-r--r-- gray/staff     3313 2010-03-10 14:46 cpio-2.11/m4/time_h.m4
+-rw-r--r-- gray/staff     1468 2010-02-22 14:49 cpio-2.11/m4/time_r.m4
+-rw-r--r-- gray/staff      400 2010-02-22 14:49 cpio-2.11/m4/timespec.m4
+-rw-r--r-- gray/staff      541 2010-02-22 14:49 cpio-2.11/m4/tm_gmtoff.m4
+-rw-r--r-- gray/staff      419 2010-02-22 14:49 cpio-2.11/m4/unistd-safer.m4
+-rw-r--r-- gray/staff     7106 2010-03-10 14:46 cpio-2.11/m4/unistd_h.m4
+-rw-r--r-- gray/staff     1217 2010-02-22 14:49 cpio-2.11/m4/unlink.m4
+-rw-r--r-- gray/staff     1559 2010-02-22 14:49 cpio-2.11/m4/unlocked-io.m4
+-rw-r--r-- gray/staff     1279 2010-02-22 14:49 cpio-2.11/m4/utimbuf.m4
+-rw-r--r-- gray/staff     1501 2010-02-22 14:49 cpio-2.11/m4/utimens.m4
+-rw-r--r-- gray/staff     2457 2010-02-22 14:49 cpio-2.11/m4/utimes.m4
+-rw-r--r-- gray/staff     8091 2010-02-22 14:49 cpio-2.11/m4/vasnprintf.m4
+-rw-r--r-- gray/staff     1174 2010-02-22 14:49 cpio-2.11/m4/version-etc.m4
+-rw-r--r-- gray/staff     1070 2010-02-22 14:49 cpio-2.11/m4/vsnprintf.m4
+-rw-r--r-- gray/staff     2066 2010-03-10 14:46 cpio-2.11/m4/warn-on-use.m4
+-rw-r--r-- gray/staff     5795 2010-03-10 14:46 cpio-2.11/m4/wchar_h.m4
+-rw-r--r-- gray/staff      747 2010-02-22 14:49 cpio-2.11/m4/wchar_t.m4
+-rw-r--r-- gray/staff     2176 2010-03-10 14:46 cpio-2.11/m4/wctype_h.m4
+-rw-r--r-- gray/staff      982 2010-02-22 14:49 cpio-2.11/m4/wint_t.m4
+-rw-r--r-- gray/staff      720 2010-02-22 14:49 cpio-2.11/m4/write.m4
+-rw-r--r-- gray/staff      573 2010-02-22 14:49 cpio-2.11/m4/xalloc.m4
+-rw-r--r-- gray/staff      358 2010-02-22 14:49 cpio-2.11/m4/xgetcwd.m4
+-rw-r--r-- gray/staff      434 2010-02-22 14:49 cpio-2.11/m4/xsize.m4
+-rw-r--r-- gray/staff      410 2010-02-22 14:49 cpio-2.11/m4/xstrndup.m4
+-rw-r--r-- gray/staff     2864 2009-02-14 23:45 cpio-2.11/README
+-rw-r--r-- gray/staff     2850 2010-03-10 18:29 cpio-2.11/configure.ac
+-rw-r--r-- gray/staff    40612 2010-03-10 18:30 cpio-2.11/aclocal.m4
+-rw-r--r-- gray/staff     3359 2009-03-10 16:39 cpio-2.11/Make.rules
+-rw-r--r-- gray/staff     1024 2010-02-12 15:49 cpio-2.11/Makefile.am
+-rw-r--r-- gray/staff    50784 2010-03-10 18:30 cpio-2.11/Makefile.in
+-rw-r--r-- gray/staff    51267 2010-03-10 18:31 cpio-2.11/config.h.in
+-rwxr-xr-x gray/staff  1184654 2010-03-10 18:30 cpio-2.11/configure
+-rw-r--r-- gray/staff    76502 2009-02-14 23:48 cpio-2.11/ABOUT-NLS
+-rw-r--r-- gray/staff      161 2009-08-03 19:31 cpio-2.11/AUTHORS
+-rw-r--r-- gray/staff    35068 2009-02-14 23:45 cpio-2.11/COPYING
+-rw-r--r-- gray/staff    70507 2010-03-10 18:42 cpio-2.11/ChangeLog
+-rw-r--r-- gray/staff    15584 2010-02-22 14:48 cpio-2.11/INSTALL
+-rw-r--r-- gray/staff     6168 2010-03-10 18:29 cpio-2.11/NEWS
+-rw-r--r-- gray/staff     1083 2009-08-03 19:31 cpio-2.11/THANKS
+-rw-r--r-- gray/staff     7891 2009-02-14 23:45 cpio-2.11/TODO
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/doc/
+-rw-r--r-- gray/staff     1014 2010-02-12 15:49 cpio-2.11/doc/Makefile.am
+-rw-r--r-- gray/staff    47711 2010-03-10 18:30 cpio-2.11/doc/Makefile.in
+-rw-r--r-- gray/staff       99 2010-03-10 18:31 cpio-2.11/doc/stamp-vti
+-rw-r--r-- gray/staff       99 2010-03-10 18:31 cpio-2.11/doc/version.texi
+-rw-r--r-- gray/staff    20427 2010-02-12 15:49 cpio-2.11/doc/cpio.texi
+-rw-r--r-- gray/staff     1956 2009-02-14 23:45 cpio-2.11/doc/cpio.1
+-rw-r--r-- gray/staff     3157 2009-02-14 23:45 cpio-2.11/doc/mt.1
+-rwxr-xr-x gray/staff     3519 2010-02-12 15:49 cpio-2.11/doc/gendocs_template
+-rw-r--r-- gray/staff    20142 2010-03-10 18:32 cpio-2.11/doc/cpio.info
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/headers/
+-rw-r--r-- gray/staff      811 2010-02-12 15:49 cpio-2.11/headers/Makefile.am
+-rw-r--r-- gray/staff    33869 2010-03-10 18:30 cpio-2.11/headers/Makefile.in
+-rw-r--r-- gray/staff     2389 2010-02-12 15:49 cpio-2.11/headers/fnmatch.h
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/gnu/
+-rw-r--r-- gray/staff    66374 2010-03-10 14:56 cpio-2.11/gnu/Makefile.am
+-rw-r--r-- gray/staff   106240 2010-03-10 18:30 cpio-2.11/gnu/Makefile.in
+-rw-r--r-- gray/staff    15024 2010-03-10 14:56 cpio-2.11/gnu/alloca.c
+-rw-r--r-- gray/staff    98403 2010-03-10 14:59 cpio-2.11/gnu/getdate.c
+-rw-r--r-- gray/staff    29459 2010-03-10 14:56 cpio-2.11/gnu/argp.h
+-rw-r--r-- gray/staff     1711 2010-03-10 14:56 cpio-2.11/gnu/argp-ba.c
+-rw-r--r-- gray/staff     1249 2010-03-10 14:56 cpio-2.11/gnu/argp-eexst.c
+-rw-r--r-- gray/staff    13406 2010-03-10 14:56 cpio-2.11/gnu/argp-fmtstream.c
+-rw-r--r-- gray/staff    14076 2010-03-10 14:56 cpio-2.11/gnu/argp-fmtstream.h
+-rw-r--r-- gray/staff     1703 2010-03-10 14:56 cpio-2.11/gnu/argp-fs-xinl.c
+-rw-r--r-- gray/staff    63732 2010-03-10 14:56 cpio-2.11/gnu/argp-help.c
+-rw-r--r-- gray/staff     5587 2010-03-10 14:56 cpio-2.11/gnu/argp-namefrob.h
+-rw-r--r-- gray/staff    31802 2010-03-10 14:56 cpio-2.11/gnu/argp-parse.c
+-rw-r--r-- gray/staff     1072 2010-03-10 14:56 cpio-2.11/gnu/argp-pin.c
+-rw-r--r-- gray/staff     1686 2010-03-10 14:56 cpio-2.11/gnu/argp-pv.c
+-rw-r--r-- gray/staff     1491 2010-03-10 14:56 cpio-2.11/gnu/argp-pvh.c
+-rw-r--r-- gray/staff     1444 2010-03-10 14:56 cpio-2.11/gnu/argp-xinl.c
+-rw-r--r-- gray/staff     1468 2010-03-10 14:56 cpio-2.11/gnu/argp-version-etc.h
+-rw-r--r-- gray/staff     1375 2010-03-10 14:56 cpio-2.11/gnu/argp-version-etc.c
+-rw-r--r-- gray/staff     4346 2010-03-10 14:56 cpio-2.11/gnu/bitrotate.h
+-rw-r--r-- gray/staff     9098 2010-03-10 14:56 cpio-2.11/gnu/c-ctype.h
+-rw-r--r-- gray/staff    11137 2010-03-10 14:56 cpio-2.11/gnu/c-ctype.c
+-rw-r--r-- gray/staff     2672 2010-03-10 14:56 cpio-2.11/gnu/close-hook.c
+-rw-r--r-- gray/staff      961 2010-03-10 14:56 cpio-2.11/gnu/exitfail.c
+-rw-r--r-- gray/staff     1232 2010-03-10 14:56 cpio-2.11/gnu/full-write.h
+-rw-r--r-- gray/staff     2379 2010-03-10 14:56 cpio-2.11/gnu/full-write.c
+-rw-r--r-- gray/staff    45662 2010-03-10 14:56 cpio-2.11/gnu/getdate.y
+-rw-r--r-- gray/staff     9894 2010-03-10 14:57 cpio-2.11/gnu/gettext.h
+-rw-r--r-- gray/staff     1469 2010-03-10 14:57 cpio-2.11/gnu/localcharset.h
+-rw-r--r-- gray/staff    18131 2010-03-10 14:57 cpio-2.11/gnu/localcharset.c
+-rw-r--r-- gray/staff     5217 2010-03-10 14:57 cpio-2.11/gnu/malloca.c
+-rw-r--r-- gray/staff     1852 2010-03-10 14:57 cpio-2.11/gnu/openat-die.c
+-rw-r--r-- gray/staff     2105 2010-03-10 14:57 cpio-2.11/gnu/progname.h
+-rw-r--r-- gray/staff     3266 2010-03-10 14:57 cpio-2.11/gnu/progname.c
+-rw-r--r-- gray/staff     1324 2010-03-10 14:57 cpio-2.11/gnu/size_max.h
+-rw-r--r-- gray/staff     1293 2010-03-10 14:57 cpio-2.11/gnu/strnlen1.h
+-rw-r--r-- gray/staff     1359 2010-03-10 14:57 cpio-2.11/gnu/strnlen1.c
+-rw-r--r-- gray/staff     5704 2010-03-10 14:57 cpio-2.11/gnu/verify.h
+-rw-r--r-- gray/staff     2996 2010-03-10 14:57 cpio-2.11/gnu/version-etc.h
+-rw-r--r-- gray/staff     9295 2010-03-10 14:57 cpio-2.11/gnu/version-etc.c
+-rw-r--r-- gray/staff     1244 2010-03-10 14:57 cpio-2.11/gnu/version-etc-fsf.c
+-rw-r--r-- gray/staff     1424 2010-03-10 14:57 cpio-2.11/gnu/xalloc-die.c
+-rw-r--r-- gray/staff     3623 2010-03-10 14:57 cpio-2.11/gnu/xsize.h
+-rw-r--r-- gray/staff     1111 2010-03-10 14:57 cpio-2.11/gnu/xstrndup.h
+-rw-r--r-- gray/staff     1281 2010-03-10 14:57 cpio-2.11/gnu/xstrndup.c
+-rw-r--r-- gray/staff     7963 2010-03-10 14:56 cpio-2.11/gnu/argmatch.c
+-rw-r--r-- gray/staff     6982 2010-03-10 14:56 cpio-2.11/gnu/chdir-long.c
+-rw-r--r-- gray/staff     4608 2010-03-10 14:56 cpio-2.11/gnu/chown.c
+-rw-r--r-- gray/staff      399 2010-03-10 14:56 cpio-2.11/gnu/fchown-stub.c
+-rw-r--r-- gray/staff     1204 2010-03-10 14:56 cpio-2.11/gnu/close.c
+-rw-r--r-- gray/staff     3118 2010-03-10 14:56 cpio-2.11/gnu/close-stream.c
+-rw-r--r-- gray/staff     4619 2010-03-10 14:56 cpio-2.11/gnu/closeout.c
+-rw-r--r-- gray/staff     2171 2010-03-10 14:57 cpio-2.11/gnu/opendir-safer.c
+-rw-r--r-- gray/staff     1079 2010-03-10 14:56 cpio-2.11/gnu/dirfd.c
+-rw-r--r-- gray/staff     1855 2010-03-10 14:56 cpio-2.11/gnu/basename.c
+-rw-r--r-- gray/staff     1293 2010-03-10 14:56 cpio-2.11/gnu/dirname.c
+-rw-r--r-- gray/staff     1659 2010-03-10 14:57 cpio-2.11/gnu/stripslash.c
+-rw-r--r-- gray/staff     2187 2010-03-10 14:56 cpio-2.11/gnu/basename-lgpl.c
+-rw-r--r-- gray/staff     3242 2010-03-10 14:56 cpio-2.11/gnu/dirname-lgpl.c
+-rw-r--r-- gray/staff     3415 2010-03-10 14:56 cpio-2.11/gnu/dup2.c
+-rw-r--r-- gray/staff     9481 2010-03-10 14:56 cpio-2.11/gnu/error.c
+-rw-r--r-- gray/staff     7942 2010-03-10 14:56 cpio-2.11/gnu/fchdir.c
+-rw-r--r-- gray/staff     1321 2010-03-10 14:56 cpio-2.11/gnu/fclose.c
+-rw-r--r-- gray/staff     9299 2010-03-10 14:56 cpio-2.11/gnu/fcntl.c
+-rw-r--r-- gray/staff     3538 2010-03-10 14:56 cpio-2.11/gnu/fdopendir.c
+-rw-r--r-- gray/staff     3590 2010-03-10 14:57 cpio-2.11/gnu/openat-proc.c
+-rw-r--r-- gray/staff     2166 2010-03-10 14:56 cpio-2.11/gnu/fileblocks.c
+-rw-r--r-- gray/staff    11736 2010-03-10 14:56 cpio-2.11/gnu/fnmatch.c
+-rw-r--r-- gray/staff    45997 2010-03-10 14:56 cpio-2.11/gnu/fnmatch_loop.c
+-rw-r--r-- gray/staff     1151 2010-03-10 14:56 cpio-2.11/gnu/fpending.c
+-rw-r--r-- gray/staff     5423 2010-03-10 14:56 cpio-2.11/gnu/fseeko.c
+-rw-r--r-- gray/staff    11834 2010-03-10 14:56 cpio-2.11/gnu/getcwd.c
+-rw-r--r-- gray/staff     2303 2010-03-10 14:56 cpio-2.11/gnu/getdtablesize.c
+-rw-r--r-- gray/staff    39133 2010-03-10 14:56 cpio-2.11/gnu/getopt.c
+-rw-r--r-- gray/staff     4593 2010-03-10 14:56 cpio-2.11/gnu/getopt1.c
+-rw-r--r-- gray/staff     1319 2010-03-10 14:57 cpio-2.11/gnu/gettime.c
+-rw-r--r-- gray/staff     3957 2010-03-10 14:57 cpio-2.11/gnu/gettimeofday.c
+-rw-r--r-- gray/staff    38146 2010-03-10 14:57 cpio-2.11/gnu/hash.c
+-rw-r--r-- gray/staff      192 2010-03-10 14:57 cpio-2.11/gnu/imaxtostr.c
+-rw-r--r-- gray/staff     1552 2010-03-10 14:57 cpio-2.11/gnu/inttostr.c
+-rw-r--r-- gray/staff      188 2010-03-10 14:57 cpio-2.11/gnu/offtostr.c
+-rw-r--r-- gray/staff      196 2010-03-10 14:57 cpio-2.11/gnu/uinttostr.c
+-rw-r--r-- gray/staff      193 2010-03-10 14:57 cpio-2.11/gnu/umaxtostr.c
+-rw-r--r-- gray/staff     3143 2010-03-10 14:57 cpio-2.11/gnu/lchown.c
+-rw-r--r-- gray/staff     1846 2010-03-10 14:57 cpio-2.11/gnu/lseek.c
+-rw-r--r-- gray/staff     3281 2010-03-10 14:57 cpio-2.11/gnu/lstat.c
+-rw-r--r-- gray/staff     1565 2010-03-10 14:57 cpio-2.11/gnu/malloc.c
+-rw-r--r-- gray/staff    10631 2010-03-10 14:57 cpio-2.11/gnu/mbrtowc.c
+-rw-r--r-- gray/staff     1853 2010-03-10 14:57 cpio-2.11/gnu/mbsinit.c
+-rw-r--r-- gray/staff     1709 2010-03-10 14:57 cpio-2.11/gnu/mbsrtowcs-state.c
+-rw-r--r-- gray/staff     3958 2010-03-10 14:57 cpio-2.11/gnu/mbsrtowcs.c
+-rw-r--r-- gray/staff     5952 2010-03-10 14:57 cpio-2.11/gnu/memchr.c
+-rw-r--r-- gray/staff     1190 2010-03-10 14:57 cpio-2.11/gnu/mempcpy.c
+-rw-r--r-- gray/staff     5787 2010-03-10 14:57 cpio-2.11/gnu/memrchr.c
+-rw-r--r-- gray/staff     2714 2010-03-10 14:57 cpio-2.11/gnu/mkdir.c
+-rw-r--r-- gray/staff    23239 2010-03-10 14:57 cpio-2.11/gnu/mktime.c
+-rw-r--r-- gray/staff    14775 2010-03-10 14:57 cpio-2.11/gnu/obstack.c
+-rw-r--r-- gray/staff     5437 2010-03-10 14:57 cpio-2.11/gnu/open.c
+-rw-r--r-- gray/staff     4279 2010-03-10 14:56 cpio-2.11/gnu/at-func.c
+-rw-r--r-- gray/staff     2001 2010-03-10 14:56 cpio-2.11/gnu/fchmodat.c
+-rw-r--r-- gray/staff     3586 2010-03-10 14:56 cpio-2.11/gnu/fchownat.c
+-rw-r--r-- gray/staff     3545 2010-03-10 14:56 cpio-2.11/gnu/fstatat.c
+-rw-r--r-- gray/staff     1439 2010-03-10 14:57 cpio-2.11/gnu/mkdirat.c
+-rw-r--r-- gray/staff     8048 2010-03-10 14:57 cpio-2.11/gnu/openat.c
+-rw-r--r-- gray/staff     3296 2010-03-10 14:57 cpio-2.11/gnu/unlinkat.c
+-rw-r--r-- gray/staff     1383 2010-03-10 14:57 cpio-2.11/gnu/quote.c
+-rw-r--r-- gray/staff    28961 2010-03-10 14:57 cpio-2.11/gnu/quotearg.c
+-rw-r--r-- gray/staff     5346 2010-03-10 14:57 cpio-2.11/gnu/rawmemchr.c
+-rw-r--r-- gray/staff     2463 2010-03-10 14:57 cpio-2.11/gnu/realloc.c
+-rw-r--r-- gray/staff     2675 2010-03-10 14:57 cpio-2.11/gnu/rmdir.c
+-rw-r--r-- gray/staff     2241 2010-03-10 14:57 cpio-2.11/gnu/safe-read.c
+-rw-r--r-- gray/staff      900 2010-03-10 14:57 cpio-2.11/gnu/safe-write.c
+-rw-r--r-- gray/staff     3375 2010-03-10 14:57 cpio-2.11/gnu/save-cwd.c
+-rw-r--r-- gray/staff     3649 2010-03-10 14:57 cpio-2.11/gnu/savedir.c
+-rw-r--r-- gray/staff    10588 2010-03-10 14:57 cpio-2.11/gnu/setenv.c
+-rw-r--r-- gray/staff     2287 2010-03-10 14:57 cpio-2.11/gnu/sleep.c
+-rw-r--r-- gray/staff     3495 2010-03-10 14:57 cpio-2.11/gnu/stat.c
+-rw-r--r-- gray/staff     4977 2010-03-10 14:57 cpio-2.11/gnu/stdio-write.c
+-rw-r--r-- gray/staff     1468 2010-03-10 14:57 cpio-2.11/gnu/stpcpy.c
+-rw-r--r-- gray/staff     1978 2010-03-10 14:57 cpio-2.11/gnu/strcasecmp.c
+-rw-r--r-- gray/staff     2066 2010-03-10 14:57 cpio-2.11/gnu/strncasecmp.c
+-rw-r--r-- gray/staff     5748 2010-03-10 14:57 cpio-2.11/gnu/strchrnul.c
+-rw-r--r-- gray/staff     1515 2010-03-10 14:57 cpio-2.11/gnu/strdup.c
+-rw-r--r-- gray/staff     9015 2010-03-10 14:57 cpio-2.11/gnu/strerror.c
+-rw-r--r-- gray/staff     1229 2010-03-10 14:57 cpio-2.11/gnu/strndup.c
+-rw-r--r-- gray/staff     1311 2010-03-10 14:57 cpio-2.11/gnu/strnlen.c
+-rw-r--r-- gray/staff    11362 2010-03-10 14:57 cpio-2.11/gnu/strtol.c
+-rw-r--r-- gray/staff     1397 2010-03-10 14:57 cpio-2.11/gnu/time_r.c
+-rw-r--r-- gray/staff     1136 2010-03-10 14:56 cpio-2.11/gnu/dup-safer.c
+-rw-r--r-- gray/staff     1628 2010-03-10 14:56 cpio-2.11/gnu/fd-safer.c
+-rw-r--r-- gray/staff     1544 2010-03-10 14:57 cpio-2.11/gnu/pipe-safer.c
+-rw-r--r-- gray/staff     3228 2010-03-10 14:57 cpio-2.11/gnu/unlink.c
+-rw-r--r-- gray/staff     2821 2010-03-10 14:57 cpio-2.11/gnu/unsetenv.c
+-rw-r--r-- gray/staff    17097 2010-03-10 14:57 cpio-2.11/gnu/utimens.c
+-rw-r--r-- gray/staff     1226 2010-03-10 14:56 cpio-2.11/gnu/asnprintf.c
+-rw-r--r-- gray/staff     6717 2010-03-10 14:57 cpio-2.11/gnu/printf-args.c
+-rw-r--r-- gray/staff    21663 2010-03-10 14:57 cpio-2.11/gnu/printf-parse.c
+-rw-r--r-- gray/staff   221350 2010-03-10 14:57 cpio-2.11/gnu/vasnprintf.c
+-rw-r--r-- gray/staff     2051 2010-03-10 14:57 cpio-2.11/gnu/vsnprintf.c
+-rw-r--r-- gray/staff     1997 2010-03-10 14:57 cpio-2.11/gnu/write.c
+-rw-r--r-- gray/staff     3372 2010-03-10 14:57 cpio-2.11/gnu/xmalloc.c
+-rw-r--r-- gray/staff     1301 2010-03-10 14:57 cpio-2.11/gnu/xgetcwd.c
+-rw-r--r-- gray/staff     1988 2010-03-10 14:56 cpio-2.11/gnu/alloca.in.h
+-rw-r--r-- gray/staff     4023 2010-03-10 14:56 cpio-2.11/gnu/argmatch.h
+-rw-r--r-- gray/staff     1229 2010-03-10 14:56 cpio-2.11/gnu/chdir-long.h
+-rw-r--r-- gray/staff     2520 2010-03-10 14:56 cpio-2.11/gnu/close-hook.h
+-rw-r--r-- gray/staff      142 2010-03-10 14:56 cpio-2.11/gnu/close-stream.h
+-rw-r--r-- gray/staff     1148 2010-03-10 14:56 cpio-2.11/gnu/closeout.h
+-rw-r--r-- gray/staff     5371 2010-03-10 14:56 cpio-2.11/gnu/dirent.in.h
+-rw-r--r-- gray/staff      962 2010-03-10 14:56 cpio-2.11/gnu/dirent--.h
+-rw-r--r-- gray/staff      947 2010-03-10 14:56 cpio-2.11/gnu/dirent-safer.h
+-rw-r--r-- gray/staff     2451 2010-03-10 14:56 cpio-2.11/gnu/dirname.h
+-rw-r--r-- gray/staff     4712 2010-03-10 14:56 cpio-2.11/gnu/errno.in.h
+-rw-r--r-- gray/staff     2593 2010-03-10 14:56 cpio-2.11/gnu/error.h
+-rw-r--r-- gray/staff      861 2010-03-10 14:56 cpio-2.11/gnu/exitfail.h
+-rw-r--r-- gray/staff     7083 2010-03-10 14:56 cpio-2.11/gnu/fcntl.in.h
+-rw-r--r-- gray/staff     1868 2010-03-10 14:57 cpio-2.11/gnu/openat-priv.h
+-rw-r--r-- gray/staff     2288 2010-03-10 14:56 cpio-2.11/gnu/float.in.h
+-rw-r--r-- gray/staff     2641 2010-03-10 14:56 cpio-2.11/gnu/fnmatch.in.h
+-rw-r--r-- gray/staff     1124 2010-03-10 14:56 cpio-2.11/gnu/fpending.h
+-rw-r--r-- gray/staff     3728 2010-03-10 14:57 cpio-2.11/gnu/stdio-impl.h
+-rw-r--r-- gray/staff      998 2010-03-10 14:56 cpio-2.11/gnu/getdate.h
+-rw-r--r-- gray/staff     8961 2010-03-10 14:56 cpio-2.11/gnu/getopt.in.h
+-rw-r--r-- gray/staff     5188 2010-03-10 14:56 cpio-2.11/gnu/getopt_int.h
+-rw-r--r-- gray/staff     3557 2010-03-10 14:57 cpio-2.11/gnu/hash.h
+-rw-r--r-- gray/staff     3348 2010-03-10 14:57 cpio-2.11/gnu/intprops.h
+-rw-r--r-- gray/staff     1693 2010-03-10 14:57 cpio-2.11/gnu/inttostr.h
+-rw-r--r-- gray/staff    26752 2010-03-10 14:57 cpio-2.11/gnu/inttypes.in.h
+-rw-r--r-- gray/staff    22967 2010-03-10 14:56 cpio-2.11/gnu/config.charset
+-rw-r--r-- gray/staff     1077 2010-03-10 14:57 cpio-2.11/gnu/ref-add.sin
+-rw-r--r-- gray/staff     1032 2010-03-10 14:57 cpio-2.11/gnu/ref-del.sin
+-rw-r--r-- gray/staff     4810 2010-03-10 14:57 cpio-2.11/gnu/malloca.h
+-rw-r--r-- gray/staff      175 2010-03-10 14:57 cpio-2.11/gnu/malloca.valgrind
+-rw-r--r-- gray/staff      426 2010-03-10 14:57 cpio-2.11/gnu/memchr.valgrind
+-rw-r--r-- gray/staff      251 2010-03-10 14:57 cpio-2.11/gnu/mktime-internal.h
+-rw-r--r-- gray/staff    25410 2010-03-10 14:57 cpio-2.11/gnu/obstack.h
+-rw-r--r-- gray/staff     3120 2010-03-10 14:57 cpio-2.11/gnu/openat.h
+-rw-r--r-- gray/staff      953 2010-03-10 14:57 cpio-2.11/gnu/quote.h
+-rw-r--r-- gray/staff    15963 2010-03-10 14:57 cpio-2.11/gnu/quotearg.h
+-rw-r--r-- gray/staff      259 2010-03-10 14:57 cpio-2.11/gnu/rawmemchr.valgrind
+-rw-r--r-- gray/staff     1228 2010-03-10 14:57 cpio-2.11/gnu/safe-read.h
+-rw-r--r-- gray/staff     1163 2010-03-10 14:57 cpio-2.11/gnu/safe-write.h
+-rw-r--r-- gray/staff     1065 2010-03-10 14:57 cpio-2.11/gnu/same-inode.h
+-rw-r--r-- gray/staff     1151 2010-03-10 14:57 cpio-2.11/gnu/save-cwd.h
+-rw-r--r-- gray/staff     1052 2010-03-10 14:57 cpio-2.11/gnu/savedir.h
+-rw-r--r-- gray/staff     5764 2010-03-10 14:57 cpio-2.11/gnu/stat-time.h
+-rw-r--r-- gray/staff     1231 2010-03-10 14:57 cpio-2.11/gnu/stdarg.in.h
+-rw-r--r-- gray/staff     4996 2010-03-10 14:57 cpio-2.11/gnu/stdbool.in.h
+-rw-r--r-- gray/staff     2777 2010-03-10 14:57 cpio-2.11/gnu/stddef.in.h
+-rw-r--r-- gray/staff    16703 2010-03-10 14:57 cpio-2.11/gnu/stdint.in.h
+-rw-r--r-- gray/staff    36628 2010-03-10 14:57 cpio-2.11/gnu/stdio.in.h
+-rw-r--r-- gray/staff    22610 2010-03-10 14:57 cpio-2.11/gnu/stdlib.in.h
+-rw-r--r-- gray/staff      259 2010-03-10 14:57 cpio-2.11/gnu/strchrnul.valgrind
+-rw-r--r-- gray/staff     4079 2010-03-10 14:57 cpio-2.11/gnu/streq.h
+-rw-r--r-- gray/staff    31978 2010-03-10 14:57 cpio-2.11/gnu/string.in.h
+-rw-r--r-- gray/staff     3371 2010-03-10 14:57 cpio-2.11/gnu/strings.in.h
+-rw-r--r-- gray/staff    16990 2010-03-10 14:57 cpio-2.11/gnu/sys_stat.in.h
+-rw-r--r-- gray/staff     2789 2010-03-10 14:57 cpio-2.11/gnu/sys_time.in.h
+-rw-r--r-- gray/staff     1990 2010-03-10 14:57 cpio-2.11/gnu/sysexits.in.h
+-rw-r--r-- gray/staff     6990 2010-03-10 14:57 cpio-2.11/gnu/time.in.h
+-rw-r--r-- gray/staff     1396 2010-03-10 14:57 cpio-2.11/gnu/timespec.h
+-rw-r--r-- gray/staff    39891 2010-03-10 14:57 cpio-2.11/gnu/unistd.in.h
+-rw-r--r-- gray/staff     1085 2010-03-10 14:57 cpio-2.11/gnu/unistd--.h
+-rw-r--r-- gray/staff     1142 2010-03-10 14:57 cpio-2.11/gnu/unistd-safer.h
+-rw-r--r-- gray/staff     3632 2010-03-10 14:57 cpio-2.11/gnu/unlocked-io.h
+-rw-r--r-- gray/staff      726 2010-03-10 14:57 cpio-2.11/gnu/utimens.h
+-rw-r--r-- gray/staff     5770 2010-03-10 14:56 cpio-2.11/gnu/float+.h
+-rw-r--r-- gray/staff     3935 2010-03-10 14:57 cpio-2.11/gnu/printf-args.h
+-rw-r--r-- gray/staff     4848 2010-03-10 14:57 cpio-2.11/gnu/printf-parse.h
+-rw-r--r-- gray/staff     3062 2010-03-10 14:57 cpio-2.11/gnu/vasnprintf.h
+-rw-r--r-- gray/staff    13644 2010-03-10 14:57 cpio-2.11/gnu/wchar.in.h
+-rw-r--r-- gray/staff     9095 2010-03-10 14:57 cpio-2.11/gnu/wctype.in.h
+-rw-r--r-- gray/staff     8399 2010-03-10 14:57 cpio-2.11/gnu/xalloc.h
+-rw-r--r-- gray/staff      868 2010-03-10 14:57 cpio-2.11/gnu/xgetcwd.h
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/lib/
+-rw-r--r-- gray/staff    10939 2010-03-10 14:57 cpio-2.11/lib/system.h
+-rw-r--r-- gray/staff     1836 2009-03-10 16:39 cpio-2.11/lib/system-ioctl.h
+-rw-r--r-- gray/staff     3474 2010-03-10 14:45 cpio-2.11/lib/rmt.h
+-rw-r--r-- gray/staff     4362 2009-03-10 16:39 cpio-2.11/lib/paxlib.h
+-rw-r--r-- gray/staff     1473 2010-02-12 15:49 cpio-2.11/lib/Makefile.am
+-rw-r--r-- gray/staff    39394 2010-03-10 18:30 cpio-2.11/lib/Makefile.in
+-rw-r--r-- gray/staff      924 2009-03-10 16:39 cpio-2.11/lib/exit.c
+-rw-r--r-- gray/staff    19670 2010-03-10 14:45 cpio-2.11/lib/rtapelib.c
+-rw-r--r-- gray/staff     2542 2010-03-10 14:57 cpio-2.11/lib/sysdep.h
+-rw-r--r-- gray/staff     3753 2010-03-10 14:57 cpio-2.11/lib/sysdep.c
+-rw-r--r-- gray/staff     7987 2009-03-10 16:39 cpio-2.11/lib/error.c
+-rw-r--r-- gray/staff     4640 2009-03-10 16:39 cpio-2.11/lib/names.c
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/rmt/
+-rw-r--r-- gray/staff      268 2009-03-10 16:39 cpio-2.11/rmt/Makefile.am
+-rw-r--r-- gray/staff    39747 2010-03-10 18:30 cpio-2.11/rmt/Makefile.in
+-rw-r--r-- gray/staff    15076 2009-09-21 16:17 cpio-2.11/rmt/rmt.c
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/src/
+-rw-r--r-- gray/staff     2159 2010-02-12 15:49 cpio-2.11/src/cpio.h
+-rw-r--r-- gray/staff     3306 2010-02-12 15:49 cpio-2.11/src/cpiohdr.h
+-rw-r--r-- gray/staff     3772 2010-02-12 15:49 cpio-2.11/src/tar.h
+-rw-r--r-- gray/staff     1547 2010-02-12 15:49 cpio-2.11/src/tarhdr.h
+-rw-r--r-- gray/staff     1006 2010-02-12 15:49 cpio-2.11/src/defer.h
+-rw-r--r-- gray/staff     2193 2010-02-12 15:49 cpio-2.11/src/dstring.h
+-rw-r--r-- gray/staff     7500 2010-02-15 15:32 cpio-2.11/src/extern.h
+-rw-r--r-- gray/staff     2518 2010-02-12 15:49 cpio-2.11/src/filetypes.h
+-rw-r--r-- gray/staff       45 2009-02-14 23:45 cpio-2.11/src/safe-stat.h
+-rw-r--r-- gray/staff     1302 2010-02-12 15:49 cpio-2.11/src/Makefile.am
+-rw-r--r-- gray/staff    42266 2010-03-10 18:30 cpio-2.11/src/Makefile.in
+-rw-r--r-- gray/staff    41976 2010-02-15 15:32 cpio-2.11/src/copyin.c
+-rw-r--r-- gray/staff    25154 2010-02-12 15:49 cpio-2.11/src/copyout.c
+-rw-r--r-- gray/staff    12320 2010-02-15 15:32 cpio-2.11/src/copypass.c
+-rw-r--r-- gray/staff     1381 2010-02-12 15:49 cpio-2.11/src/defer.c
+-rw-r--r-- gray/staff     2747 2010-02-12 15:49 cpio-2.11/src/dstring.c
+-rw-r--r-- gray/staff     5931 2010-02-12 15:49 cpio-2.11/src/global.c
+-rw-r--r-- gray/staff      897 2010-02-12 15:49 cpio-2.11/src/fatal.c
+-rw-r--r-- gray/staff    22514 2010-02-12 17:05 cpio-2.11/src/main.c
+-rw-r--r-- gray/staff    14596 2010-02-12 15:49 cpio-2.11/src/tar.c
+-rw-r--r-- gray/staff    44374 2010-03-10 15:52 cpio-2.11/src/util.c
+-rw-r--r-- gray/staff     5843 2010-02-12 15:49 cpio-2.11/src/filemode.c
+-rw-r--r-- gray/staff     5080 2010-02-12 15:49 cpio-2.11/src/idcache.c
+-rw-r--r-- gray/staff     5200 2010-02-12 15:49 cpio-2.11/src/makepath.c
+-rw-r--r-- gray/staff     5616 2010-02-12 15:49 cpio-2.11/src/userspec.c
+-rw-r--r-- gray/staff     8108 2010-02-12 15:49 cpio-2.11/src/mt.c
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/po/
+-rw-r--r-- gray/staff    15270 2009-06-19 14:40 cpio-2.11/po/Makefile.in.in
+-rw-r--r-- gray/staff      432 2009-02-14 23:48 cpio-2.11/po/remove-potcdate.sin
+-rw-r--r-- gray/staff      153 2009-02-14 23:48 cpio-2.11/po/quot.sed
+-rw-r--r-- gray/staff      217 2009-02-14 23:48 cpio-2.11/po/boldquot.sed
+-rw-r--r-- gray/staff     1203 2009-02-14 23:48 cpio-2.11/po/en@quot.header
+-rw-r--r-- gray/staff     1337 2009-02-14 23:48 cpio-2.11/po/en@boldquot.header
+-rw-r--r-- gray/staff      672 2009-02-14 23:48 cpio-2.11/po/insert-header.sin
+-rw-r--r-- gray/staff     1790 2009-02-14 23:48 cpio-2.11/po/Rules-quot
+-rw-r--r-- gray/staff     2448 2010-03-10 14:57 cpio-2.11/po/Makevars
+-rw-r--r-- gray/staff     1103 2010-02-12 15:49 cpio-2.11/po/POTFILES.in
+-rw-r--r-- gray/staff    41754 2010-03-10 18:36 cpio-2.11/po/da.po
+-rw-r--r-- gray/staff    44838 2010-03-10 18:36 cpio-2.11/po/de.po
+-rw-r--r-- gray/staff    51108 2010-03-10 18:36 cpio-2.11/po/es.po
+-rw-r--r-- gray/staff    48299 2010-03-10 18:36 cpio-2.11/po/fi.po
+-rw-r--r-- gray/staff    57270 2010-03-10 18:36 cpio-2.11/po/fr.po
+-rw-r--r-- gray/staff    44439 2010-03-10 18:36 cpio-2.11/po/ga.po
+-rw-r--r-- gray/staff    42876 2010-03-10 18:36 cpio-2.11/po/gl.po
+-rw-r--r-- gray/staff    42586 2010-03-10 18:36 cpio-2.11/po/hu.po
+-rw-r--r-- gray/staff    47386 2010-03-10 18:36 cpio-2.11/po/id.po
+-rw-r--r-- gray/staff    46216 2010-03-10 18:36 cpio-2.11/po/ko.po
+-rw-r--r-- gray/staff    47367 2010-03-10 18:36 cpio-2.11/po/nl.po
+-rw-r--r-- gray/staff    44152 2010-03-10 18:36 cpio-2.11/po/pl.po
+-rw-r--r-- gray/staff    42375 2010-03-10 18:36 cpio-2.11/po/pt_BR.po
+-rw-r--r-- gray/staff    42549 2010-03-10 18:36 cpio-2.11/po/ro.po
+-rw-r--r-- gray/staff    57222 2010-03-10 18:36 cpio-2.11/po/ru.po
+-rw-r--r-- gray/staff    55884 2010-03-10 18:36 cpio-2.11/po/sv.po
+-rw-r--r-- gray/staff    42384 2010-03-10 18:36 cpio-2.11/po/tr.po
+-rw-r--r-- gray/staff    54063 2010-03-10 18:37 cpio-2.11/po/uk.po
+-rw-r--r-- gray/staff    46963 2010-03-10 18:36 cpio-2.11/po/vi.po
+-rw-r--r-- gray/staff    39750 2010-03-10 18:36 cpio-2.11/po/zh_CN.po
+-rw-r--r-- gray/staff    38599 2010-03-10 18:36 cpio-2.11/po/zh_TW.po
+-rw-r--r-- gray/staff     3508 2010-03-10 18:36 cpio-2.11/po/da.gmo
+-rw-r--r-- gray/staff     8057 2010-03-10 18:36 cpio-2.11/po/de.gmo
+-rw-r--r-- gray/staff    13554 2010-03-10 18:36 cpio-2.11/po/es.gmo
+-rw-r--r-- gray/staff    31814 2010-03-10 18:36 cpio-2.11/po/fi.gmo
+-rw-r--r-- gray/staff    32250 2010-03-10 18:36 cpio-2.11/po/fr.gmo
+-rw-r--r-- gray/staff    20010 2010-03-10 18:36 cpio-2.11/po/ga.gmo
+-rw-r--r-- gray/staff     3861 2010-03-10 18:36 cpio-2.11/po/gl.gmo
+-rw-r--r-- gray/staff     3698 2010-03-10 18:36 cpio-2.11/po/hu.gmo
+-rw-r--r-- gray/staff    30879 2010-03-10 18:36 cpio-2.11/po/id.gmo
+-rw-r--r-- gray/staff     4370 2010-03-10 18:36 cpio-2.11/po/ko.gmo
+-rw-r--r-- gray/staff    27592 2010-03-10 18:36 cpio-2.11/po/nl.gmo
+-rw-r--r-- gray/staff    31125 2010-03-10 18:36 cpio-2.11/po/pl.gmo
+-rw-r--r-- gray/staff     3693 2010-03-10 18:36 cpio-2.11/po/pt_BR.gmo
+-rw-r--r-- gray/staff     3800 2010-03-10 18:36 cpio-2.11/po/ro.gmo
+-rw-r--r-- gray/staff    35126 2010-03-10 18:36 cpio-2.11/po/ru.gmo
+-rw-r--r-- gray/staff    27193 2010-03-10 18:36 cpio-2.11/po/sv.gmo
+-rw-r--r-- gray/staff    18802 2010-03-10 18:36 cpio-2.11/po/tr.gmo
+-rw-r--r-- gray/staff    41085 2010-03-10 18:37 cpio-2.11/po/uk.gmo
+-rw-r--r-- gray/staff    34142 2010-03-10 18:36 cpio-2.11/po/vi.gmo
+-rw-r--r-- gray/staff    16784 2010-03-10 18:36 cpio-2.11/po/zh_CN.gmo
+-rw-r--r-- gray/staff    15391 2010-03-10 18:36 cpio-2.11/po/zh_TW.gmo
+-rw-r--r-- gray/staff    30651 2010-03-10 18:34 cpio-2.11/po/cpio.pot
+-rw-r--r-- gray/staff       10 2010-03-10 18:34 cpio-2.11/po/stamp-po
+-rw-r--r-- gray/staff       72 2010-03-10 14:56 cpio-2.11/po/LINGUAS
+drwxr-xr-x gray/staff        0 2010-03-10 18:42 cpio-2.11/tests/
+-rw-r--r-- gray/staff     2612 2010-02-15 15:32 cpio-2.11/tests/Makefile.am
+-rw-r--r-- gray/staff    39295 2010-03-10 18:30 cpio-2.11/tests/Makefile.in
+-rw-r--r-- gray/staff      257 2010-02-12 15:49 cpio-2.11/tests/atlocal.in
+-rw-r--r-- gray/staff    19736 2009-08-09 13:09 cpio-2.11/tests/genfile.c
+-rw-r--r-- gray/staff     7579 2010-03-10 14:45 cpio-2.11/tests/argcv.c
+-rw-r--r-- gray/staff     1577 2009-03-10 16:39 cpio-2.11/tests/argcv.h
+-rw-r--r-- gray/staff     1218 2010-02-15 15:32 cpio-2.11/tests/testsuite.at
+-rw-r--r-- gray/staff     1127 2010-02-12 15:49 cpio-2.11/tests/inout.at
+-rw-r--r-- gray/staff     1688 2010-02-12 15:49 cpio-2.11/tests/interdir.at
+-rw-r--r-- gray/staff     1237 2010-02-15 15:32 cpio-2.11/tests/setstat01.at
+-rw-r--r-- gray/staff     1369 2010-02-15 15:32 cpio-2.11/tests/setstat02.at
+-rw-r--r-- gray/staff     1420 2010-02-15 15:32 cpio-2.11/tests/setstat03.at
+-rw-r--r-- gray/staff     1469 2010-02-15 15:32 cpio-2.11/tests/setstat04.at
+-rw-r--r-- gray/staff     1456 2010-02-15 15:32 cpio-2.11/tests/setstat05.at
+-rw-r--r-- gray/staff     1342 2010-02-12 15:49 cpio-2.11/tests/symlink.at
+-rw-r--r-- gray/staff     1222 2010-02-12 15:49 cpio-2.11/tests/version.at
+-rwxr-xr-x gray/staff    65961 2010-03-10 18:32 cpio-2.11/tests/testsuite
+-rw-r--r-- gray/staff      271 2010-03-10 18:32 cpio-2.11/tests/package.m4
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.gdY1iX
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking how to create a ustar tar archive... gnutar
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for bison... bison -y
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C99... -std=gnu99
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking for function prototypes... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking return type of signal handlers... void
+checking whether sys/types.h defines makedev... yes
+checking for an ANSI C-conforming const... yes
+checking for uid_t in sys/types.h... yes
+checking for gid_t... yes
+checking for ANSI C header files... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for fchmod... yes
+checking for fchown... yes
+checking for setmode... no
+checking for getpwuid... yes
+checking for getpwnam... yes
+checking for getgrgid... yes
+checking for getgrnam... yes
+checking for pipe... yes
+checking for fork... yes
+checking for getuid... yes
+checking for geteuid... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for inline... inline
+checking for C/C++ restrict keyword... __restrict
+checking whether getenv is declared... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking for flockfile... yes
+checking for funlockfile... yes
+checking for chown... yes
+checking for fchown... (cached) yes
+checking for fdopendir... yes
+checking for dup2... yes
+checking for fchdir... yes
+checking for fcntl... yes
+checking for btowc... yes
+checking for isblank... yes
+checking for iswctype... yes
+checking for mbsrtowcs... yes
+checking for mempcpy... yes
+checking for wmemchr... yes
+checking for wmemcpy... yes
+checking for wmempcpy... yes
+checking for __fpending... yes
+checking for getdtablesize... yes
+checking for gettimeofday... yes
+checking for nanotime... no
+checking for lchmod... no
+checking for lstat... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for mprotect... yes
+checking for alarm... yes
+checking for setenv... yes
+checking for sleep... yes
+checking for strndup... yes
+checking for pipe... (cached) yes
+checking for futimes... yes
+checking for futimesat... yes
+checking for futimens... yes
+checking for utimensat... yes
+checking for lutimes... yes
+checking for vasnprintf... no
+checking for iswcntrl... yes
+checking for mkfifo... yes
+checking for setlocale... yes
+checking features.h usability... yes
+checking features.h presence... yes
+checking for features.h... yes
+checking linewrap.h usability... no
+checking linewrap.h presence... no
+checking for linewrap.h... no
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for stdint.h... (cached) yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for inttypes.h... (cached) yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking for unistd.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking net/errno.h usability... no
+checking net/errno.h presence... no
+checking for net/errno.h... no
+checking sys/inet.h usability... no
+checking sys/inet.h presence... no
+checking for sys/inet.h... no
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking for memory.h... (cached) yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking sys/gentape.h usability... no
+checking sys/gentape.h presence... no
+checking for sys/gentape.h... no
+checking sys/tape.h usability... no
+checking sys/tape.h presence... no
+checking for sys/tape.h... no
+checking sys/device.h usability... no
+checking sys/device.h presence... no
+checking for sys/device.h... no
+checking sys/tprintf.h usability... no
+checking sys/tprintf.h presence... no
+checking for sys/tprintf.h... no
+checking sys/mtio.h usability... yes
+checking sys/mtio.h presence... yes
+checking for sys/mtio.h... yes
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking sys/io/trioctl.h usability... no
+checking sys/io/trioctl.h presence... no
+checking for sys/io/trioctl.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for unistd.h... (cached) yes
+checking for working chown... no
+checking whether chown dereferences symlinks... yes
+checking whether chown honors trailing slash... guessing no
+checking whether chown always updates ctime... guessing no
+checking whether the preprocessor supports include_next... yes
+checking whether system is Windows or MSDOS... no
+checking whether // is distinct from /... unknown, assuming no
+checking if environ is properly declared... yes
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for mode_t... yes
+checking for promoted mode_t type... mode_t
+checking for working fcntl.h... cross-compiling
+checking for mbstate_t... yes
+checking whether stdin defaults to large file offsets... yes
+checking whether getcwd (NULL, 0) allocates memory for result... guessing yes
+checking whether getcwd is declared... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for compound literals... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_gmtoff... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether optreset is declared... no
+checking whether getopt is POSIX compatible... guessing yes
+checking for working GNU getopt function... no
+checking for struct timeval... yes
+checking whether gettimeofday is declared without a macro... yes
+checking for off_t... yes
+checking for long long int... yes
+checking for unsigned long long int... yes
+checking whether stdint.h conforms to C99... yes
+checking for inttypes.h... (cached) yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking whether imaxabs is declared... yes
+checking whether imaxdiv is declared... yes
+checking whether strtoimax is declared... yes
+checking whether strtoumax is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether lstat dereferences a symlink specified with a trailing slash... no
+checking whether malloc, realloc, calloc are POSIX compliant... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... no
+checking for a traditional japanese locale... none
+checking for a transitional chinese locale... none
+checking for a french Unicode locale... none
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking for memchr... yes
+checking whether memchr works... guessing no
+checking bp-sym.h usability... no
+checking bp-sym.h presence... no
+checking for bp-sym.h... no
+checking whether memrchr is declared... yes
+checking whether unlink honors trailing slashes... guessing no
+checking for ssize_t... yes
+checking whether setenv validates arguments... guessing no
+checking search.h usability... yes
+checking search.h presence... yes
+checking for search.h... yes
+checking for tsearch... yes
+checking for wchar_t... yes
+checking whether strdup is declared... yes
+checking for working strerror function... yes
+checking whether memmem is declared without a macro... yes
+checking whether mempcpy is declared without a macro... yes
+checking whether memrchr is declared without a macro... yes
+checking whether rawmemchr is declared without a macro... yes
+checking whether stpcpy is declared without a macro... yes
+checking whether stpncpy is declared without a macro... yes
+checking whether strchrnul is declared without a macro... yes
+checking whether strdup is declared without a macro... yes
+checking whether strndup is declared without a macro... yes
+checking whether strnlen is declared without a macro... yes
+checking whether strpbrk is declared without a macro... yes
+checking whether strsep is declared without a macro... yes
+checking whether strcasestr is declared without a macro... yes
+checking whether strtok_r is declared without a macro... yes
+checking whether strsignal is declared without a macro... yes
+checking whether strverscmp is declared without a macro... yes
+checking whether strcasecmp is declared without a macro... yes
+checking whether strncasecmp is declared without a macro... yes
+checking whether strndup is declared... (cached) yes
+checking whether strnlen is declared... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking for struct timespec in <time.h>... yes
+checking whether the utimes function works... no
+checking for struct utimbuf... yes
+checking for wint_t... yes
+checking for size_t... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking for snprintf... yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... yes
+checking whether _snprintf is declared... no
+checking whether vsnprintf is declared... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for alloca as a compiler built-in... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking whether program_invocation_name is defined... yes
+checking whether program_invocation_short_name is defined... yes
+checking whether this system has an arbitrary file name length limit... yes
+checking for library containing clock_gettime... -lrt
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking for d_ino member in directory struct... no
+checking whether alphasort is declared without a macro... yes
+checking whether dirfd is declared without a macro... yes
+checking whether fdopendir is declared without a macro... yes
+checking whether scandir is declared without a macro... yes
+checking for dirfd... yes
+checking whether dirfd is declared... (cached) yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... (cached) unknown, assuming no
+checking whether dup2 works... no
+checking for error_at_line... yes
+checking whether fcntl handles F_DUPFD correctly... guessing yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... needs runtime check
+checking whether fcntl is declared without a macro... yes
+checking whether openat is declared without a macro... yes
+checking whether fdopendir works... guessing no
+checking for struct stat.st_blocks... yes
+checking for working GNU fnmatch... guessing no
+checking whether isblank is declared... yes
+checking whether __fpending is declared... yes
+checking for fseeko... yes
+checking for struct tm.tm_zone... yes
+checking whether gettimeofday clobbers localtime buffer... yes
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking for _ftime... no
+checking for gettimeofday with POSIX signature... almost
+checking whether the compiler generally respects inline... yes
+checking whether inttypes.h conforms to C99... yes
+checking whether INT32_MAX < INTMAX_MAX... yes
+checking whether INT64_MAX == LONG_MAX... no
+checking whether UINT32_MAX < UINTMAX_MAX... yes
+checking whether UINT64_MAX == ULONG_MAX... no
+checking whether imaxabs is declared without a macro... yes
+checking whether imaxdiv is declared without a macro... yes
+checking whether strtoimax is declared without a macro... yes
+checking whether strtoumax is declared without a macro... yes
+checking for lchown... yes
+checking whether lseek detects pipes... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) no
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbsrtowcs works... guessing yes
+checking for mempcpy... (cached) yes
+checking for memrchr... yes
+checking whether mkdir handles trailing slash... guessing no
+checking whether mkdir handles trailing dot... guessing no
+checking for working mktime... no
+checking for obstacks... no
+checking whether open recognizes a trailing slash... guessing yes
+checking for fchmodat... yes
+checking for fstatat... yes
+checking for mkdirat... yes
+checking for openat... yes
+checking for unlinkat... yes
+checking for fchownat... yes
+checking whether fchownat works with AT_SYMLINK_NOFOLLOW... no
+checking whether program_invocation_name is declared... (cached) yes
+checking whether program_invocation_short_name is declared... (cached) yes
+checking for rawmemchr... yes
+checking for rmdir... yes
+checking whether rmdir works... guessing no
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking whether sleep is declared... yes
+checking for working sleep... guessing no
+checking for ssize_t... (cached) yes
+checking whether stat handles trailing slashes on directories... guessing yes
+checking whether stat handles trailing slashes on files... guessing no
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for va_copy... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether stdint.h conforms to C99... (cached) yes
+checking whether dprintf is declared without a macro... yes
+checking whether fpurge is declared without a macro... no
+checking whether fseeko is declared without a macro... yes
+checking whether ftello is declared without a macro... yes
+checking whether getdelim is declared without a macro... yes
+checking whether getline is declared without a macro... yes
+checking whether popen is declared without a macro... yes
+checking whether renameat is declared without a macro... yes
+checking whether snprintf is declared without a macro... yes
+checking whether vdprintf is declared without a macro... yes
+checking whether vsnprintf is declared without a macro... yes
+checking for random.h... no
+checking for struct random_data... yes
+checking whether atoll is declared without a macro... yes
+checking whether canonicalize_file_name is declared without a macro... yes
+checking whether getloadavg is declared without a macro... yes
+checking whether getsubopt is declared without a macro... yes
+checking whether mkdtemp is declared without a macro... yes
+checking whether mkostemp is declared without a macro... yes
+checking whether mkostemps is declared without a macro... yes
+checking whether mkstemp is declared without a macro... yes
+checking whether mkstemps is declared without a macro... yes
+checking whether random_r is declared without a macro... yes
+checking whether initstat_r is declared without a macro... no
+checking whether srandom_r is declared without a macro... yes
+checking whether setstate_r is declared without a macro... yes
+checking whether realpath is declared without a macro... yes
+checking whether rpmatch is declared without a macro... yes
+checking whether setenv is declared without a macro... yes
+checking whether strtod is declared without a macro... yes
+checking whether strtoll is declared without a macro... yes
+checking whether strtoull is declared without a macro... yes
+checking whether unsetenv is declared without a macro... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... (cached) yes
+checking for strchrnul... yes
+checking for strdup... yes
+checking for working strndup... guessing yes
+checking for working strnlen... no
+checking for strtol... yes
+checking for nlink_t... yes
+checking whether fchmodat is declared without a macro... yes
+checking whether fstatat is declared without a macro... yes
+checking whether futimens is declared without a macro... yes
+checking whether lchmod is declared without a macro... yes
+checking whether lstat is declared without a macro... yes
+checking whether mkdirat is declared without a macro... yes
+checking whether mkfifo is declared without a macro... yes
+checking whether mkfifoat is declared without a macro... yes
+checking whether mknod is declared without a macro... yes
+checking whether mknodat is declared without a macro... yes
+checking whether stat is declared without a macro... yes
+checking whether utimensat is declared without a macro... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking whether localtime_r is compatible with its POSIX signature... yes
+checking whether chown is declared without a macro... yes
+checking whether dup2 is declared without a macro... yes
+checking whether dup3 is declared without a macro... yes
+checking whether environ is declared without a macro... yes
+checking whether euidaccess is declared without a macro... yes
+checking whether faccessat is declared without a macro... yes
+checking whether fchdir is declared without a macro... yes
+checking whether fchownat is declared without a macro... yes
+checking whether fsync is declared without a macro... yes
+checking whether ftruncate is declared without a macro... yes
+checking whether getcwd is declared without a macro... yes
+checking whether getdomainname is declared without a macro... yes
+checking whether getdtablesize is declared without a macro... yes
+checking whether getgroups is declared without a macro... yes
+checking whether gethostname is declared without a macro... yes
+checking whether getlogin is declared without a macro... yes
+checking whether getlogin_r is declared without a macro... yes
+checking whether getpagesize is declared without a macro... yes
+checking whether getusershell is declared without a macro... yes
+checking whether setusershell is declared without a macro... yes
+checking whether endusershell is declared without a macro... yes
+checking whether lchown is declared without a macro... yes
+checking whether link is declared without a macro... yes
+checking whether linkat is declared without a macro... yes
+checking whether lseek is declared without a macro... yes
+checking whether pipe2 is declared without a macro... yes
+checking whether pread is declared without a macro... yes
+checking whether readlink is declared without a macro... yes
+checking whether readlinkat is declared without a macro... yes
+checking whether rmdir is declared without a macro... yes
+checking whether sleep is declared without a macro... yes
+checking whether symlink is declared without a macro... yes
+checking whether symlinkat is declared without a macro... yes
+checking whether unlink is declared without a macro... yes
+checking whether unlinkat is declared without a macro... yes
+checking whether usleep is declared without a macro... yes
+checking whether unlink honors trailing slashes... (cached) guessing no
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking whether unsetenv works on duplicates... guessing no
+checking for ptrdiff_t... yes
+checking for vsnprintf... yes
+checking whether snprintf respects a size of 1... guessing yes
+checking whether btowc is declared without a macro... yes
+checking whether wctob is declared without a macro... yes
+checking whether mbsinit is declared without a macro... yes
+checking whether mbrtowc is declared without a macro... yes
+checking whether mbrlen is declared without a macro... yes
+checking whether mbsrtowcs is declared without a macro... yes
+checking whether mbsnrtowcs is declared without a macro... yes
+checking whether wcrtomb is declared without a macro... yes
+checking whether wcsrtombs is declared without a macro... yes
+checking whether wcsnrtombs is declared without a macro... yes
+checking whether wcwidth is declared without a macro... yes
+checking whether iswcntrl works... yes
+checking for stdint.h... (cached) yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for struct stat.st_blksize... yes
+checking for library containing setsockopt... none required
+checking for library containing setsockopt... (cached) none required
+checking for sys/mtio.h... (cached) yes
+checking which ioctl field to test for reversed bytes... mt_type
+checking whether to build rmt... yes
+checking for remote tape header files... yes
+checking for sys/buf.h... no
+checking for struct stat.st_blksize... (cached) yes
+checking for library containing gethostbyname... none required
+checking for getpwuid... (cached) yes
+checking for getpwnam... (cached) yes
+checking for getgrgid... (cached) yes
+checking for getgrnam... (cached) yes
+checking for pipe... (cached) yes
+checking for fork... (cached) yes
+checking for getuid... (cached) yes
+checking for geteuid... (cached) yes
+checking for getgid... yes
+checking for setuid... yes
+checking for setgid... yes
+checking for mknod... yes
+checking for symlink... yes
+checking for link... yes
+checking for chown... (cached) yes
+checking for structure packing via __attribute__((packed))... yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for pwd.h... (cached) yes
+checking for grp.h... (cached) yes
+checking for sys/io/trioctl.h... (cached) no
+checking utmp.h usability... yes
+checking utmp.h presence... yes
+checking for utmp.h... yes
+checking for getopt.h... (cached) yes
+checking for locale.h... (cached) yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking for sys/wait.h... (cached) yes
+checking for utime.h... (cached) yes
+checking for locale.h... (cached) yes
+checking process.h usability... no
+checking process.h presence... no
+checking for process.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking whether errno is declared... yes
+checking whether getpwnam is declared... yes
+checking whether getgrnam is declared... yes
+checking whether getgrgid is declared... yes
+checking whether strdup is declared... (cached) yes
+checking whether strerror is declared... yes
+checking whether getenv is declared... (cached) yes
+checking whether atoi is declared... yes
+checking whether exit is declared... yes
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for iconv... yes
+checking for working iconv... guessing yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+configure: creating ./config.status
+config.status: creating tests/Makefile
+config.status: creating tests/atlocal
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating headers/Makefile
+config.status: creating gnu/Makefile
+config.status: creating lib/Makefile
+config.status: creating rmt/Makefile
+config.status: creating src/Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing tests/atconfig commands
+Making check in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/doc'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/doc'
+Making check in headers
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/headers'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/headers'
+Making check in gnu
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+  GEN    alloca.h
+  GEN    arg-nonnull.h
+  GEN    c++defs.h
+  GEN    configmake.h
+  GEN    warn-on-use.h
+  GEN    dirent.h
+  GEN    fcntl.h
+  GEN    fnmatch.h
+  GEN    getopt.h
+  GEN    inttypes.h
+  GEN    stdio.h
+  GEN    stdlib.h
+  GEN    string.h
+  GEN    strings.h
+  GEN    sys/stat.h
+  GEN    sys/time.h
+  GEN    time.h
+  GEN    unistd.h
+  GEN    wchar.h
+  GEN    wctype.h
+make  check-recursive
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+  CC     argp-ba.o
+  CC     argp-eexst.o
+  CC     argp-fmtstream.o
+  CC     argp-fs-xinl.o
+  CC     argp-help.o
+  CC     argp-parse.o
+  CC     argp-pin.o
+  CC     argp-pv.o
+  CC     argp-pvh.o
+  CC     argp-xinl.o
+  CC     argp-version-etc.o
+  CC     c-ctype.o
+  CC     close-hook.o
+  CC     exitfail.o
+  CC     full-write.o
+  CC     getdate.o
+  CC     localcharset.o
+  CC     malloca.o
+  CC     openat-die.o
+  CC     progname.o
+  CC     strnlen1.o
+  CC     version-etc.o
+  CC     version-etc-fsf.o
+  CC     xalloc-die.o
+  CC     xstrndup.o
+  CC     argmatch.o
+  CC     asnprintf.o
+  CC     basename.o
+  CC     basename-lgpl.o
+  CC     chdir-long.o
+  CC     chown.o
+  CC     close-stream.o
+  CC     closeout.o
+  CC     dirname.o
+  CC     dirname-lgpl.o
+  CC     dup-safer.o
+  CC     dup2.o
+  CC     fchownat.o
+  CC     fcntl.o
+  CC     fd-safer.o
+  CC     fdopendir.o
+  CC     fnmatch.o
+  CC     fstatat.o
+  CC     getcwd.o
+  CC     getopt.o
+  CC     getopt1.o
+  CC     gettime.o
+  CC     gettimeofday.o
+  CC     hash.o
+  CC     imaxtostr.o
+  CC     lchown.o
+  CC     lstat.o
+  CC     malloc.o
+  CC     memchr.o
+  CC     mkdir.o
+  CC     mktime.o
+  CC     obstack.o
+  CC     offtostr.o
+  CC     openat.o
+  CC     openat-proc.o
+  CC     opendir-safer.o
+  CC     pipe-safer.o
+  CC     printf-args.o
+  CC     printf-parse.o
+  CC     quote.o
+  CC     quotearg.o
+  CC     rmdir.o
+  CC     safe-read.o
+  CC     safe-write.o
+  CC     save-cwd.o
+  CC     savedir.o
+  CC     setenv.o
+  CC     sleep.o
+  CC     stat.o
+  CC     stripslash.o
+  CC     strnlen.o
+  CC     uinttostr.o
+  CC     umaxtostr.o
+  CC     unlink.o
+  CC     unlinkat.o
+  CC     unsetenv.o
+  CC     utimens.o
+  CC     vasnprintf.o
+  CC     xgetcwd.o
+  CC     xmalloc.o
+  AR     libgnu.a
+  GEN    charset.alias
+  GEN    ref-add.sed
+  GEN    ref-del.sed
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/gnu'
+Making check in lib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/lib'
+  GEN    rmt-command.h
+make  check-am
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/lib'
+  CC     exit.o
+  CC     rtapelib.o
+  CC     sysdep.o
+  CC     error.o
+  CC     names.o
+  AR     libpax.a
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/lib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/lib'
+Making check in rmt
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/rmt'
+  CC     rmt.o
+  CCLD   rmt
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/rmt'
+Making check in src
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/cpio-2.11/src'
+  CC     copyin.o
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/cpio-2.11/src'
+
+
+RPM build errors:

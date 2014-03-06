@@ -1,0 +1,203 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 21 10:56:21 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /tmp 
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ cat <<EOF >killall-test.c
+> #include <stdio.h>
+> #include <signal.h>
+> #include <string.h>
+> void handler(int signum)
+> {
+> printf(" >> receive signal num[%d]", signum);
+> }
+> int main()
+> {
+> struct sigaction sigact;
+> memset(&sigact, 0, sizeof(sigact));
+> sigact.sa_handler = handler;
+> sigfillset(&sigact.sa_mask);
+> sigact.sa_flags = SA_RESTART;
+> sigaction(SIGHUP, &sigact, NULL);
+> sigaction(SIGTRAP, &sigact, NULL);
+> sigaction(SIGINT, &sigact, NULL);
+> sigaction(SIGQUIT, &sigact, NULL);
+> sigaction(SIGILL, &sigact, NULL);
+> sigaction(SIGABRT, &sigact, NULL);
+> sigaction(SIGFPE, &sigact, NULL);
+> sigaction(SIGKILL, &sigact, NULL);
+> sigaction(SIGSEGV, &sigact, NULL);
+> sigaction(SIGPIPE, &sigact, NULL);
+> sigaction(SIGALRM, &sigact, NULL);
+> sigaction(SIGTERM, &sigact, NULL);
+> sigaction(SIGUSR1, &sigact, NULL);
+> sigaction(SIGUSR2, &sigact, NULL);
+> sigaction(SIGCHLD, &sigact, NULL);
+> sigaction(SIGCONT, &sigact, NULL);
+> sigaction(SIGSTOP, &sigact, NULL);
+> sigaction(SIGTSTP, &sigact, NULL);
+> sigaction(SIGTTIN, &sigact, NULL);
+> sigaction(SIGTTOU, &sigact, NULL);
+> while(1)
+> {
+>  pause();
+> }
+> return 0;
+> }
+> EOF
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ sudo cp /tmp/killall-test.c /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/ 
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp 
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# /tool/usr/bin/gcc killall-test.c -o killall-test
+-bash-3.2# which killall
+/usr/bin/killall
+-bash-3.2# killall -l
+ 1) HUP
+ 2) INT
+ 3) QUIT
+ 4) ILL
+ 5) TRAP
+ 6) ABRT
+ 7) BUS
+ 8) FPE
+ 9) KILL
+10) USR1
+11) SEGV
+12) USR2
+13) PIPE
+14) ALRM
+15) TERM
+16) STKFLT
+17) CHLD
+18) CONT
+19) STOP
+20) TSTP
+21) TTIN
+22) TTOU
+23) URG
+24) XCPU
+25) XFSZ
+26) VTALRM
+27) PROF
+28) WINCH
+29) POLL
+30) PWR
+31) SYS
+-bash-3.2# killall test
+killall: test: no process killed
+-bash-3.2# killall -q test
+-bash-3.2# ./killall-test & ./killall-test & 
+[1] 1384
+[2] 1385
+-bash-3.2#  ps -A | grep killall-test
+ 1384 pts/2    00:00:00 killall-test
+ 1385 pts/2    00:00:00 killall-test
+-bash-3.2# ls
+FunctionTest        killall-test.c      mkcramfs-df.log     print-threads.c     util-linux-2.23     zlib_test.out
+killall-test        mkcramfs-cat.log    print-thread-devel  tzdata-build        zlib-1.2.7
+-bash-3.2# killall -HUP killall-test
+-bash-3.2# killall -INT killall-test
+-bash-3.2# killall -QUIT killall-test
+-bash-3.2# killall -ILL killall-test 
+-bash-3.2# killall -TRAP killall-test 
+-bash-3.2# killall -ABRT killall-test 
+-bash-3.2# killall -FPE killall-test 
+-bash-3.2# killall -USR1 killall-test 
+-bash-3.2# killall -SEGV killall-test 
+-bash-3.2# killall -USR2 killall-test 
+-bash-3.2# killall -PIPE killall-test 
+-bash-3.2#  killall -ALRM killall-test 
+-bash-3.2# killall -TERM killall-test 
+-bash-3.2# killall -CHLD killall-test 
+-bash-3.2# killall -STOP killall-test 
+
+[1]-  Stopped                 ./killall-test
+
+[2]+  Stopped                 ./killall-test
+-bash-3.2# jobs 
+[1]-  Stopped                 ./killall-test
+[2]+  Stopped                 ./killall-test
+-bash-3.2# killall -CONT killall-test 
+-bash-3.2# jobs 
+[1]-  Running                 ./killall-test &
+[2]+  Running                 ./killall-test &
+-bash-3.2# killall -TSTP killall-test 
+-bash-3.2# killall -TTIN killall-test 
+-bash-3.2#  killall -TTOU killall-test 
+-bash-3.2# killall -KILL killall-test 
+[1]-  Killed                  ./killall-test
+[2]+  Killed                  ./killall-test
+-bash-3.2# ps -A | grep killall-test 
+-bash-3.2#  ./killall-test & ./killall-test & 
+[1] 1411
+[2] 1412
+-bash-3.2# ps -A | grep killall-test 
+ 1411 pts/2    00:00:00 killall-test
+ 1412 pts/2    00:00:00 killall-test
+-bash-3.2#  killall -1 killall-test 
+-bash-3.2# killall -2 killall-test 
+-bash-3.2# killall -3 killall-test 
+-bash-3.2# killall -4 killall-test 
+-bash-3.2# killall -5 killall-test 
+-bash-3.2# killall -6 killall-test 
+-bash-3.2# killall -8 killall-test 
+-bash-3.2# killall -10 killall-test 
+-bash-3.2# killall -11 killall-test 
+-bash-3.2# killall -12 killall-test 
+-bash-3.2# killall -13 killall-test 
+-bash-3.2# killall -14 killall-test 
+-bash-3.2# killall -15 killall-test 
+-bash-3.2# killall -17 killall-test 
+-bash-3.2# killall -19 killall-test 
+
+[1]-  Stopped                 ./killall-test
+
+[2]+  Stopped                 ./killall-test
+-bash-3.2# jobs 
+[1]-  Stopped                 ./killall-test
+[2]+  Stopped                 ./killall-test
+-bash-3.2#  killall -18 killall-test 
+-bash-3.2# jobs 
+[1]-  Running                 ./killall-test &
+[2]+  Running                 ./killall-test &
+-bash-3.2#  killall -20 killall-test 
+-bash-3.2# killall -21 killall-test 
+-bash-3.2# killall -22 killall-test 
+-bash-3.2# killall -9 killall-test 
+[1]-  Killed                  ./killall-test
+[2]+  Killed                  ./killall-test
+-bash-3.2# ps -A | grep killall-test 
+-bash-3.2# killall  test completed!
+busybox : TEST_OK

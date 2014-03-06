@@ -1,0 +1,266 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.9vJt6H
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/build/
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/build/rpm/
+-r--r--r-- nathans/999     861 2006-06-20 12:21 acl-2.2.39/build/rpm/macros.template
+-r--r--r-- nathans/999     739 2006-06-20 12:21 acl-2.2.39/build/rpm/rpm-2.rc.template
+-r--r--r-- nathans/999    2216 2006-06-20 12:21 acl-2.2.39/build/rpm/Makefile
+-r--r--r-- nathans/999    2220 2006-06-20 12:21 acl-2.2.39/build/rpm/acl.spec.in
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/build/tar/
+-r--r--r-- nathans/999     544 2006-06-20 12:21 acl-2.2.39/build/tar/Makefile
+-r--r--r-- nathans/999    1419 2006-06-20 12:21 acl-2.2.39/build/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/chacl/
+-r--r--r-- nathans/999     394 2006-06-20 12:21 acl-2.2.39/chacl/Makefile
+-r--r--r-- nathans/999    8525 2006-06-20 12:21 acl-2.2.39/chacl/chacl.c
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/debian/
+-r--r--r-- nathans/999     737 2006-06-20 12:21 acl-2.2.39/debian/copyright
+-r--r--r-- nathans/999     958 2006-06-20 12:21 acl-2.2.39/debian/Makefile
+-r-xr-xr-x nathans/999    1650 2006-06-20 12:21 acl-2.2.39/debian/rules
+-r--r--r-- nathans/root   7619 2006-06-20 12:21 acl-2.2.39/debian/changelog
+-r--r--r-- nathans/root   1266 2006-06-20 12:21 acl-2.2.39/debian/control
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/doc/
+-r--r--r-- nathans/999   44956 2006-06-20 12:21 acl-2.2.39/doc/COPYING
+-r--r--r-- nathans/999    1613 2006-06-20 12:21 acl-2.2.39/doc/INSTALL
+-r--r--r-- nathans/999    3208 2006-06-20 12:21 acl-2.2.39/doc/PORTING
+-r--r--r-- nathans/999     140 2006-06-20 12:21 acl-2.2.39/doc/TODO
+-r--r--r-- nathans/999    2257 2006-06-20 12:21 acl-2.2.39/doc/extensions.txt
+-r--r--r-- nathans/999    2961 2006-06-20 12:21 acl-2.2.39/doc/libacl.txt
+-r--r--r-- nathans/999   10572 2006-06-20 12:21 acl-2.2.39/doc/old-acl.5
+-r--r--r-- nathans/999     596 2006-06-20 12:21 acl-2.2.39/doc/Makefile
+-r--r--r-- nathans/root  16813 2006-06-20 12:21 acl-2.2.39/doc/CHANGES
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/examples/
+-r--r--r-- nathans/999     116 2006-06-20 12:21 acl-2.2.39/examples/Makefile.examples
+-r--r--r-- nathans/999     318 2006-06-20 12:21 acl-2.2.39/examples/README
+-r--r--r-- nathans/999    1220 2006-06-20 12:21 acl-2.2.39/examples/copy-acl.c
+-r--r--r-- nathans/999     738 2006-06-20 12:21 acl-2.2.39/examples/copyperm.c
+-r--r--r-- nathans/999    1631 2006-06-20 12:21 acl-2.2.39/examples/get-acl.c
+-r--r--r-- nathans/999     866 2006-06-20 12:21 acl-2.2.39/examples/set-acl.c
+-r--r--r-- nathans/999     291 2006-06-20 12:21 acl-2.2.39/examples/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/getfacl/
+-r--r--r-- nathans/999    1581 2006-06-20 12:21 acl-2.2.39/getfacl/user_group.c
+-r--r--r-- nathans/999    1027 2006-06-20 12:21 acl-2.2.39/getfacl/user_group.h
+-r--r--r-- nathans/999     456 2006-06-20 12:21 acl-2.2.39/getfacl/Makefile
+-r--r--r-- nathans/root  18521 2006-06-20 12:21 acl-2.2.39/getfacl/getfacl.c
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/include/
+-r--r--r-- nathans/999    3756 2006-06-20 12:21 acl-2.2.39/include/acl.h
+-r--r--r-- nathans/999     779 2006-06-20 12:21 acl-2.2.39/include/acl_ea.h
+-r--r--r-- nathans/999     766 2006-06-20 12:21 acl-2.2.39/include/config.h.in
+-r--r--r-- nathans/999    1896 2006-06-20 12:21 acl-2.2.39/include/libacl.h
+-r--r--r-- nathans/999     340 2006-06-20 12:21 acl-2.2.39/include/misc.h
+-r--r--r-- nathans/999     587 2006-06-20 12:21 acl-2.2.39/include/Makefile
+-r--r--r-- nathans/999    1416 2006-06-20 12:21 acl-2.2.39/include/buildrules
+-r--r--r-- nathans/root   1840 2006-06-20 12:21 acl-2.2.39/include/builddefs.in
+-r--r--r-- nathans/root   4547 2006-06-20 12:21 acl-2.2.39/include/buildmacros
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/libacl/
+-r--r--r-- nathans/999    2346 2006-06-20 12:21 acl-2.2.39/libacl/__acl_from_xattr.c
+-r--r--r-- nathans/999      60 2006-06-20 12:21 acl-2.2.39/libacl/__acl_from_xattr.h
+-r--r--r-- nathans/999    3399 2006-06-20 12:21 acl-2.2.39/libacl/__acl_reorder_obj_p.c
+-r--r--r-- nathans/999    7898 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_any_text.c
+-r--r--r-- nathans/999    1777 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_xattr.c
+-r--r--r-- nathans/999      62 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_xattr.h
+-r--r--r-- nathans/999    1997 2006-06-20 12:21 acl-2.2.39/libacl/__apply_mask_to_mode.c
+-r--r--r-- nathans/999    2061 2006-06-20 12:21 acl-2.2.39/libacl/__libobj.c
+-r--r--r-- nathans/999    1130 2006-06-20 12:21 acl-2.2.39/libacl/acl_add_perm.c
+-r--r--r-- nathans/999    1705 2006-06-20 12:21 acl-2.2.39/libacl/acl_calc_mask.c
+-r--r--r-- nathans/999    3110 2006-06-20 12:21 acl-2.2.39/libacl/acl_check.c
+-r--r--r-- nathans/999    1081 2006-06-20 12:21 acl-2.2.39/libacl/acl_clear_perms.c
+-r--r--r-- nathans/999    1529 2006-06-20 12:21 acl-2.2.39/libacl/acl_cmp.c
+-r--r--r-- nathans/999    1211 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_entry.c
+-r--r--r-- nathans/999    1613 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_ext.c
+-r--r--r-- nathans/999    1816 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_int.c
+-r--r--r-- nathans/999    1935 2006-06-20 12:21 acl-2.2.39/libacl/acl_create_entry.c
+-r--r--r-- nathans/999    1131 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_def_file.c
+-r--r--r-- nathans/999    1316 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_entry.c
+-r--r--r-- nathans/999    1138 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_perm.c
+-r--r--r-- nathans/999    1481 2006-06-20 12:21 acl-2.2.39/libacl/acl_dup.c
+-r--r--r-- nathans/999     980 2006-06-20 12:21 acl-2.2.39/libacl/acl_entries.c
+-r--r--r-- nathans/999    1687 2006-06-20 12:21 acl-2.2.39/libacl/acl_equiv_mode.c
+-r--r--r-- nathans/999    1268 2006-06-20 12:21 acl-2.2.39/libacl/acl_error.c
+-r--r--r-- nathans/999    1376 2006-06-20 12:21 acl-2.2.39/libacl/acl_extended_fd.c
+-r--r--r-- nathans/999    1398 2006-06-20 12:21 acl-2.2.39/libacl/acl_extended_file.c
+-r--r--r-- nathans/999    1848 2006-06-20 12:21 acl-2.2.39/libacl/acl_free.c
+-r--r--r-- nathans/999    1881 2006-06-20 12:21 acl-2.2.39/libacl/acl_from_mode.c
+-r--r--r-- nathans/999    5742 2006-06-20 12:21 acl-2.2.39/libacl/acl_from_text.c
+-r--r--r-- nathans/999    1568 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_entry.c
+-r--r--r-- nathans/999    1816 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_fd.c
+-r--r--r-- nathans/999    2181 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_file.c
+-r--r--r-- nathans/999    1113 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_perm.c
+-r--r--r-- nathans/999    1184 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_permset.c
+-r--r--r-- nathans/999    1331 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_qualifier.c
+-r--r--r-- nathans/999    1130 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_tag_type.c
+-r--r--r-- nathans/999    1975 2006-06-20 12:21 acl-2.2.39/libacl/acl_init.c
+-r--r--r-- nathans/999    1338 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_fd.c
+-r--r--r-- nathans/999    1804 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_file.c
+-r--r--r-- nathans/999    1181 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_permset.c
+-r--r--r-- nathans/999    1328 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_qualifier.c
+-r--r--r-- nathans/999    1297 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_tag_type.c
+-r--r--r-- nathans/999    1052 2006-06-20 12:21 acl-2.2.39/libacl/acl_size.c
+-r--r--r-- nathans/999    1129 2006-06-20 12:21 acl-2.2.39/libacl/acl_to_any_text.c
+-r--r--r-- nathans/999    1046 2006-06-20 12:21 acl-2.2.39/libacl/acl_to_text.c
+-r--r--r-- nathans/999    1065 2006-06-20 12:21 acl-2.2.39/libacl/acl_valid.c
+-r--r--r-- nathans/999     794 2006-06-20 12:21 acl-2.2.39/libacl/byteorder.h
+-r--r--r-- nathans/999    2972 2006-06-20 12:21 acl-2.2.39/libacl/libacl.h
+-r--r--r-- nathans/999    2328 2006-06-20 12:21 acl-2.2.39/libacl/libobj.h
+-r--r--r-- nathans/999     512 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy.h
+-r--r--r-- nathans/999    5047 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy_fd.c
+-r--r--r-- nathans/999    6103 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy_file.c
+-r--r--r-- nathans/999    1456 2006-06-20 12:21 acl-2.2.39/libacl/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/libmisc/
+-r--r--r-- nathans/999    1380 2006-06-20 12:21 acl-2.2.39/libmisc/high_water_alloc.c
+-r--r--r-- nathans/999    1670 2006-06-20 12:21 acl-2.2.39/libmisc/quote.c
+-r--r--r-- nathans/999    1402 2006-06-20 12:21 acl-2.2.39/libmisc/unquote.c
+-r--r--r-- nathans/999     300 2006-06-20 12:21 acl-2.2.39/libmisc/Makefile
+-r--r--r-- nathans/999     731 2006-06-20 12:21 acl-2.2.39/libmisc/next_line.c
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/m4/
+-r--r--r-- nathans/999     489 2006-06-20 12:21 acl-2.2.39/m4/manual_format.m4
+-r--r--r-- nathans/999     726 2006-06-20 12:21 acl-2.2.39/m4/visibility_hidden.m4
+-r--r--r-- nathans/999    3515 2006-06-20 12:21 acl-2.2.39/m4/package_utilies.m4
+-r--r--r-- nathans/root    338 2006-06-20 12:21 acl-2.2.39/m4/Makefile
+-r--r--r-- nathans/root   1836 2006-06-20 12:21 acl-2.2.39/m4/multilib.m4
+-r--r--r-- nathans/root   3067 2006-06-20 12:21 acl-2.2.39/m4/package_attrdev.m4
+-r--r--r-- nathans/root   1313 2006-06-20 12:21 acl-2.2.39/m4/package_globals.m4
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/man/
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/man/man1/
+-r--r--r-- nathans/999    3882 2006-06-20 12:21 acl-2.2.39/man/man1/chacl.1
+-r--r--r-- nathans/999    4914 2006-06-20 12:21 acl-2.2.39/man/man1/getfacl.1
+-r--r--r-- nathans/999    8970 2006-06-20 12:21 acl-2.2.39/man/man1/setfacl.1
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man1/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 07:35 acl-2.2.39/man/man3/
+-r--r--r-- nathans/999    2363 2006-06-20 12:21 acl-2.2.39/man/man3/acl_add_perm.3
+-r--r--r-- nathans/999    3124 2006-06-20 12:21 acl-2.2.39/man/man3/acl_calc_mask.3
+-r--r--r-- nathans/999    3438 2006-06-20 12:21 acl-2.2.39/man/man3/acl_check.3
+-r--r--r-- nathans/999    2163 2006-06-20 12:21 acl-2.2.39/man/man3/acl_clear_perms.3
+-r--r--r-- nathans/999    2240 2006-06-20 12:21 acl-2.2.39/man/man3/acl_cmp.3
+-r--r--r-- nathans/999    2134 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_entry.3
+-r--r--r-- nathans/999    3182 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_ext.3
+-r--r--r-- nathans/999    2580 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_int.3
+-r--r--r-- nathans/999    3233 2006-06-20 12:21 acl-2.2.39/man/man3/acl_create_entry.3
+-r--r--r-- nathans/999    2678 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_def_file.3
+-r--r--r-- nathans/999    2428 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_entry.3
+-r--r--r-- nathans/999    2387 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_perm.3
+-r--r--r-- nathans/999    2360 2006-06-20 12:21 acl-2.2.39/man/man3/acl_dup.3
+-r--r--r-- nathans/999    2020 2006-06-20 12:21 acl-2.2.39/man/man3/acl_entries.3
+-r--r--r-- nathans/999    2615 2006-06-20 12:21 acl-2.2.39/man/man3/acl_equiv_mode.3
+-r--r--r-- nathans/999    2120 2006-06-20 12:21 acl-2.2.39/man/man3/acl_error.3
+-r--r--r-- nathans/999    3006 2006-06-20 12:21 acl-2.2.39/man/man3/acl_extended_fd.3
+-r--r--r-- nathans/999    3441 2006-06-20 12:21 acl-2.2.39/man/man3/acl_extended_file.3
+-r--r--r-- nathans/999    2276 2006-06-20 12:21 acl-2.2.39/man/man3/acl_free.3
+-r--r--r-- nathans/999    2252 2006-06-20 12:21 acl-2.2.39/man/man3/acl_from_mode.3
+-r--r--r-- nathans/999    2655 2006-06-20 12:21 acl-2.2.39/man/man3/acl_from_text.3
+-r--r--r-- nathans/999    3810 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_entry.3
+-r--r--r-- nathans/999    2767 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_fd.3
+-r--r--r-- nathans/999    3970 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_file.3
+-r--r--r-- nathans/999    2561 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_perm.3
+-r--r--r-- nathans/999    2409 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_permset.3
+-r--r--r-- nathans/999    3850 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_qualifier.3
+-r--r--r-- nathans/999    2332 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_tag_type.3
+-r--r--r-- nathans/999    2489 2006-06-20 12:21 acl-2.2.39/man/man3/acl_init.3
+-r--r--r-- nathans/999    2734 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_fd.3
+-r--r--r-- nathans/999    4745 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_file.3
+-r--r--r-- nathans/999    2721 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_permset.3
+-r--r--r-- nathans/999    3274 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_qualifier.3
+-r--r--r-- nathans/999    2292 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_tag_type.3
+-r--r--r-- nathans/999    2443 2006-06-20 12:21 acl-2.2.39/man/man3/acl_size.3
+-rw-r--r-- nathans/999    4901 2006-06-21 07:35 acl-2.2.39/man/man3/acl_to_any_text.3
+-r--r--r-- nathans/999    3033 2006-06-20 12:21 acl-2.2.39/man/man3/acl_to_text.3
+-r--r--r-- nathans/999    2416 2006-06-20 12:21 acl-2.2.39/man/man3/acl_valid.3
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man3/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 07:30 acl-2.2.39/man/man5/
+-rw-r--r-- nathans/999   15687 2006-06-21 07:30 acl-2.2.39/man/man5/acl.5
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man5/Makefile
+-r--r--r-- nathans/999     247 2006-06-20 12:21 acl-2.2.39/man/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/po/
+-r--r--r-- nathans/999    6725 2006-06-20 12:21 acl-2.2.39/po/acl.pot
+-r--r--r-- nathans/999   10989 2006-06-20 12:21 acl-2.2.39/po/de.po
+-r--r--r-- nathans/999   11627 2006-06-20 12:21 acl-2.2.39/po/pl.po
+-r--r--r-- nathans/999   11532 2006-06-20 12:21 acl-2.2.39/po/fr.po
+-r--r--r-- nathans/root    551 2006-06-20 12:21 acl-2.2.39/po/Makefile
+-r--r--r-- nathans/root  10959 2006-06-20 12:21 acl-2.2.39/po/sv.po
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/setfacl/
+-r--r--r-- nathans/999   11702 2006-06-20 12:21 acl-2.2.39/setfacl/do_set.c
+-r--r--r-- nathans/999    9772 2006-06-20 12:21 acl-2.2.39/setfacl/parse.c
+-r--r--r-- nathans/999    1798 2006-06-20 12:21 acl-2.2.39/setfacl/parse.h
+-r--r--r-- nathans/999    2650 2006-06-20 12:21 acl-2.2.39/setfacl/sequence.c
+-r--r--r-- nathans/999    2103 2006-06-20 12:21 acl-2.2.39/setfacl/sequence.h
+-r--r--r-- nathans/999     477 2006-06-20 12:21 acl-2.2.39/setfacl/Makefile
+-r--r--r-- nathans/root  16811 2006-06-20 12:21 acl-2.2.39/setfacl/setfacl.c
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/test/
+-r--r--r-- nathans/999     657 2006-06-20 12:21 acl-2.2.39/test/cp.test
+-r--r--r-- nathans/999     924 2006-06-20 12:21 acl-2.2.39/test/getfacl-noacl.test
+-r--r--r-- nathans/999     757 2006-06-20 12:21 acl-2.2.39/test/make-tree
+-r--r--r-- nathans/999    7065 2006-06-20 12:21 acl-2.2.39/test/misc.test
+-r--r--r-- nathans/999    1161 2006-06-20 12:21 acl-2.2.39/test/nfs-dir.test
+-r--r--r-- nathans/999     984 2006-06-20 12:21 acl-2.2.39/test/nfsacl.test
+-r--r--r-- nathans/999    5229 2006-06-20 12:21 acl-2.2.39/test/permissions.test
+-r--r--r-- nathans/999    6196 2006-06-20 12:21 acl-2.2.39/test/run
+-r--r--r-- nathans/999    1834 2006-06-20 12:21 acl-2.2.39/test/setfacl-X.test
+-r--r--r-- nathans/999    2836 2006-06-20 12:21 acl-2.2.39/test/setfacl.test
+-r--r--r-- nathans/999     322 2006-06-20 12:21 acl-2.2.39/test/Makefile
+-r-xr-xr-x nathans/999    1849 2006-06-20 12:21 acl-2.2.39/Makepkgs
+-r--r--r-- nathans/999     616 2006-06-20 12:21 acl-2.2.39/README
+-r--r--r-- nathans/999    1099 2006-06-20 12:21 acl-2.2.39/exports
+-r-xr-xr-x nathans/999    6931 2006-06-20 12:21 acl-2.2.39/install-sh
+-r--r--r-- nathans/root   1502 2006-06-20 12:21 acl-2.2.39/Makefile
+-r--r--r-- nathans/root    116 2006-06-20 12:21 acl-2.2.39/VERSION
+-r--r--r-- nathans/root  11371 2006-06-20 12:21 acl-2.2.39/aclocal.m4
+-r--r--r-- nathans/root    739 2006-06-20 12:21 acl-2.2.39/configure.in
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.YTyRk9
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for gmake... no
+checking for make... /usr/bin/make
+checking for tar... /bin/tar
+checking for gzip... /bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /usr/bin/awk
+checking for sed... /bin/sed
+checking for echo... /bin/echo
+checking for sort... /usr/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for msgmerge... /usr/bin/msgmerge
+checking for rpm... /usr/bin/rpm
+checking for rpmbuild... /usr/bin/rpmbuild
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking attr/error_context.h usability... yes
+checking attr/error_context.h presence... yes
+checking for attr/error_context.h... yes
+checking for getxattr in -lattr... yes
+checking whether __attribute__((visibility())) is supported... yes
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: creating include/config.h
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c quote.c
+
+
+RPM build errors:

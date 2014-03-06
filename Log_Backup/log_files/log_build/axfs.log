@@ -1,0 +1,133 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.5CelAH
+drwxr-xr-x koti/koti         0 2011-05-20 17:56 axfs-2.1_svn36/
+drwxr-xr-x koti/koti         0 2011-02-21 20:42 axfs-2.1_svn36/mkfs.axfs/
+drwxr-xr-x koti/koti         0 2011-06-03 14:42 axfs-2.1_svn36/mkfs.axfs/trunk/
+-rw-r--r-- koti/koti      1897 2011-02-21 20:42 axfs-2.1_svn36/mkfs.axfs/trunk/readme
+drwxr-xr-x koti/koti         0 2011-06-03 14:42 axfs-2.1_svn36/mkfs.axfs/trunk/linux/
+-rw-r--r-- koti/koti     11042 2011-06-03 14:42 axfs-2.1_svn36/mkfs.axfs/trunk/linux/axfs.h
+-rw-r--r-- koti/koti       239 2011-05-11 19:27 axfs-2.1_svn36/mkfs.axfs/trunk/Makefile
+-rw-r--r-- koti/koti        48 2011-02-21 20:45 axfs-2.1_svn36/mkfs.axfs/trunk/profile_empty.xml
+-rw-r--r-- koti/koti     18693 2011-02-21 20:42 axfs-2.1_svn36/mkfs.axfs/trunk/COPYING
+-rw-r--r-- koti/koti     56749 2011-02-21 20:42 axfs-2.1_svn36/mkfs.axfs/trunk/mkfs.axfs.c
+drwxr-xr-x koti/koti         0 2011-02-21 20:39 axfs-2.1_svn36/axfs_csv2xml/
+drwxr-xr-x koti/koti         0 2011-02-21 20:39 axfs-2.1_svn36/axfs_csv2xml/trunk/
+-rwxr-xr-x koti/koti      3590 2011-02-21 20:39 axfs-2.1_svn36/axfs_csv2xml/trunk/axfs_csv2xml.rb
+-rw-r--r-- koti/koti     18011 2011-02-21 20:39 axfs-2.1_svn36/axfs_csv2xml/trunk/COPYING
+drwxr-xr-x koti/koti         0 2011-02-21 20:39 axfs-2.1_svn36/driver/
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/
+-rw-r--r-- koti/koti        25 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/Kconfig
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/
+-rw-r--r-- koti/koti     14219 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_mtd.c
+-rw-r--r-- koti/koti       673 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/Kconfig
+-rw-r--r-- koti/koti       281 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/Makefile_2.4_MV_3.0
+-rw-r--r-- koti/koti       187 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/Makefile
+-rw-r--r-- koti/koti      4784 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_bdev.c
+-rw-r--r-- koti/koti      2659 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_uncompress.c
+-rw-r--r-- koti/koti      1722 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_physmem.c
+-rw-r--r-- koti/koti     25771 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_super.c
+-rw-r--r-- koti/koti     15761 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_profiling.c
+-rw-r--r-- koti/koti     24479 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_inode.c
+-rw-r--r-- koti/koti      3392 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs.h
+-rw-r--r-- koti/koti      1200 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/axfs/axfs_uml.c
+-rw-r--r-- koti/koti       178 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/fs/Config.in
+-rw-r--r-- koti/koti     18693 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/COPYING
+-rwxr-xr-x koti/koti      5345 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patchin.pl
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/include/
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/include/linux/
+-rw-r--r-- koti/koti      4147 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/include/linux/axfs_fs.h
+-rw-r--r-- koti/koti      2289 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/include/linux/axfs_fs_sb.h
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      8155 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/003_uml_fixes_2_6_18.patch
+-rw-r--r-- koti/koti      1100 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/004_gcc_deoptimizer.patch
+-rw-r--r-- koti/koti     14947 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/002_mtd_point.patch
+-rw-r--r-- koti/koti      3778 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.18/001_vm_insert_pfn_vm_insert_mixed.patch
+drwxr-xr-x koti/koti         0 2011-05-16 14:27 axfs-2.1_svn36/driver/trunk/patches/2.6.26/
+-rw-r--r-- koti/koti      1120 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.26/000_xip_file_fault.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/misc/
+-rw-r--r-- koti/koti     83890 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/misc/2.6.22-helpers.patch
+-rw-r--r-- koti/koti      4673 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/misc/2.6.22-gentoo.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.20/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.20/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      3702 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.20/001_insert_pfn_vm_insert_mixed.patch
+-rw-r--r-- koti/koti     14468 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.20/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.19/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.19/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      1084 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.19/003_gcc_deoptimizer.patch
+-rw-r--r-- koti/koti     14468 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.19/002_mtd_point.patch
+-rw-r--r-- koti/koti      4677 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.19/001_vm_insert_pfn_vm_insert_mixed.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.13/
+-rw-r--r-- koti/koti      1285 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.13/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      2450 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.13/001_VM_XIP.patch
+-rw-r--r-- koti/koti     14886 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.13/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.23/
+-rw-r--r-- koti/koti      8780 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.23/001_mixedmap.patch
+-rw-r--r-- koti/koti      1136 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.23/000_xip_file_fault.patch
+-rw-r--r-- koti/koti     14301 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.23/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.11/
+-rw-r--r-- koti/koti      2376 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.11/001_VM_XIP.patch
+-rw-r--r-- koti/koti     14807 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.11/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.16/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.16/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti     14860 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.16/002_mtd_point.patch
+-rw-r--r-- koti/koti      4667 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.16/001_vm_insert_pfn_vm_insert_mixed.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.27/
+-rw-r--r-- koti/koti      1086 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.27/000_xip_file_fault.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.10/
+-rw-r--r-- koti/koti      2359 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.10/001_VM_XIP.patch
+-rw-r--r-- koti/koti     15127 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.10/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.12/
+-rw-r--r-- koti/koti      2454 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.12/001_VM_XIP.patch
+-rw-r--r-- koti/koti     14983 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.12/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.24/
+-rw-r--r-- koti/koti      8799 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.24/001_mixedmap.patch
+-rw-r--r-- koti/koti      1168 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.24/000_xip_file_fault.patch
+-rw-r--r-- koti/koti     15524 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.24/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.21/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.21/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      4061 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.21/003_uml_fixes_2_6_21.patch
+-rw-r--r-- koti/koti      8771 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.21/001_mixedmap.patch
+-rw-r--r-- koti/koti     14468 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.21/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.4.21/
+-rw-r--r-- koti/koti       610 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.4.21/000_axfs_into_fs__h.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.14/
+-rw-r--r-- koti/koti      1285 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.14/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      2450 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.14/001_VM_XIP.patch
+-rw-r--r-- koti/koti     14886 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.14/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.15/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.15/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti     14860 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.15/002_mtd_point.patch
+-rw-r--r-- koti/koti      4665 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.15/001_vm_insert_pfn_vm_insert_mixed.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.25/
+-rw-r--r-- koti/koti      8799 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.25/001_mixedmap.patch
+-rw-r--r-- koti/koti      1168 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.25/000_xip_file_fault.patch
+-rw-r--r-- koti/koti     15519 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.25/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.22/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.22/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      8771 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.22/001_mixedmap.patch
+-rw-r--r-- koti/koti     14477 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.22/002_mtd_point.patch
+drwxr-xr-x koti/koti         0 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/
+-rw-r--r-- koti/koti      1271 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/000_xip_file_nopage.patch
+-rw-r--r-- koti/koti      2757 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/003_syscall_and_include_fixes.patch
+-rw-r--r-- koti/koti      1391 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/005_uml_registers.patch
+-rw-r--r-- koti/koti     14870 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/002_mtd_point.patch
+-rw-r--r-- koti/koti      1100 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/006_gcc_deoptimizer.patch
+-rw-r--r-- koti/koti      4677 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/001_vm_insert_pfn_vm_insert_mixed.patch
+-rw-r--r-- koti/koti       653 2011-02-21 20:40 axfs-2.1_svn36/driver/trunk/patches/2.6.17/004_stddef_and_nothreads.patch
+Patch #0 (axfs-super-on-media-structure-alignment-20110216.patch):
+Patch #1 (axfs-eliminate-duplicates-fix-20120117.patch):
+Patch #2 (mkfs.axfs-mem-leak-fix.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.gJ4pc3
+cc -g -I./ -O0   -c -o mkfs.axfs.o mkfs.axfs.c
+cc -g -I./ -O0 -o mkfs.axfs mkfs.axfs.o -lz
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.P9VyEp
+Processing files: arm-sony-linux-gnueabi-host-axfs-2.1_svn36-11000002.x86_64
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-host-axfs-2.1_svn36-11000002.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-host-axfs-2.1_svn36-11000002.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/x86_64/arm-sony-linux-gnueabi-host-axfs-2.1_svn36-11000002.x86_64.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.YAPbfv

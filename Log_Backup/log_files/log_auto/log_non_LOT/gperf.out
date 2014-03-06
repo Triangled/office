@@ -1,0 +1,548 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+gperf : 3.0.1
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/internal/SRPMS/sony-target-dev-gperf-3.0.1-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-gperf  warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  8%)#                                           (  8%)##                                          (  8%)###                                         ( 16%)####                                        ( 16%)#####                                       ( 16%)######                                      ( 16%)#######                                     ( 23%)########                                    ( 23%)#########                                   ( 23%)##########                                  ( 31%)###########                                 ( 31%)############                                ( 31%)#############                               ( 31%)##############                              ( 39%)###############                             ( 39%)################                            ( 39%)#################                           ( 47%)##################                          ( 47%)###################                         ( 47%)####################                        ( 54%)#####################                       ( 54%)######################                      ( 54%)#######################                     ( 54%)########################                    ( 62%)#########################                   ( 62%)##########################                  ( 62%)###########################                 ( 70%)############################                ( 70%)#############################               ( 70%)##############################              ( 70%)###############################             ( 78%)################################            ( 78%)#################################           ( 78%)##################################          ( 85%)###################################         ( 85%)####################################        ( 85%)#####################################       ( 85%)######################################      ( 93%)#######################################     ( 93%)########################################    ( 93%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-gperf.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.3jO1n7
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf gperf-3.0.1
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/gperf-3.0.1.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd gperf-3.0.1
++ echo 'Patch #1 (gperf-3.0.1-gcc4.patch):'
+Patch #1 (gperf-3.0.1-gcc4.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/gperf-3.0.1-gcc4.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.tWp0mR
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd gperf-3.0.1
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/share/ruby-rvm/bin
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+checking whether make sets $(MAKE)... yes
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in lib
+configure: running /bin/sh '../../lib/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../lib
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+checking for ranlib... arm-sony-linux-gnueabi-ranlib
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in src
+configure: running /bin/sh '../../src/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../src
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking for stack-allocated variable-size arrays... yes
+checking for rand in -lm... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+configure: configuring in tests
+configure: running /bin/sh '../../tests/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../tests
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in doc
+configure: running /bin/sh '../../doc/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../doc
+checking whether make sets $(MAKE)... yes
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
++ make
+cd lib; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I../../lib -c ../../lib/getopt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I../../lib -c ../../lib/getopt1.c
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I../../lib -c ../../lib/getline.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I../../lib -c ../../lib/hash.cc
+rm -f libgp.a
+ar rc libgp.a getopt.o getopt1.o getline.o hash.o
+arm-sony-linux-gnueabi-ranlib libgp.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+cd src; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/version.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/positions.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/options.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/keyword.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/keyword-list.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/input.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/bool-array.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/hash-table.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/search.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/output.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/main.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2  -o gperf version.o positions.o options.o keyword.o keyword-list.o input.o bool-array.o hash-table.o search.o output.o main.o ../lib/libgp.a -lm
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+cd tests; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+cd doc; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QsmxOX
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd gperf-3.0.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/share/ruby-rvm/bin
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
+cd lib; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+cd src; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+/bin/sh ../../src/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+/usr/bin/install -c gperf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gperf
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+cd tests; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+cd doc; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+/usr/bin/install -c -m 644 ../../doc/gperf.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gperf.info
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1
+/usr/bin/install -c -m 644 ../../doc/gperf.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/gperf.1
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf
+/usr/bin/install -c -m 644 ../../doc/gperf.html /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf/gperf.html
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-gperf-3.0.1-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-gperf-3.0.1-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-gperf-3.0.1-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.xIy33h
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd gperf-3.0.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+3 packages can be updated.
+3 updates are security updates.
+
+*** System restart required ***
+Last login: Mon Feb  3 15:44:57 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/gperf-3.0.1 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...................................................................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/gperf/test/gperf-test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.....done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.1 armv7a
+-bash-3.2# cd /tmp/gperf-3.0.1/ || echo 'COMMAND''ERROR'
+-bash-3.2# patch -p1 < /tmp/gperf-test.patch
+patching file tests/Makefile.in
+-bash-3.2#  cat <<EOF > /tmp/gperf-3.0.1/tests/gperf-test-log.out
+> EOF
+-bash-3.2# ./configure ; make check | tee /tmp/gperf_test.out
+checking whether make sets $(MAKE)... yes
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in lib
+configure: running /bin/sh './configure' --prefix=/usr/local  --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ranlib... ranlib
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in src
+configure: running /bin/sh './configure' --prefix=/usr/local  --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking for stack-allocated variable-size arrays... yes
+checking for rand in -lm... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+configure: configuring in tests
+configure: running /bin/sh './configure' --prefix=/usr/local  --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking how to run the C preprocessor... gcc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in doc
+configure: running /bin/sh './configure' --prefix=/usr/local  --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+cd lib; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/lib'
+gcc -g -O2 -I. -c ./getopt.c
+gcc -g -O2 -I. -c ./getopt1.c
+g++ -g -O2 -I. -c ./getline.cc
+g++ -g -O2 -I. -c ./hash.cc
+rm -f libgp.a
+ar rc libgp.a getopt.o getopt1.o getline.o hash.o
+ranlib libgp.a
+make[1]: Leaving directory `/tmp/gperf-3.0.1/lib'
+cd src; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/src'
+g++ -g -O2 -I. -I./../lib -c ./version.cc
+g++ -g -O2 -I. -I./../lib -c ./positions.cc
+g++ -g -O2 -I. -I./../lib -c ./options.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword-list.cc
+g++ -g -O2 -I. -I./../lib -c ./input.cc
+g++ -g -O2 -I. -I./../lib -c ./bool-array.cc
+g++ -g -O2 -I. -I./../lib -c ./hash-table.cc
+g++ -g -O2 -I. -I./../lib -c ./search.cc
+g++ -g -O2 -I. -I./../lib -c ./output.cc
+g++ -g -O2 -I. -I./../lib -c ./main.cc
+g++ -g -O2  -o gperf version.o positions.o options.o keyword.o keyword-list.o input.o bool-array.o hash-table.o search.o output.o main.o ../lib/libgp.a -lm
+make[1]: Leaving directory `/tmp/gperf-3.0.1/src'
+cd tests; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/tests'
+performing some tests of the perfect hash generator
+gcc -c -g -O2 ./test.c
+../src/gperf -c -l -S1 -I -o ./c.gperf > cinset.c
+gcc -g -O2 -o cout cinset.c test.o
+testing ANSI C reserved words, all items should be found in the set
+./cout -v < ./c.gperf > c.out
+diff ./c.exp c.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1,4,'$' -I ./ada.gperf > adainset.c
+gcc -g -O2 -o aout adainset.c test.o
+testing Ada reserved words, all items should be found in the set
+./aout -v < ./ada.gperf > ada-res.out
+diff ./ada-res.exp ada-res.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -D -k1,'$' -s 2 -I -o ./adadefs.gperf > preinset.c
+1 input keys have identical hash values, examine output carefully...
+gcc -g -O2 -o preout preinset.c test.o
+testing Ada predefined words, all items should be found in the set
+./preout -v < ./adadefs.gperf > ada-pred.out
+diff ./ada-pred.exp ada-pred.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1,2,'$' -I -o ./modula3.gperf > m3inset.c
+gcc -g -O2 -o m3out m3inset.c test.o
+testing Modula3 reserved words, all items should be found in the set
+./m3out -v < ./modula3.gperf > modula.out
+diff ./modula.exp modula.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -o -S2 -I < ./pascal.gperf > pinset.c
+gcc -g -O2 -o pout pinset.c test.o
+testing Pascal reserved words, all items should be found in the set
+./pout -v < ./pascal.gperf > pascal.out
+diff ./pascal.exp pascal.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1 -t -I -K foreign_name < ./lang-utf8.gperf > lu8inset.c
+gcc -g -O2 -o lu8out lu8inset.c test.o
+testing UTF-8 encoded languages, all items should be found in the set
+sed -e '1,6d' -e 's/,.*//' < ./lang-utf8.gperf | ./lu8out -v > lang-utf8.out
+diff ./lang-utf8.exp lang-utf8.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+gcc -c -g -O2 ./test2.c
+../src/gperf -k4 -t -l -I -K foreign_name < ./lang-ucs2.gperf > lu2inset.c
+gcc -g -O2 -o lu2out lu2inset.c test2.o
+testing UCS-2 encoded languages, all items should be found in the set
+./lu2out -v < ./lang-ucs2.in > lang-ucs2.out
+diff ./lang-ucs2.exp lang-ucs2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+testing SMTP keywords, case-insensitive
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case --compare-strncmp ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case --compare-lengths ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf -L C -F ', 0, 0' -j1 -i 1 -g -o -t -G -N is_reserved_word -k1,3,'$' < ./c-parse.gperf > c-parse.out
+diff ./c-parse.exp c-parse.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -j1 -i 1 -g -o -t -N is_reserved_word -k1,3,'$' < ./objc.gperf > objc.out
+diff ./objc.exp objc.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0, 0, 0' -D -E -S1 -j1 -i 1 -g -o -t -k'*' < ./chill.gperf > chill.out
+diff ./chill.exp chill.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0, 0' -j1 -g -o -t -N is_reserved_word -k1,4,7,'$' < ./cplusplus.gperf > cplusplus.out
+diff ./cplusplus.exp cplusplus.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0' -t -j1 -i 1 -g -o -N java_keyword -k1,3,'$' < ./java.gperf > java.out
+diff ./java.exp java.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -n -k1-8 -l < ./modula2.gperf > modula2.out
+diff ./modula2.exp modula2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -D -t -k1,'$' < ./c-parse.gperf > test-4.out
+8 input keys have identical hash values, examine output carefully...
+diff ./test-4.exp test-4.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -g -o -j1 -t -N is_reserved_word < ./gpc.gperf > gpc.out
+diff ./gpc.exp gpc.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 < ./permut2.gperf > permut2.out
+diff ./permut2.exp permut2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 < ./permut3.gperf > permut3.out
+diff ./permut3.exp permut3.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 --ignore-case < ./permutc2.gperf > permutc2.out
+diff ./permutc2.exp permutc2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -C -E -G -I -t < ./charsets.gperf > charsets.out
+diff ./charsets.exp charsets.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -C -E -G -I -t < ./languages.gperf > languages.out
+diff ./languages.exp languages.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -t < ./incomplete.gperf > incomplete.out
+diff ./incomplete.exp incomplete.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -h > test-6.out
+diff ./test-6.exp test-6.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+only if, do, for, case, goto, else, while, and return should be found 
+./aout -v < ./c.gperf > test-7.out
+diff ./test-7.exp test-7.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+make[1]: Leaving directory `/tmp/gperf-3.0.1/tests'
+cd doc; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/doc'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/gperf-3.0.1/doc'
+-bash-3.2# sleep 2; cat /tmp/gperf-3.0.1/tests/gperf-test-log.out | grep failed | wc -l > /tmp/gperf-failnum
+-bash-3.2# cd /tmp/
+-bash-3.2# export passnum=`grep -c '^Test passed' gperf_test.out`
+-bash-3.2# export failnum=`grep -c '^Test failed' gperf_test.out`
+-bash-3.2# echo Out of 23 tests, $passnum tests passed, $failnum tests failed
+Out of 23 tests, 23 tests passed, 0 tests failed
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/gperf_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/gperf-failnum to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+gperf : TEST_OK

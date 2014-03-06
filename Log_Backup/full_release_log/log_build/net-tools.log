@@ -1,0 +1,951 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-net-tools-1.60-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-net-toowarning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  2%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+#                                           (  6%)##                                          (  6%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+###                                         ( 11%)####                                        ( 11%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+#####                                       ( 14%)warning: group rpmuser does not exist - using root
+######                                      ( 35%)#######                                     ( 35%)########                                    ( 35%)#########                                   ( 35%)##########                                  ( 35%)###########                                 ( 35%)############                                ( 35%)#############                               ( 35%)##############                              ( 35%)###############                             ( 56%)################                            ( 56%)#################                           ( 56%)##################                          ( 56%)###################                         ( 56%)####################                        ( 56%)#####################                       ( 56%)######################                      ( 56%)#######################                     ( 56%)########################                    ( 77%)#########################                   ( 77%)##########################                  ( 77%)###########################                 ( 77%)############################                ( 77%)#############################               ( 77%)##############################              ( 77%)###############################             ( 77%)################################            ( 77%)#################################           ( 77%)##################################          ( 98%)###################################         ( 98%)####################################        ( 98%)#####################################       ( 98%)######################################      ( 98%)#######################################     ( 98%)########################################    ( 98%)#########################################   ( 98%)##########################################  ( 98%)warning: group rpmuser does not exist - using root
+########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-net-tools.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QLVyIX
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf net-tools-1.60
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/net-tools_1.60.orig.tar.gz
++ /bin/tar -xvvf -
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/RPM/
+-rw-r--r-- pb/pb           100 1999-01-09 21:24 net-tools-1.60/RPM/README
+-rw-r--r-- pb/pb          1022 1999-01-09 21:24 net-tools-1.60/RPM/net-tools-1.45-config.patch
+-rw-r--r-- pb/pb          2499 1999-01-10 22:09 net-tools-1.60/RPM/net-tools.spec
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/lib/
+-rw-r--r-- pb/pb          6249 2000-10-28 16:29 net-tools-1.60/lib/masq_info.c
+-rw-r--r-- pb/pb          1873 2000-10-28 16:29 net-tools-1.60/lib/Makefile
+-rw-r--r-- pb/pb          2329 1999-01-09 21:24 net-tools-1.60/lib/activate.c
+-rw-r--r-- pb/pb          6427 2000-05-20 23:57 net-tools-1.60/lib/af.c
+-rw-r--r-- pb/pb          2976 2000-03-05 16:56 net-tools-1.60/lib/arcnet.c
+-rw-r--r-- pb/pb          2344 1999-11-21 02:32 net-tools-1.60/lib/ash.c
+-rw-r--r-- pb/pb          4847 1999-11-21 02:32 net-tools-1.60/lib/ax25.c
+-rw-r--r-- pb/pb          1768 1999-01-09 21:24 net-tools-1.60/lib/ax25_gr.c
+-rw-r--r-- pb/pb          1649 1999-01-09 21:24 net-tools-1.60/lib/ddp.c
+-rw-r--r-- pb/pb           468 1999-01-09 21:24 net-tools-1.60/lib/ddp_gr.c
+-rw-r--r-- pb/pb          1962 2000-05-27 23:06 net-tools-1.60/lib/econet.c
+-rw-r--r-- pb/pb          3158 1999-11-21 02:32 net-tools-1.60/lib/ether.c
+-rw-r--r-- pb/pb          3292 2000-03-05 16:56 net-tools-1.60/lib/fddi.c
+-rw-r--r-- pb/pb          1476 2000-03-05 16:56 net-tools-1.60/lib/frame.c
+-rw-r--r-- pb/pb          2296 1999-01-09 21:24 net-tools-1.60/lib/getargs.c
+-rw-r--r-- pb/pb          3109 2000-05-20 23:57 net-tools-1.60/lib/getroute.c
+-rw-r--r-- pb/pb          1610 2000-03-05 16:56 net-tools-1.60/lib/hdlclapb.c
+-rw-r--r-- pb/pb          3319 2000-03-05 20:55 net-tools-1.60/lib/hippi.c
+-rw-r--r-- pb/pb          6139 2000-05-20 23:57 net-tools-1.60/lib/hw.c
+-rw-r--r-- pb/pb         11126 2000-05-23 02:57 net-tools-1.60/lib/inet.c
+-rw-r--r-- pb/pb          4347 2000-10-28 16:34 net-tools-1.60/lib/inet6.c
+-rw-r--r-- pb/pb          7423 2001-04-01 20:18 net-tools-1.60/lib/inet6_gr.c
+-rw-r--r-- pb/pb          4473 2000-05-23 02:48 net-tools-1.60/lib/inet6_sr.c
+-rw-r--r-- pb/pb         12685 2000-10-28 16:29 net-tools-1.60/lib/inet_gr.c
+-rw-r--r-- pb/pb          7900 2000-02-21 03:16 net-tools-1.60/lib/inet_sr.c
+-rw-r--r-- pb/pb          4499 1999-01-09 21:25 net-tools-1.60/lib/ipx.c
+-rw-r--r-- pb/pb          1995 2000-10-28 16:29 net-tools-1.60/lib/ipx_gr.c
+-rw-r--r-- pb/pb           692 1999-01-09 21:25 net-tools-1.60/lib/ipx_sr.c
+-rw-r--r-- pb/pb          1533 1999-11-21 02:32 net-tools-1.60/lib/loopback.c
+-rw-r--r-- pb/pb         22500 2001-02-11 01:01 net-tools-1.60/lib/interface.c
+-rw-r--r-- pb/pb          3672 2000-05-20 23:57 net-tools-1.60/lib/net-features.h
+-rw-r--r-- pb/pb          8800 2000-10-28 16:29 net-tools-1.60/lib/net-support.h
+-rw-r--r-- pb/pb          5221 2000-03-05 16:56 net-tools-1.60/lib/netrom.c
+-rw-r--r-- pb/pb          2229 2000-10-28 16:29 net-tools-1.60/lib/netrom_gr.c
+-rw-r--r-- pb/pb           880 1999-01-09 21:25 net-tools-1.60/lib/netrom_sr.c
+-rw-r--r-- pb/pb           617 1999-01-09 21:25 net-tools-1.60/lib/nstrcmp.c
+-rw-r--r-- pb/pb          2087 2000-05-20 23:57 net-tools-1.60/lib/pathnames.h
+-rw-r--r-- pb/pb          1482 2000-03-05 16:56 net-tools-1.60/lib/ppp.c
+-rw-r--r-- pb/pb          1136 1999-01-09 21:25 net-tools-1.60/lib/ppp_ac.c
+-rw-r--r-- pb/pb          1594 1999-01-09 21:25 net-tools-1.60/lib/proc.c
+-rw-r--r-- pb/pb           170 1999-01-09 21:25 net-tools-1.60/lib/proc.h
+-rw-r--r-- pb/pb          3865 2000-03-05 16:56 net-tools-1.60/lib/rose.c
+-rw-r--r-- pb/pb          1862 1999-01-09 21:25 net-tools-1.60/lib/rose_gr.c
+-rw-r--r-- pb/pb          2442 2000-05-20 23:57 net-tools-1.60/lib/setroute.c
+-rw-r--r-- pb/pb          1265 2000-03-19 18:07 net-tools-1.60/lib/sit.c
+-rw-r--r-- pb/pb          1625 1999-11-21 02:32 net-tools-1.60/lib/slip.c
+-rw-r--r-- pb/pb          2716 1999-01-09 21:25 net-tools-1.60/lib/slip_ac.c
+-rw-r--r-- pb/pb          3083 2000-02-21 03:16 net-tools-1.60/lib/tr.c
+-rw-r--r-- pb/pb           685 2000-03-05 20:57 net-tools-1.60/lib/tunnel.c
+-rw-r--r-- pb/pb          2268 1999-01-09 21:25 net-tools-1.60/lib/unix.c
+-rw-r--r-- pb/pb           967 1999-01-09 21:25 net-tools-1.60/lib/util.c
+-rw-r--r-- pb/pb           335 1999-01-09 21:25 net-tools-1.60/lib/util.h
+-rw-r--r-- pb/pb          2491 2000-10-28 16:29 net-tools-1.60/lib/strip.c
+-rw-r--r-- pb/pb          1581 2000-05-20 23:57 net-tools-1.60/lib/sockets.c
+-rw-r--r-- pb/pb          5823 1999-04-21 23:09 net-tools-1.60/lib/util-ank.c
+-rw-r--r-- pb/pb          3645 2000-05-21 00:23 net-tools-1.60/lib/x25.c
+-rw-r--r-- pb/pb          2170 2000-03-05 20:56 net-tools-1.60/lib/irda.c
+-rw-r--r-- pb/pb           770 1999-11-21 02:32 net-tools-1.60/lib/ec_hw.c
+-rw-r--r-- pb/pb          2019 2000-05-20 19:08 net-tools-1.60/lib/x25_gr.c
+-rw-r--r-- pb/pb          3418 2000-05-20 19:08 net-tools-1.60/lib/x25_sr.c
+-rw-r--r-- pb/pb          8935 1999-01-09 21:23 net-tools-1.60/ABOUT-NLS
+-rw-r--r-- pb/pb         17982 1999-01-09 21:23 net-tools-1.60/COPYING
+-rw-r--r-- pb/pb          1251 1999-11-21 03:06 net-tools-1.60/INSTALLING
+-rw-r--r-- pb/pb          7099 2001-04-15 20:04 net-tools-1.60/Makefile
+-rw-r--r-- pb/pb          2147 2001-04-15 20:04 net-tools-1.60/README
+-rw-r--r-- pb/pb          1201 1999-04-19 01:06 net-tools-1.60/README.ipv6
+-rw-r--r-- pb/pb          1445 1999-04-21 23:07 net-tools-1.60/TODO
+-rw-r--r-- pb/pb         20906 2001-04-08 22:35 net-tools-1.60/arp.c
+-rw-r--r-- pb/pb          3217 2000-05-21 20:02 net-tools-1.60/config.in
+-rwxr-xr-x pb/pb          3931 1999-08-28 16:51 net-tools-1.60/configure.sh
+-rw-r--r-- pb/pb         10619 2001-04-08 22:34 net-tools-1.60/hostname.c
+-rw-r--r-- pb/pb         26648 2001-04-13 23:55 net-tools-1.60/ifconfig.c
+-rw-r--r-- pb/pb         49058 2001-04-15 20:11 net-tools-1.60/netstat.c
+-rw-r--r-- pb/pb           236 2001-04-08 22:34 net-tools-1.60/intl.h
+-rw-r--r-- pb/pb          7663 2001-04-08 22:35 net-tools-1.60/rarp.c
+-rw-r--r-- pb/pb          6836 2001-04-15 20:11 net-tools-1.60/route.c
+-rw-r--r-- pb/pb         16467 2000-10-28 16:29 net-tools-1.60/slattach.c
+-rw-r--r-- pb/pb           139 2001-04-01 20:18 net-tools-1.60/.cvsignore
+-rw-r--r-- pb/pb         11989 2001-02-02 23:31 net-tools-1.60/statistics.c
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/include/
+-rw-r--r-- pb/pb          3668 2001-02-11 00:54 net-tools-1.60/include/interface.h
+-rw-r--r-- pb/pb           610 1999-01-09 21:24 net-tools-1.60/include/ipx.h
+-rw-r--r-- pb/pb           140 2000-05-20 23:57 net-tools-1.60/include/sockets.h
+-rw-r--r-- pb/pb          2390 1999-04-21 23:08 net-tools-1.60/include/util-ank.h
+-rw------- pb/pb          2550 2000-05-21 19:51 net-tools-1.60/include/mii.h
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/en_US/
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/en_US/domainname.1
+-rw-r--r-- pb/pb          4651 2000-10-28 16:29 net-tools-1.60/man/en_US/arp.8
+-rw-r--r-- pb/pb          1532 1999-01-09 21:49 net-tools-1.60/man/en_US/plipconfig.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/en_US/dnsdomainname.1
+-rw-r--r-- pb/pb           944 1999-01-09 21:25 net-tools-1.60/man/en_US/ethers.5
+-rw-r--r-- pb/pb          4884 1999-02-27 17:41 net-tools-1.60/man/en_US/hostname.1
+-rw-r--r-- pb/pb          5821 2000-10-28 16:29 net-tools-1.60/man/en_US/ifconfig.8
+-rw-r--r-- pb/pb         11090 2001-01-07 18:13 net-tools-1.60/man/en_US/netstat.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/en_US/nisdomainname.1
+-rw-r--r-- pb/pb          2229 2000-05-21 19:24 net-tools-1.60/man/en_US/rarp.8
+-rw-r--r-- pb/pb          7974 2000-05-22 00:29 net-tools-1.60/man/en_US/route.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/en_US/ypdomainname.1
+-rw-r--r-- pb/pb          2566 1999-01-09 21:49 net-tools-1.60/man/en_US/slattach.8
+-rw------- pb/pb          2960 2000-05-21 19:51 net-tools-1.60/man/en_US/mii-tool.8
+-rw-r--r-- pb/pb           971 2000-10-18 22:56 net-tools-1.60/man/en_US/nameif.8
+-rw-r--r-- pb/pb          1699 2000-10-28 16:29 net-tools-1.60/man/Makefile
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/en_US.88591/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/fr_FR/
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/fr_FR/domainname.1
+-rw-r--r-- pb/pb          4916 1999-04-19 00:53 net-tools-1.60/man/fr_FR/arp.8
+-rw-r--r-- pb/pb          1814 1999-04-19 00:54 net-tools-1.60/man/fr_FR/plipconfig.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/fr_FR/dnsdomainname.1
+-rw-r--r-- pb/pb          5302 1999-04-19 00:53 net-tools-1.60/man/fr_FR/hostname.1
+-rw-r--r-- pb/pb          6599 2000-10-28 16:29 net-tools-1.60/man/fr_FR/ifconfig.8
+-rw-r--r-- pb/pb         11362 1999-04-19 00:54 net-tools-1.60/man/fr_FR/netstat.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/fr_FR/nisdomainname.1
+-rw-r--r-- pb/pb          2316 1999-04-19 00:54 net-tools-1.60/man/fr_FR/rarp.8
+-rw-r--r-- pb/pb          8336 2000-01-03 04:23 net-tools-1.60/man/fr_FR/route.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/fr_FR/ypdomainname.1
+-rw-r--r-- pb/pb          2960 1999-04-19 00:54 net-tools-1.60/man/fr_FR/slattach.8
+-rw-r--r-- pb/pb          1119 1999-04-19 00:53 net-tools-1.60/man/fr_FR/ethers.5
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/fr_FR.88591/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/pt_BR/
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/pt_BR/domainname.1
+-rw-r--r-- pb/pb          4997 1999-01-09 21:25 net-tools-1.60/man/pt_BR/arp.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:25 net-tools-1.60/man/pt_BR/dnsdomainname.1
+-rw-r--r-- pb/pb          4684 1999-01-09 21:25 net-tools-1.60/man/pt_BR/hostname.1
+-rw-r--r-- pb/pb          6017 1999-01-09 21:25 net-tools-1.60/man/pt_BR/ifconfig.8
+-rw-r--r-- pb/pb         10268 1999-01-09 21:26 net-tools-1.60/man/pt_BR/netstat.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:26 net-tools-1.60/man/pt_BR/nisdomainname.1
+-rw-r--r-- pb/pb          2231 1999-04-19 00:54 net-tools-1.60/man/pt_BR/rarp.8
+-rw-r--r-- pb/pb          8235 2000-01-03 04:23 net-tools-1.60/man/pt_BR/route.8
+-rw-r--r-- pb/pb            20 1999-01-09 21:26 net-tools-1.60/man/pt_BR/ypdomainname.1
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/man/de_DE/
+-rw-r--r-- pb/pb            20 1999-03-05 04:21 net-tools-1.60/man/de_DE/domainname.1
+-rw-r--r-- pb/pb          5550 2000-10-28 16:29 net-tools-1.60/man/de_DE/arp.8
+-rw-r--r-- pb/pb            20 1999-03-05 04:21 net-tools-1.60/man/de_DE/dnsdomainname.1
+-rw-r--r-- pb/pb          1173 1999-03-16 02:01 net-tools-1.60/man/de_DE/ethers.5
+-rw-r--r-- pb/pb          5689 1999-03-16 02:01 net-tools-1.60/man/de_DE/hostname.1
+-rw-r--r-- pb/pb          6878 2000-10-28 16:29 net-tools-1.60/man/de_DE/ifconfig.8
+-rw-r--r-- pb/pb         11704 1999-03-16 02:01 net-tools-1.60/man/de_DE/netstat.8
+-rw-r--r-- pb/pb            20 1999-03-05 04:21 net-tools-1.60/man/de_DE/nisdomainname.1
+-rw-r--r-- pb/pb          1938 1999-03-16 02:01 net-tools-1.60/man/de_DE/plipconfig.8
+-rw-r--r-- pb/pb          2270 1999-04-19 00:53 net-tools-1.60/man/de_DE/rarp.8
+-rw-r--r-- pb/pb          9621 2000-01-03 04:23 net-tools-1.60/man/de_DE/route.8
+-rw-r--r-- pb/pb          3171 1999-03-16 02:01 net-tools-1.60/man/de_DE/slattach.8
+-rw-r--r-- pb/pb            20 1999-03-05 04:21 net-tools-1.60/man/de_DE/ypdomainname.1
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/nls/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/nls/de_DE.88591/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/nls/en_US.88591/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/nls/fr_FR.88591/
+drwxr-xr-x pb/pb             0 2001-04-15 20:12 net-tools-1.60/po/
+-rw-r--r-- pb/pb         63033 2000-02-21 03:17 net-tools-1.60/po/pt_BR.po
+-rw-r--r-- pb/pb          2351 1999-11-21 02:32 net-tools-1.60/po/Makefile
+-rw-r--r-- pb/pb         66929 2001-02-16 14:27 net-tools-1.60/po/et_EE.po
+-rw-r--r-- pb/pb             5 1999-03-16 02:01 net-tools-1.60/po/.cvsignore
+-rw-r--r-- pb/pb         62052 2000-10-28 16:29 net-tools-1.60/po/de.po
+-rw-r--r-- pb/pb         61353 2000-02-21 03:17 net-tools-1.60/po/fr.po
+-rw-r--r-- pb/pb         46463 2001-04-15 20:10 net-tools-1.60/po/net-tools.pot
+-rw-r--r-- pb/pb         63239 2000-02-21 03:16 net-tools-1.60/po/cs.po
+-rw-r--r-- pb/pb          3480 2001-04-08 22:34 net-tools-1.60/plipconfig.c
+-rw-r--r-- pb/pb         15302 2001-04-08 22:34 net-tools-1.60/iptunnel.c
+-rw-r--r-- pb/pb          5693 2000-10-18 22:56 net-tools-1.60/nameif.c
+-rw-r--r-- pb/pb          8751 2001-04-08 22:34 net-tools-1.60/ipmaddr.c
+-rw------- pb/pb         13441 2000-05-21 20:01 net-tools-1.60/mii-tool.c
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd net-tools-1.60
++ echo 'Patch #6 (net-tools_1.60-1.diff.gz):'
+Patch #6 (net-tools_1.60-1.diff.gz):
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/net-tools_1.60-1.diff.gz
++ /usr/bin/patch -s -p1
++ echo 'Patch #7 (net-tools-1.60-usagi-ipv6.diff):'
+Patch #7 (net-tools-1.60-usagi-ipv6.diff):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-1.60-usagi-ipv6.diff
++ /usr/bin/patch -s -p1
++ echo 'Patch #8 (net-tools-mll.diff):'
+Patch #8 (net-tools-mll.diff):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-mll.diff
++ /usr/bin/patch -s -p1
++ echo 'Patch #100 (net-tools-syntax-error.patch):'
+Patch #100 (net-tools-syntax-error.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-syntax-error.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #101 (net-tools-1.60-netdevice.patch):'
+Patch #101 (net-tools-1.60-netdevice.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-1.60-netdevice.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #102 (net-tools-miiphy.patch):'
+Patch #102 (net-tools-miiphy.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-miiphy.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #103 (net-tools-1.60-stddef.patch):'
+Patch #103 (net-tools-1.60-stddef.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/net-tools-1.60-stddef.patch
++ /usr/bin/patch -s -p1
++ cp /home/rpmuser/rpm/SOURCES/net-tools-custom-config.h ./config.h
++ cp /home/rpmuser/rpm/SOURCES/net-tools-1.57-config.make ./config.make
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.cYz2tp
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd net-tools-1.60
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o activate.o activate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o af.o af.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o arcnet.o arcnet.c
+arcnet.c: In function 'in_arcnet':
+arcnet.c:55:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+arcnet.c:51:14: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ash.o ash.c
+ash.c: In function 'in_ash':
+ash.c:67:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ash.c: In function 'pr_sash':
+ash.c:112:5: warning: pointer targets in passing argument 1 of 'pr_ash' differ in signedness [-Wpointer-sign]
+ash.c:35:1: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ax25.o ax25.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ax25_gr.o ax25_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ddp.o ddp.c
+ddp.c: In function 'ddp_sprint':
+ddp.c:51:5: warning: pointer targets in passing argument 1 of 'ddp_print' differ in signedness [-Wpointer-sign]
+ddp.c:35:14: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ddp_gr.o ddp_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ec_hw.o ec_hw.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o econet.o econet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ether.o ether.c
+ether.c: In function 'in_ether':
+ether.c:59:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ether.c:54:14: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o fddi.o fddi.c
+fddi.c: In function 'in_fddi':
+fddi.c:70:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+fddi.c:66:14: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o frame.o frame.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o getargs.o getargs.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o getroute.o getroute.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o hdlclapb.o hdlclapb.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o hippi.o hippi.c
+hippi.c: In function 'in_hippi':
+hippi.c:69:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hippi.c:65:14: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o hw.o hw.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet.o inet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet6.o inet6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet6_gr.o inet6_gr.c
+inet6_gr.c: In function 'rprint_fib6':
+inet6_gr.c:64:9: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+inet6_gr.c: In function 'rprint_cache6':
+inet6_gr.c:141:15: warning: variable 'num' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet6_sr.o inet6_sr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet_gr.o inet_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o inet_sr.o inet_sr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o interface.o interface.c
+interface.c: In function 'ife_print_long':
+interface.c:678:2: warning: pointer targets in passing argument 1 of 'hw->print' differ in signedness [-Wpointer-sign]
+interface.c:678:2: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ipx.o ipx.c
+ipx.c: In function 'IPX_sprint':
+ipx.c:82:5: warning: pointer targets in passing argument 1 of 'IPX_print' differ in signedness [-Wpointer-sign]
+ipx.c:45:14: note: expected 'unsigned char *' but argument is of type 'char *'
+ipx.c: In function 'IPX_getsock':
+ipx.c:90:19: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ipx_gr.o ipx_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ipx_sr.o ipx_sr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o irda.o irda.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o loopback.o loopback.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o masq_info.o masq_info.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o netrom.o netrom.c
+netrom.c: In function 'NETROM_sprint':
+netrom.c:79:35: warning: pointer targets in passing argument 1 of 'NETROM_print' differ in signedness [-Wpointer-sign]
+netrom.c:55:14: note: expected 'unsigned char *' but argument is of type 'char *'
+netrom.c: In function 'NETROM_input':
+netrom.c:90:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+netrom.c:86:11: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o netrom_gr.o netrom_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o netrom_sr.o netrom_sr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o nstrcmp.o nstrcmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ppp.o ppp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o ppp_ac.o ppp_ac.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o proc.o proc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o rose.o rose.c
+rose.c: In function 'ROSE_sprint':
+rose.c:73:33: warning: pointer targets in passing argument 1 of 'ROSE_print' differ in signedness [-Wpointer-sign]
+rose.c:57:2: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o rose_gr.o rose_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o setroute.o setroute.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o sit.o sit.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o slip.o slip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o slip_ac.o slip_ac.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o sockets.o sockets.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o strip.o strip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o tr.o tr.c
+tr.c: In function 'in_tr':
+tr.c:55:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+tr.c:51:14: warning: variable 'orig' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o tunnel.o tunnel.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o unix.o unix.c
+unix.c: In function 'UNSPEC_sprint':
+unix.c:57:5: warning: pointer targets in passing argument 1 of 'UNSPEC_print' differ in signedness [-Wpointer-sign]
+unix.c:35:14: note: expected 'unsigned char *' but argument is of type 'char *'
+unix.c: In function 'UNIX_print':
+unix.c:66:5: warning: pointer targets in return differ in signedness [-Wpointer-sign]
+unix.c: In function 'UNIX_sprint':
+unix.c:77:5: warning: pointer targets in passing argument 1 of 'UNIX_print' differ in signedness [-Wpointer-sign]
+unix.c:64:14: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o util-ank.o util-ank.c
+util-ank.c: In function 'format_host':
+util-ank.c:317:2: warning: pointer targets in passing argument 3 of 'inet_ntop' differ in signedness [-Wpointer-sign]
+In file included from util-ank.c:26:0:
+/usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/arpa/inet.h:64:20: note: expected 'char * __restrict__' but argument is of type '__u8 *'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o util.o util.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o x25.o x25.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o x25_gr.o x25_gr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib -I/home/rpmuser/rpm/BUILD/net-tools-1.60 -idirafter /home/rpmuser/rpm/BUILD/net-tools-1.60/include    -c -o x25_sr.o x25_sr.c
+Building libnet-tools.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o ifconfig.o ifconfig.c
+ifconfig.c: In function 'set_netmask':
+ifconfig.c:226:9: warning: variable 'err' set but not used [-Wunused-but-set-variable]
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o ifconfig ifconfig.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o arp.o arp.c
+arp.c: In function 'arp_getdevhw':
+arp.c:253:2: warning: pointer targets in passing argument 1 of 'xhw->print' differ in signedness [-Wpointer-sign]
+arp.c:253:2: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o arp arp.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o netstat.o netstat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o statistics.o statistics.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o netstat netstat.o statistics.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o route.o route.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o route route.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o rarp.o rarp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o rarp rarp.o -lnet-tools
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o slattach.o slattach.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o slattach slattach.o -lnet-tools
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o plipconfig.o plipconfig.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o plipconfig plipconfig.o -lnet-tools
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o nameif.o nameif.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o nameif nameif.o 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o iptunnel.o iptunnel.c
+iptunnel.c: In function 'print_tunnel':
+iptunnel.c:478:2: warning: pointer targets in passing argument 3 of 'format_host' differ in signedness [-Wpointer-sign]
+In file included from iptunnel.c:69:0:
+./include/util-ank.h:78:20: note: expected '__u8 *' but argument is of type 'char *'
+iptunnel.c:479:2: warning: pointer targets in passing argument 3 of 'format_host' differ in signedness [-Wpointer-sign]
+In file included from iptunnel.c:69:0:
+./include/util-ank.h:78:20: note: expected '__u8 *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o iptunnel iptunnel.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o ipmaddr.o ipmaddr.c
+ipmaddr.c: In function 'print_maddr':
+ipmaddr.c:266:3: warning: pointer targets in passing argument 3 of 'format_host' differ in signedness [-Wpointer-sign]
+In file included from ipmaddr.c:35:0:
+./include/util-ank.h:78:20: note: expected '__u8 *' but argument is of type 'char *'
+ipmaddr.c: In function 'multiaddr_modify':
+ipmaddr.c:348:4: warning: pointer targets in passing argument 2 of 'parse_lla' differ in signedness [-Wpointer-sign]
+ipmaddr.c:78:12: note: expected 'unsigned char *' but argument is of type 'char *'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o ipmaddr ipmaddr.o -lnet-tools 
+arm-sony-linux-gnueabi-gcc -tarmv7a -D_GNU_SOURCE -O2 -Wall -g  -I. -idirafter ./include/ -Ilib   -c -o mii-tool.o mii-tool.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -Llib -o mii-tool mii-tool.o
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.TD9Wfe
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd net-tools-1.60
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' install BASEDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a mandir=/usr/man
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/lib'
+Saved.
+install -m 0755 -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
+install -m 0755 arp        /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 ifconfig   /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 nameif     /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 netstat    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
+install -m 0755 plipconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 rarp       /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 route      /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 slattach   /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 ipmaddr    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 iptunnel   /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 mii-tool   /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+make -C man install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+LANGS=`ls -d * | grep -v Makefile` ; \
+		for LANG in $LANGS; do \
+			cd $LANG; \
+			for SECTION in 1 5 8; do \
+				if [ "$LANG" = "en_US" ] ; then \
+					MAN_DIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man$SECTION; \
+				else \
+					MAN_DIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/$LANG/man$SECTION; \
+				fi ; \
+				CMDS=`ls *.$SECTION`; \
+				[ -z "$CMDS" ] && continue; \
+				install -d -m 755 $MAN_DIR; \
+				for CMD in $CMDS; do \
+					install -m 644 $CMD $MAN_DIR; \
+				done; \
+			done; \
+			cd ..; \
+		done
+ls: cannot access *.1: No such file or directory
+ls: cannot access *.5: No such file or directory
+ls: cannot access *.8: No such file or directory
+ls: cannot access *.1: No such file or directory
+ls: cannot access *.5: No such file or directory
+ls: cannot access *.8: No such file or directory
+ls: cannot access *.5: No such file or directory
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/man'
+make -C po install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/po'
+msgfmt -o de.mo de.po
+de.po: warning: Charset "iso8859-1" is not a portable encoding name.
+                Message conversion to user's charset might not work.
+msgfmt -o fr.mo fr.po
+fr.po: warning: Charset "iso8859-1" is not a portable encoding name.
+                Message conversion to user's charset might not work.
+msgfmt -o pt_BR.mo pt_BR.po
+pt_BR.po: warning: Charset "ISO8859-9" is not a portable encoding name.
+                   Message conversion to user's charset might not work.
+msgfmt -o et_EE.mo et_EE.po
+msgfmt -o cs.mo cs.po
+catalogs='de.mo fr.mo pt_BR.mo et_EE.mo cs.mo'; \
+	for n in $catalogs; do \
+	    l=`basename $n .mo`; \
+	    install -c -m 755 -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/$l; \
+	    install -c -m 755 -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/$l/LC_MESSAGES; \
+	    install -c -m 644 $n /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/$l/LC_MESSAGES/net-tools.mo; \
+	done
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/net-tools-1.60/po'
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/arp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/ifconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/ipmaddr /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/iptunnel /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mii-tool /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/nameif /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/plipconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/rarp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/route /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/slattach /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ ln -s hostname /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin/domainname
++ ln -s hostname /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin/ypdomainname
++ ln -s hostname /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin/nisdomainname
++ cp COPYING LICENSE
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-net-tools-1.60-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-net-tools-1.60-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-net-tools-1.60-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ybwZTK
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd net-tools-1.60
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-net-tools-1.60-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 19:01:40 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/net-tools-1.60
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/net-tools/test/net-tools-testsuites.patch
+patching file Makefile
+patching file tests/arp/arp-test-main.sh
+patching file tests/arp/arp-test-PTG1.sh
+patching file tests/arp/arp-test-PTG2.sh
+patching file tests/arp/arp-test-PTG3.sh
+patching file tests/arp/Test-Support-Fns
+patching file tests/domainname/domainname-test-main.sh
+patching file tests/domainname/domainname-test-PTG1.sh
+patching file tests/domainname/domainname-test-PTG2.sh
+patching file tests/domainname/domainname-test-PTG3.sh
+patching file tests/domainname/Test-Support-Fns
+patching file tests/ifconfig/ifconfig-test-main.sh
+patching file tests/ifconfig/ifconfig-test-PTG1.sh
+patching file tests/ifconfig/ifconfig-test-PTG2.sh
+patching file tests/ifconfig/ifconfig-test-PTG3.sh
+patching file tests/ifconfig/ifconfig-test-PTG3.sh.old
+patching file tests/ifconfig/ifconfig-test-PTG3.sh.org
+patching file tests/ifconfig/Test-Support-Fns
+patching file tests/ipmaddr/ipmaddr-test-main.sh
+patching file tests/ipmaddr/ipmaddr-test-PTG1.sh
+patching file tests/ipmaddr/ipmaddr-test-PTG2.sh
+patching file tests/ipmaddr/ipmaddr-test-PTG3.sh
+patching file tests/ipmaddr/Test-Support-Fns
+patching file tests/iptunnel/iptunnel-test-main.sh
+patching file tests/iptunnel/iptunnel-test-PTG1.sh
+patching file tests/iptunnel/iptunnel-test-PTG2.sh
+patching file tests/iptunnel/iptunnel-test-PTG3.sh
+patching file tests/iptunnel/Test-Support-Fns
+patching file tests/mii-tool/mii-tool-test-main.sh
+patching file tests/mii-tool/mii-tool-test-PTG1.sh
+patching file tests/mii-tool/mii-tool-test-PTG2.sh
+patching file tests/mii-tool/mii-tool-test-PTG3.sh
+patching file tests/mii-tool/Test-Support-Fns
+patching file tests/netstat/netstat-test-main.sh
+patching file tests/netstat/netstat-test-PTG1.sh
+patching file tests/netstat/netstat-test-PTG2.sh
+patching file tests/netstat/netstat-test-PTG3.sh
+patching file tests/netstat/Test-Support-Fns
+patching file tests/net-tools-test-main.sh
+patching file tests/route/route-test-main.sh
+patching file tests/route/route-test-PTG1.sh
+patching file tests/route/route-test-PTG2.sh
+patching file tests/route/route-test-PTG3.sh
+patching file tests/route/Test-Support-Fns
+patching file tests/Test-Support-Fns
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ spawn -nottyinit sh -c for i in 0 1 ; do /sbin/ifconfig eth$i | grep "inet addr:" | grep "inet addr:10.*" > /dev/null; if [ $? == 0 ]  ; then echo eth$i ; break ; fi ; done
+eth0
+/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-linu x-gnueabi/target/armv7a/tmp/run_host.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ /sbin/ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-linu x-gnueabi/target/armv7a/tmp/destin_host.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ /sbin/ifconfig eth1 | /bin/grep HWaddr | /usr/bin/awk '{print $5}'> /usr/local/arm-sony-linux-gnue abi/target/armv7a/tmp/destin_macadd.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/net-tools-1.60rpmuser@Triangle:~/rpm/BUILD/net-tools-1.60$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/net-tools-1.60 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp............................................................................................................................................................................................................................................................................................................................................................done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 19:03:00 UTC 2014
+-bash-3.2# export run_host=`cat /tmp/run_host.log`
+-bash-3.2# export destin_host=`cat /tmp/destin_host.log`
+-bash-3.2# export destin_macadd=`cat /tmp/destin_macadd.log`
+-bash-3.2# export source_host=`/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'`
+-bash-3.2# export source_macadd=`/sbin/ifconfig eth0 | /bin/grep HWaddr | awk '{print $5}'`
+-bash-3.2# export r=`echo $destin_host | cut -d. -f1 | awk '{print $1}'`
+-bash-3.2# export s=`echo $destin_host | cut -d. -f2 | awk '{print $1}'`
+-bash-3.2# export v=`echo $destin_host | cut -d. -f3 | awk '{print $1}'`
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/net-tools-1.60/tests
+-bash-3.2# sed -i "s/HOST_IPADDR=.*/HOST_IPADDR=$run_host/g" Test-Support-Fns
+-bash-3.2# sed -i "s/TARGET_IPADDR=.*/TARGET_IPADDR=$source_host/g" Test-Support-Fns
+-bash-3.2# sed -i "s/IPADDR1=.*/IPADDR1=$destin_host/g" Test-Support-Fns
+-bash-3.2# sed -i "s/IPADDR2=.*/IPADDR2=`echo $r.$s.$v.4`/g" Test-Support-Fns
+-bash-3.2# sed -i "s/DEFAULT_ROUTE=.*/DEFAULT_ROUTE=$destin_host/g" Test-Support-Fns
+-bash-3.2# sed -i "s/GATEWAY=.*/GATEWAY=$destin_host/g" Test-Support-Fns
+-bash-3.2# sed -i "s/TARGET_MACADDR=.*/TARGET_MACADDR=$source_macadd/g" Test-Support-Fns
+-bash-3.2# sed -i "s/MACADDR1=.*/MACADDR1=$destin_macadd/g" Test-Support-Fns
+-bash-3.2# sed -i "s/BROADCASTADDR=.*/BROADCASTADDR=`echo $r.$s.$v.255`/g" Test-Support-Fns
+-bash-3.2# cp Test-Support-Fns ./mii-tool/
+-bash-3.2# cp Test-Support-Fns ./netstat/
+-bash-3.2# cp Test-Support-Fns ./arp/
+-bash-3.2# cp Test-Support-Fns ./ipmaddr/
+-bash-3.2# cp Test-Support-Fns ./ifconfig/
+-bash-3.2# cp Test-Support-Fns ./iptunnel/
+-bash-3.2# cp Test-Support-Fns ./domainname/
+-bash-3.2# cp Test-Support-Fns ./route/
+-bash-3.2# useradd rpmuser 
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+useradd: user 'rpmuser' already exists
+-bash-3.2# cd /tmp/net-tools-1.60/tests
+-bash-3.2# sh net-tools-test-main.sh
+          Execuiting net-tools Test Suite
+          ------------------------------
+
+=================================================================
+                Net-tools Test Cases                       
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Userland           : Sony CE Linux 11.0.0.0 armv7a                    
+         Date               : Thu Feb 13 19:03:03 UTC 2014                        
+=================================================================
+[32m                Testing arp[0m
+              ------------
+[32m Testing TD-net-tools-arp-PTG1 [0m
+PASS: test1 -TD-net-tools-arp-PTG1-1  - Basic functionality of arp command 
+
+[32m Testing TD-net-tools-arp-PTG2 [0m
+su: Permission denied
+(Ignored)
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+su: Module is unknown
+
+[32m Testing TD-net-tools-arp-PTG3 [0m
+FAILED: [31mtest3 -TD-net-tools-arp-PTG3-3 - Testing automatic creation of arp entries by pinging a host [0m
+Test Result      =  1
+Expected Result  =  0
+FAILED: [31mtest4 -TD-net-tools-arp-PTG3-4 - Testing  -s option of the arp command  [0m
+Test Result      =  1
+Expected Result  =  0
+PASS: test5 -TD-net-tools-arp-PTG3-5  - Testing  -n option of the arp command 
+FAILED: [31mtest6 -TD-net-tools-arp-PTG3-6 - Testing  -a option of the arp command  [0m
+Test Result      =  1
+Expected Result  =  0
+PASS: test7 -TD-net-tools-arp-PTG3-7  - Testing  -d option of the arp command 
+PASS: test8 -TD-net-tools-arp-PTG3-8  - Testing  -i option of the arp command 
+PASS: test9 -TD-net-tools-arp-PTG3-9  - Testing  -f option of the arp command 
+
+[32m                Testing domainname[0m
+              ------------
+[32m Testing TD-net-tools-domainname-PTG1 [0m
+FAILED: [31mtest10 -TD-net-tools-domainname-PTG1-10 - Basic functionality of domainname command  [0m
+Test Result      =  (none)
+Expected Result  =  10.0.6.39
+
+[32m Testing TD-net-tools-domainname-PTG2 [0m
+domainname: No such file or directory
+PASS: test11 -TD-net-tools-domainname-PTG2-11  - Testing error scenarios domainname command 
+
+[32m Testing TD-net-tools-domainname-PTG3 [0m
+PASS: test12 -TD-net-tools-domainname-PTG3-12  - Testing -v option of the domainname command
+PASS: test13 -TD-net-tools-domainname-PTG3-13  - Testing -F option of the domainname command
+
+[32m                Testing ifconfig[0m
+              ------------
+[32m Testing TD-net-tools-ifconfig-PTG1 [0m
+PASS: test14 -TD-net-tools-ifconfig-PTG1-14  - Basic functionality of ifconfig command 
+
+[32m Testing TD-net-tools-ifconfig-PTG2 [0m
+su: Permission denied
+(Ignored)
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+su: Module is unknown
+
+[32m Testing TD-net-tools-ifconfig-PTG3 [0m
+PASS: test16 -TD-net-tools-ifconfig-PTG3-16  - Testing ifconfig with -a option
+PASS: test17 -TD-net-tools-ifconfig-PTG3-17  - Testing ifconfig with ADDRESS 
+SIOCSIFFLAGS: Cannot assign requested address
+PASS: test18 -TD-net-tools-ifconfig-PTG3-18  - Testing Multicast option
+SIOCSIFNETMASK: Cannot assign requested address
+PASS: test19 -TD-net-tools-ifconfig-PTG3-19  - Testing netmask option
+SIOCSIFNETMASK: Cannot assign requested address
+PASS: test20 -TD-net-tools-ifconfig-PTG3-20  - Testing mtu option of the ifconfig command
+PASS: test21 -TD-net-tools-ifconfig-PTG3-21  - Testing txqueuelen option of the ifconfig command
+PASS: test22 -TD-net-tools-ifconfig-PTG3-22  - Testing Brodcast option
+Please wait for 1 minute
+PASS: test23 -TD-net-tools-ifconfig-PTG3-23  - Testing teturn value of the promiscuous mode of the interface
+
+[32m                Testing netstat[0m
+              ------------
+[32m Testing TD-net-tools-netstat-PTG1 [0m
+PASS: test24 -TD-net-tools-netstat-PTG1-24  - Basic functionality of netstat command 
+
+[32m Testing TD-net-tools-netstat-PTG2 [0m
+PASS: test25 -TD-net-tools-netstat-PTG2-25  - Testing return value of the netstat command with invalid option
+
+[32m Testing TD-net-tools-netstat-PTG3 [0m
+PASS: test26 -TD-net-tools-netstat-PTG3-26  - Testing -route option of the netstat command.
+awk: cmd. line:1: fatal: cannot open file `/proc/net/igmp' for reading (No such file or directory)
+netstat: no support for `AF INET (igmp)' on this system.
+PASS: test27 -TD-net-tools-netstat-PTG3-27  - Testing -g option of the netstat command.
+PASS: test28 -TD-net-tools-netstat-PTG3-28  - Testing -i option of the netstat command
+error parsing /proc/net/snmp: Success
+error parsing /proc/net/snmp: Success
+PASS: test29 -TD-net-tools-netstat-PTG3-29  - Testing -s option of the netstat command.
+netstat: no support for `ip_masquerade' on this system.
+SKIP: test30 -TD-net-tools-netstat-PTG3-30  - No support for ip_masquerade testing netstat -M option
+tcp        0      0 10.0.6.39:telnet        10.0.6.38:55038         ESTABLISHED 
+tcp        0      0 10.0.6.39:telnet        10.0.6.38:55216         ESTABLISHED 
+tcp        0      0 10.0.6.39:telnet        10.0.6.38:55044         ESTABLISHED 
+PASS: test31 -TD-net-tools-netstat-PTG3-31  - Testing -N option of the netstat command
+PASS: test32 -TD-net-tools-netstat-PTG3-32  - Testing -N option of the netstat command
+PASS: test33 -TD-net-tools-netstat-PTG3-33  - Testing --continuous option of the netstat command
+PASS: test34 -TD-net-tools-netstat-PTG3-34  - Testing  --extend option of the netstat command
+
+[32m                Testing route[0m
+              ------------
+[32m Testing TD-net-tools-route-PTG1 [0m
+FAILED: [31mtest35 -TD-net-tools-route-PTG1-35 - Basic functionality of route command  [0m
+Test Result      =  1
+Expected Result  =  0
+
+[32m Testing TD-net-tools-route-PTG2 [0m
+route/route-test-PTG2.sh: line 19: [: =: unary operator expected
+SIOCDELRT: No such process
+PASS: test36 -TD-net-tools-route-PTG2-36  - Testing error case to delete the route as a normal user
+
+[32m Testing TD-net-tools-route-PTG3 [0m
+PASS: test37 -TD-net-tools-route-PTG3-37  - Testing add option of the route command
+FAILED: [31mtest38 -TD-net-tools-route-PTG3-38 - Testing del option of the route command [0m
+Test Result      =  1
+Expected Result  =  0
+PASS: test39 -TD-net-tools-route-PTG3-39  - Testing reject with add option of the route command
+FAILED: [31mtest40 -TD-net-tools-route-PTG3-40 - Testing -n option of the route command [0m
+Test Result      =  1
+Expected Result  =  0
+PASS: test41 -TD-net-tools-route-PTG3-41  - Testing -A with del option of the route command
+PASS: test42 -TD-net-tools-route-PTG3-42  - Testing -host option of the the route command 
+PASS: test43 -TD-net-tools-route-PTG3-43  - Testing -window option of the route command
+PASS: test44 -TD-net-tools-route-PTG3-44  - Testing mss option of the the route command 
+PASS: test45 -TD-net-tools-route-PTG3-45  - Testing -A (with add) option of the route command
+FAILED: [31mtest46 -TD-net-tools-route-PTG3-46 - Testing -gw option of the route command [0m
+Test Result      =  1
+Expected Result  =  0
+
+[32m                Testing ipmaddr[0m
+              ------------
+[32m Testing TD-net-tools-ipmaddr-PTG1 [0m
+FAILED: [31mtest47 -TD-net-tools-ipmaddr-PTG1-47 - Basic functionality of ipmaddr command  [0m
+Test Result      =  1
+Expected Result  =  0
+
+[32m Testing TD-net-tools-ipmaddr-PTG2 [0m
+PASS: test48 -TD-net-tools-ipmaddr-PTG2-48  - Testing error case of ipmaddr command
+
+[32m Testing TD-net-tools-ipmaddr-PTG3 [0m
+FAILED: [31mtest49 -TD-net-tools-ipmaddr-PTG3-49 - Testing show option for ipv4 [0m
+Test Result      =  1
+Expected Result  =  0
+FAILED: [31mtest50 -TD-net-tools-ipmaddr-PTG3-50 - Testing show option for ipv6 [0m
+Test Result      =  1
+Expected Result  =  0
+PASS: test51 -TD-net-tools-ipmaddr-PTG3-51  - Testing add option of the ipmaddr command
+PASS: test52 -TD-net-tools-ipmaddr-PTG3-52  - Testing del option of the ipmaddr command
+
+[32m                Testing iptunnel[0m
+              ------------
+[32m Testing TD-net-tools-iptunnel-PTG1 [0m
+PASS: test53 -TD-net-tools-iptunnel-PTG1-53  - Return value of the iptunnel command 
+
+[32m Testing TD-net-tools-iptunnel-PTG2 [0m
+ioctl: No such device
+PASS: test54 -TD-net-tools-iptunnel-PTG2-54  - Testing error case of iptunnel command
+
+[32m Testing TD-net-tools-iptunnel-PTG3 [0m
+ioctl: No such device
+FAILED: [31mtest55 -TD-net-tools-iptunnel-PTG3-55 - Testing the add option of the iptunnel command [0m
+Test Result      =  1
+Expected Result  =  0
+ioctl: No such device
+FAILED: [31mtest56 -TD-net-tools-iptunnel-PTG3-56 - Testing show option of the iptunnel command [0m
+Test Result      =  1
+Expected Result  =  0
+ioctl: No such device
+ioctl: No such device
+FAILED: [31mtest57 -TD-net-tools-iptunnel-PTG3-57 - Testing the functionality of change option iptunnel command [0m
+Test Result      =  1
+Expected Result  =  0
+ioctl: No such device
+PASS: test58 -TD-net-tools-iptunnel-PTG3-58  - Testing del option of the iptunnel command
+
+[32m                Testing mii-tool[0m
+              ------------
+[32m Testing TD-net-tools-mii-tool-PTG1 [0m
+PASS: test59 -TD-net-tools-mii-tool-PTG1-59  - Basic functionality of mii-tool command 
+
+[32m Testing TD-net-tools-mii-tool-PTG2 [0m
+PASS: test60 -TD-net-tools-mii-tool-PTG2-60  - Testing error case of mii-tool command
+
+[32m Testing TD-net-tools-mii-tool-PTG3 [0m
+PASS: test61 -TD-net-tools-mii-tool-PTG3-61  - Testing -v option of the mii-tool command
+Feb 13 19:03:28 10 user.info mii-tool: eth0: negotiated 100baseTx-FD, link ok
+PASS: test62 -TD-net-tools-mii-tool-PTG3-62  - Testing -l & -r options of the mii-tool command 
+./Test-Support-Fns: line 158: 22267 Killed                  $MIITOOL -w -l -r $DEVICE
+
+#-------------------------------#
+# test_net-tools.log was created #
+#-------------------------------#
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/net-tools-1.60/tests/test_net-tools.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done

@@ -1,0 +1,241 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.6CLKml
+Patch #0 (giflib-5.0.4-Makefile.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.XUJGOo
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking how to print strings... printf
+checking for style of include used by make... GNU
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-sony-linux-gnueabi-gcc -tarmv7a... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-sony-linux-gnueabi-nm
+checking the name lister (arm-sony-linux-gnueabi-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to arm-sony-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-sony-linux-gnueabi-ld option to reload object files... -r
+checking for arm-sony-linux-gnueabi-objdump... arm-sony-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-sony-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-sony-linux-gnueabi-ar... arm-sony-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-sony-linux-gnueabi-strip... (cached) true
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking command to parse arm-sony-linux-gnueabi-nm output from arm-sony-linux-gnueabi-gcc -tarmv7a object... ok
+checking for sysroot... no
+checking for arm-sony-linux-gnueabi-mt... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -fno-rtti -fno-exceptions... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to produce PIC... -fPIC -DPIC
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a PIC flag -fPIC -DPIC works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a static flag -static works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -c -o file.o... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -c -o file.o... (cached) yes
+checking whether the arm-sony-linux-gnueabi-gcc -tarmv7a linker (arm-sony-linux-gnueabi-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for arm-sony-linux-gnueabi-gcc... (cached) arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... (cached) yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... (cached) none needed
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... (cached) gcc3
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a and cc understand -c and -o together... yes
+checking for xmlto... no
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for stdint.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+configure: creating ./config.status
+config.status: creating util/Makefile
+config.status: creating lib/Makefile
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating pic/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+Making all in lib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+  CC     dgif_lib.lo
+  CC     egif_lib.lo
+  CC     gif_font.lo
+  CC     gif_hash.lo
+  CC     gifalloc.lo
+  CC     gif_err.lo
+  CC     quantize.lo
+  CCLD   libgif.la
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+Making all in util
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+  CC     getarg.o
+  CC     qprintf.o
+  AR     libgetarg.a
+  CC     gifbg.o
+  CCLD   gifbg
+  CC     gifcolor.o
+  CCLD   gifcolor
+  CC     giffilter.o
+  CCLD   giffilter
+  CC     gifhisto.o
+  CCLD   gifhisto
+  CC     gifsponge.o
+  CCLD   gifsponge
+  CC     gifwedge.o
+  CCLD   gifwedge
+  CC     gif2raw.o
+  CCLD   gif2raw
+  CC     gif2rgb.o
+  CCLD   gif2rgb
+  CC     gifbuild.o
+  CCLD   gifbuild
+  CC     gifecho.o
+  CCLD   gifecho
+  CC     giffix.o
+  CCLD   giffix
+  CC     gifinto.o
+  CCLD   gifinto
+  CC     giftext.o
+  CCLD   giftext
+  CC     giftool.o
+  CCLD   giftool
+  CC     gifclrmp.o
+  CCLD   gifclrmp
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+Making all in pic
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.9VJ5vX
+Making install in lib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+test -z "/usr/lib" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib"
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libgif.la '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libgif.so.6.0.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.so.6.0.1
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libgif.so.6.0.1 libgif.so.6 || { rm -f libgif.so.6 && ln -s libgif.so.6.0.1 libgif.so.6; }; })
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libgif.so.6.0.1 libgif.so || { rm -f libgif.so && ln -s libgif.so.6.0.1 libgif.so; }; })
+libtool: install: /usr/bin/install -c .libs/libgif.lai /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.la
+libtool: install: /usr/bin/install -c .libs/libgif.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.a
+libtool: install: chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.a
+libtool: install: arm-sony-linux-gnueabi-ranlib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.a
+test -z "/tool//usr/include" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include"
+ /usr/bin/install -c -m 644 ../../lib/gif_lib.h '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/lib'
+Making install in util
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /bin/sh ../libtool   --mode=install /usr/bin/install -c gifbg gifcolor giffilter gifhisto gifsponge gifwedge gif2raw gif2rgb gifbuild gifecho giffix gifinto giftext giftool gifclrmp '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+libtool: install: /usr/bin/install -c .libs/gifbg /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifbg
+libtool: install: /usr/bin/install -c .libs/gifcolor /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifcolor
+libtool: install: /usr/bin/install -c .libs/giffilter /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/giffilter
+libtool: install: /usr/bin/install -c .libs/gifhisto /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifhisto
+libtool: install: /usr/bin/install -c .libs/gifsponge /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifsponge
+libtool: install: /usr/bin/install -c .libs/gifwedge /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifwedge
+libtool: install: /usr/bin/install -c .libs/gif2raw /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gif2raw
+libtool: install: /usr/bin/install -c .libs/gif2rgb /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gif2rgb
+libtool: install: /usr/bin/install -c .libs/gifbuild /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifbuild
+libtool: install: /usr/bin/install -c .libs/gifecho /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifecho
+libtool: install: /usr/bin/install -c .libs/giffix /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/giffix
+libtool: install: /usr/bin/install -c .libs/gifinto /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifinto
+libtool: install: /usr/bin/install -c .libs/giftext /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/giftext
+libtool: install: /usr/bin/install -c .libs/giftool /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/giftool
+libtool: install: /usr/bin/install -c .libs/gifclrmp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gifclrmp
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/util'
+Making install in pic
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir/pic'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/giflib-5.0.4/objdir'
+test -z "libgif.la" || rm -f libgif.la
+rm -f "./so_locations"
+rm -rf .libs _libs
+rm -f *.o
+rm -f *.lo
+  CC     dgif_lib.lo
+  CC     egif_lib.lo
+  CC     gif_font.lo
+  CC     gif_hash.lo
+  CC     gifalloc.lo
+  CC     gif_err.lo
+  CC     quantize.lo
+  CCLD   libgif.la
+Preparing libtool libraries for cross-compilation: /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libgif.la ... complete.
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-giflib-5.0.4-11000002.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-giflib-5.0.4-11000002.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-giflib-5.0.4-11000002.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-giflib-5.0.4-11000002.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.3U42S4

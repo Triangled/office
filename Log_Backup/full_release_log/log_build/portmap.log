@@ -1,0 +1,279 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+portmap : 5beta
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-portmap-5beta-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-portmapwarning: group rpmuser does not exist - using root
+                                            (  1%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+#                                           ( 24%)##                                          ( 24%)###                                         ( 24%)####                                        ( 24%)#####                                       ( 24%)######                                      ( 24%)#######                                     ( 24%)########                                    ( 24%)#########                                   ( 24%)##########                                  ( 24%)warning: group rpmuser does not exist - using root
+###########                                 ( 28%)warning: group rpmuser does not exist - using root
+############                                ( 83%)#############                               ( 83%)##############                              ( 83%)###############                             ( 83%)################                            ( 83%)#################                           ( 83%)##################                          ( 83%)###################                         ( 83%)####################                        ( 83%)#####################                       ( 83%)######################                      ( 83%)#######################                     ( 83%)########################                    ( 83%)#########################                   ( 83%)##########################                  ( 83%)###########################                 ( 83%)############################                ( 83%)#############################               ( 83%)##############################              ( 83%)###############################             ( 83%)################################            ( 83%)#################################           ( 83%)##################################          ( 83%)###################################         ( 83%)warning: group rpmuser does not exist - using root
+####################################        ( 91%)#####################################       ( 91%)######################################      ( 91%)#######################################     ( 91%)warning: group rpmuser does not exist - using root
+########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-portmap.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.gdtTiO
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf portmap_5beta
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/portmap_5beta.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd portmap_5beta
++ echo 'Patch (portmap_5-1.diff.gz):'
+Patch (portmap_5-1.diff.gz):
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/portmap_5-1.diff.gz
++ /usr/bin/patch -s -p1
++ echo 'Patch #10 (portmap_5beta-makefile.patch):'
+Patch #10 (portmap_5beta-makefile.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/portmap_5beta-makefile.patch
++ echo 'Patch #11 (portmap_copyright.patch):'
+Patch #11 (portmap_copyright.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/portmap_copyright.patch
++ echo 'Patch #12 (portmap-initd.diff):'
+Patch #12 (portmap-initd.diff):
++ /bin/cat /home/rpmuser/rpm/SOURCES/portmap-initd.diff
++ /usr/bin/patch -s -p1
++ echo 'Patch #100 (portmap-errno.diff):'
+Patch #100 (portmap-errno.diff):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/portmap-errno.diff
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.dP3vmm
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd portmap_5beta
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make AUX=
++ tee build.log
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2    -c -o portmap.o portmap.c
+portmap.c: In function 'callit':
+portmap.c:682:3: warning: passing argument 4 of 'client->cl_ops->cl_call' from incompatible pointer type [enabled by default]
+portmap.c:682:3: note: expected 'caddr_t' but argument is of type 'struct rmtcallargs *'
+portmap.c:682:3: warning: passing argument 6 of 'client->cl_ops->cl_call' from incompatible pointer type [enabled by default]
+portmap.c:682:3: note: expected 'caddr_t' but argument is of type 'struct rmtcallargs *'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2    -c -o pmap_check.o pmap_check.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2    -c -o from_local.o from_local.c
+from_local.c: In function 'grow_addrs':
+from_local.c:81:36: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+from_local.c:87:6: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
+from_local.c:89:6: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2  -o portmap portmap.o pmap_check.o from_local.o  -lwrap -lnsl
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2  -o pmap_dump pmap_dump.c -lnsl
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DHOSTS_ACCESS -DCHECK_PORT  -DFACILITY=LOG_DAEMON  -DIGNORE_SIGCHLD	    -O2  -o pmap_set pmap_set.c -lnsl
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Rjy5UV
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd portmap_5beta
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
++ make AUX= BASEDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
++ tee -a build.log
+install -m 0755 portmap /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 pmap_dump /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0755 pmap_set /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 0644 portmap.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
+install -m 0644 pmap_dump.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
+install -m 0644 pmap_set.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-portmap-5beta-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-portmap-5beta-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-portmap-5beta-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.BgeVSE
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd portmap_5beta
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-portmap-5beta-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 15:33:06 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/portmap_5beta
+]0;rpmuser@Triangle: ~/rpm/BUILD/portmap_5betarpmuser@Triangle:~/rpm/BUILD/portmap_5beta$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/portmap/test/portmap-test.patch
+patching file Makefile
+patching file tests/portmap-test-main.sh
+patching file tests/portmap-test-PTG1.sh
+patching file tests/Test-Support-FNS
+]0;rpmuser@Triangle: ~/rpm/BUILD/portmap_5betarpmuser@Triangle:~/rpm/BUILD/portmap_5beta$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/portmap_5beta to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~/rpm/BUILD/portmap_5betarpmuser@Triangle:~/rpm/BUILD/portmap_5beta$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# //sbin/portmap &
+[1] 23431
+-bash-3.2# //usr/sbin/rpc.nfsd &
+[2] 23433
+[1]   Done                    //sbin/portmap
+-bash-3.2# rpc.nfsd: Unable to access /proc/fs/nfsd errno 2 (No such file or directory).
+Please try, as root, 'mount -t nfsd nfsd /proc/fs/nfsd' and then restart rpc.nfsd to correct the problem
+//usr/sbin/rpc.statd &
+[3] 23438
+[2]   Exit 1                  //usr/sbin/rpc.nfsd
+-bash-3.2# //usr/sbin/rpc.mountd &
+[4] 23442
+[3]   Done                    //usr/sbin/rpc.statd
+-bash-3.2# date `cat /tmp/date.log`
+Fri Feb 14 15:36:00 UTC 2014
+[4]+  Done                    //usr/sbin/rpc.mountd
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/portmap_5beta
+-bash-3.2# make check 2>&1 | tee /tmp/portmap.log ; echo 'COMMAND''DONE'
+cd tests; sh portmap-test-main.sh; cd ../ ;
+#--------------------------------------------------#
+#         Executing Portmap Test Suite             #
+#--------------------------------------------------#
+
+=================================================================
+                 PORTMAP Test Cases                        
+         Board Architecture : armv7l                     
+         Kernel             : Linux 10.0.6.39 3.4.60_nl-kzm-a9-00073-ge5c404a #1 SMP Thu Feb 13 13:07:04 IST 2014 armv7l GNU/Linux                      
+         Userland           : Sony CE Linux 11.0.0.0 armv7a                    
+         Date               : Fri Feb 14 15:36:00 UTC 2014                        
+=================================================================
+Executing the test script portmap-test-PTG1
+The deamon is not presently running
+rpc.nfsd: Unable to access /proc/fs/nfsd errno 2 (No such file or directory).
+Please try, as root, 'mount -t nfsd nfsd /proc/fs/nfsd' and then restart rpc.nfsd to correct the problem
+Test1 in portmap-test-PTG1 FAILED - Checking the valid functionality of the portmap package using nfsd daemon
+Actual Result   = 1
+Expected Result = 0
+The deamon is not presently running
+Test2 in portmap-test-PTG1 FAILED - Checking the valid functionality of the portmap package using statd daemon
+Actual Result   = 1
+Expected Result = 0
+Test3 in portmap-test-PTG1 FAILED - Checking the valid functionality of the portmap package using mountd daemon
+Actual Result   = 1
+Expected Result = 0
+
+#---------------------------------------------#
+#         Test Execution Completed            #
+#---------------------------------------------#
+#---------------TEST RESULT-------------#
+Total Number Of Tests Executed : 3
+ Out Of 3, 3 Tests Failed 
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/portmap.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done

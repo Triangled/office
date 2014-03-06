@@ -1,0 +1,468 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.w2osnR
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.IPdEw6
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gawk... (cached) mawk
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for style of include used by make... GNU
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a and cc understand -c and -o together... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-sony-linux-gnueabi-gcc -tarmv7a... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-sony-linux-gnueabi-nm
+checking the name lister (arm-sony-linux-gnueabi-nm) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... no
+checking how to convert x86_64-pc-linux-gnu file names to arm-sony-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-sony-linux-gnueabi-ld option to reload object files... -r
+checking for arm-sony-linux-gnueabi-objdump... arm-sony-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-sony-linux-gnueabi-dlltool... dlltool
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-sony-linux-gnueabi-ar... arm-sony-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-sony-linux-gnueabi-strip... (cached) true
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking command to parse arm-sony-linux-gnueabi-nm output from arm-sony-linux-gnueabi-gcc -tarmv7a object... ok
+checking for sysroot... no
+checking for arm-sony-linux-gnueabi-mt... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -fno-rtti -fno-exceptions... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to produce PIC... -fPIC -DPIC
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a PIC flag -fPIC -DPIC works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a static flag -static works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -c -o file.o... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a supports -c -o file.o... (cached) yes
+checking whether the arm-sony-linux-gnueabi-gcc -tarmv7a linker (arm-sony-linux-gnueabi-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether byte ordering is bigendian... no
+checking for struct sockaddr_in.sin_len... no
+checking for curl... true
+checking for pthread_create in -lpthread... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/msg.h usability... yes
+checking sys/msg.h presence... yes
+checking for sys/msg.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking netinet/tcp.h usability... yes
+checking netinet/tcp.h presence... yes
+checking for netinet/tcp.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking winsock2.h usability... no
+checking winsock2.h presence... no
+checking for winsock2.h... no
+checking ws2tcpip.h usability... no
+checking ws2tcpip.h presence... no
+checking for ws2tcpip.h... no
+checking search.h usability... yes
+checking search.h presence... yes
+checking for search.h... yes
+checking plibc.h usability... no
+checking plibc.h presence... no
+checking for plibc.h... no
+checking for memmem... yes
+checking for accept4... yes
+checking for library containing clock_gettime... -lrt
+checking for IPv6... yes
+checking whether TCP_CORK is declared... yes
+checking whether TCP_NOPUSH is declared... no
+checking whether to use libcurl for testing... yes
+checking for gawk... (cached) mawk
+checking for curl-config... (cached) /usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/curl-config
+checking for the version of libcurl... 7.29.0
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking whether to generate error messages... yes
+checking whether to enable postprocessor... 
+checking for zzuf... 0
+checking for socat... 0
+checking for libgcrypt-config... (cached) /usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/libgcrypt-config
+checking for LIBGCRYPT - version >= 1.2.2... no
+checking for gnutls... --with-gnutls not specified
+checking gnutls/gnutls.h usability... no
+checking gnutls/gnutls.h presence... no
+checking for gnutls/gnutls.h... no
+checking whether to support HTTPS... no (disabled)
+checking whether to support HTTP basic authentication... yes
+checking whether to support HTTP digest authentication... yes
+checking whether -export-symbols-regex works... yes
+checking whether to compile with support for code coverage analysis... no
+configure: creating ./config.status
+config.status: creating libmicrohttpd.pc
+config.status: creating Makefile
+config.status: creating contrib/Makefile
+config.status: creating doc/Makefile
+config.status: creating m4/Makefile
+config.status: creating src/Makefile
+config.status: creating src/include/Makefile
+config.status: creating src/include/plibc/Makefile
+config.status: creating src/daemon/Makefile
+config.status: creating src/examples/Makefile
+config.status: creating src/testcurl/Makefile
+config.status: creating src/testcurl/https/Makefile
+config.status: creating src/testzzuf/Makefile
+config.status: creating MHD_config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: Configuration Summary:
+  Operating System:  linux-gnueabi
+  libgcrypt:         no, HTTPS will not be built
+  libcurl (testing): yes
+  Target directory:  /usr
+  Messages:          yes
+  Basic auth.:       yes
+  Digest auth.:      yes
+  Postproc:          yes
+  HTTPS support:     no (disabled)
+
+configure:
+  License         :  LGPL or eCos
+
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+Making all in contrib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+Making all in src
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+Making all in include
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+Making all in plibc
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+Making all in .
+make[5]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+Making all in .
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+Making all in daemon
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT connection.lo -MD -MP -MF .deps/connection.Tpo -c -o connection.lo ../../../src/daemon/connection.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT connection.lo -MD -MP -MF .deps/connection.Tpo -c ../../../src/daemon/connection.c  -fPIC -DPIC -o .libs/connection.o
+mv -f .deps/connection.Tpo .deps/connection.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT reason_phrase.lo -MD -MP -MF .deps/reason_phrase.Tpo -c -o reason_phrase.lo ../../../src/daemon/reason_phrase.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT reason_phrase.lo -MD -MP -MF .deps/reason_phrase.Tpo -c ../../../src/daemon/reason_phrase.c  -fPIC -DPIC -o .libs/reason_phrase.o
+mv -f .deps/reason_phrase.Tpo .deps/reason_phrase.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT daemon.lo -MD -MP -MF .deps/daemon.Tpo -c -o daemon.lo ../../../src/daemon/daemon.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT daemon.lo -MD -MP -MF .deps/daemon.Tpo -c ../../../src/daemon/daemon.c  -fPIC -DPIC -o .libs/daemon.o
+mv -f .deps/daemon.Tpo .deps/daemon.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT internal.lo -MD -MP -MF .deps/internal.Tpo -c -o internal.lo ../../../src/daemon/internal.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT internal.lo -MD -MP -MF .deps/internal.Tpo -c ../../../src/daemon/internal.c  -fPIC -DPIC -o .libs/internal.o
+mv -f .deps/internal.Tpo .deps/internal.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT memorypool.lo -MD -MP -MF .deps/memorypool.Tpo -c -o memorypool.lo ../../../src/daemon/memorypool.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT memorypool.lo -MD -MP -MF .deps/memorypool.Tpo -c ../../../src/daemon/memorypool.c  -fPIC -DPIC -o .libs/memorypool.o
+mv -f .deps/memorypool.Tpo .deps/memorypool.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT response.lo -MD -MP -MF .deps/response.Tpo -c -o response.lo ../../../src/daemon/response.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT response.lo -MD -MP -MF .deps/response.Tpo -c ../../../src/daemon/response.c  -fPIC -DPIC -o .libs/response.o
+mv -f .deps/response.Tpo .deps/response.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT postprocessor.lo -MD -MP -MF .deps/postprocessor.Tpo -c -o postprocessor.lo ../../../src/daemon/postprocessor.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT postprocessor.lo -MD -MP -MF .deps/postprocessor.Tpo -c ../../../src/daemon/postprocessor.c  -fPIC -DPIC -o .libs/postprocessor.o
+mv -f .deps/postprocessor.Tpo .deps/postprocessor.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT digestauth.lo -MD -MP -MF .deps/digestauth.Tpo -c -o digestauth.lo ../../../src/daemon/digestauth.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT digestauth.lo -MD -MP -MF .deps/digestauth.Tpo -c ../../../src/daemon/digestauth.c  -fPIC -DPIC -o .libs/digestauth.o
+mv -f .deps/digestauth.Tpo .deps/digestauth.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c -o md5.lo ../../../src/daemon/md5.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c ../../../src/daemon/md5.c  -fPIC -DPIC -o .libs/md5.o
+mv -f .deps/md5.Tpo .deps/md5.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT basicauth.lo -MD -MP -MF .deps/basicauth.Tpo -c -o basicauth.lo ../../../src/daemon/basicauth.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT basicauth.lo -MD -MP -MF .deps/basicauth.Tpo -c ../../../src/daemon/basicauth.c  -fPIC -DPIC -o .libs/basicauth.o
+mv -f .deps/basicauth.Tpo .deps/basicauth.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../..  -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon    -fno-strict-aliasing -O2 -MT base64.lo -MD -MP -MF .deps/base64.Tpo -c -o base64.lo ../../../src/daemon/base64.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/daemon -I../.. -I../../../src/include/plibc -I../../../src/include -I../../../src/daemon -fno-strict-aliasing -O2 -MT base64.lo -MD -MP -MF .deps/base64.Tpo -c ../../../src/daemon/base64.c  -fPIC -DPIC -o .libs/base64.o
+mv -f .deps/base64.Tpo .deps/base64.Plo
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2 -export-dynamic -no-undefined -version-info 26:2:16  -o libmicrohttpd.la -rpath /usr/lib connection.lo reason_phrase.lo daemon.lo internal.lo memorypool.lo response.lo  postprocessor.lo digestauth.lo md5.lo basicauth.lo base64.lo   -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/connection.o .libs/reason_phrase.o .libs/daemon.o .libs/internal.o .libs/memorypool.o .libs/response.o .libs/postprocessor.o .libs/digestauth.o .libs/md5.o .libs/basicauth.o .libs/base64.o   -lrt -lpthread  -O2   -Wl,-soname -Wl,libmicrohttpd.so.10 -o .libs/libmicrohttpd.so.10.16.2
+libtool: link: (cd ".libs" && rm -f "libmicrohttpd.so.10" && ln -s "libmicrohttpd.so.10.16.2" "libmicrohttpd.so.10")
+libtool: link: (cd ".libs" && rm -f "libmicrohttpd.so" && ln -s "libmicrohttpd.so.10.16.2" "libmicrohttpd.so")
+libtool: link: ( cd ".libs" && rm -f "libmicrohttpd.la" && ln -s "../libmicrohttpd.la" "libmicrohttpd.la" )
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+Making all in examples
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+Making all in .
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT minimal_example.o -MD -MP -MF .deps/minimal_example.Tpo -c -o minimal_example.o ../../../src/examples/minimal_example.c
+mv -f .deps/minimal_example.Tpo .deps/minimal_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o minimal_example minimal_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/minimal_example minimal_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT dual_stack_example.o -MD -MP -MF .deps/dual_stack_example.Tpo -c -o dual_stack_example.o ../../../src/examples/dual_stack_example.c
+mv -f .deps/dual_stack_example.Tpo .deps/dual_stack_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o dual_stack_example dual_stack_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/dual_stack_example dual_stack_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT minimal_example_comet.o -MD -MP -MF .deps/minimal_example_comet.Tpo -c -o minimal_example_comet.o ../../../src/examples/minimal_example_comet.c
+mv -f .deps/minimal_example_comet.Tpo .deps/minimal_example_comet.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o minimal_example_comet minimal_example_comet.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/minimal_example_comet minimal_example_comet.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT querystring_example.o -MD -MP -MF .deps/querystring_example.Tpo -c -o querystring_example.o ../../../src/examples/querystring_example.c
+mv -f .deps/querystring_example.Tpo .deps/querystring_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o querystring_example querystring_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/querystring_example querystring_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT fileserver_example.o -MD -MP -MF .deps/fileserver_example.Tpo -c -o fileserver_example.o ../../../src/examples/fileserver_example.c
+mv -f .deps/fileserver_example.Tpo .deps/fileserver_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o fileserver_example fileserver_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/fileserver_example fileserver_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT fileserver_example_dirs.o -MD -MP -MF .deps/fileserver_example_dirs.Tpo -c -o fileserver_example_dirs.o ../../../src/examples/fileserver_example_dirs.c
+mv -f .deps/fileserver_example_dirs.Tpo .deps/fileserver_example_dirs.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o fileserver_example_dirs fileserver_example_dirs.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/fileserver_example_dirs fileserver_example_dirs.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT fileserver_example_external_select.o -MD -MP -MF .deps/fileserver_example_external_select.Tpo -c -o fileserver_example_external_select.o ../../../src/examples/fileserver_example_external_select.c
+mv -f .deps/fileserver_example_external_select.Tpo .deps/fileserver_example_external_select.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o fileserver_example_external_select fileserver_example_external_select.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/fileserver_example_external_select fileserver_example_external_select.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT refuse_post_example.o -MD -MP -MF .deps/refuse_post_example.Tpo -c -o refuse_post_example.o ../../../src/examples/refuse_post_example.c
+mv -f .deps/refuse_post_example.Tpo .deps/refuse_post_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o refuse_post_example refuse_post_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/refuse_post_example refuse_post_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT post_example.o -MD -MP -MF .deps/post_example.Tpo -c -o post_example.o ../../../src/examples/post_example.c
+mv -f .deps/post_example.Tpo .deps/post_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o post_example post_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/post_example post_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT digest_auth_example.o -MD -MP -MF .deps/digest_auth_example.Tpo -c -o digest_auth_example.o ../../../src/examples/digest_auth_example.c
+mv -f .deps/digest_auth_example.Tpo .deps/digest_auth_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o digest_auth_example digest_auth_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/digest_auth_example digest_auth_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/examples -I../..  -I../../../src/include/plibc -I../../../src/include    -fno-strict-aliasing -O2 -MT authorization_example.o -MD -MP -MF .deps/authorization_example.Tpo -c -o authorization_example.o ../../../src/examples/authorization_example.c
+mv -f .deps/authorization_example.Tpo .deps/authorization_example.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o authorization_example authorization_example.o ../../src/daemon/libmicrohttpd.la  -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/authorization_example authorization_example.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+Making all in testcurl
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+Making all in .
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/testcurl -I../..  -I../../../src/include/plibc -I../../.. -I../../../src/daemon -I../../../src/include -I/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include   -fno-strict-aliasing -O2 -MT curl_version_check.o -MD -MP -MF .deps/curl_version_check.Tpo -c -o curl_version_check.o ../../../src/testcurl/curl_version_check.c
+mv -f .deps/curl_version_check.Tpo .deps/curl_version_check.Po
+rm -f libcurl_version_check.a
+arm-sony-linux-gnueabi-ar cru libcurl_version_check.a curl_version_check.o 
+arm-sony-linux-gnueabi-ranlib libcurl_version_check.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../../src/testcurl -I../..  -I../../../src/include/plibc -I../../.. -I../../../src/daemon -I../../../src/include -I/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include   -fno-strict-aliasing -O2 -MT daemon_options_test.o -MD -MP -MF .deps/daemon_options_test.Tpo -c -o daemon_options_test.o ../../../src/testcurl/daemon_options_test.c
+mv -f .deps/daemon_options_test.Tpo .deps/daemon_options_test.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -fno-strict-aliasing -O2   -o daemon_options_test daemon_options_test.o ../../src/daemon/libmicrohttpd.la -lrt -lpthread 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -fno-strict-aliasing -O2 -o .libs/daemon_options_test daemon_options_test.o  ../../src/daemon/.libs/libmicrohttpd.so -lrt -lpthread
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+Making all in .
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+Making all in doc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+Making all in m4
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+Making all in .
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ocM8tQ
+Making install in contrib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/contrib'
+Making install in src
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+Making install in include
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+Making install in plibc
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+Making install in .
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[5]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include/plibc'
+Making install in .
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[4]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include'
+ /usr/bin/install -c -m 644 ../../../src/include/microhttpd.h '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include'
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/include'
+Making install in daemon
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib'
+ /bin/sh ../../libtool   --mode=install /usr/bin/install -c   libmicrohttpd.la '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libmicrohttpd.so.10.16.2 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmicrohttpd.so.10.16.2
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libmicrohttpd.so.10.16.2 libmicrohttpd.so.10 || { rm -f libmicrohttpd.so.10 && ln -s libmicrohttpd.so.10.16.2 libmicrohttpd.so.10; }; })
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libmicrohttpd.so.10.16.2 libmicrohttpd.so || { rm -f libmicrohttpd.so && ln -s libmicrohttpd.so.10.16.2 libmicrohttpd.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmicrohttpd.lai /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmicrohttpd.la
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/daemon'
+Making install in examples
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+Making install in .
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/examples'
+Making install in testcurl
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+Making install in .
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+make[4]: Nothing to be done for `install-exec-am'.
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src/testcurl'
+Making install in .
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/src'
+Making install in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info'
+ /usr/bin/install -c -m 644 ../../doc/libmicrohttpd.info ../../doc/libmicrohttpd-tutorial.info '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/libmicrohttpd.info'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/libmicrohttpd-tutorial.info'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3'
+ /usr/bin/install -c -m 644 ../../doc/libmicrohttpd.3 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/doc'
+Making install in m4
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir/m4'
+Making install in .
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+make[2]: Nothing to be done for `install-exec-am'.
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libmicrohttpd.pc '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/libmicrohttpd-0.9.24/objdir'
+Preparing libtool libraries for cross-compilation: /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmicrohttpd.la ... complete.
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-libmicrohttpd-0.9.24-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libmicrohttpd-0.9.24-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-libmicrohttpd-0.9.24-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-libmicrohttpd-0.9.24-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.urdzO6

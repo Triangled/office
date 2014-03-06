@@ -1,0 +1,2708 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+bash : 3.2.48
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-bash-3.2.48-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-bash   warning: group rpmuser does not exist - using root
+                                            (  3%)#                                           (  5%)##                                          (  8%)###                                         ( 10%)####                                        ( 10%)#####                                       ( 13%)######                                      ( 15%)#######                                     ( 18%)########                                    ( 21%)#########                                   ( 23%)##########                                  ( 26%)###########                                 ( 28%)############                                ( 31%)#############                               ( 31%)##############                              ( 33%)###############                             ( 36%)################                            ( 39%)#################                           ( 41%)##################                          ( 44%)###################                         ( 46%)####################                        ( 49%)#####################                       ( 49%)######################                      ( 51%)#######################                     ( 54%)########################                    ( 57%)#########################                   ( 59%)##########################                  ( 62%)###########################                 ( 64%)############################                ( 67%)#############################               ( 70%)##############################              ( 70%)###############################             ( 72%)################################            ( 75%)#################################           ( 77%)##################################          ( 80%)###################################         ( 82%)####################################        ( 85%)#####################################       ( 88%)######################################      ( 88%)#######################################     ( 90%)########################################    ( 93%)#########################################   ( 95%)##########################################  ( 98%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.J0URED
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf bash-3.2.48
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/bash-3.2.48.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd bash-3.2.48
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.epSGcx
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export ac_cv_func_getpgrp_void=yes
++ ac_cv_func_getpgrp_void=yes
++ export ac_cv_func_setvbuf_reversed=no
++ ac_cv_func_setvbuf_reversed=no
++ export ac_cv_sys_restartable_syscalls=yes
++ ac_cv_sys_restartable_syscalls=yes
++ export bash_cv_sys_siglist=yes
++ bash_cv_sys_siglist=yes
++ export bash_cv_under_sys_siglist=yes
++ bash_cv_under_sys_siglist=yes
++ export bash_cv_ulimit_maxfds=yes
++ bash_cv_ulimit_maxfds=yes
++ export bash_cv_func_sigsetjmp=present
++ bash_cv_func_sigsetjmp=present
++ export bash_cv_job_control_missing=present
++ bash_cv_job_control_missing=present
++ export bash_cv_sys_named_pipes=present
++ bash_cv_sys_named_pipes=present
++ export cross_compiling=yes
++ cross_compiling=yes
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for emacs... no
+checking for xemacs... no
+
+Beginning configuration for bash-3.2-release for arm-sony-linux-gnueabi
+
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking for strerror in -lcposix... no
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for _LARGE_FILES value needed for large files... no
+configure: cross-compiling for arm-sony-linux-gnueabi is not supported
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ar... arm-sony-linux-gnueabi-ar
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for bison... bison -y
+checking whether make sets $(MAKE)... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for preprocessor stringizing operator... yes
+checking for working long double with more range or precision than double... no
+checking for function prototypes... yes
+checking whether char is unsigned... yes
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for off_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... no
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether integer division by zero raises SIGFPE... guessing no
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getc_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for __fsetlocking... yes
+checking for iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... bison
+checking version of bison... 2.5, ok
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for inttypes.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking for limits.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for locale.h... (cached) yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for strings.h... (cached) yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking sys/pte.h usability... no
+checking sys/pte.h presence... no
+checking for sys/pte.h... no
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for sys/param.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking for sys/ptem.h... no
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether getpgrp requires zero arguments... (cached) yes
+checking whether setvbuf arguments are reversed... (cached) no
+checking for vprintf... yes
+checking for _doprnt... no
+checking for working strcoll... no
+checking return type of signal handlers... void
+checking for __setostype... no
+checking for wait3... yes
+checking for isinf... yes
+checking for isnan... yes
+checking for mkfifo... yes
+checking for dup2... yes
+checking for eaccess... yes
+checking for fcntl... yes
+checking for getdtablesize... yes
+checking for getgroups... yes
+checking for gethostname... yes
+checking for getpagesize... (cached) yes
+checking for getpeername... yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for kill... yes
+checking for killpg... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for sbrk... yes
+checking for select... yes
+checking for setdtablesize... no
+checking for tcgetpgrp... yes
+checking for uname... yes
+checking for ulimit... yes
+checking for waitpid... yes
+checking for rename... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for confstr... yes
+checking for fnmatch... yes
+checking for getaddrinfo... yes
+checking for gethostbyname... yes
+checking for getservbyname... yes
+checking for getservent... yes
+checking for inet_aton... yes
+checking for memmove... yes
+checking for pathconf... yes
+checking for putenv... (cached) yes
+checking for raise... yes
+checking for regcomp... yes
+checking for regexec... yes
+checking for setenv... (cached) yes
+checking for setlinebuf... yes
+checking for setlocale... (cached) yes
+checking for setvbuf... yes
+checking for siginterrupt... yes
+checking for strchr... yes
+checking for sysconf... yes
+checking for tcgetattr... yes
+checking for times... yes
+checking for ttyname... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for isascii... yes
+checking for isblank... yes
+checking for isgraph... yes
+checking for isprint... yes
+checking for isspace... yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for getcwd... (cached) yes
+checking for memset... yes
+checking for strcasecmp... (cached) yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strnlen... yes
+checking for strpbrk... yes
+checking for strstr... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... (cached) yes
+checking for strtoll... yes
+checking for strtoull... yes
+checking for strtoimax... yes
+checking for strtoumax... yes
+checking whether confstr is declared... yes
+checking whether printf is declared... yes
+checking whether sbrk is declared... yes
+checking whether setregid is declared... yes
+checking whether strcpy is declared... yes
+checking whether strsignal is declared... yes
+checking whether strtold is declared... yes
+checking for broken strtold... no
+checking for declaration of strtoimax... yes
+checking for declaration of strtol... yes
+checking for declaration of strtoll... yes
+checking for declaration of strtoul... yes
+checking for declaration of strtoull... yes
+checking for declaration of strtoumax... yes
+checking for stdlib.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for alarm... yes
+checking for working mktime... no
+checking for argz.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for malloc.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) no
+checking for __argz_count... (cached) yes
+checking for __argz_next... (cached) yes
+checking for __argz_stringify... (cached) yes
+checking for dcgettext... yes
+checking for mempcpy... (cached) yes
+checking for munmap... (cached) yes
+checking for stpcpy... (cached) yes
+checking for strcspn... yes
+checking for strdup... (cached) yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for mbsrtowcs... yes
+checking for mbrlen... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcsdup... yes
+checking for wcwidth... yes
+checking for wctype... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for iswctype... yes
+checking for nl_langinfo and CODESET... yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for dlopen in -ldl... yes
+checking for dlopen... yes
+checking for dlclose... yes
+checking for dlsym... yes
+checking whether sys_siglist is declared... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for off_t... (cached) yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for ssize_t... yes
+checking for time_t... yes
+checking for long long... long long
+checking for unsigned long long... unsigned long long
+checking return type of signal handlers... (cached) void
+checking for char... yes
+checking size of char... 1
+checking for short... yes
+checking size of short... 2
+checking for int... yes
+checking size of int... 4
+checking for long... yes
+checking size of long... 4
+checking for char *... yes
+checking size of char *... 4
+checking for double... yes
+checking size of double... 8
+checking for long long... yes
+checking size of long long... 8
+checking for u_int... yes
+checking for u_long... yes
+checking for bits16_t... no
+checking for u_bits16_t... no
+checking for bits32_t... no
+checking for u_bits32_t... no
+checking for bits64_t... no
+checking for ptrdiff_t... yes
+checking whether stat file-mode macros are broken... no
+checking whether #! works in shell scripts... yes
+checking whether the ctype macros accept non-ascii characters... configure: WARNING: cannot check ctype macros if cross compiling -- defaulting to no
+no
+checking if dup2 fails to clear the close-on-exec flag... configure: WARNING: cannot check dup2 if cross compiling -- defaulting to no
+no
+checking whether pgrps need synchronization... configure: WARNING: cannot check pgrp synchronization if cross compiling -- defaulting to no
+no
+checking for type of signal functions... posix
+checking for sys_errlist and sys_nerr... yes
+checking for sys_siglist in system C library... (cached) yes
+checking for _sys_siglist in signal.h or unistd.h... yes
+checking for _sys_siglist in system C library... (cached) yes
+checking whether signal handlers are of type void... yes
+checking for clock_t... yes
+checking for sigset_t... yes
+checking for quad_t... yes
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for socklen_t... yes
+checking for size and type of struct rlimit fields... rlim_t
+checking for struct termios.c_line... yes
+checking for struct termio.c_line... yes
+checking for struct dirent.d_ino... yes
+checking for struct dirent.d_fileno... yes
+checking for struct dirent.d_namlen... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct timeval in sys/time.h and time.h... yes
+checking for struct stat.st_blocks... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for struct timezone in sys/time.h and time.h... yes
+checking for the existence of strsignal... yes
+checking if opendir() opens non-directories... configure: WARNING: cannot check opendir if cross compiling -- defaulting to no
+no
+checking whether ulimit can substitute for getdtablesize... (cached) yes
+checking to see if getenv can be redefined... configure: WARNING: cannot check getenv redefinition if cross compiling -- defaulting to yes
+yes
+checking if getcwd() will dynamically allocate memory... configure: WARNING: cannot check whether getcwd allocates memory when cross-compiling -- defaulting to no
+no
+checking for presence of POSIX-style sigsetjmp/siglongjmp... (cached) present
+checking whether or not strcoll and strcmp differ... configure: WARNING: cannot check strcoll if cross compiling -- defaulting to no
+no
+checking for standard-conformant putenv declaration... yes
+checking for standard-conformant unsetenv declaration... yes
+checking for printf floating point output in hex notation... configure: WARNING: cannot check printf if cross compiling -- defaulting to no
+no
+checking if signal handlers must be reinstalled when invoked... configure: WARNING: cannot check signal handling if cross compiling -- defaulting to no
+no
+checking for presence of necessary job control definitions... (cached) present
+checking for presence of named pipes... (cached) present
+checking whether termios.h defines TIOCGWINSZ... no
+checking whether sys/ioctl.h defines TIOCGWINSZ... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking whether WCONTINUED flag to waitpid is unavailable or available but broken... configure: WARNING: cannot check WCONTINUED if cross compiling -- defaulting to no
+no
+checking for speed_t in sys/types.h... no
+checking whether getpw functions are declared in pwd.h... yes
+checking for unusable real-time signals due to large values... configure: WARNING: cannot check real-time signals if cross compiling -- defaulting to yes
+yes
+checking for tgetent... no
+checking for tgetent in -ltermcap... no
+checking for tgetent in -ltinfo... no
+checking for tgetent in -lcurses... yes
+checking which library has the termcap functions... using libcurses
+checking whether /dev/fd is available... standard
+checking whether /dev/stdin stdout stderr are available... present
+checking for default mail directory... /var/mail
+checking shared object configuration for loadable builtins... supported
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating builtins/Makefile
+config.status: creating lib/readline/Makefile
+config.status: creating lib/glob/Makefile
+config.status: creating lib/intl/Makefile
+config.status: creating lib/malloc/Makefile
+config.status: creating lib/sh/Makefile
+config.status: creating lib/termcap/Makefile
+config.status: creating lib/tilde/Makefile
+config.status: creating doc/Makefile
+config.status: creating support/Makefile
+config.status: creating po/Makefile.in
+config.status: creating examples/loadables/Makefile
+config.status: creating examples/loadables/perl/Makefile
+config.status: creating pathnames.h
+config.status: creating config.h
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
++ ../support/mkversion.sh -b -d 3.2.48 -p 0 -o newversion.h
++ mv newversion.h version.h
++ make CFLAGS_FOR_CROSS=-I/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+bison -y -d ../parse.y
+conflicts: 1 shift/reduce
+touch parser-built
+rm -f mksyntax
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o mksyntax ../mksyntax.c 
+rm -f syntax.c
+./mksyntax -o syntax.c
+/bin/sh ../support/mkversion.sh -b -S .. -s release -d 3.2 -o newversion.h \
+		&& mv newversion.h version.h
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -c -o buildversion.o ../version.c
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o bashversion ../support/bashversion.c buildversion.o 
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 3.2.48(2)-release (arm-sony-linux-gnueabi)
+	  *                                                         *
+	  ***********************************************************
+
+rm -f shell.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../shell.c
+../shell.c: In function 'get_current_user_info':
+../shell.c:1600:27: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f eval.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../eval.c
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f mkbuiltins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -g -DCROSS_COMPILING ../../builtins/mkbuiltins.c
+gcc -rdynamic -O2 -o mkbuiltins mkbuiltins.o -ldl 
+./mkbuiltins -externfile builtext.h -structfile builtins.c \
+	    -noproduction -D ../../builtins   ../../builtins/alias.def ../../builtins/bind.def ../../builtins/break.def ../../builtins/builtin.def ../../builtins/caller.def ../../builtins/cd.def ../../builtins/colon.def ../../builtins/command.def ../../builtins/declare.def ../../builtins/echo.def ../../builtins/enable.def ../../builtins/eval.def ../../builtins/getopts.def ../../builtins/exec.def ../../builtins/exit.def ../../builtins/fc.def ../../builtins/fg_bg.def ../../builtins/hash.def ../../builtins/help.def ../../builtins/history.def ../../builtins/jobs.def ../../builtins/kill.def ../../builtins/let.def ../../builtins/read.def ../../builtins/return.def ../../builtins/set.def ../../builtins/setattr.def ../../builtins/shift.def ../../builtins/source.def ../../builtins/suspend.def ../../builtins/test.def ../../builtins/times.def ../../builtins/trap.def ../../builtins/type.def ../../builtins/ulimit.def ../../builtins/umask.def ../../builtins/wait.def ../../builtins/reserved.def ../../builtins/pushd.def ../../builtins/shopt.def ../../builtins/printf.def ../../builtins/complete.def
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f y.tab.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c y.tab.c
+../parse.y: In function 'report_syntax_error':
+../parse.y:4553:11: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f general.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../general.c
+rm -f make_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../make_cmd.c
+rm -f print_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../print_cmd.c
+rm -f dispose_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../dispose_cmd.c
+rm -f execute_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../execute_cmd.c
+rm -f variables.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../variables.c
+rm -f copy_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../copy_cmd.c
+rm -f error.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../error.c
+../error.c: In function 'command_errstr':
+../error.c:428:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+rm -f expr.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../expr.c
+../expr.c:177:17: warning: conflicting types for built-in function 'exp2' [enabled by default]
+../expr.c: In function 'pushexp':
+../expr.c:241:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'popexp':
+../expr.c:265:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'subexpr':
+../expr.c:379:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'expassign':
+../expr.c:419:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:440:3: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:445:3: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:471:8: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'expcond':
+../expr.c:501:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:513:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:516:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exp2':
+../expr.c:756:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exppower':
+../expr.c:781:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exp0':
+../expr.c:826:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:854:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:897:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'readtok':
+../expr.c:1176:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1178:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'strlong':
+../expr.c:1256:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1260:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1280:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+rm -f flags.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../flags.c
+rm -f jobs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../jobs.c
+rm -f subst.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../subst.c
+rm -f hashcmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../hashcmd.c
+rm -f hashlib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../hashlib.c
+rm -f mailcheck.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../mailcheck.c
+../mailcheck.c: In function 'check_mail':
+../mailcheck.c:386:12: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+../mailcheck.c:411:14: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f mksignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -c ../support/mksignames.c
+rm -f buildsignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -o buildsignames.o -c ../support/signames.c
+rm -f mksignames
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o mksignames mksignames.o buildsignames.o 
+rm -f lsignames.h
+./mksignames lsignames.h
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+rm -f trap.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../trap.c
+../trap.c: In function 'signal_name':
+../trap.c:199:7: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f input.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../input.c
+rm -f unwind_prot.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../unwind_prot.c
+rm -f pathexp.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pathexp.c
+rm -f sig.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../sig.c
+rm -f test.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../test.c
+../test.c: In function 'beyond':
+../test.c:145:3: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'integer_expected_error':
+../test.c:154:3: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'term':
+../test.c:262:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:264:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:279:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'binary_operator':
+../test.c:444:7: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'two_arguments':
+../test.c:688:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:691:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'three_arguments':
+../test.c:731:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'test_command':
+../test.c:806:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:822:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+rm -f version.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../version.c
+rm -f alias.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../alias.c
+rm -f array.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../array.c
+rm -f arrayfunc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../arrayfunc.c
+rm -f braces.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../braces.c
+rm -f bracecomp.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bracecomp.c
+rm -f bashhist.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bashhist.c
+rm -f bashline.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bashline.c
+rm -f list.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../list.c
+rm -f stringlib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../stringlib.c
+rm -f locale.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../locale.c
+../locale.c: In function 'localetrans':
+../locale.c:360:16: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f findcmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../findcmd.c
+rm -f redir.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../redir.c
+../redir.c: In function 'redirection_error':
+../redir.c:99:14: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f pcomplete.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pcomplete.c
+rm -f pcomplib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pcomplib.c
+rm -f syntax.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c syntax.c
+rm -f xmalloc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../xmalloc.c
+rm -f signames.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../support/signames.c
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f builtins.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 builtins.c
+rm -f alias.o
+./mkbuiltins -D ../../builtins ../../builtins/alias.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 alias.c || ( rm -f alias.c ; exit 1 )
+rm -f alias.c
+rm -f bind.o
+./mkbuiltins -D ../../builtins ../../builtins/bind.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 bind.c || ( rm -f bind.c ; exit 1 )
+rm -f bind.c
+rm -f break.o
+./mkbuiltins -D ../../builtins ../../builtins/break.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 break.c || ( rm -f break.c ; exit 1 )
+rm -f break.c
+rm -f builtin.o
+./mkbuiltins -D ../../builtins ../../builtins/builtin.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 builtin.c || ( rm -f builtin.c ; exit 1 )
+rm -f builtin.c
+rm -f caller.o
+./mkbuiltins -D ../../builtins ../../builtins/caller.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 caller.c || ( rm -f caller.c ; exit 1 )
+rm -f caller.c
+rm -f cd.o
+./mkbuiltins -D ../../builtins ../../builtins/cd.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 cd.c || ( rm -f cd.c ; exit 1 )
+rm -f cd.c
+rm -f colon.o
+./mkbuiltins -D ../../builtins ../../builtins/colon.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 colon.c || ( rm -f colon.c ; exit 1 )
+rm -f colon.c
+rm -f command.o
+./mkbuiltins -D ../../builtins ../../builtins/command.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 command.c || ( rm -f command.c ; exit 1 )
+rm -f command.c
+rm -f common.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/common.c
+rm -f declare.o
+./mkbuiltins -D ../../builtins ../../builtins/declare.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 declare.c || ( rm -f declare.c ; exit 1 )
+rm -f declare.c
+rm -f echo.o
+./mkbuiltins -D ../../builtins ../../builtins/echo.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 echo.c || ( rm -f echo.c ; exit 1 )
+rm -f echo.c
+rm -f enable.o
+./mkbuiltins -D ../../builtins ../../builtins/enable.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 enable.c || ( rm -f enable.c ; exit 1 )
+rm -f enable.c
+rm -f eval.o
+./mkbuiltins -D ../../builtins ../../builtins/eval.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 eval.c || ( rm -f eval.c ; exit 1 )
+rm -f eval.c
+rm -f evalfile.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/evalfile.c
+rm -f evalstring.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/evalstring.c
+rm -f exec.o
+./mkbuiltins -D ../../builtins ../../builtins/exec.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 exec.c || ( rm -f exec.c ; exit 1 )
+rm -f exec.c
+rm -f exit.o
+./mkbuiltins -D ../../builtins ../../builtins/exit.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 exit.c || ( rm -f exit.c ; exit 1 )
+rm -f exit.c
+rm -f fc.o
+./mkbuiltins -D ../../builtins ../../builtins/fc.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 fc.c || ( rm -f fc.c ; exit 1 )
+../../builtins/../../builtins/fc.def: In function 'fc_builtin':
+../../builtins/../../builtins/fc.def:328:7: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/fc.def:78:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f fc.c
+rm -f fg_bg.o
+./mkbuiltins -D ../../builtins ../../builtins/fg_bg.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 fg_bg.c || ( rm -f fg_bg.c ; exit 1 )
+rm -f fg_bg.c
+rm -f hash.o
+./mkbuiltins -D ../../builtins ../../builtins/hash.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 hash.c || ( rm -f hash.c ; exit 1 )
+rm -f hash.c
+rm -f help.o
+./mkbuiltins -D ../../builtins ../../builtins/help.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 help.c || ( rm -f help.c ; exit 1 )
+rm -f help.c
+rm -f history.o
+./mkbuiltins -D ../../builtins ../../builtins/history.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 history.c || ( rm -f history.c ; exit 1 )
+../../builtins/../../builtins/history.def: In function 'history_builtin':
+../../builtins/../../builtins/history.def:182:4: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/history.def:73:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f history.c
+rm -f jobs.o
+./mkbuiltins -D ../../builtins ../../builtins/jobs.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 jobs.c || ( rm -f jobs.c ; exit 1 )
+rm -f jobs.c
+rm -f kill.o
+./mkbuiltins -D ../../builtins ../../builtins/kill.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 kill.c || ( rm -f kill.c ; exit 1 )
+../../builtins/../../builtins/kill.def: In function 'kill_error':
+../../builtins/../../builtins/kill.def:250:7: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f kill.c
+rm -f let.o
+./mkbuiltins -D ../../builtins ../../builtins/let.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 let.c || ( rm -f let.c ; exit 1 )
+rm -f let.c
+rm -f pushd.o
+./mkbuiltins -D ../../builtins ../../builtins/pushd.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 pushd.c || ( rm -f pushd.c ; exit 1 )
+rm -f pushd.c
+rm -f read.o
+./mkbuiltins -D ../../builtins ../../builtins/read.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 read.c || ( rm -f read.c ; exit 1 )
+rm -f read.c
+rm -f return.o
+./mkbuiltins -D ../../builtins ../../builtins/return.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 return.c || ( rm -f return.c ; exit 1 )
+rm -f return.c
+rm -f set.o
+./mkbuiltins -D ../../builtins ../../builtins/set.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 set.c || ( rm -f set.c ; exit 1 )
+rm -f set.c
+rm -f setattr.o
+./mkbuiltins -D ../../builtins ../../builtins/setattr.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 setattr.c || ( rm -f setattr.c ; exit 1 )
+rm -f setattr.c
+rm -f shift.o
+./mkbuiltins -D ../../builtins ../../builtins/shift.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 shift.c || ( rm -f shift.c ; exit 1 )
+../../builtins/../../builtins/shift.def: In function 'shift_builtin':
+../../builtins/../../builtins/shift.def:66:7: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/shift.def:37:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+../../builtins/../../builtins/shift.def:72:2: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/shift.def:37:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f shift.c
+rm -f source.o
+./mkbuiltins -D ../../builtins ../../builtins/source.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 source.c || ( rm -f source.c ; exit 1 )
+rm -f source.c
+rm -f suspend.o
+./mkbuiltins -D ../../builtins ../../builtins/suspend.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 suspend.c || ( rm -f suspend.c ; exit 1 )
+../../builtins/../../builtins/suspend.def: In function 'suspend_builtin':
+../../builtins/../../builtins/suspend.def:95:7: warning: passing argument 1 of 'sh_nojobs' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/suspend.def:48:0:
+../../builtins/common.h:77:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f suspend.c
+rm -f test.o
+./mkbuiltins -D ../../builtins ../../builtins/test.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 test.c || ( rm -f test.c ; exit 1 )
+rm -f test.c
+rm -f times.o
+./mkbuiltins -D ../../builtins ../../builtins/times.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 times.c || ( rm -f times.c ; exit 1 )
+rm -f times.c
+rm -f trap.o
+./mkbuiltins -D ../../builtins ../../builtins/trap.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 trap.c || ( rm -f trap.c ; exit 1 )
+rm -f trap.c
+rm -f type.o
+./mkbuiltins -D ../../builtins ../../builtins/type.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 type.c || ( rm -f type.c ; exit 1 )
+rm -f type.c
+gcc  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -g -DCROSS_COMPILING -o psize.aux ../../builtins/psize.c
+/bin/sh ../../builtins/psize.sh > pipesize.h
+rm -f ulimit.o
+./mkbuiltins -D ../../builtins ../../builtins/ulimit.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ulimit.c || ( rm -f ulimit.c ; exit 1 )
+rm -f ulimit.c
+rm -f umask.o
+./mkbuiltins -D ../../builtins ../../builtins/umask.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 umask.c || ( rm -f umask.c ; exit 1 )
+../../builtins/../../builtins/umask.def: In function 'umask_builtin':
+../../builtins/../../builtins/umask.def:112:8: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/umask.def:55:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f umask.c
+rm -f wait.o
+./mkbuiltins -D ../../builtins ../../builtins/wait.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 wait.c || ( rm -f wait.c ; exit 1 )
+rm -f wait.c
+rm -f getopts.o
+./mkbuiltins -D ../../builtins ../../builtins/getopts.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 getopts.c || ( rm -f getopts.c ; exit 1 )
+rm -f getopts.c
+rm -f shopt.o
+./mkbuiltins -D ../../builtins ../../builtins/shopt.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 shopt.c || ( rm -f shopt.c ; exit 1 )
+rm -f shopt.c
+rm -f printf.o
+./mkbuiltins -D ../../builtins ../../builtins/printf.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 printf.c || ( rm -f printf.c ; exit 1 )
+rm -f printf.c
+rm -f getopt.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/getopt.c
+rm -f bashgetopt.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/bashgetopt.c
+rm -f complete.o
+./mkbuiltins -D ../../builtins ../../builtins/complete.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 complete.c || ( rm -f complete.c ; exit 1 )
+rm -f complete.c
+rm -f libbuiltins.a
+arm-sony-linux-gnueabi-ar cr libbuiltins.a builtins.o alias.o bind.o break.o builtin.o caller.o cd.o colon.o command.o common.o declare.o echo.o enable.o eval.o evalfile.o evalstring.o exec.o exit.o fc.o fg_bg.o hash.o help.o history.o jobs.o kill.o let.o pushd.o read.o return.o set.o setattr.o shift.o source.o suspend.o test.o times.o trap.o type.o ulimit.o umask.o wait.o getopts.o shopt.o printf.o getopt.o bashgetopt.o complete.o
+arm-sony-linux-gnueabi-ranlib libbuiltins.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+making lib/sh/libsh.a in ./lib/sh
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/sh'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/clktck.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/clock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/getenv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/oslib.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/setlinebuf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strnlen.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/itos.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shtty.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shmatch.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/eaccess.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/netconn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/netopen.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/timeval.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/makepath.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/pathcanon.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/pathphys.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/tmpfile.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/stringlist.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/stringvec.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/spell.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shquote.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strindex.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/snprintf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/mailstat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtulong.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtullong.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtumax.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/xstrchr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zcatfd.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/winsize.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/wcsdup.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/mktime.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/getcwd.c
+rm -f libsh.a
+arm-sony-linux-gnueabi-ar cr libsh.a clktck.o clock.o getenv.o oslib.o setlinebuf.o strnlen.o itos.o zread.o zwrite.o shtty.o shmatch.o eaccess.o netconn.o netopen.o timeval.o makepath.o pathcanon.o pathphys.o tmpfile.o stringlist.o stringvec.o spell.o shquote.o strtrans.o strindex.o snprintf.o mailstat.o fmtulong.o fmtullong.o fmtumax.o xstrchr.o zcatfd.o winsize.o wcsdup.o mktime.o getcwd.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libsh.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/sh'
+making lib/readline/libreadline.a in ./lib/readline
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+rm -f readline.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/readline.c
+rm -f vi_mode.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/vi_mode.c
+rm -f funmap.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/funmap.c
+rm -f keymaps.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/keymaps.c
+rm -f parens.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/parens.c
+rm -f search.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/search.c
+rm -f rltty.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/rltty.c
+rm -f complete.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/complete.c
+rm -f bind.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/bind.c
+rm -f isearch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/isearch.c
+rm -f display.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/display.c
+rm -f signals.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/signals.c
+rm -f util.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/util.c
+rm -f kill.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/kill.c
+rm -f undo.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/undo.c
+rm -f macro.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/macro.c
+rm -f input.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/input.c
+rm -f callback.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/callback.c
+rm -f terminal.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/terminal.c
+rm -f text.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/text.c
+rm -f nls.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/nls.c
+rm -f misc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/misc.c
+rm -f history.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/history.c
+rm -f histexpand.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histexpand.c
+rm -f histfile.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histfile.c
+rm -f histsearch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histsearch.c
+rm -f shell.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/shell.c
+rm -f savestring.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/savestring.c
+rm -f mbutil.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/mbutil.c
+rm -f tilde.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 -DREADLINE_LIBRARY -c ../../../lib/readline/tilde.c
+rm -f xmalloc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/xmalloc.c
+rm -f compat.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/compat.c
+rm -f libreadline.a
+arm-sony-linux-gnueabi-ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o tilde.o xmalloc.o compat.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libreadline.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+making lib/readline/libhistory.a in ./lib/readline
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+rm -f libhistory.a
+arm-sony-linux-gnueabi-ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o xmalloc.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libhistory.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+making lib/glob/libglob.a in ./lib/glob
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/glob'
+rm -f glob.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/glob.c
+rm -f strmatch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/strmatch.c
+rm -f smatch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/smatch.c
+rm -f xmbsrtowcs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/xmbsrtowcs.c
+rm -f -f libglob.a
+arm-sony-linux-gnueabi-ar cr libglob.a glob.o strmatch.o smatch.o xmbsrtowcs.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libglob.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/glob'
+making lib/tilde/libtilde.a in ./lib/tilde
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/tilde'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/tilde/tilde.c
+rm -f libtilde.a
+arm-sony-linux-gnueabi-ar cr libtilde.a tilde.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libtilde.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/tilde'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/malloc'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/malloc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/trace.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/stats.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/table.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/watch.c
+rm -f libmalloc.a
+arm-sony-linux-gnueabi-ar cr libmalloc.a malloc.o  trace.o stats.o table.o watch.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libmalloc.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/malloc'
+rm -f bash
+arm-sony-linux-gnueabi-gcc -tarmv7a -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde -L./lib/malloc -L./lib/sh  -rdynamic  -O2 -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o signames.o -lbuiltins -lsh -lreadline -lhistory -lcurses -lglob -ltilde -lmalloc   -ldl 
+ls -l bash
+-rwxr-xr-x 1 rpmuser swss 851472 Mar  3 12:34 bash
+arm-sony-linux-gnueabi-size bash
+   text	   data	    bss	    dec	    hex	filename
+ 660103	  18684	  21316	 700103	  aaec7	bash
++ make recho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make printenv 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make zecho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make recho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `recho' is up to date.
++ make printenv 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `printenv' is up to date.
++ make zecho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `zecho' is up to date.
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.yRlua4
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install bindir=/usr/bin
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 3.2.48(2)-release (arm-sony-linux-gnueabi)
+	  *                                                         *
+	  ***********************************************************
+
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+( cd ./po/ ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a installdirs )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/.././support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+/usr/bin/install -c -m 0755 bash /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/bash
+/usr/bin/install -c -m 0555 bashbug /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/bashbug
+( cd ./doc ; make  \
+		man1dir=/usr/man/man1 man1ext=.1 \
+		man3dir=/usr/man/man3 man3ext=.3 \
+		infodir=/usr/info htmldir= DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/doc'
+makeinfo --no-split -I../../lib/readline/doc ../../doc/bashref.texi
+/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+if test -n "" ; then \
+		/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a ; \
+	fi
+/bin/sh ../../doc/infopost.sh < ../../doc/bashref.info > bash.info ; \
+
+/usr/bin/install -c -m 644 ../../doc/bash.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/bash.1
+/usr/bin/install -c -m 644 ../../doc/bashbug.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/bashbug.1
+/usr/bin/install -c -m 644 ../../doc/bash.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info
+/usr/bin/install: cannot stat `../../doc/bash.info': No such file or directory
+make[1]: [install] Error 1 (ignored)
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+		install-info --dir-file=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/dir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info; \
+	else true; fi
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+install-info: No such file or directory for /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info
+make[1]: *** [install] Error 1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/doc'
+make: [install] Error 2 (ignored)
+( cd ./builtins ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+( cd ./po/ ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/.././support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel
++ install /home/rpmuser/rpm/SOURCES/bash_profile-sony /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bash_profile
++ install /home/rpmuser/rpm/SOURCES/bashrc /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bashrc
++ install /home/rpmuser/rpm/SOURCES/bash_logout /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bash_logout
++ cd ..
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
++ ln -s ../usr/bin/bash bash
++ ln -s ../usr/bin/bash sh
++ cd
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-bash-3.2.48-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-bash-3.2.48-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-bash-3.2.48-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QLnwaJ
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
++ exit 0
+spawn -nottyinit mv /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec.org
+spawn -nottyinit sh -c sed -e '/%install/i make\ recho\ CC_FOR_BUILD="%{sony_target_toolprefix}gcc -tarmv7a"
+' -e '/%install/i make\ printenv\ CC_FOR_BUILD="%{sony_target_toolprefix}gcc -tarmv7a"
+' -e '/%install/i make\ zecho\ CC_FOR_BUILD="%{sony_target_toolprefix}gcc -tarmv7a"' /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec.org > /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-bash.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.hbPkhD
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf bash-3.2.48
++ /bin/tar -xf -
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/bash-3.2.48.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd bash-3.2.48
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QGmz4c
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export ac_cv_func_getpgrp_void=yes
++ ac_cv_func_getpgrp_void=yes
++ export ac_cv_func_setvbuf_reversed=no
++ ac_cv_func_setvbuf_reversed=no
++ export ac_cv_sys_restartable_syscalls=yes
++ ac_cv_sys_restartable_syscalls=yes
++ export bash_cv_sys_siglist=yes
++ bash_cv_sys_siglist=yes
++ export bash_cv_under_sys_siglist=yes
++ bash_cv_under_sys_siglist=yes
++ export bash_cv_ulimit_maxfds=yes
++ bash_cv_ulimit_maxfds=yes
++ export bash_cv_func_sigsetjmp=present
++ bash_cv_func_sigsetjmp=present
++ export bash_cv_job_control_missing=present
++ bash_cv_job_control_missing=present
++ export bash_cv_sys_named_pipes=present
++ bash_cv_sys_named_pipes=present
++ export cross_compiling=yes
++ cross_compiling=yes
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for emacs... no
+checking for xemacs... no
+
+Beginning configuration for bash-3.2-release for arm-sony-linux-gnueabi
+
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking for strerror in -lcposix... no
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for _LARGE_FILES value needed for large files... no
+configure: cross-compiling for arm-sony-linux-gnueabi is not supported
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ar... arm-sony-linux-gnueabi-ar
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for bison... bison -y
+checking whether make sets $(MAKE)... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for preprocessor stringizing operator... yes
+checking for working long double with more range or precision than double... no
+checking for function prototypes... yes
+checking whether char is unsigned... yes
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for off_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... no
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether integer division by zero raises SIGFPE... guessing no
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getc_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for __fsetlocking... yes
+checking for iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... bison
+checking version of bison... 2.5, ok
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for inttypes.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking for limits.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for locale.h... (cached) yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for strings.h... (cached) yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking sys/pte.h usability... no
+checking sys/pte.h presence... no
+checking for sys/pte.h... no
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for sys/param.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking for sys/ptem.h... no
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether getpgrp requires zero arguments... (cached) yes
+checking whether setvbuf arguments are reversed... (cached) no
+checking for vprintf... yes
+checking for _doprnt... no
+checking for working strcoll... no
+checking return type of signal handlers... void
+checking for __setostype... no
+checking for wait3... yes
+checking for isinf... yes
+checking for isnan... yes
+checking for mkfifo... yes
+checking for dup2... yes
+checking for eaccess... yes
+checking for fcntl... yes
+checking for getdtablesize... yes
+checking for getgroups... yes
+checking for gethostname... yes
+checking for getpagesize... (cached) yes
+checking for getpeername... yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for kill... yes
+checking for killpg... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for sbrk... yes
+checking for select... yes
+checking for setdtablesize... no
+checking for tcgetpgrp... yes
+checking for uname... yes
+checking for ulimit... yes
+checking for waitpid... yes
+checking for rename... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for confstr... yes
+checking for fnmatch... yes
+checking for getaddrinfo... yes
+checking for gethostbyname... yes
+checking for getservbyname... yes
+checking for getservent... yes
+checking for inet_aton... yes
+checking for memmove... yes
+checking for pathconf... yes
+checking for putenv... (cached) yes
+checking for raise... yes
+checking for regcomp... yes
+checking for regexec... yes
+checking for setenv... (cached) yes
+checking for setlinebuf... yes
+checking for setlocale... (cached) yes
+checking for setvbuf... yes
+checking for siginterrupt... yes
+checking for strchr... yes
+checking for sysconf... yes
+checking for tcgetattr... yes
+checking for times... yes
+checking for ttyname... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for isascii... yes
+checking for isblank... yes
+checking for isgraph... yes
+checking for isprint... yes
+checking for isspace... yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for getcwd... (cached) yes
+checking for memset... yes
+checking for strcasecmp... (cached) yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strnlen... yes
+checking for strpbrk... yes
+checking for strstr... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... (cached) yes
+checking for strtoll... yes
+checking for strtoull... yes
+checking for strtoimax... yes
+checking for strtoumax... yes
+checking whether confstr is declared... yes
+checking whether printf is declared... yes
+checking whether sbrk is declared... yes
+checking whether setregid is declared... yes
+checking whether strcpy is declared... yes
+checking whether strsignal is declared... yes
+checking whether strtold is declared... yes
+checking for broken strtold... no
+checking for declaration of strtoimax... yes
+checking for declaration of strtol... yes
+checking for declaration of strtoll... yes
+checking for declaration of strtoul... yes
+checking for declaration of strtoull... yes
+checking for declaration of strtoumax... yes
+checking for stdlib.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for alarm... yes
+checking for working mktime... no
+checking for argz.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for malloc.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) no
+checking for __argz_count... (cached) yes
+checking for __argz_next... (cached) yes
+checking for __argz_stringify... (cached) yes
+checking for dcgettext... yes
+checking for mempcpy... (cached) yes
+checking for munmap... (cached) yes
+checking for stpcpy... (cached) yes
+checking for strcspn... yes
+checking for strdup... (cached) yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for mbsrtowcs... yes
+checking for mbrlen... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcsdup... yes
+checking for wcwidth... yes
+checking for wctype... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for iswctype... yes
+checking for nl_langinfo and CODESET... yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for dlopen in -ldl... yes
+checking for dlopen... yes
+checking for dlclose... yes
+checking for dlsym... yes
+checking whether sys_siglist is declared... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for off_t... (cached) yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for ssize_t... yes
+checking for time_t... yes
+checking for long long... long long
+checking for unsigned long long... unsigned long long
+checking return type of signal handlers... (cached) void
+checking for char... yes
+checking size of char... 1
+checking for short... yes
+checking size of short... 2
+checking for int... yes
+checking size of int... 4
+checking for long... yes
+checking size of long... 4
+checking for char *... yes
+checking size of char *... 4
+checking for double... yes
+checking size of double... 8
+checking for long long... yes
+checking size of long long... 8
+checking for u_int... yes
+checking for u_long... yes
+checking for bits16_t... no
+checking for u_bits16_t... no
+checking for bits32_t... no
+checking for u_bits32_t... no
+checking for bits64_t... no
+checking for ptrdiff_t... yes
+checking whether stat file-mode macros are broken... no
+checking whether #! works in shell scripts... yes
+checking whether the ctype macros accept non-ascii characters... configure: WARNING: cannot check ctype macros if cross compiling -- defaulting to no
+no
+checking if dup2 fails to clear the close-on-exec flag... configure: WARNING: cannot check dup2 if cross compiling -- defaulting to no
+no
+checking whether pgrps need synchronization... configure: WARNING: cannot check pgrp synchronization if cross compiling -- defaulting to no
+no
+checking for type of signal functions... posix
+checking for sys_errlist and sys_nerr... yes
+checking for sys_siglist in system C library... (cached) yes
+checking for _sys_siglist in signal.h or unistd.h... yes
+checking for _sys_siglist in system C library... (cached) yes
+checking whether signal handlers are of type void... yes
+checking for clock_t... yes
+checking for sigset_t... yes
+checking for quad_t... yes
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for socklen_t... yes
+checking for size and type of struct rlimit fields... rlim_t
+checking for struct termios.c_line... yes
+checking for struct termio.c_line... yes
+checking for struct dirent.d_ino... yes
+checking for struct dirent.d_fileno... yes
+checking for struct dirent.d_namlen... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct timeval in sys/time.h and time.h... yes
+checking for struct stat.st_blocks... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for struct timezone in sys/time.h and time.h... yes
+checking for the existence of strsignal... yes
+checking if opendir() opens non-directories... configure: WARNING: cannot check opendir if cross compiling -- defaulting to no
+no
+checking whether ulimit can substitute for getdtablesize... (cached) yes
+checking to see if getenv can be redefined... configure: WARNING: cannot check getenv redefinition if cross compiling -- defaulting to yes
+yes
+checking if getcwd() will dynamically allocate memory... configure: WARNING: cannot check whether getcwd allocates memory when cross-compiling -- defaulting to no
+no
+checking for presence of POSIX-style sigsetjmp/siglongjmp... (cached) present
+checking whether or not strcoll and strcmp differ... configure: WARNING: cannot check strcoll if cross compiling -- defaulting to no
+no
+checking for standard-conformant putenv declaration... yes
+checking for standard-conformant unsetenv declaration... yes
+checking for printf floating point output in hex notation... configure: WARNING: cannot check printf if cross compiling -- defaulting to no
+no
+checking if signal handlers must be reinstalled when invoked... configure: WARNING: cannot check signal handling if cross compiling -- defaulting to no
+no
+checking for presence of necessary job control definitions... (cached) present
+checking for presence of named pipes... (cached) present
+checking whether termios.h defines TIOCGWINSZ... no
+checking whether sys/ioctl.h defines TIOCGWINSZ... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking whether WCONTINUED flag to waitpid is unavailable or available but broken... configure: WARNING: cannot check WCONTINUED if cross compiling -- defaulting to no
+no
+checking for speed_t in sys/types.h... no
+checking whether getpw functions are declared in pwd.h... yes
+checking for unusable real-time signals due to large values... configure: WARNING: cannot check real-time signals if cross compiling -- defaulting to yes
+yes
+checking for tgetent... no
+checking for tgetent in -ltermcap... no
+checking for tgetent in -ltinfo... no
+checking for tgetent in -lcurses... yes
+checking which library has the termcap functions... using libcurses
+checking whether /dev/fd is available... standard
+checking whether /dev/stdin stdout stderr are available... present
+checking for default mail directory... /var/mail
+checking shared object configuration for loadable builtins... supported
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating builtins/Makefile
+config.status: creating lib/readline/Makefile
+config.status: creating lib/glob/Makefile
+config.status: creating lib/intl/Makefile
+config.status: creating lib/malloc/Makefile
+config.status: creating lib/sh/Makefile
+config.status: creating lib/termcap/Makefile
+config.status: creating lib/tilde/Makefile
+config.status: creating doc/Makefile
+config.status: creating support/Makefile
+config.status: creating po/Makefile.in
+config.status: creating examples/loadables/Makefile
+config.status: creating examples/loadables/perl/Makefile
+config.status: creating pathnames.h
+config.status: creating config.h
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
++ ../support/mkversion.sh -b -d 3.2.48 -p 0 -o newversion.h
++ mv newversion.h version.h
++ make CFLAGS_FOR_CROSS=-I/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+bison -y -d ../parse.y
+conflicts: 1 shift/reduce
+touch parser-built
+rm -f mksyntax
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o mksyntax ../mksyntax.c 
+rm -f syntax.c
+./mksyntax -o syntax.c
+/bin/sh ../support/mkversion.sh -b -S .. -s release -d 3.2 -o newversion.h \
+		&& mv newversion.h version.h
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -c -o buildversion.o ../version.c
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o bashversion ../support/bashversion.c buildversion.o 
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 3.2.48(2)-release (arm-sony-linux-gnueabi)
+	  *                                                         *
+	  ***********************************************************
+
+rm -f shell.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../shell.c
+../shell.c: In function 'get_current_user_info':
+../shell.c:1600:27: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f eval.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../eval.c
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f mkbuiltins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -g -DCROSS_COMPILING ../../builtins/mkbuiltins.c
+gcc -rdynamic -O2 -o mkbuiltins mkbuiltins.o -ldl 
+./mkbuiltins -externfile builtext.h -structfile builtins.c \
+	    -noproduction -D ../../builtins   ../../builtins/alias.def ../../builtins/bind.def ../../builtins/break.def ../../builtins/builtin.def ../../builtins/caller.def ../../builtins/cd.def ../../builtins/colon.def ../../builtins/command.def ../../builtins/declare.def ../../builtins/echo.def ../../builtins/enable.def ../../builtins/eval.def ../../builtins/getopts.def ../../builtins/exec.def ../../builtins/exit.def ../../builtins/fc.def ../../builtins/fg_bg.def ../../builtins/hash.def ../../builtins/help.def ../../builtins/history.def ../../builtins/jobs.def ../../builtins/kill.def ../../builtins/let.def ../../builtins/read.def ../../builtins/return.def ../../builtins/set.def ../../builtins/setattr.def ../../builtins/shift.def ../../builtins/source.def ../../builtins/suspend.def ../../builtins/test.def ../../builtins/times.def ../../builtins/trap.def ../../builtins/type.def ../../builtins/ulimit.def ../../builtins/umask.def ../../builtins/wait.def ../../builtins/reserved.def ../../builtins/pushd.def ../../builtins/shopt.def ../../builtins/printf.def ../../builtins/complete.def
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f y.tab.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c y.tab.c
+../parse.y: In function 'report_syntax_error':
+../parse.y:4553:11: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f general.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../general.c
+rm -f make_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../make_cmd.c
+rm -f print_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../print_cmd.c
+rm -f dispose_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../dispose_cmd.c
+rm -f execute_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../execute_cmd.c
+rm -f variables.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../variables.c
+rm -f copy_cmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../copy_cmd.c
+rm -f error.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../error.c
+../error.c: In function 'command_errstr':
+../error.c:428:3: warning: return discards 'const' qualifier from pointer target type [enabled by default]
+rm -f expr.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../expr.c
+../expr.c:177:17: warning: conflicting types for built-in function 'exp2' [enabled by default]
+../expr.c: In function 'pushexp':
+../expr.c:241:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'popexp':
+../expr.c:265:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'subexpr':
+../expr.c:379:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'expassign':
+../expr.c:419:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:440:3: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:445:3: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:471:8: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'expcond':
+../expr.c:501:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:513:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:516:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exp2':
+../expr.c:756:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exppower':
+../expr.c:781:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'exp0':
+../expr.c:826:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:854:2: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:897:5: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'readtok':
+../expr.c:1176:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1178:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:156:13: note: expected 'char *' but argument is of type 'const char *'
+../expr.c: In function 'strlong':
+../expr.c:1256:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1260:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+../expr.c:1280:6: warning: passing argument 1 of 'evalerror' discards 'const' qualifier from pointer target type [enabled by default]
+../expr.c:1194:1: note: expected 'char *' but argument is of type 'const char *'
+rm -f flags.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../flags.c
+rm -f jobs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../jobs.c
+rm -f subst.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../subst.c
+rm -f hashcmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../hashcmd.c
+rm -f hashlib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../hashlib.c
+rm -f mailcheck.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../mailcheck.c
+../mailcheck.c: In function 'check_mail':
+../mailcheck.c:386:12: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+../mailcheck.c:411:14: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f mksignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -c ../support/mksignames.c
+rm -f buildsignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -DBUILDTOOL -o buildsignames.o -c ../support/signames.c
+rm -f mksignames
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -g -DCROSS_COMPILING -o mksignames mksignames.o buildsignames.o 
+rm -f lsignames.h
+./mksignames lsignames.h
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+rm -f trap.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../trap.c
+../trap.c: In function 'signal_name':
+../trap.c:199:7: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f input.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../input.c
+rm -f unwind_prot.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../unwind_prot.c
+rm -f pathexp.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pathexp.c
+rm -f sig.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../sig.c
+rm -f test.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../test.c
+../test.c: In function 'beyond':
+../test.c:145:3: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'integer_expected_error':
+../test.c:154:3: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'term':
+../test.c:262:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:264:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:279:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'binary_operator':
+../test.c:444:7: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'two_arguments':
+../test.c:688:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:691:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'three_arguments':
+../test.c:731:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c: In function 'test_command':
+../test.c:806:2: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+../test.c:822:5: warning: passing argument 1 of 'test_syntax_error' discards 'const' qualifier from pointer target type [enabled by default]
+../test.c:131:1: note: expected 'char *' but argument is of type 'const char *'
+rm -f version.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../version.c
+rm -f alias.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../alias.c
+rm -f array.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../array.c
+rm -f arrayfunc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../arrayfunc.c
+rm -f braces.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../braces.c
+rm -f bracecomp.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bracecomp.c
+rm -f bashhist.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bashhist.c
+rm -f bashline.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../bashline.c
+rm -f list.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../list.c
+rm -f stringlib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../stringlib.c
+rm -f locale.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../locale.c
+../locale.c: In function 'localetrans':
+../locale.c:360:16: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f findcmd.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../findcmd.c
+rm -f redir.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../redir.c
+../redir.c: In function 'redirection_error':
+../redir.c:99:14: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f pcomplete.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pcomplete.c
+rm -f pcomplib.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../pcomplib.c
+rm -f syntax.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c syntax.c
+rm -f xmalloc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../xmalloc.c
+rm -f signames.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"arm"' -DCONF_OSTYPE='"linux-gnueabi"' -DCONF_MACHTYPE='"arm-sony-linux-gnueabi"' -DCONF_VENDOR='"sony"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I.. -I../include -I../lib   -O2 -c ../support/signames.c
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+rm -f builtins.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 builtins.c
+rm -f alias.o
+./mkbuiltins -D ../../builtins ../../builtins/alias.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 alias.c || ( rm -f alias.c ; exit 1 )
+rm -f alias.c
+rm -f bind.o
+./mkbuiltins -D ../../builtins ../../builtins/bind.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 bind.c || ( rm -f bind.c ; exit 1 )
+rm -f bind.c
+rm -f break.o
+./mkbuiltins -D ../../builtins ../../builtins/break.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 break.c || ( rm -f break.c ; exit 1 )
+rm -f break.c
+rm -f builtin.o
+./mkbuiltins -D ../../builtins ../../builtins/builtin.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 builtin.c || ( rm -f builtin.c ; exit 1 )
+rm -f builtin.c
+rm -f caller.o
+./mkbuiltins -D ../../builtins ../../builtins/caller.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 caller.c || ( rm -f caller.c ; exit 1 )
+rm -f caller.c
+rm -f cd.o
+./mkbuiltins -D ../../builtins ../../builtins/cd.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 cd.c || ( rm -f cd.c ; exit 1 )
+rm -f cd.c
+rm -f colon.o
+./mkbuiltins -D ../../builtins ../../builtins/colon.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 colon.c || ( rm -f colon.c ; exit 1 )
+rm -f colon.c
+rm -f command.o
+./mkbuiltins -D ../../builtins ../../builtins/command.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 command.c || ( rm -f command.c ; exit 1 )
+rm -f command.c
+rm -f common.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/common.c
+rm -f declare.o
+./mkbuiltins -D ../../builtins ../../builtins/declare.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 declare.c || ( rm -f declare.c ; exit 1 )
+rm -f declare.c
+rm -f echo.o
+./mkbuiltins -D ../../builtins ../../builtins/echo.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 echo.c || ( rm -f echo.c ; exit 1 )
+rm -f echo.c
+rm -f enable.o
+./mkbuiltins -D ../../builtins ../../builtins/enable.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 enable.c || ( rm -f enable.c ; exit 1 )
+rm -f enable.c
+rm -f eval.o
+./mkbuiltins -D ../../builtins ../../builtins/eval.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 eval.c || ( rm -f eval.c ; exit 1 )
+rm -f eval.c
+rm -f evalfile.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/evalfile.c
+rm -f evalstring.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/evalstring.c
+rm -f exec.o
+./mkbuiltins -D ../../builtins ../../builtins/exec.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 exec.c || ( rm -f exec.c ; exit 1 )
+rm -f exec.c
+rm -f exit.o
+./mkbuiltins -D ../../builtins ../../builtins/exit.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 exit.c || ( rm -f exit.c ; exit 1 )
+rm -f exit.c
+rm -f fc.o
+./mkbuiltins -D ../../builtins ../../builtins/fc.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 fc.c || ( rm -f fc.c ; exit 1 )
+../../builtins/../../builtins/fc.def: In function 'fc_builtin':
+../../builtins/../../builtins/fc.def:328:7: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/fc.def:78:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f fc.c
+rm -f fg_bg.o
+./mkbuiltins -D ../../builtins ../../builtins/fg_bg.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 fg_bg.c || ( rm -f fg_bg.c ; exit 1 )
+rm -f fg_bg.c
+rm -f hash.o
+./mkbuiltins -D ../../builtins ../../builtins/hash.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 hash.c || ( rm -f hash.c ; exit 1 )
+rm -f hash.c
+rm -f help.o
+./mkbuiltins -D ../../builtins ../../builtins/help.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 help.c || ( rm -f help.c ; exit 1 )
+rm -f help.c
+rm -f history.o
+./mkbuiltins -D ../../builtins ../../builtins/history.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 history.c || ( rm -f history.c ; exit 1 )
+../../builtins/../../builtins/history.def: In function 'history_builtin':
+../../builtins/../../builtins/history.def:182:4: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/history.def:73:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f history.c
+rm -f jobs.o
+./mkbuiltins -D ../../builtins ../../builtins/jobs.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 jobs.c || ( rm -f jobs.c ; exit 1 )
+rm -f jobs.c
+rm -f kill.o
+./mkbuiltins -D ../../builtins ../../builtins/kill.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 kill.c || ( rm -f kill.c ; exit 1 )
+../../builtins/../../builtins/kill.def: In function 'kill_error':
+../../builtins/../../builtins/kill.def:250:7: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+rm -f kill.c
+rm -f let.o
+./mkbuiltins -D ../../builtins ../../builtins/let.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 let.c || ( rm -f let.c ; exit 1 )
+rm -f let.c
+rm -f pushd.o
+./mkbuiltins -D ../../builtins ../../builtins/pushd.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 pushd.c || ( rm -f pushd.c ; exit 1 )
+rm -f pushd.c
+rm -f read.o
+./mkbuiltins -D ../../builtins ../../builtins/read.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 read.c || ( rm -f read.c ; exit 1 )
+rm -f read.c
+rm -f return.o
+./mkbuiltins -D ../../builtins ../../builtins/return.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 return.c || ( rm -f return.c ; exit 1 )
+rm -f return.c
+rm -f set.o
+./mkbuiltins -D ../../builtins ../../builtins/set.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 set.c || ( rm -f set.c ; exit 1 )
+rm -f set.c
+rm -f setattr.o
+./mkbuiltins -D ../../builtins ../../builtins/setattr.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 setattr.c || ( rm -f setattr.c ; exit 1 )
+rm -f setattr.c
+rm -f shift.o
+./mkbuiltins -D ../../builtins ../../builtins/shift.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 shift.c || ( rm -f shift.c ; exit 1 )
+../../builtins/../../builtins/shift.def: In function 'shift_builtin':
+../../builtins/../../builtins/shift.def:66:7: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/shift.def:37:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+../../builtins/../../builtins/shift.def:72:2: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/shift.def:37:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f shift.c
+rm -f source.o
+./mkbuiltins -D ../../builtins ../../builtins/source.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 source.c || ( rm -f source.c ; exit 1 )
+rm -f source.c
+rm -f suspend.o
+./mkbuiltins -D ../../builtins ../../builtins/suspend.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 suspend.c || ( rm -f suspend.c ; exit 1 )
+../../builtins/../../builtins/suspend.def: In function 'suspend_builtin':
+../../builtins/../../builtins/suspend.def:95:7: warning: passing argument 1 of 'sh_nojobs' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/suspend.def:48:0:
+../../builtins/common.h:77:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f suspend.c
+rm -f test.o
+./mkbuiltins -D ../../builtins ../../builtins/test.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 test.c || ( rm -f test.c ; exit 1 )
+rm -f test.c
+rm -f times.o
+./mkbuiltins -D ../../builtins ../../builtins/times.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 times.c || ( rm -f times.c ; exit 1 )
+rm -f times.c
+rm -f trap.o
+./mkbuiltins -D ../../builtins ../../builtins/trap.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 trap.c || ( rm -f trap.c ; exit 1 )
+rm -f trap.c
+rm -f type.o
+./mkbuiltins -D ../../builtins ../../builtins/type.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 type.c || ( rm -f type.c ; exit 1 )
+rm -f type.c
+gcc  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -g -DCROSS_COMPILING -o psize.aux ../../builtins/psize.c
+/bin/sh ../../builtins/psize.sh > pipesize.h
+rm -f ulimit.o
+./mkbuiltins -D ../../builtins ../../builtins/ulimit.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ulimit.c || ( rm -f ulimit.c ; exit 1 )
+rm -f ulimit.c
+rm -f umask.o
+./mkbuiltins -D ../../builtins ../../builtins/umask.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 umask.c || ( rm -f umask.c ; exit 1 )
+../../builtins/../../builtins/umask.def: In function 'umask_builtin':
+../../builtins/../../builtins/umask.def:112:8: warning: passing argument 2 of 'sh_erange' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from ../../builtins/../../builtins/umask.def:55:0:
+../../builtins/common.h:73:13: note: expected 'char *' but argument is of type 'const char *'
+rm -f umask.c
+rm -f wait.o
+./mkbuiltins -D ../../builtins ../../builtins/wait.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 wait.c || ( rm -f wait.c ; exit 1 )
+rm -f wait.c
+rm -f getopts.o
+./mkbuiltins -D ../../builtins ../../builtins/getopts.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 getopts.c || ( rm -f getopts.c ; exit 1 )
+rm -f getopts.c
+rm -f shopt.o
+./mkbuiltins -D ../../builtins ../../builtins/shopt.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 shopt.c || ( rm -f shopt.c ; exit 1 )
+rm -f shopt.c
+rm -f printf.o
+./mkbuiltins -D ../../builtins ../../builtins/printf.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 printf.c || ( rm -f printf.c ; exit 1 )
+rm -f printf.c
+rm -f getopt.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/getopt.c
+rm -f bashgetopt.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 ../../builtins/bashgetopt.c
+rm -f complete.o
+./mkbuiltins -D ../../builtins ../../builtins/complete.def
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I../.. -I../../include -I../../lib -I../../builtins    -O2 complete.c || ( rm -f complete.c ; exit 1 )
+rm -f complete.c
+rm -f libbuiltins.a
+arm-sony-linux-gnueabi-ar cr libbuiltins.a builtins.o alias.o bind.o break.o builtin.o caller.o cd.o colon.o command.o common.o declare.o echo.o enable.o eval.o evalfile.o evalstring.o exec.o exit.o fc.o fg_bg.o hash.o help.o history.o jobs.o kill.o let.o pushd.o read.o return.o set.o setattr.o shift.o source.o suspend.o test.o times.o trap.o type.o ulimit.o umask.o wait.o getopts.o shopt.o printf.o getopt.o bashgetopt.o complete.o
+arm-sony-linux-gnueabi-ranlib libbuiltins.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+making lib/sh/libsh.a in ./lib/sh
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/sh'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/clktck.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/clock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/getenv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/oslib.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/setlinebuf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strnlen.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/itos.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shtty.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shmatch.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/eaccess.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/netconn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/netopen.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/timeval.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/makepath.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/pathcanon.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/pathphys.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/tmpfile.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/stringlist.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/stringvec.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/spell.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/shquote.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/strindex.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/snprintf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/mailstat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtulong.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtullong.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/fmtumax.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/xstrchr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/zcatfd.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/winsize.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/wcsdup.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/mktime.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -I. -I../.. -I../../.. -I../../../lib -I../../../include -I../../../lib/sh  -DHAVE_CONFIG_H -DSHELL  -O2   ../../../lib/sh/getcwd.c
+rm -f libsh.a
+arm-sony-linux-gnueabi-ar cr libsh.a clktck.o clock.o getenv.o oslib.o setlinebuf.o strnlen.o itos.o zread.o zwrite.o shtty.o shmatch.o eaccess.o netconn.o netopen.o timeval.o makepath.o pathcanon.o pathphys.o tmpfile.o stringlist.o stringvec.o spell.o shquote.o strtrans.o strindex.o snprintf.o mailstat.o fmtulong.o fmtullong.o fmtumax.o xstrchr.o zcatfd.o winsize.o wcsdup.o mktime.o getcwd.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libsh.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/sh'
+making lib/readline/libreadline.a in ./lib/readline
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+rm -f readline.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/readline.c
+rm -f vi_mode.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/vi_mode.c
+rm -f funmap.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/funmap.c
+rm -f keymaps.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/keymaps.c
+rm -f parens.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/parens.c
+rm -f search.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/search.c
+rm -f rltty.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/rltty.c
+rm -f complete.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/complete.c
+rm -f bind.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/bind.c
+rm -f isearch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/isearch.c
+rm -f display.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/display.c
+rm -f signals.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/signals.c
+rm -f util.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/util.c
+rm -f kill.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/kill.c
+rm -f undo.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/undo.c
+rm -f macro.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/macro.c
+rm -f input.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/input.c
+rm -f callback.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/callback.c
+rm -f terminal.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/terminal.c
+rm -f text.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/text.c
+rm -f nls.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/nls.c
+rm -f misc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/misc.c
+rm -f history.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/history.c
+rm -f histexpand.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histexpand.c
+rm -f histfile.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histfile.c
+rm -f histsearch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/histsearch.c
+rm -f shell.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/shell.c
+rm -f savestring.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/savestring.c
+rm -f mbutil.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/mbutil.c
+rm -f tilde.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 -DREADLINE_LIBRARY -c ../../../lib/readline/tilde.c
+rm -f xmalloc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/xmalloc.c
+rm -f compat.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DHAVE_CONFIG_H -DSHELL   -I. -I/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir -I../../.. -I../../../lib  -O2 ../../../lib/readline/compat.c
+rm -f libreadline.a
+arm-sony-linux-gnueabi-ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o tilde.o xmalloc.o compat.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libreadline.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+making lib/readline/libhistory.a in ./lib/readline
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+rm -f libhistory.a
+arm-sony-linux-gnueabi-ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o xmalloc.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libhistory.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/readline'
+making lib/glob/libglob.a in ./lib/glob
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/glob'
+rm -f glob.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/glob.c
+rm -f strmatch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/strmatch.c
+rm -f smatch.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/smatch.c
+rm -f xmbsrtowcs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/glob/xmbsrtowcs.c
+rm -f -f libglob.a
+arm-sony-linux-gnueabi-ar cr libglob.a glob.o strmatch.o smatch.o xmbsrtowcs.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libglob.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/glob'
+making lib/tilde/libtilde.a in ./lib/tilde
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/tilde'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c  -DHAVE_CONFIG_H -DSHELL  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -O2 ../../../lib/tilde/tilde.c
+rm -f libtilde.a
+arm-sony-linux-gnueabi-ar cr libtilde.a tilde.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libtilde.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/tilde'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/malloc'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/malloc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/trace.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/stats.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/table.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -I. -I../.. -I../../.. -I../../../include -I../../../lib  -DHAVE_CONFIG_H -DSHELL  -O2 -DRCHECK -Dbotch=programming_error   -c ../../../lib/malloc/watch.c
+rm -f libmalloc.a
+arm-sony-linux-gnueabi-ar cr libmalloc.a malloc.o  trace.o stats.o table.o watch.o
+test -n "arm-sony-linux-gnueabi-ranlib" && arm-sony-linux-gnueabi-ranlib libmalloc.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/lib/malloc'
+rm -f bash
+arm-sony-linux-gnueabi-gcc -tarmv7a -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde -L./lib/malloc -L./lib/sh  -rdynamic  -O2 -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o signames.o -lbuiltins -lsh -lreadline -lhistory -lcurses -lglob -ltilde -lmalloc   -ldl 
+ls -l bash
+-rwxr-xr-x 1 rpmuser swss 851472 Mar  3 12:35 bash
+arm-sony-linux-gnueabi-size bash
+   text	   data	    bss	    dec	    hex	filename
+ 660103	  18684	  21316	 700103	  aaec7	bash
++ make recho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make printenv 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make zecho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
++ make recho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `recho' is up to date.
++ make printenv 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `printenv' is up to date.
++ make zecho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `zecho' is up to date.
++ make recho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `recho' is up to date.
++ make printenv 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `printenv' is up to date.
++ make zecho 'CC_FOR_BUILD=arm-sony-linux-gnueabi-gcc -tarmv7a'
+make: `zecho' is up to date.
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.sewLgp
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install bindir=/usr/bin
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 3.2.48(2)-release (arm-sony-linux-gnueabi)
+	  *                                                         *
+	  ***********************************************************
+
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+( cd ./po/ ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a installdirs )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/.././support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+/usr/bin/install -c -m 0755 bash /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/bash
+/usr/bin/install -c -m 0555 bashbug /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/bashbug
+( cd ./doc ; make  \
+		man1dir=/usr/man/man1 man1ext=.1 \
+		man3dir=/usr/man/man3 man3ext=.3 \
+		infodir=/usr/info htmldir= DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/doc'
+makeinfo --no-split -I../../lib/readline/doc ../../doc/bashref.texi
+/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+if test -n "" ; then \
+		/bin/sh ../../support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a ; \
+	fi
+/bin/sh ../../doc/infopost.sh < ../../doc/bashref.info > bash.info ; \
+
+/usr/bin/install -c -m 644 ../../doc/bash.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/bash.1
+/usr/bin/install -c -m 644 ../../doc/bashbug.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/bashbug.1
+/usr/bin/install -c -m 644 ../../doc/bash.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info
+/usr/bin/install: cannot stat `../../doc/bash.info': No such file or directory
+make[1]: [install] Error 1 (ignored)
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+		install-info --dir-file=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/dir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info; \
+	else true; fi
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+install-info: No such file or directory for /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/bash.info
+make[1]: *** [install] Error 1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/doc'
+make: [install] Error 2 (ignored)
+( cd ./builtins ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/builtins'
+( cd ./po/ ; make  DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install )
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
+if test "bash" = "gettext-tools"; then \
+	  /bin/sh /home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/.././support/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/bash-3.2.48/objdir/po'
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel
++ install /home/rpmuser/rpm/SOURCES/bash_profile-sony /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bash_profile
++ install /home/rpmuser/rpm/SOURCES/bashrc /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bashrc
++ install /home/rpmuser/rpm/SOURCES/bash_logout /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc/skel/.bash_logout
++ cd ..
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
++ ln -s ../usr/bin/bash bash
++ ln -s ../usr/bin/bash sh
++ cd
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-bash-3.2.48-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-bash-3.2.48-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-bash-3.2.48-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.TOk082
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd bash-3.2.48
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-bash-3.2.48-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/bash-3.2.48
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/bash-3.2.48 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+2 packages can be updated.
+1 update is a security update.
+
+*** System restart required ***
+Last login: Mon Mar  3 12:33:32 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# chmod 777 /dev/pts/*
+-bash-3.2# chmod 777 /dev/stdin
+-bash-3.2# chmod 777 /dev/null
+-bash-3.2# mkdir -p /home
+-bash-3.2# useradd -m rpmuser
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+useradd: user 'rpmuser' already exists
+-bash-3.2# chmod -R 777 /home/rpmuser
+-bash-3.2# chmod -R 777 /tmp

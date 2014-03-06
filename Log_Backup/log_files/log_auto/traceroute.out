@@ -1,0 +1,243 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/Tools_Userland/SRPMS/sony-target-dev-traceroute-2.0.19-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-tracerowarning: group rpmuser does not exist - using root
+                                            (  4%)#                                           (  4%)warning: group rpmuser does not exist - using root
+##                                          ( 94%)###                                         ( 94%)####                                        ( 94%)#####                                       ( 94%)######                                      ( 94%)#######                                     ( 94%)########                                    ( 94%)#########                                   ( 94%)##########                                  ( 94%)###########                                 ( 94%)############                                ( 94%)#############                               ( 94%)##############                              ( 94%)###############                             ( 94%)################                            ( 94%)#################                           ( 94%)##################                          ( 94%)###################                         ( 94%)####################                        ( 94%)#####################                       ( 94%)######################                      ( 94%)#######################                     ( 94%)########################                    ( 94%)#########################                   ( 94%)##########################                  ( 94%)###########################                 ( 94%)############################                ( 94%)#############################               ( 94%)##############################              ( 94%)###############################             ( 94%)################################            ( 94%)#################################           ( 94%)##################################          ( 94%)###################################         ( 94%)####################################        ( 94%)#####################################       ( 94%)######################################      ( 94%)#######################################     ( 94%)########################################    ( 94%)#########################################   ( 99%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-traceroute.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.G478vc
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf traceroute-2.0.19
++ /bin/tar -xf -
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/traceroute-2.0.19.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd traceroute-2.0.19
++ echo 'Patch #0 (traceroute-remove-idn.patch):'
+Patch #0 (traceroute-remove-idn.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/traceroute-remove-idn.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.mAlbLW
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd traceroute-2.0.19
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' 'LDFLAGS= -L../libsupp'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c clif.c
+rm -f libsupp.a
+ar -rc libsupp.a clif.o
+ranlib libsupp.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c as_lookups.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c csum.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c extension.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-dccp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-icmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-raw.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-tcp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-tcpconn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-udp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c poll.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c random.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c time.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c traceroute.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -L../libsupp -o traceroute as_lookups.o csum.o extension.o mod-dccp.o mod-icmp.o mod-raw.o mod-tcp.o mod-tcpconn.o mod-udp.o module.o poll.o random.o time.o traceroute.o  -lsupp -lm 
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.NMtrWM
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd traceroute-2.0.19
++ rm -rf
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-traceroute-2.0.19-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ install traceroute/traceroute /home/rpmuser/rpm/BUILDROOT/sony-target-dev-traceroute-2.0.19-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-traceroute-2.0.19-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-traceroute-2.0.19-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-traceroute-2.0.19-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-traceroute-2.0.19-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.fjUaOj
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd traceroute-2.0.19
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-traceroute-2.0.19-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 18:02:17 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin:$PATH
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export CC="/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a"
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export LD=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-ld
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export AR=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-ar
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/traceroute-2.0.19
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/traceroute/test/traceroute-test.patch
+patching file Makefile
+Hunk #1 FAILED at 8.
+1 out of 1 hunk FAILED -- saving rejects to file Makefile.rej
+patching file tests/Test-Support-FNS
+patching file tests/traceroute-test-main.sh
+patching file tests/traceroute-test-PTG1.sh
+patching file tests/traceroute-test-PTG2.sh
+patching file tests/traceroute-test-PTG3.sh
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ make
+make[1]: Nothing to be done for `all'.
+gcc -s -o tests   -lsupp -lm 
+/usr/bin/ld: skipping incompatible /home/rpmuser/rpm/BUILD/traceroute-2.0.19/libsupp/libsupp.a when searching for -lsupp
+/usr/bin/ld: cannot find -lsupp
+collect2: error: ld returned 1 exit status
+make[1]: *** [tests] Error 1
+make: *** [tests] Error 2
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+-sh: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log: Permission denied
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ spawn -nottyinit sh -c for i in 0 1 ; do /sbin/ifconfig eth$i | grep "inet addr:" | grep "inet addr:10.*" > /dev/null; if [ $? == 0 ]  ; then echo eth$i ; break ; fi ; done
+eth0
+spawn -nottyinit sh -c for i in 0 1 ; do /sbin/ifconfig eth$i | grep "inet addr:" | grep "inet addr:43.*" > /dev/null; if [ $? == 0 ]  ; then echo eth$i ; break ; fi ; done
+eth1
+/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-l inux-gnueabi/target/armv7a/tmp/ipaddr_host_eth1.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ /sbin/ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-l inux-gnueabi/target/armv7a/tmp/ipaddr_host_eth0.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/traceroute-2.0.19rpmuser@Triangle:~/rpm/BUILD/traceroute-2.0.19$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/traceroute-2.0.19 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.....................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/traceroute/test/traceroute-test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/traceroute-2.0.19
+-bash-3.2# date `cat /tmp/date.log`
+Tue Feb 18 13:05:00 UTC 2014
+-bash-3.2# export RHOST_eth1=`cat /tmp/ipaddr_host_eth1.log`
+-bash-3.2# export RHOST_eth0=`cat /tmp/ipaddr_host_eth0.log`
+-bash-3.2# export r=`echo $RHOST_eth1 | cut -d. -f1 | awk '{print $1}'`
+-bash-3.2# export s=`echo $RHOST_eth1 | cut -d. -f2 | awk '{print $1}'`
+-bash-3.2# export v=`echo $RHOST_eth1 | cut -d. -f3 | awk '{print $1}'`
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/traceroute-2.0.19/tests/
+-bash-3.2# sed -i "s/IPADDR=.*/IPADDR=$RHOST_eth1/g" Test-Support-FNS
+-bash-3.2# sed -i "s/HOST_UNREACH.*/HOST_UNREACH_IPADDR=`echo $r.$s.$v.52`/g" Test-Support-FNS
+-bash-3.2# sed -i "s/GATEWAY=.*/GATEWAY=$RHOST_eth1/g" Test-Support-FNS
+-bash-3.2# sed -i "s/NETWORK_IP=.*/NETWORK_IP=19211/g" Test-Support-FNS
+-bash-3.2# sed -i "s/export PATH=.*/export PATH=\".:~\/bin:\/bin:\/usr\/bin:\/${develFlag}\/usr\/bin:\/${develFlag}\/sbin\"/g" Test-Support-FNS [A-bash-3.2# sed -i "s/export PATH=.*/export PATH=\".:~\/bin:\/bin:\/usr\/bin:\/${develFlag}\/usr\/bin:\/${develFlag}\/sbin\"/g" Test-Support-FN[KS
+cd /tmp/traceroute-2.0.19
+-bash-3.2# cd /tmp/traceroute-2.0.19
+-bash-3.2# make check 2>&1 | tee /tmp/traceroute-test.log ; echo 'COMMAND''DONE'
+make: *** No rule to make target `check'.  Stop.
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/traceroute-test.log to 10.0.6.38:/home/rpmuser/rpm/tmp.....done

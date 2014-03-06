@@ -1,0 +1,47 @@
+cd tests; sh tcp_wrappers-test-main.sh; cd ../ ;
+          Execuiting tcp_wrappers Test Suite
+          -----------------------------
+make[1]: Entering directory `/tmp/tcp_wrappers_7.6-ipv6.1/tests'
+gcc tcpclient.c -o tcpclient
+make[1]: Leaving directory `/tmp/tcp_wrappers_7.6-ipv6.1/tests'
+
+=================================================================
+                 TCP_WRAPPERS Test Cases                        
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9                      
+         Useland            : Sony CE Linux 11.0.0.1 armv7a                    
+         Date               : Thu Jan 30 17:55:57 UTC 2014                        
+=================================================================
+[32m Testing TD-tcp_wrappers-PTG1 [0m
+PASS: test1 -TD-tcp_wrappers-PTG1-1  - Checking functionality of tcpd with sshd
+PASS: test2 -TD-tcp_wrappers-PTG1-2  - Checking functionality of the tcpdmatch utility
+FAILED: [31mtest3 -TD-tcp_wrappers-PTG1-3 - Checking functionality of tryfrom utility [0m
+Test Result      =  0
+Expected Result  =  1
+FAILED: [31mtest4 -TD-tcp_wrappers-PTG1-4 - Checking functionality of tcpd utility [0m
+Test Result      =  0
+Expected Result  =  1
+PASS: test5 -TD-tcp_wrappers-PTG1-5  - Checking functionality of tcpchk utility
+
+ Test result
+   Total no of test executed : 5
+   No of Success test cases  :3
+   No of Failed test cases : 2
+
+
+[32m Testing TD-tcp_wrappers-PTG2 [0m
+PASS: test6 -TD-tcp_wrappers-PTG2-6  - Testing error scenario of the tcpdchk funtion
+
+ Test result
+   Total no of test executed : 1
+   No of Success test cases  :1
+   No of Failed test cases : 0
+
+
+#------------------------------#
+# test_tcp_wrappers.log was created #
+#-----------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 6
+  OUT OF 6, 2 TEST FAILED
+[0m

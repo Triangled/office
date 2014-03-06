@@ -1,0 +1,67 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+lsstack : 0.1
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/test/lsstack/print-threads.c to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 19:36:41 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp
+-bash-3.2# killall print-thread-devel
+killall: print-thread-devel: no process killed
+-bash-3.2# /tool/usr/bin/gcc -g print-threads.c -pthread -o print-thread-devel || echo 'COMMAND''ERROR'
+-bash-3.2# ./print-thread-devel &
+[1] 594
+-bash-3.2# Print: thread 0
+Print: thread 4
+Print: thread 2
+Print: thread 1
+Print: thread 3
+ps ax | grep ./print-thread-devel
+  594 pts/1    SLl    0:00 ./print-thread-devel
+  601 pts/1    SL+    0:00 grep ./print-thread-devel
+-bash-3.2# lsstack `ps ax | grep ./print-thread-devel | head -1 | awk '{ print $1}'`|| echo 'COMMAND''ERROR'
+LWP 594:
+0x00000000
+LWP 599:
+0xb4e36fac
+LWP 598:
+0xb5636fac
+LWP 597:
+0xb5e36fac
+LWP 596:
+0xb6636fac
+0x00008824 in thread_function_1
+Failed to read next APCS layout from target: Input/output error
+-bash-3.2# lsstack : TEST_OK

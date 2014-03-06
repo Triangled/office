@@ -1,0 +1,126 @@
+		Executing Strace Test Suite
+		-------------------------------
+
+=================================================================
+                 STRACE Test Cases                         
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9                      
+         Date               : Tue Feb 18 17:37:25 UTC 2014                        
+=================================================================
+[32m Testing TD-strace-PTG1 [0m
+Tue Feb 18 17:37:25 UTC 2014
+test1 -TD-strace-strace-PTG1-1  PASS  - Checking the functionality of strace
+
+ Test result
+ Total no of test executed : 1
+ No of Success test cases  :1
+ No of Failed test cases : 0
+
+
+[32m Testing TD-strace-PTG2 [0m
+test2 -TD-strace-strace-PTG2-2  PASS  - Checking the strace with -e option with an invalid trace value
+test3 -TD-strace-strace-PTG2-3  PASS  - Checking the strace with -e option with an invalid read arguments
+test4 -TD-strace-strace-PTG2-4  PASS  - Checking the strace with -e option with an invalid write arguments
+
+ Test result
+ Total no of test executed : 3
+ No of Success test cases  :3
+ No of Failed test cases : 0
+
+
+[32m Testing TD-strace-PTG3 [0m
+Tue Feb 18 17:37:26 UTC 2014
+test5 -TD-strace-strace-PTG3-5  PASS  - Checking the strace with -c option
+Tue Feb 18 17:37:26 UTC 2014
+test6 -TD-strace-strace-PTG3-6  PASS  - Checking the strace with -a option
+Tue Feb 18 17:37:26 UTC 2014
+test7 -TD-strace-strace-PTG3-7  PASS  - Checking the strace with -r option
+Tue Feb 18 17:37:26 UTC 2014
+test8 -TD-strace-strace-PTG3-8  PASS  - Checking the strace with -f option
+Tue Feb 18 17:37:26 UTC 2014
+test9 -TD-strace-strace-PTG3-9  PASS  - Checking the strace with -i option
+Tue Feb 18 17:37:26 UTC 2014
+test10 -TD-strace-strace-PTG3-10  PASS  - Checking the strace with -s option
+Tue Feb 18 17:37:26 UTC 2014
+test11 -TD-strace-strace-PTG3-11  PASS  - Checking the strace with -F option
+Tue Feb 18 17:37:26 UTC 2014
+test12 -TD-strace-strace-PTG3-12  PASS  - Checking the strace with -q option
+Tue Feb 18 17:37:26 UTC 2014
+test13 -TD-strace-strace-PTG3-13  PASS  - Checking the strace with -T option
+Tue Feb 18 17:37:26 UTC 2014
+test14 -TD-strace-strace-PTG3-14  PASS  - Checking the strace with -v option
+Tue Feb 18 17:37:26 UTC 2014
+test15 -TD-strace-strace-PTG3-15  PASS  - Checking the strace with -x option
+Makefile
+Makefile.am
+Makefile.in
+Test-Support-FNS
+init.sh
+ptrace_setoptions
+strace-f
+strace-test-PTG1.sh
+strace-test-PTG2.sh
+strace-test-PTG3.sh
+strace-test-main.sh
+test_strace_result.log
+test16 -TD-strace-strace-PTG3-16  PASS  - Checking the strace with -e option
+Tue Feb 18 17:37:26 UTC 2014
+test17 -TD-strace-strace-PTG3-17  PASS  - Checking the strace with -o option
+Tue Feb 18 17:37:26 UTC 2014
+test18 -TD-strace-strace-PTG3-18  PASS  - Checking the strace with -O option
+Tue Feb 18 17:37:26 UTC 2014
+test19 -TD-strace-strace-PTG3-19  PASS  - Checking the strace with -c and -S option
+Tue Feb 18 17:37:26 UTC 2014
+test20 -TD-strace-strace-PTG3-20  PASS  - Checking the strace with -E and TX=1 option
+Tue Feb 18 17:37:27 UTC 2014
+test21 -TD-strace-strace-PTG3-21  PASS  - Checking the strace with -E and TX option
+Tue Feb 18 17:37:27 UTC 2014
+test22 -TD-strace-strace-PTG3-22  PASS  - Checking the strace with -tt option
+Tue Feb 18 17:37:27 UTC 2014
+test23 -TD-strace-strace-PTG3-23  PASS  - Checking the strace with -ff option
+Tue Feb 18 17:37:27 UTC 2014
+test24 -TD-strace-strace-PTG3-24  PASS  - Checking the strace with -t option
+Tue Feb 18 17:37:27 UTC 2014
+test25 -TD-strace-strace-PTG3-25  PASS  - Checking the strace with -xx option
+strace -- version 4.7
+test26 -TD-strace-strace-PTG3-26  PASS  - Checking the strace with -V option
+[31m test27 -TD-strace-strace-PTG3-27 -  FAILED  - Checking the strace with -cfarsiqFveoOpsSuEh option [0m
+
+Test Result      =  1
+Expected Result  =  0
+Tue Feb 18 17:37:27 UTC 2014
+test28 -TD-strace-strace-PTG3-28  PASS  - Checking the strace with -ttt option
+[31m test29 -TD-strace-strace-PTG3-29 -  FAILED  - Checking the strace with -a and -s option [0m
+
+Test Result      =  1
+Expected Result  =  0
+Tue Feb 18 17:37:27 UTC 2014
+test30 -TD-strace-strace-PTG3-30  PASS  - Checking the strace with -c and -e option
+Tue Feb 18 17:37:27 UTC 2014
+test31 -TD-strace-strace-PTG3-31  PASS  - Checking the strace with -e and trace option
+Tue Feb 18 17:37:27 UTC 2014
+test32 -TD-strace-strace-PTG3-32  PASS  - Checking the strace with -e and abbrev option
+Tue Feb 18 17:37:27 UTC 2014
+test33 -TD-strace-strace-PTG3-33  PASS  - Checking the strace with -e and verbose option
+Tue Feb 18 17:37:27 UTC 2014
+test34 -TD-strace-strace-PTG3-34  PASS  - Checking the strace with -e and raw option
+Tue Feb 18 17:37:27 UTC 2014
+test35 -TD-strace-strace-PTG3-35  PASS  - Checking the strace with -e and signal option
+Tue Feb 18 17:37:27 UTC 2014
+test36 -TD-strace-strace-PTG3-36  PASS  - Checking the strace with -e and read option
+Tue Feb 18 17:37:27 UTC 2014
+test37 -TD-strace-strace-PTG3-37  PASS  - Checking the strace with -e and write option
+
+ Test result
+ Total no of test executed : 33
+ No of Success test cases  :31
+ No of Failed test cases : 2
+
+
+#----------------------------------------#
+# test_strace_result.log was created    #
+#---------------------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 37
+  OUT OF 37, 2 TEST FAILED
+[0m

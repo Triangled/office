@@ -1,0 +1,171 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+2 packages can be updated.
+1 update is a security update.
+
+*** System restart required ***
+Last login: Mon Mar  3 12:35:41 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp
+-bash-3.2# rm jobcontrol-*.log
+rm: can't remove 'jobcontrol-*.log': No such file or directory
+-bash-3.2# cat <<EOF > jobcontrol-test.sh 
+> #!/bin/sh 
+> while true 
+> do 
+>     date 
+>     sleep 3 
+> done 
+> EOF
+-bash-3.2# chmod +x jobcontrol-test.sh 
+-bash-3.2# ./jobcontrol-test.sh >> /dev/null 2>&1 &
+[1] 988
+-bash-3.2# ./jobcontrol-test.sh >> /dev/null 2>&1 &
+[2] 991
+-bash-3.2# jobs || echo 'COMMAND''ERROR'
+[1]-  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+[2]+  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+-bash-3.2# fg %2 
+./jobcontrol-test.sh >> /dev/null 2>&1
+^Z 
+
+[2]+  Stopped                 ./jobcontrol-test.sh >> /dev/null 2>&1
+-bash-3.2#  
+-bash-3.2# jobs | tee /tmp/jobcontrol-fg.log
+[1]-  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+[2]+  Stopped                 ./jobcontrol-test.sh >> /dev/null 2>&1
+-bash-3.2# bg %2 || echo 'COMMAND''ERROR'
+[2]+ ./jobcontrol-test.sh >> /dev/null 2>&1 &
+-bash-3.2# jobs | tee /tmp/jobcontrol-bg.log 
+[1]-  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+[2]+  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+-bash-3.2# kill %1 || echo 'COMMAND''ERROR'
+-bash-3.2# jobs || echo 'COMMAND''ERROR'
+[1]-  Terminated              ./jobcontrol-test.sh >> /dev/null 2>&1
+[2]+  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+-bash-3.2# jobs | tee /tmp/jobcontrol-kill.log
+ls -l
+[2]+  Running                 ./jobcontrol-test.sh >> /dev/null 2>&1 &
+-bash-3.2# ls -l
+ls -l
+drwxrwxrwx    3 root     root          4096 Feb 13 05:44 FunctionTest
+drwxrwxrwx    2 1009     600           4096 Feb 21 12:22 LeakTracer
+drwxrwxrwx   13 1009     600           4096 Mar  3 07:04 bash-3.2.48
+drwxr-xr-x   12 1009     600           4096 Mar  3 06:58 curl-7.29.0
+-rwxrwxrwx    1 1009     600             13 Feb 28 05:25 date.log
+-rwxrwxrwx    1 1009     600             13 Feb 26 09:30 destin_host.log
+-rwxrwxrwx    1 1009     600             18 Feb 26 09:30 destin_macadd.log
+drwxrwxrwx   12 1009     600           4096 Feb 27 05:28 gc-7.2
+-rw-r--r--    1 root     root          1123 Feb 27 05:42 gc_test.out
+-rwxrwxrwx    1 root     root            13 Feb 21 12:20 host_ip.log
+-rwxrwxrwx    1 1009     600             13 Feb 28 05:25 ipaddr_host_eth0.log
+-rwxrwxrwx    1 1009     600             10 Feb 28 05:25 ipaddr_host_eth1.log
+-rw-r--r--    1 root     root           142 Mar  3 07:06 jobcontrol-bg.log
+-rw-r--r--    1 root     root           140 Mar  3 07:06 jobcontrol-fg.log
+-rw-r--r--    1 root     root            71 Mar  3 07:06 jobcontrol-kill.log
+-rwxrwxrwx    1 root     root            56 Mar  3 07:06 jobcontrol-test.sh
+-rwxrwxrwx    1 root     root          9540 Feb 21 05:26 killall-test
+-rwxrwxrwx    1 root     root          1027 Feb 21 05:26 killall-test.c
+-rwxrwxrwx    1 root     root             9 Mar  3 06:59 libcurl_test.out
+-rwxrwxrwx    1 root     root            12 Feb 21 14:05 mkcramfs-cat.log
+-rwxrwxrwx    1 root     root            12 Feb 21 14:05 mkcramfs-df.log
+drwxrwxrwx    3 1009     600           4096 Feb 21 13:06 performance-test
+-rwxrwxrwx    1 root     root         11845 Feb 21 05:16 print-thread-devel
+-rwxrwxrwx    1 1009     600           1842 Feb  3  2009 print-threads.c
+drwxrwxrwx   12 1009     600           4096 Feb 21 10:12 shadow-4.1.5
+-rwxrwxrwx    1 root     root          3687 Feb 21 10:15 shadow_test.out
+drwxr-xr-x    2 1009     600           4096 Feb 26 09:09 smem-1.3
+drwxr-xr-x   12 1009     600           4096 Feb 27 10:21 tar-1.17
+-rw-r--r--    1 root     root          5980 Feb 26 09:48 tar_test.out
+-rwxrwxrwx    1 root     root            10 Feb 21 12:20 target_ip.log
+drwxr-xr-x    7 1009     600          12288 Feb 26 09:30 tcpdump-4.3.0
+-rw-r--r--    1 root     root          1287 Feb 26 09:31 tcpdump-test.log
+drwxr-xr-x    7 1009     600           4096 Feb 28 07:02 traceroute-2.0.19
+-rwxrwxrwx    1 root     root            49 Feb 21 05:39 traceroute-test.log
+-rw-r--r--    1 1009     600          17522 Aug 22  2012 traceroute-test.patch
+-rw-r--r--    1 root     root            49 Feb 28 07:02 traceroute.log
+drwxrwxrwx    4 root     root          4096 Feb 20 14:22 tzdata-build
+drwxrwxrwx   25 1009     600           4096 Feb 24 06:39 util-linux-2.23
+drwxrwxrwx   14 1009     600           4096 Feb 26 07:31 zlib-1.2.7
+-rwxrwxrwx    1 root     root           875 Feb 26 07:31 zlib_test.out
+-bash-3.2# ls -l
+ls -l
+drwxrwxrwx    3 root     root          4096 Feb 13 05:44 FunctionTest
+drwxrwxrwx    2 1009     600           4096 Feb 21 12:22 LeakTracer
+drwxrwxrwx   13 1009     600           4096 Mar  3 07:04 bash-3.2.48
+drwxr-xr-x   12 1009     600           4096 Mar  3 06:58 curl-7.29.0
+-rwxrwxrwx    1 1009     600             13 Feb 28 05:25 date.log
+-rwxrwxrwx    1 1009     600             13 Feb 26 09:30 destin_host.log
+-rwxrwxrwx    1 1009     600             18 Feb 26 09:30 destin_macadd.log
+drwxrwxrwx   12 1009     600           4096 Feb 27 05:28 gc-7.2
+-rw-r--r--    1 root     root          1123 Feb 27 05:42 gc_test.out
+-rwxrwxrwx    1 root     root            13 Feb 21 12:20 host_ip.log
+-rwxrwxrwx    1 1009     600             13 Feb 28 05:25 ipaddr_host_eth0.log
+-rwxrwxrwx    1 1009     600             10 Feb 28 05:25 ipaddr_host_eth1.log
+-rw-r--r--    1 root     root           142 Mar  3 07:06 jobcontrol-bg.log
+-rw-r--r--    1 root     root           140 Mar  3 07:06 jobcontrol-fg.log
+-rw-r--r--    1 root     root            71 Mar  3 07:06 jobcontrol-kill.log
+-rwxrwxrwx    1 root     root            56 Mar  3 07:06 jobcontrol-test.sh
+-rwxrwxrwx    1 root     root          9540 Feb 21 05:26 killall-test
+-rwxrwxrwx    1 root     root          1027 Feb 21 05:26 killall-test.c
+-rwxrwxrwx    1 root     root             9 Mar  3 06:59 libcurl_test.out
+-rwxrwxrwx    1 root     root            12 Feb 21 14:05 mkcramfs-cat.log
+-rwxrwxrwx    1 root     root            12 Feb 21 14:05 mkcramfs-df.log
+drwxrwxrwx    3 1009     600           4096 Feb 21 13:06 performance-test
+-rwxrwxrwx    1 root     root         11845 Feb 21 05:16 print-thread-devel
+-rwxrwxrwx    1 1009     600           1842 Feb  3  2009 print-threads.c
+drwxrwxrwx   12 1009     600           4096 Feb 21 10:12 shadow-4.1.5
+-rwxrwxrwx    1 root     root          3687 Feb 21 10:15 shadow_test.out
+drwxr-xr-x    2 1009     600           4096 Feb 26 09:09 smem-1.3
+drwxr-xr-x   12 1009     600           4096 Feb 27 10:21 tar-1.17
+-rw-r--r--    1 root     root          5980 Feb 26 09:48 tar_test.out
+-rwxrwxrwx    1 root     root            10 Feb 21 12:20 target_ip.log
+drwxr-xr-x    7 1009     600          12288 Feb 26 09:30 tcpdump-4.3.0
+-rw-r--r--    1 root     root          1287 Feb 26 09:31 tcpdump-test.log
+drwxr-xr-x    7 1009     600           4096 Feb 28 07:02 traceroute-2.0.19
+-rwxrwxrwx    1 root     root            49 Feb 21 05:39 traceroute-test.log
+-rw-r--r--    1 1009     600          17522 Aug 22  2012 traceroute-test.patch
+-rw-r--r--    1 root     root            49 Feb 28 07:02 traceroute.log
+drwxrwxrwx    4 root     root          4096 Feb 20 14:22 tzdata-build
+drwxrwxrwx   25 1009     600           4096 Feb 24 06:39 util-linux-2.23
+drwxrwxrwx   14 1009     600           4096 Feb 26 07:31 zlib-1.2.7
+-rwxrwxrwx    1 root     root           875 Feb 26 07:31 zlib_test.out
+-bash-3.2# ls -l
+fg 
+^C
+
+-bash-3.2# 
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/jobcontrol-fg.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/jobcontrol-bg.log to 10.0.6.38:/home/rpmuser/rpm/tmp.........done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/jobcontrol-kill.log to 10.0.6.38:/home/rpmuser/rpm/tmp.......done
+jobcontrol test completed!
+jobcontrol : TEST_OK

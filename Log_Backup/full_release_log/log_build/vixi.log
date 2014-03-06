@@ -1,0 +1,318 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/internal/SRPMS/sony-target-dev-vixie-cron-4.1-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-vixie-cwarning: group rpmuser does not exist - using root
+                                            (  3%)warning: group rpmuser does not exist - using root
+#                                           (100%)##                                          (100%)###                                         (100%)####                                        (100%)#####                                       (100%)######                                      (100%)#######                                     (100%)########                                    (100%)#########                                   (100%)##########                                  (100%)###########                                 (100%)############                                (100%)#############                               (100%)##############                              (100%)###############                             (100%)################                            (100%)#################                           (100%)##################                          (100%)###################                         (100%)####################                        (100%)#####################                       (100%)######################                      (100%)#######################                     (100%)########################                    (100%)#########################                   (100%)##########################                  (100%)###########################                 (100%)############################                (100%)#############################               (100%)##############################              (100%)###############################             (100%)################################            (100%)#################################           (100%)##################################          (100%)###################################         (100%)####################################        (100%)#####################################       (100%)######################################      (100%)#######################################     (100%)########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-vixie-cron.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.KbbjkE
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf vixie-cron-4.1
++ /bin/bzip2 -dc /home/rpmuser/rpm/SOURCES/vixie-cron-4.1.tar.bz2
++ /bin/tar -xvvf -
+drwxr-xr-x ratler/ratler     0 2005-02-22 17:49 vixie-cron-4.1/
+-rw-r--r-- ratler/ratler  3054 2005-02-22 17:49 vixie-cron-4.1/README
+-rw-r--r-- ratler/ratler  8856 2005-02-22 17:49 vixie-cron-4.1/CHANGES
+-rw-r--r-- ratler/ratler  3956 2005-02-22 17:49 vixie-cron-4.1/FEATURES
+-rw-r--r-- ratler/ratler  4230 2005-02-22 17:49 vixie-cron-4.1/INSTALL
+-rw-r--r-- ratler/ratler  3858 2005-02-22 17:49 vixie-cron-4.1/CONVERSION
+-rw-r--r-- ratler/ratler  1598 2005-02-22 17:49 vixie-cron-4.1/THANKS
+-rw-r--r-- ratler/ratler 20685 2005-02-22 17:49 vixie-cron-4.1/MAIL
+-rw-r--r-- ratler/ratler  4984 2005-02-22 17:49 vixie-cron-4.1/bitstring.3
+-rw-r--r-- ratler/ratler  7342 2005-02-22 17:49 vixie-cron-4.1/crontab.5
+-rw-r--r-- ratler/ratler  3207 2005-02-22 17:49 vixie-cron-4.1/crontab.1
+-rw-r--r-- ratler/ratler  3592 2005-02-22 17:49 vixie-cron-4.1/cron.8
+-rw-r--r-- ratler/ratler   380 2005-02-22 17:49 vixie-cron-4.1/putman.sh
+-rw-r--r-- ratler/ratler  4712 2005-02-22 17:49 vixie-cron-4.1/Makefile
+-rw-r--r-- ratler/ratler  5038 2005-02-22 17:49 vixie-cron-4.1/bitstring.h
+-rw-r--r-- ratler/ratler  1328 2005-02-22 17:49 vixie-cron-4.1/cron.h
+-rw-r--r-- ratler/ratler  3590 2005-02-22 17:49 vixie-cron-4.1/config.h
+-rw-r--r-- ratler/ratler  3024 2005-02-22 17:49 vixie-cron-4.1/pathnames.h
+-rw-r--r-- ratler/ratler  3138 2005-02-22 17:49 vixie-cron-4.1/externs.h
+-rw-r--r-- ratler/ratler  4186 2005-02-22 17:49 vixie-cron-4.1/macros.h
+-rw-r--r-- ratler/ratler  1967 2005-02-22 17:49 vixie-cron-4.1/structs.h
+-rw-r--r-- ratler/ratler  2494 2005-02-22 17:49 vixie-cron-4.1/funcs.h
+-rw-r--r-- ratler/ratler  2003 2005-02-22 17:49 vixie-cron-4.1/globals.h
+-rw-r--r-- ratler/ratler 11569 2005-02-22 17:49 vixie-cron-4.1/cron.c
+-rw-r--r-- ratler/ratler 15890 2005-02-22 17:49 vixie-cron-4.1/crontab.c
+-rw-r--r-- ratler/ratler  7256 2005-02-22 17:49 vixie-cron-4.1/database.c
+-rw-r--r-- ratler/ratler 14031 2005-02-22 17:49 vixie-cron-4.1/do_command.c
+-rw-r--r-- ratler/ratler 14293 2005-02-22 17:49 vixie-cron-4.1/entry.c
+-rw-r--r-- ratler/ratler  5694 2005-02-22 17:49 vixie-cron-4.1/env.c
+-rw-r--r-- ratler/ratler  1768 2005-02-22 17:49 vixie-cron-4.1/job.c
+-rw-r--r-- ratler/ratler  2640 2005-02-22 17:49 vixie-cron-4.1/user.c
+-rw-r--r-- ratler/ratler  5045 2005-02-22 17:49 vixie-cron-4.1/popen.c
+-rw-r--r-- ratler/ratler 16733 2005-02-22 17:49 vixie-cron-4.1/misc.c
+-rw-r--r-- ratler/ratler  3608 2005-02-22 17:49 vixie-cron-4.1/pw_dup.c
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd vixie-cron-4.1
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.CMgQpF
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd vixie-cron-4.1
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o cron.o cron.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o database.o database.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o user.o user.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o entry.o entry.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o job.o job.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o do_command.o do_command.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o misc.o misc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o env.o env.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o popen.o popen.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o pw_dup.o pw_dup.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -o cron cron.o database.o user.o entry.o job.o do_command.o misc.o env.o popen.o pw_dup.o 
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o crontab.o crontab.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -o crontab crontab.o misc.o entry.o env.o pw_dup.o 
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.sRK6aJ
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd vixie-cron-4.1
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ cp crontab /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ cp cron /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-vixie-cron-4.1-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-vixie-cron-4.1-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-vixie-cron-4.1-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.P46JLU
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd vixie-cron-4.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-vixie-cron-4.1-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 12:44:33 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/vixie-cron-4.1
+]0;rpmuser@Triangle: ~/rpm/BUILD/vixie-cron-4.1rpmuser@Triangle:~/rpm/BUILD/vixie-cron-4.1$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/vixie-cron/test/cron-tests.patch
+patching file Makefile
+patching file tests/cron-test-main.sh
+patching file tests/cron-test-PTG1.sh
+patching file tests/cron-test-PTG2.sh
+patching file tests/cron-test-PTG3.sh
+patching file tests/Test-Support-Fns
+]0;rpmuser@Triangle: ~/rpm/BUILD/vixie-cron-4.1rpmuser@Triangle:~/rpm/BUILD/vixie-cron-4.1$ make CC="/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a"
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o cron.o cron.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o database.o database.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o user.o user.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o entry.o entry.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o job.o job.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o do_command.o do_command.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o misc.o misc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o env.o env.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o popen.o popen.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o pw_dup.o pw_dup.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a  -o cron cron.o database.o user.o entry.o job.o do_command.o misc.o env.o popen.o pw_dup.o 
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -g -I.    -c -o crontab.o crontab.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a  -o crontab crontab.o misc.o entry.o env.o pw_dup.o 
+]0;rpmuser@Triangle: ~/rpm/BUILD/vixie-cron-4.1rpmuser@Triangle:~/rpm/BUILD/vixie-cron-4.1$ date sending 10.0.6.38:/home/rpmuser/rpm/BUILD/vixie-cron-4.1 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..........................................done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Fri Feb 14 12:50:00 UTC 2014
+-bash-3.2# cd /tmp/vixie-cron-4.1
+-bash-3.2# cron
+/var/cron: No such file or directory
+/var/cron: created
+tabs: No such file or directory
+tabs: created
+-bash-3.2# syslogd
+-bash-3.2# useradd rpmuser
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+useradd: user 'rpmuser' already exists
+-bash-3.2# make check 2>&1 | tee /tmp/vixie-cron.log ; echo 'COMMAND''DONE'
+cd tests; sh cron-test-main.sh; cd ../ ;
+
+=================================================================
+                  CRON Test Cases                          
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Date               : Fri Feb 14 12:50:00 UTC 2014                        
+=================================================================
+ Testing TD-cron-PTG1 
+ -----------------------
+Execution in Progress...Please wait for 130 seconds.
+PASS: test1 -TD-cron-PTG1-1  - Basic Functionality Test 
+Execution in Progress...Please wait for 150 seconds.
+PASS: test2 -TD-cron-PTG1-2  - Checking schedules the job correctly 
+
+ Testing TD-cron-PTG2 
+ -----------------------
+su: Permission denied
+(Ignored)
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+su: Module is unknown
+
+ Testing TD-cron-PTG3 
+ -----------------------
+PASS: test5 -TD-cron-PTG3-5  - Testing -l option (to List all cronjobs) 
+PASS: test6 -TD-cron-PTG3-6  - Testing -r option (to uninstall all cronjobs) 
+
+#----------------------------#
+# cron_result.log was created #
+#---------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 4
+  ALL TESTS SUCCESSFUL 
+[0m
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/vixie-cron.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+vixie-cron : TEST_OK

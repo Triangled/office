@@ -1,0 +1,479 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/Tools_Userland/SRPMS/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-tcp-wra                                            (  3%)warning: group rpmuser does not exist - using root
+#                                           ( 14%)##                                          ( 14%)###                                         ( 14%)####                                        ( 14%)#####                                       ( 14%)warning: group rpmuser does not exist - using root
+######                                      ( 52%)#######                                     ( 52%)########                                    ( 52%)#########                                   ( 52%)##########                                  ( 52%)###########                                 ( 52%)############                                ( 52%)#############                               ( 52%)##############                              ( 52%)###############                             ( 52%)################                            ( 52%)#################                           ( 52%)##################                          ( 52%)###################                         ( 52%)####################                        ( 52%)#####################                       ( 52%)######################                      ( 52%)#######################                     ( 89%)########################                    ( 89%)#########################                   ( 89%)##########################                  ( 89%)###########################                 ( 89%)############################                ( 89%)#############################               ( 89%)##############################              ( 89%)###############################             ( 89%)################################            ( 89%)#################################           ( 89%)##################################          ( 89%)###################################         ( 89%)####################################        ( 89%)#####################################       ( 89%)######################################      ( 89%)#######################################     ( 97%)########################################    ( 97%)#########################################   ( 97%)##########################################  ( 97%)warning: group rpmuser does not exist - using root
+########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-tcp-wrappers.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.7fkEV5
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf tcp_wrappers_7.6-ipv6.1
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/tcp_wrappers_7.6-ipv6.1.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd tcp_wrappers_7.6-ipv6.1
++ echo 'Patch (tcp-wrappers_7.6-ipv6.1-3.diff.gz):'
+Patch (tcp-wrappers_7.6-ipv6.1-3.diff.gz):
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/tcp-wrappers_7.6-ipv6.1-3.diff.gz
++ /usr/bin/patch -s -p1
++ echo 'Patch #1 (tcp_wrappers_7.6-ipv6.4-update.patch):'
+Patch #1 (tcp_wrappers_7.6-ipv6.4-update.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/tcp_wrappers_7.6-ipv6.4-update.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.RY5MTA
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcp_wrappers_7.6-ipv6.1
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ sed -i 's,^extern char \*malloc();,/* & */,' scaffold.c
++ sed -i 's/ln -s/ln -sf/' Makefile
++ sed -i 's/-o root -g root/ /' Makefile
++ make REAL_DAEMON_DIR=/usr/sbin 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' GLIBC=4 linux
++ tee build.log
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tcp_wrappers_7.6-ipv6.1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpd.o -c tcpd.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c hosts_access.c -o shared/hosts_access.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c options.c -o shared/options.o
+options.c: In function 'twist_option':
+options.c:448:13: warning: incompatible implicit declaration of built-in function 'execl' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c shell_cmd.c -o shared/shell_cmd.o
+shell_cmd.c: In function 'do_child':
+shell_cmd.c:84:9: warning: incompatible implicit declaration of built-in function 'execl' [enabled by default]
+shell_cmd.c:91:5: warning: incompatible implicit declaration of built-in function '_exit' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c rfc931.c -o shared/rfc931.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c eval.c -o shared/eval.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c hosts_ctl.c -o shared/hosts_ctl.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c refuse.c -o shared/refuse.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c percent_x.c -o shared/percent_x.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c clean_exit.c -o shared/clean_exit.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c weak_symbols.c -o shared/weak_symbols.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c fromhost.c -o shared/fromhost.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c fix_options.c -o shared/fix_options.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c socket.c -o shared/socket.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c tli.c -o shared/tli.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c workarounds.c -o shared/workarounds.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c update.c -o shared/update.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c misc.c -o shared/misc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c diag.c -o shared/diag.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c percent_m.c -o shared/percent_m.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -fPIC -shared -D_REENTRANT -c myvsyslog.c -o shared/myvsyslog.o
+rm -f shared/libwrap.so.0.7.6
+arm-sony-linux-gnueabi-gcc -tarmv7a -o shared/libwrap.so.0.7.6 -shared -Xlinker -soname -Xlinker libwrap.so.0 -lc -lnsl shared/hosts_access.o shared/options.o shared/shell_cmd.o shared/rfc931.o shared/eval.o shared/hosts_ctl.o shared/refuse.o shared/percent_x.o shared/clean_exit.o shared/weak_symbols.o shared/fromhost.o shared/fix_options.o shared/socket.o shared/tli.o shared/workarounds.o shared/update.o shared/misc.o shared/diag.o shared/percent_m.o shared/myvsyslog.o;
+ln -sff libwrap.so.0.7.6 shared/libwrap.so.0
+ln -sff libwrap.so.0 shared/libwrap.so
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpd tcpd.o -Lshared -lwrap
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpdmatch.o -c tcpdmatch.c
+tcpdmatch.c: In function 'main':
+tcpdmatch.c:196:2: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+tcpdmatch.c:250:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o fakelog.o -c fakelog.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o inetcf.o -c inetcf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o scaffold.o -c scaffold.c
+scaffold.c: In function 'dup_hostent':
+scaffold.c:62:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+scaffold.c: In function 'check_dns':
+scaffold.c:154:5: warning: incompatible implicit declaration of built-in function 'free' [enabled by default]
+scaffold.c: In function 'clean_exit':
+scaffold.c:176:5: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpdmatch tcpdmatch.o fakelog.o inetcf.o scaffold.o -Lshared -lwrap
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o try-from.o -c try-from.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o try-from try-from.o fakelog.o -Lshared -lwrap
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o safe_finger.o -c safe_finger.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o safe_finger safe_finger.o -Lshared -lwrap
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpdchk.o -c tcpdchk.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tcpdchk tcpdchk.o fakelog.o inetcf.o scaffold.o -Lshared -lwrap
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o hosts_access.o -c hosts_access.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o options.o -c options.c
+options.c: In function 'twist_option':
+options.c:448:13: warning: incompatible implicit declaration of built-in function 'execl' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o shell_cmd.o -c shell_cmd.c
+shell_cmd.c: In function 'do_child':
+shell_cmd.c:84:9: warning: incompatible implicit declaration of built-in function 'execl' [enabled by default]
+shell_cmd.c:91:5: warning: incompatible implicit declaration of built-in function '_exit' [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o rfc931.o -c rfc931.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o eval.o -c eval.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o hosts_ctl.o -c hosts_ctl.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o refuse.o -c refuse.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o percent_x.o -c percent_x.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o clean_exit.o -c clean_exit.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o weak_symbols.o -c weak_symbols.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o fromhost.o -c fromhost.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o fix_options.o -c fix_options.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o socket.o -c socket.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o tli.o -c tli.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o workarounds.o -c workarounds.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o update.o -c update.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o misc.o -c misc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o diag.o -c diag.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o percent_m.o -c percent_m.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -DFACILITY=LOG_DAEMON	 -DHOSTS_ACCESS  -DNETGROUP    -DDAEMON_UMASK=022 -DREAL_DAEMON_DIR=\"/usr/sbin\" -DPROCESS_OPTIONS -DKILL_IP_OPTIONS -DSEVERITY=LOG_INFO	 -DRFC931_TIMEOUT=10  -DHOSTS_DENY=\"/etc/hosts.deny\" -DHOSTS_ALLOW=\"/etc/hosts.allow\"   -DHAVE_STRERROR -DHAVE_WEAKSYMS -D_REENTRANT    -DHAVE_IPV6 -DUSE_GETHOSTBYNAME2 -o myvsyslog.o -c myvsyslog.c
+rm -f libwrap.a
+ar rv libwrap.a hosts_access.o options.o shell_cmd.o rfc931.o eval.o hosts_ctl.o refuse.o percent_x.o clean_exit.o weak_symbols.o fromhost.o fix_options.o socket.o tli.o workarounds.o update.o misc.o diag.o percent_m.o myvsyslog.o
+ar: creating libwrap.a
+a - hosts_access.o
+a - options.o
+a - shell_cmd.o
+a - rfc931.o
+a - eval.o
+a - hosts_ctl.o
+a - refuse.o
+a - percent_x.o
+a - clean_exit.o
+a - weak_symbols.o
+a - fromhost.o
+a - fix_options.o
+a - socket.o
+a - tli.o
+a - workarounds.o
+a - update.o
+a - misc.o
+a - diag.o
+a - percent_m.o
+a - myvsyslog.o
+ranlib libwrap.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tcp_wrappers_7.6-ipv6.1'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OqpFzg
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcp_wrappers_7.6-ipv6.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include
++ make install-lib DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ tee -a ../build.log
+install   -m 0644 shared/libwrap.so.0.7.6 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/
+ln -sf libwrap.so.0.7.6 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libwrap.so.0
++ tee -a ../build.log
++ make install-bin DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+install   -m 0755 tcpd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+install   -m 0755 tcpdchk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+install   -m 0755 tcpdmatch /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+install   -m 0755 try-from /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+install   -m 0755 safe_finger /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+install   -m 0644 tcpd.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8/
+install   -m 0644 tcpdchk.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8/
+install   -m 0644 tcpdmatch.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8/
+install   -m 0644 hosts_access.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5/
+install   -m 0644 hosts_options.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5/
+ln -sf hosts_access.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5/hosts.allow.5
+ln -sf hosts_access.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5/hosts.deny.5
++ make install-dev DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ tee -a ../build.log
+ln -sf /lib/libwrap.so.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libwrap.so
+install   -m 0644 hosts_access.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3/
+install   -m 0644 tcpd.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/
+install   -m 0644 libwrap.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/
+ln -sf hosts_access.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3/hosts_ctl.3
+ln -sf hosts_access.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3/request_init.3
+ln -sf hosts_access.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3/request_set.3
++ rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/safe_finger
++ rm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libwrap.so
++ ln -s ../../lib/libwrap.so.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libwrap.so
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/tcpd.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libwrap.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ ln -s ../../tool/usr/lib/libwrap.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libwrap.a
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-tcp-wrappers-IPv6-7.6-11000002.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-tcp-wrappers-IPv6-7.6-11000002.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.2QJVcj
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcp_wrappers_7.6-ipv6.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcp-wrappers-IPv6-7.6-11000002.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/tcp_wrappers_7.6-ipv6.1 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.....................................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/tcp-wrappers/test/tcp_wrappers_tests.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+3 packages can be updated.
+3 updates are security updates.
+
+*** System restart required ***
+Last login: Mon Feb  3 13:12:11 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.1 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Mon Feb  3 14:18:00 UTC 2014
+-bash-3.2# rm -rf /root/.ssh/known_hosts
+-bash-3.2# rm -rf //etc/ssh/ssh_host_key
+-bash-3.2# rm -rf //etc/ssh/ssh_host_rsa_key
+-bash-3.2# rm -rf //etc/ssh/ssh_host_dsa_key
+-bash-3.2# ssh-keygen -t rsa1 -b 1024 -f //etc/ssh/ssh_host_key -C '' -N ''
+Generating public/private rsa1 key pair.
+Your identification has been saved in //etc/ssh/ssh_host_key.
+Your public key has been saved in //etc/ssh/ssh_host_key.pub.
+The key fingerprint is:
+77:1a:ee:49:58:85:9e:d5:0b:93:8e:29:d5:cc:8a:5c 
+The key's randomart image is:
++--[RSA1 1024]----+
+|                 |
+|           = o   |
+|          E X .  |
+|       . = O o . |
+|        S X o .  |
+|         * +     |
+|        . +      |
+|         o .     |
+|          o      |
++-----------------+
+-bash-3.2# ssh-keygen -t rsa  -f //etc/ssh/ssh_host_rsa_key -C '' -N ''
+Generating public/private rsa key pair.
+Your identification has been saved in //etc/ssh/ssh_host_rsa_key.
+Your public key has been saved in //etc/ssh/ssh_host_rsa_key.pub.
+The key fingerprint is:
+cc:42:5e:87:f2:f5:f4:90:24:1e:0e:09:26:80:2b:ee 
+The key's randomart image is:
++--[ RSA 2048]----+
+| .... o...o .    |
+|.    o  .= + .   |
+| .    o o = +    |
+|o    o * o o o   |
+|o     o S   . .  |
+| .     .         |
+|.                |
+| E               |
+|                 |
++-----------------+
+-bash-3.2# ssh-keygen -t dsa  -f //etc/ssh/ssh_host_dsa_key -C '' -N ''
+Generating public/private dsa key pair.
+Your identification has been saved in //etc/ssh/ssh_host_dsa_key.
+Your public key has been saved in //etc/ssh/ssh_host_dsa_key.pub.
+The key fingerprint is:
+d3:1a:0f:d6:4b:cb:f8:7a:2b:ea:61:d9:16:9b:b8:b1 
+The key's randomart image is:
++--[ DSA 1024]----+
+|                 |
+|                 |
+|                 |
+|         o       |
+|        S +      |
+|       = & o     |
+|      * B =      |
+|     . *...      |
+|     .E..+o.     |
++-----------------+
+-bash-3.2# //usr/sbin/sshd
+-bash-3.2# useradd rpmuser
+-bash-3.2# passwd rpmuser
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+-bash-3.2# mkdir /home/rpmuser
+-bash-3.2# chown -R rpmuser /home/rpmuser
+-bash-3.2# ssh rpmuser@127.0.0.1
+The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+RSA key fingerprint is cc:42:5e:87:f2:f5:f4:90:24:1e:0e:09:26:80:2b:ee.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '127.0.0.1' (RSA) to the list of known hosts.
+rpmuser@127.0.0.1's password: 
+Sony CE Linux 11.0.0.1 armv7a
+-sh-3.2$ exit
+logout
+Connection to 127.0.0.1 closed.
+-bash-3.2# cd /tmp/tcp_wrappers_7.6-ipv6.1
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# patch -p1 < /tmp/tcp_wrappers_tests.patch
+patching file Makefile
+Hunk #1 succeeded at 819 with fuzz 1 (offset 82 lines).
+patching file tests/active/hosts.allow
+patching file tests/active/hosts.deny
+patching file tests/common/passwd
+patching file tests/common/xinetd.conf
+patching file tests/common/xinetd_err.conf
+patching file tests/inactive/hosts.allow
+patching file tests/inactive/hosts.deny
+patching file tests/Makefile
+patching file tests/tcpclient.c
+patching file tests/tcpd.exp
+patching file tests/tcp_wrappers-test-main.sh
+patching file tests/tcp_wrappers-test-PTG1.sh
+patching file tests/tcp_wrappers-test-PTG2.sh
+patching file tests/Test-Support-Fns
+patching file tests/try-from.exp
+-bash-3.2# rm -rf /etc/hosts.deny
+-bash-3.2# touch /etc/hosts.deny
+-bash-3.2# make check 2>&1 | tee /tmp/tcp_wrappers.log ; echo 'COMMAND''DONE'
+cd tests; sh tcp_wrappers-test-main.sh; cd ../ ;
+          Execuiting tcp_wrappers Test Suite
+          -----------------------------
+make[1]: Entering directory `/tmp/tcp_wrappers_7.6-ipv6.1/tests'
+gcc tcpclient.c -o tcpclient
+make[1]: Leaving directory `/tmp/tcp_wrappers_7.6-ipv6.1/tests'
+
+=================================================================
+                 TCP_WRAPPERS Test Cases                        
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9                      
+         Useland            : Sony CE Linux 11.0.0.1 armv7a                    
+         Date               : Mon Feb  3 14:18:37 UTC 2014                        
+=================================================================
+[32m Testing TD-tcp_wrappers-PTG1 [0m
+PASS: test1 -TD-tcp_wrappers-PTG1-1  - Checking functionality of tcpd with sshd
+PASS: test2 -TD-tcp_wrappers-PTG1-2  - Checking functionality of the tcpdmatch utility
+FAILED: [31mtest3 -TD-tcp_wrappers-PTG1-3 - Checking functionality of tryfrom utility [0m
+Test Result      =  0
+Expected Result  =  1
+FAILED: [31mtest4 -TD-tcp_wrappers-PTG1-4 - Checking functionality of tcpd utility [0m
+Test Result      =  0
+Expected Result  =  1
+PASS: test5 -TD-tcp_wrappers-PTG1-5  - Checking functionality of tcpchk utility
+
+ Test result
+   Total no of test executed : 5
+   No of Success test cases  :3
+   No of Failed test cases : 2
+
+
+[32m Testing TD-tcp_wrappers-PTG2 [0m
+PASS: test6 -TD-tcp_wrappers-PTG2-6  - Testing error scenario of the tcpdchk funtion
+
+ Test result
+   Total no of test executed : 1
+   No of Success test cases  :1
+   No of Failed test cases : 0
+
+
+#------------------------------#
+# test_tcp_wrappers.log was created #
+#-----------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 6
+  OUT OF 6, 2 TEST FAILED
+[0m
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/tcp_wrappers.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+tcp-wrappers : TEST_OK

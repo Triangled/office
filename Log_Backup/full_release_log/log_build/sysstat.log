@@ -1,0 +1,207 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 10:32:17 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root 
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# iostat 1 9 || echo 'COMMAND''ERROR'
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a (10.0.6.39)       02/14/14        _armv7l_        (2 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           5.06    0.00    2.27    4.10    0.00   88.56
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.02         0.00        924          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2.01    0.00    3.52   43.22    0.00   51.26
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          15.27    0.00    6.90   26.11    0.00   51.72
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           3.96    0.00    7.43   38.12    0.00   50.50
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          18.18    0.00    7.07   22.22    0.00   52.53
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.51    0.00    8.04   38.19    0.00   52.26
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          18.91    0.00    6.47   23.38    0.00   51.24
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          16.58    0.00    7.04   23.62    0.00   52.76
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2.50    0.00    5.00   41.50    0.00   51.00
+
+Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+sda               0.00         0.00         0.00          0          0
+
+-bash-3.2# mpstat 1 5 || echo 'COMMAND''ERROR'
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a (10.0.6.39)       02/14/14        _armv7l_        (2 CPU)
+
+10:33:57     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest   %idle
+10:33:58     all   17.24    0.00    6.40   24.63    0.00    0.49    0.00    0.00   51.23
+10:33:59     all    1.47    0.00    6.37   41.67    0.00    0.98    0.00    0.00   49.51
+10:34:00     all   16.10    0.00    7.80   22.93    0.00    0.98    0.00    0.00   52.20
+10:34:01     all    2.04    0.00    6.63   40.31    0.00    0.00    0.00    0.00   51.02
+10:34:02     all   18.84    0.00    6.76   21.74    0.00    1.45    0.00    0.00   51.21
+Average:     all   11.23    0.00    6.80   30.15    0.00    0.79    0.00    0.00   51.03
+-bash-3.2# pidstat 1 5 || echo 'COMMAND''ERROR'
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a (10.0.6.39)       02/14/14        _armv7l_        (2 CPU)
+
+10:34:02          PID    %usr %system  %guest    %CPU   CPU  Command
+10:34:03         2448    0.96    0.96    0.00    1.92     0  configure
+10:34:03         4220    0.96    0.00    0.00    0.96     0  pidstat
+
+10:34:03          PID    %usr %system  %guest    %CPU   CPU  Command
+10:34:04         2448    0.00    0.99    0.00    0.99     0  configure
+10:34:04         4220    0.00    2.97    0.00    2.97     1  pidstat
+
+10:34:04          PID    %usr %system  %guest    %CPU   CPU  Command
+10:34:05         2448    0.00    2.00    0.00    2.00     0  configure
+10:34:05         4220    2.00    1.00    0.00    3.00     1  pidstat
+10:34:05        29920    0.00    1.00    0.00    1.00     0  kworker/0:0
+
+10:34:05          PID    %usr %system  %guest    %CPU   CPU  Command
+10:34:06          395    0.00    0.99    0.00    0.99     1  telnetd
+10:34:06         2448    0.99    0.99    0.00    1.98     0  configure
+10:34:06         4220    0.00    0.99    0.00    0.99     1  pidstat
+10:34:06         4274    7.92    0.00    0.00    7.92     0  cc1
+10:34:06        29920    0.00    0.99    0.00    0.99     0  kworker/0:0
+
+10:34:06          PID    %usr %system  %guest    %CPU   CPU  Command
+10:34:07         1263    0.00    0.99    0.00    0.99     1  kworker/1:1
+10:34:07         4220    0.99    1.98    0.00    2.97     1  pidstat
+10:34:07         4284    0.00    0.99    0.00    0.99     0  gcc
+10:34:07        29920    0.00    0.99    0.00    0.99     0  kworker/0:0
+
+Average:          PID    %usr %system  %guest    %CPU   CPU  Command
+Average:          395    0.00    0.20    0.00    0.20     -  telnetd
+Average:         1263    0.00    0.20    0.00    0.20     -  kworker/1:1
+Average:         2448    0.39    0.99    0.00    1.38     -  configure
+Average:         4220    0.79    1.38    0.00    2.17     -  pidstat
+Average:         4284    0.00    0.20    0.00    0.20     -  gcc
+Average:        29920    0.00    0.59    0.00    0.59     -  kworker/0:0
+-bash-3.2# sar 1 5 -o /tmp/sysstat.log||echo 'COMMAND''ERROR'
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a (10.0.6.39)       02/14/14        _armv7l_        (2 CPU)
+
+10:34:07        CPU     %user     %nice   %system   %iowait    %steal     %idle
+10:34:08        all     13.00      0.00      8.50     24.00      0.00     54.50
+10:34:09        all     12.94      0.00      6.47     29.35      0.00     51.24
+10:34:10        all     10.95      0.00     10.45     26.87      0.00     51.74
+10:34:11        all     16.50      0.00      9.00     19.00      0.00     55.50
+10:34:12        all      8.37      0.00      8.37     31.53      0.00     51.72
+Average:        all     12.34      0.00      8.56     26.17      0.00     52.94
+-bash-3.2# sadf /tmp/sysstat.log ||echo 'COMMAND''ERROR'
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %user   13.00
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %nice   0.00
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %system 8.50
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %iowait 24.00
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %steal  0.00
+10.0.6.39       1       2014-02-14 10:34:08 UTC all     %idle   54.50
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %user   12.94
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %nice   0.00
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %system 6.47
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %iowait 29.35
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %steal  0.00
+10.0.6.39       1       2014-02-14 10:34:09 UTC all     %idle   51.24
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %user   10.95
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %nice   0.00
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %system 10.45
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %iowait 26.87
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %steal  0.00
+10.0.6.39       1       2014-02-14 10:34:10 UTC all     %idle   51.74
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %user   16.50
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %nice   0.00
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %system 9.00
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %iowait 19.00
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %steal  0.00
+10.0.6.39       1       2014-02-14 10:34:11 UTC all     %idle   55.50
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %user   8.37
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %nice   0.00
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %system 8.37
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %iowait 31.53
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %steal  0.00
+10.0.6.39       1       2014-02-14 10:34:12 UTC all     %idle   51.72
+-bash-3.2# sar 1 5 || echo 'COMMAND''ERROR'
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a (10.0.6.39)       02/14/14        _armv7l_        (2 CPU)
+
+10:34:12        CPU     %user     %nice   %system   %iowait    %steal     %idle
+10:34:13        all     17.68      0.00      7.07     21.72      0.00     53.54
+10:34:14        all     15.69      0.00      8.33     24.02      0.00     51.96
+10:34:16        all     17.26      0.00      7.61     21.83      0.00     53.30
+10:34:17        all     15.66      0.00      7.07     24.75      0.00     52.53
+10:34:18        all     17.91      0.00      6.97     21.89      0.00     53.23
+Average:        all     16.83      0.00      7.41     22.85      0.00     52.91
+-bash-3.2# sadf 
+Cannot open /var/sa/sa14: No such file or directory
+-bash-3.2# ls -l //var
+drwxr-xr-x    3 root     root          4096 Apr 18  2013 cache
+drwxr-xr-x    2 root     root          4096 Feb 13 05:41 db
+drwxr-xr-x    2 root     root          4096 Apr 19  2013 dhcpd
+drwxr-xr-x    3 root     root          4096 Feb 13 05:40 ftp
+drwxr-xr-x    4 root     root          4096 Feb 13 05:41 lib
+drwxr-xr-x    3 root     root          4096 Feb 13 12:49 lock
+drwxr-xr-x    5 root     root          4096 Feb 13 06:37 log
+drwxr-xr-x    2 root     root          4096 Feb 13 05:40 nginx
+drwxr-xr-x    4 root     root          4096 Feb 13 13:38 run
+drwxr-xr-x    2 root     root          4096 Apr 18  2013 sa
+drwxr-xr-x    4 root     root          4096 Feb 13 05:44 spool
+-bash-3.2# ls -l //var/sa/
+-bash-3.2# Sysstat  test completed!
+sysstat : TEST_OK

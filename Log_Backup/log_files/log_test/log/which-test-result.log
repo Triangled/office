@@ -1,0 +1,105 @@
+make  check-recursive
+make[1]: Entering directory `/tmp/which-2.18'
+Making check in tilde
+make[2]: Entering directory `/tmp/which-2.18/tilde'
+source='tilde.c' object='tilde.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ../depcomp \
+	gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c tilde.c
+source='shell.c' object='shell.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ../depcomp \
+	gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c shell.c
+rm -f libtilde.a
+ar cru libtilde.a tilde.o shell.o 
+ranlib libtilde.a
+make[2]: Leaving directory `/tmp/which-2.18/tilde'
+Making check in .
+make[2]: Entering directory `/tmp/which-2.18'
+restore=: && backupdir=".am$$" && \
+	am__cwd=`pwd` && cd . && \
+	rm -rf $backupdir && mkdir $backupdir && \
+	if (/bin/sh /tmp/which-2.18/missing --run makeinfo --version) >/dev/null 2>&1; then \
+	  for f in which.info which.info-[0-9] which.info-[0-9][0-9] which.i[0-9] which.i[0-9][0-9]; do \
+	    if test -f $f; then mv $f $backupdir; restore=mv; else :; fi; \
+	  done; \
+	else :; fi && \
+	cd "$am__cwd"; \
+	if /bin/sh /tmp/which-2.18/missing --run makeinfo   -I . \
+	 -o which.info which.texinfo; \
+	then \
+	  rc=0; \
+	  cd .; \
+	else \
+	  rc=$?; \
+	  cd . && \
+	  $restore $backupdir/* `echo "./which.info" | sed 's|[^/]*$||'`; \
+	fi; \
+	rm -rf $backupdir; exit $rc
+source='getopt.c' object='getopt.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ./depcomp \
+	/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -c getopt.c
+source='getopt1.c' object='getopt1.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ./depcomp \
+	/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -c getopt1.c
+source='bash.c' object='bash.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ./depcomp \
+	/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -c bash.c
+source='which.c' object='which.o' libtool=no \
+	DEPDIR=.deps depmode=pch /bin/sh ./depcomp \
+	/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -c which.c
+/tool/usr/bin/gcc  -g -O2   -o which  getopt.o getopt1.o bash.o which.o ./tilde/libtilde.a //usr/lib/libiberty.a
+make[2]: Leaving directory `/tmp/which-2.18'
+make[1]: Leaving directory `/tmp/which-2.18'
+cd tests; sh which-test-main.sh; cd ../ ;
+
+=================================================================
+                 WHICH Test Cases                          
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9                      
+         Date               : Thu Jan 23 11:26:11 UTC 2014                        
+=================================================================
+ Testing TD-which-PTG1 
+ -----------------------
+PASS: test1 -TD-which-PTG1-1  - Testing which command without option for the built in command 
+PASS: test2 -TD-which-PTG1-2  - Testing which command without option for the temporary created file 
+PASS: test3 -TD-which-PTG1-3  -  Tesing Return value of successful case: 
+
+ Test result
+ Total no of test executed : 3
+ No of Success test cases  :3
+ No of Failed test cases : 0
+
+
+ Testing TD-which-PTG2 
+ -----------------------
+PASS: test4 -TD-which-PTG2-4  -  Testing  with one failed argument
+PASS: test5 -TD-which-PTG2-5  -  With Invalid Command
+
+ Test result
+ Total no of test executed : 2
+ No of Success test cases  :2
+ No of Failed test cases : 0
+
+
+ Testing TD-which-PTG3 
+ -----------------------
+PASS: test6 -TD-which-PTG3-6  -  With --show-tilde Option
+PASS: test7 -TD-which-PTG3-7  -  With --show-dot option
+PASS: test8 -TD-which-PTG3-8  - Testing --skip-dot option using 'whereis' command
+PASS: test9 -TD-which-PTG3-9  - Testing --show-tilde --show-dot option
+PASS: test10 -TD-which-PTG3-10  - Testing --skip-alias Option
+PASS: test11 -TD-which-PTG3-11  - Testing Version Info Option
+PASS: test12 -TD-which-PTG3-12  - Testing -a option
+
+ Test result
+ Total no of test executed : 7
+ No of Success test cases  :7
+ No of Failed test cases : 0
+
+
+#----------------------------#
+# result.log was created #
+#---------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 12
+  ALL TESTS SUCCESSFUL 
+[0m

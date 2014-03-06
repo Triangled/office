@@ -1,0 +1,713 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+grep : 2.5.1a
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-grep-2.5.1a-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-grep   warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            ( 12%)#                                           ( 12%)##                                          ( 12%)###                                         ( 12%)####                                        ( 12%)#####                                       ( 25%)######                                      ( 25%)#######                                     ( 25%)########                                    ( 25%)#########                                   ( 25%)##########                                  ( 25%)###########                                 ( 37%)############                                ( 37%)#############                               ( 37%)##############                              ( 37%)###############                             ( 37%)################                            ( 49%)#################                           ( 49%)##################                          ( 49%)###################                         ( 49%)####################                        ( 49%)#####################                       ( 49%)######################                      ( 62%)#######################                     ( 62%)########################                    ( 62%)#########################                   ( 62%)##########################                  ( 62%)###########################                 ( 74%)############################                ( 74%)#############################               ( 74%)##############################              ( 74%)###############################             ( 74%)################################            ( 74%)#################################           ( 86%)##################################          ( 86%)###################################         ( 86%)####################################        ( 86%)#####################################       ( 86%)######################################      ( 99%)#######################################     ( 99%)########################################    ( 99%)#########################################   ( 99%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-grep.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.tJy1uy
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf grep-2.5.1a
++ /bin/bzip2 -dc /home/rpmuser/rpm/SOURCES/grep-2.5.1a.tar.bz2
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd grep-2.5.1a
++ echo 'Patch (grep-2.5.1a-diff):'
+Patch (grep-2.5.1a-diff):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/grep-2.5.1a-diff
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.S6EcGP
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd grep-2.5.1a
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export ac_cv_lib_pcre_pcre_exec=no
++ ac_cv_lib_pcre_pcre_exec=no
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --disable-perl-regexp
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets ${MAKE}... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for gawk... (cached) mawk
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for arm-sony-linux-gnueabi-getconf... no
+checking for getconf... getconf
+checking for CFLAGS value to request large file support... 
+checking for LDFLAGS value to request large file support... 
+checking for LIBS value to request large file support... 
+checking for _FILE_OFFSET_BITS... no
+checking for _LARGEFILE_SOURCE... no
+checking for _LARGE_FILES... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for function prototypes... yes
+checking for ANSI C header files... yes
+checking for string.h... (cached) yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking for an ANSI C-conforming const... yes
+checking for inttypes.h... yes
+checking for unsigned long long... yes
+checking for ANSI C header files... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for memory.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether stat file-mode macros are broken... no
+checking for stdlib.h... (cached) yes
+checking for mbstate_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether closedir returns void... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... no
+checking for btowc... yes
+checking for isascii... yes
+checking for memmove... yes
+checking for setmode... no
+checking for strerror... yes
+checking for wctype... yes
+checking for mbrtowc... yes
+checking for memchr... yes
+checking for stpcpy... yes
+checking for strtoul... yes
+checking for atexit... yes
+checking for fnmatch... yes
+checking for stdlib.h... (cached) yes
+checking whether <inttypes.h> defines strtoumax as a macro... no
+checking for strtoumax... yes
+checking whether strtoul is declared... yes
+checking whether strtoull is declared... yes
+checking for strerror in -lcposix... no
+checking for inline... inline
+checking for off_t... yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for stpcpy... (cached) yes
+checking for strchr... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... (cached) yes
+checking for tsearch... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking whether NLS is requested... no
+checking for bison... bison
+checking version of bison... 2.5, ok
+checking for dos file convention... no
+checking for DJGPP environment... no
+checking for environ variable separator... :
+checking for working re_compile_pattern... no
+checking for getopt_long... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking for string.h... (cached) yes
+checking for working strerror_r... no
+checking for strerror... (cached) yes
+checking for strerror_r... (cached) yes
+checking for vprintf... yes
+checking for doprnt... no
+checking for ANSI C header files... (cached) yes
+checking for working malloc... no
+checking for working realloc... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/posix/Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating po/Makefile.in
+config.status: creating intl/Makefile
+config.status: creating doc/Makefile
+config.status: creating m4/Makefile
+config.status: creating vms/Makefile
+config.status: creating bootstrap/Makefile
+config.status: creating config.h
+config.status: executing default-1 commands
+config.status: executing default-2 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
++ make
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+Making all in intl
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/intl'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/intl'
+Making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/po'
+Making all in lib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+Making all in posix
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+source='../../lib/closeout.c' object='closeout.o' libtool=no \
+	depfile='.deps/closeout.Po' tmpdepfile='.deps/closeout.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/closeout.c || echo '../../lib/'`../../lib/closeout.c
+source='../../lib/error.c' object='error.o' libtool=no \
+	depfile='.deps/error.Po' tmpdepfile='.deps/error.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/error.c || echo '../../lib/'`../../lib/error.c
+source='../../lib/exclude.c' object='exclude.o' libtool=no \
+	depfile='.deps/exclude.Po' tmpdepfile='.deps/exclude.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/exclude.c || echo '../../lib/'`../../lib/exclude.c
+source='../../lib/hard-locale.c' object='hard-locale.o' libtool=no \
+	depfile='.deps/hard-locale.Po' tmpdepfile='.deps/hard-locale.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/hard-locale.c || echo '../../lib/'`../../lib/hard-locale.c
+source='../../lib/isdir.c' object='isdir.o' libtool=no \
+	depfile='.deps/isdir.Po' tmpdepfile='.deps/isdir.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/isdir.c || echo '../../lib/'`../../lib/isdir.c
+source='../../lib/obstack.c' object='obstack.o' libtool=no \
+	depfile='.deps/obstack.Po' tmpdepfile='.deps/obstack.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/obstack.c || echo '../../lib/'`../../lib/obstack.c
+source='../../lib/quotearg.c' object='quotearg.o' libtool=no \
+	depfile='.deps/quotearg.Po' tmpdepfile='.deps/quotearg.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/quotearg.c || echo '../../lib/'`../../lib/quotearg.c
+source='../../lib/savedir.c' object='savedir.o' libtool=no \
+	depfile='.deps/savedir.Po' tmpdepfile='.deps/savedir.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/savedir.c || echo '../../lib/'`../../lib/savedir.c
+source='../../lib/xmalloc.c' object='xmalloc.o' libtool=no \
+	depfile='.deps/xmalloc.Po' tmpdepfile='.deps/xmalloc.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/xmalloc.c || echo '../../lib/'`../../lib/xmalloc.c
+source='../../lib/xstrtol.c' object='xstrtol.o' libtool=no \
+	depfile='.deps/xstrtol.Po' tmpdepfile='.deps/xstrtol.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/xstrtol.c || echo '../../lib/'`../../lib/xstrtol.c
+source='../../lib/xstrtoumax.c' object='xstrtoumax.o' libtool=no \
+	depfile='.deps/xstrtoumax.Po' tmpdepfile='.deps/xstrtoumax.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/xstrtoumax.c || echo '../../lib/'`../../lib/xstrtoumax.c
+source='../../lib/regex.c' object='regex.o' libtool=no \
+	depfile='.deps/regex.Po' tmpdepfile='.deps/regex.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/regex.c || echo '../../lib/'`../../lib/regex.c
+In file included from ../../lib/regex.h:2:0,
+                 from ../../lib/regex.c:212:
+../../lib/posix/regex.h:536:0: warning: "__restrict_arr" redefined [enabled by default]
+In file included from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/features.h:375:0,
+                 from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/wchar.h:27,
+                 from ../../lib/regex.c:55:
+/usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/cdefs.h:358:0: note: this is the location of the previous definition
+source='../../lib/malloc.c' object='malloc.o' libtool=no \
+	depfile='.deps/malloc.Po' tmpdepfile='.deps/malloc.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/malloc.c || echo '../../lib/'`../../lib/malloc.c
+source='../../lib/realloc.c' object='realloc.o' libtool=no \
+	depfile='.deps/realloc.Po' tmpdepfile='.deps/realloc.TPo' \
+	depmode=gcc3 /bin/sh ../../depcomp \
+	arm-sony-linux-gnueabi-gcc -tarmv7a -DLIBDIR=\"/usr/lib\" -DHAVE_CONFIG_H -I. -I../../lib -I.. -I.. -I../../lib -I../intl    -O2 -c `test -f ../../lib/realloc.c || echo '../../lib/'`../../lib/realloc.c
+rm -f libgreputils.a
+ar cru libgreputils.a closeout.o error.o exclude.o hard-locale.o isdir.o obstack.o quotearg.o savedir.o xmalloc.o xstrtol.o xstrtoumax.o regex.o malloc.o realloc.o 
+arm-sony-linux-gnueabi-ranlib libgreputils.a
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+Making all in doc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+Updating ../../doc/version.texi
+cd ../../doc \
+	  && /bin/sh /home/rpmuser/rpm/BUILD/grep-2.5.1a/missing --run makeinfo   \
+	       `echo ../../doc/grep.texi | sed 's,.*/,,'`
+inst=`echo "grep" | sed 's,x,x,'`.1; \
+sed -e "s%@grep@%$inst%g" ../../doc/fgrep.man > fgrep.1
+inst=`echo "grep" | sed 's,x,x,'`.1; \
+sed -e "s%@grep@%$inst%g" ../../doc/egrep.man > egrep.1
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+Making all in src
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../src -I.. -I../intl -I../../lib -DLOCALEDIR=\"/usr/share/locale\"    -O2 -c `test -f ../../src/grep.c || echo '../../src/'`../../src/grep.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../src -I.. -I../intl -I../../lib -DLOCALEDIR=\"/usr/share/locale\"    -O2 -c `test -f ../../src/dfa.c || echo '../../src/'`../../src/dfa.c
+In file included from ../../lib/regex.h:2:0,
+                 from ../../src/dfa.c:115:
+../../lib/posix/regex.h:536:0: warning: "__restrict_arr" redefined [enabled by default]
+In file included from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/features.h:375:0,
+                 from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/assert.h:36,
+                 from ../../src/dfa.c:25:
+/usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/cdefs.h:358:0: note: this is the location of the previous definition
+../../src/dfa.c: In function 'parse_bracket_exp_mb':
+../../src/dfa.c:485:19: warning: assignment from incompatible pointer type [enabled by default]
+../../src/dfa.c:554:7: warning: assignment from incompatible pointer type [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../src -I.. -I../intl -I../../lib -DLOCALEDIR=\"/usr/share/locale\"    -O2 -c `test -f ../../src/kwset.c || echo '../../src/'`../../src/kwset.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../src -I.. -I../intl -I../../lib -DLOCALEDIR=\"/usr/share/locale\"    -O2 -c `test -f ../../src/search.c || echo '../../src/'`../../src/search.c
+In file included from ../../lib/regex.h:2:0,
+                 from ../../src/search.c:34:
+../../lib/posix/regex.h:536:0: warning: "__restrict_arr" redefined [enabled by default]
+In file included from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/features.h:375:0,
+                 from /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/types.h:25,
+                 from ../../src/search.c:24:
+/usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/cdefs.h:358:0: note: this is the location of the previous definition
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../../src -I.. -I../intl -I../../lib -DLOCALEDIR=\"/usr/share/locale\"    -O2 -c `test -f ../../src/grepmat.c || echo '../../src/'`../../src/grepmat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o grep  grep.o dfa.o kwset.o search.o grepmat.o ../lib/libgreputils.a 
+echo '#!/bin/sh' >egrep
+echo 'exec grep -E ${1+"$@"}' >>egrep
+chmod a+x egrep
+echo '#!/bin/sh' >fgrep
+echo 'exec grep -F ${1+"$@"}' >>fgrep
+chmod a+x fgrep
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+Making all in tests
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+Making all in m4
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+Making all in vms
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+Making all in bootstrap
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.lGN8tE
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd grep-2.5.1a
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
+Making install in intl
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/intl'
+if test "grep" = "gettext" \
+	   && test '' = 'intl-compat.o'; then \
+	  /bin/sh `case "../mkinstalldirs" in /*) echo "../mkinstalldirs" ;; *) echo "../../mkinstalldirs" ;; esac` /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include; \
+	  /usr/bin/install -c -m 644 libintl.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/libintl.h; \
+	  @LIBTOOL@ --mode=install \
+	    /usr/bin/install -c -m 644 libintl.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libintl.a; \
+	else \
+	  : ; \
+	fi
+if test 'no' = yes; then \
+	  test yes != no || /bin/sh `case "../mkinstalldirs" in /*) echo "../mkinstalldirs" ;; *) echo "../../mkinstalldirs" ;; esac` /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+	  temp=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/t-charset.alias; \
+	  dest=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; \
+	  if test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; then \
+	    orig=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; \
+	    sed -f ref-add.sed $orig > $temp; \
+	    /usr/bin/install -c -m 644 $temp $dest; \
+	    rm -f $temp; \
+	  else \
+	    if test yes = no; then \
+	      orig=charset.alias; \
+	      sed -f ref-add.sed $orig > $temp; \
+	      /usr/bin/install -c -m 644 $temp $dest; \
+	      rm -f $temp; \
+	    fi; \
+	  fi; \
+	  /bin/sh `case "../mkinstalldirs" in /*) echo "../mkinstalldirs" ;; *) echo "../../mkinstalldirs" ;; esac` /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale; \
+	  test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias \
+	    && orig=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias \
+	    || orig=../../intl/locale.alias; \
+	  temp=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/t-locale.alias; \
+	  dest=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias; \
+	  sed -f ref-add.sed $orig > $temp; \
+	  /usr/bin/install -c -m 644 $temp $dest; \
+	  rm -f $temp; \
+	else \
+	  : ; \
+	fi
+if test "grep" = "gettext"; then \
+	  /bin/sh `case "../mkinstalldirs" in /*) echo "../mkinstalldirs" ;; *) echo "../../mkinstalldirs" ;; esac` /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl; \
+	  /usr/bin/install -c -m 644 VERSION /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/VERSION; \
+	  /usr/bin/install -c -m 644 ChangeLog.inst /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/ChangeLog; \
+	  dists="COPYING.LIB-2.0 COPYING.LIB-2.1 Makefile.in config.charset locale.alias ref-add.sin ref-del.sin gmo.h gettextP.h hash-string.h plural-exp.h eval-plural.h os2compat.h libgnuintl.h loadinfo.h bindtextdom.c dcgettext.c dgettext.c gettext.c finddomain.c loadmsgcat.c localealias.c textdomain.c l10nflist.c explodename.c dcigettext.c dcngettext.c dngettext.c ngettext.c plural.y plural-exp.c localcharset.c localename.c osdep.c os2compat.c intl-compat.c"; \
+	  for file in $dists; do \
+	    /usr/bin/install -c -m 644 ../../intl/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/$file; \
+	  done; \
+	  chmod a+x /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/config.charset; \
+	  dists="plural.c"; \
+	  for file in $dists; do \
+	    if test -f $file; then dir=.; else dir=../../intl; fi; \
+	    /usr/bin/install -c -m 644 $dir/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/$file; \
+	  done; \
+	  dists="xopen-msg.sed linux-msg.sed po2tbl.sed.in cat-compat.c COPYING.LIB-2 gettext.h libgettext.h plural-eval.c"; \
+	  for file in $dists; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/intl/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/intl'
+Making install in po
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/po'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/po'
+Making install in lib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+Making install in posix
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib/posix'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/lib'
+Making install in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+/bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+ /usr/bin/install -c -m 644 ../../doc/grep.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/grep.info
+ install-info --info-dir=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/grep.info
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+/bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+ /usr/bin/install -c -m 644 ../../doc/grep.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/grep.1
+ /usr/bin/install -c -m 644 fgrep.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/fgrep.1
+ /usr/bin/install -c -m 644 egrep.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/egrep.1
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/doc'
+Making install in src
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+/bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+  /usr/bin/install -c grep /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/grep
+/bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+ /usr/bin/install -c egrep /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/egrep
+ /usr/bin/install -c fgrep /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/fgrep
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/src'
+Making install in tests
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/tests'
+Making install in m4
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/m4'
+Making install in vms
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/vms'
+Making install in bootstrap
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir/bootstrap'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/grep-2.5.1a/objdir'
++ gzip -9 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/grep.1
++ ln -s grep.1.gz /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/egrep.1.gz
++ ln -s grep.1.gz /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/fgrep.1.gz
++ gzip -9 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/grep.info
++ install -m 755 ../debian/rgrep /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/rgrep
++ ln -s grep.1.gz /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/rgrep.1.gz
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-grep-2.5.1a-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-grep-2.5.1a-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-grep-2.5.1a-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.BORr58
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd grep-2.5.1a
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-grep-2.5.1a-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 15:38:19 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/grep-2.5.1a to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...................................................................................................................................................................................................................................................................................................................................................................................done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 15:45:00 UTC 2014
+-bash-3.2# export PATH=/usr/bin:$PATH
+-bash-3.2# cd /tmp/grep-2.5.1a/objdir/src
+-bash-3.2# mv grep grep.org
+-bash-3.2# ln -s /usr/bin/grep  .
+-bash-3.2# mv fgrep fgrep.org
+-bash-3.2# ln -s /usr/bin/fgrep .
+-bash-3.2# mv egrep egrep.org
+-bash-3.2# ln -s /usr/bin/egrep .
+-bash-3.2# cd /tmp/grep-2.5.1a/objdir/tests
+-bash-3.2# make check 2>&1 | tee /tmp/grep.log
+make  check-TESTS
+make[1]: Entering directory `/tmp/grep-2.5.1a/objdir/tests'
+
+Please, do not be alarmed if some of the tests failed.
+Report them to <bug-grep@gnu.org>,
+with the line number, the name of the file,
+and grep version number 'grep --version'.
+Thank You.
+
+PASS: warning.sh
+PASS: khadafy.sh
+../../tests/spencer1.sh: line 10: mawk: command not found
+PASS: spencer1.sh
+../../tests/bre.sh: line 10: mawk: command not found
+PASS: bre.sh
+../../tests/ere.sh: line 10: mawk: command not found
+PASS: ere.sh
+PASS: status.sh
+PASS: empty.sh
+PASS: options.sh
+PASS: backref.sh
+PASS: file.sh
+===================
+All 10 tests passed
+===================
+make[1]: Leaving directory `/tmp/grep-2.5.1a/objdir/tests'
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/grep.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+grep : TEST_OK

@@ -1,0 +1,35 @@
+cd tests;  make; chmod +x run_tcpdump.sh; ./run_tcpdump.sh
+make[1]: Entering directory `/tmp/tcpdump-4.3.0/tests'
+/tool/usr/bin/gcc -g -O2    broadcast.c   -o broadcast
+/tool/usr/bin/gcc -g -O2    multicast.c   -o multicast
+/tool/usr/bin/gcc -g -O2    tcpclient.c   -o tcpclient
+/tool/usr/bin/gcc -g -O2    tcpclient_rst.c   -o tcpclient_rst
+/tool/usr/bin/gcc -g -O2    tcpclient_urg.c   -o tcpclient_urg
+/tool/usr/bin/gcc -g -O2    udpclient.c   -o udpclient
+make[1]: Leaving directory `/tmp/tcpdump-4.3.0/tests'
+Logging machin details
+Linux 3.4.60_nl-kzm-a9-00073-ge5c404a armv7l
+Testing... ../tcpdump
+checking... ../tcpdump version
+tcpdump version : tcpdump version 4.3.0
+libpcap version : libpcap version 1.3.0
+
+
+Running tests from /tmp/tcpdump-4.3.0/tests/tcpdump-PTG1.sh
+TD-tcpdump-PTG1-001: tcpdump without any options
+Test Pass
+
+TD-tcpdump-PTG1-002: tcpdump with qualifier - type and premitive - host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-003: tcpdump with qualifier - type and premitive - src host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-004: tcpdump with qualifier - type and premitive - dst host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-005: tcpdump with qualifier - type and premitive - ether host
+Testing with valid mac address

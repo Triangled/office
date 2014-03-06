@@ -1,0 +1,98 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 18:24:59 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /dev/
+-bash-3.2# ./MAKEDEV sda 
+-bash-3.2# export PATH=//sbin:$PATH 
+-bash-3.2# umount sda1 
+umount: can't umount sda1: Invalid argument
+-bash-3.2# mkfs.vfat -v sda1 || echo 'COMMAND''ERROR'
+mkfs.vfat 2.11 (12 Mar 2005)
+Auto-selecting FAT32 for large filesystem
+sda1 has 255 heads and 63 sectors per track,
+logical sector size is 512,
+using 0xf8 media descriptor, with 488392002 sectors;
+file system has 2 32-bit FATs and 32 sectors per cluster.
+FAT size is 119179 sectors, and provides 15254800 clusters.
+Volume ID is 00001561, no volume label.
+-bash-3.2# fsck.vfat -v sda1 || echo 'COMMAND''ERROR'
+dosfsck 2.11 (12 Mar 2005)
+dosfsck 2.11, 12 Mar 2005, FAT32, LFN
+Checking we can access the last sector of the filesystem
+Boot sector contents:
+System ID "mkdosfs"
+Media byte 0xf8 (hard disk)
+       512 bytes per logical sector
+     16384 bytes per cluster
+        32 reserved sectors
+First FAT starts at byte 16384 (sector 32)
+         2 FATs, 32 bit entries
+  61019648 bytes per FAT (= 119179 sectors)
+Root directory start at cluster 2 (arbitrary size)
+Data area starts at byte 122055680 (sector 238390)
+  15254800 data clusters (249934643200 bytes)
+63 sectors/track, 255 heads
+         0 hidden sectors
+ 488392002 sectors total
+Checking for unused clusters.
+Checking free cluster summary.
+sda1: 0 files, 1/15254800 clusters
+-bash-3.2# mkdir -p /a 
+-bash-3.2# mount -t vfat sda1 /a || echo 'COMMAND''ERROR'
+-bash-3.2# dd seek=2880 of=floppy.img count=0 
+0+0 records in
+0+0 records out
+-bash-3.2# mkdosfs floppy.img 
+mkdosfs 2.11 (12 Mar 2005)
+-bash-3.2# mkdir -p /mnt 
+-bash-3.2# mount floppy.img /mnt -o loop || echo 'COMMAND''ERROR'
+-bash-3.2# df | egrep "sda1|loop" | cut -d/ -f3 | awk '{print $1}' > /tmp/dosfstool-df.log
+-bash-3.2# cat /proc/mounts | egrep "sda1|loop" | cut -d/ -f3 | awk '{print $1}' > /tmp/dosfstool-cat.log 
+-bash-3.2# umount /a || echo 'COMMAND''ERROR'
+-bash-3.2# umount /mnt 
+-bash-3.2# df 
+Filesystem           1K-blocks      Used Available Use% Mounted on
+rootfs               236149504  31047732 193099368  14% /
+10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a
+                     236149504  31047732 193099368  14% /
+-bash-3.2# cat /proc/mounts 
+rootfs / rootfs rw 0 0
+10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a / nfs rw,noatime,vers=2,rsize=4096,wsize=4096,namlen=255,hard,nolock,proto=udp,timeo=10,retrans=3,sec=sys,mountaddr=10.0.6.38,mountvers=1,mountproto=udp,local_lock=all,addr=10.0.6.38 0 0
+proc /proc proc rw,relatime 0 0
+none /sys sysfs rw,relatime 0 0
+devpts /dev/pts devpts rw,relatime,mode=600 0 0
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/dosfstool-df.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/dosfstool-cat.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done

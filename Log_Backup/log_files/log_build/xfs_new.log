@@ -1,0 +1,716 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.eE1Lar
+-r--r--r-- bnaujok/ptg    1489 2007-01-23 11:27 xfsprogs-2.8.20/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20
+-rwxr-xr-x bnaujok/ptg  207610 2007-03-16 08:28 xfsprogs-2.8.20/configure
+-r--r--r-- bnaujok/ptg    1592 2007-03-16 08:10 xfsprogs-2.8.20/configure.in
+-r-xr-xr-x bnaujok/ptg    1848 2007-01-23 11:27 xfsprogs-2.8.20/Makepkgs
+-r--r--r-- bnaujok/ptg   13817 2007-03-16 08:10 xfsprogs-2.8.20/aclocal.m4
+-r-xr-xr-x bnaujok/ptg    6931 2007-01-23 11:27 xfsprogs-2.8.20/install-sh
+-r--r--r-- bnaujok/ptg     452 2007-01-23 11:27 xfsprogs-2.8.20/README
+-r--r--r-- bnaujok/ptg     116 2007-03-16 08:10 xfsprogs-2.8.20/VERSION
+-r--r--r-- bnaujok/ptg    2003 2007-01-23 11:27 xfsprogs-2.8.20/include/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/include
+-r--r--r-- bnaujok/ptg    3202 2007-01-23 11:27 xfsprogs-2.8.20/include/cache.h
+-r--r--r-- bnaujok/ptg    2136 2007-01-23 11:27 xfsprogs-2.8.20/include/handle.h
+-r--r--r-- bnaujok/ptg    2434 2007-01-23 11:27 xfsprogs-2.8.20/include/jdm.h
+-r--r--r-- bnaujok/ptg   23719 2007-01-23 11:27 xfsprogs-2.8.20/include/libxfs.h
+-r--r--r-- bnaujok/ptg    4743 2007-01-23 11:27 xfsprogs-2.8.20/include/libxlog.h
+-r--r--r-- bnaujok/ptg    2173 2007-01-23 11:27 xfsprogs-2.8.20/include/list.h
+-r--r--r-- bnaujok/ptg     984 2007-01-23 11:27 xfsprogs-2.8.20/include/parent.h
+-r--r--r-- bnaujok/ptg    1468 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs.h
+-r--r--r-- bnaujok/ptg    6297 2007-01-23 11:27 xfsprogs-2.8.20/include/xqm.h
+-r--r--r-- bnaujok/ptg    8099 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_ag.h
+-r--r--r-- bnaujok/ptg    5864 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_alloc.h
+-r--r--r-- bnaujok/ptg    5377 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_alloc_btree.h
+-r--r--r-- bnaujok/ptg    6601 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_arch.h
+-r--r--r-- bnaujok/ptg   11365 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_attr_leaf.h
+-r--r--r-- bnaujok/ptg    4365 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_attr_sf.h
+-r--r--r-- bnaujok/ptg    2070 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_bit.h
+-r--r--r-- bnaujok/ptg   11861 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_bmap.h
+-r--r--r-- bnaujok/ptg   13348 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_bmap_btree.h
+-r--r--r-- bnaujok/ptg   14849 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_btree.h
+-r--r--r-- bnaujok/ptg    5095 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_buf_item.h
+-r--r--r-- bnaujok/ptg   10570 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_da_btree.h
+-r--r--r-- bnaujok/ptg    1443 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dfrag.h
+-r--r--r-- bnaujok/ptg   11083 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dinode.h
+-r--r--r-- bnaujok/ptg    2766 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2.h
+-r--r--r-- bnaujok/ptg    3068 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2_block.h
+-r--r--r-- bnaujok/ptg    5897 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2_data.h
+-r--r--r-- bnaujok/ptg    8239 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2_leaf.h
+-r--r--r-- bnaujok/ptg    3644 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2_node.h
+-r--r--r-- bnaujok/ptg    6271 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir2_sf.h
+-r--r--r-- bnaujok/ptg    8425 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir_leaf.h
+-r--r--r-- bnaujok/ptg    5352 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_dir_sf.h
+-r--r--r-- bnaujok/ptg    5232 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_extfree_item.h
+-r--r--r-- bnaujok/ptg   19160 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_fs.h
+-r--r--r-- bnaujok/ptg    5204 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_ialloc.h
+-r--r--r-- bnaujok/ptg    5608 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_ialloc_btree.h
+-r--r--r-- bnaujok/ptg    1386 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_imap.h
+-r--r--r-- bnaujok/ptg   15273 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_inode.h
+-r--r--r-- bnaujok/ptg    6474 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_inode_item.h
+-r--r--r-- bnaujok/ptg    2813 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_inum.h
+-r--r--r-- bnaujok/ptg    5788 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_log.h
+-r--r--r-- bnaujok/ptg   20807 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_log_priv.h
+-r--r--r-- bnaujok/ptg    2076 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_log_recover.h
+-r--r--r-- bnaujok/ptg   22402 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_mount.h
+-r--r--r-- bnaujok/ptg   14934 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_quota.h
+-r--r--r-- bnaujok/ptg    5614 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_rtalloc.h
+-r--r--r-- bnaujok/ptg   18232 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_sb.h
+-r--r--r-- bnaujok/ptg   37082 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_trans.h
+-r--r--r-- bnaujok/ptg    3663 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_trans_space.h
+-r--r--r-- bnaujok/ptg    5924 2007-01-23 11:27 xfsprogs-2.8.20/include/xfs_types.h
+-r--r--r-- bnaujok/ptg    3010 2007-01-23 11:27 xfsprogs-2.8.20/include/linux.h
+-r--r--r-- bnaujok/ptg    4449 2007-01-23 11:27 xfsprogs-2.8.20/include/swab.h
+-r--r--r-- bnaujok/ptg    3699 2007-01-23 11:27 xfsprogs-2.8.20/include/darwin.h
+-r--r--r-- bnaujok/ptg    3427 2007-01-23 11:27 xfsprogs-2.8.20/include/freebsd.h
+-r--r--r-- bnaujok/ptg   12870 2007-01-23 11:27 xfsprogs-2.8.20/include/irix.h
+-r--r--r-- bnaujok/ptg    4012 2007-01-23 11:27 xfsprogs-2.8.20/include/platform_defs.h.in
+-r--r--r-- bnaujok/ptg    3355 2007-01-23 11:27 xfsprogs-2.8.20/include/builddefs.in
+-r--r--r-- bnaujok/ptg    4586 2007-01-23 11:27 xfsprogs-2.8.20/include/buildmacros
+-r--r--r-- bnaujok/ptg    1735 2007-01-23 11:27 xfsprogs-2.8.20/include/buildrules
+-r--r--r-- bnaujok/ptg    1868 2007-01-23 11:27 xfsprogs-2.8.20/include/volume.h
+-r--r--r-- bnaujok/ptg    1319 2007-01-23 11:27 xfsprogs-2.8.20/include/fstyp.h
+-r--r--r-- bnaujok/ptg    7753 2007-01-23 11:27 xfsprogs-2.8.20/include/dvh.h
+-r--r--r-- bnaujok/ptg    1657 2007-01-23 11:27 xfsprogs-2.8.20/include/command.h
+-r--r--r-- bnaujok/ptg    1885 2007-01-23 11:27 xfsprogs-2.8.20/include/input.h
+-r--r--r-- bnaujok/ptg    2300 2007-01-23 11:27 xfsprogs-2.8.20/include/path.h
+-r--r--r-- bnaujok/ptg    1662 2007-01-23 11:27 xfsprogs-2.8.20/include/project.h
+-r--r--r-- bnaujok/ptg    1147 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/libxfs
+-r--r--r-- bnaujok/ptg   30301 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs.h
+-r--r--r-- bnaujok/ptg    1581 2007-02-07 05:59 xfsprogs-2.8.20/libxfs/init.h
+-r--r--r-- bnaujok/ptg    6523 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/bit.c
+-r--r--r-- bnaujok/ptg   12983 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/cache.c
+-r--r--r-- bnaujok/ptg   18266 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/init.c
+-r--r--r-- bnaujok/ptg    4587 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/lio.c
+-r--r--r-- bnaujok/ptg   12214 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/logitem.c
+-r--r--r-- bnaujok/ptg   15458 2007-02-23 10:57 xfsprogs-2.8.20/libxfs/rdwr.c
+-r--r--r-- bnaujok/ptg   19680 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/trans.c
+-r--r--r-- bnaujok/ptg   22695 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/util.c
+-r--r--r-- bnaujok/ptg   68545 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_alloc.c
+-r--r--r-- bnaujok/ptg   33774 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_ialloc.c
+-r--r--r-- bnaujok/ptg   21970 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_rtalloc.c
+-r--r--r-- bnaujok/ptg   36354 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_inode.c
+-r--r--r-- bnaujok/ptg   23583 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_btree.c
+-r--r--r-- bnaujok/ptg   65277 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_alloc_btree.c
+-r--r--r-- bnaujok/ptg   45943 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_ialloc_btree.c
+-r--r--r-- bnaujok/ptg   69404 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_bmap_btree.c
+-r--r--r-- bnaujok/ptg   71221 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_da_btree.c
+-r--r--r-- bnaujok/ptg   16033 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir.c
+-r--r--r-- bnaujok/ptg   52557 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir_leaf.c
+-r--r--r-- bnaujok/ptg   15511 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2.c
+-r--r--r-- bnaujok/ptg   44275 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2_leaf.c
+-r--r--r-- bnaujok/ptg   71763 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_attr_leaf.c
+-r--r--r-- bnaujok/ptg   33273 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2_block.c
+-r--r--r-- bnaujok/ptg   58490 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2_node.c
+-r--r--r-- bnaujok/ptg   26675 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2_data.c
+-r--r--r-- bnaujok/ptg   33225 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_dir2_sf.c
+-r--r--r-- bnaujok/ptg  154937 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_bmap.c
+-r--r--r-- bnaujok/ptg    9253 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_mount.c
+-r--r--r-- bnaujok/ptg    2463 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_trans.c
+-r--r--r-- bnaujok/ptg   39656 2007-01-23 11:27 xfsprogs-2.8.20/libxfs/xfs_attr.c
+-r--r--r-- bnaujok/ptg    4836 2007-02-07 05:59 xfsprogs-2.8.20/libxfs/linux.c
+-r--r--r-- bnaujok/ptg    2638 2007-02-07 05:59 xfsprogs-2.8.20/libxfs/darwin.c
+-r--r--r-- bnaujok/ptg    3832 2007-02-07 05:59 xfsprogs-2.8.20/libxfs/freebsd.c
+-r--r--r-- bnaujok/ptg    2226 2007-02-07 05:59 xfsprogs-2.8.20/libxfs/irix.c
+-r--r--r-- bnaujok/ptg     409 2007-01-23 11:27 xfsprogs-2.8.20/libxlog/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/libxlog
+-r--r--r-- bnaujok/ptg   42691 2007-02-07 05:59 xfsprogs-2.8.20/libxlog/xfs_log_recover.c
+-r--r--r-- bnaujok/ptg    3158 2007-01-23 11:27 xfsprogs-2.8.20/libxlog/util.c
+-r--r--r-- bnaujok/ptg     487 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/libxcmd
+-r--r--r-- bnaujok/ptg    3617 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/command.c
+-r--r--r-- bnaujok/ptg    8265 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/input.c
+-r--r--r-- bnaujok/ptg    8986 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/paths.c
+-r--r--r-- bnaujok/ptg    3736 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/projects.c
+-r--r--r-- bnaujok/ptg    2068 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/help.c
+-r--r--r-- bnaujok/ptg    1117 2007-01-23 11:27 xfsprogs-2.8.20/libxcmd/quit.c
+-r--r--r-- bnaujok/ptg     344 2007-01-23 11:27 xfsprogs-2.8.20/libhandle/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/libhandle
+-r--r--r-- bnaujok/ptg    8467 2007-01-23 11:27 xfsprogs-2.8.20/libhandle/handle.c
+-r--r--r-- bnaujok/ptg    4909 2007-01-23 11:27 xfsprogs-2.8.20/libhandle/jdm.c
+-r--r--r-- bnaujok/ptg     541 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/libdisk
+-r--r--r-- bnaujok/ptg    1668 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/drivers.h
+-r--r--r-- bnaujok/ptg    7013 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/fstype.h
+-r--r--r-- bnaujok/ptg    1600 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/pttype.h
+-r--r--r-- bnaujok/ptg    1797 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/md.h
+-r--r--r-- bnaujok/ptg    1685 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/xvm.h
+-r--r--r-- bnaujok/ptg    1232 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/evms.h
+-r--r--r-- bnaujok/ptg    2198 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/drivers.c
+-r--r--r-- bnaujok/ptg   12259 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/fstype.c
+-r--r--r-- bnaujok/ptg    2629 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/pttype.c
+-r--r--r-- bnaujok/ptg    2618 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/dm.c
+-r--r--r-- bnaujok/ptg    1862 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/md.c
+-r--r--r-- bnaujok/ptg    2297 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/xvm.c
+-r--r--r-- bnaujok/ptg    1615 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/evms.c
+-r--r--r-- bnaujok/ptg    2639 2007-01-23 11:27 xfsprogs-2.8.20/libdisk/lvm.c
+-r--r--r-- bnaujok/ptg     450 2007-01-23 11:27 xfsprogs-2.8.20/copy/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/copy
+-r--r--r-- bnaujok/ptg    2980 2007-01-23 11:27 xfsprogs-2.8.20/copy/xfs_copy.h
+-r--r--r-- bnaujok/ptg   29612 2007-01-23 11:27 xfsprogs-2.8.20/copy/xfs_copy.c
+-r--r--r-- bnaujok/ptg    1281 2007-01-23 11:27 xfsprogs-2.8.20/db/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/db
+-r--r--r-- bnaujok/ptg     757 2007-01-23 11:27 xfsprogs-2.8.20/db/addr.h
+-r--r--r-- bnaujok/ptg     888 2007-01-23 11:27 xfsprogs-2.8.20/db/agf.h
+-r--r--r-- bnaujok/ptg     892 2007-01-23 11:27 xfsprogs-2.8.20/db/agfl.h
+-r--r--r-- bnaujok/ptg     888 2007-01-23 11:27 xfsprogs-2.8.20/db/agi.h
+-r--r--r-- bnaujok/ptg    1224 2007-01-23 11:27 xfsprogs-2.8.20/db/attr.h
+-r--r--r-- bnaujok/ptg    1022 2007-01-23 11:27 xfsprogs-2.8.20/db/attrshort.h
+-r--r--r-- bnaujok/ptg    1094 2007-01-23 11:27 xfsprogs-2.8.20/db/bit.h
+-r--r--r-- bnaujok/ptg     849 2007-01-23 11:27 xfsprogs-2.8.20/db/block.h
+-r--r--r-- bnaujok/ptg    1241 2007-01-23 11:27 xfsprogs-2.8.20/db/bmap.h
+-r--r--r-- bnaujok/ptg    1199 2007-01-23 11:27 xfsprogs-2.8.20/db/bmapbt.h
+-r--r--r-- bnaujok/ptg    1023 2007-01-23 11:27 xfsprogs-2.8.20/db/bmroot.h
+-r--r--r-- bnaujok/ptg     954 2007-01-23 11:27 xfsprogs-2.8.20/db/bnobt.h
+-r--r--r-- bnaujok/ptg     758 2007-01-23 11:27 xfsprogs-2.8.20/db/check.h
+-r--r--r-- bnaujok/ptg     954 2007-01-23 11:27 xfsprogs-2.8.20/db/cntbt.h
+-r--r--r-- bnaujok/ptg    1240 2007-01-23 11:27 xfsprogs-2.8.20/db/command.h
+-r--r--r-- bnaujok/ptg     760 2007-01-23 11:27 xfsprogs-2.8.20/db/convert.h
+-r--r--r-- bnaujok/ptg     814 2007-01-23 11:27 xfsprogs-2.8.20/db/dbread.h
+-r--r--r-- bnaujok/ptg     808 2007-01-23 11:27 xfsprogs-2.8.20/db/debug.h
+-r--r--r-- bnaujok/ptg    1213 2007-01-23 11:27 xfsprogs-2.8.20/db/dir.h
+-r--r--r-- bnaujok/ptg    1272 2007-01-23 11:27 xfsprogs-2.8.20/db/dir2.h
+-r--r--r-- bnaujok/ptg    1135 2007-01-23 11:27 xfsprogs-2.8.20/db/dir2sf.h
+-r--r--r-- bnaujok/ptg    1016 2007-01-23 11:27 xfsprogs-2.8.20/db/dirshort.h
+-r--r--r-- bnaujok/ptg     884 2007-01-23 11:27 xfsprogs-2.8.20/db/dquot.h
+-r--r--r-- bnaujok/ptg     757 2007-01-23 11:27 xfsprogs-2.8.20/db/echo.h
+-r--r--r-- bnaujok/ptg    1717 2007-01-23 11:27 xfsprogs-2.8.20/db/faddr.h
+-r--r--r-- bnaujok/ptg    4595 2007-01-23 11:27 xfsprogs-2.8.20/db/field.h
+-r--r--r-- bnaujok/ptg     759 2007-01-23 11:27 xfsprogs-2.8.20/db/flist.h
+-r--r--r-- bnaujok/ptg    1400 2007-01-23 11:27 xfsprogs-2.8.20/db/fprint.h
+-r--r--r-- bnaujok/ptg     757 2007-01-23 11:27 xfsprogs-2.8.20/db/frag.h
+-r--r--r-- bnaujok/ptg     759 2007-01-23 11:27 xfsprogs-2.8.20/db/freesp.h
+-r--r--r-- bnaujok/ptg     753 2007-01-23 11:27 xfsprogs-2.8.20/db/hash.h
+-r--r--r-- bnaujok/ptg     757 2007-01-23 11:27 xfsprogs-2.8.20/db/help.h
+-r--r--r-- bnaujok/ptg     898 2007-01-23 11:27 xfsprogs-2.8.20/db/init.h
+-r--r--r-- bnaujok/ptg     954 2007-01-23 11:27 xfsprogs-2.8.20/db/inobt.h
+-r--r--r-- bnaujok/ptg    1382 2007-01-23 11:27 xfsprogs-2.8.20/db/inode.h
+-r--r--r-- bnaujok/ptg     919 2007-01-23 11:27 xfsprogs-2.8.20/db/input.h
+-r--r--r-- bnaujok/ptg    2327 2007-01-23 11:27 xfsprogs-2.8.20/db/io.h
+-r--r--r-- bnaujok/ptg     929 2007-01-23 11:27 xfsprogs-2.8.20/db/malloc.h
+-r--r--r-- bnaujok/ptg     863 2007-01-23 11:27 xfsprogs-2.8.20/db/output.h
+-r--r--r-- bnaujok/ptg    1117 2007-01-23 11:27 xfsprogs-2.8.20/db/print.h
+-r--r--r-- bnaujok/ptg     757 2007-01-23 11:27 xfsprogs-2.8.20/db/quit.h
+-r--r--r-- bnaujok/ptg     914 2007-01-23 11:27 xfsprogs-2.8.20/db/sb.h
+-r--r--r-- bnaujok/ptg     868 2007-01-23 11:27 xfsprogs-2.8.20/db/sig.h
+-r--r--r-- bnaujok/ptg     928 2007-01-23 11:27 xfsprogs-2.8.20/db/strvec.h
+-r--r--r-- bnaujok/ptg     807 2007-01-23 11:27 xfsprogs-2.8.20/db/text.h
+-r--r--r-- bnaujok/ptg    1875 2007-01-23 11:27 xfsprogs-2.8.20/db/type.h
+-r--r--r-- bnaujok/ptg     988 2007-01-23 11:27 xfsprogs-2.8.20/db/write.h
+-r--r--r-- bnaujok/ptg     750 2007-01-23 11:27 xfsprogs-2.8.20/db/attrset.h
+-r--r--r-- bnaujok/ptg    2839 2007-01-23 11:27 xfsprogs-2.8.20/db/addr.c
+-r--r--r-- bnaujok/ptg    3723 2007-01-23 11:27 xfsprogs-2.8.20/db/agf.c
+-r--r--r-- bnaujok/ptg    2652 2007-01-23 11:27 xfsprogs-2.8.20/db/agfl.c
+-r--r--r-- bnaujok/ptg    3152 2007-01-23 11:27 xfsprogs-2.8.20/db/agi.c
+-r--r--r-- bnaujok/ptg   12533 2007-01-23 11:27 xfsprogs-2.8.20/db/attr.c
+-r--r--r-- bnaujok/ptg    4580 2007-01-23 11:27 xfsprogs-2.8.20/db/attrshort.c
+-r--r--r-- bnaujok/ptg    4204 2007-01-23 11:27 xfsprogs-2.8.20/db/bit.c
+-r--r--r-- bnaujok/ptg    6534 2007-01-23 11:27 xfsprogs-2.8.20/db/block.c
+-r--r--r-- bnaujok/ptg    8160 2007-01-23 11:27 xfsprogs-2.8.20/db/bmap.c
+-r--r--r-- bnaujok/ptg    8495 2007-01-23 11:27 xfsprogs-2.8.20/db/bmapbt.c
+-r--r--r-- bnaujok/ptg    7241 2007-01-23 11:27 xfsprogs-2.8.20/db/bmroot.c
+-r--r--r-- bnaujok/ptg    4686 2007-01-23 11:27 xfsprogs-2.8.20/db/bnobt.c
+-r--r--r-- bnaujok/ptg  115496 2007-01-23 11:27 xfsprogs-2.8.20/db/check.c
+-r--r--r-- bnaujok/ptg    4761 2007-01-23 11:27 xfsprogs-2.8.20/db/cntbt.c
+-r--r--r-- bnaujok/ptg    2956 2007-01-23 11:27 xfsprogs-2.8.20/db/command.c
+-r--r--r-- bnaujok/ptg    8204 2007-01-23 11:27 xfsprogs-2.8.20/db/convert.c
+-r--r--r-- bnaujok/ptg    1793 2007-01-23 11:27 xfsprogs-2.8.20/db/dbread.c
+-r--r--r-- bnaujok/ptg    1310 2007-01-23 11:27 xfsprogs-2.8.20/db/debug.c
+-r--r--r-- bnaujok/ptg    7024 2007-01-23 11:27 xfsprogs-2.8.20/db/dir.c
+-r--r--r-- bnaujok/ptg   19403 2007-01-23 11:27 xfsprogs-2.8.20/db/dir2.c
+-r--r--r-- bnaujok/ptg    5374 2007-01-23 11:27 xfsprogs-2.8.20/db/dir2sf.c
+-r--r--r-- bnaujok/ptg    3459 2007-01-23 11:27 xfsprogs-2.8.20/db/dirshort.c
+-r--r--r-- bnaujok/ptg    4844 2007-01-23 11:27 xfsprogs-2.8.20/db/dquot.c
+-r--r--r-- bnaujok/ptg    1179 2007-01-23 11:27 xfsprogs-2.8.20/db/echo.c
+-r--r--r-- bnaujok/ptg    8422 2007-01-23 11:27 xfsprogs-2.8.20/db/faddr.c
+-r--r--r-- bnaujok/ptg   16570 2007-01-23 11:27 xfsprogs-2.8.20/db/field.c
+-r--r--r-- bnaujok/ptg    8934 2007-01-23 11:27 xfsprogs-2.8.20/db/flist.c
+-r--r--r-- bnaujok/ptg    3698 2007-01-23 11:27 xfsprogs-2.8.20/db/fprint.c
+-r--r--r-- bnaujok/ptg   12504 2007-01-23 11:27 xfsprogs-2.8.20/db/frag.c
+-r--r--r-- bnaujok/ptg    9190 2007-01-23 11:27 xfsprogs-2.8.20/db/freesp.c
+-r--r--r-- bnaujok/ptg    1501 2007-01-23 11:27 xfsprogs-2.8.20/db/hash.c
+-r--r--r-- bnaujok/ptg    2048 2007-01-23 11:27 xfsprogs-2.8.20/db/help.c
+-r--r--r-- bnaujok/ptg    3619 2007-01-23 11:27 xfsprogs-2.8.20/db/init.c
+-r--r--r-- bnaujok/ptg    4738 2007-01-23 11:27 xfsprogs-2.8.20/db/inobt.c
+-r--r--r-- bnaujok/ptg   16688 2007-01-23 11:27 xfsprogs-2.8.20/db/inode.c
+-r--r--r-- bnaujok/ptg    5945 2007-01-23 11:27 xfsprogs-2.8.20/db/input.c
+-r--r--r-- bnaujok/ptg   13558 2007-01-23 11:27 xfsprogs-2.8.20/db/io.c
+-r--r--r-- bnaujok/ptg    1529 2007-01-23 11:27 xfsprogs-2.8.20/db/malloc.c
+-r--r--r-- bnaujok/ptg    2360 2007-01-23 11:27 xfsprogs-2.8.20/db/output.c
+-r--r--r-- bnaujok/ptg    5857 2007-01-23 11:27 xfsprogs-2.8.20/db/print.c
+-r--r--r-- bnaujok/ptg    1045 2007-01-23 11:27 xfsprogs-2.8.20/db/quit.c
+-r--r--r-- bnaujok/ptg   20145 2007-01-23 11:27 xfsprogs-2.8.20/db/sb.c
+-r--r--r-- bnaujok/ptg    1319 2007-01-23 11:27 xfsprogs-2.8.20/db/sig.c
+-r--r--r-- bnaujok/ptg    1730 2007-01-23 11:27 xfsprogs-2.8.20/db/strvec.c
+-r--r--r-- bnaujok/ptg    1873 2007-01-23 11:27 xfsprogs-2.8.20/db/text.c
+-r--r--r-- bnaujok/ptg    4423 2007-01-23 11:27 xfsprogs-2.8.20/db/type.c
+-r--r--r-- bnaujok/ptg   14063 2007-01-23 11:27 xfsprogs-2.8.20/db/write.c
+-r--r--r-- bnaujok/ptg    5851 2007-01-23 11:27 xfsprogs-2.8.20/db/attrset.c
+-r-xr-xr-x bnaujok/ptg     665 2007-01-23 11:27 xfsprogs-2.8.20/db/xfs_admin.sh
+-r-xr-xr-x bnaujok/ptg     658 2007-01-23 11:27 xfsprogs-2.8.20/db/xfs_check.sh
+-r-xr-xr-x bnaujok/ptg     612 2007-01-23 11:27 xfsprogs-2.8.20/db/xfs_ncheck.sh
+-r--r--r-- bnaujok/ptg     315 2007-01-23 11:27 xfsprogs-2.8.20/fsck/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/fsck
+-r-xr-xr-x bnaujok/ptg     362 2007-01-23 11:27 xfsprogs-2.8.20/fsck/xfs_fsck.sh
+-r--r--r-- bnaujok/ptg     532 2007-01-23 11:27 xfsprogs-2.8.20/growfs/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/growfs
+-r--r--r-- bnaujok/ptg   12912 2007-01-23 11:27 xfsprogs-2.8.20/growfs/xfs_growfs.c
+-r-xr-xr-x bnaujok/ptg     431 2007-01-23 11:27 xfsprogs-2.8.20/growfs/xfs_info.sh
+-r--r--r-- bnaujok/ptg    1537 2007-01-23 11:27 xfsprogs-2.8.20/io/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/io
+-r--r--r-- bnaujok/ptg    1194 2007-01-23 11:27 xfsprogs-2.8.20/io/init.h
+-r--r--r-- bnaujok/ptg    3942 2007-01-23 11:27 xfsprogs-2.8.20/io/io.h
+-r--r--r-- bnaujok/ptg    3887 2007-01-23 11:27 xfsprogs-2.8.20/io/init.c
+-r--r--r-- bnaujok/ptg    9599 2007-01-23 11:27 xfsprogs-2.8.20/io/attr.c
+-r--r--r-- bnaujok/ptg   12147 2007-01-25 10:02 xfsprogs-2.8.20/io/bmap.c
+-r--r--r-- bnaujok/ptg    2640 2007-01-23 11:27 xfsprogs-2.8.20/io/file.c
+-r--r--r-- bnaujok/ptg    1953 2007-01-23 11:27 xfsprogs-2.8.20/io/freeze.c
+-r--r--r-- bnaujok/ptg    1690 2007-01-23 11:27 xfsprogs-2.8.20/io/fsync.c
+-r--r--r-- bnaujok/ptg    3596 2007-01-23 11:27 xfsprogs-2.8.20/io/getrusage.c
+-r--r--r-- bnaujok/ptg    1868 2007-01-23 11:27 xfsprogs-2.8.20/io/imap.c
+-r--r--r-- bnaujok/ptg   15349 2007-01-25 10:02 xfsprogs-2.8.20/io/mmap.c
+-r--r--r-- bnaujok/ptg   19685 2007-01-23 11:27 xfsprogs-2.8.20/io/open.c
+-r--r--r-- bnaujok/ptg   10255 2007-01-23 11:27 xfsprogs-2.8.20/io/parent.c
+-r--r--r-- bnaujok/ptg    9170 2007-01-23 11:27 xfsprogs-2.8.20/io/pread.c
+-r--r--r-- bnaujok/ptg    3749 2007-01-23 11:27 xfsprogs-2.8.20/io/prealloc.c
+-r--r--r-- bnaujok/ptg    8718 2007-03-16 08:10 xfsprogs-2.8.20/io/pwrite.c
+-r--r--r-- bnaujok/ptg    1627 2007-01-23 11:27 xfsprogs-2.8.20/io/shutdown.c
+-r--r--r-- bnaujok/ptg    1613 2007-01-23 11:27 xfsprogs-2.8.20/io/truncate.c
+-r--r--r-- bnaujok/ptg    3698 2007-01-23 11:27 xfsprogs-2.8.20/io/fadvise.c
+-r--r--r-- bnaujok/ptg    3457 2007-01-23 11:27 xfsprogs-2.8.20/io/madvise.c
+-r--r--r-- bnaujok/ptg    3069 2007-01-23 11:27 xfsprogs-2.8.20/io/mincore.c
+-r--r--r-- bnaujok/ptg    4601 2007-01-23 11:27 xfsprogs-2.8.20/io/sendfile.c
+-r--r--r-- bnaujok/ptg    5066 2007-01-23 11:27 xfsprogs-2.8.20/io/inject.c
+-r--r--r-- bnaujok/ptg    1965 2007-01-23 11:27 xfsprogs-2.8.20/io/resblks.c
+-r-xr-xr-x bnaujok/ptg     638 2007-01-23 11:27 xfsprogs-2.8.20/io/xfs_bmap.sh
+-r--r--r-- bnaujok/ptg     754 2007-01-23 11:27 xfsprogs-2.8.20/io/xfs_freeze.sh
+-r-xr-xr-x bnaujok/ptg    1007 2007-01-23 11:27 xfsprogs-2.8.20/io/xfs_mkfile.sh
+-r--r--r-- bnaujok/ptg     543 2007-01-23 11:27 xfsprogs-2.8.20/logprint/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/logprint
+-r--r--r-- bnaujok/ptg    1667 2007-01-23 11:27 xfsprogs-2.8.20/logprint/logprint.h
+-r--r--r-- bnaujok/ptg    5847 2007-01-23 11:27 xfsprogs-2.8.20/logprint/logprint.c
+-r--r--r-- bnaujok/ptg    1876 2007-01-23 11:27 xfsprogs-2.8.20/logprint/log_copy.c
+-r--r--r-- bnaujok/ptg    2139 2007-01-23 11:27 xfsprogs-2.8.20/logprint/log_dump.c
+-r--r--r-- bnaujok/ptg   44577 2007-01-23 11:27 xfsprogs-2.8.20/logprint/log_misc.c
+-r--r--r-- bnaujok/ptg   15285 2007-01-23 11:27 xfsprogs-2.8.20/logprint/log_print_all.c
+-r--r--r-- bnaujok/ptg    1996 2007-01-23 11:27 xfsprogs-2.8.20/logprint/log_print_trans.c
+-r--r--r-- bnaujok/ptg     621 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/mkfs
+-r--r--r-- bnaujok/ptg    3174 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/xfs_mkfs.h
+-r--r--r-- bnaujok/ptg    2970 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/maxtrres.c
+-r--r--r-- bnaujok/ptg   18158 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/proto.c
+-r--r--r-- bnaujok/ptg   64061 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/xfs_mkfs.c
+-r--r--r-- bnaujok/ptg    1848 2007-01-23 11:27 xfsprogs-2.8.20/mkfs/fstyp.c
+-r--r--r-- bnaujok/ptg     841 2007-01-23 11:27 xfsprogs-2.8.20/quota/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/quota
+-r--r--r-- bnaujok/ptg    1084 2007-01-23 11:27 xfsprogs-2.8.20/quota/init.h
+-r--r--r-- bnaujok/ptg    2743 2007-02-23 10:57 xfsprogs-2.8.20/quota/quota.h
+-r--r--r-- bnaujok/ptg    3059 2007-01-23 11:27 xfsprogs-2.8.20/quota/init.c
+-r--r--r-- bnaujok/ptg   10313 2007-02-23 10:57 xfsprogs-2.8.20/quota/util.c
+-r--r--r-- bnaujok/ptg   16107 2007-01-23 11:27 xfsprogs-2.8.20/quota/edit.c
+-r--r--r-- bnaujok/ptg    9098 2007-01-23 11:27 xfsprogs-2.8.20/quota/free.c
+-r--r--r-- bnaujok/ptg    3215 2007-01-23 11:27 xfsprogs-2.8.20/quota/path.c
+-r--r--r-- bnaujok/ptg    7404 2007-01-23 11:27 xfsprogs-2.8.20/quota/project.c
+-r--r--r-- bnaujok/ptg    9183 2007-01-23 11:27 xfsprogs-2.8.20/quota/quot.c
+-r--r--r-- bnaujok/ptg   10423 2007-01-23 11:27 xfsprogs-2.8.20/quota/quota.c
+-r--r--r-- bnaujok/ptg   15656 2007-01-23 11:27 xfsprogs-2.8.20/quota/report.c
+-r--r--r-- bnaujok/ptg   13496 2007-01-23 11:27 xfsprogs-2.8.20/quota/state.c
+-r--r--r-- bnaujok/ptg    1632 2007-01-23 11:27 xfsprogs-2.8.20/quota/linux.c
+-r--r--r-- bnaujok/ptg     949 2007-01-23 11:27 xfsprogs-2.8.20/quota/darwin.c
+-r--r--r-- bnaujok/ptg     863 2007-01-23 11:27 xfsprogs-2.8.20/quota/freebsd.c
+-r--r--r-- bnaujok/ptg    1573 2007-01-23 11:27 xfsprogs-2.8.20/quota/irix.c
+-r--r--r-- bnaujok/ptg    1497 2007-01-23 11:27 xfsprogs-2.8.20/repair/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/repair
+-r--r--r-- bnaujok/ptg    3414 2007-01-23 11:27 xfsprogs-2.8.20/repair/agheader.h
+-r--r--r-- bnaujok/ptg    3872 2007-01-23 11:27 xfsprogs-2.8.20/repair/attr_repair.h
+-r--r--r-- bnaujok/ptg    3155 2007-01-23 11:27 xfsprogs-2.8.20/repair/avl.h
+-r--r--r-- bnaujok/ptg    3040 2007-01-23 11:27 xfsprogs-2.8.20/repair/avl64.h
+-r--r--r-- bnaujok/ptg    2295 2007-01-23 11:27 xfsprogs-2.8.20/repair/bmap.h
+-r--r--r-- bnaujok/ptg    3025 2007-01-23 11:27 xfsprogs-2.8.20/repair/dinode.h
+-r--r--r-- bnaujok/ptg    3881 2007-01-23 11:27 xfsprogs-2.8.20/repair/dir.h
+-r--r--r-- bnaujok/ptg    3104 2007-01-23 11:27 xfsprogs-2.8.20/repair/dir2.h
+-r--r--r-- bnaujok/ptg    1044 2007-01-23 11:27 xfsprogs-2.8.20/repair/dir_stack.h
+-r--r--r-- bnaujok/ptg     963 2007-01-23 11:27 xfsprogs-2.8.20/repair/err_protos.h
+-r--r--r-- bnaujok/ptg    6625 2007-01-23 11:27 xfsprogs-2.8.20/repair/globals.h
+-r--r--r-- bnaujok/ptg   19762 2007-01-23 11:27 xfsprogs-2.8.20/repair/incore.h
+-r--r--r-- bnaujok/ptg    1433 2007-01-23 11:27 xfsprogs-2.8.20/repair/protos.h
+-r--r--r-- bnaujok/ptg    1072 2007-01-23 11:27 xfsprogs-2.8.20/repair/rt.h
+-r--r--r-- bnaujok/ptg    1229 2007-01-23 11:27 xfsprogs-2.8.20/repair/progress.h
+-r--r--r-- bnaujok/ptg    2282 2007-01-23 11:27 xfsprogs-2.8.20/repair/scan.h
+-r--r--r-- bnaujok/ptg    2116 2007-01-23 11:27 xfsprogs-2.8.20/repair/versions.h
+-r--r--r-- bnaujok/ptg     879 2007-01-23 11:27 xfsprogs-2.8.20/repair/prefetch.h
+-r--r--r-- bnaujok/ptg    1544 2007-01-23 11:27 xfsprogs-2.8.20/repair/threads.h
+-r--r--r-- bnaujok/ptg   12846 2007-01-23 11:27 xfsprogs-2.8.20/repair/agheader.c
+-r--r--r-- bnaujok/ptg   33286 2007-01-23 11:27 xfsprogs-2.8.20/repair/attr_repair.c
+-r--r--r-- bnaujok/ptg   30731 2007-01-23 11:27 xfsprogs-2.8.20/repair/avl.c
+-r--r--r-- bnaujok/ptg   31126 2007-01-23 11:27 xfsprogs-2.8.20/repair/avl64.c
+-r--r--r-- bnaujok/ptg    8107 2007-01-23 11:27 xfsprogs-2.8.20/repair/bmap.c
+-r--r--r-- bnaujok/ptg   31771 2007-01-23 11:27 xfsprogs-2.8.20/repair/dino_chunks.c
+-r--r--r-- bnaujok/ptg   77463 2007-03-16 08:10 xfsprogs-2.8.20/repair/dinode.c
+-r--r--r-- bnaujok/ptg   83665 2007-01-23 11:27 xfsprogs-2.8.20/repair/dir.c
+-r--r--r-- bnaujok/ptg   56608 2007-03-16 08:10 xfsprogs-2.8.20/repair/dir2.c
+-r--r--r-- bnaujok/ptg    2961 2007-01-23 11:27 xfsprogs-2.8.20/repair/dir_stack.c
+-r--r--r-- bnaujok/ptg     785 2007-01-23 11:27 xfsprogs-2.8.20/repair/globals.c
+-r--r--r-- bnaujok/ptg    5709 2007-01-23 11:27 xfsprogs-2.8.20/repair/incore.c
+-r--r--r-- bnaujok/ptg    1305 2007-01-23 11:27 xfsprogs-2.8.20/repair/incore_bmc.c
+-r--r--r-- bnaujok/ptg    3570 2007-01-23 11:27 xfsprogs-2.8.20/repair/init.c
+-r--r--r-- bnaujok/ptg   25025 2007-01-23 11:27 xfsprogs-2.8.20/repair/incore_ext.c
+-r--r--r-- bnaujok/ptg   16324 2007-01-23 11:27 xfsprogs-2.8.20/repair/incore_ino.c
+-r--r--r-- bnaujok/ptg    2622 2007-01-23 11:27 xfsprogs-2.8.20/repair/phase1.c
+-r--r--r-- bnaujok/ptg    5694 2007-01-23 11:27 xfsprogs-2.8.20/repair/phase2.c
+-r--r--r-- bnaujok/ptg    5764 2007-01-23 11:27 xfsprogs-2.8.20/repair/phase3.c
+-r-xr--r-- bnaujok/ptg   35883 2007-02-23 10:57 xfsprogs-2.8.20/repair/phase4.c
+-r--r--r-- bnaujok/ptg   46775 2007-01-23 11:27 xfsprogs-2.8.20/repair/phase5.c
+-r--r--r-- bnaujok/ptg  105892 2007-02-07 05:59 xfsprogs-2.8.20/repair/phase6.c
+-r--r--r-- bnaujok/ptg    8862 2007-01-23 11:27 xfsprogs-2.8.20/repair/phase7.c
+-r--r--r-- bnaujok/ptg    6408 2007-01-23 11:27 xfsprogs-2.8.20/repair/rt.c
+-r--r--r-- bnaujok/ptg   19532 2007-01-23 11:27 xfsprogs-2.8.20/repair/sb.c
+-r--r--r-- bnaujok/ptg   12383 2007-01-23 11:27 xfsprogs-2.8.20/repair/progress.c
+-r--r--r-- bnaujok/ptg   11007 2007-01-23 11:27 xfsprogs-2.8.20/repair/prefetch.c
+-r--r--r-- bnaujok/ptg   34641 2007-02-23 10:57 xfsprogs-2.8.20/repair/scan.c
+-r--r--r-- bnaujok/ptg    8152 2007-01-23 11:27 xfsprogs-2.8.20/repair/versions.c
+-r--r--r-- bnaujok/ptg   16225 2007-01-23 11:27 xfsprogs-2.8.20/repair/xfs_repair.c
+-r--r--r-- bnaujok/ptg    7416 2007-01-23 11:27 xfsprogs-2.8.20/repair/threads.c
+-r--r--r-- bnaujok/ptg     348 2007-01-23 11:27 xfsprogs-2.8.20/rtcp/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/rtcp
+-r--r--r-- bnaujok/ptg    8605 2007-01-23 11:27 xfsprogs-2.8.20/rtcp/xfs_rtcp.c
+-r--r--r-- bnaujok/ptg     398 2007-01-23 11:27 xfsprogs-2.8.20/m4/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/m4
+-r--r--r-- bnaujok/ptg     489 2007-01-23 11:27 xfsprogs-2.8.20/m4/manual_format.m4
+-r--r--r-- bnaujok/ptg     783 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_aiodev.m4
+-r--r--r-- bnaujok/ptg    1318 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_globals.m4
+-r--r--r-- bnaujok/ptg    2117 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_libcdev.m4
+-r--r--r-- bnaujok/ptg     469 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_pthread.m4
+-r--r--r-- bnaujok/ptg    1669 2007-03-16 08:10 xfsprogs-2.8.20/m4/package_types.m4
+-r--r--r-- bnaujok/ptg    3787 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_utilies.m4
+-r--r--r-- bnaujok/ptg     760 2007-01-23 11:27 xfsprogs-2.8.20/m4/package_uuiddev.m4
+-r--r--r-- bnaujok/ptg    1836 2007-01-23 11:27 xfsprogs-2.8.20/m4/multilib.m4
+-r--r--r-- bnaujok/ptg     236 2007-01-23 11:27 xfsprogs-2.8.20/man/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/man
+-r--r--r-- bnaujok/ptg     388 2007-01-23 11:27 xfsprogs-2.8.20/man/man3/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/man/man3
+-r--r--r-- bnaujok/ptg    6318 2007-01-23 11:27 xfsprogs-2.8.20/man/man3/handle.3
+-r--r--r-- bnaujok/ptg   18489 2007-01-23 11:27 xfsprogs-2.8.20/man/man3/xfsctl.3
+-r--r--r-- bnaujok/ptg     387 2007-01-23 11:27 xfsprogs-2.8.20/man/man5/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/man/man5
+-r--r--r-- bnaujok/ptg    3714 2007-01-23 11:27 xfsprogs-2.8.20/man/man5/xfs.5
+-r--r--r-- bnaujok/ptg     387 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/man/man8
+-r--r--r-- bnaujok/ptg     636 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/fsck.xfs.8
+-r--r--r-- bnaujok/ptg   21760 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/mkfs.xfs.8
+-r--r--r-- bnaujok/ptg    1946 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_admin.8
+-r--r--r-- bnaujok/ptg    1795 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_bmap.8
+-r--r--r-- bnaujok/ptg    6453 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_check.8
+-r--r--r-- bnaujok/ptg    4145 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_copy.8
+-r--r--r-- bnaujok/ptg   44906 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_db.8
+-r--r--r-- bnaujok/ptg    1869 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_freeze.8
+-r--r--r-- bnaujok/ptg    3554 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_growfs.8
+-r--r--r-- bnaujok/ptg   13345 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_io.8
+-r--r--r-- bnaujok/ptg    2645 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_logprint.8
+-r--r--r-- bnaujok/ptg     661 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_mkfile.8
+-r--r--r-- bnaujok/ptg    1817 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_ncheck.8
+-r--r--r-- bnaujok/ptg   17814 2007-01-31 06:10 xfsprogs-2.8.20/man/man8/xfs_quota.8
+-r--r--r-- bnaujok/ptg   15277 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_repair.8
+-r--r--r-- bnaujok/ptg    1166 2007-01-23 11:27 xfsprogs-2.8.20/man/man8/xfs_rtcp.8
+-r--r--r-- bnaujok/ptg     557 2007-01-23 11:27 xfsprogs-2.8.20/doc/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/doc
+-r--r--r-- bnaujok/ptg    4742 2007-01-23 11:27 xfsprogs-2.8.20/doc/INSTALL
+-r--r--r-- bnaujok/ptg    3239 2007-01-23 11:27 xfsprogs-2.8.20/doc/PORTING
+-r--r--r-- bnaujok/ptg   48787 2007-03-16 08:10 xfsprogs-2.8.20/doc/CHANGES
+-r--r--r-- bnaujok/ptg   63071 2007-01-23 11:27 xfsprogs-2.8.20/doc/COPYING
+-r--r--r-- bnaujok/ptg    2032 2007-01-23 11:27 xfsprogs-2.8.20/doc/CREDITS
+-r--r--r-- bnaujok/ptg    2850 2007-01-23 11:27 xfsprogs-2.8.20/po/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/po
+-r--r--r-- bnaujok/ptg  288729 2007-01-23 11:27 xfsprogs-2.8.20/po/pl.po
+-rw-r--r-- bnaujok/ptg  183521 2007-03-16 08:32 xfsprogs-2.8.20/po/xfsprogs.pot
+-r--r--r-- bnaujok/ptg     863 2007-01-23 11:27 xfsprogs-2.8.20/debian/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/debian
+-r--r--r-- bnaujok/ptg   18274 2007-03-16 08:10 xfsprogs-2.8.20/debian/changelog
+-r--r--r-- bnaujok/ptg    1805 2007-01-23 11:27 xfsprogs-2.8.20/debian/control
+-r--r--r-- bnaujok/ptg     698 2007-01-23 11:27 xfsprogs-2.8.20/debian/copyright
+-r-xr-xr-x bnaujok/ptg    2234 2007-01-23 11:27 xfsprogs-2.8.20/debian/rules
+-r--r--r-- bnaujok/ptg    1419 2007-01-23 11:27 xfsprogs-2.8.20/build/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/build
+-r--r--r-- bnaujok/ptg     544 2007-01-23 11:27 xfsprogs-2.8.20/build/tar/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/build/tar
+-r--r--r-- bnaujok/ptg    2216 2007-01-23 11:27 xfsprogs-2.8.20/build/rpm/Makefile
+drwxr-xr-x                  Creating directory: xfsprogs-2.8.20/build/rpm
+-r--r--r-- bnaujok/ptg     844 2007-01-23 11:27 xfsprogs-2.8.20/build/rpm/macros.template
+-r--r--r-- bnaujok/ptg    2332 2007-01-23 11:27 xfsprogs-2.8.20/build/rpm/xfsprogs.spec.in
+-r--r--r-- bnaujok/ptg     739 2007-01-23 11:27 xfsprogs-2.8.20/build/rpm/rpm-2.rc.template
+Patch #1 (xfsprogs-2.8-devel_2.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.7cZr3x
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking for gmake... no
+checking for make... /usr/bin/make
+checking for tar... /bin/tar
+checking for gzip... /bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /usr/bin/awk
+checking for sed... /bin/sed
+checking for echo... /bin/echo
+checking for sort... /usr/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for msgmerge... /usr/bin/msgmerge
+checking for xgettext... /usr/bin/xgettext
+checking for rpm... /usr/bin/rpm
+checking for rpmbuild... /usr/bin/rpmbuild
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking aio.h usability... yes
+checking aio.h presence... yes
+checking for aio.h... yes
+checking for lio_listio... no
+checking for lio_listio in -lrt... yes
+checking uuid.h usability... no
+checking uuid.h presence... no
+checking for uuid.h... no
+checking sys/uuid.h usability... no
+checking sys/uuid.h presence... no
+checking for sys/uuid.h... no
+checking uuid/uuid.h usability... yes
+checking uuid/uuid.h presence... yes
+checking for uuid/uuid.h... yes
+checking for uuid_compare... no
+checking for uuid_compare in -luuid... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_mutex_init in -lpthread... yes
+checking for fadvise ... yes
+checking for madvise ... yes
+checking for mincore ... yes
+checking for sendfile ... yes
+checking for getmntent ... yes
+checking for getmntinfo ... no
+checking for __psint_t ... no
+checking for __psunsigned_t ... no
+checking for __u32 ... yes
+checking for long... yes
+checking size of long... 4
+checking for char *... yes
+checking size of char *... 4
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: creating include/platform_defs.h
+=== include ===
+rm -f xfs disk
+ln -s . xfs
+ln -s . disk
+=== libxfs ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c bit.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c bit.c  -fPIC -DPIC -o .libs/bit.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c bit.c -o bit.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c cache.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c cache.c  -fPIC -DPIC -o .libs/cache.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c cache.c -o cache.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c init.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c init.c  -fPIC -DPIC -o .libs/init.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c init.c -o init.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c lio.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c lio.c  -fPIC -DPIC -o .libs/lio.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c lio.c -o lio.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c logitem.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c logitem.c  -fPIC -DPIC -o .libs/logitem.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c logitem.c -o logitem.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c rdwr.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c rdwr.c  -fPIC -DPIC -o .libs/rdwr.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c rdwr.c -o rdwr.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c trans.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c trans.c  -fPIC -DPIC -o .libs/trans.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c trans.c -o trans.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c util.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c util.c  -fPIC -DPIC -o .libs/util.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c util.c -o util.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_alloc.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_alloc.c  -fPIC -DPIC -o .libs/xfs_alloc.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_alloc.c -o xfs_alloc.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_ialloc.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_ialloc.c  -fPIC -DPIC -o .libs/xfs_ialloc.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_ialloc.c -o xfs_ialloc.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_rtalloc.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_rtalloc.c  -fPIC -DPIC -o .libs/xfs_rtalloc.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_rtalloc.c -o xfs_rtalloc.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_inode.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_inode.c  -fPIC -DPIC -o .libs/xfs_inode.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_inode.c -o xfs_inode.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_btree.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_btree.c  -fPIC -DPIC -o .libs/xfs_btree.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_btree.c -o xfs_btree.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_alloc_btree.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_alloc_btree.c  -fPIC -DPIC -o .libs/xfs_alloc_btree.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_alloc_btree.c -o xfs_alloc_btree.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_ialloc_btree.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_ialloc_btree.c  -fPIC -DPIC -o .libs/xfs_ialloc_btree.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_ialloc_btree.c -o xfs_ialloc_btree.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_bmap_btree.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_bmap_btree.c  -fPIC -DPIC -o .libs/xfs_bmap_btree.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_bmap_btree.c -o xfs_bmap_btree.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_da_btree.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_da_btree.c  -fPIC -DPIC -o .libs/xfs_da_btree.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_da_btree.c -o xfs_da_btree.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir.c  -fPIC -DPIC -o .libs/xfs_dir.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir.c -o xfs_dir.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir_leaf.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir_leaf.c  -fPIC -DPIC -o .libs/xfs_dir_leaf.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir_leaf.c -o xfs_dir_leaf.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2.c  -fPIC -DPIC -o .libs/xfs_dir2.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2.c -o xfs_dir2.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2_leaf.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_leaf.c  -fPIC -DPIC -o .libs/xfs_dir2_leaf.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_leaf.c -o xfs_dir2_leaf.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_attr_leaf.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_attr_leaf.c  -fPIC -DPIC -o .libs/xfs_attr_leaf.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_attr_leaf.c -o xfs_attr_leaf.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2_block.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_block.c  -fPIC -DPIC -o .libs/xfs_dir2_block.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_block.c -o xfs_dir2_block.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2_node.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_node.c  -fPIC -DPIC -o .libs/xfs_dir2_node.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_node.c -o xfs_dir2_node.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2_data.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_data.c  -fPIC -DPIC -o .libs/xfs_dir2_data.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_data.c -o xfs_dir2_data.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_dir2_sf.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_sf.c  -fPIC -DPIC -o .libs/xfs_dir2_sf.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_dir2_sf.c -o xfs_dir2_sf.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_bmap.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_bmap.c  -fPIC -DPIC -o .libs/xfs_bmap.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_bmap.c -o xfs_bmap.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_mount.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_mount.c  -fPIC -DPIC -o .libs/xfs_mount.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_mount.c -o xfs_mount.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_trans.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_trans.c  -fPIC -DPIC -o .libs/xfs_trans.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_trans.c -o xfs_trans.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_attr.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_attr.c  -fPIC -DPIC -o .libs/xfs_attr.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_attr.c -o xfs_attr.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall  -I. -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c linux.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c linux.c  -fPIC -DPIC -o .libs/linux.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -I. -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c linux.c -o linux.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -rpath /lib -version-info 0:0:0 -o libxfs.la bit.lo cache.lo init.lo lio.lo logitem.lo rdwr.lo trans.lo util.lo xfs_alloc.lo xfs_ialloc.lo xfs_rtalloc.lo xfs_inode.lo xfs_btree.lo xfs_alloc_btree.lo xfs_ialloc_btree.lo xfs_bmap_btree.lo xfs_da_btree.lo xfs_dir.lo xfs_dir_leaf.lo xfs_dir2.lo xfs_dir2_leaf.lo xfs_attr_leaf.lo xfs_dir2_block.lo xfs_dir2_node.lo xfs_dir2_data.lo xfs_dir2_sf.lo xfs_bmap.lo xfs_mount.lo xfs_trans.lo xfs_attr.lo linux.lo 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/bit.o .libs/cache.o .libs/init.o .libs/lio.o .libs/logitem.o .libs/rdwr.o .libs/trans.o .libs/util.o .libs/xfs_alloc.o .libs/xfs_ialloc.o .libs/xfs_rtalloc.o .libs/xfs_inode.o .libs/xfs_btree.o .libs/xfs_alloc_btree.o .libs/xfs_ialloc_btree.o .libs/xfs_bmap_btree.o .libs/xfs_da_btree.o .libs/xfs_dir.o .libs/xfs_dir_leaf.o .libs/xfs_dir2.o .libs/xfs_dir2_leaf.o .libs/xfs_attr_leaf.o .libs/xfs_dir2_block.o .libs/xfs_dir2_node.o .libs/xfs_dir2_data.o .libs/xfs_dir2_sf.o .libs/xfs_bmap.o .libs/xfs_mount.o .libs/xfs_trans.o .libs/xfs_attr.o .libs/linux.o      -Wl,-soname -Wl,libxfs.so.0 -o .libs/libxfs.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libxfs.so.0" && ln -s "libxfs.so.0.0.0" "libxfs.so.0")
+libtool: link: (cd ".libs" && rm -f "libxfs.so" && ln -s "libxfs.so.0.0.0" "libxfs.so")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libxfs.a  bit.o cache.o init.o lio.o logitem.o rdwr.o trans.o util.o xfs_alloc.o xfs_ialloc.o xfs_rtalloc.o xfs_inode.o xfs_btree.o xfs_alloc_btree.o xfs_ialloc_btree.o xfs_bmap_btree.o xfs_da_btree.o xfs_dir.o xfs_dir_leaf.o xfs_dir2.o xfs_dir2_leaf.o xfs_attr_leaf.o xfs_dir2_block.o xfs_dir2_node.o xfs_dir2_data.o xfs_dir2_sf.o xfs_bmap.o xfs_mount.o xfs_trans.o xfs_attr.o linux.o
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libxfs.a
+libtool: link: ( cd ".libs" && rm -f "libxfs.la" && ln -s "../libxfs.la" "libxfs.la" )
+=== libxlog ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xfs_log_recover.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_log_recover.c  -fPIC -DPIC -o .libs/xfs_log_recover.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xfs_log_recover.c -o xfs_log_recover.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c util.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c util.c  -fPIC -DPIC -o .libs/util.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c util.c -o util.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -rpath /lib -version-info 0:0:0 -o libxlog.la xfs_log_recover.lo util.lo 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/xfs_log_recover.o .libs/util.o      -Wl,-soname -Wl,libxlog.so.0 -o .libs/libxlog.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libxlog.so.0" && ln -s "libxlog.so.0.0.0" "libxlog.so.0")
+libtool: link: (cd ".libs" && rm -f "libxlog.so" && ln -s "libxlog.so.0.0.0" "libxlog.so")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libxlog.a  xfs_log_recover.o util.o
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libxlog.a
+libtool: link: ( cd ".libs" && rm -f "libxlog.la" && ln -s "../libxlog.la" "libxlog.la" )
+=== libxcmd ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c command.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c command.c  -fPIC -DPIC -o .libs/command.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c command.c -o command.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c input.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c input.c  -fPIC -DPIC -o .libs/input.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c input.c -o input.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c paths.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c paths.c  -fPIC -DPIC -o .libs/paths.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c paths.c -o paths.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c projects.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c projects.c  -fPIC -DPIC -o .libs/projects.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c projects.c -o projects.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c help.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c help.c  -fPIC -DPIC -o .libs/help.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c help.c -o help.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT  -c quit.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c quit.c  -fPIC -DPIC -o .libs/quit.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -DHAVE_GETMNTENT -c quit.c -o quit.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -rpath /lib -version-info 0:0:0 -o libxcmd.la command.lo input.lo paths.lo projects.lo help.lo quit.lo 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/command.o .libs/input.o .libs/paths.o .libs/projects.o .libs/help.o .libs/quit.o      -Wl,-soname -Wl,libxcmd.so.0 -o .libs/libxcmd.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libxcmd.so.0" && ln -s "libxcmd.so.0.0.0" "libxcmd.so.0")
+libtool: link: (cd ".libs" && rm -f "libxcmd.so" && ln -s "libxcmd.so.0.0.0" "libxcmd.so")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libxcmd.a  command.o input.o paths.o projects.o help.o quit.o
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libxcmd.a
+libtool: link: ( cd ".libs" && rm -f "libxcmd.la" && ln -s "../libxcmd.la" "libxcmd.la" )
+=== libhandle ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c handle.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c handle.c  -fPIC -DPIC -o .libs/handle.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c handle.c -o handle.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c jdm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c jdm.c  -fPIC -DPIC -o .libs/jdm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c jdm.c -o jdm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -rpath /lib -version-info 1:3:0 -o libhandle.la handle.lo jdm.lo 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/handle.o .libs/jdm.o      -Wl,-soname -Wl,libhandle.so.1 -o .libs/libhandle.so.1.0.3
+libtool: link: (cd ".libs" && rm -f "libhandle.so.1" && ln -s "libhandle.so.1.0.3" "libhandle.so.1")
+libtool: link: (cd ".libs" && rm -f "libhandle.so" && ln -s "libhandle.so.1.0.3" "libhandle.so")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libhandle.a  handle.o jdm.o
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libhandle.a
+libtool: link: ( cd ".libs" && rm -f "libhandle.la" && ln -s "../libhandle.la" "libhandle.la" )
+=== libdisk ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c drivers.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c drivers.c  -fPIC -DPIC -o .libs/drivers.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c drivers.c -o drivers.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c fstype.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c fstype.c  -fPIC -DPIC -o .libs/fstype.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c fstype.c -o fstype.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c pttype.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c pttype.c  -fPIC -DPIC -o .libs/pttype.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c pttype.c -o pttype.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c dm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c dm.c  -fPIC -DPIC -o .libs/dm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c dm.c -o dm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c md.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c md.c  -fPIC -DPIC -o .libs/md.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c md.c -o md.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c xvm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xvm.c  -fPIC -DPIC -o .libs/xvm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c xvm.c -o xvm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c evms.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c evms.c  -fPIC -DPIC -o .libs/evms.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c evms.c -o evms.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -c lvm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c lvm.c  -fPIC -DPIC -o .libs/lvm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -g -O2 -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall -c lvm.c -o lvm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -rpath /lib -version-info 0:0:0 -o libdisk.la drivers.lo fstype.lo pttype.lo dm.lo md.lo xvm.lo evms.lo lvm.lo 
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/drivers.o .libs/fstype.o .libs/pttype.o .libs/dm.o .libs/md.o .libs/xvm.o .libs/evms.o .libs/lvm.o      -Wl,-soname -Wl,libdisk.so.0 -o .libs/libdisk.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libdisk.so.0" && ln -s "libdisk.so.0.0.0" "libdisk.so.0")
+libtool: link: (cd ".libs" && rm -f "libdisk.so" && ln -s "libdisk.so.0.0.0" "libdisk.so")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libdisk.a  drivers.o fstype.o pttype.o dm.o md.o xvm.o evms.o lvm.o
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libdisk.a
+libtool: link: ( cd ".libs" && rm -f "libdisk.la" && ln -s "../libdisk.la" "libdisk.la" )
+=== copy ===
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall   -g -O2  -DVERSION=\"2.8.20\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"xfsprogs\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -funsigned-char -fno-strict-aliasing -Wall    -c -o xfs_copy.o xfs_copy.c
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -o xfs_copy     -static  xfs_copy.o   ../libxfs/libxfs.la -luuid -lpthread -lrt  
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -o xfs_copy xfs_copy.o  ../libxfs/.libs/libxfs.a /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so -lpthread -lrt -Wl,-rpath -Wl,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -Wl,-rpath -Wl,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+
+
+RPM build errors:

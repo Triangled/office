@@ -1,0 +1,508 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-netkit-rsh-0.17-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-netkit-warning: group rpmuser does not exist - using root
+                                            (  3%)warning: group rpmuser does not exist - using root
+#                                           (  4%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+##                                          ( 28%)###                                         ( 28%)####                                        ( 28%)#####                                       ( 28%)######                                      ( 28%)#######                                     ( 28%)########                                    ( 28%)#########                                   ( 28%)##########                                  ( 28%)###########                                 ( 28%)warning: group rpmuser does not exist - using root
+############                                ( 31%)#############                               ( 31%)warning: group rpmuser does not exist - using root
+##############                              ( 96%)###############                             ( 96%)################                            ( 96%)#################                           ( 96%)##################                          ( 96%)###################                         ( 96%)####################                        ( 96%)#####################                       ( 96%)######################                      ( 96%)#######################                     ( 96%)########################                    ( 96%)#########################                   ( 96%)##########################                  ( 96%)###########################                 ( 96%)############################                ( 96%)#############################               ( 96%)##############################              ( 96%)###############################             ( 96%)################################            ( 96%)#################################           ( 96%)##################################          ( 96%)###################################         ( 96%)####################################        ( 96%)#####################################       ( 96%)######################################      ( 96%)#######################################     ( 96%)########################################    ( 96%)#########################################   ( 96%)warning: group rpmuser does not exist - using root
+##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-netkit-rsh.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.zdUskZ
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf netkit-rsh-0.17
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/netkit-rsh_0.17.orig.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd netkit-rsh-0.17
++ echo 'Patch #0 (netkit-rsh_0.17-10.diff.gz):'
+Patch #0 (netkit-rsh_0.17-10.diff.gz):
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/netkit-rsh_0.17-10.diff.gz
++ /usr/bin/patch -s -p1
++ echo 'Patch #1 (netkit-rsh_0.17-5-cross.diff):'
+Patch #1 (netkit-rsh_0.17-5-cross.diff):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/netkit-rsh_0.17-5-cross.diff
++ echo 'Patch #2 (netkit-rsh-0.16.1-makefile.patch):'
+Patch #2 (netkit-rsh-0.16.1-makefile.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/netkit-rsh-0.16.1-makefile.patch
++ echo 'Patch #3 (netkit-rsh-0.17-ss.patch):'
+Patch #3 (netkit-rsh-0.17-ss.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/netkit-rsh-0.17-ss.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #4 (netkit-rsh-fix-pathnames.patch):'
+Patch #4 (netkit-rsh-fix-pathnames.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/netkit-rsh-fix-pathnames.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.IjXQRA
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd netkit-rsh-0.17
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ ./configure --installroot=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a --prefix=/usr
+Directories: /usr/bin /usr/sbin /usr/man 
+Installing in chroot tree rooted at /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+Checking if C compiler works... yes
+Checking if arm-sony-linux-gnueabi-gcc -tarmv7a accepts gcc warnings... yes
+Checking if arm-sony-linux-gnueabi-gcc -tarmv7a accepts -O2... yes
+Checking for BSD signal semantics... yes
+Checking for GNU libc... yes
+Checking for PAM... yes
+Checking for crypt... -lcrypt
+Checking for forkpty... -lutil
+Checking for logwtmp... -lutil
+Checking for socklen_t... yes
+Checking for snprintf declaration... ok
+Checking for snprintf implementation... ok
+Generating MCONFIG...
++ make all 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256'
++ tee -a build.log
+(cd  rcp && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  rcp.c -c
+rcp.c: In function 'rsource':
+rcp.c:555:2: warning: implicit declaration of function 'asprintf' [-Wimplicit-function-declaration]
+rcp.c:555:2: warning: nested extern declaration of 'asprintf' [-Wnested-externs]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rcp.o -lcrypt -lutil -lutil -o rcp
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+(cd  rexec && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  rexec.c -c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rexec.o -lcrypt -lutil -lutil -o rexec
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+(cd  rexecd && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM -DRESTRICT_FTP=1 rexecd.c -c
+rexecd.c: In function 'doit':
+rexecd.c:468:2: warning: missing sentinel in function call [-Wformat]
+rexecd.c: In function 'PAM_conv':
+rexecd.c:197:5: warning: ignoring return value of 'realloc', declared with attribute warn_unused_result [-Wunused-result]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rexecd.o -lcrypt -lutil -lutil -ldl -lpam -lpam_misc -o rexecd
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+(cd  rlogin && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  rlogin.c -c
+rlogin.c: In function 'main':
+rlogin.c:312:2: warning: 'sigblock' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:195) [-Wdeprecated-declarations]
+rlogin.c: In function 'doit':
+rlogin.c:404:2: warning: 'sigsetmask' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:198) [-Wdeprecated-declarations]
+rlogin.c: In function 'setsignal':
+rlogin.c:417:2: warning: 'sigblock' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:195) [-Wdeprecated-declarations]
+rlogin.c:421:2: warning: 'sigsetmask' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:198) [-Wdeprecated-declarations]
+rlogin.c: In function 'reader':
+rlogin.c:731:2: warning: 'sigsetmask' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:198) [-Wdeprecated-declarations]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rlogin.o -lcrypt -lutil -lutil -o rlogin
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+(cd  rlogind && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM rlogind.c -c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM network.c -c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM auth.c -c
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM sockconv.c -c
+sockconv.c: In function 'sock_conv':
+sockconv.c:102:46: warning: parameter 'appdata_ptr' set but not used [-Wunused-but-set-parameter]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rlogind.o network.o auth.o sockconv.o -lcrypt -lutil -lutil -ldl -lpam -lpam_misc -o rlogind
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+(cd  rsh && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  rsh.c -c
+rsh.c: In function 'main':
+rsh.c:206:2: warning: 'sigblock' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:195) [-Wdeprecated-declarations]
+rsh.c: In function 'talk':
+rsh.c:283:2: warning: 'sigsetmask' is deprecated (declared at /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/signal.h:198) [-Wdeprecated-declarations]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rsh.o -lcrypt -lutil -lutil -o rsh
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+(cd  rshd && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256 -O2 -O2 -Wall -W -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline  -DUSE_PAM rshd.c -c
+rshd.c: In function 'doit':
+rshd.c:580:2: warning: missing sentinel in function call [-Wformat]
+arm-sony-linux-gnueabi-gcc -tarmv7a -DOPEN_MAX=256  rshd.o -lcrypt -lutil -lutil -ldl -lpam -o rshd
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.039m5k
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd netkit-rsh-0.17
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
++ tee -a build.log
++ make install
+(cd  rcp && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+install -m4755 rcp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+install -m644 rcp.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+(cd  rexec && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+install -m 755 rexec /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+install -m 644 rexec.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+(cd  rexecd && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+install -m755 rexecd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/in.rexecd
+install -m644 rexecd.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/in.rexecd.8
+ln -sf in.rexecd.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/rexecd.8
+
+You have chosen to use PAM as the authentication method
+You should copy the rexec.pam file provided to /etc/pam.d
+or if you know what you are doing, tailor it to your needs
+
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+(cd  rlogin && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+install -m4755 rlogin /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+install -m 644 rlogin.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+(cd  rlogind && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+install -m755 rlogind /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/in.rlogind
+install -m644 rlogind.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/in.rlogind.8
+ln -sf in.rlogind.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/rlogind.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+(cd  rsh && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+install -m4755 rsh /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+install -m644 rsh.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+(cd  rshd && make install)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
+install -m755 rshd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/in.rshd
+install -m644 rshd.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/in.rshd.8
+ln -sf in.rshd.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/rshd.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-netkit-rsh-0.17-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-netkit-rsh-0.17-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-netkit-rsh-0.17-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.vaGCrA
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd netkit-rsh-0.17
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-netkit-rsh-0.17-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 18:20:22 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/netkit-rsh-0.17
+]0;rpmuser@Triangle: ~/rpm/BUILD/netkit-rsh-0.17rpmuser@Triangle:~/rpm/BUILD/netkit-rsh-0.17$ pwd
+/home/rpmuser/rpm/BUILD/netkit-rsh-0.17
+]0;rpmuser@Triangle: ~/rpm/BUILD/netkit-rsh-0.17rpmuser@Triangle:~/rpm/BUILD/netkit-rsh-0.17$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/netkit-rsh/test/netkit-rsh-test.patch 
+patching file Makefile
+patching file tests/netkit-rsh-main.sh
+patching file tests/netkit-rsh-test-PTG1.sh
+patching file tests/netkit-rsh-test-PTG2.sh
+patching file tests/netkit-rsh-test-PTG3.sh
+patching file tests/rlogin_pass1.exp
+patching file tests/rlogin_pass2.exp
+patching file tests/rlogin_pass3.exp
+patching file tests/rlogin_pass.exp
+patching file tests/Test-Support-Fns
+]0;rpmuser@Triangle: ~/rpm/BUILD/netkit-rsh-0.17rpmuser@Triangle:~/rpm/BUILD/netkit-rsh-0.17$ ./configure
+Directories: /usr/bin /usr/sbin /usr/man 
+Looking for a C compiler... gcc
+Checking if gcc accepts gcc warnings... yes
+Checking if gcc accepts -O2... yes
+Checking for BSD signal semantics... yes
+Checking for GNU libc... yes
+Checking for PAM... no
+Checking for shadow... yes
+Checking for crypt... -lcrypt
+Checking for forkpty... -lutil
+Checking for logwtmp... -lutil
+Checking for socklen_t... yes
+Checking for snprintf declaration... ok
+Checking for snprintf implementation... ok
+Generating MCONFIG...
+]0;rpmuser@Triangle: ~/rpm/BUILD/netkit-rsh-0.17rpmuser@Triangle:~/rpm/BUILD/netkit-rsh-0.17$ make
+(cd  rcp && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rcp'
+(cd  rexec && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexec'
+(cd  rexecd && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rexecd'
+(cd  rlogin && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogin'
+(cd  rlogind && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rlogind'
+(cd  rsh && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rsh'
+(cd  rshd && make)
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/netkit-rsh-0.17/rshd'
+]0;rpmuser@Triangle: ~/rpm/BUILD/netkit-rsh-0.17rpmuser@Triangle:~/rpm/BUILD/netkit-rsh-0.17$ sudo su
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# echo "10.0.6.39 root" > /root/.rhosts
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# chmod 644 /root/.rhosts
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# echo "rsh" >> /etc/securetty
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# echo "rexec" >> /etc/securetty
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# echo "rlogin" >> /etc/securetty
+]0;root@Triangle: /home/rpmuser/rpm/BUILD/netkit-rsh-0.17root@Triangle:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17# su rpmuser
+sh-4.2$ sudo killall ssh-agent 
+sh-4.2$ spawn -nottyinit sh -c for i in 0 1 ; do /sbin/ifconfig eth$i | grep "inet addr:" | grep "inet addr:10.*" > /dev/null; if [ $? == 0 ]  ; then echo eth$i ; break ; fi ; done
+eth0
+/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/Variable. log 
+sh-4.2$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+sh-4.2$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/netkit-rsh-0.17 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...............................................................................................................done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 19:01:00 UTC 2014
+-bash-3.2# export IPHOST=`cat /tmp/Variable.log`
+-bash-3.2# export r=`echo $IPHOST | cut -d. -f1 | awk '{print $1}'`
+-bash-3.2# export s=`echo $IPHOST | cut -d. -f2 | awk '{print $1}'`
+-bash-3.2# export v=`echo $IPHOST | cut -d. -f3 | awk '{print $1}'`
+-bash-3.2# spawn -nottyinit sh -c echo "abczxs"
+abczxs
+export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/netkit-rsh-0.17/tests/
+-bash-3.2# sed -i "s/export IPADDR=.*/export IPADDR=$IPHOST/g" Test-Support-Fns
+-bash-3.2# sed -i "s/export IN_IPADDR=.*/export IN_IPADDR=`echo $r.$s.$v.2`/g" Test-Support-Fns
+-bash-3.2# sed -i "s/export TEST_USER=.*/export TEST_USER=root/" Test-Support-Fns
+-bash-3.2# sed -i "s/export TEST_USER_PASSWD=.*/export TEST_USER_PASSWD=`echo "abczxs
+> 
+> "`/" Test-Support-Fns
+-bash-3.2# cd /tmp/netkit-rsh-0.17
+-bash-3.2# chmod u+s rlogin/rlogin
+-bash-3.2# chmod u+s rcp/rcp
+-bash-3.2# chmod u+s rsh/rsh
+-bash-3.2# chmod u+s /usr/bin/tee
+-bash-3.2# chmod u+s /usr/bin/tee
+-bash-3.2# make check  2>&1 | tee /tmp/netkit-rsh-test.log ; echo 'COMMAND''DONE'
+cd tests; sh netkit-rsh-main.sh; cd ../ ;
+#--------------------------------------------------#
+#            Executing Netkit-rsh Test Suite       #
+#--------------------------------------------------#
+
+=================================================================
+            NETKIT-RSH Test Cases                          
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Date               : Thu Feb 13 19:01:01 UTC 2014                        
+=================================================================
+ Testing TD-netkit-rsh-PTG1 
+ ---------------------------------
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest1 -TD-netkit-rsh-PTG1-1 - Checking the functionality of rcp by transferring file form src to dest [0m
+Test Result      =  1
+Expected Result  =  0
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest2 -TD-netkit-rsh-PTG1-2 - Checking the functionality of rcp by transferring directory from src to dest [0m
+Test Result      =  1
+Expected Result  =  0
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest3 -TD-netkit-rsh-PTG1-3 - Checking the functionality of rcp by transferring file form dest to src [0m
+Test Result      =  1
+Expected Result  =  0
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest4 -TD-netkit-rsh-PTG1-4 - Checking the functionality of rcp by transferring directory form dest to src [0m
+Test Result      =  1
+Expected Result  =  0
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest5 -TD-netkit-rsh-PTG1-5 - Checking the functionality of rsh [0m
+Test Result      =  1
+Expected Result  =  0
+spawn ../rlogin/rlogin -l root 10.0.6.38
+rcmd: socket: Permission denied
+  netkit-rsh TEST PASSED: test6-TD-netkit-rsh-PTG1-6  - Checking the functionality of rlogin
+
+ Test result
+ Total no of test executed : 6
+ No of Success test cases  :1
+ No of Failed test cases : 5
+
+
+ Testing TD-netkit-rsh-PTG2 
+ ---------------------------------
+rcmd: socket: Permission denied
+  netkit-rsh TEST PASSED: test7-TD-netkit-rsh-PTG2-7  - Checking the error condition of rlogin by giving an invalid IP address
+10.0.6.2: No route to host
+  netkit-rsh TEST PASSED: test8-TD-netkit-rsh-PTG2-8  - Checking the error condition of rsh by giving an invalid IP address
+usage: rcp [-p] f1 f2; or: rcp [-rp] f1 ... fn directory
+  netkit-rsh TEST PASSED: test9-TD-netkit-rsh-PTG2-9  - Checking the error condition of rcp by giving an invalid IP address
+
+ Test result
+ Total no of test executed : 3
+ No of Success test cases  :3
+ No of Failed test cases : 0
+
+
+ Testing TD-netkit-rsh-PTG3 
+ ---------------------------------
+spawn ../rlogin/rlogin -l root -L 10.0.6.38
+rcmd: socket: Permission denied
+  netkit-rsh TEST PASSED: test10-TD-netkit-rsh-PTG3-10  - Checking the functionality of rlogin with -L option
+spawn ../rlogin/rlogin -l root -ea 10.0.6.38
+rcmd: socket: Permission denied
+  netkit-rsh TEST PASSED: test11-TD-netkit-rsh-PTG3-11  - Checking the functionality of rlogin with -ea option
+spawn ../rlogin/rlogin -l root -8 10.0.6.38
+rcmd: socket: Permission denied
+  netkit-rsh TEST PASSED: test12-TD-netkit-rsh-PTG3-12  - Checking the functionality of rlogin with -8 option
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest13 -TD-netkit-rsh-PTG3-13 - Checking the functionality of rsh with -d option [0m
+Test Result      =  1
+Expected Result  =  0
+rcmd: socket: Permission denied
+netkit-rsh TEST FAILED: [31mtest14 -TD-netkit-rsh-PTG3-14 - Checking the functionality of rcp with -p option [0m
+Test Result      =  1
+Expected Result  =  0
+
+ Test result
+ Total no of test executed : 5
+ No of Success test cases  :3
+ No of Failed test cases : 2
+
+
+#----------------------------------------#
+# netkit-rsh_test_result.log was created #
+#----------------------------------------#
+[32m TEST RESULT
+ NO OF TEST EXECUTED : 14
+  OUT OF 14, 7 TEST FAILED
+ failures = 7, success = 7
+[0m
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/netkit-rsh-test.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+sending 10.0.6.38:/tmp/rcp-rsh-rlogin-test.log to 10.0.6.38:/home/rpmuser/rpm/tmp....

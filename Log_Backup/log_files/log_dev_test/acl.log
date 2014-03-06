@@ -1,0 +1,1103 @@
+-bash-3.2# ./configure LIBTOOL='/tmp/acl-2.2.39/libtool --tag=CC'
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gmake... no
+checking for make... /usr/bin/make
+./configure: line 3062: test: /tmp/acl-2.2.39/libtool: binary operator expected
+checking for tar... /bin/tar
+checking for gzip... /bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /bin/awk
+checking for sed... /bin/sed
+checking for echo... /bin/echo
+checking for sort... /usr/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for msgmerge... /usr/bin/msgmerge
+checking for rpm... no
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking attr/error_context.h usability... yes
+checking attr/error_context.h presence... yes
+checking for attr/error_context.h... yes
+checking for getxattr in -lattr... yes
+checking whether __attribute__((visibility())) is supported... yes
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: WARNING:  'include/builddefs.in' seems to ignore the --datarootdir setting
+config.status: creating include/config.h
+config.status: include/config.h is unchanged
+-bash-3.2# sed -i 's/arm-sony-linux-gnueabi-//g' libtool
+-bash-3.2# make -k tests
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+make[1]: Nothing to be done for `default'.
+=== libacl ===
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_add_perm.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c  -fPIC -DPIC -o .libs/acl_add_perm.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c -o acl_add_perm.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_calc_mask.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c  -fPIC -DPIC -o .libs/acl_calc_mask.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c -o acl_calc_mask.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_entry.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c  -fPIC -DPIC -o .libs/acl_copy_entry.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c -o acl_copy_entry.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_perm.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c  -fPIC -DPIC -o .libs/acl_delete_perm.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c -o acl_delete_perm.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_free.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c  -fPIC -DPIC -o .libs/acl_free.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c -o acl_free.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_entry.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c  -fPIC -DPIC -o .libs/acl_get_entry.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c -o acl_get_entry.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_file.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c  -fPIC -DPIC -o .libs/acl_get_file.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c -o acl_get_file.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_permset.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c  -fPIC -DPIC -o .libs/acl_get_permset.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c -o acl_get_permset.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_qualifier.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c  -fPIC -DPIC -o .libs/acl_get_qualifier.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c -o acl_get_qualifier.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_valid.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c  -fPIC -DPIC -o .libs/acl_valid.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c -o acl_valid.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_entries.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c  -fPIC -DPIC -o .libs/acl_entries.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c -o acl_entries.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_check.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c  -fPIC -DPIC -o .libs/acl_check.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c -o acl_check.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_to_any_text.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c  -fPIC -DPIC -o .libs/__acl_to_any_text.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c -o __acl_to_any_text.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=compile gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __libobj.c
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c  -fPIC -DPIC -o .libs/__libobj.o
+libtool: compile:  gcc -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c -o __libobj.o >/dev/null 2>&1
+/tmp/acl-2.2.39/libtool --tag=CC --mode=link gcc -Wl,--version-script,../exports -rpath /usr/lib -version-info 2:0:1 -o libacl.la acl_add_perm.lo acl_calc_mask.lo acl_clear_perms.lo acl_copy_entry.lo acl_copy_ext.lo acl_copy_int.lo acl_create_entry.lo acl_delete_def_file.lo acl_delete_entry.lo acl_delete_perm.lo acl_dup.lo acl_free.lo acl_from_text.lo acl_get_entry.lo acl_get_fd.lo acl_get_file.lo acl_get_perm.lo acl_get_permset.lo acl_get_qualifier.lo acl_get_tag_type.lo acl_init.lo acl_set_fd.lo acl_set_file.lo acl_set_permset.lo acl_set_qualifier.lo acl_set_tag_type.lo acl_to_text.lo acl_valid.lo acl_size.lo acl_to_any_text.lo acl_entries.lo acl_check.lo acl_error.lo acl_cmp.lo acl_extended_fd.lo acl_extended_file.lo acl_equiv_mode.lo acl_from_mode.lo __acl_to_any_text.lo __acl_to_xattr.lo __acl_from_xattr.lo __acl_reorder_obj_p.lo __libobj.lo __apply_mask_to_mode.lo perm_copy_fd.lo perm_copy_file.lo -lattr ../libmisc/libmisc.la
+libtool: link: rm -fr  .libs/libacl.a .libs/libacl.la .libs/libacl.lai .libs/libacl.so .libs/libacl.so.1 .libs/libacl.so.1.1.0
+libtool: link: gcc -tarmv7a -shared  -fPIC -DPIC  .libs/acl_add_perm.o .libs/acl_calc_mask.o .libs/acl_clear_perms.o .libs/acl_copy_entry.o .libs/acl_copy_ext.o .libs/acl_copy_int.o .libs/acl_create_entry.o .libs/acl_delete_def_file.o .libs/acl_delete_entry.o .libs/acl_delete_perm.o .libs/acl_dup.o .libs/acl_free.o .libs/acl_from_text.o .libs/acl_get_entry.o .libs/acl_get_fd.o .libs/acl_get_file.o .libs/acl_get_perm.o .libs/acl_get_permset.o .libs/acl_get_qualifier.o .libs/acl_get_tag_type.o .libs/acl_init.o .libs/acl_set_fd.o .libs/acl_set_file.o .libs/acl_set_permset.o .libs/acl_set_qualifier.o .libs/acl_set_tag_type.o .libs/acl_to_text.o .libs/acl_valid.o .libs/acl_size.o .libs/acl_to_any_text.o .libs/acl_entries.o .libs/acl_check.o .libs/acl_error.o .libs/acl_cmp.o .libs/acl_extended_fd.o .libs/acl_extended_file.o .libs/acl_equiv_mode.o .libs/acl_from_mode.o .libs/__acl_to_any_text.o .libs/__acl_to_xattr.o .libs/__acl_from_xattr.o .libs/__acl_reorder_obj_p.o .libs/__libobj.o .libs/__apply_mask_to_mode.o .libs/perm_copy_fd.o .libs/perm_copy_file.o  -Wl,--whole-archive ../libmisc/.libs/libmisc.a -Wl,--no-whole-archive  -lattr  -Wl,--version-script -Wl,../exports   -Wl,-soname -Wl,libacl.so.1 -o .libs/libacl.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libacl.so.1" && ln -s "libacl.so.1.1.0" "libacl.so.1")
+libtool: link: (cd ".libs" && rm -f "libacl.so" && ln -s "libacl.so.1.1.0" "libacl.so")
+libtool: link: (cd .libs/libacl.lax/libmisc.a && ar x "/tmp/acl-2.2.39/libacl/../libmisc/.libs/libmisc.a")
+libtool: link: ar cru .libs/libacl.a  acl_add_perm.o acl_calc_mask.o acl_clear_perms.o acl_copy_entry.o acl_copy_ext.o acl_copy_int.o acl_create_entry.o acl_delete_def_file.o acl_delete_entry.o acl_delete_perm.o acl_dup.o acl_free.o acl_from_text.o acl_get_entry.o acl_get_fd.o acl_get_file.o acl_get_perm.o acl_get_permset.o acl_get_qualifier.o acl_get_tag_type.o acl_init.o acl_set_fd.o acl_set_file.o acl_set_permset.o acl_set_qualifier.o acl_set_tag_type.o acl_to_text.o acl_valid.o acl_size.o acl_to_any_text.o acl_entries.o acl_check.o acl_error.o acl_cmp.o acl_extended_fd.o acl_extended_file.o acl_equiv_mode.o acl_from_mode.o __acl_to_any_text.o __acl_to_xattr.o __acl_from_xattr.o __acl_reorder_obj_p.o __libobj.o __apply_mask_to_mode.o perm_copy_fd.o perm_copy_file.o  .libs/libacl.lax/libmisc.a/high_water_alloc.o .libs/libacl.lax/libmisc.a/next_line.o .libs/libacl.lax/libmisc.a/quote.o .libs/libacl.lax/libmisc.a/unquote.o 
+libtool: link: ranlib .libs/libacl.a
+libtool: link: rm -fr .libs/libacl.lax
+libtool: link: ( cd ".libs" && rm -f "libacl.la" && ln -s "../libacl.la" "libacl.la" )
+=== getfacl ===
+/tmp/acl-2.2.39/libtool --tag=CC --mode=link gcc -o getfacl    getfacl.o user_group.o   ../libacl/libacl.la -lattr ../libmisc/libmisc.la  
+libtool: link: gcc -o .libs/getfacl getfacl.o user_group.o  ../libacl/.libs/libacl.so -lattr ../libmisc/.libs/libmisc.a
+=== setfacl ===
+/tmp/acl-2.2.39/libtool --tag=CC --mode=link gcc -o setfacl    setfacl.o do_set.o sequence.o parse.o   ../libacl/libacl.la -lattr ../libmisc/libmisc.la  
+libtool: link: gcc -o .libs/setfacl setfacl.o do_set.o sequence.o parse.o  ../libacl/.libs/libacl.so -lattr ../libmisc/.libs/libmisc.a
+=== chacl ===
+/tmp/acl-2.2.39/libtool --tag=CC --mode=link gcc -o chacl    chacl.o   ../libacl/libacl.la -lattr  
+libtool: link: gcc -o .libs/chacl chacl.o  ../libacl/.libs/libacl.so -lattr
+=== m4 ===
+make[1]: Nothing to be done for `default'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `default'.
+=== man3 ===
+make[2]: Nothing to be done for `default'.
+=== man5 ===
+make[2]: Nothing to be done for `default'.
+=== doc ===
+make[1]: Nothing to be done for `default'.
+=== po ===
+make[1]: Nothing to be done for `default'.
+=== test ===
+make[1]: Nothing to be done for `default'.
+=== examples ===
+make[1]: Nothing to be done for `default'.
+=== build ===
+make[1]: Nothing to be done for `default'.
+=== debian ===
+make[1]: Nothing to be done for `default'.
+/usr/bin/make -C test/ tests
+make[1]: Entering directory `/tmp/acl-2.2.39/test'
+*** cp.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[3] $ umask 022 -- ok
+[4] $ mkdir d -- ok
+[5] $ cd d -- ok
+[6] $ touch f -- ok
+[7] $ setfacl -m u:bin:rw f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[8] $ ls -l f | awk -- '{ print $1 }' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[11] $ cp f g -- ok
+[12] $ ls -l g | awk -- '{ print $1 }' -- ok
+[15] $ rm g -- ok
+[16] $ cp -p f g -- ok
+[17] $ ls -l f | awk -- '{ print $1 }' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[20] $ mkdir h -- ok
+[21] $ echo blubb > h/x -- ok
+[22] $ cp -rp h i -- ok
+[23] $ cat i/x -- ok
+[26] $ rm -r i -- ok
+[27] $ setfacl -R -m u:bin:rwX h -- failed
+~                                     ? lt-setfacl: h: Operation not supported 
+~                                     ? lt-setfacl: h/x: Operation not supported
+[28] $ getfacl --omit-header h/x -- failed
+user::rw-                             | user::rw-                              
+user:bin:rwx                          ? group::r--                             
+group::r--                            ? other::r--                             
+mask::rwx                             ?                                        
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[36] $ cp -rp h i -- ok
+[37] $ getfacl --omit-header i/x -- failed
+user::rw-                             | user::rw-                              
+user:bin:rwx                          ? group::r--                             
+group::r--                            ? other::r--                             
+mask::rwx                             ?                                        
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[45] $ cd .. -- ok
+[46] $ rm -r d -- ok
+22 commands (16 passed, 6 failed)
+make[1]: *** [cp.test] Error 6
+*** getfacl-noacl.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[4] $ mkdir test -- ok
+[5] $ cd test -- ok
+[6] $ umask 027 -- ok
+[7] $ touch x -- ok
+[8] $ getfacl --omit-header x -- ok
+[14] $ getfacl --omit-header --access x -- ok
+[20] $ getfacl --omit-header -d x -- ok
+[21] $ getfacl --omit-header -d . -- ok
+[22] $ getfacl --omit-header -d / -- failed
+getfacl: Removing leading '/' from absolute path names ? lt-getfacl: Removing leading '/' from absolute path names
+[25] $ getfacl --skip-base x -- ok
+[26] $ getfacl --omit-header --all-effective x -- ok
+[32] $ getfacl --omit-header --no-effective x -- ok
+[38] $ mkdir d -- ok
+[39] $ touch d/y -- ok
+[40] $ ln -s d l -- ok
+[41] $ getfacl -dR . | grep file | sort -- ok
+[47] $ ln -s l ll -- ok
+[48] $ getfacl -dLR ll | grep file | sort -- failed
+# file: ll                            ? # file: l                              
+# file: ll/y                          ? # file: l/y                            
+[52] $ rm l ll x -- ok
+[53] $ rm -rf d -- ok
+[54] $ cd .. -- ok
+[55] $ rmdir test -- ok
+22 commands (20 passed, 2 failed)
+make[1]: *** [getfacl-noacl.test] Error 2
+*** misc.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[6] $ umask 027 -- ok
+[7] $ touch f -- ok
+[10] $ setfacl -m u::r f -- ok
+[11] $ setfacl -m u::rw,u:bin:rw f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[12] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw----+                           ? -r--r-----                             
+[15] $ getfacl --omit-header f -- failed
+user::rw-                             ? user::r--                              
+user:bin:rw-                          ? group::r--                             
+group::r--                            ? other::---                             
+mask::rw-                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[23] $ rm f -- ok
+[24] $ umask 022 -- ok
+[25] $ touch f -- ok
+[26] $ setfacl -m u:bin:rw f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[27] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[30] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rw-                          ? group::r--                             
+group::r--                            ? other::r--                             
+mask::rw-                             ?                                        
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[38] $ rm f -- ok
+[39] $ umask 027 -- ok
+[40] $ mkdir d -- ok
+[41] $ setfacl -m u:bin:rwx d -- failed
+~                                     ? lt-setfacl: d: Operation not supported 
+[42] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---+                           ? drwxr-x---                             
+[45] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx                          ? group::r-x                             
+group::r-x                            ? other::---                             
+mask::rwx                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[53] $ rmdir d -- ok
+[54] $ umask 022 -- ok
+[55] $ mkdir d -- ok
+[56] $ setfacl -m u:bin:rwx d -- failed
+~                                     ? lt-setfacl: d: Operation not supported 
+[57] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwxr-x+                           ? drwxr-xr-x                             
+[60] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx                          ? group::r-x                             
+group::r-x                            ? other::r-x                             
+mask::rwx                             ?                                        
+other::r-x                            ? ~                                      
+                                      ? ~                                      
+[68] $ rmdir d -- ok
+[73] $ umask 022 -- ok
+[74] $ touch f -- ok
+[75] $ setfacl -m u:bin:rw,u:daemon:r f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[76] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[79] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rw-                          ? group::r--                             
+user:daemon:r--                       ? other::r--                             
+group::r--                            ?                                        
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[90] $ setfacl -m g:users:rw,g:daemon:r f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[91] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[94] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rw-                          ? group::r--                             
+user:daemon:r--                       ? other::r--                             
+group::r--                            ?                                        
+group:daemon:r--                      ? ~                                      
+group:users:rw-                       ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[107] $ setfacl -x g:users f -- ok
+[108] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[111] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rw-                          ? group::r--                             
+user:daemon:r--                       ? other::r--                             
+group::r--                            ?                                        
+group:daemon:r--                      ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[123] $ setfacl -x u:daemon f -- ok
+[124] $ ls -dl f | awk '{print $1}' -- failed
+-rw-rw-r--+                           ? -rw-r--r--                             
+[127] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rw-                          ? group::r--                             
+group::r--                            ? other::r--                             
+group:daemon:r--                      ?                                        
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[136] $ rm f -- ok
+[140] $ umask 027 -- ok
+[141] $ mkdir d -- ok
+[142] $ setfacl -m u:bin:rwx,u:daemon:rw,d:u:bin:rwx,d:m:rx d -- failed
+~                                     ? lt-setfacl: d: Operation not supported 
+[143] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---+                           ? drwxr-x---                             
+[146] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx                          ? group::r-x                             
+user:daemon:rw-                       ? other::---                             
+group::r-x                            ?                                        
+mask::rwx                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[162] $ umask 027 -- ok
+[163] $ touch d/f -- ok
+[164] $ ls -dl d/f | awk '{print $1}' -- failed
+-rw-r-----+                           ? -rw-r-----                             
+[167] $ getfacl --omit-header d/f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rwx    #effective:r--           ? group::r--                             
+group::r-x      #effective:r--             ? other::---                             
+mask::r--                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[175] $ rm d/f -- ok
+[176] $ umask 022 -- ok
+[177] $ touch d/f -- ok
+[178] $ ls -dl d/f | awk '{print $1}' -- failed
+-rw-r-----+                           ? -rw-r--r--                             
+[181] $ getfacl --omit-header d/f -- failed
+user::rw-                             | user::rw-                              
+user:bin:rwx    #effective:r--           ? group::r--                             
+group::r-x      #effective:r--             ? other::r--                             
+mask::r--                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[189] $ rm d/f -- ok
+[193] $ umask 000 -- ok
+[194] $ mkdir d/d -- ok
+[195] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxrwxrwx                             
+[198] $ getfacl --omit-header d/d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx    #effective:r-x           ? group::rwx                             
+group::r-x                            ? other::rwx                             
+mask::r-x                             ?                                        
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[211] $ rmdir d/d -- ok
+[212] $ umask 022 -- ok
+[213] $ mkdir d/d -- ok
+[214] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-xr-x                             
+[217] $ getfacl --omit-header d/d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx    #effective:r-x           ? group::r-x                             
+group::r-x                            ? other::r-x                             
+mask::r-x                             ?                                        
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[232] $ setfacl -nm u:daemon:rx,d:u:daemon:rx,g:users:rx,g:daemon:rwx d/d -- failed
+~                                     ? lt-setfacl: d/d: Operation not supported
+[233] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-xr-x                             
+[236] $ getfacl --omit-header d/d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx    #effective:r-x           ? group::r-x                             
+user:daemon:r-x                       ? other::r-x                             
+group::r-x                            ?                                        
+group:daemon:rwx        #effective:r-x       ? ~                                      
+group:users:r-x                       ? ~                                      
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:user:daemon:r-x               ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[255] $ ln -s d d/l -- ok
+[256] $ ls -dl d/l | awk '{print $1}' -- ok
+[259] $ ls -dl -L d/l | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-xr-x                             
+[262] $ getfacl --omit-header d/l -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx    #effective:r-x           ? group::r-x                             
+user:daemon:r-x                       ? other::---                             
+group::r-x                            ?                                        
+group:daemon:rwx        #effective:r-x       ? ~                                      
+group:users:r-x                       ? ~                                      
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:user:daemon:r-x               ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[279] $ rm d/l -- ok
+[283] $ setfacl -m g:daemon:rx,u:bin:rx d/d -- failed
+~                                     ? lt-setfacl: d/d: Operation not supported
+[284] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-xr-x                             
+[287] $ getfacl --omit-header d/d -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::r-x                             
+user:daemon:r-x                       ? other::r-x                             
+group::r-x                            ?                                        
+group:daemon:r-x                      ? ~                                      
+group:users:r-x                       ? ~                                      
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx    #effective:r-x   ? ~                                      
+default:user:daemon:r-x               ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::r-x                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[304] $ setfacl -m d:u:bin:rwx d/d -- failed
+~                                     ? lt-setfacl: d/d: Operation not supported
+[305] $ ls -dl d/d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-xr-x                             
+[308] $ getfacl --omit-header d/d -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::r-x                             
+user:daemon:r-x                       ? other::r-x                             
+group::r-x                            ?                                        
+group:daemon:r-x                      ? ~                                      
+group:users:r-x                       ? ~                                      
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx                  ? ~                                      
+default:user:daemon:r-x               ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::---                    ? ~                                      
+                                      ? ~                                      
+[325] $ rmdir d/d -- ok
+[329] $ setfacl -k d -- ok
+[330] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwx---+                           ? drwxr-x---                             
+[333] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:rwx                          ? group::r-x                             
+user:daemon:rw-                       ? other::---                             
+group::r-x                            ?                                        
+mask::rwx                             ? ~                                      
+other::---                            ? ~                                      
+                                      ? ~                                      
+[344] $ setfacl -b d -- ok
+[345] $ ls -dl d | awk '{print $1}' -- ok
+[348] $ getfacl --omit-header d -- ok
+[356] $ chmod 775 d -- ok
+[357] $ ls -dl d | awk '{print $1}' -- ok
+[360] $ getfacl --omit-header d -- ok
+[366] $ rmdir d -- ok
+[367] $ umask 002 -- ok
+[368] $ mkdir d -- ok
+[369] $ setfacl -m u:daemon:rwx,u:bin:rx,d:u:daemon:rwx,d:u:bin:rx d -- failed
+~                                     ? lt-setfacl: d: Operation not supported 
+[370] $ ls -dl d | awk '{print $1}' -- failed
+drwxrwxr-x+                           ? drwxrwxr-x                             
+[373] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::rwx                             
+user:daemon:rwx                       ? other::r-x                             
+group::rwx                            ?                                        
+mask::rwx                             ? ~                                      
+other::r-x                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:r-x                  ? ~                                      
+default:user:daemon:rwx               ? ~                                      
+default:group::rwx                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::r-x                    ? ~                                      
+                                      ? ~                                      
+[388] $ chmod 750 d -- ok
+[389] $ ls -dl d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-x---                             
+[392] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::r-x                             
+user:daemon:rwx #effective:r-x        ? other::---                             
+group::rwx      #effective:r-x             ?                                        
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:r-x                  ? ~                                      
+default:user:daemon:rwx               ? ~                                      
+default:group::rwx                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::r-x                    ? ~                                      
+                                      ? ~                                      
+[407] $ chmod 750 d -- ok
+[408] $ ls -dl d | awk '{print $1}' -- failed
+drwxr-x---+                           ? drwxr-x---                             
+[411] $ getfacl --omit-header d -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::r-x                             
+user:daemon:rwx #effective:r-x        ? other::---                             
+group::rwx      #effective:r-x             ?                                        
+mask::r-x                             ? ~                                      
+other::---                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:r-x                  ? ~                                      
+default:user:daemon:rwx               ? ~                                      
+default:group::rwx                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::r-x                    ? ~                                      
+                                      ? ~                                      
+[426] $ rmdir d -- ok
+101 commands (48 passed, 53 failed)
+make[1]: *** [misc.test] Error 53
+*** nfs-dir.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 11.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 11.
+[10] $ umask 022 -- ok
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 12.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 12.
+[11] $ mkdir /test -- ok
+[12] $ echo blah > /test/blah -- ok
+[16] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN0> line 15.
+ok
+[17] $ cat test/blah -- failed
+blah                                  ? cat: can't open 'test/blah': No such file or directory
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 23.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 23.
+[22] $ su -- Use of uninitialized value $users in split at run line 125, <GEN1> line 15.
+ok
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 24.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 24.
+[23] $ chmod go-rwx /test -- ok
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 25.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 25.
+[24] $ setfacl -m u:bin:rx /test -- failed
+~                                     ? lt-setfacl: /test: Operation not supported
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 27.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 27.
+[25] $ ls -dl /test | awk '{print $1, $3, $4}' -- failed
+drwxr-x---+ root root                 ? drwx------ root root                   
+[27] $ getfacl --omit-header /test 2> /dev/null -- failed
+user::rwx                             | user::rwx                              
+user:bin:r-x                          ? group::---                             
+group::---                            ? other::---                             
+mask::r-x                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[38] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN2> line 15.
+ok
+[39] $ cat test/blah -- failed
+blah                                  ? cat: can't open 'test/blah': No such file or directory
+[41] $ sleep 3 -- ok
+[42] $ cat test/blah -- failed
+blah                                  ? cat: can't open 'test/blah': No such file or directory
+[44] $ cat test/blah -- failed
+blah                                  ? cat: can't open 'test/blah': No such file or directory
+Use of uninitialized value $1 in concatenation (.) or string at run line 39, <> line 50.
+Use of uninitialized value within %ENV in substitution iterator at run line 39, <> line 50.
+[49] $ su -- Use of uninitialized value $users in split at run line 125, <GEN3> line 15.
+ok
+[50] $ rm -rf /test -- ok
+17 commands (10 passed, 7 failed)
+make[1]: *** [nfs-dir.test] Error 7
+*** nfsacl.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[6] $ umask 022 -- ok
+[7] $ mkdir -p test/sub -- ok
+[8] $ echo blah > test/sub/blah -- ok
+[10] $ cp -rp test/sub test/sub2 -- ok
+[11] $ find test/sub2 | sort | xargs ls -dl | awk '{print $1,$8}' -- failed
+drwxr-xr-x test/sub2                  ? drwxr-xr-x 13:03                       
+-rw-r--r-- test/sub2/blah             ? -rw-r--r-- 13:03                       
+[15] $ rm -rf test/sub2 -- ok
+[17] $ setfacl -m u:daemon:rwx test/sub -- failed
+~                                     ? lt-setfacl: test/sub: Operation not supported
+[18] $ setfacl -dm u:daemon:rwx test/sub -- failed
+~                                     ? lt-setfacl: test/sub: Operation not supported
+[19] $ getfattr -m- test/sub -- failed
+# file: test/sub                      ? ~                                      
+system.posix_acl_access               ? ~                                      
+system.posix_acl_default              ? ~                                      
+                                      ? ~                                      
+[25] $ cp -rp test/sub test/sub2 -- ok
+[26] $ find test/sub2 | sort | xargs ls -dl | awk '{print $1,$8}' -- failed
+drwxrwxr-x+ test/sub2                 ? drwxr-xr-x 13:03                       
+-rw-r--r-- test/sub2/blah             ? -rw-r--r-- 13:03                       
+[30] $ rm -rf test/sub2 -- ok
+[32] $ setfacl -m u:daemon:rw test/sub/blah -- failed
+~                                     ? lt-setfacl: test/sub/blah: Operation not supported
+[33] $ cp -rp test/sub test/sub2 -- ok
+[34] $ find test/sub2 | sort | xargs ls -dl | awk '{print $1,$8}' -- failed
+drwxrwxr-x+ test/sub2                 ? drwxr-xr-x 13:03                       
+-rw-rw-r--+ test/sub2/blah            ? -rw-r--r-- 13:03                       
+[38] $ rm -rf test/sub2 -- ok
+[42] $ rm -rf test -- ok
+17 commands (10 passed, 7 failed)
+make[1]: *** [nfsacl.test] Error 7
+*** permissions.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[12] $ id -u -- ok
+[19] $ mkdir d -- ok
+[20] $ cd d -- ok
+[21] $ umask 027 -- ok
+[22] $ touch f -- ok
+[23] $ ls -l f | awk -- '{ print $1, $3, $4 }' -- ok
+[30] $ echo root > f -- ok
+[32] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN0> line 15.
+ok
+[33] $ echo daemon >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[36] $ su -- Use of uninitialized value $users in split at run line 125, <GEN1> line 15.
+ok
+[42] $ chown bin:bin f -- ok
+[43] $ ls -l f | awk -- '{ print $1, $3, $4 }' -- ok
+[45] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN2> line 15.
+ok
+[46] $ echo bin >> f -- ok
+[52] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN3> line 15.
+ok
+[53] $ cat f -- failed
+root                                  ? cat: can't open 'f': Permission denied 
+bin                                   ? ~                                      
+[57] $ echo daemon >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[64] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN4> line 15.
+ok
+[65] $ setfacl -m u:daemon:rw f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[66] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:daemon:rw-                       ? group::r--                             
+group::r--                            ? other::---                             
+mask::rw-                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[77] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN5> line 15.
+ok
+[78] $ echo daemon >> f -- failed
+~                                     ? /bin/sh: f: Permission denied          
+[79] $ cat f -- failed
+root                                  ? cat: can't open 'f': Permission denied 
+bin                                   ? ~                                      
+daemon                                ? ~                                      
+[88] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN6> line 15.
+ok
+[89] $ chmod g-w f -- ok
+[90] $ getfacl --omit-header f -- failed
+user::rw-                             | user::rw-                              
+user:daemon:rw- #effective:r--        ? group::r--                             
+group::r--                            ? other::---                             
+mask::r--                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[98] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN7> line 15.
+ok
+[99] $ echo daemon >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[108] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN8> line 15.
+ok
+[109] $ setfacl -m u:daemon:r,g:daemon:rw-,o::rw- f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[111] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN9> line 15.
+ok
+[112] $ echo daemon >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[119] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN10> line 15.
+ok
+[120] $ setfacl -x u:daemon f -- ok
+[122] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN11> line 15.
+ok
+[123] $ echo daemon2 >> f -- failed
+~                                     ? /bin/sh: f: Permission denied          
+[124] $ cat f -- failed
+root                                  ? cat: can't open 'f': Permission denied 
+bin                                   ? ~                                      
+daemon                                ? ~                                      
+daemon2                               ? ~                                      
+[134] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN12> line 15.
+ok
+[135] $ setfacl -m g:daemon:r f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[137] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN13> line 15.
+ok
+[138] $ echo daemon3 >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[145] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN14> line 15.
+ok
+[146] $ setfacl -x g:daemon f -- ok
+[148] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN15> line 15.
+ok
+[149] $ echo daemon4 >> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[156] $ su -- Use of uninitialized value $users in split at run line 125, <GEN16> line 15.
+ok
+[157] $ chgrp root f -- ok
+[159] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN17> line 15.
+ok
+[160] $ echo daemon5 >> f -- failed
+~                                     ? /bin/sh: f: Permission denied          
+[161] $ cat f -- failed
+root                                  ? cat: can't open 'f': Permission denied 
+bin                                   ? ~                                      
+daemon                                ? ~                                      
+daemon2                               ? ~                                      
+daemon5                               ? ~                                      
+[172] $ su -- Use of uninitialized value $users in split at run line 125, <GEN18> line 15.
+ok
+[173] $ setfacl -m g:bin:r,g:daemon:w f -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+[175] $ su daemon -- Use of uninitialized value $users in split at run line 125, <GEN19> line 15.
+ok
+[176] $ : < f -- failed
+~                                     ? /bin/sh: f: Permission denied          
+[177] $ : > f -- failed
+~                                     ? /bin/sh: f: Permission denied          
+[178] $ : <> f -- failed
+f: Permission denied                  ? /bin/sh: f: Permission denied          
+[186] $ su -- Use of uninitialized value $users in split at run line 125, <GEN20> line 15.
+ok
+[187] $ mkdir -m 750 e -- ok
+[188] $ touch e/h -- ok
+[190] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN21> line 15.
+ok
+[191] $ shopt -s nullglob ; echo e/* -- ok
+[194] $ echo i > e/i -- failed
+e/i: Permission denied                ? /bin/sh: e/i: Permission denied        
+[197] $ su -- Use of uninitialized value $users in split at run line 125, <GEN22> line 15.
+ok
+[198] $ setfacl -m u:bin:rx e -- failed
+~                                     ? lt-setfacl: e: Operation not supported 
+[200] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN23> line 15.
+ok
+[201] $ echo e/* -- failed
+e/h                                   ? e/*                                    
+[203] $ echo i > e/i -- failed
+e/i: Permission denied                ? /bin/sh: e/i: Permission denied        
+[206] $ su -- Use of uninitialized value $users in split at run line 125, <GEN24> line 15.
+ok
+[207] $ setfacl -m u:bin:rwx e -- failed
+~                                     ? lt-setfacl: e: Operation not supported 
+[209] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN25> line 15.
+ok
+[210] $ echo i > e/i -- failed
+~                                     ? /bin/sh: e/i: Permission denied        
+[215] $ su -- Use of uninitialized value $users in split at run line 125, <GEN26> line 15.
+ok
+[216] $ touch g -- ok
+[217] $ ln -s g l -- ok
+[218] $ setfacl -m u:bin:rw l -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[219] $ ls -l g | awk -- '{ print $1, $3, $4 }' -- failed
+-rw-rw----+ root root                 ? -rw-r----- root root                   
+[229] $ mknod -m 0660 hdt b 91 64 -- ok
+[230] $ mknod -m 0660 null c 1 3 -- ok
+[231] $ mkfifo -m 0660 fifo -- ok
+[233] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN27> line 15.
+ok
+[234] $ : < hdt -- failed
+hdt: Permission denied                ? /bin/sh: hdt: Permission denied        
+[236] $ : < null -- failed
+null: Permission denied               ? /bin/sh: null: Permission denied       
+[238] $ : < fifo -- failed
+fifo: Permission denied               ? /bin/sh: fifo: Permission denied       
+[241] $ su -- Use of uninitialized value $users in split at run line 125, <GEN28> line 15.
+ok
+[242] $ setfacl -m u:bin:rw hdt null fifo -- failed
+~                                     ? lt-setfacl: hdt: Operation not supported
+~                                     ? lt-setfacl: null: Operation not supported
+~                                     ? lt-setfacl: fifo: Operation not supported
+[244] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN29> line 15.
+ok
+[245] $ : < hdt -- failed
+hdt: No such device or address        ? /bin/sh: hdt: Permission denied        
+[247] $ : < null -- failed
+~                                     ? /bin/sh: null: Permission denied       
+[248] $ ( echo blah > fifo & ) ; cat fifo -- failed
+blah                                  ? /bin/sh: fifo: Permission denied       
+~                                     ? cat: can't open 'fifo': Permission denied
+[256] $ su -- Use of uninitialized value $users in split at run line 125, <GEN30> line 15.
+ok
+[257] $ mkdir -m 600 x -- ok
+[258] $ chown daemon:daemon x -- ok
+[259] $ echo j > x/j -- ok
+[260] $ ls -l x/j | awk -- '{ print $1, $3, $4 }' -- ok
+[263] $ setfacl -m u:daemon:r x -- failed
+~                                     ? lt-setfacl: x: Operation not supported 
+[265] $ ls -l x/j | awk -- '{ print $1, $3, $4 }' -- ok
+[269] $ echo k > x/k -- ok
+[272] $ chmod 750 x -- ok
+[277] $ su -- Use of uninitialized value $users in split at run line 125, <GEN31> line 15.
+ok
+[278] $ cd .. -- ok
+[279] $ rm -rf d -- ok
+101 commands (63 passed, 38 failed)
+make[1]: *** [permissions.test] Error 38
+*** setfacl-X.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[1] $ umask 022 -- ok
+[2] $ mkdir d -- ok
+[3] $ cd d -- ok
+[5] $ setfacl -dm u:bin:rwx . -- failed
+~                                     ? lt-setfacl: .: Operation not supported 
+[7] $ touch f g -- ok
+[8] $ chmod ugo+x f -- ok
+[9] $ setfacl -m u:bin:rw,g::r g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[10] $ setfacl -m u:root:rwX f g -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+~                                     ? lt-setfacl: g: Operation not supported 
+[11] $ getfacl --omit-header --no-effective f g -- failed
+user::rwx                             | user::rwx                              
+user:root:rwx                         ? group::r-x                             
+user:bin:rwx                          ? other::r-x                             
+group::r-x                            ?                                        
+mask::rwx                             ? user::rw-                              
+other::r-x                            ? group::r--                             
+                                      ? other::r--                             
+user::rw-                             ?                                        
+user:root:rw-                         ? ~                                      
+user:bin:rw-                          ? ~                                      
+group::r--                            ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[27] $ rm f g -- ok
+[28] $ touch f g -- ok
+[29] $ mkdir d e -- ok
+[30] $ setfacl -n -m u:root:rwX d f e g -- failed
+~                                     ? lt-setfacl: d: Operation not supported 
+~                                     ? lt-setfacl: f: Operation not supported 
+~                                     ? lt-setfacl: e: Operation not supported 
+~                                     ? lt-setfacl: g: Operation not supported 
+[31] $ getfacl --omit-header --no-effective d e f g -- failed
+user::rwx                             | user::rwx                              
+user:root:rwx                         ? group::r-x                             
+user:bin:rwx                          ? other::r-x                             
+group::r-x                            ?                                        
+mask::rwx                             ? user::rwx                              
+other::r-x                            ? group::r-x                             
+default:user::rwx                     ? other::r-x                             
+default:user:bin:rwx                  ?                                        
+default:group::r-x                    ? user::rw-                              
+default:mask::rwx                     ? group::r--                             
+default:other::r-x                    ? other::r--                             
+                                      |                                        
+user::rwx                             ? user::rw-                              
+user:root:rwx                         ? group::r--                             
+user:bin:rwx                          ? other::r--                             
+group::r-x                            ?                                        
+mask::rwx                             ? ~                                      
+other::r-x                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx                  ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::r-x                    ? ~                                      
+                                      ? ~                                      
+user::rw-                             ? ~                                      
+user:root:rwx                         ? ~                                      
+user:bin:rwx                          ? ~                                      
+group::r-x                            ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+user::rw-                             ? ~                                      
+user:root:rwx                         ? ~                                      
+user:bin:rwx                          ? ~                                      
+group::r-x                            ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[71] $ rm f g -- ok
+[72] $ rmdir d e -- ok
+[73] $ touch f g -- ok
+[74] $ mkdir d e -- ok
+[75] $ setfacl -n -m u:root:rwX f d g e -- failed
+~                                     ? lt-setfacl: f: Operation not supported 
+~                                     ? lt-setfacl: d: Operation not supported 
+~                                     ? lt-setfacl: g: Operation not supported 
+~                                     ? lt-setfacl: e: Operation not supported 
+[76] $ getfacl --omit-header --no-effective d e f g -- failed
+user::rwx                             | user::rwx                              
+user:root:rwx                         ? group::r-x                             
+user:bin:rwx                          ? other::r-x                             
+group::r-x                            ?                                        
+mask::rwx                             ? user::rwx                              
+other::r-x                            ? group::r-x                             
+default:user::rwx                     ? other::r-x                             
+default:user:bin:rwx                  ?                                        
+default:group::r-x                    ? user::rw-                              
+default:mask::rwx                     ? group::r--                             
+default:other::r-x                    ? other::r--                             
+                                      |                                        
+user::rwx                             ? user::rw-                              
+user:root:rwx                         ? group::r--                             
+user:bin:rwx                          ? other::r--                             
+group::r-x                            ?                                        
+mask::rwx                             ? ~                                      
+other::r-x                            ? ~                                      
+default:user::rwx                     ? ~                                      
+default:user:bin:rwx                  ? ~                                      
+default:group::r-x                    ? ~                                      
+default:mask::rwx                     ? ~                                      
+default:other::r-x                    ? ~                                      
+                                      ? ~                                      
+user::rw-                             ? ~                                      
+user:root:rwx                         ? ~                                      
+user:bin:rwx                          ? ~                                      
+group::r-x                            ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+user::rw-                             ? ~                                      
+user:root:rwx                         ? ~                                      
+user:bin:rwx                          ? ~                                      
+group::r-x                            ? ~                                      
+mask::rw-                             ? ~                                      
+other::r--                            ? ~                                      
+                                      ? ~                                      
+[116] $ rm f g -- ok
+[117] $ rmdir d e -- ok
+[118] $ cd .. -- ok
+[119] $ rm -rf d -- ok
+24 commands (16 passed, 8 failed)
+make[1]: *** [setfacl-X.test] Error 8
+*** setfacl.test ***
+main::process_test() called too early to check prototype at run line 47.
+main::process_test() called too early to check prototype at run line 60.
+[3] $ mkdir d -- ok
+[4] $ chown bin:bin d -- ok
+[5] $ cd d -- ok
+[7] $ su bin -- Use of uninitialized value $users in split at run line 125, <GEN0> line 15.
+ok
+[8] $ sg bin -- [(1,0)(1 1,1 1)]ok
+[9] $ umask 027 -- ok
+[10] $ touch g -- ok
+[11] $ ls -dl g | awk '{print $1}' -- ok
+[14] $ setfacl -m m:- g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[15] $ ls -dl g | awk '{print $1}' -- failed
+-rw-------+                           ? -rw-r-----                             
+[18] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rw-                             | user::rw-                              
+group::r--      #effective:---             ? group::r--                             
+mask::---                             ? other::---                             
+other::---                            ?                                        
+                                      ? ~                                      
+[28] $ setfacl -x m g -- ok
+[29] $ getfacl g -- ok
+[38] $ setfacl -m u:daemon:rw g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[39] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rw-                             | user::rw-                              
+user:daemon:rw-                       ? group::r--                             
+group::r--                            ? other::---                             
+mask::rw-                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[50] $ setfacl -m u::rwx,g::r-x,o:- g -- ok
+[51] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rwx                             | user::rwx                              
+user:daemon:rw-                       ? group::r-x                             
+group::r-x                            ? other::---                             
+mask::rwx                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[62] $ setfacl -m u::rwx,g::r-x,o:-,m:- g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[63] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rwx                             | user::rwx                              
+user:daemon:rw- #effective:---        ? group::r-x                             
+group::r-x      #effective:---             ? other::---                             
+mask::---                             ?                                        
+other::---                            ? ~                                      
+                                      ? ~                                      
+[74] $ setfacl -m u::rwx,g::r-x,o:-,u:root:-,m:- g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[75] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rwx                             | user::rwx                              
+user:root:---                         ? group::r-x                             
+user:daemon:rw- #effective:---        ? other::---                             
+group::r-x      #effective:---             ?                                        
+mask::---                             ? ~                                      
+other::---                            ? ~                                      
+                                      ? ~                                      
+[87] $ setfacl -m u::rwx,g::r-x,o:-,u:root:-,m:- g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[88] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rwx                             | user::rwx                              
+user:root:---                         ? group::r-x                             
+user:daemon:rw- #effective:---        ? other::---                             
+group::r-x      #effective:---             ?                                        
+mask::---                             ? ~                                      
+other::---                            ? ~                                      
+                                      ? ~                                      
+[100] $ setfacl -m u::rwx,g::r-x,o:-,u:root:- g -- failed
+~                                     ? lt-setfacl: g: Operation not supported 
+[101] $ getfacl g -- failed
+# file: g                             | # file: g                              
+# owner: bin                          | # owner: bin                           
+# group: bin                          | # group: bin                           
+user::rwx                             | user::rwx                              
+user:root:---                         ? group::r-x                             
+user:daemon:rw-                       ? other::---                             
+group::r-x                            ?                                        
+mask::rwx                             ? ~                                      
+other::---                            ? ~                                      
+                                      ? ~                                      
+[113] $ setfacl --test -x u: g -- failed
+setfacl: g: Malformed access ACL `user:root:---,user:daemon:rw-,group::r-x,mask::rwx,other::---': Missing or wrong entry at entry 1 ? lt-setfacl: g: Malformed access ACL `group::r-x,other::---': Missing or wrong entry at entry 1
+[116] $ setfacl --test -x u:x -- failed
+setfacl: Option -x: Invalid argument near character 3 ? lt-setfacl: Option -x: Invalid argument near character 3
+[119] $ setfacl -m d:u:root:rwx g -- failed
+setfacl: g: Only directories can have default ACLs ? lt-setfacl: g: Only directories can have default ACLs
+[122] $ setfacl -x m g -- failed
+setfacl: g: Malformed access ACL `user::rwx,user:root:---,user:daemon:rw-,group::r-x,other::---': Missing or wrong entry at entry 5 ? ~                                      
+[129] $ mkdir d -- ok
+[130] $ setfacl --test -m u::rwx,u:bin:rwx,g::r-x,o::--- d -- ok
+[133] $ setfacl --test -m u::rwx,u:bin:rwx,g::r-x,m::---,o::--- d -- ok
+[136] $ setfacl --test -d -m u::rwx,u:bin:rwx,g::r-x,o::--- d -- ok
+[139] $ setfacl --test -d -m u::rwx,u:bin:rwx,g::r-x,m::---,o::--- d -- ok
+[142] $ su -- Use of uninitialized value $users in split at run line 125, <GEN1> line 15.
+ok
+[143] $ cd .. -- ok
+[144] $ rm -r d -- ok
+37 commands (19 passed, 18 failed)
+make[1]: *** [setfacl.test] Error 18
+make[1]: Target `tests' not remade because of errors.
+make[1]: Leaving directory `/tmp/acl-2.2.39/test'
+make: *** [tests] Error 2
+

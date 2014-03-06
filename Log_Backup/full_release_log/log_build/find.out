@@ -1,0 +1,1898 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+findutils : 4.2.31
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-findutils-4.2.31-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-findutiwarning: group rpmuser does not exist - using root
+                                            (  5%)#                                           (  5%)##                                          ( 10%)###                                         ( 10%)####                                        ( 15%)#####                                       ( 15%)######                                      ( 15%)#######                                     ( 20%)########                                    ( 20%)#########                                   ( 25%)##########                                  ( 25%)###########                                 ( 30%)############                                ( 30%)#############                               ( 35%)##############                              ( 35%)###############                             ( 39%)################                            ( 39%)#################                           ( 44%)##################                          ( 44%)###################                         ( 44%)####################                        ( 49%)#####################                       ( 49%)######################                      ( 54%)#######################                     ( 54%)########################                    ( 59%)#########################                   ( 59%)##########################                  ( 64%)###########################                 ( 64%)############################                ( 69%)#############################               ( 69%)##############################              ( 74%)###############################             ( 74%)################################            ( 74%)#################################           ( 79%)##################################          ( 79%)###################################         ( 84%)####################################        ( 84%)#####################################       ( 89%)######################################      ( 89%)#######################################     ( 94%)########################################    ( 94%)#########################################   ( 99%)##########################################  ( 99%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-findutils.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.INBoVh
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf findutils-4.2.31
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/findutils-4.2.31.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd findutils-4.2.31
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.x3Hiw8
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd findutils-4.2.31
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export ac_cv_func_setvbuf_reversed=no
++ ac_cv_func_setvbuf_reversed=no
++ export ac_cv_path_SORT=/usr/local/bin/sort
++ ac_cv_path_SORT=/usr/local/bin/sort
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking whether debug output should be produced... no
+checking for leaf optimisation... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for AIX... no
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for library containing strerror... none required
+checking for function prototypes... yes
+checking for string.h... (cached) yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for arm-sony-linux-gnueabi-ranlib... (cached) arm-sony-linux-gnueabi-ranlib
+checking whether make sets $(MAKE)... (cached) yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for working alloca.h... yes
+checking for alloca... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/statvfs.h usability... yes
+checking sys/statvfs.h presence... yes
+checking for sys/statvfs.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for stdlib.h... (cached) yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for string.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether canonicalize_file_name is declared... yes
+checking for canonicalize_file_name... yes
+checking for resolvepath... no
+checking for mempcpy... yes
+checking for btowc... yes
+checking for iswctype... yes
+checking for mbsrtowcs... yes
+checking for wmemchr... yes
+checking for wmemcpy... yes
+checking for wmempcpy... yes
+checking for alarm... yes
+checking for lchmod... no
+checking for fdopendir... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for fchdir... yes
+checking for mblen... yes
+checking for mbrlen... yes
+checking for tzset... yes
+checking for lstat... yes
+checking for pipe... yes
+checking for iswcntrl... yes
+checking for uid_t in sys/types.h... yes
+checking for unistd.h... (cached) yes
+checking for working chown... no
+checking whether chown(2) dereferences symlinks... yes
+checking whether system is Windows or MSDOS... no
+checking whether // is distinct from /... unknown, assuming no
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for st_dm_mode in struct stat... no
+checking whether strmode is declared... no
+checking for mbstate_t... yes
+checking whether getcwd (NULL, 0) allocates memory for result... no
+checking whether getcwd is declared... yes
+checking whether getdelim is declared... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for getopt_long_only... yes
+checking whether optreset is declared... no
+checking for working GNU getopt function... checking whether getopt_clip is declared... no
+yes
+checking whether getenv is declared... yes
+checking for inline... inline
+checking for long long int... yes
+checking for unsigned long long int... yes
+checking absolute name of <stdint.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/lib/gcc/arm-sony-linux-gnueabi/4.7.3/include/stdint.h
+checking whether stdint.h conforms to C99... yes
+checking for inttypes.h... (cached) yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking whether imaxabs is declared... yes
+checking whether imaxdiv is declared... yes
+checking whether strtoimax is declared... yes
+checking whether strtoumax is declared... yes
+checking whether lchown is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking whether getc_unlocked is declared... yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether memrchr is declared... yes
+checking for C/C++ restrict keyword... __restrict
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether strdup is declared... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for struct tm.tm_gmtoff... yes
+checking absolute name of <string.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h
+checking whether strndup is declared... yes
+checking whether strnlen is declared... yes
+checking whether stat file-mode macros are broken... no
+checking for struct timespec in <time.h>... yes
+checking absolute name of <time.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h
+checking for alloca as a compiler built-in... yes
+checking whether this system has an arbitrary file name length limit... yes
+checking for fchown... yes
+checking for d_ino member in directory struct... yes
+checking for dirfd... yes
+checking whether dirfd is declared... yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... (cached) unknown, assuming no
+checking for error_at_line... yes
+checking for working fcntl.h... cross-compiling
+checking absolute name of <fcntl.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/fcntl.h
+checking for struct stat.st_blocks... yes
+checking for flexible array member... yes
+checking for working GNU fnmatch... cross
+checking whether isblank is declared... yes
+checking for __fpending... yes
+checking whether __fpending is declared... yes
+checking for getdelim... yes
+checking whether getline is declared... yes
+checking for getline... yes
+checking for working getline function... yes
+checking whether the compiler generally respects inline... yes
+checking whether inttypes.h conforms to C99... no
+checking absolute name of <inttypes.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h
+checking for lchown... yes
+checking whether lstat dereferences a symlink specified with a trailing slash... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... no
+checking for working memcmp... no
+checking for mempcpy... (cached) yes
+checking for memrchr... yes
+checking for memset... yes
+checking for working mktime... no
+checking for listmntent... no
+checking for getmntinfo... no
+checking for sys/ucred.h... no
+checking for sys/mount.h... yes
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking sys/fs_types.h usability... no
+checking sys/fs_types.h presence... no
+checking for sys/fs_types.h... no
+checking for struct fsstat.f_fstypename... no
+checking for library containing getmntent... none required
+checking for getmntent... yes
+checking for listmntent of Cray/Unicos-9... no
+checking for mntctl function and struct vmount... no
+checking for one-argument getmntent function... yes
+checking sys/mntent.h usability... no
+checking sys/mntent.h presence... no
+checking for sys/mntent.h... no
+checking for struct statfs.f_fstypename... no
+checking for fchmodat... yes
+checking for mkdirat... yes
+checking for openat... yes
+checking for fchownat... yes
+checking whether fchownat works with AT_SYMLINK_NOFOLLOW... no
+checking for mbstate_t... (cached) yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for readlink... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... no
+checking for working re_compile_pattern... no
+checking whether isblank is declared... (cached) yes
+checking for rpmatch... yes
+checking for ssize_t... yes
+checking absolute name of <stdint.h>... (cached) ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/lib/gcc/arm-sony-linux-gnueabi/4.7.3/include/stdint.h
+checking whether stdint.h conforms to C99... (cached) yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking absolute name of <stdlib.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h
+checking for stpcpy... yes
+checking for strdup... yes
+checking for working strndup... checking for strndup... yes
+yes
+checking for working strnlen... no
+checking whether <inttypes.h> defines strtoimax as a macro... no
+checking for strtoimax... yes
+checking for strtol... yes
+checking for strtoll... yes
+checking for strtoul... yes
+checking for strtoull... yes
+checking whether <inttypes.h> defines strtoumax as a macro... no
+checking for strtoumax... yes
+checking whether mkdir is declared... yes
+checking absolute name of <sys/stat.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/stat.h
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking whether localtime_r is compatible with its POSIX signature... yes
+checking absolute name of <unistd.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h
+checking whether <wchar.h> is standalone... yes
+checking absolute name of <wctype.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/wctype.h
+checking for getpwnam... yes
+checking for ANSI C header files... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for string.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking for stdlib.h... (cached) yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for unistd.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for locale.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for mntent.h... (cached) yes
+checking sys/mnttab.h usability... no
+checking sys/mnttab.h presence... no
+checking for sys/mnttab.h... no
+checking sys/mntio.h usability... no
+checking sys/mntio.h presence... no
+checking for sys/mntio.h... no
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking whether sys/types.h defines makedev... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether stat file-mode macros are broken... (cached) no
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for pid_t... yes
+checking for ino_t... yes
+checking for dev_t... yes
+checking for mode_t... yes
+checking for struct stat.st_blocks... (cached) yes
+checking for struct stat.st_rdev... yes
+checking whether we should use struct dirent.d_type, if available... yes
+checking for struct dirent.d_type... yes
+checking whether struct tm is in sys/time.h or time.h... (cached) time.h
+checking for struct tm.tm_zone... (cached) yes
+checking for strftime... yes
+checking for memcmp... yes
+checking for memset... (cached) yes
+checking for stpcpy... (cached) yes
+checking for strdup... (cached) yes
+checking for strstr... yes
+checking for strtol... (cached) yes
+checking for strtoul... (cached) yes
+checking for fchdir... (cached) yes
+checking for getcwd... yes
+checking for strerror... yes
+checking for endgrent... yes
+checking for endpwent... yes
+checking for setlocale... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether closedir returns void... yes
+checking for getmntent... (cached) yes
+checking for getmntent... (cached) yes
+checking for setmntent... yes
+checking for endmntent... yes
+checking for waitpid... yes
+checking for strspn... yes
+checking for forcefindlib... no
+checking for alloca as a compiler built-in... (cached) yes
+checking for working re_compile_pattern... (cached) no
+checking whether isblank is declared... (cached) yes
+checking for sort... (cached) /usr/local/bin/sort
+checking if /usr/local/bin/sort supports the -z option... no
+checking for struct dirent.d_type... (cached) yes
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking whether to use NLS... no
+configure: creating ./config.status
+config.status: creating gnulib/Makefile
+config.status: creating gnulib/lib/Makefile
+config.status: creating m4/Makefile
+config.status: creating Makefile
+config.status: creating find/Makefile
+config.status: creating find/testsuite/Makefile
+config.status: creating xargs/Makefile
+config.status: creating xargs/testsuite/Makefile
+config.status: creating locate/Makefile
+config.status: creating locate/testsuite/Makefile
+config.status: creating po/Makefile.in
+config.status: WARNING:  ../po/Makefile.in.in seems to ignore the --datarootdir setting
+config.status: creating po/Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
++ make all LOCATE_DB=/var/lib/locate/locatedb
++ tee -a build.log
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+Making all in gnulib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+Making all in lib
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ../../../gnulib/lib/alloca_.h; \
+	} > alloca.h-t
+mv -f alloca.h-t alloca.h
+rm -f configmake.h-t configmake.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  echo '#define PREFIX "/usr"'; \
+	  echo '#define EXEC_PREFIX "/usr"'; \
+	  echo '#define BINDIR "/usr/bin"'; \
+	  echo '#define SBINDIR "/usr/sbin"'; \
+	  echo '#define LIBEXECDIR "/usr/libexec"'; \
+	  echo '#define DATAROOTDIR "/usr/share"'; \
+	  echo '#define DATADIR "/usr/share"'; \
+	  echo '#define SYSCONFDIR "/usr/etc"'; \
+	  echo '#define SHAREDSTATEDIR "/usr/com"'; \
+	  echo '#define LOCALSTATEDIR "/usr/var"'; \
+	  echo '#define INCLUDEDIR "/tool//usr/include"'; \
+	  echo '#define OLDINCLUDEDIR "/usr/include"'; \
+	  echo '#define DOCDIR "/usr/share/doc/findutils"'; \
+	  echo '#define INFODIR "/usr/share/info"'; \
+	  echo '#define HTMLDIR "/usr/share/doc/findutils"'; \
+	  echo '#define DVIDIR "/usr/share/doc/findutils"'; \
+	  echo '#define PDFDIR "/usr/share/doc/findutils"'; \
+	  echo '#define PSDIR "/usr/share/doc/findutils"'; \
+	  echo '#define LIBDIR "/usr/lib"'; \
+	  echo '#define LISPDIR ""'; \
+	  echo '#define LOCALEDIR "/usr/share/locale"'; \
+	  echo '#define MANDIR "/usr/share/man"'; \
+	  echo '#define MANEXT ""'; \
+	  echo '#define PKGDATADIR "/usr/share/findutils"'; \
+	  echo '#define PKGINCLUDEDIR "/tool//usr/include/findutils"'; \
+	  echo '#define PKGLIBDIR "/usr/lib/findutils"'; \
+	  echo '#define PKGLIBEXECDIR ""'; \
+	} | sed '/""/d' > configmake.h-t
+mv configmake.h-t configmake.h
+rm -f fcntl.h-t fcntl.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''ABSOLUTE_FCNTL_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/fcntl.h"|g' \
+	      < ../../../gnulib/lib/fcntl_.h; \
+	} > fcntl.h-t
+mv fcntl.h-t fcntl.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ../../../gnulib/lib/fnmatch_.h; \
+	} > fnmatch.h-t
+mv -f fnmatch.h-t fnmatch.h
+rm -f inttypes.h-t inttypes.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+	      -e 's|@''ABSOLUTE_INTTYPES_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h"|g' \
+	      -e 's/@''PRI_MACROS_BROKEN''@/0/g' \
+	      -e 's/@''HAVE_LONG_LONG_INT''@/1/g' \
+	      -e 's/@''HAVE_UNSIGNED_LONG_LONG_INT''@/1/g' \
+	      -e 's/@''PRIPTR_PREFIX''@/""/g' \
+	      -e 's/@''GNULIB_IMAXABS''@/0/g' \
+	      -e 's/@''GNULIB_IMAXDIV''@/0/g' \
+	      -e 's/@''GNULIB_STRTOIMAX''@/1/g' \
+	      -e 's/@''GNULIB_STRTOUMAX''@/1/g' \
+	      -e 's/@''HAVE_DECL_IMAXABS''@/1/g' \
+	      -e 's/@''HAVE_DECL_IMAXDIV''@/1/g' \
+	      -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g' \
+	      -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../.././link-warning.h' \
+	      < ../../../gnulib/lib/inttypes_.h; \
+	} > inttypes.h-t
+mv inttypes.h-t inttypes.h
+rm -f stdlib.h-t stdlib.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''ABSOLUTE_STDLIB_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h"|g' \
+	      -e 's|@''GNULIB_GETSUBOPT''@|0|g' \
+	      -e 's|@''GNULIB_MKDTEMP''@|0|g' \
+	      -e 's|@''GNULIB_MKSTEMP''@|0|g' \
+	      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+	      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+	      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../.././link-warning.h' \
+	      < ../../../gnulib/lib/stdlib_.h; \
+	} > stdlib.h-t
+mv stdlib.h-t stdlib.h
+rm -f string.h-t string.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''ABSOLUTE_STRING_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h"|g' \
+	      -e 's|@''GNULIB_MBSLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSRCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSSTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSNCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSPCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSPBRK''@|0|g' \
+	      -e 's|@''GNULIB_MBSSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSSEP''@|0|g' \
+	      -e 's|@''GNULIB_MBSTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_MEMMEM''@|0|g' \
+	      -e 's|@''GNULIB_MEMPCPY''@|1|g' \
+	      -e 's|@''GNULIB_MEMRCHR''@|1|g' \
+	      -e 's|@''GNULIB_STPCPY''@|1|g' \
+	      -e 's|@''GNULIB_STPNCPY''@|0|g' \
+	      -e 's|@''GNULIB_STRCHRNUL''@|0|g' \
+	      -e 's|@''GNULIB_STRDUP''@|1|g' \
+	      -e 's|@''GNULIB_STRNDUP''@|1|g' \
+	      -e 's|@''GNULIB_STRNLEN''@|1|g' \
+	      -e 's|@''GNULIB_STRPBRK''@|0|g' \
+	      -e 's|@''GNULIB_STRSEP''@|0|g' \
+	      -e 's|@''GNULIB_STRCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_STRTOK_R''@|0|g' \
+	      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+	      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+	      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+	      -e 's|@''HAVE_STPCPY''@|1|g' \
+	      -e 's|@''HAVE_STPNCPY''@|1|g' \
+	      -e 's|@''HAVE_STRCASECMP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNCASECMP''@|1|g' \
+	      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+	      -e 's|@''HAVE_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+	      -e 's|@''HAVE_STRPBRK''@|1|g' \
+	      -e 's|@''HAVE_STRSEP''@|1|g' \
+	      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../.././link-warning.h' \
+	      < ../../../gnulib/lib/string_.h; \
+	} > string.h-t
+mv string.h-t string.h
+/bin/mkdir -p sys
+rm -f sys/stat.h-t sys/stat.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''ABSOLUTE_SYS_STAT_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/stat.h"|g' \
+	      < ../../../gnulib/lib/stat_.h; \
+	} > sys/stat.h-t
+mv sys/stat.h-t sys/stat.h
+rm -f time.h-t time.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@ABSOLUTE_TIME_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h"|g' \
+ 	      -e 's|@REPLACE_LOCALTIME_R''@|0|g' \
+ 	      -e 's|@REPLACE_NANOSLEEP''@|GNULIB_PORTCHECK|g' \
+ 	      -e 's|@REPLACE_STRPTIME''@|GNULIB_PORTCHECK|g' \
+ 	      -e 's|@REPLACE_TIMEGM''@|GNULIB_PORTCHECK|g' \
+ 	      -e 's|@SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+ 	      -e 's|@TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+	      < ../../../gnulib/lib/time_.h; \
+	} > time.h-t
+mv time.h-t time.h
+rm -f unistd.h-t unistd.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''HAVE_UNISTD_H''@|1|g' \
+	      -e 's|@''ABSOLUTE_UNISTD_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h"|g' \
+	      -e 's|@''GNULIB_CHOWN''@|1|g' \
+	      -e 's|@''GNULIB_DUP2''@|0|g' \
+	      -e 's|@''GNULIB_FCHDIR''@|0|g' \
+	      -e 's|@''GNULIB_FTRUNCATE''@|0|g' \
+	      -e 's|@''GNULIB_GETCWD''@|1|g' \
+	      -e 's|@''GNULIB_GETLOGIN_R''@|0|g' \
+	      -e 's|@''GNULIB_READLINK''@|1|g' \
+	      -e 's|@''HAVE_DUP2''@|1|g' \
+	      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+	      -e 's|@''HAVE_READLINK''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+	      -e 's|@''REPLACE_CHOWN''@|1|g' \
+	      -e 's|@''REPLACE_FCHDIR''@|0|g' \
+	      -e 's|@''REPLACE_GETCWD''@|1|g' \
+	      < ../../../gnulib/lib/unistd_.h; \
+	} > unistd.h-t
+mv unistd.h-t unistd.h
+make  all-am
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT localcharset.o -MD -MP -MF .deps/localcharset.Tpo -c -o localcharset.o ../../../gnulib/lib/localcharset.c
+mv -f .deps/localcharset.Tpo .deps/localcharset.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xalloc-die.o -MD -MP -MF .deps/xalloc-die.Tpo -c -o xalloc-die.o ../../../gnulib/lib/xalloc-die.c
+mv -f .deps/xalloc-die.Tpo .deps/xalloc-die.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrndup.o -MD -MP -MF .deps/xstrndup.Tpo -c -o xstrndup.o ../../../gnulib/lib/xstrndup.c
+mv -f .deps/xstrndup.Tpo .deps/xstrndup.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtoumax.o -MD -MP -MF .deps/xstrtoumax.Tpo -c -o xstrtoumax.o ../../../gnulib/lib/xstrtoumax.c
+mv -f .deps/xstrtoumax.Tpo .deps/xstrtoumax.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT argmatch.o -MD -MP -MF .deps/argmatch.Tpo -c -o argmatch.o ../../../gnulib/lib/argmatch.c
+mv -f .deps/argmatch.Tpo .deps/argmatch.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT basename.o -MD -MP -MF .deps/basename.Tpo -c -o basename.o ../../../gnulib/lib/basename.c
+mv -f .deps/basename.Tpo .deps/basename.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT canonicalize.o -MD -MP -MF .deps/canonicalize.Tpo -c -o canonicalize.o ../../../gnulib/lib/canonicalize.c
+mv -f .deps/canonicalize.Tpo .deps/canonicalize.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT chdir-long.o -MD -MP -MF .deps/chdir-long.Tpo -c -o chdir-long.o ../../../gnulib/lib/chdir-long.c
+mv -f .deps/chdir-long.Tpo .deps/chdir-long.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT chown.o -MD -MP -MF .deps/chown.Tpo -c -o chown.o ../../../gnulib/lib/chown.c
+mv -f .deps/chown.Tpo .deps/chown.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT close-stream.o -MD -MP -MF .deps/close-stream.Tpo -c -o close-stream.o ../../../gnulib/lib/close-stream.c
+mv -f .deps/close-stream.Tpo .deps/close-stream.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT closeout.o -MD -MP -MF .deps/closeout.Tpo -c -o closeout.o ../../../gnulib/lib/closeout.c
+mv -f .deps/closeout.Tpo .deps/closeout.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT creat-safer.o -MD -MP -MF .deps/creat-safer.Tpo -c -o creat-safer.o ../../../gnulib/lib/creat-safer.c
+mv -f .deps/creat-safer.Tpo .deps/creat-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT cycle-check.o -MD -MP -MF .deps/cycle-check.Tpo -c -o cycle-check.o ../../../gnulib/lib/cycle-check.c
+mv -f .deps/cycle-check.Tpo .deps/cycle-check.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT dirname.o -MD -MP -MF .deps/dirname.Tpo -c -o dirname.o ../../../gnulib/lib/dirname.c
+mv -f .deps/dirname.Tpo .deps/dirname.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT dup-safer.o -MD -MP -MF .deps/dup-safer.Tpo -c -o dup-safer.o ../../../gnulib/lib/dup-safer.c
+mv -f .deps/dup-safer.Tpo .deps/dup-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT exitfail.o -MD -MP -MF .deps/exitfail.Tpo -c -o exitfail.o ../../../gnulib/lib/exitfail.c
+mv -f .deps/exitfail.Tpo .deps/exitfail.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fchownat.o -MD -MP -MF .deps/fchownat.Tpo -c -o fchownat.o ../../../gnulib/lib/fchownat.c
+mv -f .deps/fchownat.Tpo .deps/fchownat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fd-safer.o -MD -MP -MF .deps/fd-safer.Tpo -c -o fd-safer.o ../../../gnulib/lib/fd-safer.c
+mv -f .deps/fd-safer.Tpo .deps/fd-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT filemode.o -MD -MP -MF .deps/filemode.Tpo -c -o filemode.o ../../../gnulib/lib/filemode.c
+mv -f .deps/filemode.Tpo .deps/filemode.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT filenamecat.o -MD -MP -MF .deps/filenamecat.Tpo -c -o filenamecat.o ../../../gnulib/lib/filenamecat.c
+mv -f .deps/filenamecat.Tpo .deps/filenamecat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fnmatch.o -MD -MP -MF .deps/fnmatch.Tpo -c -o fnmatch.o ../../../gnulib/lib/fnmatch.c
+mv -f .deps/fnmatch.Tpo .deps/fnmatch.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fopen-safer.o -MD -MP -MF .deps/fopen-safer.Tpo -c -o fopen-safer.o ../../../gnulib/lib/fopen-safer.c
+mv -f .deps/fopen-safer.Tpo .deps/fopen-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fstatat.o -MD -MP -MF .deps/fstatat.Tpo -c -o fstatat.o ../../../gnulib/lib/fstatat.c
+mv -f .deps/fstatat.Tpo .deps/fstatat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT getcwd.o -MD -MP -MF .deps/getcwd.Tpo -c -o getcwd.o ../../../gnulib/lib/getcwd.c
+mv -f .deps/getcwd.Tpo .deps/getcwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT human.o -MD -MP -MF .deps/human.Tpo -c -o human.o ../../../gnulib/lib/human.c
+mv -f .deps/human.Tpo .deps/human.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT idcache.o -MD -MP -MF .deps/idcache.Tpo -c -o idcache.o ../../../gnulib/lib/idcache.c
+mv -f .deps/idcache.Tpo .deps/idcache.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT lstat.o -MD -MP -MF .deps/lstat.Tpo -c -o lstat.o ../../../gnulib/lib/lstat.c
+mv -f .deps/lstat.Tpo .deps/lstat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT malloc.o -MD -MP -MF .deps/malloc.Tpo -c -o malloc.o ../../../gnulib/lib/malloc.c
+mv -f .deps/malloc.Tpo .deps/malloc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT memcmp.o -MD -MP -MF .deps/memcmp.Tpo -c -o memcmp.o ../../../gnulib/lib/memcmp.c
+mv -f .deps/memcmp.Tpo .deps/memcmp.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT mktime.o -MD -MP -MF .deps/mktime.Tpo -c -o mktime.o ../../../gnulib/lib/mktime.c
+mv -f .deps/mktime.Tpo .deps/mktime.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT modechange.o -MD -MP -MF .deps/modechange.Tpo -c -o modechange.o ../../../gnulib/lib/modechange.c
+mv -f .deps/modechange.Tpo .deps/modechange.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT mountlist.o -MD -MP -MF .deps/mountlist.Tpo -c -o mountlist.o ../../../gnulib/lib/mountlist.c
+mv -f .deps/mountlist.Tpo .deps/mountlist.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT open-safer.o -MD -MP -MF .deps/open-safer.Tpo -c -o open-safer.o ../../../gnulib/lib/open-safer.c
+mv -f .deps/open-safer.Tpo .deps/open-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT openat-die.o -MD -MP -MF .deps/openat-die.Tpo -c -o openat-die.o ../../../gnulib/lib/openat-die.c
+mv -f .deps/openat-die.Tpo .deps/openat-die.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT openat-proc.o -MD -MP -MF .deps/openat-proc.Tpo -c -o openat-proc.o ../../../gnulib/lib/openat-proc.c
+mv -f .deps/openat-proc.Tpo .deps/openat-proc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT pipe-safer.o -MD -MP -MF .deps/pipe-safer.Tpo -c -o pipe-safer.o ../../../gnulib/lib/pipe-safer.c
+mv -f .deps/pipe-safer.Tpo .deps/pipe-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT quote.o -MD -MP -MF .deps/quote.Tpo -c -o quote.o ../../../gnulib/lib/quote.c
+mv -f .deps/quote.Tpo .deps/quote.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT quotearg.o -MD -MP -MF .deps/quotearg.Tpo -c -o quotearg.o ../../../gnulib/lib/quotearg.c
+mv -f .deps/quotearg.Tpo .deps/quotearg.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT realloc.o -MD -MP -MF .deps/realloc.Tpo -c -o realloc.o ../../../gnulib/lib/realloc.c
+mv -f .deps/realloc.Tpo .deps/realloc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT regex.o -MD -MP -MF .deps/regex.Tpo -c -o regex.o ../../../gnulib/lib/regex.c
+In file included from ../../../gnulib/lib/regex.c:58:0:
+../../../gnulib/lib/regex_internal.h:185:55: warning: integer overflow in preprocessor expression [enabled by default]
+mv -f .deps/regex.Tpo .deps/regex.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT save-cwd.o -MD -MP -MF .deps/save-cwd.Tpo -c -o save-cwd.o ../../../gnulib/lib/save-cwd.c
+mv -f .deps/save-cwd.Tpo .deps/save-cwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT savedir.o -MD -MP -MF .deps/savedir.Tpo -c -o savedir.o ../../../gnulib/lib/savedir.c
+mv -f .deps/savedir.Tpo .deps/savedir.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT strftime.o -MD -MP -MF .deps/strftime.Tpo -c -o strftime.o ../../../gnulib/lib/strftime.c
+mv -f .deps/strftime.Tpo .deps/strftime.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT stripslash.o -MD -MP -MF .deps/stripslash.Tpo -c -o stripslash.o ../../../gnulib/lib/stripslash.c
+mv -f .deps/stripslash.Tpo .deps/stripslash.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT strnlen.o -MD -MP -MF .deps/strnlen.Tpo -c -o strnlen.o ../../../gnulib/lib/strnlen.c
+mv -f .deps/strnlen.Tpo .deps/strnlen.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xgetcwd.o -MD -MP -MF .deps/xgetcwd.Tpo -c -o xgetcwd.o ../../../gnulib/lib/xgetcwd.c
+mv -f .deps/xgetcwd.Tpo .deps/xgetcwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xmalloc.o -MD -MP -MF .deps/xmalloc.Tpo -c -o xmalloc.o ../../../gnulib/lib/xmalloc.c
+mv -f .deps/xmalloc.Tpo .deps/xmalloc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xreadlink.o -MD -MP -MF .deps/xreadlink.Tpo -c -o xreadlink.o ../../../gnulib/lib/xreadlink.c
+mv -f .deps/xreadlink.Tpo .deps/xreadlink.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtol.o -MD -MP -MF .deps/xstrtol.Tpo -c -o xstrtol.o ../../../gnulib/lib/xstrtol.c
+mv -f .deps/xstrtol.Tpo .deps/xstrtol.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtoul.o -MD -MP -MF .deps/xstrtoul.Tpo -c -o xstrtoul.o ../../../gnulib/lib/xstrtoul.c
+mv -f .deps/xstrtoul.Tpo .deps/xstrtoul.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT yesno.o -MD -MP -MF .deps/yesno.Tpo -c -o yesno.o ../../../gnulib/lib/yesno.c
+mv -f .deps/yesno.Tpo .deps/yesno.Po
+rm -f libgnulib.a
+ar cru libgnulib.a localcharset.o xalloc-die.o xstrndup.o xstrtoumax.o argmatch.o basename.o canonicalize.o chdir-long.o chown.o close-stream.o closeout.o creat-safer.o cycle-check.o dirname.o dup-safer.o exitfail.o fchownat.o fd-safer.o filemode.o filenamecat.o fnmatch.o fopen-safer.o fstatat.o getcwd.o human.o idcache.o lstat.o malloc.o memcmp.o mktime.o modechange.o mountlist.o open-safer.o openat-die.o openat-proc.o pipe-safer.o quote.o quotearg.o realloc.o regex.o save-cwd.o savedir.o strftime.o stripslash.o strnlen.o xgetcwd.o xmalloc.o xreadlink.o xstrtol.o xstrtoul.o yesno.o 
+arm-sony-linux-gnueabi-ranlib libgnulib.a
+rm -f t-charset.alias charset.alias
+/bin/sh ../../../gnulib/lib/config.charset 'arm-sony-linux-gnueabi' > t-charset.alias
+mv t-charset.alias charset.alias
+rm -f t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/findutils/g' ../../../gnulib/lib/ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+rm -f t-ref-del.sed ref-del.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/findutils/g' ../../../gnulib/lib/ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+Making all in lib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make  all-am
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT gnulib-version.o -MD -MP -MF .deps/gnulib-version.Tpo -c -o gnulib-version.o ../../lib/gnulib-version.c
+mv -f .deps/gnulib-version.Tpo .deps/gnulib-version.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT listfile.o -MD -MP -MF .deps/listfile.Tpo -c -o listfile.o ../../lib/listfile.c
+mv -f .deps/listfile.Tpo .deps/listfile.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT nextelem.o -MD -MP -MF .deps/nextelem.Tpo -c -o nextelem.o ../../lib/nextelem.c
+mv -f .deps/nextelem.Tpo .deps/nextelem.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT extendbuf.o -MD -MP -MF .deps/extendbuf.Tpo -c -o extendbuf.o ../../lib/extendbuf.c
+mv -f .deps/extendbuf.Tpo .deps/extendbuf.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT buildcmd.o -MD -MP -MF .deps/buildcmd.Tpo -c -o buildcmd.o ../../lib/buildcmd.c
+mv -f .deps/buildcmd.Tpo .deps/buildcmd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT savedirinfo.o -MD -MP -MF .deps/savedirinfo.Tpo -c -o savedirinfo.o ../../lib/savedirinfo.c
+mv -f .deps/savedirinfo.Tpo .deps/savedirinfo.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT forcefindlib.o -MD -MP -MF .deps/forcefindlib.Tpo -c -o forcefindlib.o ../../lib/forcefindlib.c
+mv -f .deps/forcefindlib.Tpo .deps/forcefindlib.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT qmark.o -MD -MP -MF .deps/qmark.Tpo -c -o qmark.o ../../lib/qmark.c
+mv -f .deps/qmark.Tpo .deps/qmark.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT printquoted.o -MD -MP -MF .deps/printquoted.Tpo -c -o printquoted.o ../../lib/printquoted.c
+mv -f .deps/printquoted.Tpo .deps/printquoted.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT regextype.o -MD -MP -MF .deps/regextype.Tpo -c -o regextype.o ../../lib/regextype.c
+mv -f .deps/regextype.Tpo .deps/regextype.Po
+rm -f libfind.a
+ar cru libfind.a gnulib-version.o listfile.o nextelem.o extendbuf.o buildcmd.o savedirinfo.o forcefindlib.o qmark.o printquoted.o regextype.o forcefindlib.o
+arm-sony-linux-gnueabi-ranlib libfind.a
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+Making all in find
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+Making all in testsuite
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT find.o -MD -MP -MF .deps/find.Tpo -c -o find.o ../../find/find.c
+mv -f .deps/find.Tpo .deps/find.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT fstype.o -MD -MP -MF .deps/fstype.Tpo -c -o fstype.o ../../find/fstype.c
+mv -f .deps/fstype.Tpo .deps/fstype.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT parser.o -MD -MP -MF .deps/parser.Tpo -c -o parser.o ../../find/parser.c
+mv -f .deps/parser.Tpo .deps/parser.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT pred.o -MD -MP -MF .deps/pred.Tpo -c -o pred.o ../../find/pred.c
+mv -f .deps/pred.Tpo .deps/pred.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT tree.o -MD -MP -MF .deps/tree.Tpo -c -o tree.o ../../find/tree.c
+mv -f .deps/tree.Tpo .deps/tree.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o ../../find/util.c
+mv -f .deps/util.Tpo .deps/util.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT version.o -MD -MP -MF .deps/version.Tpo -c -o version.o ../../find/version.c
+mv -f .deps/version.Tpo .deps/version.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o find find.o fstype.o parser.o pred.o tree.o util.o version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+Making all in xargs
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+Making all in testsuite
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../xargs -I.. -I../gnulib/lib -I../../gnulib/lib -I../../lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT xargs.o -MD -MP -MF .deps/xargs.Tpo -c -o xargs.o ../../xargs/xargs.c
+mv -f .deps/xargs.Tpo .deps/xargs.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o xargs xargs.o ../find/version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+Making all in locate
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+Making all in testsuite
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/var/lib/locate/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT locate.o -MD -MP -MF .deps/locate.Tpo -c -o locate.o ../../locate/locate.c
+../../locate/locate.c:109:0: warning: "textdomain" redefined [enabled by default]
+In file included from ../../gnulib/lib/xstrtol.h:27:0,
+                 from ../../locate/locate.c:71:
+../../gnulib/lib/gettext.h:78:0: note: this is the location of the previous definition
+../../locate/locate.c:110:0: warning: "bindtextdomain" redefined [enabled by default]
+In file included from ../../gnulib/lib/xstrtol.h:27:0,
+                 from ../../locate/locate.c:71:
+../../gnulib/lib/gettext.h:79:0: note: this is the location of the previous definition
+mv -f .deps/locate.Tpo .deps/locate.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o locate locate.o ../find/version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/var/lib/locate/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT frcode.o -MD -MP -MF .deps/frcode.Tpo -c -o frcode.o ../../locate/frcode.c
+mv -f .deps/frcode.Tpo .deps/frcode.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o frcode frcode.o ../find/version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/var/lib/locate/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT code.o -MD -MP -MF .deps/code.Tpo -c -o code.o ../../locate/code.c
+mv -f .deps/code.Tpo .deps/code.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o code code.o ../find/version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/var/lib/locate/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT bigram.o -MD -MP -MF .deps/bigram.Tpo -c -o bigram.o ../../locate/bigram.c
+mv -f .deps/bigram.Tpo .deps/bigram.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a  -O2   -o bigram bigram.o ../find/version.o ../lib/libfind.a ../gnulib/lib/libgnulib.a  
+rm -f updatedb
+find=`echo find|sed 's,x,x,'`; \
+	frcode=`echo frcode|sed 's,x,x,'`; \
+	bigram=`echo bigram|sed 's,x,x,'`; \
+	code=`echo code|sed 's,x,x,'`; \
+	sed \
+	-e "s,@""bindir""@,/usr/bin," \
+	-e "s,@""libexecdir""@,/usr/libexec," \
+	-e "s,@""LOCATE_DB""@,/var/lib/locate/locatedb," \
+	-e "s,@""VERSION""@,4.2.31," \
+	-e "s,@""find""@,${find}," \
+	-e "s,@""frcode""@,${frcode}," \
+	-e "s,@""bigram""@,${bigram}," \
+	-e "s,@""code""@,${code}," \
+	-e "s,@""SORT""@,/usr/local/bin/sort," \
+	-e "s,@""SORT_SUPPORTS_Z""@,false," \
+	../../locate/updatedb.sh > updatedb
+chmod +x updatedb
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+Making all in doc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+Making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/po'
+Making all in m4
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.XuLGy8
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd findutils-4.2.31
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
++ tee -a build.log
+Making install in gnulib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+Making install in lib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make  install-am
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+test yes != no || /bin/sh ../../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+if test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; then \
+	  sed -f ref-add.sed /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias > /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	  /usr/bin/install -c -m 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias ; \
+	  rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	else \
+	  if test yes = no; then \
+	    sed -f ref-add.sed charset.alias > /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	    /usr/bin/install -c -m 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias ; \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	  fi ; \
+	fi
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib/lib'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/gnulib'
+Making install in lib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make  install-am
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/lib'
+Making install in find
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+Making install in testsuite
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find/testsuite'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /usr/bin/install -c 'find' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/find'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1"
+ /usr/bin/install -c -m 644 '../../find/find.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/find.1'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/find'
+Making install in xargs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+Making install in testsuite
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs/testsuite'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /usr/bin/install -c 'xargs' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/xargs'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1"
+ /usr/bin/install -c -m 644 '../../xargs/xargs.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/xargs.1'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/xargs'
+Making install in locate
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+Making install in testsuite
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate/testsuite'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /usr/bin/install -c 'locate' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/locate'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+ /usr/bin/install -c 'updatedb' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/updatedb'
+test -z "/usr/libexec" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec"
+  /usr/bin/install -c 'frcode' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/frcode'
+  /usr/bin/install -c 'code' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/code'
+  /usr/bin/install -c 'bigram' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/bigram'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1"
+ /usr/bin/install -c -m 644 '../../locate/locate.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/locate.1'
+ /usr/bin/install -c -m 644 '../../locate/updatedb.1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/updatedb.1'
+test -z "/usr/share/man/man5" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5"
+ /usr/bin/install -c -m 644 '../../locate/locatedb.5' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5/locatedb.5'
+make  install-data-hook
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/var
+mkdir -p -- /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/var
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/locate'
+Making install in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/info" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info"
+ /usr/bin/install -c -m 644 '../../doc/find.info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/find.info'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/find.info'
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/doc'
+Making install in po
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/po'
+if test "findutils" = "gettext-tools"; then \
+	  /bin/sh ../../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/po'
+Making install in m4
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir/m4'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/findutils-4.2.31/objdir'
++ cd ..
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/lib/locate
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/xargs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin/xargs
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-findutils-4.2.31-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-findutils-4.2.31-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-findutils-4.2.31-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.k2XDNe
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd findutils-4.2.31
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-findutils-4.2.31-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/findutils-4.2.31
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/findutils-4.2.31 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/findutils/test/findutils-arm.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 14:36:02 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/findutils-4.2.31/objdir/
+-bash-3.2# patch -p2 < /tmp/findutils-armv7a.patch
+-bash: /tmp/findutils-armv7a.patch: No such file or directory
+-bash-3.2# cd /tmp/findutils-4.2.31/objdir/find || echo 'COMMAND''ERROR'
+-bash-3.2# ln -s /usr/bin/find .
+ln: ./find: File exists
+-bash-3.2# cd /tmp/findutils-4.2.31/objdir/xargs
+-bash-3.2# mv xargs xargs.org
+-bash-3.2# ln -s /usr/local/bin/xargs .
+-bash-3.2# cd /tmp/findutils-4.2.31/objdir/locate
+-bash-3.2# mv locate locate.org
+-bash-3.2# mv updatedb updatedb.org
+-bash-3.2# ln -s /usr/bin/locate .
+-bash-3.2# ln -s /usr/bin/updatedb .
+-bash-3.2# cd /tmp/findutils-4.2.31/objdir
+-bash-3.2# make -k check CC=/tool/usr/bin/gcc 2>&1 | tee /tmp/findutils_test.out ; echo 'COMMAND''DONE'
+Making check in gnulib
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/gnulib'
+Making check in lib
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/gnulib/lib'
+make  check-am
+make[3]: Entering directory `/tmp/findutils-4.2.31/objdir/gnulib/lib'
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT localcharset.o -MD -MP -MF .deps/localcharset.Tpo -c -o localcharset.o ../../../gnulib/lib/localcharset.c
+In file included from ../../../gnulib/lib/localcharset.c:28:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [localcharset.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xalloc-die.o -MD -MP -MF .deps/xalloc-die.Tpo -c -o xalloc-die.o ../../../gnulib/lib/xalloc-die.c
+In file included from ../../../gnulib/lib/xalloc-die.c:24:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [xalloc-die.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrndup.o -MD -MP -MF .deps/xstrndup.Tpo -c -o xstrndup.o ../../../gnulib/lib/xstrndup.c
+In file included from ../../../gnulib/lib/xstrndup.c:24:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [xstrndup.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtoumax.o -MD -MP -MF .deps/xstrtoumax.Tpo -c -o xstrtoumax.o ../../../gnulib/lib/xstrtoumax.c
+In file included from ../../../gnulib/lib/xstrtol.h:25:0,
+                 from ../../../gnulib/lib/xstrtol.c:32,
+                 from ../../../gnulib/lib/xstrtoumax.c:6:
+./inttypes.h:25:100: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h: No such file or directory
+compilation terminated.
+make[3]: *** [xstrtoumax.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT argmatch.o -MD -MP -MF .deps/argmatch.Tpo -c -o argmatch.o ../../../gnulib/lib/argmatch.c
+In file included from ../../../gnulib/lib/argmatch.c:30:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [argmatch.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT basename.o -MD -MP -MF .deps/basename.Tpo -c -o basename.o ../../../gnulib/lib/basename.c
+In file included from ../../../gnulib/lib/basename.c:24:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [basename.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT canonicalize.o -MD -MP -MF .deps/canonicalize.Tpo -c -o canonicalize.o ../../../gnulib/lib/canonicalize.c
+In file included from ../../../gnulib/lib/canonicalize.h:44:0,
+                 from ../../../gnulib/lib/canonicalize.c:21:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [canonicalize.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT chdir-long.o -MD -MP -MF .deps/chdir-long.Tpo -c -o chdir-long.o ../../../gnulib/lib/chdir-long.c
+In file included from ../../../gnulib/lib/chdir-long.h:20:0,
+                 from ../../../gnulib/lib/chdir-long.c:22:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [chdir-long.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT chown.o -MD -MP -MF .deps/chown.Tpo -c -o chown.o ../../../gnulib/lib/chown.c
+In file included from ../../../gnulib/lib/chown.c:25:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [chown.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT close-stream.o -MD -MP -MF .deps/close-stream.Tpo -c -o close-stream.o ../../../gnulib/lib/close-stream.c
+mv -f .deps/close-stream.Tpo .deps/close-stream.Po
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT closeout.o -MD -MP -MF .deps/closeout.Tpo -c -o closeout.o ../../../gnulib/lib/closeout.c
+In file included from ../../../gnulib/lib/closeout.c:26:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [closeout.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT creat-safer.o -MD -MP -MF .deps/creat-safer.Tpo -c -o creat-safer.o ../../../gnulib/lib/creat-safer.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/fcntl-safer.h:21,
+                 from ../../../gnulib/lib/creat-safer.c:23:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [creat-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT cycle-check.o -MD -MP -MF .deps/cycle-check.Tpo -c -o cycle-check.o ../../../gnulib/lib/cycle-check.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/cycle-check.c:24:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [cycle-check.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT dirname.o -MD -MP -MF .deps/dirname.Tpo -c -o dirname.o ../../../gnulib/lib/dirname.c
+In file included from ../../../gnulib/lib/dirname.c:24:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [dirname.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT dup-safer.o -MD -MP -MF .deps/dup-safer.Tpo -c -o dup-safer.o ../../../gnulib/lib/dup-safer.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ./fcntl.h:25,
+                 from ../../../gnulib/lib/dup-safer.c:25:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [dup-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT exitfail.o -MD -MP -MF .deps/exitfail.Tpo -c -o exitfail.o ../../../gnulib/lib/exitfail.c
+In file included from ../../../gnulib/lib/exitfail.c:24:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [exitfail.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fchownat.o -MD -MP -MF .deps/fchownat.Tpo -c -o fchownat.o ../../../gnulib/lib/fchownat.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ./fcntl.h:25,
+                 from ../../../gnulib/lib/openat.h:20,
+                 from ../../../gnulib/lib/fchownat.c:27:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [fchownat.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fd-safer.o -MD -MP -MF .deps/fd-safer.Tpo -c -o fd-safer.o ../../../gnulib/lib/fd-safer.c
+In file included from ../../../gnulib/lib/fd-safer.c:27:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [fd-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT filemode.o -MD -MP -MF .deps/filemode.Tpo -c -o filemode.o ../../../gnulib/lib/filemode.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/filemode.h:21,
+                 from ../../../gnulib/lib/filemode.c:22:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [filemode.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT filenamecat.o -MD -MP -MF .deps/filenamecat.Tpo -c -o filenamecat.o ../../../gnulib/lib/filenamecat.c
+In file included from ../../../gnulib/lib/filenamecat.c:27:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [filenamecat.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fnmatch.o -MD -MP -MF .deps/fnmatch.Tpo -c -o fnmatch.o ../../../gnulib/lib/fnmatch.c
+In file included from ../../../gnulib/lib/fnmatch.c:39:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [fnmatch.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fopen-safer.o -MD -MP -MF .deps/fopen-safer.Tpo -c -o fopen-safer.o ../../../gnulib/lib/fopen-safer.c
+In file included from ../../../gnulib/lib/fopen-safer.c:26:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [fopen-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT fstatat.o -MD -MP -MF .deps/fstatat.Tpo -c -o fstatat.o ../../../gnulib/lib/fstatat.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ./fcntl.h:25,
+                 from ../../../gnulib/lib/openat.h:20,
+                 from ../../../gnulib/lib/fstatat.c:24:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [fstatat.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT getcwd.o -MD -MP -MF .deps/getcwd.Tpo -c -o getcwd.o ../../../gnulib/lib/getcwd.c
+In file included from ../../../gnulib/lib/getcwd.c:21:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [getcwd.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT human.o -MD -MP -MF .deps/human.Tpo -c -o human.o ../../../gnulib/lib/human.c
+In file included from ../../../gnulib/lib/human.h:28:0,
+                 from ../../../gnulib/lib/human.c:24:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [human.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT idcache.o -MD -MP -MF .deps/idcache.Tpo -c -o idcache.o ../../../gnulib/lib/idcache.c
+In file included from ../../../gnulib/lib/idcache.c:24:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [idcache.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT lstat.o -MD -MP -MF .deps/lstat.Tpo -c -o lstat.o ../../../gnulib/lib/lstat.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/lstat.c:29:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [lstat.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT malloc.o -MD -MP -MF .deps/malloc.Tpo -c -o malloc.o ../../../gnulib/lib/malloc.c
+In file included from ../../../gnulib/lib/malloc.c:24:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [malloc.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT memcmp.o -MD -MP -MF .deps/memcmp.Tpo -c -o memcmp.o ../../../gnulib/lib/memcmp.c
+In file included from ../../../gnulib/lib/memcmp.c:28:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [memcmp.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT mktime.o -MD -MP -MF .deps/mktime.Tpo -c -o mktime.o ../../../gnulib/lib/mktime.c
+In file included from ../../../gnulib/lib/mktime.c:35:0:
+./time.h:28:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [mktime.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT modechange.o -MD -MP -MF .deps/modechange.Tpo -c -o modechange.o ../../../gnulib/lib/modechange.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/modechange.h:24,
+                 from ../../../gnulib/lib/modechange.c:31:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [modechange.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT mountlist.o -MD -MP -MF .deps/mountlist.Tpo -c -o mountlist.o ../../../gnulib/lib/mountlist.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/mountlist.h:24,
+                 from ../../../gnulib/lib/mountlist.c:22:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [mountlist.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT open-safer.o -MD -MP -MF .deps/open-safer.Tpo -c -o open-safer.o ../../../gnulib/lib/open-safer.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/fcntl-safer.h:21,
+                 from ../../../gnulib/lib/open-safer.c:23:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [open-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT openat-die.o -MD -MP -MF .deps/openat-die.Tpo -c -o openat-die.o ../../../gnulib/lib/openat-die.c
+In file included from ../../../gnulib/lib/openat-die.c:21:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [openat-die.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT openat-proc.o -MD -MP -MF .deps/openat-proc.Tpo -c -o openat-proc.o ../../../gnulib/lib/openat-proc.c
+In file included from ../../../gnulib/lib/openat-priv.h:22:0,
+                 from ../../../gnulib/lib/openat-proc.c:23:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [openat-proc.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT pipe-safer.o -MD -MP -MF .deps/pipe-safer.Tpo -c -o pipe-safer.o ../../../gnulib/lib/pipe-safer.c
+In file included from ../../../gnulib/lib/pipe-safer.c:24:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [pipe-safer.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT quote.o -MD -MP -MF .deps/quote.Tpo -c -o quote.o ../../../gnulib/lib/quote.c
+mv -f .deps/quote.Tpo .deps/quote.Po
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT quotearg.o -MD -MP -MF .deps/quotearg.Tpo -c -o quotearg.o ../../../gnulib/lib/quotearg.c
+In file included from ../../../gnulib/lib/quotearg.c:32:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [quotearg.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT realloc.o -MD -MP -MF .deps/realloc.Tpo -c -o realloc.o ../../../gnulib/lib/realloc.c
+In file included from ../../../gnulib/lib/realloc.c:24:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [realloc.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT regex.o -MD -MP -MF .deps/regex.Tpo -c -o regex.o ../../../gnulib/lib/regex.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/regex.h:24,
+                 from ../../../gnulib/lib/regex.c:57:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [regex.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT save-cwd.o -MD -MP -MF .deps/save-cwd.Tpo -c -o save-cwd.o ../../../gnulib/lib/save-cwd.c
+In file included from ../../../gnulib/lib/save-cwd.c:29:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [save-cwd.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT savedir.o -MD -MP -MF .deps/savedir.Tpo -c -o savedir.o ../../../gnulib/lib/savedir.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/savedir.c:26:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [savedir.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT strftime.o -MD -MP -MF .deps/strftime.Tpo -c -o strftime.o ../../../gnulib/lib/strftime.c
+In file included from ../../../gnulib/lib/strftime.c:39:0:
+./time.h:28:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [strftime.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT stripslash.o -MD -MP -MF .deps/stripslash.Tpo -c -o stripslash.o ../../../gnulib/lib/stripslash.c
+mv -f .deps/stripslash.Tpo .deps/stripslash.Po
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT strnlen.o -MD -MP -MF .deps/strnlen.Tpo -c -o strnlen.o ../../../gnulib/lib/strnlen.c
+In file included from ../../../gnulib/lib/strnlen.c:21:0:
+./string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[3]: *** [strnlen.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xgetcwd.o -MD -MP -MF .deps/xgetcwd.Tpo -c -o xgetcwd.o ../../../gnulib/lib/xgetcwd.c
+In file included from ../../../gnulib/lib/xgetcwd.c:26:0:
+./unistd.h:23:97: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h: No such file or directory
+compilation terminated.
+make[3]: *** [xgetcwd.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xmalloc.o -MD -MP -MF .deps/xmalloc.Tpo -c -o xmalloc.o ../../../gnulib/lib/xmalloc.c
+In file included from ../../../gnulib/lib/xmalloc.c:29:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [xmalloc.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xreadlink.o -MD -MP -MF .deps/xreadlink.Tpo -c -o xreadlink.o ../../../gnulib/lib/xreadlink.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../../gnulib/lib/xreadlink.c:30:
+./time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[3]: *** [xreadlink.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtol.o -MD -MP -MF .deps/xstrtol.Tpo -c -o xstrtol.o ../../../gnulib/lib/xstrtol.c
+In file included from ../../../gnulib/lib/xstrtol.h:25:0,
+                 from ../../../gnulib/lib/xstrtol.c:32:
+./inttypes.h:25:100: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h: No such file or directory
+compilation terminated.
+make[3]: *** [xstrtol.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT xstrtoul.o -MD -MP -MF .deps/xstrtoul.Tpo -c -o xstrtoul.o ../../../gnulib/lib/xstrtoul.c
+In file included from ../../../gnulib/lib/xstrtol.h:25:0,
+                 from ../../../gnulib/lib/xstrtol.c:32,
+                 from ../../../gnulib/lib/xstrtoul.c:6:
+./inttypes.h:25:100: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h: No such file or directory
+compilation terminated.
+make[3]: *** [xstrtoul.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I../.. -I../../../gnulib/lib  -I../../intl   -O2 -MT yesno.o -MD -MP -MF .deps/yesno.Tpo -c -o yesno.o ../../../gnulib/lib/yesno.c
+In file included from ../../../gnulib/lib/yesno.c:24:0:
+./stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[3]: *** [yesno.o] Error 1
+make[3]: Target `check-am' not remade because of errors.
+make[3]: Leaving directory `/tmp/findutils-4.2.31/objdir/gnulib/lib'
+make[2]: *** [check] Error 2
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/gnulib/lib'
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/gnulib'
+make[2]: Nothing to be done for `check-am'.
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/gnulib'
+make[1]: *** [check-recursive] Error 1
+make[1]: Target `check' not remade because of errors.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/gnulib'
+Making check in lib
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/lib'
+make  check-am
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/lib'
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT listfile.o -MD -MP -MF .deps/listfile.Tpo -c -o listfile.o ../../lib/listfile.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../lib/listfile.c:43:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [listfile.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT nextelem.o -MD -MP -MF .deps/nextelem.Tpo -c -o nextelem.o ../../lib/nextelem.c
+In file included from ../../lib/nextelem.c:29:0:
+../gnulib/lib/string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[2]: *** [nextelem.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT extendbuf.o -MD -MP -MF .deps/extendbuf.Tpo -c -o extendbuf.o ../../lib/extendbuf.c
+In file included from ../../lib/extendbuf.c:26:0:
+../gnulib/lib/stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[2]: *** [extendbuf.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT buildcmd.o -MD -MP -MF .deps/buildcmd.Tpo -c -o buildcmd.o ../../lib/buildcmd.c
+In file included from ../../lib/buildcmd.c:31:0:
+../gnulib/lib/string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[2]: *** [buildcmd.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT savedirinfo.o -MD -MP -MF .deps/savedirinfo.Tpo -c -o savedirinfo.o ../../lib/savedirinfo.c
+In file included from ../../lib/savedirinfo.c:28:0:
+../gnulib/lib/sys/stat.h:27:98: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/stat.h: No such file or directory
+compilation terminated.
+make[2]: *** [savedirinfo.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT qmark.o -MD -MP -MF .deps/qmark.Tpo -c -o qmark.o ../../lib/qmark.c
+In file included from ../../lib/qmark.c:26:0:
+../gnulib/lib/stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[2]: *** [qmark.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT printquoted.o -MD -MP -MF .deps/printquoted.Tpo -c -o printquoted.o ../../lib/printquoted.c
+In file included from ../../lib/printquoted.c:27:0:
+../gnulib/lib/stdlib.h:44:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h: No such file or directory
+compilation terminated.
+make[2]: *** [printquoted.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../lib -I../gnulib/lib -I../../gnulib/lib     -O2 -MT regextype.o -MD -MP -MF .deps/regextype.Tpo -c -o regextype.o ../../lib/regextype.c
+In file included from ../../lib/regextype.c:27:0:
+../gnulib/lib/string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[2]: *** [regextype.o] Error 1
+make[2]: Target `check-am' not remade because of errors.
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/lib'
+make[1]: *** [check] Error 2
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/lib'
+Making check in find
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/find'
+Making check in testsuite
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/find/testsuite'
+make  check-DEJAGNU
+make[3]: Entering directory `/tmp/findutils-4.2.31/objdir/find/testsuite'
+Making a new site.exp file...
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../find/testsuite && pwd`; export srcdir; \
+        EXPECT=expect; export EXPECT; \
+        runtest=runtest; \
+        if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+          exit_status=0; l='find'; for tool in $l; do \
+            if $runtest  --tool $tool --srcdir $srcdir ; \
+            then :; else exit_status=1; fi; \
+          done; \
+        else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+        fi; \
+        exit $exit_status
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find tool init file
+Test Run By root on Thu Feb 20 14:57:05 2014
+Target is x86_64-pc-linux-gnu
+Host   is arm-sony-linux-gnueabi
+Build  is x86_64-pc-linux-gnu
+
+                === find tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /usr/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /usr/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /tmp/findutils-4.2.31/find/testsuite/config/unix.exp as tool-and-target-specific interface file.
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/comma.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/delete.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/depth-d.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/depth.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/empty.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/exec-many-rtn-failure.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/exec-many-rtn-success.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/exec-one-rtn-fail.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/exec-one-rtn-success.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/execdir-one.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/execdir-root-only.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/false.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/follow-arg-parent-symlink.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/follow-basic.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/gnu-or.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/gnuand.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/gnunot.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/ilname.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/iname.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/inum.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/ipath.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/iregex1.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/iwholename.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/lname.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/name-opt.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/name-period.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/path.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/perm-slash.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/perm.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/posix-dflt.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/posix-h.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/posix-l.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/print0.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/printf-h.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/printf-symlink.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/printf.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/printfHdfl.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/prune-default-print.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/quit.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/regex1.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/regex2.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/samefile-copy.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/samefile-link.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/samefile-same.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/samefile-symlink.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/sv-bug-12230.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/sv-bug-17477.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/sv-bug-17782.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/true.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/wholename.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/xtype-symlink.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.gnu/xtype.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/and.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/depth1.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/exec-one.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/grouping.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/links.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/name.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/perm-vanilla.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/posixnot.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/prune.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/sizes.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/sv-bug-11175.exp ...
+Running /tmp/findutils-4.2.31/find/testsuite/find.posix/sv-bug-12181.exp ...
+
+                === find Summary ===
+
+# of expected passes            64
+/tmp/findutils-4.2.31/objdir/find/testsuite/../find version 4.2.31
+Built using GNU gnulib version 2007-02-24
+Features enabled: D_TYPE O_NOFOLLOW(enabled) LEAF_OPTIMISATION 
+
+make[3]: Leaving directory `/tmp/findutils-4.2.31/objdir/find/testsuite'
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/find/testsuite'
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/find'
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT find.o -MD -MP -MF .deps/find.Tpo -c -o find.o ../../find/find.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/defs.h:23,
+                 from ../../find/find.c:30:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [find.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT fstype.o -MD -MP -MF .deps/fstype.Tpo -c -o fstype.o ../../find/fstype.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/fstype.c:34:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [fstype.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT parser.o -MD -MP -MF .deps/parser.Tpo -c -o parser.o ../../find/parser.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/defs.h:23,
+                 from ../../find/parser.c:22:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [parser.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT pred.o -MD -MP -MF .deps/pred.Tpo -c -o pred.o ../../find/pred.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/defs.h:23,
+                 from ../../find/pred.c:21:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [pred.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT tree.o -MD -MP -MF .deps/tree.Tpo -c -o tree.o ../../find/tree.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/defs.h:23,
+                 from ../../find/tree.c:20:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [tree.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../find -I../gnulib/lib -I../../lib -I../../gnulib/lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o ../../find/util.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../find/defs.h:23,
+                 from ../../find/util.c:20:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [util.o] Error 1
+make[2]: Target `check-am' not remade because of errors.
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/find'
+make[1]: *** [check-recursive] Error 1
+make[1]: Target `check' not remade because of errors.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/find'
+Making check in xargs
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/xargs'
+Making check in testsuite
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/xargs/testsuite'
+make  check-DEJAGNU
+make[3]: Entering directory `/tmp/findutils-4.2.31/objdir/xargs/testsuite'
+Making a new site.exp file...
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../xargs/testsuite && pwd`; export srcdir; \
+        EXPECT=expect; export EXPECT; \
+        runtest=runtest; \
+        if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+          exit_status=0; l='xargs'; for tool in $l; do \
+            if $runtest  --tool $tool --srcdir $srcdir ; \
+            then :; else exit_status=1; fi; \
+          done; \
+        else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+        fi; \
+        exit $exit_status
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find tool init file
+Test Run By root on Thu Feb 20 14:57:41 2014
+Target is x86_64-pc-linux-gnu
+Host   is arm-sony-linux-gnueabi
+Build  is x86_64-pc-linux-gnu
+
+                === xargs tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /usr/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /usr/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /tmp/findutils-4.2.31/xargs/testsuite/config/unix.exp as tool-and-target-specific interface file.
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/0n3.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/E_-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/L2-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/L2_2-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/L3-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/P3-n1-IARG.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/delim-o.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/empty-r.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/empty_def-r.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/idef-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/idef-s26-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/l1-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/l1_2-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n1-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n2-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n2-s26-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n2-s26-x-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n3-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/n3-s36-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/noeof-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/nothing.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/r.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/s118-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/s19-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/s19_2-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/s20-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/s30-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/space-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/space-r.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.gnu/space-t-0.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/EEOF.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/EEOFb.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/EEOFe.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/E_-IARG.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/E_.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/IARG-E_.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/IARG-s15.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/IARG.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/L2-n2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/L2_2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/L3.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/arg_max_32bit_linux_bug.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/arg_max_64bit_linux_bug.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/childfail.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/empty.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/empty_def.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/hithere.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n1.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n2-s26-x.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n2-s26.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n3-s36.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/n3.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/noeof.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/quotes.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/rc-123.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/rc-124.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/rc-125.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/rc-126.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/rc-127.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s118.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s19.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s19_2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s20.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s30.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s47.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s470.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s48.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/s6.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/savannah-11865.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/space-I.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/space.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/uc_L2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/unmatched-n2-x.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/unmatched.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.posix/unmatched2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/e.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/eEOF.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/empty-t.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/empty_def-t.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/eof1.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/iARG.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/idef-s26.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/idef.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/iquotes.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/l1.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/l1_2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/l1n4.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/lc_l2.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/s30-t.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/space-t.exp ...
+Running /tmp/findutils-4.2.31/xargs/testsuite/xargs.sysv/trace.exp ...
+
+                === xargs Summary ===
+
+# of expected passes            92
+/tmp/findutils-4.2.31/objdir/xargs/testsuite/../xargs version 4.2.31
+Built using GNU gnulib version 2007-02-24
+
+make[3]: Leaving directory `/tmp/findutils-4.2.31/objdir/xargs/testsuite'
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/xargs/testsuite'
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/xargs'
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../xargs -I.. -I../gnulib/lib -I../../gnulib/lib -I../../lib -I../intl -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT xargs.o -MD -MP -MF .deps/xargs.Tpo -c -o xargs.o ../../xargs/xargs.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../xargs/xargs.c:55:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [xargs.o] Error 1
+make[2]: Target `check-am' not remade because of errors.
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/xargs'
+make[1]: *** [check-recursive] Error 1
+make[1]: Target `check' not remade because of errors.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/xargs'
+Making check in locate
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/locate'
+Making check in testsuite
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/locate/testsuite'
+make  check-DEJAGNU
+make[3]: Entering directory `/tmp/findutils-4.2.31/objdir/locate/testsuite'
+Making a new site.exp file...
+srcdir=`CDPATH="${ZSH_VERSION+.}:" && cd ../../../locate/testsuite && pwd`; export srcdir; \
+        EXPECT=expect; export EXPECT; \
+        runtest=runtest; \
+        if /bin/sh -c "$runtest --version" > /dev/null 2>&1; then \
+          exit_status=0; l='locate'; for tool in $l; do \
+            if $runtest  --tool $tool --srcdir $srcdir ; \
+            then :; else exit_status=1; fi; \
+          done; \
+        else echo "WARNING: could not find \`runtest'" 1>&2; :;\
+        fi; \
+        exit $exit_status
+WARNING: Couldn't find the global config file.
+WARNING: Couldn't find tool init file
+Test Run By root on Thu Feb 20 14:58:31 2014
+Target is x86_64-pc-linux-gnu
+Host   is arm-sony-linux-gnueabi
+Build  is x86_64-pc-linux-gnu
+
+                === locate tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /usr/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /usr/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /tmp/findutils-4.2.31/locate/testsuite/config/unix.exp as tool-and-target-specific interface file.
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/bigprefix1.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/exceedshort.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/exists1.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/exists2.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/exists3.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/ignore_case1.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/ignore_case2.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/ignore_case3.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/notexists1.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/notexists2.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/notexists3.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/regex1.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/space1st.exp ...
+Running /tmp/findutils-4.2.31/locate/testsuite/locate.gnu/sv-bug-19484.exp ...
+
+                === locate Summary ===
+
+# of expected passes            22
+/tmp/findutils-4.2.31/objdir/locate/testsuite/../locate version 4.2.31
+Built using GNU gnulib version 2007-02-24
+
+make[3]: Leaving directory `/tmp/findutils-4.2.31/objdir/locate/testsuite'
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/locate/testsuite'
+make[2]: Entering directory `/tmp/findutils-4.2.31/objdir/locate'
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/usr/var/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT locate.o -MD -MP -MF .deps/locate.Tpo -c -o locate.o ../../locate/locate.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../locate/locate.c:66:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [locate.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/usr/var/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT frcode.o -MD -MP -MF .deps/frcode.Tpo -c -o frcode.o ../../locate/frcode.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../locate/frcode.c:70:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [frcode.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/usr/var/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT code.o -MD -MP -MF .deps/code.Tpo -c -o code.o ../../locate/code.c
+In file included from //tool/usr/include/sys/types.h:132:0,
+                 from ../../locate/code.c:50:
+../gnulib/lib/time.h:24:95: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h: No such file or directory
+compilation terminated.
+make[2]: *** [code.o] Error 1
+/tool/usr/bin/gcc -DHAVE_CONFIG_H -I. -I.. -I../../locate -I../../lib -I../gnulib/lib -I../../gnulib/lib -I../intl -DLOCATE_DB=\"/usr/var/locatedb\" -DLOCALEDIR=\"/usr/share/locale\"    -O2 -MT bigram.o -MD -MP -MF .deps/bigram.Tpo -c -o bigram.o ../../locate/bigram.c
+In file included from ../../locate/bigram.c:38:0:
+../gnulib/lib/string.h:29:96: fatal error: ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h: No such file or directory
+compilation terminated.
+make[2]: *** [bigram.o] Error 1
+make[2]: Target `check-am' not remade because of errors.
+make[2]: Leaving directory `/tmp/findutils-4.2.31/objdir/locate'
+make[1]: *** [check-recursive] Error 1
+make[1]: Target `check' not remade because of errors.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/locate'
+Making check in doc
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/doc'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/doc'
+Making check in po
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/po'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/po'
+Making check in m4
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir/m4'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir/m4'
+make[1]: Entering directory `/tmp/findutils-4.2.31/objdir'
+make[1]: Nothing to be done for `check-am'.
+make[1]: Leaving directory `/tmp/findutils-4.2.31/objdir'
+make: *** [check-recursive] Error 1
+make: Target `check' not remade because of errors.
+COMMANDDONE
+-bash-3.2# mkdir findulils_results
+-bash-3.2# cp -r find/testsuite/find.*  findulils_results
+cp -r xargs/testsuite/xargs.* findulils_results
+-bash-3.2# cp -r xargs/testsuite/xargs.* findulils_results
+-bash-3.2# cp -r locate/testsuite/locate.* findulils_results
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/findutils-4.2.31/objdir/findulils_results to 10.0.6.38:/home/rpmuser/rpm/tmp..............done

@@ -1,0 +1,31 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.F6WX8C
+Patch #0 (traceroute-remove-idn.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Euwx6p
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c clif.c
+rm -f libsupp.a
+ar -rc libsupp.a clif.o
+ranlib libsupp.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c as_lookups.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c csum.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c extension.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-dccp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-icmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-raw.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-tcp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-tcpconn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c mod-udp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c poll.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c random.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c time.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall  -D_GNU_SOURCE -c traceroute.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -L../libsupp -o traceroute as_lookups.o csum.o extension.o mod-dccp.o mod-icmp.o mod-raw.o mod-tcp.o mod-tcpconn.o mod-udp.o module.o poll.o random.o time.o traceroute.o  -lsupp -lm 
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.NYkWwi
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-traceroute-2.0.19-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-traceroute-2.0.19-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-traceroute-2.0.19-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-traceroute-2.0.19-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ns93YV

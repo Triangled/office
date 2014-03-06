@@ -1,0 +1,189 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+*** System restart required ***
+Last login: Tue Mar  4 16:53:24 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser//MAIN/dist/pkg/elfsum/test/
+]0;rpmuser@Triangle: ~/MAIN/dist/pkg/elfsum/testrpmuser@Triangle:~/MAIN/dist/pkg/elfsum/test$ ./elfsum-test.sh arm-sony-linux-gnueabi dev armv7a | tee /tmp/elfsum.log
++ WOS=
++ '[' == yes ']'
+./elfsum-test.sh: line 6: [: ==: unary operator expected
++ DEVELFLAG=devel
++ DEVFLAG=-dev
++ '[' arm-sony-linux-gnueabi ']'
++ TRIPLET=arm-sony-linux-gnueabi
++ export PATH=/usr/local/arm-sony-linux-gnueabi/bin:/usr/local/arm-sony-linux-gnueabi/devel/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/devel/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/share/ruby-rvm/bin
++ PATH=/usr/local/arm-sony-linux-gnueabi/bin:/usr/local/arm-sony-linux-gnueabi/devel/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/devel/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/share/ruby-rvm/bin
++ '[' dev = dev ']'
++ PREFIX=arm-sony-linux-gnueabi-dev-
++ '[' armv7a ']'
++ GCC='arm-sony-linux-gnueabi-dev-gcc -tarmv7a'
++ GCC_SHARED='arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC'
++ GPP='arm-sony-linux-gnueabi-dev-g++ -tarmv7a'
++ MYNAME=elfsum-test
++ echo '========== TEST CASE for executable ELF =========='
+========== TEST CASE for executable ELF ==========
++ test1
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a hello.c -o hello1.elf
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a ./hello.c -o ./hello2.elf -g
++ arm-sony-linux-gnueabi-dev-elfsum --add hello1.elf hello2.elf
++ echo 'elfsum-test: checking whether elfsum is added'
++ arm-sony-linux-gnueabi-dev-readelf -S hello1.elf
+elfsum-test: checking whether elfsum is added
++ arm-sony-linux-gnueabi-dev-readelf -S hello2.elf
++ grep '\.snsc_elfsum' hello1.sec
+  [35] .snsc_elfsum      PROGBITS        00000000 000eac 00001c 00      0   0  1
++ grep '\.snsc_elfsum' hello2.sec
+  [35] .snsc_elfsum      PROGBITS        00000000 001067 00001c 00      0   0  1
++ echo 'elfsum-test: checking whether elfsums of same programs are same'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of same programs are same
+[sha1]9d56005dbdac7e8702ce650c6932668161a1edfb (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: checking whether elfsums are same when a program is stripped'
++ arm-sony-linux-gnueabi-dev-strip hello2.elf
+elfsum-test: checking whether elfsums are same when a program is stripped
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+[sha1]9d56005dbdac7e8702ce650c6932668161a1edfb (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: adding elfsum section to different program...'
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a hello.c -o hello2.elf '-DHOGE="yasu!"'
+elfsum-test: adding elfsum section to different program...
++ arm-sony-linux-gnueabi-dev-elfsum --add hello2.elf
++ echo 'elfsum-test: checking whether elfsums of different programs are different'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of different programs are different
+[sha1]9d56005dbdac7e8702ce650c6932668161a1edfb (1 files)
+	hello1.elf
+[sha1]c5d88aeb90c7df8ac27eb462b362717e188326a8 (1 files)
+	hello2.elf
++ echo 'elfsum-test: adding elfsum section to timestamped program...'
+elfsum-test: adding elfsum section to timestamped program...
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a hello.c -o hello1.elf '-DHOGE="1985-02-28 08:03:16 JST"'
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a hello.c -o hello2.elf '-DHOGE="2112-09-03 12:09:03 JST"'
++ arm-sony-linux-gnueabi-dev-elfsum --add hello1.elf hello2.elf --skip-pattern=skip-pattern.txt
++ echo 'elfsum-test: checking whether elfsums of timestamped programs are same'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of timestamped programs are same
+[sha1]bd0ace26b90c97d73f63e6062e571bc6007a65b5 (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: deleting elfsum section...'
++ arm-sony-linux-gnueabi-dev-elfsum --delete hello1.elf hello2.elf
+elfsum-test: deleting elfsum section...
++ echo 'elfsum-test: checking whether elfsum is deleted'
++ arm-sony-linux-gnueabi-dev-readelf -S hello1.elf
+elfsum-test: checking whether elfsum is deleted
++ arm-sony-linux-gnueabi-dev-readelf -S hello2.elf
++ grep '\.snsc_elfsum' hello1.sec
++ grep '\.snsc_elfsum' hello2.sec
++ return 0
++ echo 'elfsum-test: checking anonymous namespace problem'
+elfsum-test: checking anonymous namespace problem
++ arm-sony-linux-gnueabi-dev-g++ -tarmv7a unnamed-namespace.cpp -o hello1.elf -frandom-seed=yasu
++ sleep 1
++ arm-sony-linux-gnueabi-dev-g++ -tarmv7a unnamed-namespace.cpp -o hello2.elf -frandom-seed=yasu
++ arm-sony-linux-gnueabi-dev-elfsum --add --list --compare hello1.elf hello2.elf
+[sha1]1ee70f0729e1bd3ed49c65246363efa7d6e3a976 (2 files)
+	hello1.elf
+	hello2.elf
++ arm-sony-linux-gnueabi-dev-g++ -tarmv7a unnamed-namespace.cpp -o hello1.elf -Wl,--version-script,unnamed-namespace.map
++ sleep 1
++ arm-sony-linux-gnueabi-dev-g++ -tarmv7a unnamed-namespace.cpp -o hello2.elf -Wl,--version-script,unnamed-namespace.map
++ arm-sony-linux-gnueabi-dev-elfsum --add --list --compare hello1.elf hello2.elf
+[sha1]1ee70f0729e1bd3ed49c65246363efa7d6e3a976 (2 files)
+	hello1.elf
+	hello2.elf
++ echo '========== TEST CASE for -shared library =========='
++ GCC='arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC'
+========== TEST CASE for -shared library ==========
++ test1
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC hello.c -o hello1.elf
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC ./hello.c -o ./hello2.elf -g
++ arm-sony-linux-gnueabi-dev-elfsum --add hello1.elf hello2.elf
++ echo 'elfsum-test: checking whether elfsum is added'
++ arm-sony-linux-gnueabi-dev-readelf -S hello1.elf
+elfsum-test: checking whether elfsum is added
++ arm-sony-linux-gnueabi-dev-readelf -S hello2.elf
++ grep '\.snsc_elfsum' hello1.sec
+  [25] .snsc_elfsum      PROGBITS        00000000 00086a 00001c 00      0   0  1
++ grep '\.snsc_elfsum' hello2.sec
+  [32] .snsc_elfsum      PROGBITS        00000000 000aa6 00001c 00      0   0  1
++ echo 'elfsum-test: checking whether elfsums of same programs are same'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of same programs are same
+[sha1]d7bffbc9d17951987d57ef0afa01d8d0b206d4fa (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: checking whether elfsums are same when a program is stripped'
++ arm-sony-linux-gnueabi-dev-strip hello2.elf
+elfsum-test: checking whether elfsums are same when a program is stripped
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+[sha1]d7bffbc9d17951987d57ef0afa01d8d0b206d4fa (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: adding elfsum section to different program...'
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC hello.c -o hello2.elf '-DHOGE="yasu!"'
+elfsum-test: adding elfsum section to different program...
++ arm-sony-linux-gnueabi-dev-elfsum --add hello2.elf
++ echo 'elfsum-test: checking whether elfsums of different programs are different'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of different programs are different
+[sha1]d7bffbc9d17951987d57ef0afa01d8d0b206d4fa (1 files)
+	hello1.elf
+[sha1]6d9f5339bf478fd3cfcbcbb31f2a803a5c6d6ab7 (1 files)
+	hello2.elf
++ echo 'elfsum-test: adding elfsum section to timestamped program...'
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC hello.c -o hello1.elf '-DHOGE="1985-02-28 08:03:16 JST"'
+elfsum-test: adding elfsum section to timestamped program...
++ arm-sony-linux-gnueabi-dev-gcc -tarmv7a -shared -fPIC hello.c -o hello2.elf '-DHOGE="2112-09-03 12:09:03 JST"'
++ arm-sony-linux-gnueabi-dev-elfsum --add hello1.elf hello2.elf --skip-pattern=skip-pattern.txt
++ echo 'elfsum-test: checking whether elfsums of timestamped programs are same'
++ arm-sony-linux-gnueabi-dev-elfsum --list --compare hello1.elf hello2.elf
+elfsum-test: checking whether elfsums of timestamped programs are same
+[sha1]4f5c6cd4c414ef6de6c80fd9e17ab3d10c77840c (2 files)
+	hello1.elf
+	hello2.elf
++ echo 'elfsum-test: deleting elfsum section...'
+elfsum-test: deleting elfsum section...
++ arm-sony-linux-gnueabi-dev-elfsum --delete hello1.elf hello2.elf
++ echo 'elfsum-test: checking whether elfsum is deleted'
++ arm-sony-linux-gnueabi-dev-readelf -S hello1.elf
+elfsum-test: checking whether elfsum is deleted
++ arm-sony-linux-gnueabi-dev-readelf -S hello2.elf
++ grep '\.snsc_elfsum' hello1.sec
++ grep '\.snsc_elfsum' hello2.sec
++ return 0
++ echo
++ echo 'elfsum-test: SUCCEEDed ;-)'
+
+elfsum-test: SUCCEEDed ;-)
++ rm_temp
++ rm hello1.elf hello2.elf hello1.sec hello2.sec
+]0;rpmuser@Triangle: ~/MAIN/dist/pkg/elfsum/testrpmuser@Triangle:~/MAIN/dist/pkg/elfsum/test$ sending 10.0.6.38:/tmp/elfsum.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+elfsum test completed!
+elfsum : TEST_OK
