@@ -1,0 +1,548 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+lz77 : 1.5.0
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/Tools_Userland/SRPMS/sony-target-dev-mtd-utils-1.5.0-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-mtd-utiwarning: group rpmuser does not exist - using root
+                                            ( 19%)#                                           ( 19%)##                                          ( 19%)###                                         ( 19%)####                                        ( 19%)#####                                       ( 19%)######                                      ( 19%)#######                                     ( 19%)########                                    ( 38%)#########                                   ( 38%)##########                                  ( 38%)###########                                 ( 38%)############                                ( 38%)#############                               ( 38%)##############                              ( 38%)###############                             ( 38%)################                            ( 38%)#################                           ( 57%)##################                          ( 57%)###################                         ( 57%)####################                        ( 57%)#####################                       ( 57%)######################                      ( 57%)#######################                     ( 57%)########################                    ( 57%)#########################                   ( 76%)##########################                  ( 76%)###########################                 ( 76%)############################                ( 76%)#############################               ( 76%)##############################              ( 76%)###############################             ( 76%)################################            ( 76%)#################################           ( 95%)##################################          ( 95%)###################################         ( 95%)####################################        ( 95%)#####################################       ( 95%)######################################      ( 95%)#######################################     ( 95%)########################################    ( 95%)#########################################   ( 95%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-mtd-utils.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.gSIkqS
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf mtd-utils-1.5.0
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/mtd-utils-1.5.0.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd mtd-utils-1.5.0
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.oE01br
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd mtd-utils-1.5.0
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make CROSS=arm-sony-linux-gnueabi- 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' 'CFLAGS=-g -O2 -I./include'
+  CHK     include/version.h
+  CC      ftl_format.o
+  CC      lib/libmtd.o
+  CC      lib/libmtd_legacy.o
+  CC      lib/libcrc32.o
+  CC      lib/libfec.o
+  AR      lib/libmtd.a
+  LD      ftl_format
+  CC      flash_erase.o
+  LD      flash_erase
+  CC      nanddump.o
+  LD      nanddump
+  CC      doc_loadbios.o
+  LD      doc_loadbios
+  CC      ftl_check.o
+  LD      ftl_check
+  CC      mkfs.jffs2.o
+  CC      compr_rtime.o
+  CC      compr_zlib.o
+  CC      compr_lzo.o
+  CC      compr.o
+  CC      rbtree.o
+  LD      mkfs.jffs2
+  CC      flash_lock.o
+  LD      flash_lock
+  CC      flash_unlock.o
+  LD      flash_unlock
+  CC      flash_otp_info.o
+  LD      flash_otp_info
+  CC      flash_otp_dump.o
+  LD      flash_otp_dump
+  CC      mtd_debug.o
+  LD      mtd_debug
+  CC      flashcp.o
+flashcp.c: In function 'main':
+flashcp.c:255:2: warning: #warning "Check for smaller erase regions" [-Wcpp]
+  LD      flashcp
+  CC      nandwrite.o
+  LD      nandwrite
+  CC      nandtest.o
+  LD      nandtest
+  CC      jffs2dump.o
+  LD      jffs2dump
+  CC      nftldump.o
+  LD      nftldump
+  CC      nftl_format.o
+  LD      nftl_format
+  CC      docfdisk.o
+  LD      docfdisk
+  CC      rfddump.o
+  LD      rfddump
+  CC      rfdformat.o
+  LD      rfdformat
+  CC      serve_image.o
+  LD      serve_image
+  CC      recv_image.o
+  LD      recv_image
+  CC      sumtool.o
+  LD      sumtool
+  CC      jffs2reader.o
+  LD      jffs2reader
+  CC      mkfs.ubifs/mkfs.ubifs.o
+  CC      mkfs.ubifs/crc16.o
+  CC      mkfs.ubifs/lpt.o
+  CC      mkfs.ubifs/compr.o
+  CC      mkfs.ubifs/devtable.o
+  CC      mkfs.ubifs/hashtable/hashtable.o
+  CC      mkfs.ubifs/hashtable/hashtable_itr.o
+  CC      ubi-utils/libubi.o
+  AR      ubi-utils/libubi.a
+  LD      mkfs.ubifs/mkfs.ubifs
+  CC      ubi-utils/ubiupdatevol.o
+  CC      ubi-utils/ubiutils-common.o
+  LD      ubi-utils/ubiupdatevol
+  CC      ubi-utils/ubimkvol.o
+  LD      ubi-utils/ubimkvol
+  CC      ubi-utils/ubirmvol.o
+  LD      ubi-utils/ubirmvol
+  CC      ubi-utils/ubicrc32.o
+  LD      ubi-utils/ubicrc32
+  CC      ubi-utils/ubinfo.o
+  LD      ubi-utils/ubinfo
+  CC      ubi-utils/ubiattach.o
+  LD      ubi-utils/ubiattach
+  CC      ubi-utils/ubidetach.o
+  LD      ubi-utils/ubidetach
+  CC      ubi-utils/ubinize.o
+  CC      ubi-utils/libubigen.o
+  AR      ubi-utils/libubigen.a
+  CC      ubi-utils/libiniparser.o
+  CC      ubi-utils/dictionary.o
+  AR      ubi-utils/libiniparser.a
+  LD      ubi-utils/ubinize
+  CC      ubi-utils/ubiformat.o
+  CC      ubi-utils/libscan.o
+  AR      ubi-utils/libscan.a
+  LD      ubi-utils/ubiformat
+  CC      ubi-utils/ubirename.o
+  LD      ubi-utils/ubirename
+  CC      ubi-utils/mtdinfo.o
+  LD      ubi-utils/mtdinfo
+  CC      ubi-utils/ubirsvol.o
+  LD      ubi-utils/ubirsvol
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ELDq0z
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd mtd-utils-1.5.0
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
++ make CROSS=arm-sony-linux-gnueabi- 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' 'CFLAGS=-g -O2 -I./include' DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64 SBINDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin MANDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man install
+  CHK     include/version.h
+mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64//usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
+install -m 0755 /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ftl_format /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flash_erase /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/nanddump /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/doc_loadbios /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ftl_check /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/mkfs.jffs2 /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flash_lock /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flash_unlock /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flash_otp_info /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flash_otp_dump /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/mtd_debug /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/flashcp /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/nandwrite /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/nandtest /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/jffs2dump /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/nftldump /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/nftl_format /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/docfdisk /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/rfddump /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/rfdformat /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/serve_image /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/recv_image /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/sumtool /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/jffs2reader /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/mkfs.ubifs/mkfs.ubifs /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubiupdatevol /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubimkvol /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubirmvol /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubicrc32 /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubinfo /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubiattach /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubidetach /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubinize /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubiformat /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubirename /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/mtdinfo /home/rpmuser/rpm/BUILD/mtd-utils-1.5.0/arm-sony-linux-gnueabi/ubi-utils/ubirsvol flash_eraseall /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64//usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/
+mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64//usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
+install -m 0644 mkfs.jffs2.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64//usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/
+gzip -9f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64//usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/*.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-mtd-utils-1.5.0-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-mtd-utils-1.5.0-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-mtd-utils-1.5.0-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.TyjE03
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd mtd-utils-1.5.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-mtd-utils-1.5.0-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/mtd-utils-1.5.0 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp........................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/mtd-utils/test/mtd-utils-1.0.0_test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 17:38:16 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/mtd-utils-1.5.0 || echo 'COMMAND''ERROR'
+-bash-3.2# patch -p1 < /tmp/mtd-utils-1.0.0_test.patch
+patching file jittertest/run_all.sh
+patching file jittertest/sample
+-bash-3.2# make clean
+rm -f /tmp/mtd-utils-1.5.0/*.o /tmp/mtd-utils-1.5.0/ftl_format /tmp/mtd-utils-1.5.0/flash_erase /tmp/mtd-utils-1.5.0/nanddump /tmp/mtd-utils-1.5.0/doc_loadbios /tmp/mtd-utils-1.5.0/ftl_check /tmp/mtd-utils-1.5.0/mkfs.jffs2 /tmp/mtd-utils-1.5.0/flash_lock /tmp/mtd-utils-1.5.0/flash_unlock /tmp/mtd-utils-1.5.0/flash_otp_info /tmp/mtd-utils-1.5.0/flash_otp_dump /tmp/mtd-utils-1.5.0/mtd_debug /tmp/mtd-utils-1.5.0/flashcp /tmp/mtd-utils-1.5.0/nandwrite /tmp/mtd-utils-1.5.0/nandtest /tmp/mtd-utils-1.5.0/jffs2dump /tmp/mtd-utils-1.5.0/nftldump /tmp/mtd-utils-1.5.0/nftl_format /tmp/mtd-utils-1.5.0/docfdisk /tmp/mtd-utils-1.5.0/rfddump /tmp/mtd-utils-1.5.0/rfdformat /tmp/mtd-utils-1.5.0/serve_image /tmp/mtd-utils-1.5.0/recv_image /tmp/mtd-utils-1.5.0/sumtool /tmp/mtd-utils-1.5.0/jffs2reader /tmp/mtd-utils-1.5.0/mkfs.ubifs/mkfs.ubifs /tmp/mtd-utils-1.5.0/ubi-utils/ubiupdatevol /tmp/mtd-utils-1.5.0/ubi-utils/ubimkvol /tmp/mtd-utils-1.5.0/ubi-utils/ubirmvol /tmp/mtd-utils-1.5.0/ubi-utils/ubicrc32 /tmp/mtd-utils-1.5.0/ubi-utils/ubinfo /tmp/mtd-utils-1.5.0/ubi-utils/ubiattach /tmp/mtd-utils-1.5.0/ubi-utils/ubidetach /tmp/mtd-utils-1.5.0/ubi-utils/ubinize /tmp/mtd-utils-1.5.0/ubi-utils/ubiformat /tmp/mtd-utils-1.5.0/ubi-utils/ubirename /tmp/mtd-utils-1.5.0/ubi-utils/mtdinfo /tmp/mtd-utils-1.5.0/ubi-utils/ubirsvol /tmp/mtd-utils-1.5.0/lib/libmtd.a /tmp/mtd-utils-1.5.0/ubi-utils/libubi.a /tmp/mtd-utils-1.5.0/.*.c.dep
+rm -f /tmp/mtd-utils-1.5.0/include/version.h
+make -C tests clean
+make[1]: Entering directory `/tmp/mtd-utils-1.5.0/tests'
+make -C checkfs clean
+make[2]: Entering directory `/tmp/mtd-utils-1.5.0/tests/checkfs'
+rm -f /tmp/mtd-utils-1.5.0/tests/checkfs/*.o /tmp/mtd-utils-1.5.0/tests/checkfs/checkfs /tmp/mtd-utils-1.5.0/tests/checkfs/makefiles /tmp/mtd-utils-1.5.0/tests/checkfs/.*.c.dep
+make[2]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/checkfs'
+make -C fs-tests clean
+make[2]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests'
+make -C lib clean
+make[3]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/lib'
+rm -f *.o
+make[3]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/lib'
+make -C simple clean
+make[3]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/simple'
+rm -f *.o test_1 test_2 ftrunc orph perf
+make[3]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/simple'
+make -C stress clean
+make[3]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/stress'
+make -C atoms clean
+make[4]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/stress/atoms'
+rm -f *.o stress_1 stress_2 stress_3 pdfrun rndwrite00 fwrite00 rmdir00 rndrm00 rndrm99 gcd_hupper run_pdf_test_file
+make[4]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/stress/atoms'
+rm -rf run_pdf_test_file_*
+make[3]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/stress'
+make -C integrity clean
+make[3]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/integrity'
+rm -f *.o integck libubi.a
+make[3]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/integrity'
+make -C utils clean
+make[3]: Entering directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/utils'
+rm -f *.o fstest_monitor free_space
+make[3]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests/utils'
+make[2]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/fs-tests'
+make -C jittertest clean
+make[2]: Entering directory `/tmp/mtd-utils-1.5.0/tests/jittertest'
+rm -rf *~
+rm -rf core
+rm -rf *.o
+rm -rf JitterTest
+make[2]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/jittertest'
+make -C ubi-tests clean
+make[2]: Entering directory `/tmp/mtd-utils-1.5.0/tests/ubi-tests'
+rm -f /tmp/mtd-utils-1.5.0/tests/ubi-tests/*.o /tmp/mtd-utils-1.5.0/tests/ubi-tests/io_update /tmp/mtd-utils-1.5.0/tests/ubi-tests/volrefcnt /tmp/mtd-utils-1.5.0/tests/ubi-tests/integ /tmp/mtd-utils-1.5.0/tests/ubi-tests/io_paral /tmp/mtd-utils-1.5.0/tests/ubi-tests/io_read /tmp/mtd-utils-1.5.0/tests/ubi-tests/io_basic /tmp/mtd-utils-1.5.0/tests/ubi-tests/mkvol_basic /tmp/mtd-utils-1.5.0/tests/ubi-tests/mkvol_bad /tmp/mtd-utils-1.5.0/tests/ubi-tests/mkvol_paral /tmp/mtd-utils-1.5.0/tests/ubi-tests/rsvol /tmp/mtd-utils-1.5.0/tests/ubi-tests/.*.c.dep
+rm -f libubi.a
+make[2]: Leaving directory `/tmp/mtd-utils-1.5.0/tests/ubi-tests'
+make[1]: Leaving directory `/tmp/mtd-utils-1.5.0/tests'
+-bash-3.2# make
+  CHK     include/version.h
+  CC      ftl_format.o
+  CC      lib/libmtd.o
+  CC      lib/libmtd_legacy.o
+  CC      lib/libcrc32.o
+  CC      lib/libfec.o
+  AR      lib/libmtd.a
+  LD      ftl_format
+  CC      flash_erase.o
+  LD      flash_erase
+  CC      nanddump.o
+  LD      nanddump
+  CC      doc_loadbios.o
+  LD      doc_loadbios
+  CC      ftl_check.o
+  LD      ftl_check
+  CC      mkfs.jffs2.o
+  CC      compr_rtime.o
+  CC      compr_zlib.o
+  CC      compr_lzo.o
+  CC      compr.o
+  CC      rbtree.o
+  LD      mkfs.jffs2
+  CC      flash_lock.o
+  LD      flash_lock
+  CC      flash_unlock.o
+  LD      flash_unlock
+  CC      flash_otp_info.o
+  LD      flash_otp_info
+  CC      flash_otp_dump.o
+  LD      flash_otp_dump
+  CC      mtd_debug.o
+  LD      mtd_debug
+  CC      flashcp.o
+flashcp.c: In function 'main':
+flashcp.c:255:2: warning: #warning "Check for smaller erase regions" [-Wcpp]
+  LD      flashcp
+  CC      nandwrite.o
+  LD      nandwrite
+  CC      nandtest.o
+  LD      nandtest
+  CC      jffs2dump.o
+  LD      jffs2dump
+  CC      nftldump.o
+  LD      nftldump
+  CC      nftl_format.o
+  LD      nftl_format
+  CC      docfdisk.o
+docfdisk.c: In function 'main':
+docfdisk.c:268:12: warning: 'ip' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  LD      docfdisk
+  CC      rfddump.o
+  LD      rfddump
+  CC      rfdformat.o
+  LD      rfdformat
+  CC      serve_image.o
+  LD      serve_image
+  CC      recv_image.o
+  LD      recv_image
+  CC      sumtool.o
+  LD      sumtool
+  CC      jffs2reader.o
+  LD      jffs2reader
+  CC      mkfs.ubifs/mkfs.ubifs.o
+  CC      mkfs.ubifs/crc16.o
+  CC      mkfs.ubifs/lpt.o
+  CC      mkfs.ubifs/compr.o
+  CC      mkfs.ubifs/devtable.o
+  CC      mkfs.ubifs/hashtable/hashtable.o
+  CC      mkfs.ubifs/hashtable/hashtable_itr.o
+  CC      ubi-utils/libubi.o
+  AR      ubi-utils/libubi.a
+  LD      mkfs.ubifs/mkfs.ubifs
+  CC      ubi-utils/ubiupdatevol.o
+  CC      ubi-utils/ubiutils-common.o
+  LD      ubi-utils/ubiupdatevol
+  CC      ubi-utils/ubimkvol.o
+  LD      ubi-utils/ubimkvol
+  CC      ubi-utils/ubirmvol.o
+  LD      ubi-utils/ubirmvol
+  CC      ubi-utils/ubicrc32.o
+  LD      ubi-utils/ubicrc32
+  CC      ubi-utils/ubinfo.o
+  LD      ubi-utils/ubinfo
+  CC      ubi-utils/ubiattach.o
+  LD      ubi-utils/ubiattach
+  CC      ubi-utils/ubidetach.o
+  LD      ubi-utils/ubidetach
+  CC      ubi-utils/ubinize.o
+  CC      ubi-utils/libubigen.o
+  AR      ubi-utils/libubigen.a
+  CC      ubi-utils/libiniparser.o
+  CC      ubi-utils/dictionary.o
+  AR      ubi-utils/libiniparser.a
+  LD      ubi-utils/ubinize
+  CC      ubi-utils/ubiformat.o
+  CC      ubi-utils/libscan.o
+  AR      ubi-utils/libscan.a
+  LD      ubi-utils/ubiformat
+  CC      ubi-utils/ubirename.o
+  LD      ubi-utils/ubirename
+  CC      ubi-utils/mtdinfo.o
+  LD      ubi-utils/mtdinfo
+  CC      ubi-utils/ubirsvol.o
+  LD      ubi-utils/ubirsvol
+-bash-3.2# gcc ./tests/jittertest/JitterTest.c -o ./jittertest/JitterTest
+-bash-3.2# cd jittertest
+-bash-3.2# sh run_all.sh 2>&1 | tee /tmp/mtd-utils_test.out
+mv: can't rename 'Makefile': No such file or directory
+sed: can't read /tmp/Makefile: No such file or directory
+make: *** No rule to make target `clean'.  Stop.
+make: *** No targets.  Stop.
+run_all.sh: line 24: ../mkfs.jffs: No such file or directory
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data1
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data1
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data2
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data2
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data3
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data3
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.030000ms.
+JitterTest exiting.
+
+*************************************
+mtd-utils Tests PASSED
+*************************************
+-bash-3.2# cat /tmp/mtd-utils_test.out
+mv: can't rename 'Makefile': No such file or directory
+sed: can't read /tmp/Makefile: No such file or directory
+make: *** No rule to make target `clean'.  Stop.
+make: *** No targets.  Stop.
+run_all.sh: line 24: ../mkfs.jffs: No such file or directory
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data1
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data1
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data2
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data2
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./jffs_test/jffs_data3
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.000000ms.
+JitterTest exiting.
+Not running with request priority 1. running with priority 2 instead!
+Press Ctrl+C to exit the program.
+Output File:        ./ext_data3
+Scheduler priority: 1
+Interrupt period:   50 milliseconds
+Ctrl+C detected. Worst Jitter time was:75.030000ms.
+JitterTest exiting.
+
+*************************************
+mtd-utils Tests PASSED
+*************************************
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/mtd-utils_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp..done
+lz77 : TEST_OK

@@ -1,0 +1,926 @@
+
+-------------------- util-linux regression tests --------------------
+
+                    For development purpose only.                    
+                 Don't execute on production system!                 
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       bitops: swap bytes                     ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        blkid: low-level superblocks probing  ...
+                : adaptec-raid                ... OK
+                : befs                        ... OK
+                : bfs                         ... OK
+                : cramfs                      ... OK
+                : ddf-raid                    ... OK
+                : exfat                       ... OK
+                : ext2                        ... OK
+                : ext3                        ... OK
+                : f2fs                        ... OK
+                : fat                         ... OK
+                : fat16_noheads               ... OK
+                : fat32_label_64MB            ... OK
+                : gfs2                        ... OK
+                : hfs                         ... OK
+                : hfsplus                     ... OK
+                : hpfs                        ... OK
+                : hpt37x-raid                 ... OK
+                : hpt45x-raid                 ... OK
+                : iso-joliet                  ... OK
+                : iso-rr-joliet               ... OK
+                : iso                         ... OK
+                : isw-raid                    ... OK
+                : jbd                         ... OK
+                : jfs                         ... OK
+                : jmicron-raid                ... OK
+                : lsi-raid                    ... OK
+                : lvm2                        ... OK
+                : mdraid                      ... OK
+                : minix-BE                    ... OK
+                : minix-LE                    ... OK
+                : netware                     ... OK
+                : nilfs2                      ... OK
+                : ntfs                        ... OK
+                : nvidia-raid                 ... OK
+                : ocfs2                       ... OK
+                : promise-raid                ... OK
+                : reiser3                     ... OK
+                : reiser4                     ... OK
+                : romfs                       ... OK
+                : silicon-raid                ... OK
+                : small-fat32                 ... OK
+                : swap0                       ... OK
+                : swap1                       ... OK
+                : tuxonice                    ... OK
+                : ubifs                       ... OK
+                : udf                         ... OK
+                : ufs                         ... OK
+                : via-raid                    ... OK
+                : vmfs                        ... OK
+                : vmfs_volume                 ... OK
+                : xfs                         ... OK
+                : zfs                         ... OK
+           ... OK (all 52 sub-tests PASSED)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        blkid: partitions probing             ...
+                : bsd                         ... OK
+                : dos+bsd                     ... OK
+                : gpt                         ... OK
+                : sgi                         ... OK
+                : sun                         ... OK
+           ... OK (all 5 sub-tests PASSED)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        blkid: MD raid0 (whole-disks)         ... IGNORE (missing mdadm)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        blkid: MD raid1 (last partition)      ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/blkid/md-raid1-part: line 45: udevadm: command not found
+/tmp/util-linux-2.23.2/tests/../tests/ts/blkid/md-raid1-part: line 53: udevadm: command not found
+/tmp/util-linux-2.23.2/tests/../tests/ts/blkid/md-raid1-part: line 66: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (blkid/md-raid1-part)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        blkid: MD raid1 (whole-disks)         ... IGNORE (missing mdadm)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+    build-sys: config                         ... IGNORE (optional)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+          cal: 1 month                        ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+          cal: 3 months                       ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+          cal: year                           ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+          col: multibyte input                ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        colrm: basic check                    ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       column: fill row                       ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       column: multiple files                 ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       column: separator & table              ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       cramfs: mkfs doubles                   ...BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+ OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       cramfs: fsck endianness                ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       cramfs: mkfs checksums                 ...BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+ OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+       cramfs: mkfs endianness                ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        dmesg: levels                         ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        dmesg: decode                         ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        dmesg: delta                          ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        dmesg: facilities                     ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        eject: umount                         ...
+                : by-disk                     ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+lt-eject: too many arguments
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 44: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (eject/umount-by-disk)
+                : by-disk-mounted             ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+mkfs.ext2: invalid blocks '(missing' on device 'IGNORE'
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 58: udevadm: command not found
+
+Usage:
+ mount [-lhV]
+ mount -a [options]
+ mount [options] [--source] <source> | [--target] <directory>
+ mount [options] <source> <directory>
+ mount <operation> <mountpoint> [<target>]
+
+Options:
+ -a, --all               mount all filesystems mentioned in fstab
+ -c, --no-canonicalize   don't canonicalize paths
+ -f, --fake              dry run; skip the mount(2) syscall
+ -F, --fork              fork off for each device (use with -a)
+ -T, --fstab <path>      alternative file to /etc/fstab
+ -h, --help              display this help text and exit
+ -i, --internal-only     don't call the mount.<type> helpers
+ -l, --show-labels       lists all mounts with LABELs
+ -n, --no-mtab           don't write to /etc/mtab
+ -o, --options <list>    comma-separated list of mount options
+ -O, --test-opts <list>  limit the set of filesystems (use with -a)
+ -r, --read-only         mount the filesystem read-only (same as -o ro)
+ -t, --types <list>      limit the set of filesystem types
+     --source <src>      explicitly specifies source (path, label, uuid)
+     --target <target>   explicitly specifies mountpoint
+ -v, --verbose           say what is being done
+ -V, --version           display version information and exit
+ -w, --rw, --read-write  mount the filesystem read-write (default)
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Source:
+ -L, --label <label>     synonym for LABEL=<label>
+ -U, --uuid <uuid>       synonym for UUID=<uuid>
+ LABEL=<label>           specifies device by filesystem label
+ UUID=<uuid>             specifies device by filesystem UUID
+ PARTLABEL=<label>       specifies device by partition label
+ PARTUUID=<uuid>         specifies device by partition UUID
+ <device>                specifies device by path
+ <directory>             mountpoint for bind mounts (see --bind/rbind)
+ <file>                  regular file for loopdev setup
+
+Operations:
+ -B, --bind              mount a subtree somewhere else (same as -o bind)
+ -M, --move              move a subtree to some other place
+ -R, --rbind             mount a subtree and all submounts somewhere else
+ --make-shared           mark a subtree as shared
+ --make-slave            mark a subtree as slave
+ --make-private          mark a subtree as private
+ --make-unbindable       mark a subtree as unbindable
+ --make-rshared          recursively mark a whole subtree as shared
+ --make-rslave           recursively mark a whole subtree as slave
+ --make-rprivate         recursively mark a whole subtree as private
+ --make-runbindable      recursively mark a whole subtree as unbindable
+
+For more details see mount(8).
+lt-eject: too many arguments
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 44: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (eject/umount-by-disk-mounted)
+                : by-disk-mounted-partition   ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 37: udevadm: command not found
+Could not stat IGNORE1 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+Could not stat IGNORE2 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 40: udevadm: command not found
+
+Usage:
+ mount [-lhV]
+ mount -a [options]
+ mount [options] [--source] <source> | [--target] <directory>
+ mount [options] <source> <directory>
+ mount <operation> <mountpoint> [<target>]
+
+Options:
+ -a, --all               mount all filesystems mentioned in fstab
+ -c, --no-canonicalize   don't canonicalize paths
+ -f, --fake              dry run; skip the mount(2) syscall
+ -F, --fork              fork off for each device (use with -a)
+ -T, --fstab <path>      alternative file to /etc/fstab
+ -h, --help              display this help text and exit
+ -i, --internal-only     don't call the mount.<type> helpers
+ -l, --show-labels       lists all mounts with LABELs
+ -n, --no-mtab           don't write to /etc/mtab
+ -o, --options <list>    comma-separated list of mount options
+ -O, --test-opts <list>  limit the set of filesystems (use with -a)
+ -r, --read-only         mount the filesystem read-only (same as -o ro)
+ -t, --types <list>      limit the set of filesystem types
+     --source <src>      explicitly specifies source (path, label, uuid)
+     --target <target>   explicitly specifies mountpoint
+ -v, --verbose           say what is being done
+ -V, --version           display version information and exit
+ -w, --rw, --read-write  mount the filesystem read-write (default)
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Source:
+ -L, --label <label>     synonym for LABEL=<label>
+ -U, --uuid <uuid>       synonym for UUID=<uuid>
+ LABEL=<label>           specifies device by filesystem label
+ UUID=<uuid>             specifies device by filesystem UUID
+ PARTLABEL=<label>       specifies device by partition label
+ PARTUUID=<uuid>         specifies device by partition UUID
+ <device>                specifies device by path
+ <directory>             mountpoint for bind mounts (see --bind/rbind)
+ <file>                  regular file for loopdev setup
+
+Operations:
+ -B, --bind              mount a subtree somewhere else (same as -o bind)
+ -M, --move              move a subtree to some other place
+ -R, --rbind             mount a subtree and all submounts somewhere else
+ --make-shared           mark a subtree as shared
+ --make-slave            mark a subtree as slave
+ --make-private          mark a subtree as private
+ --make-unbindable       mark a subtree as unbindable
+ --make-rshared          recursively mark a whole subtree as shared
+ --make-rslave           recursively mark a whole subtree as slave
+ --make-rprivate         recursively mark a whole subtree as private
+ --make-runbindable      recursively mark a whole subtree as unbindable
+
+For more details see mount(8).
+
+Usage:
+ mount [-lhV]
+ mount -a [options]
+ mount [options] [--source] <source> | [--target] <directory>
+ mount [options] <source> <directory>
+ mount <operation> <mountpoint> [<target>]
+
+Options:
+ -a, --all               mount all filesystems mentioned in fstab
+ -c, --no-canonicalize   don't canonicalize paths
+ -f, --fake              dry run; skip the mount(2) syscall
+ -F, --fork              fork off for each device (use with -a)
+ -T, --fstab <path>      alternative file to /etc/fstab
+ -h, --help              display this help text and exit
+ -i, --internal-only     don't call the mount.<type> helpers
+ -l, --show-labels       lists all mounts with LABELs
+ -n, --no-mtab           don't write to /etc/mtab
+ -o, --options <list>    comma-separated list of mount options
+ -O, --test-opts <list>  limit the set of filesystems (use with -a)
+ -r, --read-only         mount the filesystem read-only (same as -o ro)
+ -t, --types <list>      limit the set of filesystem types
+     --source <src>      explicitly specifies source (path, label, uuid)
+     --target <target>   explicitly specifies mountpoint
+ -v, --verbose           say what is being done
+ -V, --version           display version information and exit
+ -w, --rw, --read-write  mount the filesystem read-write (default)
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Source:
+ -L, --label <label>     synonym for LABEL=<label>
+ -U, --uuid <uuid>       synonym for UUID=<uuid>
+ LABEL=<label>           specifies device by filesystem label
+ UUID=<uuid>             specifies device by filesystem UUID
+ PARTLABEL=<label>       specifies device by partition label
+ PARTUUID=<uuid>         specifies device by partition UUID
+ <device>                specifies device by path
+ <directory>             mountpoint for bind mounts (see --bind/rbind)
+ <file>                  regular file for loopdev setup
+
+Operations:
+ -B, --bind              mount a subtree somewhere else (same as -o bind)
+ -M, --move              move a subtree to some other place
+ -R, --rbind             mount a subtree and all submounts somewhere else
+ --make-shared           mark a subtree as shared
+ --make-slave            mark a subtree as slave
+ --make-private          mark a subtree as private
+ --make-unbindable       mark a subtree as unbindable
+ --make-rshared          recursively mark a whole subtree as shared
+ --make-rslave           recursively mark a whole subtree as slave
+ --make-rprivate         recursively mark a whole subtree as private
+ --make-runbindable      recursively mark a whole subtree as unbindable
+
+For more details see mount(8).
+lt-eject: too many arguments
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 44: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (eject/umount-by-disk-mounted-partition)
+                : by-partition                ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 37: udevadm: command not found
+Could not stat IGNORE1 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+Could not stat IGNORE2 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 40: udevadm: command not found
+lt-eject: too many arguments
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 44: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (eject/umount-by-partition)
+                : by-partition-mounted        ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 37: udevadm: command not found
+Could not stat IGNORE1 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+Could not stat IGNORE2 --- No such file or directory
+
+The device apparently does not exist; did you specify it correctly?
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 40: udevadm: command not found
+
+Usage:
+ mount [-lhV]
+ mount -a [options]
+ mount [options] [--source] <source> | [--target] <directory>
+ mount [options] <source> <directory>
+ mount <operation> <mountpoint> [<target>]
+
+Options:
+ -a, --all               mount all filesystems mentioned in fstab
+ -c, --no-canonicalize   don't canonicalize paths
+ -f, --fake              dry run; skip the mount(2) syscall
+ -F, --fork              fork off for each device (use with -a)
+ -T, --fstab <path>      alternative file to /etc/fstab
+ -h, --help              display this help text and exit
+ -i, --internal-only     don't call the mount.<type> helpers
+ -l, --show-labels       lists all mounts with LABELs
+ -n, --no-mtab           don't write to /etc/mtab
+ -o, --options <list>    comma-separated list of mount options
+ -O, --test-opts <list>  limit the set of filesystems (use with -a)
+ -r, --read-only         mount the filesystem read-only (same as -o ro)
+ -t, --types <list>      limit the set of filesystem types
+     --source <src>      explicitly specifies source (path, label, uuid)
+     --target <target>   explicitly specifies mountpoint
+ -v, --verbose           say what is being done
+ -V, --version           display version information and exit
+ -w, --rw, --read-write  mount the filesystem read-write (default)
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Source:
+ -L, --label <label>     synonym for LABEL=<label>
+ -U, --uuid <uuid>       synonym for UUID=<uuid>
+ LABEL=<label>           specifies device by filesystem label
+ UUID=<uuid>             specifies device by filesystem UUID
+ PARTLABEL=<label>       specifies device by partition label
+ PARTUUID=<uuid>         specifies device by partition UUID
+ <device>                specifies device by path
+ <directory>             mountpoint for bind mounts (see --bind/rbind)
+ <file>                  regular file for loopdev setup
+
+Operations:
+ -B, --bind              mount a subtree somewhere else (same as -o bind)
+ -M, --move              move a subtree to some other place
+ -R, --rbind             mount a subtree and all submounts somewhere else
+ --make-shared           mark a subtree as shared
+ --make-slave            mark a subtree as slave
+ --make-private          mark a subtree as private
+ --make-unbindable       mark a subtree as unbindable
+ --make-rshared          recursively mark a whole subtree as shared
+ --make-rslave           recursively mark a whole subtree as slave
+ --make-rprivate         recursively mark a whole subtree as private
+ --make-runbindable      recursively mark a whole subtree as unbindable
+
+For more details see mount(8).
+
+Usage:
+ mount [-lhV]
+ mount -a [options]
+ mount [options] [--source] <source> | [--target] <directory>
+ mount [options] <source> <directory>
+ mount <operation> <mountpoint> [<target>]
+
+Options:
+ -a, --all               mount all filesystems mentioned in fstab
+ -c, --no-canonicalize   don't canonicalize paths
+ -f, --fake              dry run; skip the mount(2) syscall
+ -F, --fork              fork off for each device (use with -a)
+ -T, --fstab <path>      alternative file to /etc/fstab
+ -h, --help              display this help text and exit
+ -i, --internal-only     don't call the mount.<type> helpers
+ -l, --show-labels       lists all mounts with LABELs
+ -n, --no-mtab           don't write to /etc/mtab
+ -o, --options <list>    comma-separated list of mount options
+ -O, --test-opts <list>  limit the set of filesystems (use with -a)
+ -r, --read-only         mount the filesystem read-only (same as -o ro)
+ -t, --types <list>      limit the set of filesystem types
+     --source <src>      explicitly specifies source (path, label, uuid)
+     --target <target>   explicitly specifies mountpoint
+ -v, --verbose           say what is being done
+ -V, --version           display version information and exit
+ -w, --rw, --read-write  mount the filesystem read-write (default)
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Source:
+ -L, --label <label>     synonym for LABEL=<label>
+ -U, --uuid <uuid>       synonym for UUID=<uuid>
+ LABEL=<label>           specifies device by filesystem label
+ UUID=<uuid>             specifies device by filesystem UUID
+ PARTLABEL=<label>       specifies device by partition label
+ PARTUUID=<uuid>         specifies device by partition UUID
+ <device>                specifies device by path
+ <directory>             mountpoint for bind mounts (see --bind/rbind)
+ <file>                  regular file for loopdev setup
+
+Operations:
+ -B, --bind              mount a subtree somewhere else (same as -o bind)
+ -M, --move              move a subtree to some other place
+ -R, --rbind             mount a subtree and all submounts somewhere else
+ --make-shared           mark a subtree as shared
+ --make-slave            mark a subtree as slave
+ --make-private          mark a subtree as private
+ --make-unbindable       mark a subtree as unbindable
+ --make-rshared          recursively mark a whole subtree as shared
+ --make-rslave           recursively mark a whole subtree as slave
+ --make-rprivate         recursively mark a whole subtree as private
+ --make-runbindable      recursively mark a whole subtree as unbindable
+
+For more details see mount(8).
+lt-eject: too many arguments
+/tmp/util-linux-2.23.2/tests/../tests/ts/eject/umount: line 44: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (eject/umount-by-partition-mounted)
+           ... FAILED (5 from 5 sub-tests)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: align 512/4K                   ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: basename FILE [SUFFIX]
+
+Strip directory path and .SUFFIX from FILE
+
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K: line 68: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (fdisk/align-512-4K)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: align 512/4K +alignment_offset ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: basename FILE [SUFFIX]
+
+Strip directory path and .SUFFIX from FILE
+
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K-63: line 68: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (fdisk/align-512-4K-63)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: align 512/4K +MD               ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: basename FILE [SUFFIX]
+
+Strip directory path and .SUFFIX from FILE
+
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K-md: line 50: udevadm: command not found
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K-md: line 61: udevadm: command not found
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K-md: line 79: udevadm: command not found
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-4K-md: line 85: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (fdisk/align-512-4K-md)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: align 512/512                  ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: align 512/512 +topology        ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: basename FILE [SUFFIX]
+
+Strip directory path and .SUFFIX from FILE
+
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/fdisk/align-512-512-topology: line 69: udevadm: command not found
+rmmod: can't unload 'scsi_debug': unknown symbol in module, or unknown parameter
+ FAILED (fdisk/align-512-512-topology)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: nested BSD                     ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: GPT                            ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: MBR - id                       ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: MBR - dos mode                 ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: MBR - non-dos mode             ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: invalid input tests            ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+        fdisk: sunlabel tests                 ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         fsck: is mounted                     ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+      hexdump: format-strings                 ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+      hwclock: system to hw                   ... IGNORE (cannot sync with 0.fedora.pool.ntp.org)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: headers                        ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: limits overflow                ... FAILED (ipcs/limits)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: basic limits                   ... FAILED (ipcs/limits2)
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: mk-rm-msg                      ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: mk-rm-sem                      ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+         ipcs: mk-rm-shm                      ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+      isosize: print-size                     ... OK
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: readlink FILE
+
+Display the value of a symlink
+
+     libmount: context                        ...modprobe: unrecognized option '--dry-run'
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: modprobe [-alrqvsD] MODULE [symbol=value]...
+
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
+	-r	Remove MODULE (stacks) or do autoclean
+	-q	Quiet
+	-v	Verbose
+	-s	Log to syslog
+	-D	Show dependencies
+
+BusyBox v1.20.2 (2013-09-26 06:50:14 JST) multi-call binary.
+
+Usage: basename FILE [SUFFIX]
+
+Strip directory path and .SUFFIX from FILE
+
+
+/tmp/util-linux-2.23.2/tests/../tests/ts/libmount/context: line 41: udevadm: command not found

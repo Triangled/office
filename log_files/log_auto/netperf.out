@@ -1,0 +1,108 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 12:54:05 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /tmp
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ killall -9 /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netserver
+/usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netserver: no process found
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netserver || echo 'COMMAND''ERROR'
+Starting netserver with host 'IN(6)ADDR_ANY' port '12865' and family AF_UNSPEC
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf || echo 'COMMAND''ERROR'
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    10.00    25173.37   
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t TCP_STREAM || echo 'COMMAND''ERROR'
+MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    10.00    26541.55   
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t UDP_STREAM || echo 'COMMAND''ERROR'
+MIGRATED UDP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Socket  Message  Elapsed      Messages                
+Size    Size     Time         Okay Errors   Throughput
+bytes   bytes    secs            #      #   10^6bits/sec
+
+212992   65507   10.00      676864      0    35471.19
+212992           10.00      645025           33802.66
+
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t TCP_CRR || echo 'COMMAND''ERROR'
+MIGRATED TCP Connect/Request/Response TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Local /Remote
+Socket Size   Request  Resp.   Elapsed  Trans.
+Send   Recv   Size     Size    Time     Rate         
+bytes  Bytes  bytes    bytes   secs.    per sec   
+
+16384  87380  1        1       10.00    13163.06   
+16384  87380 
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ touch file1
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -f file1 -t TCP_SENDFILE || echo 'COMMAND''ER ROR'
+TCP SENDFILE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    KBytes/sec  
+
+ 87380  16384  16384    10.00    5240440.97   
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t TCP_MAERTS || echo 'COMMAND''ERROR'
+MIGRATED TCP MAERTS TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET
+Recv   Send    Send                          
+Socket Socket  Message  Elapsed              
+Size   Size    Size     Time     Throughput  
+bytes  bytes   bytes    secs.    10^6bits/sec  
+
+ 87380  16384  16384    10.00    25131.82   
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t TCP_RR || echo 'COMMAND''ERROR'
+MIGRATED TCP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET : first burst 0
+Local /Remote
+Socket Size   Request  Resp.   Elapsed  Trans.
+Send   Recv   Size     Size    Time     Rate         
+bytes  Bytes  bytes    bytes   secs.    per sec   
+
+16384  87380  1        1       10.00    51396.08   
+16384  87380 
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t UDP_RR || echo 'COMMAND''ERROR'
+MIGRATED UDP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to localhost.localdomain () port 0 AF_INET : first burst 0
+Local /Remote
+Socket Size   Request  Resp.   Elapsed  Trans.
+Send   Recv   Size     Size    Time     Rate         
+bytes  Bytes  bytes    bytes   secs.    per sec   
+
+212992 212992 1        1       10.00    58317.73   
+212992 212992
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t LOC_CPU || echo 'COMMAND''ERROR'
+100]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ /usr/local/arm-sony-linux-gnueabi/host/bin//arm-sony-linux-gnueabi-netperf -t REM_CPU || echo 'COMMAND''ERROR'
+100]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ cd /tmp
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ netperf-host test completed!
+netperf-host : TEST_OK

@@ -1,0 +1,1807 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-util-linux-2.23-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-util-liwarning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  2%)#                                           (  4%)##                                          (  6%)###                                         (  9%)####                                        ( 10%)#####                                       ( 13%)######                                      ( 15%)#######                                     ( 18%)########                                    ( 20%)#########                                   ( 23%)##########                                  ( 24%)###########                                 ( 26%)############                                ( 29%)#############                               ( 31%)##############                              ( 34%)###############                             ( 36%)################                            ( 38%)#################                           ( 40%)##################                          ( 43%)###################                         ( 45%)####################                        ( 48%)#####################                       ( 50%)######################                      ( 51%)#######################                     ( 54%)########################                    ( 56%)#########################                   ( 59%)##########################                  ( 61%)###########################                 ( 63%)############################                ( 65%)#############################               ( 67%)##############################              ( 70%)###############################             ( 72%)################################            ( 75%)#################################           ( 76%)##################################          ( 79%)###################################         ( 81%)####################################        ( 84%)#####################################       ( 86%)######################################      ( 89%)#######################################     ( 90%)########################################    ( 92%)#########################################   ( 95%)##########################################  ( 97%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-util-linux-ng.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.yv4ySH
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf util-linux-2.23
++ /bin/bzip2 -dc /home/rpmuser/rpm/SOURCES/util-linux-2.23.tar.bz2
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd util-linux-2.23
++ echo 'Patch #1 (util-linux-adjust-sbin.patch):'
+Patch #1 (util-linux-adjust-sbin.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/util-linux-adjust-sbin.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QuewI8
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd util-linux-2.23
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --sbindir=/usr/sbin --bindir=/usr/bin --libdir=/usr/lib
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking how to create a pax tar archive... gnutar
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking whether make supports nested variables... yes
+configure: Default --exec-prefix detected.
+configure:   --localstatedir defaults to /run
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a and cc understand -c and -o together... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C99... -std=gnu99
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for an ANSI C-conforming const... yes
+checking for working volatile... yes
+checking whether byte ordering is bigendian... no
+checking whether compiler handles -fno-common... yes
+checking whether compiler handles -Wall... yes
+checking whether compiler handles -Werror=sequence-point... yes
+checking whether compiler handles -Wextra... yes
+checking whether compiler handles -Wmissing-declarations... yes
+checking whether compiler handles -Wmissing-parameter-type... yes
+checking whether compiler handles -Wmissing-prototypes... yes
+checking whether compiler handles -Wno-missing-field-initializers... yes
+checking whether compiler handles -Wredundant-decls... yes
+checking whether compiler handles -Wsign-compare... yes
+checking whether compiler handles -Wtype-limits... yes
+checking whether compiler handles -Wuninitialized... yes
+checking whether compiler handles -Wunused-but-set-parameter... yes
+checking whether compiler handles -Wunused-but-set-variable... yes
+checking whether compiler handles -Wunused-parameter... yes
+checking whether compiler handles -Wunused-result... yes
+checking whether compiler handles -Wunused-variable... yes
+checking whether compiler handles -Wnested-externs... yes
+checking whether compiler handles -Wpointer-arith... yes
+checking whether compiler handles -Wstrict-prototypes... yes
+checking whether compiler handles -Wformat-security... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-sony-linux-gnueabi-nm
+checking the name lister (arm-sony-linux-gnueabi-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to arm-sony-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-sony-linux-gnueabi-ld option to reload object files... -r
+checking for arm-sony-linux-gnueabi-objdump... arm-sony-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-sony-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-sony-linux-gnueabi-ar... arm-sony-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-sony-linux-gnueabi-strip... (cached) true
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking command to parse arm-sony-linux-gnueabi-nm output from arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 object... ok
+checking for sysroot... no
+checking for arm-sony-linux-gnueabi-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 static flag -static works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -c -o file.o... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 linker (arm-sony-linux-gnueabi-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for arm-sony-linux-gnueabi-pkg-config... no
+checking for pkg-config... /usr/local/arm-sony-linux-gnueabi/host/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build gtk-doc documentation... no
+checking for gtkdoc-check... no
+checking for xsltproc... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking for linux/compiler.h... no
+checking for linux/blkpg.h... yes
+checking for linux/major.h... yes
+checking asm/io.h usability... no
+checking asm/io.h presence... no
+checking for asm/io.h... no
+checking err.h usability... yes
+checking err.h presence... yes
+checking for err.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for inttypes.h... (cached) yes
+checking linux/cdrom.h usability... yes
+checking linux/cdrom.h presence... yes
+checking for linux/cdrom.h... yes
+checking linux/falloc.h usability... yes
+checking linux/falloc.h presence... yes
+checking for linux/falloc.h... yes
+checking linux/watchdog.h usability... yes
+checking linux/watchdog.h presence... yes
+checking for linux/watchdog.h... yes
+checking linux/fd.h usability... yes
+checking linux/fd.h presence... yes
+checking for linux/fd.h... yes
+checking linux/raw.h usability... yes
+checking linux/raw.h presence... yes
+checking for linux/raw.h... yes
+checking linux/tiocl.h usability... yes
+checking linux/tiocl.h presence... yes
+checking for linux/tiocl.h... yes
+checking linux/version.h usability... yes
+checking linux/version.h presence... yes
+checking for linux/version.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking net/if.h usability... yes
+checking net/if.h presence... yes
+checking for net/if.h... yes
+checking net/if_dl.h usability... no
+checking net/if_dl.h presence... no
+checking for net/if_dl.h... no
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking paths.h usability... yes
+checking paths.h presence... yes
+checking for paths.h... yes
+checking pty.h usability... yes
+checking pty.h presence... yes
+checking for pty.h... yes
+checking security/pam_misc.h usability... yes
+checking security/pam_misc.h presence... yes
+checking for security/pam_misc.h... yes
+checking for stdint.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdlib.h... (cached) yes
+checking endian.h usability... yes
+checking endian.h presence... yes
+checking for endian.h... yes
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking sys/endian.h usability... no
+checking sys/endian.h presence... no
+checking for sys/endian.h... no
+checking sys/disk.h usability... no
+checking sys/disk.h presence... no
+checking for sys/disk.h... no
+checking sys/disklabel.h usability... no
+checking sys/disklabel.h presence... no
+checking for sys/disklabel.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/io.h usability... yes
+checking sys/io.h presence... yes
+checking for sys/io.h... yes
+checking sys/ioccom.h usability... no
+checking sys/ioccom.h presence... no
+checking for sys/ioccom.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking sys/prctl.h usability... yes
+checking sys/prctl.h presence... yes
+checking for sys/prctl.h... yes
+checking sys/queue.h usability... yes
+checking sys/queue.h presence... yes
+checking for sys/queue.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/sockio.h usability... no
+checking sys/sockio.h presence... no
+checking for sys/sockio.h... no
+checking for sys/stat.h... (cached) yes
+checking sys/swap.h usability... yes
+checking sys/swap.h presence... yes
+checking for sys/swap.h... yes
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking for unistd.h... (cached) yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for struct termios.c_line... yes
+checking for struct stat.st_mtim.tv_nsec... yes
+checking whether UNAME26 is declared... yes
+checking whether ADDR_NO_RANDOMIZE is declared... yes
+checking whether FDPIC_FUNCPTRS is declared... yes
+checking whether MMAP_PAGE_ZERO is declared... yes
+checking whether ADDR_COMPAT_LAYOUT is declared... yes
+checking whether READ_IMPLIES_EXEC is declared... yes
+checking whether ADDR_LIMIT_32BIT is declared... yes
+checking whether WHOLE_SECONDS is declared... yes
+checking whether STICKY_TIMEOUTS is declared... yes
+checking whether ADDR_LIMIT_3GB is declared... yes
+checking whether _NL_TIME_WEEK_1STDAY is declared... yes
+checking whether llseek is declared... no
+checking whether lseek64 is declared... yes
+checking whether environ is declared... yes
+checking whether strsignal is declared... yes
+checking for __fpending... yes
+checking for secure_getenv... no
+checking for __secure_getenv... yes
+checking for err... yes
+checking for errx... yes
+checking for fsync... yes
+checking for futimens... yes
+checking for getdomainname... yes
+checking for getdtablesize... yes
+checking for getexecname... no
+checking for getmntinfo... no
+checking for getrlimit... yes
+checking for inotify_init... yes
+checking for jrand48... yes
+checking for lchown... yes
+checking for llseek... yes
+checking for lseek64... yes
+checking for mempcpy... yes
+checking for nanosleep... yes
+checking for personality... yes
+checking for posix_fadvise... yes
+checking for prctl... yes
+checking for rpmatch... yes
+checking for scandirat... yes
+checking for setresgid... yes
+checking for setresuid... yes
+checking for sigqueue... yes
+checking for srandom... yes
+checking for strnchr... no
+checking for strndup... yes
+checking for strnlen... yes
+checking for strtoull... yes
+checking for sysconf... yes
+checking for updwtmp... yes
+checking for usleep... yes
+checking for warn... yes
+checking for warnx... yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for openat... yes
+checking for fstatat... yes
+checking for unlinkat... yes
+checking for ioperm... yes
+checking for iopl... yes
+checking for struct sockaddr.sa_len... no
+checking for library containing socket... none required
+checking for dirfd... yes
+checking whether program_invocation_short_name is defined... yes
+checking whether __progname is defined... yes
+checking whether the target supports thread-local storage... yes
+checking scanf string alloc modifiers... (%ms) yes
+checking for openpty in -lutil... yes
+checking for tgetnum in -ltermcap... no
+checking for union semun... no
+checking for loff_t... yes
+checking for cpu_set_t... yes
+checking whether CPU_ALLOC is declared... yes
+checking crypt.h usability... yes
+checking crypt.h presence... yes
+checking for crypt.h... yes
+checking for udev_new in -ludev... no
+checking ncurses.h usability... yes
+checking ncurses.h presence... yes
+checking for ncurses.h... yes
+checking for initscr in -lncursesw... no
+checking for initscr in -lncurses... yes
+checking ncurses/ncurses.h usability... no
+checking ncurses/ncurses.h presence... no
+checking for ncurses/ncurses.h... no
+checking for tgetent in -ltinfo... no
+checking for syscall fallocate... SYS_fallocate
+checking for valid fallocate() function... yes
+checking for syscall unshare... SYS_unshare
+checking for unshare... yes
+checking for syscall setns... SYS_setns
+checking for setns... yes
+checking for capng_apply in -lcap-ng... no
+configure: WARNING: libcap-ng not found; do not build setpriv
+checking for crc32 in -lz... yes
+checking for syscall prlimit64... SYS_prlimit64
+checking for prlimit... yes
+checking for syscall pivot_root... SYS_pivot_root
+checking for LIBUSER... no
+checking for lu_start in -luser... no
+checking for syscall ioprio_set... SYS_ioprio_set
+checking for syscall ioprio_get... SYS_ioprio_get
+checking for syscall sched_getaffinity... SYS_sched_getaffinity
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libblkid/docs/Makefile
+config.status: creating libblkid/docs/version.xml
+config.status: creating libblkid/src/blkid.h
+config.status: creating libmount/docs/Makefile
+config.status: creating libmount/docs/version.xml
+config.status: creating libmount/src/libmount.h
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+	util-linux  2.23-rc1
+
+	prefix:            /usr
+	exec prefix:       ${prefix}
+
+        localstatedir:     /run
+	bindir:	           /usr/bin
+	sbindir:           /usr/sbin
+	libdir:            /usr/lib
+	includedir:        /tool//usr/include
+        usrbin_execdir:    ${exec_prefix}/bin
+        usrsbin_execdir:   ${exec_prefix}/sbin
+        usrlib_execdir:    /usr/lib
+
+	compiler:          arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99
+	cflags:            -O2
+	suid cflags:       
+	ldflags:           
+	suid ldflags:      
+
+	warnings:
+
+ -fno-common -Wall -Werror=sequence-point -Wextra -Wmissing-declarations -Wmissing-parameter-type -Wmissing-prototypes -Wno-missing-field-initializers -Wredundant-decls -Wsign-compare -Wtype-limits -Wuninitialized -Wunused-but-set-parameter -Wunused-but-set-variable -Wunused-parameter -Wunused-result -Wunused-variable -Wnested-externs -Wpointer-arith -Wstrict-prototypes
+
++ make
+CDPATH="${ZSH_VERSION+.}:" && cd .. && /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing --run aclocal-1.12 -I m4
+/home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing: line 51: aclocal-1.12: command not found
+WARNING: 'aclocal-1.12' is missing on your system.  You should only need it if
+         you modified 'acinclude.m4' or 'configure.ac'.  You might want
+         to install the Automake and Perl packages.  Grab them from
+         any GNU archive site.
+ cd .. && /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing --run automake-1.12 --foreign
+/home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing: line 51: automake-1.12: command not found
+WARNING: 'automake-1.12' is missing on your system.  You should only need it if
+         you modified 'Makefile.am', 'acinclude.m4' or 'configure.ac'.
+         You might want to install the Automake and Perl packages.
+         Grab them from any GNU archive site.
+CDPATH="${ZSH_VERSION+.}:" && cd .. && /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing --run autoconf
+aclocal.m4:16: warning: this file was generated for autoconf 2.69.
+You have another version of autoconf.  It may work, but is not guaranteed to.
+If you have problems, you may need to regenerate the build system entirely.
+To do so, use the procedure documented by the package, typically 'autoreconf'.
+/bin/sh ./config.status --recheck
+running CONFIG_SHELL=/bin/sh /bin/sh ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --sbindir=/usr/sbin --bindir=/usr/bin --libdir=/usr/lib build_alias=x86_64-pc-linux-gnu host_alias=arm-sony-linux-gnueabi CC=arm-sony-linux-gnueabi-gcc -tarmv7a CFLAGS=-O2 LDFLAGS= CPP=arm-sony-linux-gnueabi-cpp -tarmv7a PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig --no-create --no-recursion
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking how to create a pax tar archive... gnutar
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking whether make supports nested variables... yes
+configure: Default --exec-prefix detected.
+configure:   --localstatedir defaults to /run
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a and cc understand -c and -o together... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C99... -std=gnu99
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for an ANSI C-conforming const... yes
+checking for working volatile... yes
+checking whether byte ordering is bigendian... no
+checking whether compiler handles -fno-common... yes
+checking whether compiler handles -Wall... yes
+checking whether compiler handles -Werror=sequence-point... yes
+checking whether compiler handles -Wextra... yes
+checking whether compiler handles -Wmissing-declarations... yes
+checking whether compiler handles -Wmissing-parameter-type... yes
+checking whether compiler handles -Wmissing-prototypes... yes
+checking whether compiler handles -Wno-missing-field-initializers... yes
+checking whether compiler handles -Wredundant-decls... yes
+checking whether compiler handles -Wsign-compare... yes
+checking whether compiler handles -Wtype-limits... yes
+checking whether compiler handles -Wuninitialized... yes
+checking whether compiler handles -Wunused-but-set-parameter... yes
+checking whether compiler handles -Wunused-but-set-variable... yes
+checking whether compiler handles -Wunused-parameter... yes
+checking whether compiler handles -Wunused-result... yes
+checking whether compiler handles -Wunused-variable... yes
+checking whether compiler handles -Wnested-externs... yes
+checking whether compiler handles -Wpointer-arith... yes
+checking whether compiler handles -Wstrict-prototypes... yes
+checking whether compiler handles -Wformat-security... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... arm-sony-linux-gnueabi-nm
+checking the name lister (arm-sony-linux-gnueabi-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to arm-sony-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for arm-sony-linux-gnueabi-ld option to reload object files... -r
+checking for arm-sony-linux-gnueabi-objdump... arm-sony-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-sony-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-sony-linux-gnueabi-ar... arm-sony-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-sony-linux-gnueabi-strip... (cached) true
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking command to parse arm-sony-linux-gnueabi-nm output from arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 object... ok
+checking for sysroot... no
+checking for arm-sony-linux-gnueabi-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 static flag -static works... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -c -o file.o... yes
+checking if arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 linker (arm-sony-linux-gnueabi-ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... no
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for arm-sony-linux-gnueabi-pkg-config... no
+checking for pkg-config... /usr/local/arm-sony-linux-gnueabi/host/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build gtk-doc documentation... no
+checking for gtkdoc-check... no
+checking for xsltproc... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking for linux/compiler.h... no
+checking for linux/blkpg.h... yes
+checking for linux/major.h... yes
+checking asm/io.h usability... no
+checking asm/io.h presence... no
+checking for asm/io.h... no
+checking err.h usability... yes
+checking err.h presence... yes
+checking for err.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for inttypes.h... (cached) yes
+checking linux/cdrom.h usability... yes
+checking linux/cdrom.h presence... yes
+checking for linux/cdrom.h... yes
+checking linux/falloc.h usability... yes
+checking linux/falloc.h presence... yes
+checking for linux/falloc.h... yes
+checking linux/watchdog.h usability... yes
+checking linux/watchdog.h presence... yes
+checking for linux/watchdog.h... yes
+checking linux/fd.h usability... yes
+checking linux/fd.h presence... yes
+checking for linux/fd.h... yes
+checking linux/raw.h usability... yes
+checking linux/raw.h presence... yes
+checking for linux/raw.h... yes
+checking linux/tiocl.h usability... yes
+checking linux/tiocl.h presence... yes
+checking for linux/tiocl.h... yes
+checking linux/version.h usability... yes
+checking linux/version.h presence... yes
+checking for linux/version.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking net/if.h usability... yes
+checking net/if.h presence... yes
+checking for net/if.h... yes
+checking net/if_dl.h usability... no
+checking net/if_dl.h presence... no
+checking for net/if_dl.h... no
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking paths.h usability... yes
+checking paths.h presence... yes
+checking for paths.h... yes
+checking pty.h usability... yes
+checking pty.h presence... yes
+checking for pty.h... yes
+checking security/pam_misc.h usability... yes
+checking security/pam_misc.h presence... yes
+checking for security/pam_misc.h... yes
+checking for stdint.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdlib.h... (cached) yes
+checking endian.h usability... yes
+checking endian.h presence... yes
+checking for endian.h... yes
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking sys/endian.h usability... no
+checking sys/endian.h presence... no
+checking for sys/endian.h... no
+checking sys/disk.h usability... no
+checking sys/disk.h presence... no
+checking for sys/disk.h... no
+checking sys/disklabel.h usability... no
+checking sys/disklabel.h presence... no
+checking for sys/disklabel.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/io.h usability... yes
+checking sys/io.h presence... yes
+checking for sys/io.h... yes
+checking sys/ioccom.h usability... no
+checking sys/ioccom.h presence... no
+checking for sys/ioccom.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking sys/prctl.h usability... yes
+checking sys/prctl.h presence... yes
+checking for sys/prctl.h... yes
+checking sys/queue.h usability... yes
+checking sys/queue.h presence... yes
+checking for sys/queue.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/sockio.h usability... no
+checking sys/sockio.h presence... no
+checking for sys/sockio.h... no
+checking for sys/stat.h... (cached) yes
+checking sys/swap.h usability... yes
+checking sys/swap.h presence... yes
+checking for sys/swap.h... yes
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking for unistd.h... (cached) yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for struct termios.c_line... yes
+checking for struct stat.st_mtim.tv_nsec... yes
+checking whether UNAME26 is declared... yes
+checking whether ADDR_NO_RANDOMIZE is declared... yes
+checking whether FDPIC_FUNCPTRS is declared... yes
+checking whether MMAP_PAGE_ZERO is declared... yes
+checking whether ADDR_COMPAT_LAYOUT is declared... yes
+checking whether READ_IMPLIES_EXEC is declared... yes
+checking whether ADDR_LIMIT_32BIT is declared... yes
+checking whether WHOLE_SECONDS is declared... yes
+checking whether STICKY_TIMEOUTS is declared... yes
+checking whether ADDR_LIMIT_3GB is declared... yes
+checking whether _NL_TIME_WEEK_1STDAY is declared... yes
+checking whether llseek is declared... no
+checking whether lseek64 is declared... yes
+checking whether environ is declared... yes
+checking whether strsignal is declared... yes
+checking for __fpending... yes
+checking for secure_getenv... no
+checking for __secure_getenv... yes
+checking for err... yes
+checking for errx... yes
+checking for fsync... yes
+checking for futimens... yes
+checking for getdomainname... yes
+checking for getdtablesize... yes
+checking for getexecname... no
+checking for getmntinfo... no
+checking for getrlimit... yes
+checking for inotify_init... yes
+checking for jrand48... yes
+checking for lchown... yes
+checking for llseek... yes
+checking for lseek64... yes
+checking for mempcpy... yes
+checking for nanosleep... yes
+checking for personality... yes
+checking for posix_fadvise... yes
+checking for prctl... yes
+checking for rpmatch... yes
+checking for scandirat... yes
+checking for setresgid... yes
+checking for setresuid... yes
+checking for sigqueue... yes
+checking for srandom... yes
+checking for strnchr... no
+checking for strndup... yes
+checking for strnlen... yes
+checking for strtoull... yes
+checking for sysconf... yes
+checking for updwtmp... yes
+checking for usleep... yes
+checking for warn... yes
+checking for warnx... yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for openat... yes
+checking for fstatat... yes
+checking for unlinkat... yes
+checking for ioperm... yes
+checking for iopl... yes
+checking for struct sockaddr.sa_len... no
+checking for library containing socket... none required
+checking for dirfd... yes
+checking whether program_invocation_short_name is defined... yes
+checking whether __progname is defined... yes
+checking whether the target supports thread-local storage... yes
+checking scanf string alloc modifiers... (%ms) yes
+checking for openpty in -lutil... yes
+checking for tgetnum in -ltermcap... no
+checking for union semun... no
+checking for loff_t... yes
+checking for cpu_set_t... yes
+checking whether CPU_ALLOC is declared... yes
+checking crypt.h usability... yes
+checking crypt.h presence... yes
+checking for crypt.h... yes
+checking for udev_new in -ludev... no
+checking ncurses.h usability... yes
+checking ncurses.h presence... yes
+checking for ncurses.h... yes
+checking for initscr in -lncursesw... no
+checking for initscr in -lncurses... yes
+checking ncurses/ncurses.h usability... no
+checking ncurses/ncurses.h presence... no
+checking for ncurses/ncurses.h... no
+checking for tgetent in -ltinfo... no
+checking for syscall fallocate... SYS_fallocate
+checking for valid fallocate() function... yes
+checking for syscall unshare... SYS_unshare
+checking for unshare... yes
+checking for syscall setns... SYS_setns
+checking for setns... yes
+checking for capng_apply in -lcap-ng... no
+configure: WARNING: libcap-ng not found; do not build setpriv
+checking for crc32 in -lz... yes
+checking for syscall prlimit64... SYS_prlimit64
+checking for prlimit... yes
+checking for syscall pivot_root... SYS_pivot_root
+checking for LIBUSER... no
+checking for lu_start in -luser... no
+checking for syscall ioprio_set... SYS_ioprio_set
+checking for syscall ioprio_get... SYS_ioprio_get
+checking for syscall sched_getaffinity... SYS_sched_getaffinity
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+
+	util-linux  2.23-rc1
+
+	prefix:            /usr
+	exec prefix:       ${prefix}
+
+        localstatedir:     /run
+	bindir:	           /usr/bin
+	sbindir:           /usr/sbin
+	libdir:            /usr/lib
+	includedir:        /tool//usr/include
+        usrbin_execdir:    ${exec_prefix}/bin
+        usrsbin_execdir:   ${exec_prefix}/sbin
+        usrlib_execdir:    /usr/lib
+
+	compiler:          arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99
+	cflags:            -O2
+	suid cflags:       
+	ldflags:           
+	suid ldflags:      
+
+	warnings:
+
+ -fno-common -Wall -Werror=sequence-point -Wextra -Wmissing-declarations -Wmissing-parameter-type -Wmissing-prototypes -Wno-missing-field-initializers -Wredundant-decls -Wsign-compare -Wtype-limits -Wuninitialized -Wunused-but-set-parameter -Wunused-but-set-variable -Wunused-parameter -Wunused-result -Wunused-variable -Wnested-externs -Wpointer-arith -Wstrict-prototypes
+
+ /bin/sh ./config.status
+config.status: creating Makefile
+config.status: creating libblkid/docs/Makefile
+config.status: creating libblkid/docs/version.xml
+config.status: creating libblkid/src/blkid.h
+config.status: creating libmount/docs/Makefile
+config.status: creating libmount/docs/version.xml
+config.status: creating libmount/src/libmount.h
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+(CDPATH="${ZSH_VERSION+.}:" && cd .. && /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/config/missing --run autoheader)
+rm -f stamp-h1
+touch ../config.h.in
+cd . && /bin/sh ./config.status config.h
+config.status: creating config.h
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+Making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/po'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+  CC       lib/libcommon_la-at.lo
+  CC       lib/libcommon_la-blkdev.lo
+  CC       lib/libcommon_la-canonicalize.lo
+  CC       lib/libcommon_la-colors.lo
+  CC       lib/libcommon_la-crc32.lo
+  CC       lib/libcommon_la-env.lo
+  CC       lib/libcommon_la-fileutils.lo
+  CC       lib/libcommon_la-ismounted.lo
+  CC       lib/libcommon_la-mangle.lo
+  CC       lib/libcommon_la-match.lo
+  CC       lib/libcommon_la-mbsalign.lo
+  CC       lib/libcommon_la-md5.lo
+  CC       lib/libcommon_la-pager.lo
+  CC       lib/libcommon_la-path.lo
+  CC       lib/libcommon_la-procutils.lo
+  CC       lib/libcommon_la-randutils.lo
+  CC       lib/libcommon_la-setproctitle.lo
+  CC       lib/libcommon_la-strutils.lo
+  CC       lib/libcommon_la-sysfs.lo
+  CC       lib/libcommon_la-tt.lo
+  CC       lib/libcommon_la-wholedisk.lo
+  CC       lib/libcommon_la-ttyutils.lo
+  CC       lib/libcommon_la-xgetpass.lo
+  CC       lib/libcommon_la-exec_shell.lo
+  CC       lib/libcommon_la-linux_version.lo
+  CC       lib/libcommon_la-loopdev.lo
+  CC       lib/libcommon_la-cpuset.lo
+  CCLD     libcommon.la
+  CC       libfdisk/src/libfdisk_la-init.lo
+  CC       libfdisk/src/libfdisk_la-test.lo
+  CC       libfdisk/src/libfdisk_la-ask.lo
+  CC       libfdisk/src/libfdisk_la-alignment.lo
+  CC       libfdisk/src/libfdisk_la-label.lo
+  CC       libfdisk/src/libfdisk_la-utils.lo
+  CC       libfdisk/src/libfdisk_la-context.lo
+  CC       libfdisk/src/libfdisk_la-parttype.lo
+  CC       libfdisk/src/libfdisk_la-gpt.lo
+  CC       libblkid/src/libblkid_la-cache.lo
+  CC       libblkid/src/libblkid_la-config.lo
+  CC       libblkid/src/libblkid_la-dev.lo
+  CC       libblkid/src/libblkid_la-devname.lo
+  CC       libblkid/src/libblkid_la-devno.lo
+  CC       libblkid/src/libblkid_la-encode.lo
+  CC       libblkid/src/libblkid_la-evaluate.lo
+  CC       libblkid/src/libblkid_la-getsize.lo
+  CC       libblkid/src/libblkid_la-llseek.lo
+  CC       libblkid/src/libblkid_la-probe.lo
+  CC       libblkid/src/libblkid_la-read.lo
+  CC       libblkid/src/libblkid_la-resolve.lo
+  CC       libblkid/src/libblkid_la-save.lo
+  CC       libblkid/src/libblkid_la-tag.lo
+  CC       libblkid/src/libblkid_la-verify.lo
+  CC       libblkid/src/libblkid_la-version.lo
+  CC       libblkid/src/partitions/libblkid_la-aix.lo
+  CC       libblkid/src/partitions/libblkid_la-bsd.lo
+  CC       libblkid/src/partitions/libblkid_la-dos.lo
+  CC       libblkid/src/partitions/libblkid_la-gpt.lo
+  CC       libblkid/src/partitions/libblkid_la-mac.lo
+  CC       libblkid/src/partitions/libblkid_la-minix.lo
+  CC       libblkid/src/partitions/libblkid_la-partitions.lo
+  CC       libblkid/src/partitions/libblkid_la-sgi.lo
+  CC       libblkid/src/partitions/libblkid_la-solaris_x86.lo
+  CC       libblkid/src/partitions/libblkid_la-sun.lo
+  CC       libblkid/src/partitions/libblkid_la-ultrix.lo
+  CC       libblkid/src/partitions/libblkid_la-unixware.lo
+  CC       libblkid/src/superblocks/libblkid_la-adaptec_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-befs.lo
+  CC       libblkid/src/superblocks/libblkid_la-bfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-btrfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-cramfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-ddf_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-drbd.lo
+  CC       libblkid/src/superblocks/libblkid_la-drbdproxy_datalog.lo
+  CC       libblkid/src/superblocks/libblkid_la-exfat.lo
+  CC       libblkid/src/superblocks/libblkid_la-ext.lo
+  CC       libblkid/src/superblocks/libblkid_la-f2fs.lo
+  CC       libblkid/src/superblocks/libblkid_la-gfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-hfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-highpoint_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-hpfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-iso9660.lo
+  CC       libblkid/src/superblocks/libblkid_la-isw_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-jfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-jmicron_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-linux_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-lsi_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-luks.lo
+  CC       libblkid/src/superblocks/libblkid_la-lvm.lo
+  CC       libblkid/src/superblocks/libblkid_la-minix.lo
+  CC       libblkid/src/superblocks/libblkid_la-netware.lo
+  CC       libblkid/src/superblocks/libblkid_la-nilfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-ntfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-nvidia_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-ocfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-promise_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-reiserfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-romfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-silicon_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-squashfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-superblocks.lo
+  CC       libblkid/src/superblocks/libblkid_la-swap.lo
+  CC       libblkid/src/superblocks/libblkid_la-sysv.lo
+  CC       libblkid/src/superblocks/libblkid_la-ubifs.lo
+  CC       libblkid/src/superblocks/libblkid_la-udf.lo
+  CC       libblkid/src/superblocks/libblkid_la-ufs.lo
+  CC       libblkid/src/superblocks/libblkid_la-vfat.lo
+  CC       libblkid/src/superblocks/libblkid_la-via_raid.lo
+  CC       libblkid/src/superblocks/libblkid_la-vmfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-vxfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-xfs.lo
+  CC       libblkid/src/superblocks/libblkid_la-zfs.lo
+  CC       libblkid/src/topology/libblkid_la-topology.lo
+  CC       libblkid/src/topology/libblkid_la-dm.lo
+  CC       libblkid/src/topology/libblkid_la-evms.lo
+  CC       libblkid/src/topology/libblkid_la-ioctl.lo
+  CC       libblkid/src/topology/libblkid_la-lvm.lo
+  CC       libblkid/src/topology/libblkid_la-md.lo
+  CC       libblkid/src/topology/libblkid_la-sysfs.lo
+  CC       libuuid/src/libuuid_la-clear.lo
+  CC       libuuid/src/libuuid_la-compare.lo
+  CC       libuuid/src/libuuid_la-copy.lo
+  CC       libuuid/src/libuuid_la-gen_uuid.lo
+  CC       libuuid/src/libuuid_la-isnull.lo
+  CC       libuuid/src/libuuid_la-pack.lo
+  CC       libuuid/src/libuuid_la-parse.lo
+  CC       libuuid/src/libuuid_la-unpack.lo
+  CC       libuuid/src/libuuid_la-unparse.lo
+  CC       libuuid/src/libuuid_la-uuid_time.lo
+  CC       lib/libuuid_la-randutils.lo
+  CCLD     libuuid.la
+  CCLD     libblkid.la
+copying selected object files to avoid basename conflicts...
+  CCLD     libfdisk.la
+  CC       libmount/src/libmount_la-cache.lo
+  CC       libmount/src/libmount_la-context.lo
+  CC       libmount/src/libmount_la-context_loopdev.lo
+  CC       libmount/src/libmount_la-context_mount.lo
+  CC       libmount/src/libmount_la-context_umount.lo
+  CC       libmount/src/libmount_la-fs.lo
+  CC       libmount/src/libmount_la-init.lo
+  CC       libmount/src/libmount_la-iter.lo
+  CC       libmount/src/libmount_la-lock.lo
+  CC       libmount/src/libmount_la-optmap.lo
+  CC       libmount/src/libmount_la-optstr.lo
+  CC       libmount/src/libmount_la-tab.lo
+  CC       libmount/src/libmount_la-tab_diff.lo
+  CC       libmount/src/libmount_la-tab_parse.lo
+  CC       libmount/src/libmount_la-tab_update.lo
+  CC       libmount/src/libmount_la-test.lo
+  CC       libmount/src/libmount_la-utils.lo
+  CC       libmount/src/libmount_la-version.lo
+  CCLD     libmount.la
+  CC       text-utils/more.o
+../text-utils/more.c: In function 'main':
+../text-utils/more.c:342:6: warning: variable 'left' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/more.c:343:6: warning: variable 'prnames' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/more.c:344:6: warning: variable 'initopt' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/more.c:345:6: warning: variable 'srchopt' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/more.c:348:8: warning: variable 'initbuf' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+  CCLD     more
+  CC       login-utils/login.o
+  CC       login-utils/logindefs.o
+  CCLD     login
+  CC       login-utils/su-su.o
+  CC       login-utils/su-su-common.o
+  CC       login-utils/su-logindefs.o
+  CCLD     su
+  CC       sys-utils/dmesg.o
+  CCLD     dmesg
+  CC       sys-utils/mount-mount.o
+  CCLD     mount
+  CC       sys-utils/umount-umount.o
+  CCLD     umount
+  CC       sys-utils/wdctl.o
+  CCLD     wdctl
+  CC       sys-utils/mountpoint-mountpoint.o
+  CCLD     mountpoint
+  CC       misc-utils/lsblk-lsblk.o
+  CCLD     lsblk
+  CC       misc-utils/findmnt-findmnt.o
+../misc-utils/findmnt.c: In function 'get_tag':
+../misc-utils/findmnt.c:413:75: warning: unused parameter 'col' [-Wunused-parameter]
+  CCLD     findmnt
+  CC       misc-utils/kill.o
+  CCLD     kill
+  CC       term-utils/agetty.o
+  CCLD     agetty
+  CC       login-utils/sulogin.o
+  CC       login-utils/sulogin-consoles.o
+  CCLD     sulogin
+  CC       login-utils/runuser.o
+  CC       login-utils/su-common.o
+  CCLD     runuser
+  CC       sys-utils/ctrlaltdel.o
+  CCLD     ctrlaltdel
+  CC       sys-utils/fsfreeze.o
+  CCLD     fsfreeze
+  CC       sys-utils/fstrim.o
+  CCLD     fstrim
+  CC       sys-utils/blkdiscard.o
+  CCLD     blkdiscard
+  CC       sys-utils/losetup.o
+  CCLD     losetup
+  CC       sys-utils/swapon-swapon.o
+  CC       sys-utils/swapon-swapon-common.o
+  CCLD     swapon
+  CC       sys-utils/swapoff-swapoff.o
+  CC       sys-utils/swapoff-swapon-common.o
+  CCLD     swapoff
+  CC       sys-utils/chcpu.o
+  CCLD     chcpu
+  CC       sys-utils/pivot_root.o
+  CCLD     pivot_root
+  CC       sys-utils/switch_root.o
+  CCLD     switch_root
+  CC       sys-utils/hwclock.o
+  CC       sys-utils/hwclock-cmos.o
+  CC       sys-utils/hwclock-kd.o
+  CC       sys-utils/hwclock-rtc.o
+  CCLD     hwclock
+  CC       misc-utils/blkid-blkid.o
+  CCLD     blkid
+  CC       misc-utils/findfs-findfs.o
+  CCLD     findfs
+  CC       misc-utils/wipefs-wipefs.o
+  CCLD     wipefs
+  CC       disk-utils/fsck.minix.o
+  CCLD     fsck.minix
+  CC       disk-utils/mkfs.minix.o
+  CCLD     mkfs.minix
+  CC       disk-utils/mkfs.o
+  CCLD     mkfs
+  CC       disk-utils/mkfs.bfs.o
+  CCLD     mkfs.bfs
+  CC       disk-utils/mkswap-mkswap.o
+  CCLD     mkswap
+  CC       disk-utils/swaplabel-swaplabel.o
+  CCLD     swaplabel
+  CC       disk-utils/fsck-fsck.o
+  CCLD     fsck
+  CC       disk-utils/raw.o
+  CCLD     raw
+  CC       disk-utils/fsck.cramfs.o
+  CC       disk-utils/cramfs_common.o
+  CCLD     fsck.cramfs
+  CC       disk-utils/mkfs.cramfs.o
+  CCLD     mkfs.cramfs
+  CC       disk-utils/blockdev.o
+  CCLD     blockdev
+  CC       fdisks/fdisk-fdisk.o
+  CC       fdisks/fdisk-fdisk-ask.o
+  CC       fdisks/fdisk-fdiskbsdlabel.o
+  CC       fdisks/fdisk-fdiskdoslabel.o
+  CC       fdisks/fdisk-fdiskmaclabel.o
+  CC       fdisks/fdisk-fdisksgilabel.o
+  CC       fdisks/fdisk-fdisksunlabel.o
+  CC       fdisks/fdisk-partname.o
+  CCLD     fdisk
+  CC       fdisks/partname.o
+  CC       fdisks/sfdisk.o
+  CCLD     sfdisk
+  CC       fdisks/cfdisk-cfdisk.o
+  CCLD     cfdisk
+  CC       schedutils/chrt.o
+  CCLD     chrt
+  CC       schedutils/ionice.o
+  CCLD     ionice
+  CC       schedutils/taskset.o
+  CCLD     taskset
+  CC       text-utils/col.o
+  CCLD     col
+  CC       text-utils/colcrt.o
+  CCLD     colcrt
+  CC       text-utils/colrm.o
+  CCLD     colrm
+  CC       text-utils/column.o
+  CCLD     column
+  CC       text-utils/conv.o
+  CC       text-utils/display.o
+  CC       text-utils/hexdump.o
+  CC       text-utils/hexsyntax.o
+  CC       text-utils/parse.o
+  CCLD     hexdump
+  CC       text-utils/rev.o
+  CCLD     rev
+  CC       text-utils/tailf.o
+  CCLD     tailf
+  CC       text-utils/pg.o
+../text-utils/pg.c: In function 'pgfile':
+../text-utils/pg.c:878:21: warning: variable 'fpos' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/pg.c:889:11: warning: variable 'searchcount' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+../text-utils/pg.c:895:6: warning: variable 'nobuf' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+  CCLD     pg
+  CC       text-utils/ul.o
+  CCLD     ul
+  CC       term-utils/script.o
+  CCLD     script
+  CC       term-utils/scriptreplay.o
+  CCLD     scriptreplay
+  CC       term-utils/setterm.o
+  CCLD     setterm
+  CC       term-utils/wall-wall.o
+  CC       term-utils/wall-ttymsg.o
+  CCLD     wall
+  CC       login-utils/utmpdump.o
+  CCLD     utmpdump
+  CC       sys-utils/flock.o
+  CCLD     flock
+  CC       sys-utils/ipcmk.o
+  CCLD     ipcmk
+  CC       sys-utils/ipcrm.o
+  CCLD     ipcrm
+  CC       sys-utils/ipcs.o
+  CC       sys-utils/ipcutils.o
+  CCLD     ipcs
+  CC       sys-utils/renice.o
+  CCLD     renice
+  CC       sys-utils/setsid.o
+  CCLD     setsid
+  CC       sys-utils/cytune.o
+  CCLD     cytune
+  CC       sys-utils/setarch.o
+  CCLD     setarch
+  CC       sys-utils/eject-eject.o
+  CCLD     eject
+  CC       sys-utils/prlimit.o
+  CCLD     prlimit
+  CC       sys-utils/lscpu.o
+../sys-utils/lscpu.c: In function 'read_hypervisor_cpuid':
+../sys-utils/lscpu.c:515:42: warning: unused parameter 'desc' [-Wunused-parameter]
+  CCLD     lscpu
+  CC       sys-utils/fallocate.o
+  CCLD     fallocate
+  CC       sys-utils/unshare.o
+  CCLD     unshare
+  CC       sys-utils/nsenter.o
+  CCLD     nsenter
+  CC       misc-utils/cal.o
+  CC       lib/mbsalign.o
+  CC       lib/strutils.o
+  CCLD     cal
+  CC       misc-utils/logger.o
+  CCLD     logger
+  CC       misc-utils/look.o
+  CCLD     look
+  CC       misc-utils/mcookie.o
+  CC       lib/md5.o
+  CCLD     mcookie
+  CC       misc-utils/namei.o
+  CCLD     namei
+  CC       misc-utils/whereis.o
+  CCLD     whereis
+  CC       misc-utils/lslocks-lslocks.o
+  CCLD     lslocks
+  CC       misc-utils/uuidgen-uuidgen.o
+  CCLD     uuidgen
+  CC       misc-utils/rename.o
+  CCLD     rename
+  CC       misc-utils/getopt.o
+  CCLD     getopt
+  CC       disk-utils/isosize.o
+  CCLD     isosize
+  CC       sys-utils/readprofile.o
+  CCLD     readprofile
+  CC       sys-utils/ldattach.o
+  CCLD     ldattach
+  CC       sys-utils/rtcwake.o
+  CCLD     rtcwake
+  CC       misc-utils/uuidd-uuidd.o
+  CCLD     uuidd
+  CC       disk-utils/fdformat.o
+  CCLD     fdformat
+  CC       disk-utils/partx-partx.o
+  CCLD     partx
+  CC       disk-utils/addpart.o
+  CCLD     addpart
+  CC       disk-utils/delpart.o
+  CCLD     delpart
+  CC       disk-utils/resizepart.o
+  CCLD     resizepart
+  GEN      misc-utils/uuidd.8
+  GEN      sys-utils/linux32.8
+  GEN      sys-utils/linux64.8
+  GEN      libuuid/uuid.pc
+  GEN      libblkid/blkid.pc
+  GEN      libmount/mount.pc
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.egheOq
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd util-linux-2.23
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
+make  install-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+Making install in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/po'
+if test "util-linux" = "gettext-tools"; then \
+	  /bin/sh ../../config/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/po'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c more login su dmesg mount umount wdctl mountpoint lsblk findmnt kill '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+libtool: install: /usr/bin/install -c more /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/more
+libtool: install: /usr/bin/install -c login /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/login
+libtool: install: /usr/bin/install -c su /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/su
+libtool: install: /usr/bin/install -c dmesg /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/dmesg
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/mount /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/mount
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/umount /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/umount
+libtool: install: /usr/bin/install -c wdctl /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/wdctl
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/mountpoint /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/mountpoint
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/lsblk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/lsblk
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/findmnt /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/findmnt
+libtool: install: /usr/bin/install -c kill /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/kill
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c agetty sulogin runuser ctrlaltdel fsfreeze fstrim blkdiscard losetup swapon swapoff chcpu pivot_root switch_root hwclock blkid findfs wipefs fsck.minix mkfs.minix mkfs mkfs.bfs mkswap swaplabel fsck raw fsck.cramfs mkfs.cramfs blockdev fdisk sfdisk cfdisk '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin'
+libtool: install: /usr/bin/install -c agetty /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/agetty
+libtool: install: /usr/bin/install -c sulogin /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/sulogin
+libtool: install: /usr/bin/install -c runuser /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/runuser
+libtool: install: /usr/bin/install -c ctrlaltdel /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/ctrlaltdel
+libtool: install: /usr/bin/install -c fsfreeze /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsfreeze
+libtool: install: /usr/bin/install -c fstrim /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fstrim
+libtool: install: /usr/bin/install -c blkdiscard /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/blkdiscard
+libtool: install: /usr/bin/install -c losetup /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/losetup
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/swapon /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/swapon
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/swapoff /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/swapoff
+libtool: install: /usr/bin/install -c chcpu /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/chcpu
+libtool: install: /usr/bin/install -c pivot_root /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/pivot_root
+libtool: install: /usr/bin/install -c switch_root /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/switch_root
+libtool: install: /usr/bin/install -c hwclock /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/hwclock
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/blkid /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/blkid
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/findfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/findfs
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/wipefs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/wipefs
+libtool: install: /usr/bin/install -c fsck.minix /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsck.minix
+libtool: install: /usr/bin/install -c mkfs.minix /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs.minix
+libtool: install: /usr/bin/install -c mkfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs
+libtool: install: /usr/bin/install -c mkfs.bfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs.bfs
+libtool: install: warning: `libuuid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/mkswap /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkswap
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/swaplabel /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/swaplabel
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/fsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsck
+libtool: install: /usr/bin/install -c raw /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/raw
+libtool: install: /usr/bin/install -c fsck.cramfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsck.cramfs
+libtool: install: /usr/bin/install -c mkfs.cramfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs.cramfs
+libtool: install: /usr/bin/install -c blockdev /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/blockdev
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/fdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fdisk
+libtool: install: /usr/bin/install -c sfdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/sfdisk
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/cfdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/cfdisk
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c chrt ionice taskset col colcrt colrm column hexdump rev tailf pg ul script scriptreplay setterm wall utmpdump flock ipcmk ipcrm ipcs renice setsid cytune setarch eject prlimit lscpu fallocate unshare nsenter cal logger look mcookie namei whereis lslocks uuidgen rename getopt isosize '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+libtool: install: /usr/bin/install -c chrt /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/chrt
+libtool: install: /usr/bin/install -c ionice /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/ionice
+libtool: install: /usr/bin/install -c taskset /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/taskset
+libtool: install: /usr/bin/install -c col /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/col
+libtool: install: /usr/bin/install -c colcrt /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/colcrt
+libtool: install: /usr/bin/install -c colrm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/colrm
+libtool: install: /usr/bin/install -c column /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/column
+libtool: install: /usr/bin/install -c hexdump /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/hexdump
+libtool: install: /usr/bin/install -c rev /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/rev
+libtool: install: /usr/bin/install -c tailf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/tailf
+libtool: install: /usr/bin/install -c pg /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/pg
+libtool: install: /usr/bin/install -c ul /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/ul
+libtool: install: /usr/bin/install -c script /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/script
+libtool: install: /usr/bin/install -c scriptreplay /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/scriptreplay
+libtool: install: /usr/bin/install -c setterm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/setterm
+libtool: install: /usr/bin/install -c wall /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/wall
+libtool: install: /usr/bin/install -c utmpdump /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/utmpdump
+libtool: install: /usr/bin/install -c flock /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/flock
+libtool: install: /usr/bin/install -c ipcmk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/ipcmk
+libtool: install: /usr/bin/install -c ipcrm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/ipcrm
+libtool: install: /usr/bin/install -c ipcs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/ipcs
+libtool: install: /usr/bin/install -c renice /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/renice
+libtool: install: /usr/bin/install -c setsid /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/setsid
+libtool: install: /usr/bin/install -c cytune /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/cytune
+libtool: install: /usr/bin/install -c setarch /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/setarch
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/eject /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/eject
+libtool: install: /usr/bin/install -c prlimit /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/prlimit
+libtool: install: /usr/bin/install -c lscpu /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/lscpu
+libtool: install: /usr/bin/install -c fallocate /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/fallocate
+libtool: install: /usr/bin/install -c unshare /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/unshare
+libtool: install: /usr/bin/install -c nsenter /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/nsenter
+libtool: install: /usr/bin/install -c cal /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/cal
+libtool: install: /usr/bin/install -c logger /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/logger
+libtool: install: /usr/bin/install -c look /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/look
+libtool: install: /usr/bin/install -c mcookie /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/mcookie
+libtool: install: /usr/bin/install -c namei /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/namei
+libtool: install: /usr/bin/install -c whereis /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/whereis
+libtool: install: warning: `libmount.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/lslocks /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/lslocks
+libtool: install: warning: `libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/uuidgen /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/uuidgen
+libtool: install: /usr/bin/install -c rename /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/rename
+libtool: install: /usr/bin/install -c getopt /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/getopt
+libtool: install: /usr/bin/install -c isosize /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/isosize
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libuuid.la libblkid.la libmount.la '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libuuid.so.1.3.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so.1.3.0
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libuuid.so.1.3.0 libuuid.so.1 || { rm -f libuuid.so.1 && ln -s libuuid.so.1.3.0 libuuid.so.1; }; })
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libuuid.so.1.3.0 libuuid.so || { rm -f libuuid.so && ln -s libuuid.so.1.3.0 libuuid.so; }; })
+libtool: install: /usr/bin/install -c .libs/libuuid.lai /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.la
+libtool: install: warning: relinking `libblkid.la'
+libtool: install: (cd /home/rpmuser/rpm/BUILD/util-linux-2.23/objdir; /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libtool  --silent --tag CC --mode=relink arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -I./libblkid/src -I../libblkid/src -I../libuuid/src -O2 -Wl,--version-script=../libblkid/src/blkid.sym -version-info 2:0:1 -o libblkid.la -rpath /usr/lib libblkid/src/libblkid_la-cache.lo libblkid/src/libblkid_la-config.lo libblkid/src/libblkid_la-dev.lo libblkid/src/libblkid_la-devname.lo libblkid/src/libblkid_la-devno.lo libblkid/src/libblkid_la-encode.lo libblkid/src/libblkid_la-evaluate.lo libblkid/src/libblkid_la-getsize.lo libblkid/src/libblkid_la-llseek.lo libblkid/src/libblkid_la-probe.lo libblkid/src/libblkid_la-read.lo libblkid/src/libblkid_la-resolve.lo libblkid/src/libblkid_la-save.lo libblkid/src/libblkid_la-tag.lo libblkid/src/libblkid_la-verify.lo libblkid/src/libblkid_la-version.lo libblkid/src/partitions/libblkid_la-aix.lo libblkid/src/partitions/libblkid_la-bsd.lo libblkid/src/partitions/libblkid_la-dos.lo libblkid/src/partitions/libblkid_la-gpt.lo libblkid/src/partitions/libblkid_la-mac.lo libblkid/src/partitions/libblkid_la-minix.lo libblkid/src/partitions/libblkid_la-partitions.lo libblkid/src/partitions/libblkid_la-sgi.lo libblkid/src/partitions/libblkid_la-solaris_x86.lo libblkid/src/partitions/libblkid_la-sun.lo libblkid/src/partitions/libblkid_la-ultrix.lo libblkid/src/partitions/libblkid_la-unixware.lo libblkid/src/superblocks/libblkid_la-adaptec_raid.lo libblkid/src/superblocks/libblkid_la-befs.lo libblkid/src/superblocks/libblkid_la-bfs.lo libblkid/src/superblocks/libblkid_la-btrfs.lo libblkid/src/superblocks/libblkid_la-cramfs.lo libblkid/src/superblocks/libblkid_la-ddf_raid.lo libblkid/src/superblocks/libblkid_la-drbd.lo libblkid/src/superblocks/libblkid_la-drbdproxy_datalog.lo libblkid/src/superblocks/libblkid_la-exfat.lo libblkid/src/superblocks/libblkid_la-ext.lo libblkid/src/superblocks/libblkid_la-f2fs.lo libblkid/src/superblocks/libblkid_la-gfs.lo libblkid/src/superblocks/libblkid_la-hfs.lo libblkid/src/superblocks/libblkid_la-highpoint_raid.lo libblkid/src/superblocks/libblkid_la-hpfs.lo libblkid/src/superblocks/libblkid_la-iso9660.lo libblkid/src/superblocks/libblkid_la-isw_raid.lo libblkid/src/superblocks/libblkid_la-jfs.lo libblkid/src/superblocks/libblkid_la-jmicron_raid.lo libblkid/src/superblocks/libblkid_la-linux_raid.lo libblkid/src/superblocks/libblkid_la-lsi_raid.lo libblkid/src/superblocks/libblkid_la-luks.lo libblkid/src/superblocks/libblkid_la-lvm.lo libblkid/src/superblocks/libblkid_la-minix.lo libblkid/src/superblocks/libblkid_la-netware.lo libblkid/src/superblocks/libblkid_la-nilfs.lo libblkid/src/superblocks/libblkid_la-ntfs.lo libblkid/src/superblocks/libblkid_la-nvidia_raid.lo libblkid/src/superblocks/libblkid_la-ocfs.lo libblkid/src/superblocks/libblkid_la-promise_raid.lo libblkid/src/superblocks/libblkid_la-reiserfs.lo libblkid/src/superblocks/libblkid_la-romfs.lo libblkid/src/superblocks/libblkid_la-silicon_raid.lo libblkid/src/superblocks/libblkid_la-squashfs.lo libblkid/src/superblocks/libblkid_la-superblocks.lo libblkid/src/superblocks/libblkid_la-swap.lo libblkid/src/superblocks/libblkid_la-sysv.lo libblkid/src/superblocks/libblkid_la-ubifs.lo libblkid/src/superblocks/libblkid_la-udf.lo libblkid/src/superblocks/libblkid_la-ufs.lo libblkid/src/superblocks/libblkid_la-vfat.lo libblkid/src/superblocks/libblkid_la-via_raid.lo libblkid/src/superblocks/libblkid_la-vmfs.lo libblkid/src/superblocks/libblkid_la-vxfs.lo libblkid/src/superblocks/libblkid_la-xfs.lo libblkid/src/superblocks/libblkid_la-zfs.lo libblkid/src/topology/libblkid_la-topology.lo libblkid/src/topology/libblkid_la-dm.lo libblkid/src/topology/libblkid_la-evms.lo libblkid/src/topology/libblkid_la-ioctl.lo libblkid/src/topology/libblkid_la-lvm.lo libblkid/src/topology/libblkid_la-md.lo libblkid/src/topology/libblkid_la-sysfs.lo libcommon.la libuuid.la -inst-prefix-dir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a)
+libtool: install: /usr/bin/install -c .libs/libblkid.so.1.1.0T /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so.1.1.0
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libblkid.so.1.1.0 libblkid.so.1 || { rm -f libblkid.so.1 && ln -s libblkid.so.1.1.0 libblkid.so.1; }; })
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libblkid.so.1.1.0 libblkid.so || { rm -f libblkid.so && ln -s libblkid.so.1.1.0 libblkid.so; }; })
+libtool: install: /usr/bin/install -c .libs/libblkid.lai /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.la
+libtool: install: warning: relinking `libmount.la'
+libtool: install: (cd /home/rpmuser/rpm/BUILD/util-linux-2.23/objdir; /bin/sh /home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libtool  --silent --tag CC --mode=relink arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -I./libblkid/src -I./libmount/src -I../libmount/src -O2 -Wl,--version-script=../libmount/src/libmount.sym -version-info 2:0:1 -o libmount.la -rpath /usr/lib libmount/src/libmount_la-cache.lo libmount/src/libmount_la-context.lo libmount/src/libmount_la-context_loopdev.lo libmount/src/libmount_la-context_mount.lo libmount/src/libmount_la-context_umount.lo libmount/src/libmount_la-fs.lo libmount/src/libmount_la-init.lo libmount/src/libmount_la-iter.lo libmount/src/libmount_la-lock.lo libmount/src/libmount_la-optmap.lo libmount/src/libmount_la-optstr.lo libmount/src/libmount_la-tab.lo libmount/src/libmount_la-tab_diff.lo libmount/src/libmount_la-tab_parse.lo libmount/src/libmount_la-tab_update.lo libmount/src/libmount_la-test.lo libmount/src/libmount_la-utils.lo libmount/src/libmount_la-version.lo libcommon.la libblkid.la -inst-prefix-dir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a)
+libtool: install: /usr/bin/install -c .libs/libmount.so.1.1.0T /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.so.1.1.0
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libmount.so.1.1.0 libmount.so.1 || { rm -f libmount.so.1 && ln -s libmount.so.1.1.0 libmount.so.1; }; })
+libtool: install: (cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && { ln -s -f libmount.so.1.1.0 libmount.so || { rm -f libmount.so && ln -s libmount.so.1.1.0 libmount.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmount.lai /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.la
+libtool: install: /usr/bin/install -c .libs/libuuid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
+libtool: install: chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
+libtool: install: arm-sony-linux-gnueabi-ranlib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
+libtool: install: /usr/bin/install -c .libs/libblkid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a
+libtool: install: chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a
+libtool: install: arm-sony-linux-gnueabi-ranlib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a
+libtool: install: /usr/bin/install -c .libs/libmount.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.a
+libtool: install: chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.a
+libtool: install: arm-sony-linux-gnueabi-ranlib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.a
+libtool: install: warning: remember to run `libtool --finish /usr/lib'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c readprofile ldattach rtcwake uuidd fdformat partx addpart delpart resizepart '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin'
+libtool: install: /usr/bin/install -c readprofile /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/readprofile
+libtool: install: /usr/bin/install -c ldattach /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/ldattach
+libtool: install: /usr/bin/install -c rtcwake /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/rtcwake
+libtool: install: warning: `libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/uuidd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/uuidd
+libtool: install: /usr/bin/install -c fdformat /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fdformat
+libtool: install: warning: `libblkid.la' has not been installed in `/usr/lib'
+libtool: install: warning: `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir/libuuid.la' has not been installed in `/usr/lib'
+libtool: install: /usr/bin/install -c .libs/partx /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/partx
+libtool: install: /usr/bin/install -c addpart /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/addpart
+libtool: install: /usr/bin/install -c delpart /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/delpart
+libtool: install: /usr/bin/install -c resizepart /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/resizepart
+make  install-exec-hook
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+if test "/usr/lib" != "/usr/lib"; then \
+		mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so.* /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		so_img_name=$(readlink /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so); \
+		so_img_rel_target=$(echo /usr/lib | sed 's,\(^/\|\)[^/][^/]*,..,g'); \
+		(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && \
+			rm -f libuuid.so && \
+			ln -s $so_img_rel_target/usr/lib/$so_img_name libuuid.so); \
+	fi
+if test "/usr/lib" != "/usr/lib"; then \
+		mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so.* /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		so_img_name=$(readlink /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so); \
+		so_img_rel_target=$(echo /usr/lib | sed 's,\(^/\|\)[^/][^/]*,..,g'); \
+		(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && \
+			rm -f libblkid.so && \
+			ln -s $so_img_rel_target/usr/lib/$so_img_name libblkid.so); \
+	fi
+if test "/usr/lib" != "/usr/lib"; then \
+		mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.so.* /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+		so_img_name=$(readlink /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.so); \
+		so_img_rel_target=$(echo /usr/lib | sed 's,\(^/\|\)[^/][^/]*,..,g'); \
+		(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib && \
+			rm -f libmount.so && \
+			ln -s $so_img_rel_target/usr/lib/$so_img_name libmount.so); \
+	fi
+chgrp tty /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/wall
+chmod g+s /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/wall
+for I in linux32 linux64        ; do \
+		cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin && ln -sf setarch $I ; \
+	done
+chmod 4755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/mount
+chmod 4755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/umount
+chmod 4755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/su
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/getopt/'
+ /usr/bin/install -c ../misc-utils/getopt-parse.bash ../misc-utils/getopt-parse.tcsh '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/getopt/'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1'
+ /usr/bin/install -c -m 644 ../schedutils/chrt.1 ../schedutils/ionice.1 ../schedutils/taskset.1 ../text-utils/col.1 ../text-utils/colcrt.1 ../text-utils/colrm.1 ../text-utils/column.1 ../text-utils/hexdump.1 ../text-utils/rev.1 ../text-utils/tailf.1 ../text-utils/pg.1 ../text-utils/ul.1 ../text-utils/more.1 ../term-utils/script.1 ../term-utils/scriptreplay.1 ../term-utils/setterm.1 ../term-utils/wall.1 ../login-utils/login.1 ../login-utils/utmpdump.1 ../login-utils/su.1 ../login-utils/runuser.1 ../sys-utils/flock.1 ../sys-utils/ipcmk.1 ../sys-utils/ipcrm.1 ../sys-utils/ipcs.1 ../sys-utils/renice.1 ../sys-utils/setsid.1 ../sys-utils/dmesg.1 ../sys-utils/eject.1 ../sys-utils/prlimit.1 ../sys-utils/lscpu.1 ../sys-utils/mountpoint.1 ../sys-utils/fallocate.1 ../sys-utils/unshare.1 ../sys-utils/nsenter.1 ../misc-utils/cal.1 ../misc-utils/logger.1 ../misc-utils/look.1 ../misc-utils/mcookie.1 ../misc-utils/namei.1 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1'
+ /usr/bin/install -c -m 644 ../misc-utils/whereis.1 ../misc-utils/uuidgen.1 ../misc-utils/kill.1 ../misc-utils/rename.1 ../misc-utils/getopt.1 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3'
+ /usr/bin/install -c -m 644 ../libuuid/man/uuid.3 ../libuuid/man/uuid_clear.3 ../libuuid/man/uuid_compare.3 ../libuuid/man/uuid_copy.3 ../libuuid/man/uuid_generate.3 ../libuuid/man/uuid_is_null.3 ../libuuid/man/uuid_parse.3 ../libuuid/man/uuid_time.3 ../libuuid/man/uuid_unparse.3 ../libuuid/man/uuid_generate_random.3 ../libuuid/man/uuid_generate_time.3 ../libuuid/man/uuid_generate_time_safe.3 ../libblkid/libblkid.3 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5'
+ /usr/bin/install -c -m 644 ../sys-utils/fstab.5 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8'
+ /usr/bin/install -c -m 644 ../term-utils/agetty.8 ../login-utils/sulogin.8 ../sys-utils/readprofile.8 ../sys-utils/ctrlaltdel.8 ../sys-utils/fsfreeze.8 ../sys-utils/fstrim.8 ../sys-utils/blkdiscard.8 ../sys-utils/cytune.8 ../sys-utils/ldattach.8 ../sys-utils/rtcwake.8 ../sys-utils/setarch.8 ../sys-utils/losetup.8 ../sys-utils/mount.8 ../sys-utils/umount.8 ../sys-utils/swapoff.8 ../sys-utils/swapon.8 ../sys-utils/chcpu.8 ../sys-utils/wdctl.8 ../sys-utils/pivot_root.8 ../sys-utils/switch_root.8 ../sys-utils/hwclock.8 ../misc-utils/lslocks.8 ../misc-utils/lsblk.8 misc-utils/uuidd.8 ../misc-utils/blkid.8 ../misc-utils/findfs.8 ../misc-utils/wipefs.8 ../misc-utils/findmnt.8 ../disk-utils/fsck.minix.8 ../disk-utils/mkfs.minix.8 ../disk-utils/mkfs.8 ../disk-utils/isosize.8 ../disk-utils/mkfs.bfs.8 ../disk-utils/mkswap.8 ../disk-utils/swaplabel.8 ../disk-utils/fsck.8 ../disk-utils/raw.8 ../disk-utils/blockdev.8 ../disk-utils/fdformat.8 ../disk-utils/addpart.8 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8'
+ /usr/bin/install -c -m 644 ../disk-utils/delpart.8 ../disk-utils/resizepart.8 ../disk-utils/partx.8 ../fdisks/fdisk.8 ../fdisks/sfdisk.8 ../fdisks/cfdisk.8 sys-utils/linux32.8 sys-utils/linux64.8 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/blkid'
+ /usr/bin/install -c -m 644 ./libblkid/src/blkid.h '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/blkid'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/libmount'
+ /usr/bin/install -c -m 644 ./libmount/src/libmount.h '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/libmount'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libuuid/uuid.pc libblkid/blkid.pc libmount/mount.pc '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig'
+ /bin/mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/uuid'
+ /usr/bin/install -c -m 644 ../libuuid/src/uuid.h '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/uuid'
+make  install-data-hook
+make[4]: Entering directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[4]: Nothing to be done for `install-data-hook'.
+make[4]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/util-linux-2.23/objdir'
++ ln -s agetty /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/getty
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/eject
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin
++ for c in logger taskset su
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/logger /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin/logger
++ for c in logger taskset su
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/taskset /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin/taskset
++ for c in logger taskset su
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/su /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/bin/su
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/blockdev /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/blockdev
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/cfdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/cfdisk
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fdisk
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsck.minix /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck.minix
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/hwclock /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/hwclock
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkfs.minix /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs.minix
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/mkswap /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkswap
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/blkid /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/blkid
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/fsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/findfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/findfs
++ for c in blockdev cfdisk fdisk fsck.minix hwclock mkfs mkfs.minix mkswap blkid fsck findfs uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/uuidd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/uuidd
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin
++ for c in sfdisk
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/sfdisk /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin/sfdisk
++ for c in blkid findfs fsck uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/blkid /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin/blkid
++ for c in blkid findfs fsck uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/findfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin/findfs
++ for c in blkid findfs fsck uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin/fsck
++ for c in blkid findfs fsck uuidd
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/uuidd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/local/sbin/uuidd
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib
++ for c in libblkid.so.1 libblkid.so.1.1.0 libuuid.so.1 libuuid.so.1.3.0
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libblkid.so.1
++ for c in libblkid.so.1 libblkid.so.1.1.0 libuuid.so.1 libuuid.so.1.3.0
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so.1.1.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libblkid.so.1.1.0
++ for c in libblkid.so.1 libblkid.so.1.1.0 libuuid.so.1 libuuid.so.1.3.0
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libuuid.so.1
++ for c in libblkid.so.1 libblkid.so.1.1.0 libuuid.so.1 libuuid.so.1.3.0
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so.1.3.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libuuid.so.1.3.0
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libblkid.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libblkid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libmount.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libmount.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libmount.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libuuid.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libuuid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' pkgconfig '!=' pkgconfig ']'
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so
++ ln -s ../../lib/libblkid.so.1.1.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so
++ ln -s ../../lib/libuuid.so.1.3.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/blkid/blkid.h
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/uuid/uuid.h
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libblkid.a
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libuuid.a
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/pkgconfig/blkid.pc
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/pkgconfig/uuid.pc
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.so
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.so
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-util-linux-2.23-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-util-linux-2.23-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-util-linux-2.23-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.swLW7K
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd util-linux-2.23
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-util-linux-2.23-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/util-linux-2.23
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/util-linux-2.23 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 21 10:46:07 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39 
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd 
+-bash-3.2# useradd test 
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+useradd: user 'test' already exists
+-bash-3.2# mkdir -p /home/test
+-bash-3.2# cd /home/test/
+-bash-3.2# chown -R test /home/test/
+-bash-3.2# su test
+su: Permission denied
+(Ignored)
+configuration error - unknown item 'FAILLOG_ENAB' (notify administrator)
+configuration error - unknown item 'LASTLOG_ENAB' (notify administrator)
+configuration error - unknown item 'MAIL_CHECK_ENAB' (notify administrator)
+configuration error - unknown item 'OBSCURE_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'PORTTIME_CHECKS_ENAB' (notify administrator)
+configuration error - unknown item 'QUOTAS_ENAB' (notify administrator)
+configuration error - unknown item 'MOTD_FILE' (notify administrator)
+configuration error - unknown item 'FTMP_FILE' (notify administrator)
+configuration error - unknown item 'NOLOGINS_FILE' (notify administrator)
+configuration error - unknown item 'ENV_HZ' (notify administrator)
+configuration error - unknown item 'PASS_MIN_LEN' (notify administrator)
+configuration error - unknown item 'SU_WHEEL_ONLY' (notify administrator)
+configuration error - unknown item 'CRACKLIB_DICTPATH' (notify administrator)
+configuration error - unknown item 'PASS_CHANGE_TRIES' (notify administrator)
+configuration error - unknown item 'PASS_ALWAYS_WARN' (notify administrator)
+configuration error - unknown item 'CHFN_AUTH' (notify administrator)
+configuration error - unknown item 'ENVIRON_FILE' (notify administrator)
+su: Module is unknown
+-bash-3.2# 

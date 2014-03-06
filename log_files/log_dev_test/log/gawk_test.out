@@ -1,0 +1,5 @@
+LC_ALL=${GAWKLOCALE:-C} LANG=${GAWKLOCALE:-C} ../gawk -f ../../test/Gentests "../../test/Makefile.am" *.awk *.in > ../../test/Maketests
+cd .. && make  am--refresh
+make[1]: Entering directory `/tmp/gawk-3.1.5/objdir'
+cd .. && /bin/sh /home/rpmuser/rpm/BUILD/gawk-3.1.5/missing --run aclocal-1.9 -I m4
+make[1]: Leaving directory `/tmp/gawk-3.1.5/objdir'

@@ -1,0 +1,2093 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+e2fsprogs : 1.42.7
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-e2fsprogs-1.42.7-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-e2fsprowarning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  1%)#                                           (  3%)##                                          (  7%)###                                         (  9%)####                                        ( 11%)#####                                       ( 13%)######                                      ( 15%)#######                                     ( 18%)########                                    ( 20%)#########                                   ( 22%)##########                                  ( 24%)###########                                 ( 26%)############                                ( 29%)#############                               ( 31%)##############                              ( 34%)###############                             ( 36%)################                            ( 38%)#################                           ( 41%)##################                          ( 43%)###################                         ( 45%)####################                        ( 47%)#####################                       ( 49%)######################                      ( 51%)#######################                     ( 54%)########################                    ( 56%)#########################                   ( 58%)##########################                  ( 61%)###########################                 ( 63%)############################                ( 66%)#############################               ( 68%)##############################              ( 70%)###############################             ( 72%)################################            ( 74%)#################################           ( 77%)##################################          ( 79%)###################################         ( 81%)####################################        ( 83%)#####################################       ( 85%)######################################      ( 88%)#######################################     ( 91%)########################################    ( 93%)#########################################   ( 95%)##########################################  ( 97%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-e2fsprogs.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.5AAHl0
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf e2fsprogs-1.42.7
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd e2fsprogs-1.42.7
++ echo 'Patch #1 (e2fsprogs-1.42.7-check-strtoull.patch):'
+Patch #1 (e2fsprogs-1.42.7-check-strtoull.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-check-strtoull.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #2 (e2fsprogs-1.42.7-xopensource.patch):'
+Patch #2 (e2fsprogs-1.42.7-xopensource.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-xopensource.patch
++ echo 'Patch #3 (e2fsprogs-1.42.7-d_loaddump-test.patch):'
+Patch #3 (e2fsprogs-1.42.7-d_loaddump-test.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-d_loaddump-test.patch
++ echo 'Patch #4 (e2fsprogs-1.42.7-dd2devel.patch):'
+Patch #4 (e2fsprogs-1.42.7-dd2devel.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-dd2devel.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #5 (e2fsprogs-1.42.7-dont-cp-devnull.patch):'
+Patch #5 (e2fsprogs-1.42.7-dont-cp-devnull.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-dont-cp-devnull.patch
++ echo 'Patch #6 (e2fsprogs-1.42.7_inline_xattr-test-grep.patch):'
+Patch #6 (e2fsprogs-1.42.7_inline_xattr-test-grep.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7_inline_xattr-test-grep.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #7 (e2fsprogs-1.42.7-m_bigjournal-test-fix.patch):'
+Patch #7 (e2fsprogs-1.42.7-m_bigjournal-test-fix.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/e2fsprogs-1.42.7-m_bigjournal-test-fix.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Uumrrh
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd e2fsprogs-1.42.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
+++ /usr/local/arm-sony-linux-gnueabi/cross/config/PlatformTest/PlatformTest.py '--cc=arm-sony-linux-gnueabi-gcc -tarmv7a' --objdump=arm-sony-linux-gnueabi-objdump --testfile=/usr/local/arm-sony-linux-gnueabi/cross/config/PlatformTest/tests.c
++ eval export ac_cv_sizeof_ssize_t=4 export ac_cv_sys_restartable_syscalls=yes export ac_cv_func_getpgrp_void=yes export ac_cv_sizeof_short=2 export ac_cv_sizeof_size_t=4 export ac_cv_func_closedir_void=no export ac_cv_sizeof_char=1 export ac_cv_sizeof_float=4 export ac_cv_sizeof_long_double=8 export ac_cv_sizeof_pthread_mutex_t=24 export ac_cv_func_setvbuf_reversed=no export ac_cv_sizeof_long=4 export ac_cv_sizeof_uintptr_t=4 export ac_cv_sizeof_wchar_t=4 export ac_cv_sizeof_double=8 export ac_cv_sizeof_pthread_t=4 export ac_cv_sizeof_long_long=8 export ac_cv_sizeof_off_t=4 export ac_cv_func_placeholder=no export ac_cv_func_getpwuid_r=yes export ac_cv_sizeof_int=4 export ac_cv_sizeof_void_p=4 export ac_cv_func_setpgrp_void=yes export ac_cv_c_bigendian=no export ac_cv_rshift_extends_sign=yes export ac_cv_sizeof_fpos_t=12 export ac_cv_func_pthread_key_delete=yes
+++ export ac_cv_sizeof_ssize_t=4 export ac_cv_sys_restartable_syscalls=yes export ac_cv_func_getpgrp_void=yes export ac_cv_sizeof_short=2 export ac_cv_sizeof_size_t=4 export ac_cv_func_closedir_void=no export ac_cv_sizeof_char=1 export ac_cv_sizeof_float=4 export ac_cv_sizeof_long_double=8 export ac_cv_sizeof_pthread_mutex_t=24 export ac_cv_func_setvbuf_reversed=no export ac_cv_sizeof_long=4 export ac_cv_sizeof_uintptr_t=4 export ac_cv_sizeof_wchar_t=4 export ac_cv_sizeof_double=8 export ac_cv_sizeof_pthread_t=4 export ac_cv_sizeof_long_long=8 export ac_cv_sizeof_off_t=4 export ac_cv_func_placeholder=no export ac_cv_func_getpwuid_r=yes export ac_cv_sizeof_int=4 export ac_cv_sizeof_void_p=4 export ac_cv_func_setpgrp_void=yes export ac_cv_c_bigendian=no export ac_cv_rshift_extends_sign=yes export ac_cv_sizeof_fpos_t=12 export ac_cv_func_pthread_key_delete=yes
+++ ac_cv_sizeof_ssize_t=4
+++ ac_cv_sys_restartable_syscalls=yes
+++ ac_cv_func_getpgrp_void=yes
+++ ac_cv_sizeof_short=2
+++ ac_cv_sizeof_size_t=4
+++ ac_cv_func_closedir_void=no
+++ ac_cv_sizeof_char=1
+++ ac_cv_sizeof_float=4
+++ ac_cv_sizeof_long_double=8
+++ ac_cv_sizeof_pthread_mutex_t=24
+++ ac_cv_func_setvbuf_reversed=no
+++ ac_cv_sizeof_long=4
+++ ac_cv_sizeof_uintptr_t=4
+++ ac_cv_sizeof_wchar_t=4
+++ ac_cv_sizeof_double=8
+++ ac_cv_sizeof_pthread_t=4
+++ ac_cv_sizeof_long_long=8
+++ ac_cv_sizeof_off_t=4
+++ ac_cv_func_placeholder=no
+++ ac_cv_func_getpwuid_r=yes
+++ ac_cv_sizeof_int=4
+++ ac_cv_sizeof_void_p=4
+++ ac_cv_func_setpgrp_void=yes
+++ ac_cv_c_bigendian=no
+++ ac_cv_rshift_extends_sign=yes
+++ ac_cv_sizeof_fpos_t=12
+++ ac_cv_func_pthread_key_delete=yes
++ chmod 755 configure
++ autoconf
+++ find . -name '*.pc.in' -print
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/blkid/blkid.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/blkid/blkid.pc.in.tmp ./lib/blkid/blkid.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/ext2fs/ext2fs.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/ext2fs/ext2fs.pc.in.tmp ./lib/ext2fs/ext2fs.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/quota/quota.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/quota/quota.pc.in.tmp ./lib/quota/quota.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/ss/ss.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/ss/ss.pc.in.tmp ./lib/ss/ss.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/e2p/e2p.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/e2p/e2p.pc.in.tmp ./lib/e2p/e2p.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ cat ./lib/et/com_err.pc.in
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ mv ./lib/et/com_err.pc.in.tmp ./lib/et/com_err.pc.in
++ for f in '`find . -name '\''*.pc.in'\'' -print `'
++ sed -e 's!@exec_prefix@!${prefix}!' -e 's!@libdir@!${exec_prefix}/lib!' -e 's!!/tool/${prefix}/include!' -e 's!@includedir@!/tool/${prefix}/include!'
++ cat ./lib/uuid/uuid.pc.in
++ mv ./lib/uuid/uuid.pc.in.tmp ./lib/uuid/uuid.pc.in
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --sysconfdir=/etc --bindir=/bin --sbindir=/sbin --includedir=/tool//usr/include --enable-elf-shlibs --enable-dynamic-e2fsck
+configure: WARNING: unrecognized options: --enable-dynamic-e2fsck
+Generating configuration file for e2fsprogs version 1.42.7
+Release date is January, 2013
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for dlopen in -ldl... yes
+checking for arm-sony-linux-gnueabi-gcc... (cached) arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... (cached) yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... (cached) none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for additional special compiler flags... (none)
+Disabling maintainer mode by default
+Disabling symlinks for install by default
+Disabling relative symlinks for install by default
+Disabling symlinks for build by default
+Disabling verbose make commands
+Disabling compression support by default
+Enabling htree directory support by default
+Enabling ELF shared libraries
+Disabling BSD shared libraries by default
+Disabling profiling libraries by default
+Disabling checker libraries by default
+Disabling journal debugging by default
+Disabling blkid debugging by default
+Enabling testio debugging by default
+checking for arm-sony-linux-gnueabi-pkg-config... no
+checking for pkg-config... /usr/local/arm-sony-linux-gnueabi/host/bin/pkg-config
+configure: WARNING: using cross tools not prefixed with host triplet
+checking pkg-config is at least version 0.9.0... yes
+Enabling private uuid library by default
+checking for arm-sony-linux-gnueabi-pkg-config... /usr/local/arm-sony-linux-gnueabi/host/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+Enabling private blkid library by default
+checking for arm-sony-linux-gnueabi-pkg-config... (cached) /usr/local/arm-sony-linux-gnueabi/host/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+Disabling quota support by default
+Enabling debugfs support by default
+Enabling e2image support by default
+Enabling e2resize support by default
+Enabling e4defrag support by default
+Building fsck wrapper by default
+Building e2initrd helper by default
+Try using thread local support by default
+checking for thread local storage (TLS) class... __thread
+Building uuidd by default
+checking whether make sets $(MAKE)... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for strerror in -lcposix... no
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for an ANSI C-conforming const... yes
+checking for signed... yes
+checking for inline... inline
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for long long... yes
+checking for long double... yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking whether printf() supports POSIX/XSI format strings... guessing yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... no
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether integer division by zero raises SIGFPE... guessing no
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking for stdint.h... (cached) yes
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for ptrdiff_t... yes
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for asprintf... yes
+checking for fwprintf... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for snprintf... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for wcslen... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for __fsetlocking... yes
+checking whether _snprintf is declared... no
+checking whether _snwprintf is declared... no
+checking whether feof_unlocked is declared... yes
+checking whether fgets_unlocked is declared... no
+checking whether getc_unlocked is declared... yes
+checking for iconv... yes
+checking for iconv declaration... install-shextern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... bison
+checking version of bison... 2.5, ok
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking whether make sets $(MAKE)... (cached) yes
+checking for GNU make... make
+checking for ln... /bin/ln
+checking whether ln -s works... yes
+checking for mv... /bin/mv
+checking for cp... /bin/cp
+checking for rm... /bin/rm
+checking for chmod... /bin/chmod
+checking for gawk... no
+checking for mawk... mawk
+checking for egrep... (cached) /bin/grep -E
+checking for sed... /bin/sed
+checking for perl... /usr/local/arm-sony-linux-gnueabi/host/bin/perl
+checking for ldconfig... /sbin/ldconfig
+checking for arm-sony-linux-gnueabi-ar... arm-sony-linux-gnueabi-ar
+checking for arm-sony-linux-gnueabi-ranlib... (cached) arm-sony-linux-gnueabi-ranlib
+checking for arm-sony-linux-gnueabi-strip... true
+checking for makeinfo... makeinfo
+checking for gcc... gcc
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for malloc.h... (cached) yes
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking paths.h usability... yes
+checking paths.h presence... yes
+checking for paths.h... yes
+checking semaphore.h usability... yes
+checking semaphore.h presence... yes
+checking for semaphore.h... yes
+checking setjmp.h usability... yes
+checking setjmp.h presence... yes
+checking for setjmp.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking for unistd.h... (cached) yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking linux/falloc.h usability... yes
+checking linux/falloc.h presence... yes
+checking for linux/falloc.h... yes
+checking linux/fd.h usability... yes
+checking linux/fd.h presence... yes
+checking for linux/fd.h... yes
+checking linux/major.h usability... yes
+checking linux/major.h presence... yes
+checking for linux/major.h... yes
+checking net/if_dl.h usability... no
+checking net/if_dl.h presence... no
+checking for net/if_dl.h... no
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking sys/disklabel.h usability... no
+checking sys/disklabel.h presence... no
+checking for sys/disklabel.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/prctl.h usability... yes
+checking sys/prctl.h presence... yes
+checking for sys/prctl.h... yes
+checking sys/queue.h usability... yes
+checking sys/queue.h presence... yes
+checking for sys/queue.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/sockio.h usability... no
+checking sys/sockio.h presence... no
+checking for sys/sockio.h... no
+checking for sys/stat.h... (cached) yes
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking sys/sysmacros.h usability... yes
+checking sys/sysmacros.h presence... yes
+checking for sys/sysmacros.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/un.h usability... yes
+checking sys/un.h presence... yes
+checking for sys/un.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for sys/disk.h... no
+checking for sys/mount.h... yes
+checking for net/if.h... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for struct dirent.d_reclen... yes
+checking for ssize_t... yes
+checking whether llseek is declared... no
+checking whether lseek64 is declared... yes
+checking size of short... (cached) 2
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of long long... (cached) 8
+checking whether byte ordering is bigendian... (cached) no
+checking for inttypes.h... (cached) yes
+checking for intptr_t... yes
+checking whether struct stat has a st_flags field... no
+checking for struct sockaddr.sa_len... no
+checking for __secure_getenv... yes
+checking for backtrace... yes
+checking for blkid_probe_get_topology... no
+checking for chflags... no
+checking for fallocate... yes
+checking for fallocate64... yes
+checking for fchown... yes
+checking for fdatasync... yes
+checking for fstat64... yes
+checking for ftruncate64... yes
+checking for getdtablesize... yes
+checking for getmntinfo... no
+checking for getpwuid_r... (cached) yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for jrand48... yes
+checking for llseek... yes
+checking for lseek64... yes
+checking for mallinfo... yes
+checking for mbstowcs... yes
+checking for memalign... yes
+checking for mmap... yes
+checking for msync... yes
+checking for nanosleep... yes
+checking for open64... yes
+checking for pathconf... yes
+checking for posix_fadvise... yes
+checking for posix_memalign... yes
+checking for prctl... yes
+checking for setmntent... yes
+checking for setresgid... yes
+checking for setresuid... yes
+checking for srandom... yes
+checking for strcasecmp... (cached) yes
+checking for strdup... (cached) yes
+checking for strnlen... yes
+checking for strptime... yes
+checking for strtoull... yes
+checking for sync_file_range... yes
+checking for sysconf... yes
+checking for usleep... yes
+checking for utime... yes
+checking for valloc... yes
+checking for socket in -lsocket... no
+checking for optreset... no
+checking for sem_init... no
+checking for sem_init in -lpthread... yes
+checking for unified diff option... -u
+Setting root_bindir to /bin
+Setting root_sbindir to /sbin
+Setting root_sysconfdir to /etc
+checking whether we can link with -static... yes
+configure: creating ./config.status
+config.status: creating MCONFIG
+config.status: creating Makefile
+config.status: creating e2fsprogs.spec
+config.status: creating util/Makefile
+config.status: creating util/subst.conf
+config.status: creating util/gen-tarball
+config.status: creating util/install-symlink
+config.status: creating lib/et/Makefile
+config.status: creating lib/ss/Makefile
+config.status: creating lib/e2p/Makefile
+config.status: creating lib/ext2fs/Makefile
+config.status: creating lib/ext2fs/ext2_types.h
+config.status: creating lib/uuid/Makefile
+config.status: creating lib/uuid/uuid_types.h
+config.status: creating lib/blkid/Makefile
+config.status: creating lib/blkid/blkid_types.h
+config.status: creating lib/quota/Makefile
+config.status: creating lib/ss/ss.pc
+config.status: creating lib/uuid/uuid.pc
+config.status: creating lib/et/com_err.pc
+config.status: creating lib/e2p/e2p.pc
+config.status: creating lib/blkid/blkid.pc
+config.status: creating lib/ext2fs/ext2fs.pc
+config.status: creating misc/Makefile
+config.status: creating ext2ed/Makefile
+config.status: creating e2fsck/Makefile
+config.status: creating debugfs/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/progs/Makefile
+config.status: creating resize/Makefile
+config.status: creating doc/Makefile
+config.status: creating intl/Makefile
+config.status: creating intl/libgnuintl.h
+config.status: creating po/Makefile.in
+config.status: creating lib/config.h
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+configure: WARNING: unrecognized options: --enable-dynamic-e2fsck
++ make BUILD_CC=gcc all
++ tee -a build.log
+cd ./util ; make subst
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/util'
+	CC ../../util/subst.c
+	LD subst
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/util'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `util/subst.conf' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/config.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+	SUBST lib/dirpaths.h
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+cd .; CONFIG_FILES=./lib/ext2fs/ext2_types.h ./config.status
+config.status: creating ./lib/ext2fs/ext2_types.h
+config.status: creating lib/config.h
+config.status: lib/config.h is unchanged
+config.status: executing default-1 commands
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+cd .; CONFIG_FILES=./lib/blkid/blkid_types.h ./config.status
+config.status: creating ./lib/blkid/blkid_types.h
+config.status: creating lib/config.h
+config.status: lib/config.h is unchanged
+config.status: executing default-1 commands
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+cd .; CONFIG_FILES=./lib/uuid/uuid_types.h ./config.status
+config.status: creating ./lib/uuid/uuid_types.h
+config.status: creating lib/config.h
+config.status: lib/config.h is unchanged
+config.status: executing default-1 commands
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+	SUBST compile_et
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+	SUBST ext2_err.et
+	COMPILE_ET ext2_err.et
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make libs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `util/subst.conf' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/config.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/dirpaths.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/ext2fs/ext2_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/blkid/blkid_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/uuid/uuid_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[2]: `compile_et' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[2]: `ext2_err.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/et
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+	CC ../../../lib/et/error_message.c
+	CC ../../../lib/et/et_name.c
+	CC ../../../lib/et/init_et.c
+	CC ../../../lib/et/com_err.c
+	CC ../../../lib/et/com_right.c
+	GEN_LIB libcom_err.a
+	GEN_ELF_SOLIB libcom_err.so.2.1
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+making all in lib/ss
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+	SUBST mk_cmds
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+	COMPILE_ET ss_err.et
+	CC ss_err.c
+	MK_CMDS std_rqs.c
+	CC std_rqs.c
+	CC ../../../lib/ss/invocation.c
+	CC ../../../lib/ss/help.c
+	CC ../../../lib/ss/execute_cmd.c
+	CC ../../../lib/ss/listen.c
+	CC ../../../lib/ss/parse.c
+	CC ../../../lib/ss/error.c
+	CC ../../../lib/ss/prompt.c
+	CC ../../../lib/ss/request_tbl.c
+	CC ../../../lib/ss/list_rqs.c
+	CC ../../../lib/ss/pager.c
+	CC ../../../lib/ss/requests.c
+	CC ../../../lib/ss/data.c
+	CC ../../../lib/ss/get_readline.c
+	GEN_LIB libss.a
+	GEN_ELF_SOLIB libss.so.2.0
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+making all in lib/e2p
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+	CC ../../../lib/e2p/feature.c
+	CC ../../../lib/e2p/fgetflags.c
+	CC ../../../lib/e2p/fsetflags.c
+	CC ../../../lib/e2p/fgetversion.c
+	CC ../../../lib/e2p/fsetversion.c
+	CC ../../../lib/e2p/getflags.c
+	CC ../../../lib/e2p/getversion.c
+	CC ../../../lib/e2p/hashstr.c
+	CC ../../../lib/e2p/iod.c
+	CC ../../../lib/e2p/ls.c
+	CC ../../../lib/e2p/mntopts.c
+	CC ../../../lib/e2p/parse_num.c
+	CC ../../../lib/e2p/pe.c
+	CC ../../../lib/e2p/pf.c
+	CC ../../../lib/e2p/ps.c
+	CC ../../../lib/e2p/setflags.c
+	CC ../../../lib/e2p/setversion.c
+	CC ../../../lib/e2p/uuid.c
+	CC ../../../lib/e2p/ostype.c
+	CC ../../../lib/e2p/percent.c
+	GEN_LIB libe2p.a
+	GEN_ELF_SOLIB libe2p.so.2.3
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+making all in lib/uuid
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+	CP uuid.h
+	CC ../../../lib/uuid/clear.c
+	CC ../../../lib/uuid/compare.c
+	CC ../../../lib/uuid/copy.c
+	CC ../../../lib/uuid/gen_uuid.c
+	CC ../../../lib/uuid/isnull.c
+	CC ../../../lib/uuid/pack.c
+	CC ../../../lib/uuid/parse.c
+	CC ../../../lib/uuid/unpack.c
+	CC ../../../lib/uuid/unparse.c
+	CC ../../../lib/uuid/uuid_time.c
+	GEN_LIB libuuid.a
+	GEN_ELF_SOLIB libuuid.so.1.2
+	CC tst_uuid.o
+	LD tst_uuid
+	LD uuid_time
+	SUBST uuid.3
+	SUBST uuid_clear.3
+	SUBST uuid_compare.3
+	SUBST uuid_copy.3
+	SUBST uuid_generate.3
+	SUBST uuid_is_null.3
+	SUBST uuid_parse.3
+	SUBST uuid_time.3
+	SUBST uuid_unparse.3
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+making all in lib/ext2fs
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+	CC ../../../lib/ext2fs/bb_compat.c
+	CC ../../../lib/ext2fs/inode_io.c
+	CC ../../../lib/ext2fs/write_bb_file.c
+	CC ../../../lib/ext2fs/dupfs.c
+	CC ../../../lib/ext2fs/imager.c
+	CC ../../../lib/ext2fs/test_io.c
+	CC ext2_err.c
+	CC ../../../lib/ext2fs/alloc.c
+	CC ../../../lib/ext2fs/alloc_sb.c
+	CC ../../../lib/ext2fs/alloc_stats.c
+	CC ../../../lib/ext2fs/alloc_tables.c
+	CC ../../../lib/ext2fs/badblocks.c
+	CC ../../../lib/ext2fs/bb_inode.c
+	CC ../../../lib/ext2fs/bitmaps.c
+	CC ../../../lib/ext2fs/bitops.c
+	CC ../../../lib/ext2fs/blkmap64_ba.c
+	CC ../../../lib/ext2fs/blkmap64_rb.c
+	CC ../../../lib/ext2fs/blknum.c
+	CC ../../../lib/ext2fs/block.c
+	CC ../../../lib/ext2fs/bmap.c
+	CC ../../../lib/ext2fs/check_desc.c
+	CC ../../../lib/ext2fs/closefs.c
+	CC ../../../lib/ext2fs/crc16.c
+	CC gen_crc32ctable
+	GEN32CTABLE crc32c_table.h
+	CC ../../../lib/ext2fs/crc32c.c
+	CC ../../../lib/ext2fs/csum.c
+	CC ../../../lib/ext2fs/dblist.c
+	CC ../../../lib/ext2fs/dblist_dir.c
+	CC ../../../lib/ext2fs/dirblock.c
+	CC ../../../lib/ext2fs/dirhash.c
+	CC ../../../lib/ext2fs/dir_iterate.c
+	CC ../../../lib/ext2fs/expanddir.c
+	CC ../../../lib/ext2fs/ext_attr.c
+	CC ../../../lib/ext2fs/extent.c
+	CC ../../../lib/ext2fs/fileio.c
+	CC ../../../lib/ext2fs/finddev.c
+	CC ../../../lib/ext2fs/flushb.c
+	CC ../../../lib/ext2fs/freefs.c
+	CC ../../../lib/ext2fs/gen_bitmap.c
+	CC ../../../lib/ext2fs/gen_bitmap64.c
+	CC ../../../lib/ext2fs/get_pathname.c
+	CC ../../../lib/ext2fs/getsize.c
+	CC ../../../lib/ext2fs/getsectsize.c
+	CC ../../../lib/ext2fs/i_block.c
+	CC ../../../lib/ext2fs/icount.c
+	CC ../../../lib/ext2fs/ind_block.c
+	CC ../../../lib/ext2fs/initialize.c
+	CC ../../../lib/ext2fs/inline.c
+	CC ../../../lib/ext2fs/inode.c
+	CC ../../../lib/ext2fs/io_manager.c
+	CC ../../../lib/ext2fs/ismounted.c
+	CC ../../../lib/ext2fs/link.c
+	CC ../../../lib/ext2fs/llseek.c
+	CC ../../../lib/ext2fs/lookup.c
+	CC ../../../lib/ext2fs/mkdir.c
+	CC ../../../lib/ext2fs/mkjournal.c
+	CC ../../../lib/ext2fs/mmp.c
+	CC ../../../lib/ext2fs/namei.c
+	CC ../../../lib/ext2fs/native.c
+	CC ../../../lib/ext2fs/newdir.c
+	CC ../../../lib/ext2fs/openfs.c
+	CC ../../../lib/ext2fs/progress.c
+	CC ../../../lib/ext2fs/punch.c
+	CC ../../../lib/ext2fs/qcow2.c
+	CC ../../../lib/ext2fs/read_bb.c
+	CC ../../../lib/ext2fs/read_bb_file.c
+	CC ../../../lib/ext2fs/res_gdt.c
+	CC ../../../lib/ext2fs/rw_bitmaps.c
+	CC ../../../lib/ext2fs/swapfs.c
+	CC ../../../lib/ext2fs/symlink.c
+	CC ../../../lib/ext2fs/tdb.c
+	CC ../../../lib/ext2fs/undo_io.c
+	CC ../../../lib/ext2fs/unix_io.c
+	CC ../../../lib/ext2fs/unlink.c
+	CC ../../../lib/ext2fs/valid_blk.c
+	CC ../../../lib/ext2fs/version.c
+	CC ../../../lib/ext2fs/rbtree.c
+	GEN_LIB libext2fs.a
+	GEN_ELF_SOLIB libext2fs.so.2.4
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/blkid
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+	MKDIR elfshared
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+	CP blkid.h
+	CC ../../../lib/blkid/cache.c
+	CC ../../../lib/blkid/dev.c
+	CC ../../../lib/blkid/devname.c
+	CC ../../../lib/blkid/devno.c
+	CC ../../../lib/blkid/getsize.c
+	CC ../../../lib/blkid/llseek.c
+	CC ../../../lib/blkid/probe.c
+	CC ../../../lib/blkid/read.c
+	CC ../../../lib/blkid/resolve.c
+	CC ../../../lib/blkid/save.c
+	CC ../../../lib/blkid/tag.c
+	CC ../../../lib/blkid/version.c
+	GEN_LIB libblkid.a
+	GEN_ELF_SOLIB libblkid.so.1.0
+	SUBST libblkid.3
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+making all in lib/quota
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+	CC ../../../lib/quota/mkquota.c
+	CC ../../../lib/quota/quotaio.c
+	CC ../../../lib/quota/quotaio_v2.c
+	CC ../../../lib/quota/quotaio_tree.c
+	CC ../../../lib/quota/../../e2fsck/dict.c
+	GEN_LIB libquota.a
+	CONFIG.STATUS quota.pc
+config.status: creating lib/quota/quota.pc
+config.status: creating lib/config.h
+config.status: lib/config.h is unchanged
+config.status: executing default-1 commands
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+making all in intl
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make progs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `util/subst.conf' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/config.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/dirpaths.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/ext2fs/ext2_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/blkid/blkid_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: `lib/uuid/uuid_types.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[2]: `compile_et' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[2]: `ext2_err.h' is up to date.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/et
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+making all in lib/ss
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+making all in lib/e2p
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+making all in lib/uuid
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+making all in lib/ext2fs
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/blkid
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+making all in lib/quota
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+making all in intl
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+making all in e2fsck
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/e2fsck'
+	COMPILE_ET prof_err.et
+	CC gen_crc32table
+	GEN32TABLE crc32table.h
+	CC ../../e2fsck/crc32.c
+	CC ../../e2fsck/dict.c
+	CC ../../e2fsck/unix.c
+	CC ../../e2fsck/e2fsck.c
+	CC ../../e2fsck/super.c
+	CC ../../e2fsck/pass1.c
+	CC ../../e2fsck/pass1b.c
+	CC ../../e2fsck/pass2.c
+	CC ../../e2fsck/pass3.c
+	CC ../../e2fsck/pass4.c
+	CC ../../e2fsck/pass5.c
+	CC ../../e2fsck/journal.c
+	CC ../../e2fsck/badblocks.c
+	CC ../../e2fsck/util.c
+	CC ../../e2fsck/dirinfo.c
+	CC ../../e2fsck/dx_dirinfo.c
+	CC ../../e2fsck/ehandler.c
+	CC ../../e2fsck/problem.c
+	CC ../../e2fsck/message.c
+	CC ../../e2fsck/quota.c
+	CC ../../e2fsck/recovery.c
+In file included from ../../e2fsck/recovery.c:18:0:
+../../e2fsck/jfs_user.h:123:6: warning: '__bswap_32' is static but used in inline function 'journal_tag_bytes' which is not static [enabled by default]
+	CC ../../e2fsck/region.c
+	CC ../../e2fsck/revoke.c
+In file included from ../../e2fsck/revoke.c:62:0:
+../../e2fsck/jfs_user.h:123:6: warning: '__bswap_32' is static but used in inline function 'journal_tag_bytes' which is not static [enabled by default]
+	CC ../../e2fsck/ea_refcount.c
+	CC ../../e2fsck/rehash.c
+	CC ../../e2fsck/profile.c
+	CC prof_err.c
+	CC ../../e2fsck/logfile.c
+	CC ../../e2fsck/sigcatcher.c
+	LD e2fsck
+	SUBST e2fsck.8
+	SUBST e2fsck.conf.5
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/e2fsck'
+making all in debugfs
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/debugfs'
+	MK_CMDS debug_cmds.c
+	CC debug_cmds.c
+	CC ../../debugfs/debugfs.c
+	CC ../../debugfs/util.c
+	CC ../../debugfs/ncheck.c
+	CC ../../debugfs/icheck.c
+	CC ../../debugfs/ls.c
+	CC ../../debugfs/lsdel.c
+	CC ../../debugfs/dump.c
+	CC ../../debugfs/set_fields.c
+	CC ../../debugfs/logdump.c
+	CC ../../debugfs/htree.c
+	CC ../../debugfs/unused.c
+	CC e2freefrag.o
+	CC ../../debugfs/filefrag.c
+	MK_CMDS extent_cmds.c
+	CC extent_cmds.c
+	CC ../../debugfs/extent_inode.c
+	CC ../../debugfs/zap.c
+	LD debugfs
+	SUBST debugfs.8
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/debugfs'
+making all in misc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/misc'
+	CP ../../e2fsck/profile.h
+	COMPILE_ET prof_err.et
+	CC ../../misc/mke2fs.c
+	CC ../../misc/util.c
+	CC ../../misc/../e2fsck/profile.c
+	CC prof_err.c
+if test -f ../../misc/mke2fs.conf.custom.in ; then \
+		cp ../../misc/mke2fs.conf.custom.in mke2fs.conf; \
+	else \
+		cp ../../misc/mke2fs.conf.in mke2fs.conf; \
+	fi
+	PROFILE_TO_C mke2fs.conf
+	CC default_profile.c
+	LD mke2fs
+	CC ../../misc/badblocks.c
+	LD badblocks
+	CC ../../misc/tune2fs.c
+	LD tune2fs
+	CC ../../misc/dumpe2fs.c
+	LD dumpe2fs
+	CC ../../misc/blkid.c
+	LD blkid
+	CC ../../misc/logsave.c
+	LD logsave
+	CC ../../misc/e2image.c
+	LD e2image
+	CC ../../misc/fsck.c
+	CC ../../misc/base_device.c
+	CC ../../misc/ismounted.c
+	LD fsck
+	CC ../../misc/e2undo.c
+	LD e2undo
+	CC ../../misc/chattr.c
+	LD chattr
+	CC ../../misc/lsattr.c
+	LD lsattr
+	CC ../../misc/uuidgen.c
+	LD uuidgen
+	CC ../../misc/mklost+found.c
+	LD mklost+found
+	CC ../../misc/filefrag.c
+	LD filefrag
+	CC ../../misc/e2freefrag.c
+	LD e2freefrag
+	CC ../../misc/uuidd.c
+	LD uuidd
+	CC ../../misc/e4defrag.c
+	LD e4defrag
+	SUBST tune2fs.8
+	SUBST mklost+found.8
+	SUBST mke2fs.8
+	SUBST dumpe2fs.8
+	SUBST badblocks.8
+	SUBST e2label.8
+	SUBST findfs.8
+	SUBST blkid.8
+	SUBST e2image.8
+	SUBST logsave.8
+	SUBST filefrag.8
+	SUBST e2freefrag.8
+	SUBST e2undo.8
+	SUBST uuidd.8
+	SUBST e4defrag.8
+	SUBST fsck.8
+	SUBST chattr.1
+	SUBST lsattr.1
+	SUBST uuidgen.1
+	SUBST mke2fs.conf.5
+	CC ../../misc/e2initrd_helper.c
+	LD e2initrd_helper
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/misc'
+making all in resize
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/resize'
+	CC ../../resize/extent.c
+	CC ../../resize/resize2fs.c
+	CC ../../resize/main.c
+	CC ../../resize/online.c
+	CC ../../resize/resource_track.c
+	CC ../../resize/sim_progress.c
+	LD resize2fs
+	CC ../../resize/test_extent.c
+	LD test_extent
+	SUBST resize2fs.8
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/resize'
+making all in tests/progs
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/tests/progs'
+	CC ../../../tests/progs/test_icount.c
+	MK_CMDS test_icount_cmds.c
+	CC test_icount_cmds.c
+	LD test_icount
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/tests/progs'
+making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/po'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make docs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/doc'
+	MAKEINFO libext2fs.info
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.bFdx1H
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd e2fsprogs-1.42.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64-bak
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ tee -a build.log
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install install-libs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `util/subst.conf' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/config.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/dirpaths.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/ext2fs/ext2_types.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/blkid/blkid_types.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: `lib/uuid/uuid_types.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[1]: `compile_et' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[1]: `ext2_err.h' is up to date.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/et
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+making all in lib/ss
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+making all in lib/e2p
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+making all in lib/uuid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+making all in lib/ext2fs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making all in lib/blkid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+making all in lib/quota
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+making all in intl
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+making install in e2fsck
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/e2fsck'
+	MKINSTALLDIRS /sbin /usr/share/man/man8
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man8
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man5
+	INSTALL /sbin/e2fsck
+	LINK /sbin/fsck.ext2
+	LINK /sbin/fsck.ext3
+	LINK /sbin/fsck.ext4
+	LINK /sbin/fsck.ext4dev
+	INSTALL_DATA /usr/share/man/man8/e2fsck.8
+	INSTALL_DATA /usr/share/man/man5/e2fsck.conf.5
+	LINK /usr/share/man/man8/fsck.ext2.8
+	LINK /usr/share/man/man8/fsck.ext3.8
+	LINK /usr/share/man/man8/fsck.ext4.8
+	LINK /usr/share/man/man8/fsck.ext4dev.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/e2fsck'
+making install in debugfs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/debugfs'
+	MKINSTALLDIRS /sbin /usr/share/man/man8
+	INSTALL /sbin/debugfs
+	INSTALL_DATA /usr/share/man/man8/debugfs.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/debugfs'
+making install in misc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/misc'
+	MKINSTALLDIRS /sbin /sbin /bin /usr/share/man/man1 /usr/share/man/man8 /usr/lib /etc
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/bin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc
+	INSTALL /sbin/mke2fs
+	INSTALL /sbin/badblocks
+	INSTALL /sbin/tune2fs
+	INSTALL /sbin/dumpe2fs
+	INSTALL /sbin/blkid
+	INSTALL /sbin/logsave
+	INSTALL /sbin/e2image
+	INSTALL /sbin/fsck
+	INSTALL /sbin/e2undo
+	INSTALL /sbin/mklost+found
+	INSTALL /sbin/filefrag
+	INSTALL /sbin/e2freefrag
+	INSTALL /sbin/uuidd
+	INSTALL /sbin/e4defrag
+	LINK /sbin/mkfs.ext2
+	LINK /sbin/mkfs.ext3
+	LINK /sbin/mkfs.ext4
+	LINK /sbin/mkfs.ext4dev
+	LINK /sbin/findfs
+	INSTALL /bin/chattr
+	INSTALL /bin/lsattr
+	INSTALL /bin/uuidgen
+	INSTALL /usr/lib/e2initrd_helper
+	INSTALL_DATA /usr/share/man/man8/tune2fs.8
+	INSTALL_DATA /usr/share/man/man8/mklost+found.8
+	INSTALL_DATA /usr/share/man/man8/mke2fs.8
+	INSTALL_DATA /usr/share/man/man8/dumpe2fs.8
+	INSTALL_DATA /usr/share/man/man8/badblocks.8
+	INSTALL_DATA /usr/share/man/man8/e2label.8
+	INSTALL_DATA /usr/share/man/man8/findfs.8
+	INSTALL_DATA /usr/share/man/man8/blkid.8
+	INSTALL_DATA /usr/share/man/man8/e2image.8
+	INSTALL_DATA /usr/share/man/man8/logsave.8
+	INSTALL_DATA /usr/share/man/man8/filefrag.8
+	INSTALL_DATA /usr/share/man/man8/e2freefrag.8
+	INSTALL_DATA /usr/share/man/man8/e2undo.8
+	INSTALL_DATA /usr/share/man/man8/uuidd.8
+	INSTALL_DATA /usr/share/man/man8/e4defrag.8
+	INSTALL_DATA /usr/share/man/man8/fsck.8
+	LINK mkfs.ext2.8
+	LINK mkfs.ext3.8
+	LINK mkfs.ext4.8
+	LINK mkfs.ext4dev.8
+	INSTALL_DATA /usr/share/man/man1/chattr.1
+	INSTALL_DATA /usr/share/man/man1/lsattr.1
+	INSTALL_DATA /usr/share/man/man1/uuidgen.1
+	INSTALL_DATA /usr/share/man/man5/mke2fs.conf.5
+	INSTALL_DATA /etc/mke2fs.conf
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/misc'
+making install in resize
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/resize'
+	MKINSTALLDIRS /sbin /usr/share/man/man8
+	INSTALL /sbin/resize2fs
+	INSTALL_DATA /usr/share/man/man8/resize2fs.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/resize'
+making install in tests/progs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/tests/progs'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/tests/progs'
+making install in po
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/po'
+if test "e2fsprogs" = "gettext-tools"; then \
+	  /bin/sh ../../config/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/po'
+making install-shlibs in lib/et
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+	MKINSTALLDIRS /usr/lib /usr/lib
+cd ../../util ; make symlinks
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/util'
+	CC ../../util/symlinks.c
+	LD symlinks
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/util'
+	INSTALL-ELF-LIB /usr/lib/libcom_err.so.2.1
+	SYMLINK /usr/lib/libcom_err.so.2
+	SYMLINK /usr/lib/libcom_err.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+making install-shlibs in lib/ss
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libss.so.2.0
+	SYMLINK /usr/lib/libss.so.2
+	SYMLINK /usr/lib/libss.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+making install-shlibs in lib/e2p
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libe2p.so.2.3
+	SYMLINK /usr/lib/libe2p.so.2
+	SYMLINK /usr/lib/libe2p.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+making install-shlibs in lib/uuid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libuuid.so.1.2
+	SYMLINK /usr/lib/libuuid.so.1
+	SYMLINK /usr/lib/libuuid.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+making install-shlibs in lib/ext2fs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libext2fs.so.2.4
+	SYMLINK /usr/lib/libext2fs.so.2
+	SYMLINK /usr/lib/libext2fs.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making install-shlibs in lib/blkid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libblkid.so.1.0
+	SYMLINK /usr/lib/libblkid.so.1
+	SYMLINK /usr/lib/libblkid.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install-shlibs] Error 1 (ignored)
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+making install-shlibs in lib/quota
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+make[1]: Nothing to be done for `install-shlibs'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+making install-shlibs in intl
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[1]: Nothing to be done for `install-shlibs'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/doc'
+	TEXI2DVI libext2fs.dvi
+You don't have a working TeX binary installed, but the texi2dvi script
+can't proceed without it. If you want to use this script, you have to
+install some kind of TeX, for example TeX Live Debian packages. You can do
+that with this command:
+       apt-get install texlive
+make[1]: [libext2fs.dvi] Error 1 (ignored)
+	MKINSTALLDIRS /usr/share/info
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info
+	INSTALL_DATA /usr/share/info/libext2fs.info
+	GZIP /usr/share/info/libext2fs.info*
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/doc'
+if test ! -d e2fsck && test ! -d debugfs && test ! -d misc && test ! -d ext2ed ; then make install-libs ; fi
+making install in lib/et
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libcom_err.so.2.1
+	SYMLINK /usr/lib/libcom_err.so.2
+	SYMLINK /usr/lib/libcom_err.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/et /usr/share/et /bin /usr/share/man/man1 /usr/share/man/man3
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/et
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/et
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man3
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig
+	INSTALL_DATA /usr/lib/libcom_err.a
+	INSTALL_DATA /tool//usr/include/et/com_err.h
+	INSTALL_DATA /usr/share/et/et_c.awk
+	INSTALL_DATA /usr/share/et/et_h.awk
+	INSTALL_SCRIPT /bin/compile_et
+	INSTALL_DATA /usr/share/man/man3/com_err.3
+	INSTALL_DATA /usr/share/man/man1/compile_et.1
+	INSTALL_DATA /usr/lib/pkgconfig/com_err.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/et'
+making install in lib/ss
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libss.so.2.0
+	SYMLINK /usr/lib/libss.so.2
+	SYMLINK /usr/lib/libss.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/ss /usr/share/ss /bin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/ss
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/ss
+	INSTALL_DATA /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libss.a
+	INSTALL_DATA /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/ss/ss.h
+	INSTALL_DATA /tool//usr/include/ss/ss_err.h
+	INSTALL_DATA /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/ss/ct_c.awk
+	INSTALL_DATA /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/ss/ct_c.sed
+	INSTALL /bin/mk_cmds
+	INSTALL_DATA /usr/share/man/man1/mk_cmds.1
+	INSTALL_DATA /usr/lib/pkgconfig/ss.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ss'
+making install in lib/e2p
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libe2p.so.2.3
+	SYMLINK /usr/lib/libe2p.so.2
+	SYMLINK /usr/lib/libe2p.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/e2p
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/e2p
+	INSTALL_DATA /usr/lib/libe2p.a
+	INSTALL_DATA /tool//usr/include/e2p/e2p.h
+	INSTALL_DATA /usr/lib/pkgconfig/e2p.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/e2p'
+making install in lib/uuid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libuuid.so.1.2
+	SYMLINK /usr/lib/libuuid.so.1
+	SYMLINK /usr/lib/libuuid.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/uuid /usr/share/man/man3
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/uuid
+	INSTALL_DATA /usr/lib/libuuid.a
+	INSTALL_DATA /tool//usr/include/uuid/uuid.h
+	INSTALL_DATA /usr/share/man/man3/uuid.3
+	INSTALL_DATA /usr/share/man/man3/uuid_clear.3
+	INSTALL_DATA /usr/share/man/man3/uuid_compare.3
+	INSTALL_DATA /usr/share/man/man3/uuid_copy.3
+	INSTALL_DATA /usr/share/man/man3/uuid_generate.3
+	INSTALL_DATA /usr/share/man/man3/uuid_is_null.3
+	INSTALL_DATA /usr/share/man/man3/uuid_parse.3
+	INSTALL_DATA /usr/share/man/man3/uuid_time.3
+	INSTALL_DATA /usr/share/man/man3/uuid_unparse.3
+	LINK /usr/share/man/man3/uuid_generate_random.3
+	LINK /usr/share/man/man3/uuid_generate_time.3
+	INSTALL_DATA /usr/lib/pkgconfig/uuid.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/uuid'
+making install in lib/ext2fs
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libext2fs.so.2.4
+	SYMLINK /usr/lib/libext2fs.so.2
+	SYMLINK /usr/lib/libext2fs.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/ext2fs
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/ext2fs
+	INSTALL_DATA /usr/lib/libext2fs.a
+	INSTALL_DATA /tool//usr/include/ext2fs/bitops.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2fs.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2_io.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2_fs.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2_ext_attr.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext3_extents.h
+	INSTALL_DATA /tool//usr/include/ext2fs/tdb.h
+	INSTALL_DATA /tool//usr/include/ext2fs/qcow2.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2_err.h
+	INSTALL_DATA /tool//usr/include/ext2fs/ext2_types.h
+	INSTALL_DATA /usr/lib/pkgconfig/ext2fs.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/ext2fs'
+making install in lib/blkid
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+	MKINSTALLDIRS /usr/lib /usr/lib
+	INSTALL-ELF-LIB /usr/lib/libblkid.so.1.0
+	SYMLINK /usr/lib/libblkid.so.1
+	SYMLINK /usr/lib/libblkid.so
+	LDCONFIG
+/sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied
+make[1]: [install] Error 1 (ignored)
+	MKINSTALLDIRS /usr/lib /tool//usr/include/blkid
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/blkid
+	INSTALL_DATA /usr/lib/libblkid.a
+	INSTALL_DATA /tool//usr/include/blkid/blkid.h
+	INSTALL_DATA /tool//usr/include/blkid/blkid_types.h
+	INSTALL_DATA /usr/share/man/man3/libblkid.3
+	INSTALL_DATA /usr/lib/pkgconfig/blkid.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/blkid'
+making install in lib/quota
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+	MKINSTALLDIRS /usr/lib /tool//usr/include/quota /usr/share/man/man3
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/quota
+	INSTALL_DATA /usr/lib/libquota.a
+	INSTALL_DATA /tool//usr/include/quota/mkquota.h
+	INSTALL_DATA /usr/lib/pkgconfig/quota.pc
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/lib/quota'
+making install in intl
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
+if test 'no' = yes; then \
+	  test yes != no || /bin/sh ../../config/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib; \
+	  temp=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/t-charset.alias; \
+	  dest=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; \
+	  if test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; then \
+	    orig=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; \
+	    sed -f ref-add.sed $orig > $temp; \
+	    /usr/bin/install -c -m 644 $temp $dest; \
+	    rm -f $temp; \
+	  else \
+	    if test yes = no; then \
+	      orig=charset.alias; \
+	      sed -f ref-add.sed $orig > $temp; \
+	      /usr/bin/install -c -m 644 $temp $dest; \
+	      rm -f $temp; \
+	    fi; \
+	  fi; \
+	  /bin/sh ../../config/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale; \
+	  test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias \
+	    && orig=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias \
+	    || orig=../../intl/locale.alias; \
+	  temp=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/t-locale.alias; \
+	  dest=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/locale/locale.alias; \
+	  sed -f ref-add.sed $orig > $temp; \
+	  /usr/bin/install -c -m 644 $temp $dest; \
+	  rm -f $temp; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7/objdir/intl'
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
++ ln -sf libblkid.so.1 libblkid.so
++ ln -sf libcom_err.so.2 libcom_err.so
++ ln -sf libe2p.so.2 libe2p.so
++ ln -sf libext2fs.so.2 libext2fs.so
++ ln -sf libss.so.2 libss.so
++ ln -sf libuuid.so.1 libuuid.so
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libcom_err.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libe2p.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libext2fs.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libquota.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libss.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libblkid.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libblkid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libblkid.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libcom_err.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libcom_err.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libcom_err.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libe2p.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libe2p.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libe2p.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libext2fs.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libext2fs.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libext2fs.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libquota.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libquota.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libquota.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libss.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libss.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libss.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libuuid.a '!=' pkgconfig ']'
++ ln -s ../../tool/usr/lib/libuuid.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' pkgconfig '!=' pkgconfig ']'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-e2fsprogs-1.42.7-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-e2fsprogs-1.42.7-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-e2fsprogs-1.42.7-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.e1C85F
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd e2fsprogs-1.42.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-e2fsprogs-1.42.7-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/e2fsprogs-1.42.7 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 16:50:43 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/e2fsprogs-1.42.7/objdir/tests || echo 'COMMAND''ERROR'
+-bash-3.2# make check CC=/tool/usr/bin/gcc | tee /tmp/e2fsprogs_test.out
+Running e2fsprogs test suite...
+ 
+/bin/cp ../../tests/mke2fs.conf.in mke2fs.conf
+Creating test_one script...
+d_loaddump: debugfs load/dump test: failed
+d_special_files: create special files in debugfs: ok
+e_brel_bma: block relocation table using the memory array implementation: skipped
+e_icount_normal: inode counting structure optimized for low counts: ok
+e_icount_opt: inode counting abstraction optimized for counting: ok
+e_irel_ima: inode relocation table using the memory array implementation: skipped
+f_16384_block: 16384 byte blocksize: ok
+f_8192_block: 8192 byte blocksize: ok
+f_bad_disconnected_inode: Disconnected inode with bad fields: ok
+f_bad_local_jnl: test for corrupt local journal (bad V1->V2 journal upgrade): ok
+f_badbblocks: illegal blocks in bad block inode: ok
+f_baddir: corrupted directory entries: ok
+f_baddir2: salvage last directory entry: ok
+f_baddotdir: bad '.' and '..' entries: ok
+f_badinode: corrupted inode entries: ok
+f_badjour_indblks: corruption in journal inode's indirect blocks: ok
+f_badjourblks: Illegal blocks in journal inode (and backup in superblock): ok
+f_badorphan: corrupted orphan list: ok
+f_badprimary: bad blocks in the primary superblock and group descriptors: ok
+f_badroot: file in root directory inode: ok
+f_badsymlinks: corrupted symlinks: ok
+f_badtable: bad blocks in bitmaps and inode table: ok
+f_bbfile: bad blocks in files: ok
+f_bbinode: bad blocks in inode table: ok
+f_big_sparse: big sparse file: ok
+f_bitmaps: corrupted inode and block bitmaps: ok
+f_clear_xattr: clearing i_file_acl when !ext_attr feature: ok
+f_crashdisk: Superblock with illegal values: ok
+f_dir_bad_mode: directory with corrupted i_mode: ok
+f_dirlink: directory hard links: ok
+f_dup: blocks claimed by two different files: ok
+f_dup2: blocks claimed by three different files: ok
+f_dup3: blocks claimed by one file multiple times: ok
+f_dup4: find all directory pathnames: ok
+f_dup_ba: multiply claimed blocks with bigalloc: ok
+f_dup_de: duplicate directory entries: ok
+f_dup_de2: duplicate directory entries for non-indexed dirs: ok
+f_dup_resize: blocks claimed by the resize inode and another inode: failed
+f_dupdot: duplicate '.' and '..' entries: ok
+f_dupfsblks: blocks claimed by a file and bitmaps or inode tables: ok
+f_dupsuper: blocks claimed by a file and superblock or group descriptors: ok
+f_ea_checks: extended attribute block checks: ok
+f_end-bitmap: corruption at end of block bitmap: ok
+f_eofblocks: blocks after i_size: ok
+f_expand: expanding lost+found: ok
+f_ext_journal: test external journal device: ok
+f_ext_zero_len: extent with zero length: ok
+f_extent_bad_node: bad interior node in extent tree: ok
+f_extent_interior_start_lblk: incorrect starting lblk in an interior node: ok
+f_extents: basic extents support: ok
+f_extents2: multiply claimed blocks in extents and other illegal extents: ok
+f_extra_journal: Valid journal inode, but has_journal feature not present: ok
+f_fast_symlink_extents: fast symlink with extents flag set: ok
+f_file_acl_high: i_file_acl_high should be zero: ok
+f_filetype: set filetype information and illegal special files: ok
+f_full_bg: inode table in last block of first bg: ok
+f_h_badnode: hash directory with bad HTREE nodes: ok
+f_h_badroot: bad htree root nodes: ok
+f_h_normal: Normal (signed) HTREE directory: ok
+f_h_reindex: reindex HTREE Directory with different hash seed: ok
+f_h_unsigned: Unsigned HTREE directory: ok
+f_holedir: directory with holes and illegal blocks: ok
+f_holedir2: directories with holes and zero i_size: ok
+f_hurd: GNU/Hurd specific tests: ok
+f_illbbitmap: illegal block bitmap: ok
+f_illibitmap: illegal inode bitmap: ok
+f_illitable: illegal inode table: ok
+f_illitable_flexbg: illegal inode table with FLEX_BG: ok
+f_imagic: non-imagic filesystem with imagic inodes: ok
+f_imagic_fs: imagic filesystem with imagic inodes: ok
+f_invalid_bad_inode: check for bogus bad inode: ok
+f_jnl_32bit: on-disk 32-bit journal format: ok
+f_jnl_64bit: on-disk 64-bit journal format: ok
+f_jnl_errno: journal s_errno handling: ok
+f_journal: recover journal from corrupted inode table: ok
+f_lotsbad: too many illegal blocks in inode: failed
+--- ../../tests/f_lotsbad/expect.1      2009-08-13 01:39:58.000000000 +0000
++++ f_lotsbad.1.log     2014-02-14 11:40:30.903300000 +0000
+@@ -4,58 +4,6 @@
+ Inode 13 is too big.  Truncate? yes
+ 
+ Block #16580876 (74) causes directory to be too big.  CLEARED.
+-Inode 13, i_size is 15360, should be 12288.  Fix? yes
+-
+-Inode 13, i_blocks is 32, should be 30.  Fix? yes
+-
+-Inode 12 has illegal block(s).  Clear? yes
+-
+-Illegal block #12 (778398818) in inode 12.  CLEARED.
+-Illegal block #13 (1768444960) in inode 12.  CLEARED.
+-Illegal block #14 (1752375411) in inode 12.  CLEARED.
+-Illegal block #15 (1684829551) in inode 12.  CLEARED.
+-Illegal block #16 (1886349344) in inode 12.  CLEARED.
+-Illegal block #17 (1819633253) in inode 12.  CLEARED.
+-Illegal block #18 (1663072620) in inode 12.  CLEARED.
+-Illegal block #19 (1735287144) in inode 12.  CLEARED.
+-Illegal block #20 (1310731877) in inode 12.  CLEARED.
+-Illegal block #21 (560297071) in inode 12.  CLEARED.
+-Illegal block #22 (543512352) in inode 12.  CLEARED.
+-Too many illegal blocks in inode 12.
+-Clear inode? yes
+-
+-Restarting e2fsck from the beginning...
+-Pass 1: Checking inodes, blocks, and sizes
+-Pass 2: Checking directory structure
+-Entry 'termcap' in / (2) has deleted/unused inode 12.  Clear? yes
+-
+-Pass 3: Checking directory connectivity
+-Pass 4: Checking reference counts
+-Inode 2 ref count is 5, should be 4.  Fix? yes
+-
+-Pass 5: Checking group summary information
+-Block bitmap differences:  -(27--41) -(44--45) -(74--90)
+-Fix? yes
+-
+-Free blocks count wrong for group #0 (9, counted=43).
+-Fix? yes
+-
+-Free blocks count wrong (9, counted=43).
+-Fix? yes
+-
+-Inode bitmap differences:  -12 -14
+-Fix? yes
+-
+-Free inodes count wrong for group #0 (18, counted=20).
+-Fix? yes
+-
+-Directories count wrong for group #0 (4, counted=3).
+-Fix? yes
+-
+-Free inodes count wrong (18, counted=20).
+-Fix? yes
+-
+-
+-test_filesys: ***** FILE SYSTEM WAS MODIFIED *****
+-test_filesys: 12/32 files (0.0% non-contiguous), 57/100 blocks
+-Exit status is 1
++Error storing directory block information (inode=13, block=0, num=12481610): Memory allocation failed
++e2fsck: aborted
++Exit status is 8
+--- ../../tests/f_lotsbad/expect.2      2009-08-13 01:39:58.000000000 +0000
++++ f_lotsbad.2.log     2014-02-14 11:40:33.763300000 +0000
+@@ -1,7 +1,9 @@
++Filesystem did not have a UUID; generating one.
++
+ Pass 1: Checking inodes, blocks, and sizes
+-Pass 2: Checking directory structure
+-Pass 3: Checking directory connectivity
+-Pass 4: Checking reference counts
+-Pass 5: Checking group summary information
+-test_filesys: 12/32 files (0.0% non-contiguous), 57/100 blocks
+-Exit status is 0
++Inode 13 is too big.  Truncate? yes
++
++Block #16580876 (74) causes directory to be too big.  CLEARED.
++Error storing directory block information (inode=13, block=0, num=12481610): Memory allocation failed
++e2fsck: aborted
++Exit status is 8
+f_lpf: missing lost+found: ok
+f_lpf2: create lost+found and reconnect lost directory: ok
+f_lpffile: lost+found is not a directory: ok
+f_messy_inode: bad file and directory acl pointers: ok
+f_miss_blk_bmap: missing block bitmap: ok
+f_miss_journal: Non-existent journal inode: ok
+f_misstable: missing inode table: ok
+f_mke2fs2b: mke2fs version 0.2b created filesystem: ok
+f_mmp: disable MMP with tune2fs after e2fsck killed: ok
+f_mmp_garbage: repair MMP when it is corrupted: ok
+f_noroot: missing root directory: ok
+f_okgroup: 8193 block long filesystem: ok
+f_orphan: clearing orphan inodes: ok
+f_orphan_dotdot_ft: filetype of .. in orphaned directories: ok
+f_orphan_extents_inode: truncating an orphaned extent-mapped inode: ok
+f_orphan_indirect_inode: truncating an orphaned inode in preen mode: ok
+f_overfsblks: overlapping inode and block bitmaps: ok
+f_preen: preen shouldn't destroy backup superblocks: ok
+f_recnect_bad: Reconnecting bad inode: ok
+f_reconnect: simple disconnected file inode: ok
+f_rehash_dir: optimize htree directories: ok
+f_resize_inode: e2fsck with resize_inode: ok
+f_salvage_dir: salvage corrupted directories: ok
+f_selinux: SE Linux generated symlinks with EA data: ok
+f_special_ea: Special files with extended attributes: ok
+f_summary_counts: incorrect inode/block free counts: ok
+f_uninit_ext_past_eof: fallocated extents after i_size: ok
+f_uninit_last_uninit: last group has BLOCK_UNINIT set: ok
+f_unsorted_EAs: unsorted EAs in inode should not be deleted: ok
+f_unused_itable: Don't move files to lost+found for bg_unused_itable: ok
+f_valid_ea_in_inode: valid ea-in-inode examplars: ok
+f_zero_group: fallback for damaged group descriptors: ok
+f_zero_inode_size: superblock with a zero inode size: ok
+f_zero_super: fallback for damaged superblock: ok
+i_e2image: create/convert raw/qcow2 images: ok
+m_bigjournal: journal over 4GB in size: failed
+m_dasd_bs: 2048 byte sector devices: ok
+m_extent_journal: extent-mapped journal: ok
+m_large_file: largefile fs type: ok
+m_meta_bg: meta blockgroup feature: ok
+m_mkfs_overhead: test bg overhead calculation: ok
+m_mmp: enable MMP during mke2fs: ok
+m_no_opt: no filesystem extensions: ok
+m_raid_opt: raid options: ok
+m_std: standard filesystem options: ok
+m_uninit: uninitialized group feature: ok
+../../tests/r_inline_xattr/script: line 14: /devel/usr/bin/grep: No such file or directory
+../../tests/r_inline_xattr/script: line 27: /devel/usr/bin/grep: No such file or directory
+r_inline_xattr: shrinking filesystem with in-inode extended attributes: failed
+r_move_itable: filesystem resize which requires moving the inode table: ok
+r_resize_inode: filesystem resize with a resize_inode present: ok
+t_ext_jnl_rm: remove missing external journal device: ok
+t_mmp_1on: enable MMP using tune2fs: ok
+t_mmp_2off: disable MMP using tune2fs: ok
+u_mke2fs: e2undo with mke2fs: ok
+u_tune2fs: e2undo with tune2fs: ok
+122 tests succeeded     5 tests failed
+Tests failed: d_loaddump f_dup_resize f_lotsbad m_bigjournal r_inline_xattr 
+make: *** [test_post] Error 1
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/e2fsprogs_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+spawn -nottyinit sh -c diff -u /home/rpmuser//MAIN/dist/pkg/e2fsprogs/test/e2fsprogs_sample.out /home/rpmuser/rpm/tmp/e2fsprogs_test.out > /home/rpmuser/rpm/tmp/e2fsprogs_test.diff; true
+/home/rpmuser/rpm/tmp/e2fsprogs_test.diff is ----------------------------------------------
+--- /home/rpmuser//MAIN/dist/pkg/e2fsprogs/test/e2fsprogs_sample.out	2008-05-22 07:52:04.000000000 +0530
++++ /home/rpmuser/rpm/tmp/e2fsprogs_test.out	2014-02-14 17:34:45.455244181 +0530
+@@ -1,9 +1,11 @@
+-Creating test_script...
+ Running e2fsprogs test suite...
+  
+-d_loaddump: debugfs load/dump test: ok
++/bin/cp ../../tests/mke2fs.conf.in mke2fs.conf
++Creating test_one script...
++d_loaddump: debugfs load/dump test: failed
++d_special_files: create special files in debugfs: ok
+ e_brel_bma: block relocation table using the memory array implementation: skipped
+-e_icount_normal: inode counting abstraction optimized for storing inode counts: ok
++e_icount_normal: inode counting structure optimized for low counts: ok
+ e_icount_opt: inode counting abstraction optimized for counting: ok
+ e_irel_ima: inode relocation table using the memory array implementation: skipped
+ f_16384_block: 16384 byte blocksize: ok
+@@ -34,16 +36,26 @@
+ f_dup2: blocks claimed by three different files: ok
+ f_dup3: blocks claimed by one file multiple times: ok
+ f_dup4: find all directory pathnames: ok
++f_dup_ba: multiply claimed blocks with bigalloc: ok
+ f_dup_de: duplicate directory entries: ok
+-f_dup_resize: blocks claimed by the resize inode and another inode: ok
++f_dup_de2: duplicate directory entries for non-indexed dirs: ok
++f_dup_resize: blocks claimed by the resize inode and another inode: failed
+ f_dupdot: duplicate '.' and '..' entries: ok
+ f_dupfsblks: blocks claimed by a file and bitmaps or inode tables: ok
+ f_dupsuper: blocks claimed by a file and superblock or group descriptors: ok
++f_ea_checks: extended attribute block checks: ok
+ f_end-bitmap: corruption at end of block bitmap: ok
++f_eofblocks: blocks after i_size: ok
+ f_expand: expanding lost+found: ok
+-f_ext_journal: ok
+-f_extents: skipped
++f_ext_journal: test external journal device: ok
++f_ext_zero_len: extent with zero length: ok
++f_extent_bad_node: bad interior node in extent tree: ok
++f_extent_interior_start_lblk: incorrect starting lblk in an interior node: ok
++f_extents: basic extents support: ok
++f_extents2: multiply claimed blocks in extents and other illegal extents: ok
+ f_extra_journal: Valid journal inode, but has_journal feature not present: ok
++f_fast_symlink_extents: fast symlink with extents flag set: ok
++f_file_acl_high: i_file_acl_high should be zero: ok
+ f_filetype: set filetype information and illegal special files: ok
+ f_full_bg: inode table in last block of first bg: ok
+ f_h_badnode: hash directory with bad HTREE nodes: ok
+@@ -52,14 +64,102 @@
+ f_h_reindex: reindex HTREE Directory with different hash seed: ok
+ f_h_unsigned: Unsigned HTREE directory: ok
+ f_holedir: directory with holes and illegal blocks: ok
++f_holedir2: directories with holes and zero i_size: ok
+ f_hurd: GNU/Hurd specific tests: ok
+ f_illbbitmap: illegal block bitmap: ok
+ f_illibitmap: illegal inode bitmap: ok
+ f_illitable: illegal inode table: ok
++f_illitable_flexbg: illegal inode table with FLEX_BG: ok
+ f_imagic: non-imagic filesystem with imagic inodes: ok
+ f_imagic_fs: imagic filesystem with imagic inodes: ok
++f_invalid_bad_inode: check for bogus bad inode: ok
++f_jnl_32bit: on-disk 32-bit journal format: ok
++f_jnl_64bit: on-disk 64-bit journal format: ok
++f_jnl_errno: journal s_errno handling: ok
+ f_journal: recover journal from corrupted inode table: ok
+-f_lotsbad: too many illegal blocks in inode: ok
++f_lotsbad: too many illegal blocks in inode: failed
++--- ../../tests/f_lotsbad/expect.1	2009-08-13 01:39:58.000000000 +0000
+++++ f_lotsbad.1.log	2014-02-14 11:40:30.903300000 +0000
++@@ -4,58 +4,6 @@
++ Inode 13 is too big.  Truncate? yes
++ 
++ Block #16580876 (74) causes directory to be too big.  CLEARED.
++-Inode 13, i_size is 15360, should be 12288.  Fix? yes
++-
++-Inode 13, i_blocks is 32, should be 30.  Fix? yes
++-
++-Inode 12 has illegal block(s).  Clear? yes
++-
++-Illegal block #12 (778398818) in inode 12.  CLEARED.
++-Illegal block #13 (1768444960) in inode 12.  CLEARED.
++-Illegal block #14 (1752375411) in inode 12.  CLEARED.
++-Illegal block #15 (1684829551) in inode 12.  CLEARED.
++-Illegal block #16 (1886349344) in inode 12.  CLEARED.
++-Illegal block #17 (1819633253) in inode 12.  CLEARED.
++-Illegal block #18 (1663072620) in inode 12.  CLEARED.
++-Illegal block #19 (1735287144) in inode 12.  CLEARED.
++-Illegal block #20 (1310731877) in inode 12.  CLEARED.
++-Illegal block #21 (560297071) in inode 12.  CLEARED.
++-Illegal block #22 (543512352) in inode 12.  CLEARED.
++-Too many illegal blocks in inode 12.
++-Clear inode? yes
++-
++-Restarting e2fsck from the beginning...
++-Pass 1: Checking inodes, blocks, and sizes
++-Pass 2: Checking directory structure
++-Entry 'termcap' in / (2) has deleted/unused inode 12.  Clear? yes
++-
++-Pass 3: Checking directory connectivity
++-Pass 4: Checking reference counts
++-Inode 2 ref count is 5, should be 4.  Fix? yes
++-
++-Pass 5: Checking group summary information
++-Block bitmap differences:  -(27--41) -(44--45) -(74--90)
++-Fix? yes
++-
++-Free blocks count wrong for group #0 (9, counted=43).
++-Fix? yes
++-
++-Free blocks count wrong (9, counted=43).
++-Fix? yes
++-
++-Inode bitmap differences:  -12 -14
++-Fix? yes
++-
++-Free inodes count wrong for group #0 (18, counted=20).
++-Fix? yes
++-
++-Directories count wrong for group #0 (4, counted=3).
++-Fix? yes
++-
++-Free inodes count wrong (18, counted=20).
++-Fix? yes
++-
++-
++-test_filesys: ***** FILE SYSTEM WAS MODIFIED *****
++-test_filesys: 12/32 files (0.0% non-contiguous), 57/100 blocks
++-Exit status is 1
+++Error storing directory block information (inode=13, block=0, num=12481610): Memory allocation failed
+++e2fsck: aborted
+++Exit status is 8
++--- ../../tests/f_lotsbad/expect.2	2009-08-13 01:39:58.000000000 +0000
+++++ f_lotsbad.2.log	2014-02-14 11:40:33.763300000 +0000
++@@ -1,7 +1,9 @@
+++Filesystem did not have a UUID; generating one.
+++
++ Pass 1: Checking inodes, blocks, and sizes
++-Pass 2: Checking directory structure
++-Pass 3: Checking directory connectivity
++-Pass 4: Checking reference counts
++-Pass 5: Checking group summary information
++-test_filesys: 12/32 files (0.0% non-contiguous), 57/100 blocks
++-Exit status is 0
+++Inode 13 is too big.  Truncate? yes
+++
+++Block #16580876 (74) causes directory to be too big.  CLEARED.
+++Error storing directory block information (inode=13, block=0, num=12481610): Memory allocation failed
+++e2fsck: aborted
+++Exit status is 8
+ f_lpf: missing lost+found: ok
+ f_lpf2: create lost+found and reconnect lost directory: ok
+ f_lpffile: lost+found is not a directory: ok
+@@ -68,33 +168,51 @@
+ f_miss_journal: Non-existent journal inode: ok
+ f_misstable: missing inode table: ok
+ f_mke2fs2b: mke2fs version 0.2b created filesystem: ok
++f_mmp: disable MMP with tune2fs after e2fsck killed: ok
++f_mmp_garbage: repair MMP when it is corrupted: ok
+ f_noroot: missing root directory: ok
+ f_okgroup: 8193 block long filesystem: ok
+ f_orphan: clearing orphan inodes: ok
+ f_orphan_dotdot_ft: filetype of .. in orphaned directories: ok
++f_orphan_extents_inode: truncating an orphaned extent-mapped inode: ok
++f_orphan_indirect_inode: truncating an orphaned inode in preen mode: ok
+ f_overfsblks: overlapping inode and block bitmaps: ok
+ f_preen: preen shouldn't destroy backup superblocks: ok
+ f_recnect_bad: Reconnecting bad inode: ok
+ f_reconnect: simple disconnected file inode: ok
++f_rehash_dir: optimize htree directories: ok
+ f_resize_inode: e2fsck with resize_inode: ok
+ f_salvage_dir: salvage corrupted directories: ok
+ f_selinux: SE Linux generated symlinks with EA data: ok
+ f_special_ea: Special files with extended attributes: ok
+ f_summary_counts: incorrect inode/block free counts: ok
+-f_swapfs: checking the e2fsck swapfs functionality: ok
++f_uninit_ext_past_eof: fallocated extents after i_size: ok
++f_uninit_last_uninit: last group has BLOCK_UNINIT set: ok
++f_unsorted_EAs: unsorted EAs in inode should not be deleted: ok
++f_unused_itable: Don't move files to lost+found for bg_unused_itable: ok
+ f_valid_ea_in_inode: valid ea-in-inode examplars: ok
+ f_zero_group: fallback for damaged group descriptors: ok
+ f_zero_inode_size: superblock with a zero inode size: ok
+ f_zero_super: fallback for damaged superblock: ok
++i_e2image: create/convert raw/qcow2 images: ok
++m_bigjournal: journal over 4GB in size: failed
+ m_dasd_bs: 2048 byte sector devices: ok
++m_extent_journal: extent-mapped journal: ok
+ m_large_file: largefile fs type: ok
+ m_meta_bg: meta blockgroup feature: ok
+ m_mkfs_overhead: test bg overhead calculation: ok
++m_mmp: enable MMP during mke2fs: ok
+ m_no_opt: no filesystem extensions: ok
+ m_raid_opt: raid options: ok
+ m_std: standard filesystem options: ok
+-r_inline_xattr: shrinking filesystem with in-inode extended attributes: ok
+-r_move_itable: filesystem resize which requires moving the inode table : ok
++m_uninit: uninitialized group feature: ok
++r_inline_xattr: shrinking filesystem with in-inode extended attributes: failed
++r_move_itable: filesystem resize which requires moving the inode table: ok
+ r_resize_inode: filesystem resize with a resize_inode present: ok
+-92 tests succeeded      0 tests failed
+-
++t_ext_jnl_rm: remove missing external journal device: ok
++t_mmp_1on: enable MMP using tune2fs: ok
++t_mmp_2off: disable MMP using tune2fs: ok
++u_mke2fs: e2undo with mke2fs: ok
++u_tune2fs: e2undo with tune2fs: ok
++122 tests succeeded	5 tests failed
++Tests failed: d_loaddump f_dup_resize f_lotsbad m_bigjournal r_inline_xattr 
+----------------------------------------------------------------

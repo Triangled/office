@@ -1,0 +1,54 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Wed Feb 19 18:36:08 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp
+-bash-3.2# echo test > test.txt
+-bash-3.2# file test.txt 2<&1 | tee tofrodos_test.out
+test.txt: ASCII text
+-bash-3.2# todos test.txt
+-bash-3.2# file test.txt 2<&1 | tee -a tofrodos_test.out
+test.txt: ASCII text, with CRLF line terminators
+-bash-3.2# fromdos test.txt
+-bash-3.2# file test.txt 2<&1 | tee -a tofrodos_test.out
+test.txt: ASCII text
+-bash-3.2# unix2dos test.txt
+-bash-3.2# file test.txt 2<&1 | tee -a tofrodos_test.out
+test.txt: ASCII text, with CRLF line terminators
+-bash-3.2# dos2unix test.txt
+-bash-3.2# file test.txt 2<&1 | tee -a tofrodos_test.out
+test.txt: ASCII text
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/tofrodos_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+tofrodos : TEST_OK

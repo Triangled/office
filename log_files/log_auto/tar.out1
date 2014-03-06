@@ -1,0 +1,1338 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+tar : 1.17
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-tar-1.17-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-tar    warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  3%)#                                           (  5%)##                                          (  7%)###                                         ( 10%)####                                        ( 12%)#####                                       ( 14%)######                                      ( 17%)#######                                     ( 19%)########                                    ( 22%)#########                                   ( 24%)##########                                  ( 24%)###########                                 ( 26%)############                                ( 29%)#############                               ( 31%)##############                              ( 33%)###############                             ( 36%)################                            ( 38%)#################                           ( 41%)##################                          ( 43%)###################                         ( 45%)####################                        ( 48%)#####################                       ( 50%)######################                      ( 52%)#######################                     ( 55%)########################                    ( 57%)#########################                   ( 60%)##########################                  ( 62%)###########################                 ( 64%)############################                ( 67%)#############################               ( 69%)##############################              ( 71%)###############################             ( 74%)################################            ( 76%)#################################           ( 76%)##################################          ( 79%)###################################         ( 81%)####################################        ( 83%)#####################################       ( 86%)######################################      ( 88%)#######################################     ( 90%)########################################    ( 93%)#########################################   ( 95%)##########################################  ( 98%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-tar.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Rz6JKs
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf tar-1.17
++ /bin/tar -xf -
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/tar-1.17.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd tar-1.17
++ echo 'Patch #1 (tar-1.17-gcc-4.3.patch):'
+Patch #1 (tar-1.17-gcc-4.3.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/tar-1.17-gcc-4.3.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.FouAq7
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tar-1.17
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking how to create a ustar tar archive... gnutar
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking for bison... bison -y
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for AIX... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C99... -std=gnu99
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking for _LARGE_FILES value needed for large files... no
+checking for strerror in -lcposix... no
+checking for inline... inline
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking linux/fd.h usability... yes
+checking linux/fd.h presence... yes
+checking for linux/fd.h... yes
+checking for memory.h... (cached) yes
+checking net/errno.h usability... no
+checking net/errno.h presence... no
+checking for net/errno.h... no
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking for string.h... (cached) yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/device.h usability... no
+checking sys/device.h presence... no
+checking for sys/device.h... no
+checking sys/filio.h usability... no
+checking sys/filio.h presence... no
+checking for sys/filio.h... no
+checking sys/gentape.h usability... no
+checking sys/gentape.h presence... no
+checking for sys/gentape.h... no
+checking sys/inet.h usability... no
+checking sys/inet.h presence... no
+checking for sys/inet.h... no
+checking sys/io/trioctl.h usability... no
+checking sys/io/trioctl.h presence... no
+checking for sys/io/trioctl.h... no
+checking sys/mtio.h usability... yes
+checking sys/mtio.h presence... yes
+checking for sys/mtio.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/tprintf.h usability... no
+checking sys/tprintf.h presence... no
+checking for sys/tprintf.h... no
+checking sys/tape.h usability... no
+checking sys/tape.h presence... no
+checking for sys/tape.h... no
+checking for unistd.h... (cached) yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking features.h usability... yes
+checking features.h presence... yes
+checking for features.h... yes
+checking linewrap.h usability... no
+checking linewrap.h presence... no
+checking for linewrap.h... no
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking priv.h usability... no
+checking priv.h presence... no
+checking for priv.h... no
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for sys/buf.h... no
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether sys/types.h defines makedev... yes
+checking whether stat file-mode macros are broken... no
+checking for ANSI C header files... (cached) yes
+checking for st_fstype string in struct stat... no
+checking return type of signal handlers... void
+checking for mode_t... yes
+checking for pid_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking for major_t... no
+checking for minor_t... no
+checking for dev_t... yes
+checking for ino_t... yes
+checking for ssize_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... no
+checking for long long int... yes
+checking for C/C++ restrict keyword... restrict
+checking whether getenv is declared... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking for flockfile... yes
+checking for funlockfile... yes
+checking for pathconf... yes
+checking for canonicalize_file_name... yes
+checking for getcwd... yes
+checking for readlink... yes
+checking for dup2... yes
+checking for fchdir... yes
+checking for btowc... yes
+checking for iswctype... yes
+checking for mbsrtowcs... yes
+checking for mempcpy... yes
+checking for wmemchr... yes
+checking for wmemcpy... yes
+checking for wmempcpy... yes
+checking for ftruncate... yes
+checking for gettimeofday... yes
+checking for nanotime... no
+checking for alarm... yes
+checking for lchmod... no
+checking for fdopendir... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for setenv... yes
+checking for sleep... yes
+checking for strerror... yes
+checking for lstat... yes
+checking for pipe... yes
+checking for futimes... yes
+checking for futimesat... yes
+checking for vasnprintf... no
+checking for iswcntrl... yes
+checking for wcwidth... yes
+checking for mkfifo... yes
+checking for setlocale... yes
+checking for d_ino member in directory struct... no
+checking whether system is Windows or MSDOS... no
+checking for long file names... yes
+checking whether canonicalize_file_name is declared... yes
+checking for unistd.h... (cached) yes
+checking for working chown... no
+checking whether chown(2) dereferences symlinks... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking whether // is distinct from /... unknown, assuming no
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for mbstate_t... yes
+checking whether getcwd (NULL, 0) allocates memory for result... no
+checking whether getcwd is declared... yes
+checking for compound literals... no
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_gmtoff... yes
+checking whether getdelim is declared... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking for getopt_long_only... yes
+checking whether optreset is declared... no
+checking for working GNU getopt function... checking whether getopt_clip is declared... no
+yes
+checking absolute name of <sys/time.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/time.h
+checking for struct timeval... yes
+checking for unsigned long long int... yes
+checking absolute name of <stdint.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/lib/gcc/arm-sony-linux-gnueabi/4.7.3/include/stdint.h
+checking whether stdint.h conforms to C99... yes
+checking for inttypes.h... (cached) yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking whether imaxabs is declared... yes
+checking whether imaxdiv is declared... yes
+checking whether strtoimax is declared... yes
+checking whether strtoumax is declared... yes
+checking whether lchown is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking whether memrchr is declared... yes
+checking whether strdup is declared... yes
+checking absolute name of <string.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h
+checking whether strndup is declared... yes
+checking whether strnlen is declared... yes
+checking for struct timespec in <time.h>... yes
+checking absolute name of <time.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h
+checking whether utime accepts a null argument... no
+checking for struct utimbuf... yes
+checking determine whether the utimes function works... no
+checking for EOVERFLOW... yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking whether vsnprintf is declared... yes
+checking for alloca as a compiler built-in... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking whether program_invocation_name is defined... yes
+checking whether program_invocation_short_name is defined... yes
+checking whether this system has an arbitrary file name length limit... yes
+checking for fchown... yes
+checking for library containing clock_gettime... -lrt
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking for d_ino member in directory struct... (cached) no
+checking for dirfd... yes
+checking whether dirfd is declared... yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... (cached) unknown, assuming no
+checking for error_at_line... yes
+checking for working fcntl.h... cross-compiling
+checking absolute name of <fcntl.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/fcntl.h
+checking for struct stat.st_blocks... yes
+checking for working GNU fnmatch... cross
+checking whether isblank is declared... yes
+checking for __fpending... yes
+checking whether __fpending is declared... yes
+checking for struct tm.tm_zone... yes
+checking for getdelim... yes
+checking whether getline is declared... yes
+checking for getline... yes
+checking for working getline function... yes
+checking OS.h usability... no
+checking OS.h presence... no
+checking for OS.h... no
+checking for getpagesize... yes
+checking for gettimeofday with POSIX signature... yes
+checking whether gettimeofday clobbers localtime buffer... yes
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking for _ftime... no
+checking whether the compiler generally respects inline... yes
+checking whether inttypes.h conforms to C99... no
+checking absolute name of <inttypes.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h
+checking for lchown... yes
+checking whether lstat dereferences a symlink specified with a trailing slash... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) no
+checking for memchr... yes
+checking for mempcpy... (cached) yes
+checking for memrchr... yes
+checking for memset... yes
+checking for mkdtemp... yes
+checking for working mktime... no
+checking for obstacks... yes
+checking for fchmodat... yes
+checking for mkdirat... yes
+checking for openat... yes
+checking for fchownat... yes
+checking whether fchownat works with AT_SYMLINK_NOFOLLOW... no
+checking for mbstate_t... (cached) yes
+checking whether mbrtowc and mbstate_t are properly declared... (cached) yes
+checking for working re_compile_pattern... no
+checking whether isblank is declared... (cached) yes
+checking for rmdir... yes
+checking for rpmatch... yes
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking for ssize_t... (cached) yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for va_copy... yes
+checking absolute name of <stdint.h>... (cached) ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/lib/gcc/arm-sony-linux-gnueabi/4.7.3/include/stdint.h
+checking whether stdint.h conforms to C99... (cached) yes
+checking absolute name of <stdio.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdio.h
+checking absolute name of <stdlib.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... yes
+checking for strchrnul... yes
+checking for strdup... yes
+checking for working strndup... checking for strndup... yes
+yes
+checking for working strnlen... no
+checking whether <inttypes.h> defines strtoimax as a macro... no
+checking for strtoimax... yes
+checking for strtol... yes
+checking for strtoll... yes
+checking for strtoul... yes
+checking for strtoull... yes
+checking whether <inttypes.h> defines strtoumax as a macro... no
+checking for strtoumax... yes
+checking whether mkdir is declared... yes
+checking absolute name of <sys/stat.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/stat.h
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking absolute name of <sysexits.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sysexits.h
+checking whether localtime_r is compatible with its POSIX signature... yes
+checking absolute name of <unistd.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h
+checking whether utimes accepts a null argument... no
+checking for ptrdiff_t... yes
+checking for snprintf... yes
+checking for wcslen... yes
+checking for vsnprintf... yes
+checking whether <wchar.h> is standalone... yes
+checking absolute name of <wctype.h>... ///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/wctype.h
+checking whether wcwidth is declared... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for struct stat.st_blksize... yes
+checking for library containing setsockopt... none required
+checking for library containing setsockopt... (cached) none required
+checking for sys/mtio.h... (cached) yes
+checking which ioctl field to test for reversed bytes... mt_type
+checking whether to build rmt... yes
+checking for remote tape header files... yes
+checking for sys/buf.h... (cached) no
+checking for struct stat.st_blksize... (cached) yes
+checking for fsync... yes
+checking for getdtablesize... yes
+checking for lstat... (cached) yes
+checking for mkfifo... (cached) yes
+checking for readlink... (cached) yes
+checking for strerror... (cached) yes
+checking for symlink... yes
+checking for setlocale... (cached) yes
+checking for utimes... yes
+checking whether getgrgid is declared... yes
+checking whether getpwuid is declared... yes
+checking whether time is declared... yes
+checking for waitpid... yes
+checking for remote shell... /usr/bin/rsh
+checking for default archive format... GNU
+checking for default archive... -
+checking for default blocking... 20
+checking for default quoting style... escape
+checking for ld used by GCC... arm-sony-linux-gnueabi-ld
+checking if the linker (arm-sony-linux-gnueabi-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for iconv... yes
+checking for working iconv... guessing yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking for iconv_t... yes
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking whether to use NLS... no
+configure: creating ./config.status
+config.status: creating tests/Makefile
+config.status: creating tests/atlocal
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating lib/Makefile
+config.status: creating po/Makefile.in
+config.status: creating scripts/Makefile
+config.status: creating rmt/Makefile
+config.status: creating src/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing tests/atconfig commands
++ make
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+Making all in doc
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+Making all in lib
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ../../lib/alloca_.h; \
+	} > alloca.h-t
+mv -f alloca.h-t alloca.h
+rm -f configmake.h-t configmake.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  echo '#define PREFIX "/usr"'; \
+	  echo '#define EXEC_PREFIX "/usr"'; \
+	  echo '#define BINDIR "/usr/bin"'; \
+	  echo '#define SBINDIR "/usr/sbin"'; \
+	  echo '#define LIBEXECDIR "/usr/libexec"'; \
+	  echo '#define DATAROOTDIR "/usr/share"'; \
+	  echo '#define DATADIR "/usr/share"'; \
+	  echo '#define SYSCONFDIR "/usr/etc"'; \
+	  echo '#define SHAREDSTATEDIR "/usr/com"'; \
+	  echo '#define LOCALSTATEDIR "/usr/var"'; \
+	  echo '#define INCLUDEDIR "/tool//usr/include"'; \
+	  echo '#define OLDINCLUDEDIR "/usr/include"'; \
+	  echo '#define DOCDIR "/usr/share/doc/tar"'; \
+	  echo '#define INFODIR "/usr/share/info"'; \
+	  echo '#define HTMLDIR "/usr/share/doc/tar"'; \
+	  echo '#define DVIDIR "/usr/share/doc/tar"'; \
+	  echo '#define PDFDIR "/usr/share/doc/tar"'; \
+	  echo '#define PSDIR "/usr/share/doc/tar"'; \
+	  echo '#define LIBDIR "/usr/lib"'; \
+	  echo '#define LISPDIR ""'; \
+	  echo '#define LOCALEDIR "/usr/share/locale"'; \
+	  echo '#define MANDIR "/usr/share/man"'; \
+	  echo '#define MANEXT ""'; \
+	  echo '#define PKGDATADIR "/usr/share/tar"'; \
+	  echo '#define PKGINCLUDEDIR "/tool//usr/include/tar"'; \
+	  echo '#define PKGLIBDIR "/usr/lib/tar"'; \
+	  echo '#define PKGLIBEXECDIR "/usr/libexec/tar"'; \
+	} | sed '/""/d' > configmake.h-t
+mv configmake.h-t configmake.h
+rm -f fcntl.h-t fcntl.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''ABSOLUTE_FCNTL_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/fcntl.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      < ../../lib/fcntl_.h; \
+	} > fcntl.h-t
+mv fcntl.h-t fcntl.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ../../lib/fnmatch_.h; \
+	} > fnmatch.h-t
+mv -f fnmatch.h-t fnmatch.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  cat ../../lib/getopt_.h; \
+	} > getopt.h-t
+mv -f getopt.h-t getopt.h
+rm -f inttypes.h-t inttypes.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+	      -e 's|@''ABSOLUTE_INTTYPES_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/inttypes.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's/@''PRI_MACROS_BROKEN''@/0/g' \
+	      -e 's/@''HAVE_LONG_LONG_INT''@/1/g' \
+	      -e 's/@''HAVE_UNSIGNED_LONG_LONG_INT''@/1/g' \
+	      -e 's/@''PRIPTR_PREFIX''@/""/g' \
+	      -e 's/@''GNULIB_IMAXABS''@/0/g' \
+	      -e 's/@''GNULIB_IMAXDIV''@/0/g' \
+	      -e 's/@''GNULIB_STRTOIMAX''@/1/g' \
+	      -e 's/@''GNULIB_STRTOUMAX''@/1/g' \
+	      -e 's/@''HAVE_DECL_IMAXABS''@/1/g' \
+	      -e 's/@''HAVE_DECL_IMAXDIV''@/1/g' \
+	      -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g' \
+	      -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../build-aux/link-warning.h' \
+	      < ../../lib/inttypes_.h; \
+	} > inttypes.h-t
+mv inttypes.h-t inttypes.h
+rm -f stdio.h-t stdio.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''ABSOLUTE_STDIO_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdio.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@''GNULIB_FPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_PRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_SNPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_SPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VFPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VSNPRINTF''@|1|g' \
+	      -e 's|@''GNULIB_VSPRINTF_POSIX''@|0|g' \
+	      -e 's|@''GNULIB_VASPRINTF''@|0|g' \
+	      -e 's|@''GNULIB_FSEEK''@|0|g' \
+	      -e 's|@''GNULIB_FSEEKO''@|0|g' \
+	      -e 's|@''GNULIB_FTELL''@|0|g' \
+	      -e 's|@''GNULIB_FTELLO''@|0|g' \
+	      -e 's|@''GNULIB_FFLUSH''@|0|g' \
+	      -e 's|@''REPLACE_FPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VFPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_PRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_SNPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DECL_SNPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_VSNPRINTF''@|0|g' \
+	      -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_SPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_VSPRINTF''@|0|g' \
+	      -e 's|@''HAVE_VASPRINTF''@|1|g' \
+	      -e 's|@''REPLACE_VASPRINTF''@|0|g' \
+	      -e 's|@''REPLACE_FSEEKO''@|0|g' \
+	      -e 's|@''REPLACE_FSEEK''@|0|g' \
+	      -e 's|@''REPLACE_FTELLO''@|0|g' \
+	      -e 's|@''REPLACE_FTELL''@|0|g' \
+	      -e 's|@''REPLACE_FFLUSH''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../build-aux/link-warning.h' \
+	      < ../../lib/stdio_.h; \
+	} > stdio.h-t
+mv stdio.h-t stdio.h
+rm -f stdlib.h-t stdlib.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''ABSOLUTE_STDLIB_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/stdlib.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@''GNULIB_GETSUBOPT''@|0|g' \
+	      -e 's|@''GNULIB_MKDTEMP''@|1|g' \
+	      -e 's|@''GNULIB_MKSTEMP''@|0|g' \
+	      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+	      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+	      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../build-aux/link-warning.h' \
+	      < ../../lib/stdlib_.h; \
+	} > stdlib.h-t
+mv stdlib.h-t stdlib.h
+rm -f string.h-t string.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@''ABSOLUTE_STRING_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/string.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@''GNULIB_MBSLEN''@|0|g' \
+	      -e 's|@''GNULIB_MBSCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSRCHR''@|0|g' \
+	      -e 's|@''GNULIB_MBSSTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASECMP''@|1|g' \
+	      -e 's|@''GNULIB_MBSNCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSPCASECMP''@|0|g' \
+	      -e 's|@''GNULIB_MBSCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_MBSCSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSPBRK''@|0|g' \
+	      -e 's|@''GNULIB_MBSSPN''@|0|g' \
+	      -e 's|@''GNULIB_MBSSEP''@|0|g' \
+	      -e 's|@''GNULIB_MBSTOK_R''@|0|g' \
+	      -e 's|@''GNULIB_MEMMEM''@|0|g' \
+	      -e 's|@''GNULIB_MEMPCPY''@|1|g' \
+	      -e 's|@''GNULIB_MEMRCHR''@|1|g' \
+	      -e 's|@''GNULIB_STPCPY''@|1|g' \
+	      -e 's|@''GNULIB_STPNCPY''@|0|g' \
+	      -e 's|@''GNULIB_STRCHRNUL''@|1|g' \
+	      -e 's|@''GNULIB_STRDUP''@|1|g' \
+	      -e 's|@''GNULIB_STRNDUP''@|1|g' \
+	      -e 's|@''GNULIB_STRNLEN''@|1|g' \
+	      -e 's|@''GNULIB_STRPBRK''@|0|g' \
+	      -e 's|@''GNULIB_STRSEP''@|0|g' \
+	      -e 's|@''GNULIB_STRCASESTR''@|0|g' \
+	      -e 's|@''GNULIB_STRTOK_R''@|0|g' \
+	      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+	      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+	      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+	      -e 's|@''HAVE_STPCPY''@|1|g' \
+	      -e 's|@''HAVE_STPNCPY''@|1|g' \
+	      -e 's|@''HAVE_STRCASECMP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNCASECMP''@|1|g' \
+	      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+	      -e 's|@''HAVE_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+	      -e 's|@''HAVE_STRPBRK''@|1|g' \
+	      -e 's|@''HAVE_STRSEP''@|1|g' \
+	      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+	      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+	      -e '/definition of GL_LINK_WARNING/r ../../build-aux/link-warning.h' \
+	      < ../../lib/string_.h; \
+	} > string.h-t
+mv string.h-t string.h
+/bin/mkdir -p sys
+rm -f sys/stat.h-t sys/stat.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''ABSOLUTE_SYS_STAT_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/stat.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@''HAVE_IO_H''@|0|g' \
+	      -e 's|@''HAVE_LSTAT''@|1|g' \
+	      -e 's|@''HAVE_DECL_MKDIR''@|1|g' \
+	      < ../../lib/sys_stat_.h; \
+	} > sys/stat.h-t
+mv sys/stat.h-t sys/stat.h
+/bin/mkdir -p sys
+rm -f sys/time.h-t sys/time.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's/@''HAVE_SYS_TIME_H''@/1/g' \
+	      -e 's|@''ABSOLUTE_SYS_TIME_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/sys/time.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's/@''REPLACE_GETTIMEOFDAY''@/1/g' \
+	      -e 's/@''HAVE_STRUCT_TIMEVAL''@/1/g' \
+	      < ../../lib/sys_time_.h; \
+	} > sys/time.h-t
+mv sys/time.h-t sys/time.h
+rm -f time.h-t time.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+	  sed -e 's|@ABSOLUTE_TIME_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/time.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@REPLACE_LOCALTIME_R''@|0|g' \
+	      -e 's|@REPLACE_NANOSLEEP''@|GNULIB_PORTCHECK|g' \
+	      -e 's|@REPLACE_STRPTIME''@|GNULIB_PORTCHECK|g' \
+	      -e 's|@REPLACE_TIMEGM''@|GNULIB_PORTCHECK|g' \
+	      -e 's|@SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+	      -e 's|@TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+	      < ../../lib/time_.h; \
+	} > time.h-t
+mv time.h-t time.h
+rm -f unistd.h-t unistd.h
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  sed -e 's|@''HAVE_UNISTD_H''@|1|g' \
+	      -e 's|@''ABSOLUTE_UNISTD_H''@|"///usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include/unistd.h"|g' \
+	      -e 's/@''HAVE_INCLUDE_NEXT''@/(__GNUC__ || 60000000 <= __DECC_VER)/g' \
+	      -e 's|@''GNULIB_CHOWN''@|1|g' \
+	      -e 's|@''GNULIB_DUP2''@|1|g' \
+	      -e 's|@''GNULIB_FCHDIR''@|1|g' \
+	      -e 's|@''GNULIB_FTRUNCATE''@|1|g' \
+	      -e 's|@''GNULIB_GETCWD''@|1|g' \
+	      -e 's|@''GNULIB_GETLOGIN_R''@|0|g' \
+	      -e 's|@''GNULIB_LSEEK''@|0|g' \
+	      -e 's|@''GNULIB_READLINK''@|1|g' \
+	      -e 's|@''GNULIB_SLEEP''@|1|g' \
+	      -e 's|@''HAVE_DUP2''@|1|g' \
+	      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+	      -e 's|@''HAVE_READLINK''@|1|g' \
+	      -e 's|@''HAVE_SLEEP''@|1|g' \
+	      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+	      -e 's|@''REPLACE_CHOWN''@|1|g' \
+	      -e 's|@''REPLACE_FCHDIR''@|0|g' \
+	      -e 's|@''REPLACE_GETCWD''@|1|g' \
+	      -e 's|@''REPLACE_LSEEK''@|0|g' \
+	      < ../../lib/unistd_.h; \
+	} > unistd.h-t
+mv unistd.h-t unistd.h
+rm -f rmt-command.h-t rmt-command.h
+echo "#ifndef DEFAULT_RMT_COMMAND" >> rmt-command.h-t
+echo "# define DEFAULT_RMT_COMMAND \"/usr/libexec/`echo rmt | sed 's,x,x,'`\"" >> rmt-command.h-t
+echo "#endif" >> rmt-command.h-t
+mv rmt-command.h-t rmt-command.h
+make  all-am
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT allocsa.o -MD -MP -MF .deps/allocsa.Tpo -c -o allocsa.o ../../lib/allocsa.c
+mv -f .deps/allocsa.Tpo .deps/allocsa.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-ba.o -MD -MP -MF .deps/argp-ba.Tpo -c -o argp-ba.o ../../lib/argp-ba.c
+mv -f .deps/argp-ba.Tpo .deps/argp-ba.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-eexst.o -MD -MP -MF .deps/argp-eexst.Tpo -c -o argp-eexst.o ../../lib/argp-eexst.c
+mv -f .deps/argp-eexst.Tpo .deps/argp-eexst.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-fmtstream.o -MD -MP -MF .deps/argp-fmtstream.Tpo -c -o argp-fmtstream.o ../../lib/argp-fmtstream.c
+mv -f .deps/argp-fmtstream.Tpo .deps/argp-fmtstream.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-fs-xinl.o -MD -MP -MF .deps/argp-fs-xinl.Tpo -c -o argp-fs-xinl.o ../../lib/argp-fs-xinl.c
+mv -f .deps/argp-fs-xinl.Tpo .deps/argp-fs-xinl.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-help.o -MD -MP -MF .deps/argp-help.Tpo -c -o argp-help.o ../../lib/argp-help.c
+mv -f .deps/argp-help.Tpo .deps/argp-help.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-parse.o -MD -MP -MF .deps/argp-parse.Tpo -c -o argp-parse.o ../../lib/argp-parse.c
+mv -f .deps/argp-parse.Tpo .deps/argp-parse.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-pin.o -MD -MP -MF .deps/argp-pin.Tpo -c -o argp-pin.o ../../lib/argp-pin.c
+mv -f .deps/argp-pin.Tpo .deps/argp-pin.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-pv.o -MD -MP -MF .deps/argp-pv.Tpo -c -o argp-pv.o ../../lib/argp-pv.c
+mv -f .deps/argp-pv.Tpo .deps/argp-pv.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-pvh.o -MD -MP -MF .deps/argp-pvh.Tpo -c -o argp-pvh.o ../../lib/argp-pvh.c
+mv -f .deps/argp-pvh.Tpo .deps/argp-pvh.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argp-xinl.o -MD -MP -MF .deps/argp-xinl.Tpo -c -o argp-xinl.o ../../lib/argp-xinl.c
+mv -f .deps/argp-xinl.Tpo .deps/argp-xinl.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT full-write.o -MD -MP -MF .deps/full-write.Tpo -c -o full-write.o ../../lib/full-write.c
+mv -f .deps/full-write.Tpo .deps/full-write.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT getdate.o -MD -MP -MF .deps/getdate.Tpo -c -o getdate.o ../../lib/getdate.c
+mv -f .deps/getdate.Tpo .deps/getdate.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT localcharset.o -MD -MP -MF .deps/localcharset.Tpo -c -o localcharset.o ../../lib/localcharset.c
+mv -f .deps/localcharset.Tpo .deps/localcharset.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT mbchar.o -MD -MP -MF .deps/mbchar.Tpo -c -o mbchar.o ../../lib/mbchar.c
+mv -f .deps/mbchar.Tpo .deps/mbchar.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT mbscasecmp.o -MD -MP -MF .deps/mbscasecmp.Tpo -c -o mbscasecmp.o ../../lib/mbscasecmp.c
+mv -f .deps/mbscasecmp.Tpo .deps/mbscasecmp.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT openat-die.o -MD -MP -MF .deps/openat-die.Tpo -c -o openat-die.o ../../lib/openat-die.c
+mv -f .deps/openat-die.Tpo .deps/openat-die.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT strnlen1.o -MD -MP -MF .deps/strnlen1.Tpo -c -o strnlen1.o ../../lib/strnlen1.c
+mv -f .deps/strnlen1.Tpo .deps/strnlen1.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT version-etc.o -MD -MP -MF .deps/version-etc.Tpo -c -o version-etc.o ../../lib/version-etc.c
+mv -f .deps/version-etc.Tpo .deps/version-etc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT version-etc-fsf.o -MD -MP -MF .deps/version-etc-fsf.Tpo -c -o version-etc-fsf.o ../../lib/version-etc-fsf.c
+mv -f .deps/version-etc-fsf.Tpo .deps/version-etc-fsf.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xalloc-die.o -MD -MP -MF .deps/xalloc-die.Tpo -c -o xalloc-die.o ../../lib/xalloc-die.c
+mv -f .deps/xalloc-die.Tpo .deps/xalloc-die.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xstrndup.o -MD -MP -MF .deps/xstrndup.Tpo -c -o xstrndup.o ../../lib/xstrndup.c
+mv -f .deps/xstrndup.Tpo .deps/xstrndup.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xstrtoumax.o -MD -MP -MF .deps/xstrtoumax.Tpo -c -o xstrtoumax.o ../../lib/xstrtoumax.c
+mv -f .deps/xstrtoumax.Tpo .deps/xstrtoumax.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT paxerror.o -MD -MP -MF .deps/paxerror.Tpo -c -o paxerror.o ../../lib/paxerror.c
+mv -f .deps/paxerror.Tpo .deps/paxerror.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT paxexit.o -MD -MP -MF .deps/paxexit.Tpo -c -o paxexit.o ../../lib/paxexit.c
+mv -f .deps/paxexit.Tpo .deps/paxexit.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT paxnames.o -MD -MP -MF .deps/paxnames.Tpo -c -o paxnames.o ../../lib/paxnames.c
+mv -f .deps/paxnames.Tpo .deps/paxnames.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT prepargs.o -MD -MP -MF .deps/prepargs.Tpo -c -o prepargs.o ../../lib/prepargs.c
+mv -f .deps/prepargs.Tpo .deps/prepargs.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT rtapelib.o -MD -MP -MF .deps/rtapelib.Tpo -c -o rtapelib.o ../../lib/rtapelib.c
+mv -f .deps/rtapelib.Tpo .deps/rtapelib.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT stdopen.o -MD -MP -MF .deps/stdopen.Tpo -c -o stdopen.o ../../lib/stdopen.c
+mv -f .deps/stdopen.Tpo .deps/stdopen.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT argmatch.o -MD -MP -MF .deps/argmatch.Tpo -c -o argmatch.o ../../lib/argmatch.c
+mv -f .deps/argmatch.Tpo .deps/argmatch.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT asnprintf.o -MD -MP -MF .deps/asnprintf.Tpo -c -o asnprintf.o ../../lib/asnprintf.c
+mv -f .deps/asnprintf.Tpo .deps/asnprintf.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT backupfile.o -MD -MP -MF .deps/backupfile.Tpo -c -o backupfile.o ../../lib/backupfile.c
+mv -f .deps/backupfile.Tpo .deps/backupfile.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT basename.o -MD -MP -MF .deps/basename.Tpo -c -o basename.o ../../lib/basename.c
+mv -f .deps/basename.Tpo .deps/basename.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT chdir-long.o -MD -MP -MF .deps/chdir-long.Tpo -c -o chdir-long.o ../../lib/chdir-long.c
+mv -f .deps/chdir-long.Tpo .deps/chdir-long.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT chown.o -MD -MP -MF .deps/chown.Tpo -c -o chown.o ../../lib/chown.c
+mv -f .deps/chown.Tpo .deps/chown.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT close-stream.o -MD -MP -MF .deps/close-stream.Tpo -c -o close-stream.o ../../lib/close-stream.c
+mv -f .deps/close-stream.Tpo .deps/close-stream.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT closeout.o -MD -MP -MF .deps/closeout.Tpo -c -o closeout.o ../../lib/closeout.c
+mv -f .deps/closeout.Tpo .deps/closeout.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT creat-safer.o -MD -MP -MF .deps/creat-safer.Tpo -c -o creat-safer.o ../../lib/creat-safer.c
+mv -f .deps/creat-safer.Tpo .deps/creat-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT dirname.o -MD -MP -MF .deps/dirname.Tpo -c -o dirname.o ../../lib/dirname.c
+mv -f .deps/dirname.Tpo .deps/dirname.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT dup-safer.o -MD -MP -MF .deps/dup-safer.Tpo -c -o dup-safer.o ../../lib/dup-safer.c
+mv -f .deps/dup-safer.Tpo .deps/dup-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT exclude.o -MD -MP -MF .deps/exclude.Tpo -c -o exclude.o ../../lib/exclude.c
+mv -f .deps/exclude.Tpo .deps/exclude.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT exitfail.o -MD -MP -MF .deps/exitfail.Tpo -c -o exitfail.o ../../lib/exitfail.c
+mv -f .deps/exitfail.Tpo .deps/exitfail.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT fchownat.o -MD -MP -MF .deps/fchownat.Tpo -c -o fchownat.o ../../lib/fchownat.c
+mv -f .deps/fchownat.Tpo .deps/fchownat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT fd-safer.o -MD -MP -MF .deps/fd-safer.Tpo -c -o fd-safer.o ../../lib/fd-safer.c
+mv -f .deps/fd-safer.Tpo .deps/fd-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT fnmatch.o -MD -MP -MF .deps/fnmatch.Tpo -c -o fnmatch.o ../../lib/fnmatch.c
+mv -f .deps/fnmatch.Tpo .deps/fnmatch.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT fstatat.o -MD -MP -MF .deps/fstatat.Tpo -c -o fstatat.o ../../lib/fstatat.c
+mv -f .deps/fstatat.Tpo .deps/fstatat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT getcwd.o -MD -MP -MF .deps/getcwd.Tpo -c -o getcwd.o ../../lib/getcwd.c
+mv -f .deps/getcwd.Tpo .deps/getcwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT getopt.o -MD -MP -MF .deps/getopt.Tpo -c -o getopt.o ../../lib/getopt.c
+mv -f .deps/getopt.Tpo .deps/getopt.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT getopt1.o -MD -MP -MF .deps/getopt1.Tpo -c -o getopt1.o ../../lib/getopt1.c
+mv -f .deps/getopt1.Tpo .deps/getopt1.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT gettime.o -MD -MP -MF .deps/gettime.Tpo -c -o gettime.o ../../lib/gettime.c
+mv -f .deps/gettime.Tpo .deps/gettime.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT gettimeofday.o -MD -MP -MF .deps/gettimeofday.Tpo -c -o gettimeofday.o ../../lib/gettimeofday.c
+mv -f .deps/gettimeofday.Tpo .deps/gettimeofday.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT hash.o -MD -MP -MF .deps/hash.Tpo -c -o hash.o ../../lib/hash.c
+mv -f .deps/hash.Tpo .deps/hash.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT human.o -MD -MP -MF .deps/human.Tpo -c -o human.o ../../lib/human.c
+mv -f .deps/human.Tpo .deps/human.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT imaxtostr.o -MD -MP -MF .deps/imaxtostr.Tpo -c -o imaxtostr.o ../../lib/imaxtostr.c
+mv -f .deps/imaxtostr.Tpo .deps/imaxtostr.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT lstat.o -MD -MP -MF .deps/lstat.Tpo -c -o lstat.o ../../lib/lstat.c
+mv -f .deps/lstat.Tpo .deps/lstat.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT malloc.o -MD -MP -MF .deps/malloc.Tpo -c -o malloc.o ../../lib/malloc.c
+mv -f .deps/malloc.Tpo .deps/malloc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT mktime.o -MD -MP -MF .deps/mktime.Tpo -c -o mktime.o ../../lib/mktime.c
+mv -f .deps/mktime.Tpo .deps/mktime.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT modechange.o -MD -MP -MF .deps/modechange.Tpo -c -o modechange.o ../../lib/modechange.c
+mv -f .deps/modechange.Tpo .deps/modechange.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT offtostr.o -MD -MP -MF .deps/offtostr.Tpo -c -o offtostr.o ../../lib/offtostr.c
+mv -f .deps/offtostr.Tpo .deps/offtostr.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT open-safer.o -MD -MP -MF .deps/open-safer.Tpo -c -o open-safer.o ../../lib/open-safer.c
+mv -f .deps/open-safer.Tpo .deps/open-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT openat-proc.o -MD -MP -MF .deps/openat-proc.Tpo -c -o openat-proc.o ../../lib/openat-proc.c
+mv -f .deps/openat-proc.Tpo .deps/openat-proc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT pipe-safer.o -MD -MP -MF .deps/pipe-safer.Tpo -c -o pipe-safer.o ../../lib/pipe-safer.c
+mv -f .deps/pipe-safer.Tpo .deps/pipe-safer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT printf-args.o -MD -MP -MF .deps/printf-args.Tpo -c -o printf-args.o ../../lib/printf-args.c
+mv -f .deps/printf-args.Tpo .deps/printf-args.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT printf-parse.o -MD -MP -MF .deps/printf-parse.Tpo -c -o printf-parse.o ../../lib/printf-parse.c
+mv -f .deps/printf-parse.Tpo .deps/printf-parse.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT quote.o -MD -MP -MF .deps/quote.Tpo -c -o quote.o ../../lib/quote.c
+mv -f .deps/quote.Tpo .deps/quote.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT quotearg.o -MD -MP -MF .deps/quotearg.Tpo -c -o quotearg.o ../../lib/quotearg.c
+mv -f .deps/quotearg.Tpo .deps/quotearg.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT regex.o -MD -MP -MF .deps/regex.Tpo -c -o regex.o ../../lib/regex.c
+In file included from ../../lib/regex.c:58:0:
+../../lib/regex_internal.h:185:55: warning: integer overflow in preprocessor expression [enabled by default]
+mv -f .deps/regex.Tpo .deps/regex.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT safe-read.o -MD -MP -MF .deps/safe-read.Tpo -c -o safe-read.o ../../lib/safe-read.c
+mv -f .deps/safe-read.Tpo .deps/safe-read.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT safe-write.o -MD -MP -MF .deps/safe-write.Tpo -c -o safe-write.o ../../lib/safe-write.c
+mv -f .deps/safe-write.Tpo .deps/safe-write.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT save-cwd.o -MD -MP -MF .deps/save-cwd.Tpo -c -o save-cwd.o ../../lib/save-cwd.c
+mv -f .deps/save-cwd.Tpo .deps/save-cwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT savedir.o -MD -MP -MF .deps/savedir.Tpo -c -o savedir.o ../../lib/savedir.c
+mv -f .deps/savedir.Tpo .deps/savedir.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT stripslash.o -MD -MP -MF .deps/stripslash.Tpo -c -o stripslash.o ../../lib/stripslash.c
+mv -f .deps/stripslash.Tpo .deps/stripslash.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT strnlen.o -MD -MP -MF .deps/strnlen.Tpo -c -o strnlen.o ../../lib/strnlen.c
+mv -f .deps/strnlen.Tpo .deps/strnlen.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT tempname.o -MD -MP -MF .deps/tempname.Tpo -c -o tempname.o ../../lib/tempname.c
+mv -f .deps/tempname.Tpo .deps/tempname.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT uinttostr.o -MD -MP -MF .deps/uinttostr.Tpo -c -o uinttostr.o ../../lib/uinttostr.c
+mv -f .deps/uinttostr.Tpo .deps/uinttostr.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT umaxtostr.o -MD -MP -MF .deps/umaxtostr.Tpo -c -o umaxtostr.o ../../lib/umaxtostr.c
+mv -f .deps/umaxtostr.Tpo .deps/umaxtostr.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT unlinkdir.o -MD -MP -MF .deps/unlinkdir.Tpo -c -o unlinkdir.o ../../lib/unlinkdir.c
+mv -f .deps/unlinkdir.Tpo .deps/unlinkdir.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT utime.o -MD -MP -MF .deps/utime.Tpo -c -o utime.o ../../lib/utime.c
+mv -f .deps/utime.Tpo .deps/utime.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT utimens.o -MD -MP -MF .deps/utimens.Tpo -c -o utimens.o ../../lib/utimens.c
+mv -f .deps/utimens.Tpo .deps/utimens.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT vasnprintf.o -MD -MP -MF .deps/vasnprintf.Tpo -c -o vasnprintf.o ../../lib/vasnprintf.c
+mv -f .deps/vasnprintf.Tpo .deps/vasnprintf.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xgetcwd.o -MD -MP -MF .deps/xgetcwd.Tpo -c -o xgetcwd.o ../../lib/xgetcwd.c
+mv -f .deps/xgetcwd.Tpo .deps/xgetcwd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xmalloc.o -MD -MP -MF .deps/xmalloc.Tpo -c -o xmalloc.o ../../lib/xmalloc.c
+mv -f .deps/xmalloc.Tpo .deps/xmalloc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xstrtol.o -MD -MP -MF .deps/xstrtol.Tpo -c -o xstrtol.o ../../lib/xstrtol.c
+mv -f .deps/xstrtol.Tpo .deps/xstrtol.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../lib     -O2 -MT xstrtoul.o -MD -MP -MF .deps/xstrtoul.Tpo -c -o xstrtoul.o ../../lib/xstrtoul.c
+mv -f .deps/xstrtoul.Tpo .deps/xstrtoul.Po
+rm -f libtar.a
+ar cru libtar.a allocsa.o argp-ba.o argp-eexst.o argp-fmtstream.o argp-fs-xinl.o argp-help.o argp-parse.o argp-pin.o argp-pv.o argp-pvh.o argp-xinl.o full-write.o getdate.o localcharset.o mbchar.o mbscasecmp.o openat-die.o strnlen1.o version-etc.o version-etc-fsf.o xalloc-die.o xstrndup.o xstrtoumax.o paxerror.o paxexit.o paxnames.o prepargs.o rtapelib.o stdopen.o argmatch.o asnprintf.o backupfile.o basename.o chdir-long.o chown.o close-stream.o closeout.o creat-safer.o dirname.o dup-safer.o exclude.o exitfail.o fchownat.o fd-safer.o fnmatch.o fstatat.o getcwd.o getopt.o getopt1.o gettime.o gettimeofday.o hash.o human.o imaxtostr.o lstat.o malloc.o mktime.o modechange.o offtostr.o open-safer.o openat-proc.o pipe-safer.o printf-args.o printf-parse.o quote.o quotearg.o regex.o safe-read.o safe-write.o save-cwd.o savedir.o stripslash.o strnlen.o tempname.o uinttostr.o umaxtostr.o unlinkdir.o utime.o utimens.o vasnprintf.o xgetcwd.o xmalloc.o xstrtol.o xstrtoul.o  
+arm-sony-linux-gnueabi-ranlib libtar.a
+rm -f t-charset.alias charset.alias
+/bin/sh ../../lib/config.charset 'arm-sony-linux-gnueabi' > t-charset.alias
+mv t-charset.alias charset.alias
+rm -f t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/tar/g' ../../lib/ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+rm -f t-ref-del.sed ref-del.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/tar/g' ../../lib/ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+Making all in rmt
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../rmt -I../../lib -I../ -I../lib    -O2 -MT rmt.o -MD -MP -MF .deps/rmt.Tpo -c -o rmt.o ../../rmt/rmt.c
+mv -f .deps/rmt.Tpo .deps/rmt.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99  -O2   -o rmt rmt.o ../lib/libtar.a   
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+Making all in src
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT buffer.o -MD -MP -MF .deps/buffer.Tpo -c -o buffer.o ../../src/buffer.c
+mv -f .deps/buffer.Tpo .deps/buffer.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT compare.o -MD -MP -MF .deps/compare.Tpo -c -o compare.o ../../src/compare.c
+mv -f .deps/compare.Tpo .deps/compare.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT create.o -MD -MP -MF .deps/create.Tpo -c -o create.o ../../src/create.c
+mv -f .deps/create.Tpo .deps/create.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT delete.o -MD -MP -MF .deps/delete.Tpo -c -o delete.o ../../src/delete.c
+mv -f .deps/delete.Tpo .deps/delete.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT extract.o -MD -MP -MF .deps/extract.Tpo -c -o extract.o ../../src/extract.c
+mv -f .deps/extract.Tpo .deps/extract.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT xheader.o -MD -MP -MF .deps/xheader.Tpo -c -o xheader.o ../../src/xheader.c
+mv -f .deps/xheader.Tpo .deps/xheader.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT incremen.o -MD -MP -MF .deps/incremen.Tpo -c -o incremen.o ../../src/incremen.c
+mv -f .deps/incremen.Tpo .deps/incremen.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT list.o -MD -MP -MF .deps/list.Tpo -c -o list.o ../../src/list.c
+mv -f .deps/list.Tpo .deps/list.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT misc.o -MD -MP -MF .deps/misc.Tpo -c -o misc.o ../../src/misc.c
+mv -f .deps/misc.Tpo .deps/misc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT names.o -MD -MP -MF .deps/names.Tpo -c -o names.o ../../src/names.c
+mv -f .deps/names.Tpo .deps/names.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT sparse.o -MD -MP -MF .deps/sparse.Tpo -c -o sparse.o ../../src/sparse.c
+mv -f .deps/sparse.Tpo .deps/sparse.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT system.o -MD -MP -MF .deps/system.Tpo -c -o system.o ../../src/system.c
+mv -f .deps/system.Tpo .deps/system.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT tar.o -MD -MP -MF .deps/tar.Tpo -c -o tar.o ../../src/tar.c
+mv -f .deps/tar.Tpo .deps/tar.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT transform.o -MD -MP -MF .deps/transform.Tpo -c -o transform.o ../../src/transform.c
+mv -f .deps/transform.Tpo .deps/transform.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT update.o -MD -MP -MF .deps/update.Tpo -c -o update.o ../../src/update.c
+mv -f .deps/update.Tpo .deps/update.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../src -I../../lib -I../ -I../lib    -O2 -MT utf8.o -MD -MP -MF .deps/utf8.Tpo -c -o utf8.o ../../src/utf8.c
+mv -f .deps/utf8.Tpo .deps/utf8.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99  -O2   -o tar buffer.o compare.o create.o delete.o extract.o xheader.o incremen.o list.o misc.o names.o sparse.o system.o tar.o transform.o update.o utf8.o ../lib/libtar.a   -lrt 
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+Making all in scripts
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+Making all in po
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/po'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/po'
+Making all in tests
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OkIMBp
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tar-1.17
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
++ tee -a ../build.log
+Making install in doc
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/info" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info"
+ /usr/bin/install -c -m 644 '../../doc/tar.info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/tar.info'
+ /usr/bin/install -c -m 644 '../../doc/tar.info-1' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/tar.info-1'
+ /usr/bin/install -c -m 644 '../../doc/tar.info-2' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/tar.info-2'
+ install-info --info-dir='/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info/tar.info'
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/doc'
+Making install in lib
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+make  install-am
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+test yes != no || /bin/sh ../../build-aux/mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+if test -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias; then \
+	  sed -f ref-add.sed /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias > /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	  /usr/bin/install -c -m 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias ; \
+	  rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	else \
+	  if test yes = no; then \
+	    sed -f ref-add.sed charset.alias > /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	    /usr/bin/install -c -m 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.alias ; \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/charset.tmp ; \
+	  fi ; \
+	fi
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/lib'
+Making install in rmt
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/libexec" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec"
+  /usr/bin/install -c 'rmt' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/rmt'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/rmt'
+Making install in src
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /usr/bin/install -c 'tar' '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/tar'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/src'
+Making install in scripts
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+test -z "/usr/libexec" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec"
+test -z "/usr/sbin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin"
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/scripts'
+Making install in po
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/po'
+if test "tar" = "gettext-tools"; then \
+	  /bin/mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po; \
+	  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+	    /usr/bin/install -c -m 644 ../../po/$file \
+			    /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	  for file in Makevars; do \
+	    rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/gettext/po/$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/po'
+Making install in tests
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests'
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/tar-1.17/objdir'
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
++ cd ..
++ cp COPYING LICENSE
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/rmt
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-tar-1.17-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-tar-1.17-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-tar-1.17-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.KVNoXm
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tar-1.17
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tar-1.17-11000001.x86_64
++ exit 0
+spawn -nottyinit sh -c cd /home/rpmuser/rpm/BUILD/tar-1.17/objdir/tests; export PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin/:$PATH; make genfile
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../tests -I../../lib -I../lib -I../../src -DLOCALEDIR=\"/usr/share/locale\"   -O2 -MT genfile.o -MD -MP -MF .deps/genfile.Tpo -c -o genfile.o ../../tests/genfile.c
+mv -f .deps/genfile.Tpo .deps/genfile.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I../../tests -I../../lib -I../lib -I../../src -DLOCALEDIR=\"/usr/share/locale\"   -O2 -MT argcv.o -MD -MP -MF .deps/argcv.Tpo -c -o argcv.o ../../tests/argcv.c
+mv -f .deps/argcv.Tpo .deps/argcv.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -std=gnu99  -O2   -o genfile genfile.o argcv.o ../lib/libtar.a  -lrt 
+spawn -nottyinit sh -c cd /home/rpmuser/rpm/BUILD/tar-1.17; patch -p1 < /home/rpmuser//MAIN/dist/pkg/tar/test/tar-1.17-sort_exclude_test-1.patch; patch -p1 < /home/rpmuser//MAIN/dist/pkg/tar/test/tar-test-25-gzip.patch
+patching file ChangeLog
+patching file tests/exclude.at
+patching file tests/gzip.at
+patching file tests/testsuite
+spawn -nottyinit rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/tar-1.17
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/tar-1.17 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 19:08:10 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /dev; ./MAKEDEV sda
+-bash-3.2# rm -rf /mnt; mkdir /mnt
+-bash-3.2# mount /dev/sda1 /mnt || echo 'COMMAND''ERROR'
+-bash-3.2# cd /mnt
+-bash-3.2# cp -r /tmp/tar-1.17 . || echo 'COMMAND''ERROR'
+-bash-3.2# cd /mnt/tar-1.17/objdir/tests/
+-bash-3.2# cp atconfig atconfig.org
+-bash-3.2# cat atconfig.org | sed -e "s/home\/rpmuser\/rpmdir\/BUILD/mnt/g" > atconfig
+-bash-3.2# cp atlocal atlocal.org
+-bash-3.2# cat atlocal.org | sed -e "s/home\/rpmuser\/rpmdir\/BUILD/mnt/g" > atlocal
+-bash-3.2# /bin/sh ../../tests/testsuite > /tmp/tar_test.out
+ERROR: 55 tests were run,
+51 failed unexpectedly.
+17 tests were skipped.
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/tar_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+cat /tmp/tar_test.out; echo 'COMMAND''DONE'
+## ------------------------ ##
+## GNU tar 1.17 test suite. ##
+## ------------------------ ##
+  1: tar version                                   FAILED (version.at:21)
+  2: decompressing from stdin                      FAILED (pipe.at:33)
+  3: mixing options                                ok
+  4: interspersed options                          ok
+  5: files-from: empty entries                     FAILED (T-empty.at:36)
+  6: files-from: 0-separated file without -0       skipped (T-null.at:24)
+  7: tar --index-file=FILE --file=-                FAILED (indexfile.at:29)
+  8: tar cvf -                                     ok
+  9: append                                        FAILED (append.at:24)
+ 10: appending files with long names               FAILED (append01.at:34)
+ 11: append vs. create                             FAILED (append02.at:43)
+ 12: exclude                                       FAILED (exclude.at:26)
+ 13: deleting a member after a big one             FAILED (delete01.at:26)
+ 14: deleting a member from stdin archive          FAILED (delete02.at:26)
+ 15: deleting members with long names              FAILED (delete03.at:26)
+ 16: deleting a large last member                  FAILED (delete04.at:26)
+ 17: deleting non-existing member                  FAILED (delete05.at:30)
+ 18: extract over an existing directory            ok
+ 19: extracting symlinks over an existing file     FAILED (extrac02.at:28)
+ 20: extraction loops                              FAILED (extrac03.at:26)
+ 21: extract + fnmatch                             FAILED (extrac04.at:26)
+ 22: extracting selected members from pax          FAILED (extrac05.at:38)
+ 23: mode of extracted directories                 FAILED (extrac06.at:36)
+ 24: extracting symlinks to a read-only dir        FAILED (extrac07.at:30)
+ 25: gzip                                          FAILED (gzip.at:28)
+ 26: incremental                                   FAILED (incremental.at:26)
+ 27: restore broken symlinks from incremental      FAILED (incr01.at:30)
+ 28: restoring timestamps from incremental         FAILED (incr02.at:35)
+ 29: --listed for individual files                 FAILED (listed01.at:29)
+ 30: working --listed                              FAILED (listed02.at:31)
+ 31: renamed files in incrementals                 FAILED (incr03.at:31)
+ 32: proper icontents initialization               FAILED (incr04.at:34)
+ 33: renamed dirs in incrementals                  FAILED (rename01.at:27)
+ 34: move between hierarchies                      FAILED (rename02.at:27)
+ 35: cyclic renames                                FAILED (rename03.at:26)
+ 36: changed file types in incrementals            FAILED (chtype.at:30)
+ 37: ignfail                                       skipped (ignfail.at:26)
+ 38: link count gt 2                               skipped (link01.at:36)
+ 39: long names in V7 archives                     FAILED (longv7.at:30)
+ 40: long file names divisible by block size       FAILED (long01.at:36)
+ 41: ustar: unsplittable file name                 FAILED (lustar01.at:27)
+ 42: ustar: unsplittable path name                 FAILED (lustar02.at:32)
+ 43: ustar: splitting long names                   FAILED (lustar03.at:29)
+ 44: multivolume dumps from pipes                  FAILED (multiv01.at:30)
+ 45: skipping a straddling member                  FAILED (multiv02.at:31)
+ 46: MV archive & long filenames                   FAILED (multiv03.at:33)
+ 47: split directory members in a MV archive       FAILED (multiv04.at:39)
+ 48: Restoring after an out of sync folume         FAILED (multiv05.at:30)
+ 49: old archives                                  FAILED (old.at:27)
+ 50: recurse                                       FAILED (recurse.at:24)
+ 51: working -C with --same-order                  FAILED (same-order01.at:29)
+ 52: multiple -C options                           FAILED (same-order02.at:28)
+ 53: short records                                 FAILED (shortrec.at:28)
+ 54: sparse files                                  skipped (sparse01.at:24)
+ 55: extracting sparse file over a pipe            skipped (sparse02.at:28)
+ 56: storing sparse files > 8G                     skipped (sparse03.at:29)
+ 57: sparse files in MV archives                   skipped (sparsemv.at:31)
+ 58: sparse files in PAX MV archives, v.0.0        skipped (spmvp00.at:24)
+ 59: sparse files in PAX MV archives, v.0.1        skipped (spmvp01.at:24)
+ 60: sparse files in PAX MV archives, v.1.0        skipped (spmvp10.at:24)
+ 61: update unchanged directories                  FAILED (update.at:30)
+ 62: volume                                        FAILED (volume.at:26)
+ 63: volume header size                            skipped (volsize.at:32)
+ 64: compressed format recognition                 FAILED (comprec.at:25)
+ 65: truncate                                      FAILED (truncate.at:32)
+ 66: grow                                          FAILED (grow.at:27)
+ 67: gtarfail                                      skipped (gtarfail.at:26)
+ 68: gtarfail2                                     skipped (gtarfail2.at:26)
+ 69: multi-fail                                    skipped (multi-fail.at:26)
+ 70: ustar-big-2g                                  skipped (ustar-big-2g.at:26)
+ 71: ustar-big-8g                                  skipped (ustar-big-8g.at:26)
+ 72: pax-big-10g                                   skipped (pax-big-10g.at:26)
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+## -------------------------- ##
+## testsuite.log was created. ##
+## -------------------------- ##
+
+Please send `tests/testsuite.log' and all information you think might help:
+
+   To: <bug-tar@gnu.org>
+   Subject: [GNU tar 1.17] testsuite: 1 2 5 7 9 10 11 12 13 14 15 16 17 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 61 62 64 65 66 failed
+
+
+You may investigate any problem if you feel able to do so, in which
+case the test suite provides a good starting point.  Its output may
+be found below `tests/testsuite.dir'.
+
+COMMANDDONE
+-bash-3.2# 

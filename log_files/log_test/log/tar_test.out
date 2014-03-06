@@ -1,0 +1,94 @@
+## ------------------------ ##
+## GNU tar 1.17 test suite. ##
+## ------------------------ ##
+  1: tar version                                   ok
+  2: decompressing from stdin                      ok
+  3: mixing options                                ok
+  4: interspersed options                          ok
+  5: files-from: empty entries                     ok
+  6: files-from: 0-separated file without -0       ok
+  7: tar --index-file=FILE --file=-                ok
+  8: tar cvf -                                     ok
+  9: append                                        ok
+ 10: appending files with long names               ok
+ 11: append vs. create                             ok
+ 12: exclude                                       FAILED (exclude.at:26)
+ 13: deleting a member after a big one             ok
+ 14: deleting a member from stdin archive          ok
+ 15: deleting members with long names              ok
+ 16: deleting a large last member                  ok
+ 17: deleting non-existing member                  ok
+ 18: extract over an existing directory            ok
+ 19: extracting symlinks over an existing file     ok
+ 20: extraction loops                              ok
+ 21: extract + fnmatch                             ok
+ 22: extracting selected members from pax          ok
+ 23: mode of extracted directories                 ok
+ 24: extracting symlinks to a read-only dir        ok
+ 25: gzip                                          FAILED (gzip.at:28)
+ 26: incremental                                   ok
+ 27: restore broken symlinks from incremental      ok
+ 28: restoring timestamps from incremental         ok
+ 29: --listed for individual files                 ok
+ 30: working --listed                              ok
+ 31: renamed files in incrementals                 ok
+ 32: proper icontents initialization               ok
+ 33: renamed dirs in incrementals                  ok
+ 34: move between hierarchies                      ok
+ 35: cyclic renames                                ok
+ 36: changed file types in incrementals            ok
+ 37: ignfail                                       skipped (ignfail.at:26)
+ 38: link count gt 2                               ok
+ 39: long names in V7 archives                     ok
+ 40: long file names divisible by block size       ok
+ 41: ustar: unsplittable file name                 ok
+ 42: ustar: unsplittable path name                 ok
+ 43: ustar: splitting long names                   ok
+ 44: multivolume dumps from pipes                  ok
+ 45: skipping a straddling member                  ok
+ 46: MV archive & long filenames                   ok
+ 47: split directory members in a MV archive       ok
+ 48: Restoring after an out of sync folume         ok
+ 49: old archives                                  ok
+ 50: recurse                                       ok
+ 51: working -C with --same-order                  ok
+ 52: multiple -C options                           ok
+ 53: short records                                 ok
+ 54: sparse files                                  ok
+ 55: extracting sparse file over a pipe            ok
+ 56: storing sparse files > 8G                     ok
+ 57: sparse files in MV archives                   ok
+ 58: sparse files in PAX MV archives, v.0.0        ok
+ 59: sparse files in PAX MV archives, v.0.1        ok
+ 60: sparse files in PAX MV archives, v.1.0        ok
+ 61: update unchanged directories                  ok
+ 62: volume                                        ok
+ 63: volume header size                            skipped (volsize.at:32)
+ 64: compressed format recognition                 ok
+ 65: truncate                                      ok
+ 66: grow                                          ok
+ 67: gtarfail                                      skipped (gtarfail.at:26)
+ 68: gtarfail2                                     skipped (gtarfail2.at:26)
+ 69: multi-fail                                    skipped (multi-fail.at:26)
+ 70: ustar-big-2g                                  skipped (ustar-big-2g.at:26)
+ 71: ustar-big-8g                                  skipped (ustar-big-8g.at:26)
+ 72: pax-big-10g                                   skipped (pax-big-10g.at:26)
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+## -------------------------- ##
+## testsuite.log was created. ##
+## -------------------------- ##
+
+Please send `tests/testsuite.log' and all information you think might help:
+
+   To: <bug-tar@gnu.org>
+   Subject: [GNU tar 1.17] testsuite: 12 25 failed
+
+
+You may investigate any problem if you feel able to do so, in which
+case the test suite provides a good starting point.  Its output may
+be found below `tests/testsuite.dir'.
+

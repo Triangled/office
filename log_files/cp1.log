@@ -1,0 +1,296 @@
+-bash-3.2# make check 
+Making check in doc
+make[1]: Entering directory `/tmp/cpio-2.11/doc'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/cpio-2.11/doc'
+Making check in headers
+make[1]: Entering directory `/tmp/cpio-2.11/headers'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/cpio-2.11/headers'
+Making check in gnu
+make[1]: Entering directory `/tmp/cpio-2.11/gnu'
+make  check-recursive
+make[2]: Entering directory `/tmp/cpio-2.11/gnu'
+make[3]: Entering directory `/tmp/cpio-2.11/gnu'
+  CC     argp-eexst.o
+  CC     argp-fmtstream.o
+  CC     argp-fs-xinl.o
+  CC     argp-help.o
+  CC     argp-parse.o
+  CC     argp-pin.o
+  CC     argp-pv.o
+  CC     argp-pvh.o
+  CC     argp-xinl.o
+  CC     argp-version-etc.o
+  CC     c-ctype.o
+  CC     close-hook.o
+  CC     exitfail.o
+  CC     full-write.o
+  CC     getdate.o
+  CC     localcharset.o
+  CC     malloca.o
+  CC     openat-die.o
+  CC     progname.o
+  CC     strnlen1.o
+  CC     version-etc.o
+  CC     version-etc-fsf.o
+  CC     xalloc-die.o
+  CC     xstrndup.o
+  CC     argmatch.o
+  CC     asnprintf.o
+  CC     basename.o
+  CC     basename-lgpl.o
+  CC     chdir-long.o
+  CC     close-stream.o
+  CC     closeout.o
+  CC     dirname.o
+  CC     dirname-lgpl.o
+  CC     dup-safer.o
+  CC     fcntl.o
+  CC     fd-safer.o
+  CC     getopt.o
+  CC     getopt1.o
+  CC     gettime.o
+  CC     hash.o
+  CC     imaxtostr.o
+  CC     offtostr.o
+  CC     openat-proc.o
+  CC     opendir-safer.o
+  CC     pipe-safer.o
+  CC     printf-args.o
+  CC     printf-parse.o
+  CC     quote.o
+  CC     quotearg.o
+  CC     safe-read.o
+  CC     safe-write.o
+  CC     save-cwd.o
+  CC     savedir.o
+  CC     stripslash.o
+  CC     uinttostr.o
+  CC     umaxtostr.o
+  CC     utimens.o
+  CC     vasnprintf.o
+  CC     xgetcwd.o
+  CC     xmalloc.o
+  AR     libgnu.a
+  GEN    charset.alias
+  GEN    ref-add.sed
+  GEN    ref-del.sed
+make[3]: Leaving directory `/tmp/cpio-2.11/gnu'
+make[2]: Leaving directory `/tmp/cpio-2.11/gnu'
+make[1]: Leaving directory `/tmp/cpio-2.11/gnu'
+Making check in lib
+make[1]: Entering directory `/tmp/cpio-2.11/lib'
+  GEN    rmt-command.h
+make  check-am
+make[2]: Entering directory `/tmp/cpio-2.11/lib'
+  CC     exit.o
+  CC     rtapelib.o
+  CC     sysdep.o
+  CC     error.o
+  CC     names.o
+  AR     libpax.a
+make[2]: Leaving directory `/tmp/cpio-2.11/lib'
+make[1]: Leaving directory `/tmp/cpio-2.11/lib'
+Making check in rmt
+make[1]: Entering directory `/tmp/cpio-2.11/rmt'
+  CC     rmt.o
+  CCLD   rmt
+make[1]: Leaving directory `/tmp/cpio-2.11/rmt'
+Making check in src
+make[1]: Entering directory `/tmp/cpio-2.11/src'
+  CC     copyin.o
+  CC     copyout.o
+  CC     copypass.o
+  CC     defer.o
+  CC     dstring.o
+  CC     global.o
+  CC     fatal.o
+  CC     main.o
+  CC     tar.o
+  CC     util.o
+  CC     filemode.o
+  CC     idcache.o
+  CC     makepath.o
+  CC     userspec.o
+  CCLD   cpio
+make[1]: Leaving directory `/tmp/cpio-2.11/src'
+Making check in po
+make[1]: Entering directory `/tmp/cpio-2.11/po'
+make[1]: Leaving directory `/tmp/cpio-2.11/po'
+Making check in tests
+make[1]: Entering directory `/tmp/cpio-2.11/tests'
+make  genfile
+make[2]: Entering directory `/tmp/cpio-2.11/tests'
+  CC     genfile.o
+  CC     argcv.o
+  CCLD   genfile
+make[2]: Leaving directory `/tmp/cpio-2.11/tests'
+make  check-local
+make[2]: Entering directory `/tmp/cpio-2.11/tests'
+{                                      \
+          echo '# Signature of the current package.'; \
+          echo 'm4_define([AT_PACKAGE_NAME],      [GNU cpio])'; \
+          echo 'm4_define([AT_PACKAGE_TARNAME],   [cpio])'; \
+          echo 'm4_define([AT_PACKAGE_VERSION],   [2.11])'; \
+          echo 'm4_define([AT_PACKAGE_STRING],    [GNU cpio 2.11])'; \
+          echo 'm4_define([AT_PACKAGE_BUGREPORT], [bug-cpio@gnu.org])'; \
+        } >./package.m4
+/bin/sh /tmp/cpio-2.11/build-aux/missing --run autom4te --language=autotest -I . testsuite.at -o testsuite.tmp
+mv testsuite.tmp testsuite
+/bin/sh ./testsuite 
+## ------------------------- ##
+## GNU cpio 2.11 test suite. ##
+## ------------------------- ##
+  1: cpio version                                    ok
+  2: basic functionality: copyin/copyout             ok
+  3: symlink                                         ok
+  4: interdir                                        ok
+  5: delayed setstat                                 ok
+  6: delayed setstat (with -depth)                   ok
+  7: delayed setstat (copy-pass)                     ok
+  8: delayed setstat (umask)                         ok
+  9: delayed setstat (umask, copy-pass)              ok
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+All 9 tests were successful.
+make[2]: Leaving directory `/tmp/cpio-2.11/tests'
+make[1]: Leaving directory `/tmp/cpio-2.11/tests'
+make[1]: Entering directory `/tmp/cpio-2.11'
+make[1]: Leaving directory `/tmp/cpio-2.11'
+-bash-3.2# make install
+Making install in doc
+make[1]: Entering directory `/tmp/cpio-2.11/doc'
+make[2]: Entering directory `/tmp/cpio-2.11/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/share/info" || /usr/bin/mkdir -p "/usr/local/share/info"
+ /usr/bin/install -c -m 644 ./cpio.info '/usr/local/share/info'
+ install-info --info-dir='/usr/local/share/info' '/usr/local/share/info/cpio.info'
+test -z "/usr/local/share/man/man1" || /usr/bin/mkdir -p "/usr/local/share/man/man1"
+ /usr/bin/install -c -m 644 cpio.1 mt.1 '/usr/local/share/man/man1'
+make[2]: Leaving directory `/tmp/cpio-2.11/doc'
+make[1]: Leaving directory `/tmp/cpio-2.11/doc'
+Making install in headers
+make[1]: Entering directory `/tmp/cpio-2.11/headers'
+make[2]: Entering directory `/tmp/cpio-2.11/headers'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/tmp/cpio-2.11/headers'
+make[1]: Leaving directory `/tmp/cpio-2.11/headers'
+Making install in gnu
+make[1]: Entering directory `/tmp/cpio-2.11/gnu'
+make  install-recursive
+make[2]: Entering directory `/tmp/cpio-2.11/gnu'
+make[3]: Entering directory `/tmp/cpio-2.11/gnu'
+make[4]: Entering directory `/tmp/cpio-2.11/gnu'
+if test yes = no; then \
+          case 'linux-gnueabi' in \
+            darwin[56]*) \
+              need_charset_alias=true ;; \
+            darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+              need_charset_alias=false ;; \
+            *) \
+              need_charset_alias=true ;; \
+          esac ; \
+        else \
+          need_charset_alias=false ; \
+        fi ; \
+        if $need_charset_alias; then \
+          /bin/sh /tmp/cpio-2.11/build-aux/install-sh -d /usr/local/lib ; \
+        fi ; \
+        if test -f /usr/local/lib/charset.alias; then \
+          sed -f ref-add.sed /usr/local/lib/charset.alias > /usr/local/lib/charset.tmp ; \
+          /usr/bin/install -c -m 644 /usr/local/lib/charset.tmp /usr/local/lib/charset.alias ; \
+          rm -f /usr/local/lib/charset.tmp ; \
+        else \
+          if $need_charset_alias; then \
+            sed -f ref-add.sed charset.alias > /usr/local/lib/charset.tmp ; \
+            /usr/bin/install -c -m 644 /usr/local/lib/charset.tmp /usr/local/lib/charset.alias ; \
+            rm -f /usr/local/lib/charset.tmp ; \
+          fi ; \
+        fi
+make[4]: Nothing to be done for `install-data-am'.
+make[4]: Leaving directory `/tmp/cpio-2.11/gnu'
+make[3]: Leaving directory `/tmp/cpio-2.11/gnu'
+make[2]: Leaving directory `/tmp/cpio-2.11/gnu'
+make[1]: Leaving directory `/tmp/cpio-2.11/gnu'
+Making install in lib
+make[1]: Entering directory `/tmp/cpio-2.11/lib'
+make  install-am
+make[2]: Entering directory `/tmp/cpio-2.11/lib'
+make[3]: Entering directory `/tmp/cpio-2.11/lib'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/tmp/cpio-2.11/lib'
+make[2]: Leaving directory `/tmp/cpio-2.11/lib'
+make[1]: Leaving directory `/tmp/cpio-2.11/lib'
+Making install in rmt
+make[1]: Entering directory `/tmp/cpio-2.11/rmt'
+make[2]: Entering directory `/tmp/cpio-2.11/rmt'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/libexec" || /usr/bin/mkdir -p "/usr/local/libexec"
+  /usr/bin/install -c rmt '/usr/local/libexec'
+make[2]: Leaving directory `/tmp/cpio-2.11/rmt'
+make[1]: Leaving directory `/tmp/cpio-2.11/rmt'
+Making install in src
+make[1]: Entering directory `/tmp/cpio-2.11/src'
+make[2]: Entering directory `/tmp/cpio-2.11/src'
+test -z "/usr/local/bin" || /usr/bin/mkdir -p "/usr/local/bin"
+  /usr/bin/install -c cpio '/usr/local/bin'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/tmp/cpio-2.11/src'
+make[1]: Leaving directory `/tmp/cpio-2.11/src'
+Making install in po
+make[1]: Entering directory `/tmp/cpio-2.11/po'
+/usr/bin/mkdir -p /usr/local/share
+installing da.gmo as /usr/local/share/locale/da/LC_MESSAGES/cpio.mo
+installing de.gmo as /usr/local/share/locale/de/LC_MESSAGES/cpio.mo
+installing es.gmo as /usr/local/share/locale/es/LC_MESSAGES/cpio.mo
+installing fi.gmo as /usr/local/share/locale/fi/LC_MESSAGES/cpio.mo
+installing fr.gmo as /usr/local/share/locale/fr/LC_MESSAGES/cpio.mo
+installing ga.gmo as /usr/local/share/locale/ga/LC_MESSAGES/cpio.mo
+installing gl.gmo as /usr/local/share/locale/gl/LC_MESSAGES/cpio.mo
+installing hu.gmo as /usr/local/share/locale/hu/LC_MESSAGES/cpio.mo
+installing id.gmo as /usr/local/share/locale/id/LC_MESSAGES/cpio.mo
+installing ko.gmo as /usr/local/share/locale/ko/LC_MESSAGES/cpio.mo
+installing nl.gmo as /usr/local/share/locale/nl/LC_MESSAGES/cpio.mo
+installing pl.gmo as /usr/local/share/locale/pl/LC_MESSAGES/cpio.mo
+installing pt_BR.gmo as /usr/local/share/locale/pt_BR/LC_MESSAGES/cpio.mo
+installing ro.gmo as /usr/local/share/locale/ro/LC_MESSAGES/cpio.mo
+installing ru.gmo as /usr/local/share/locale/ru/LC_MESSAGES/cpio.mo
+installing sv.gmo as /usr/local/share/locale/sv/LC_MESSAGES/cpio.mo
+installing tr.gmo as /usr/local/share/locale/tr/LC_MESSAGES/cpio.mo
+installing uk.gmo as /usr/local/share/locale/uk/LC_MESSAGES/cpio.mo
+installing vi.gmo as /usr/local/share/locale/vi/LC_MESSAGES/cpio.mo
+installing zh_CN.gmo as /usr/local/share/locale/zh_CN/LC_MESSAGES/cpio.mo
+installing zh_TW.gmo as /usr/local/share/locale/zh_TW/LC_MESSAGES/cpio.mo
+if test "cpio" = "gettext-tools"; then \
+          /usr/bin/mkdir -p /usr/local/share/gettext/po; \
+          for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+            /usr/bin/install -c -m 644 ./$file \
+                            /usr/local/share/gettext/po/$file; \
+          done; \
+          for file in Makevars; do \
+            rm -f /usr/local/share/gettext/po/$file; \
+          done; \
+        else \
+          : ; \
+        fi
+make[1]: Leaving directory `/tmp/cpio-2.11/po'
+Making install in tests
+make[1]: Entering directory `/tmp/cpio-2.11/tests'
+make[2]: Entering directory `/tmp/cpio-2.11/tests'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/tmp/cpio-2.11/tests'
+make[1]: Leaving directory `/tmp/cpio-2.11/tests'
+make[1]: Entering directory `/tmp/cpio-2.11'
+make[2]: Entering directory `/tmp/cpio-2.11'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/tmp/cpio-2.11'
+make[1]: Leaving directory `/tmp/cpio-2.11'
+

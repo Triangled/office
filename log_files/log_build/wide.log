@@ -1,0 +1,263 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.tPx6B2
+drwxr-xr-x root/wheel        0 2008-06-15 13:29 wide-dhcpv6-20080615
+-rw-r--r-- root/wheel    10311 2008-06-15 13:18 wide-dhcpv6-20080615/addrconf.c
+-rw-r--r-- root/wheel     1832 2007-03-21 15:22 wide-dhcpv6-20080615/addrconf.h
+-rw-r--r-- root/wheel    14359 2007-03-21 15:22 wide-dhcpv6-20080615/auth.c
+-rw-r--r-- root/wheel     2373 2007-03-21 15:22 wide-dhcpv6-20080615/auth.h
+-rw-r--r-- root/wheel     5275 2007-03-21 15:22 wide-dhcpv6-20080615/base64.c
+-rw-r--r-- root/wheel     1684 2007-03-21 15:22 wide-dhcpv6-20080615/base64.h
+-rw-r--r-- root/wheel    81258 2007-03-21 15:23 wide-dhcpv6-20080615/cfparse.c
+-rw-r--r-- root/wheel    25698 2007-03-21 15:22 wide-dhcpv6-20080615/cfparse.y
+-rw-r--r-- root/wheel    70400 2007-03-21 15:23 wide-dhcpv6-20080615/cftoken.c
+-rw-r--r-- root/wheel    10614 2007-03-21 15:22 wide-dhcpv6-20080615/cftoken.l
+-rw-r--r-- root/wheel    79892 2008-06-15 13:18 wide-dhcpv6-20080615/common.c
+-rw-r--r-- root/wheel     7178 2007-03-21 15:22 wide-dhcpv6-20080615/common.h
+-rw-r--r-- root/wheel    53200 2008-06-15 13:18 wide-dhcpv6-20080615/config.c
+-rw-r--r-- root/wheel    10131 2008-06-15 13:18 wide-dhcpv6-20080615/config.h
+-rw-r--r-- root/wheel     3156 2007-03-21 15:22 wide-dhcpv6-20080615/control.h
+-rw-r--r-- root/wheel    11359 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6.h
+-rw-r--r-- root/wheel     8893 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6_ctl.c
+-rw-r--r-- root/wheel     2174 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6_ctl.h
+-rw-r--r-- root/wheel    14833 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6_ctlclient.c
+-rw-r--r-- root/wheel     6334 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c.8
+-rw-r--r-- root/wheel    52855 2008-06-15 13:18 wide-dhcpv6-20080615/dhcp6c.c
+-rw-r--r-- root/wheel    16703 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c.conf.5
+-rw-r--r-- root/wheel     1911 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c.h
+-rw-r--r-- root/wheel    19053 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c_ia.c
+-rw-r--r-- root/wheel     2640 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c_ia.h
+-rw-r--r-- root/wheel    12000 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c_script.c
+-rw-r--r-- root/wheel     5582 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6ctl.8
+-rw-r--r-- root/wheel     3775 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6relay.8
+-rw-r--r-- root/wheel    27440 2008-06-15 13:18 wide-dhcpv6-20080615/dhcp6relay.c
+-rw-r--r-- root/wheel     7458 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6relay_script.c
+-rw-r--r-- root/wheel     4449 2008-06-15 13:18 wide-dhcpv6-20080615/dhcp6s.8
+-rw-r--r-- root/wheel   100920 2008-06-15 13:21 wide-dhcpv6-20080615/dhcp6s.c
+-rw-r--r-- root/wheel    11409 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6s.conf.5
+-rw-r--r-- root/wheel     4364 2008-06-15 13:18 wide-dhcpv6-20080615/if.c
+-rw-r--r-- root/wheel     6936 2008-06-15 13:18 wide-dhcpv6-20080615/lease.c
+-rw-r--r-- root/wheel     1906 2008-06-15 13:18 wide-dhcpv6-20080615/lease.h
+-rw-r--r-- root/wheel    13571 2007-03-21 15:22 wide-dhcpv6-20080615/prefixconf.c
+-rw-r--r-- root/wheel     2061 2007-03-21 15:22 wide-dhcpv6-20080615/prefixconf.h
+-rw-r--r-- root/wheel     5326 2007-03-21 15:22 wide-dhcpv6-20080615/timer.c
+-rw-r--r-- root/wheel     2608 2007-03-21 15:22 wide-dhcpv6-20080615/timer.h
+-rw-r--r-- root/wheel     4557 2007-03-21 15:23 wide-dhcpv6-20080615/y.tab.h
+-rw-r--r-- root/wheel     5031 2007-03-21 15:22 wide-dhcpv6-20080615/Makefile.in
+-rw-r--r-- root/wheel     1615 2007-03-21 15:22 wide-dhcpv6-20080615/README
+-rw-r--r-- root/wheel     1532 2007-03-21 15:22 wide-dhcpv6-20080615/COPYRIGHT
+-rw-r--r-- root/wheel    12833 2008-06-15 13:23 wide-dhcpv6-20080615/CHANGES
+-rwxr-xr-x root/wheel   196830 2008-06-15 13:18 wide-dhcpv6-20080615/configure
+-rw-r--r-- root/wheel     6328 2008-06-15 13:18 wide-dhcpv6-20080615/configure.in
+-rwxr-xr-x root/wheel     5585 2007-03-21 15:22 wide-dhcpv6-20080615/install-sh
+-rw-r--r-- root/wheel      747 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6c.conf.sample
+-rw-r--r-- root/wheel      831 2007-03-21 15:22 wide-dhcpv6-20080615/dhcp6s.conf.sample
+drwxr-xr-x root/wheel        0 2008-06-15 13:29 wide-dhcpv6-20080615/missing
+-rw-r--r-- root/wheel     2140 2007-03-21 15:22 wide-dhcpv6-20080615/missing/arc4random.c
+-rw-r--r-- root/wheel     1731 2007-03-21 15:22 wide-dhcpv6-20080615/missing/arc4random.h
+-rw-r--r-- root/wheel     2624 2007-03-21 15:22 wide-dhcpv6-20080615/missing/strlcat.c
+-rw-r--r-- root/wheel     2558 2007-03-21 15:22 wide-dhcpv6-20080615/missing/strlcpy.c
+-rw-r--r-- root/wheel     1908 2007-03-21 15:22 wide-dhcpv6-20080615/missing/daemon.c
+-rw-r--r-- root/wheel     1723 2007-03-21 15:22 wide-dhcpv6-20080615/missing/err.h
+-rw-r--r-- root/wheel     1981 2007-03-21 15:22 wide-dhcpv6-20080615/missing/warnx.c
+-rw-r--r-- root/wheel     2064 2007-03-21 15:22 wide-dhcpv6-20080615/missing/ifaddrs.h
+-rw-r--r-- root/wheel     5564 2007-03-21 15:22 wide-dhcpv6-20080615/missing/getifaddrs.c
+drwxr-xr-x root/wheel        0 2008-06-15 13:29 wide-dhcpv6-20080615/missing/sys
+-rw-r--r-- root/wheel     4819 2007-03-21 15:22 wide-dhcpv6-20080615/missing/sys/queue.h
+Patch #1 (dhcp6c-client-20080615.patch):
+Patch #2 (wide-dhcpv6-20080615-in6_pktinfo.patch):
+Patch #3 (wide-dhcpv6-20080615-dprintf.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.qW9q7w
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for bison... bison -y
+checking for flex... flex
+checking for yywrap in -lfl... yes
+checking lex output file root... lex.yy
+checking whether yytext is a pointer... yes
+checking for sys/queue.h... yes
+checking for egrep... grep -E
+checking for getaddrinfo/getnameinfo library... regular
+checking for getaddrinfo... yes
+checking for getnameinfo... yes
+checking for getifaddrs... yes
+checking for if_nametoindex... yes
+checking for strlcpy... no
+checking for strlcat... no
+checking for daemon... yes
+checking for warnx... yes
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking for socklen_t... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for sig_atomic_t... yes
+checking whether getpgrp requires zero arguments... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a needs -traditional... no
+checking whether setpgrp takes no argument... (cached) yes
+checking return type of signal handlers... void
+checking for mktime... yes
+checking for select... yes
+checking for socket... yes
+checking for clock_gettime... no
+checking for local DB directory... /var
+checking for arc4random... no
+checking if --enable-pedant option is specified... no
+checking ANSI predeclared __func__... yes
+checking checking the existence TAILQ_FOREACH_REVERSE... yes
+checking argument order of TAILQ_FOREACH_REVERSE... old
+checking if you have a length field in struct sockaddr*... no
+checking the owner of the programs... bin
+checking the group owner of the programs... bin
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+configure: creating ./config.status
+config.status: creating Makefile
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o dhcp6c.o dhcp6c.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o common.o common.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o config.o config.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o prefixconf.o prefixconf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o dhcp6c_ia.o dhcp6c_ia.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o timer.o timer.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o dhcp6c_script.o dhcp6c_script.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o if.o if.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o base64.o base64.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o auth.o auth.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o dhcp6_ctl.o dhcp6_ctl.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o addrconf.o addrconf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o lease.o lease.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o cfparse.o cfparse.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"    -c -o cftoken.o cftoken.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c ./missing/strlcpy.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c ./missing/strlcat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I. -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DYYTEXT_POINTER=1 -DHAVE_GETADDRINFO=1 -DHAVE_GETNAMEINFO=1 -DHAVE_GETIFADDRS=1 -DHAVE_IF_NAMETOINDEX=1 -DHAVE_DAEMON=1 -DHAVE_WARNX=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_TIME_H=1 -DHAVE_SYSLOG_H=1 -DHAVE_UNISTD_H=1 -DHAVE_IFADDRS_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_STRUCT_TM_TM_ZONE=1 -DHAVE_TM_ZONE=1 -DHAVE_SIG_ATOMIC_T=1 -DGETPGRP_VOID=1 -DSETPGRP_VOID=1 -DRETSIGTYPE=void -DHAVE_MKTIME=1 -DHAVE_SELECT=1 -DHAVE_SOCKET=1 -DHAVE_ANSI_FUNC=1 -DHAVE_TAILQ_FOREACH_REVERSE_OLD=1 -DHAVE_STDARG_H=1  -DSYSCONFDIR=\"/etc\" -DLOCALDBDIR=\"/var\" -DVERSION=\"1.1.1\"  -c ./missing/arc4random.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -o dhcp6c dhcp6c.o common.o config.o prefixconf.o dhcp6c_ia.o timer.o dhcp6c_script.o if.o base64.o auth.o dhcp6_ctl.o addrconf.o lease.o cfparse.o cftoken.o strlcpy.o strlcat.o arc4random.o -lfl
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.2zyUAo
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for bison... bison -y
+checking for flex... flex
+checking for yywrap in -lfl... yes
+checking lex output file root... lex.yy
+checking whether yytext is a pointer... yes
+checking for sys/queue.h... yes
+checking for egrep... grep -E
+checking for getaddrinfo/getnameinfo library... regular
+checking for getaddrinfo... yes
+checking for getnameinfo... yes
+checking for getifaddrs... yes
+checking for if_nametoindex... yes
+checking for strlcpy... no
+checking for strlcat... no
+checking for daemon... yes
+checking for warnx... yes
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking for socklen_t... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for sig_atomic_t... yes
+checking whether getpgrp requires zero arguments... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a needs -traditional... no
+checking whether setpgrp takes no argument... (cached) yes
+checking return type of signal handlers... void
+checking for mktime... yes
+checking for select... yes
+checking for socket... yes
+checking for clock_gettime... no
+checking for local DB directory... /var
+checking for arc4random... no
+checking if --enable-pedant option is specified... no
+checking ANSI predeclared __func__... yes
+checking checking the existence TAILQ_FOREACH_REVERSE... yes
+checking argument order of TAILQ_FOREACH_REVERSE... old
+checking if you have a length field in struct sockaddr*... no
+checking the owner of the programs... bin
+checking the group owner of the programs... bin
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+configure: creating ./config.status
+config.status: creating Makefile
+make: Nothing to be done for `all'.
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-wide-dhcpv6-20080615-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-wide-dhcpv6-20080615-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-wide-dhcpv6-20080615-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-wide-dhcpv6-20080615-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Ris20v

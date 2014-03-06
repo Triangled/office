@@ -1,0 +1,576 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+zlib : 1.2.7
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-zlib-1.2.7-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-zlib   warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  1%)warning: group rpmuser does not exist - using root
+#                                           ( 13%)##                                          ( 13%)###                                         ( 13%)####                                        ( 13%)#####                                       ( 13%)######                                      ( 24%)#######                                     ( 24%)########                                    ( 24%)#########                                   ( 24%)##########                                  ( 24%)###########                                 ( 36%)############                                ( 36%)#############                               ( 36%)##############                              ( 36%)###############                             ( 36%)################                            ( 47%)#################                           ( 47%)##################                          ( 47%)###################                         ( 47%)####################                        ( 47%)#####################                       ( 59%)######################                      ( 59%)#######################                     ( 59%)########################                    ( 59%)#########################                   ( 59%)##########################                  ( 71%)###########################                 ( 71%)############################                ( 71%)#############################               ( 71%)##############################              ( 71%)###############################             ( 82%)################################            ( 82%)#################################           ( 82%)##################################          ( 82%)###################################         ( 82%)####################################        ( 94%)#####################################       ( 94%)######################################      ( 94%)#######################################     ( 94%)########################################    ( 94%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-zlib.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.DN9gpo
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf zlib-1.2.7
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/zlib-1.2.7.tar.gz
++ /bin/tar -xvvf -
+drwxr-xr-x madler/staff      0 2012-05-03 09:51 zlib-1.2.7/
+-rw-r--r-- madler/staff   4968 2011-09-11 04:45 zlib-1.2.7/adler32.c
+drwxr-xr-x madler/staff      0 2010-02-14 05:52 zlib-1.2.7/amiga/
+-rw-r--r-- madler/staff   1981 2010-02-14 05:52 zlib-1.2.7/amiga/Makefile.pup
+-rw-r--r-- madler/staff   1847 2010-02-14 05:52 zlib-1.2.7/amiga/Makefile.sas
+drwxr-xr-x madler/staff      0 2012-02-19 03:45 zlib-1.2.7/as400/
+-rw-r--r-- madler/staff   8016 2012-02-02 12:55 zlib-1.2.7/as400/bndsrc
+-rw-r--r-- madler/staff   5291 2012-02-13 05:45 zlib-1.2.7/as400/compile.clp
+-rw-r--r-- madler/staff   4991 2012-02-13 05:45 zlib-1.2.7/as400/readme.txt
+-rw-r--r-- madler/staff  27460 2012-02-19 03:45 zlib-1.2.7/as400/zlib.inc
+-rw-r--r-- madler/staff  73286 2012-05-03 09:42 zlib-1.2.7/ChangeLog
+-rw-r--r-- madler/staff   7227 2012-04-30 09:50 zlib-1.2.7/CMakeLists.txt
+-rw-r--r-- madler/staff   2520 2005-12-11 23:57 zlib-1.2.7/compress.c
+-rwxr-xr-x madler/staff  25985 2012-05-02 09:47 zlib-1.2.7/configure
+drwxr-xr-x madler/staff      0 2012-03-27 08:47 zlib-1.2.7/contrib/
+drwxr-xr-x madler/staff      0 2004-10-04 07:28 zlib-1.2.7/contrib/ada/
+-rw-r--r-- madler/staff   3717 2004-09-06 12:25 zlib-1.2.7/contrib/ada/buffer_demo.adb
+-rw-r--r-- madler/staff   4467 2004-07-23 13:19 zlib-1.2.7/contrib/ada/mtest.adb
+-rw-r--r-- madler/staff   4248 2004-05-31 16:23 zlib-1.2.7/contrib/ada/read.adb
+-rw-r--r-- madler/staff   2178 2004-10-04 07:24 zlib-1.2.7/contrib/ada/readme.txt
+-rw-r--r-- madler/staff  13180 2004-05-31 16:21 zlib-1.2.7/contrib/ada/test.adb
+-rw-r--r-- madler/staff   5996 2004-10-04 07:25 zlib-1.2.7/contrib/ada/zlib-streams.adb
+-rw-r--r-- madler/staff   4330 2004-10-04 07:25 zlib-1.2.7/contrib/ada/zlib-streams.ads
+-rw-r--r-- madler/staff   3329 2003-12-15 16:22 zlib-1.2.7/contrib/ada/zlib-thin.adb
+-rw-r--r-- madler/staff  15819 2004-07-23 12:03 zlib-1.2.7/contrib/ada/zlib-thin.ads
+-rw-r--r-- madler/staff  20400 2004-09-06 12:23 zlib-1.2.7/contrib/ada/zlib.adb
+-rw-r--r-- madler/staff  13594 2004-09-06 12:23 zlib-1.2.7/contrib/ada/zlib.ads
+-rw-r--r-- madler/staff    511 2004-10-04 07:28 zlib-1.2.7/contrib/ada/zlib.gpr
+drwxr-xr-x madler/staff      0 2010-02-24 12:34 zlib-1.2.7/contrib/amd64/
+-rw-r--r-- madler/staff  12418 2010-02-24 12:34 zlib-1.2.7/contrib/amd64/amd64-match.S
+drwxr-xr-x madler/staff      0 2011-09-11 03:20 zlib-1.2.7/contrib/asm686/
+-rw-r--r-- madler/staff  10365 2011-09-11 03:20 zlib-1.2.7/contrib/asm686/match.S
+-rw-r--r-- madler/staff   1622 2010-02-23 21:36 zlib-1.2.7/contrib/asm686/README.686
+drwxr-xr-x madler/staff      0 2003-03-04 12:12 zlib-1.2.7/contrib/blast/
+-rw-r--r-- madler/staff  17425 2003-02-16 23:07 zlib-1.2.7/contrib/blast/blast.c
+-rw-r--r-- madler/staff   3237 2003-02-16 23:07 zlib-1.2.7/contrib/blast/blast.h
+-rw-r--r-- madler/staff    127 2003-03-03 11:15 zlib-1.2.7/contrib/blast/Makefile
+-rw-r--r-- madler/staff     74 2003-03-04 12:12 zlib-1.2.7/contrib/blast/README
+-rw-r--r-- madler/staff      8 2003-02-13 11:07 zlib-1.2.7/contrib/blast/test.pk
+-rw-r--r-- madler/staff     13 2003-02-13 11:08 zlib-1.2.7/contrib/blast/test.txt
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/contrib/delphi/
+-rw-r--r-- madler/staff   2500 2003-11-12 12:19 zlib-1.2.7/contrib/delphi/readme.txt
+-rw-r--r-- madler/staff  16412 2012-02-13 05:45 zlib-1.2.7/contrib/delphi/ZLib.pas
+-rw-r--r-- madler/staff    186 2003-07-28 02:50 zlib-1.2.7/contrib/delphi/ZLibConst.pas
+-rw-r--r-- madler/staff   2360 2011-11-28 03:45 zlib-1.2.7/contrib/delphi/zlibd32.mak
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/contrib/dotzlib/
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/contrib/dotzlib/DotZLib/
+-rw-r--r-- madler/staff   2500 2004-09-15 04:11 zlib-1.2.7/contrib/dotzlib/DotZLib/AssemblyInfo.cs
+-rw-r--r-- madler/staff   8040 2004-09-19 04:01 zlib-1.2.7/contrib/dotzlib/DotZLib/ChecksumImpl.cs
+-rw-r--r-- madler/staff   2246 2004-03-29 20:27 zlib-1.2.7/contrib/dotzlib/DotZLib/CircularBuffer.cs
+-rw-r--r-- madler/staff   6335 2004-09-19 04:08 zlib-1.2.7/contrib/dotzlib/DotZLib/CodecBase.cs
+-rw-r--r-- madler/staff   3992 2004-03-30 18:29 zlib-1.2.7/contrib/dotzlib/DotZLib/Deflater.cs
+-rw-r--r-- madler/staff   9927 2004-03-30 18:28 zlib-1.2.7/contrib/dotzlib/DotZLib/DotZLib.cs
+-rw-r--r-- madler/staff   5396 2004-09-19 05:02 zlib-1.2.7/contrib/dotzlib/DotZLib/DotZLib.csproj
+-rw-r--r-- madler/staff  11162 2004-03-30 18:43 zlib-1.2.7/contrib/dotzlib/DotZLib/GZipStream.cs
+-rw-r--r-- madler/staff   3740 2004-09-19 04:07 zlib-1.2.7/contrib/dotzlib/DotZLib/Inflater.cs
+-rw-r--r-- madler/staff   7683 2012-02-13 05:45 zlib-1.2.7/contrib/dotzlib/DotZLib/UnitTests.cs
+-rw-r--r-- madler/staff   1175 2004-09-19 03:49 zlib-1.2.7/contrib/dotzlib/DotZLib.build
+-rw-r--r-- madler/staff  72726 2004-09-19 04:13 zlib-1.2.7/contrib/dotzlib/DotZLib.chm
+-rw-r--r-- madler/staff    907 2004-03-22 05:21 zlib-1.2.7/contrib/dotzlib/DotZLib.sln
+-rw-r--r-- madler/staff   1359 2004-03-29 10:44 zlib-1.2.7/contrib/dotzlib/LICENSE_1_0.txt
+-rw-r--r-- madler/staff   2358 2004-09-19 05:02 zlib-1.2.7/contrib/dotzlib/readme.txt
+drwxr-xr-x madler/staff      0 2010-03-12 09:17 zlib-1.2.7/contrib/gcc_gvmat64/
+-rw-r--r-- madler/staff  16413 2010-03-12 09:17 zlib-1.2.7/contrib/gcc_gvmat64/gvmat64.S
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/contrib/infback9/
+-rw-r--r-- madler/staff  21693 2008-02-18 00:23 zlib-1.2.7/contrib/infback9/infback9.c
+-rw-r--r-- madler/staff   1594 2005-04-08 20:50 zlib-1.2.7/contrib/infback9/infback9.h
+-rw-r--r-- madler/staff   6599 2003-09-14 04:47 zlib-1.2.7/contrib/infback9/inffix9.h
+-rw-r--r-- madler/staff   1991 2003-09-14 03:31 zlib-1.2.7/contrib/infback9/inflate9.h
+-rw-r--r-- madler/staff  13404 2012-02-13 05:45 zlib-1.2.7/contrib/infback9/inftree9.c
+-rw-r--r-- madler/staff   2901 2008-02-18 04:32 zlib-1.2.7/contrib/infback9/inftree9.h
+-rw-r--r-- madler/staff     51 2003-09-09 10:15 zlib-1.2.7/contrib/infback9/README
+drwxr-xr-x madler/staff      0 2010-03-13 07:54 zlib-1.2.7/contrib/inflate86/
+-rw-r--r-- madler/staff  40608 2010-03-13 07:54 zlib-1.2.7/contrib/inflate86/inffas86.c
+-rw-r--r-- madler/staff  42842 2004-10-21 07:35 zlib-1.2.7/contrib/inflate86/inffast.S
+drwxr-xr-x madler/staff      0 2003-08-18 08:31 zlib-1.2.7/contrib/iostream/
+-rw-r--r-- madler/staff    526 1997-04-30 20:04 zlib-1.2.7/contrib/iostream/test.cpp
+-rw-r--r-- madler/staff   5112 2003-08-18 08:31 zlib-1.2.7/contrib/iostream/zfstream.cpp
+-rw-r--r-- madler/staff   2467 2003-08-18 08:31 zlib-1.2.7/contrib/iostream/zfstream.h
+drwxr-xr-x madler/staff      0 1998-01-20 01:58 zlib-1.2.7/contrib/iostream2/
+-rw-r--r-- madler/staff   9283 1998-01-20 01:57 zlib-1.2.7/contrib/iostream2/zstream.h
+-rw-r--r-- madler/staff    711 1998-01-20 01:58 zlib-1.2.7/contrib/iostream2/zstream_test.cpp
+drwxr-xr-x madler/staff      0 2003-06-11 20:54 zlib-1.2.7/contrib/iostream3/
+-rw-r--r-- madler/staff   1490 2003-06-11 17:39 zlib-1.2.7/contrib/iostream3/README
+-rw-r--r-- madler/staff   1490 2003-06-11 20:54 zlib-1.2.7/contrib/iostream3/test.cc
+-rw-r--r-- madler/staff    491 2003-06-11 17:32 zlib-1.2.7/contrib/iostream3/TODO
+-rw-r--r-- madler/staff  13447 2003-06-11 16:45 zlib-1.2.7/contrib/iostream3/zfstream.cc
+-rw-r--r-- madler/staff  12240 2003-06-10 17:38 zlib-1.2.7/contrib/iostream3/zfstream.h
+drwxr-xr-x madler/staff      0 2010-03-29 01:57 zlib-1.2.7/contrib/masmx64/
+-rw-r--r-- madler/staff     86 2005-02-06 18:00 zlib-1.2.7/contrib/masmx64/bld_ml64.bat
+-rw-r--r-- madler/staff  16443 2010-03-03 00:51 zlib-1.2.7/contrib/masmx64/gvmat64.asm
+-rw-r--r-- madler/staff   7577 2010-02-24 12:18 zlib-1.2.7/contrib/masmx64/inffas8664.c
+-rw-r--r-- madler/staff  10583 2010-03-03 00:36 zlib-1.2.7/contrib/masmx64/inffasx64.asm
+-rw-r--r-- madler/staff   1237 2010-03-29 01:57 zlib-1.2.7/contrib/masmx64/readme.txt
+drwxr-xr-x madler/staff      0 2011-09-11 03:32 zlib-1.2.7/contrib/masmx86/
+-rw-r--r-- madler/staff     92 2010-03-02 23:45 zlib-1.2.7/contrib/masmx86/bld_ml32.bat
+-rw-r--r-- madler/staff  16392 2011-09-11 03:31 zlib-1.2.7/contrib/masmx86/inffas32.asm
+-rw-r--r-- madler/staff  15825 2011-09-11 03:32 zlib-1.2.7/contrib/masmx86/match686.asm
+-rw-r--r-- madler/staff    873 2010-03-29 01:58 zlib-1.2.7/contrib/masmx86/readme.txt
+drwxr-xr-x madler/staff      0 2012-03-27 08:47 zlib-1.2.7/contrib/minizip/
+-rw-r--r-- madler/staff    786 2012-03-27 08:47 zlib-1.2.7/contrib/minizip/configure.ac
+-rw-r--r-- madler/staff   4759 2009-10-26 11:19 zlib-1.2.7/contrib/minizip/crypt.h
+-rw-r--r-- madler/staff   8225 2012-01-22 01:28 zlib-1.2.7/contrib/minizip/ioapi.c
+-rw-r--r-- madler/staff   7051 2012-01-17 08:21 zlib-1.2.7/contrib/minizip/ioapi.h
+-rw-r--r-- madler/staff  11903 2010-02-15 17:28 zlib-1.2.7/contrib/minizip/iowin32.c
+-rw-r--r-- madler/staff    851 2010-02-15 17:28 zlib-1.2.7/contrib/minizip/iowin32.h
+-rw-r--r-- madler/staff    901 2010-02-15 17:18 zlib-1.2.7/contrib/minizip/make_vms.com
+-rw-r--r-- madler/staff    457 2010-01-04 13:09 zlib-1.2.7/contrib/minizip/Makefile
+-rw-r--r-- madler/staff    818 2012-03-27 08:47 zlib-1.2.7/contrib/minizip/Makefile.am
+-rw-r--r-- madler/staff  17763 2010-07-18 21:34 zlib-1.2.7/contrib/minizip/miniunz.c
+-rw-r--r-- madler/staff  15034 2012-01-22 01:30 zlib-1.2.7/contrib/minizip/minizip.c
+-rw-r--r-- madler/staff    263 2011-11-14 02:12 zlib-1.2.7/contrib/minizip/minizip.pc.in
+-rw-r--r-- madler/staff    109 2010-02-15 17:23 zlib-1.2.7/contrib/minizip/MiniZip64_Changes.txt
+-rw-r--r-- madler/staff   3048 2010-02-15 17:23 zlib-1.2.7/contrib/minizip/MiniZip64_info.txt
+-rw-r--r-- madler/staff   8146 2012-01-22 01:28 zlib-1.2.7/contrib/minizip/mztools.c
+-rw-r--r-- madler/staff    708 2012-01-22 01:28 zlib-1.2.7/contrib/minizip/mztools.h
+-rw-r--r-- madler/staff  71072 2012-01-22 01:19 zlib-1.2.7/contrib/minizip/unzip.c
+-rw-r--r-- madler/staff  16358 2010-02-15 17:28 zlib-1.2.7/contrib/minizip/unzip.h
+-rw-r--r-- madler/staff  65856 2012-02-04 23:44 zlib-1.2.7/contrib/minizip/zip.c
+-rw-r--r-- madler/staff  15366 2010-02-15 17:28 zlib-1.2.7/contrib/minizip/zip.h
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/contrib/pascal/
+-rw-r--r-- madler/staff  15687 2003-08-21 02:30 zlib-1.2.7/contrib/pascal/example.pas
+-rw-r--r-- madler/staff   3004 2003-08-18 02:31 zlib-1.2.7/contrib/pascal/readme.txt
+-rw-r--r-- madler/staff   2360 2011-11-28 03:45 zlib-1.2.7/contrib/pascal/zlibd32.mak
+-rw-r--r-- madler/staff  10126 2012-02-13 05:45 zlib-1.2.7/contrib/pascal/zlibpas.pas
+drwxr-xr-x madler/staff      0 2011-03-17 12:41 zlib-1.2.7/contrib/puff/
+-rw-r--r-- madler/staff   1899 2010-04-26 07:39 zlib-1.2.7/contrib/puff/Makefile
+-rw-r--r-- madler/staff  37725 2010-04-25 14:34 zlib-1.2.7/contrib/puff/puff.c
+-rw-r--r-- madler/staff   1415 2010-04-25 14:34 zlib-1.2.7/contrib/puff/puff.h
+-rw-r--r-- madler/staff   4917 2011-03-17 12:41 zlib-1.2.7/contrib/puff/pufftest.c
+-rw-r--r-- madler/staff   3076 2003-03-04 11:56 zlib-1.2.7/contrib/puff/README
+-rw-r--r-- madler/staff   2517 2010-04-23 11:17 zlib-1.2.7/contrib/puff/zeros.raw
+-rw-r--r-- madler/staff   3120 2010-03-12 11:45 zlib-1.2.7/contrib/README.contrib
+drwxr-xr-x madler/staff      0 2005-07-15 15:07 zlib-1.2.7/contrib/testzlib/
+-rw-r--r-- madler/staff   7625 2005-07-15 15:07 zlib-1.2.7/contrib/testzlib/testzlib.c
+-rw-r--r-- madler/staff    205 2005-02-06 18:25 zlib-1.2.7/contrib/testzlib/testzlib.txt
+drwxr-xr-x madler/staff      0 2004-03-07 11:30 zlib-1.2.7/contrib/untgz/
+-rw-r--r-- madler/staff    234 2003-07-28 00:13 zlib-1.2.7/contrib/untgz/Makefile
+-rw-r--r-- madler/staff    281 2003-07-27 23:53 zlib-1.2.7/contrib/untgz/Makefile.msc
+-rw-r--r-- madler/staff  16542 2004-03-07 11:30 zlib-1.2.7/contrib/untgz/untgz.c
+drwxr-xr-x madler/staff      0 2012-03-23 10:54 zlib-1.2.7/contrib/vstudio/
+-rw-r--r-- madler/staff   2253 2012-03-04 23:16 zlib-1.2.7/contrib/vstudio/readme.txt
+drwxr-xr-x madler/staff      0 2012-03-23 10:54 zlib-1.2.7/contrib/vstudio/vc10/
+-rw-r--r-- madler/staff  18969 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/miniunz.vcxproj
+-rw-r--r-- madler/staff    921 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/miniunz.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/miniunz.vcxproj.user
+-rw-r--r-- madler/staff  18549 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/minizip.vcxproj
+-rw-r--r-- madler/staff    921 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/minizip.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/minizip.vcxproj.user
+-rw-r--r-- madler/staff  27312 2010-03-03 00:25 zlib-1.2.7/contrib/vstudio/vc10/testzlib.vcxproj
+-rw-r--r-- madler/staff   2139 2010-03-03 00:23 zlib-1.2.7/contrib/vstudio/vc10/testzlib.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/testzlib.vcxproj.user
+-rw-r--r-- madler/staff  19022 2012-03-04 23:16 zlib-1.2.7/contrib/vstudio/vc10/testzlibdll.vcxproj
+-rw-r--r-- madler/staff    923 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/testzlibdll.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/testzlibdll.vcxproj.user
+-rw-r--r-- madler/staff    944 2012-03-04 23:16 zlib-1.2.7/contrib/vstudio/vc10/zlib.rc
+-rw-r--r-- madler/staff  27612 2010-03-03 00:25 zlib-1.2.7/contrib/vstudio/vc10/zlibstat.vcxproj
+-rw-r--r-- madler/staff   2514 2010-03-03 00:23 zlib-1.2.7/contrib/vstudio/vc10/zlibstat.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/zlibstat.vcxproj.user
+-rw-r--r-- madler/staff   6620 2012-03-23 10:54 zlib-1.2.7/contrib/vstudio/vc10/zlibvc.def
+-rw-r--r-- madler/staff  10153 2010-02-24 12:37 zlib-1.2.7/contrib/vstudio/vc10/zlibvc.sln
+-rw-r--r-- madler/staff  41701 2012-03-04 23:16 zlib-1.2.7/contrib/vstudio/vc10/zlibvc.vcxproj
+-rw-r--r-- madler/staff   4039 2010-03-03 00:23 zlib-1.2.7/contrib/vstudio/vc10/zlibvc.vcxproj.filters
+-rw-r--r-- madler/staff    143 2010-02-16 22:57 zlib-1.2.7/contrib/vstudio/vc10/zlibvc.vcxproj.user
+drwxr-xr-x madler/staff      0 2012-03-23 10:54 zlib-1.2.7/contrib/vstudio/vc9/
+-rw-r--r-- madler/staff  12939 2010-02-16 21:37 zlib-1.2.7/contrib/vstudio/vc9/miniunz.vcproj
+-rw-r--r-- madler/staff  12753 2010-02-16 21:38 zlib-1.2.7/contrib/vstudio/vc9/minizip.vcproj
+-rw-r--r-- madler/staff  18951 2010-03-03 00:25 zlib-1.2.7/contrib/vstudio/vc9/testzlib.vcproj
+-rw-r--r-- madler/staff  12978 2010-02-16 21:38 zlib-1.2.7/contrib/vstudio/vc9/testzlibdll.vcproj
+-rw-r--r-- madler/staff    944 2012-03-04 23:16 zlib-1.2.7/contrib/vstudio/vc9/zlib.rc
+-rw-r--r-- madler/staff  19532 2010-03-03 15:52 zlib-1.2.7/contrib/vstudio/vc9/zlibstat.vcproj
+-rw-r--r-- madler/staff   6619 2012-03-23 10:54 zlib-1.2.7/contrib/vstudio/vc9/zlibvc.def
+-rw-r--r-- madler/staff  10612 2010-02-24 12:29 zlib-1.2.7/contrib/vstudio/vc9/zlibvc.sln
+-rw-r--r-- madler/staff  28028 2010-03-03 15:50 zlib-1.2.7/contrib/vstudio/vc9/zlibvc.vcproj
+-rw-r--r-- madler/staff  13174 2012-04-30 04:48 zlib-1.2.7/crc32.c
+-rw-r--r-- madler/staff  30562 2012-04-30 04:48 zlib-1.2.7/crc32.h
+-rw-r--r-- madler/staff  71392 2012-02-13 05:45 zlib-1.2.7/deflate.c
+-rw-r--r-- madler/staff  12787 2012-01-14 11:24 zlib-1.2.7/deflate.h
+drwxr-xr-x madler/staff      0 2011-09-11 03:38 zlib-1.2.7/doc/
+-rw-r--r-- madler/staff   9335 2011-09-11 03:38 zlib-1.2.7/doc/algorithm.txt
+-rw-r--r-- madler/staff  20502 1996-05-22 01:48 zlib-1.2.7/doc/rfc1950.txt
+-rw-r--r-- madler/staff  36944 1996-05-22 01:48 zlib-1.2.7/doc/rfc1951.txt
+-rw-r--r-- madler/staff  25037 1996-05-28 22:43 zlib-1.2.7/doc/rfc1952.txt
+-rw-r--r-- madler/staff   5193 2006-05-28 22:24 zlib-1.2.7/doc/txtvsbin.txt
+drwxr-xr-x madler/staff      0 2010-01-18 03:12 zlib-1.2.7/examples/
+-rw-r--r-- madler/staff  24101 2008-02-18 08:20 zlib-1.2.7/examples/enough.c
+-rw-r--r-- madler/staff   8594 2005-06-13 06:01 zlib-1.2.7/examples/fitblk.c
+-rw-r--r-- madler/staff  25853 2010-01-18 00:20 zlib-1.2.7/examples/gun.c
+-rw-r--r-- madler/staff  16838 2004-09-15 20:10 zlib-1.2.7/examples/gzappend.c
+-rw-r--r-- madler/staff  14014 2005-06-13 05:53 zlib-1.2.7/examples/gzjoin.c
+-rw-r--r-- madler/staff  41424 2008-04-26 04:44 zlib-1.2.7/examples/gzlog.c
+-rw-r--r-- madler/staff   4423 2008-04-25 23:10 zlib-1.2.7/examples/gzlog.h
+-rw-r--r-- madler/staff   1817 2010-01-18 03:12 zlib-1.2.7/examples/README.examples
+-rw-r--r-- madler/staff  29824 2005-12-12 02:27 zlib-1.2.7/examples/zlib_how.html
+-rw-r--r-- madler/staff   6323 2005-12-12 02:27 zlib-1.2.7/examples/zpipe.c
+-rw-r--r-- madler/staff  15313 2005-12-12 05:11 zlib-1.2.7/examples/zran.c
+-rw-r--r-- madler/staff  16573 2011-11-28 03:45 zlib-1.2.7/FAQ
+-rw-r--r-- madler/staff    678 2010-02-14 05:42 zlib-1.2.7/gzclose.c
+-rw-r--r-- madler/staff   6029 2012-03-18 10:15 zlib-1.2.7/gzguts.h
+-rw-r--r-- madler/staff  15825 2012-03-19 03:22 zlib-1.2.7/gzlib.c
+-rw-r--r-- madler/staff  18518 2012-02-19 03:45 zlib-1.2.7/gzread.c
+-rw-r--r-- madler/staff  15817 2012-03-03 22:58 zlib-1.2.7/gzwrite.c
+-rw-r--r-- madler/staff   1988 2012-03-11 22:46 zlib-1.2.7/INDEX
+-rw-r--r-- madler/staff  22701 2011-12-19 00:09 zlib-1.2.7/infback.c
+-rw-r--r-- madler/staff  13439 2010-04-19 09:46 zlib-1.2.7/inffast.c
+-rw-r--r-- madler/staff    427 2010-04-19 09:46 zlib-1.2.7/inffast.h
+-rw-r--r-- madler/staff   6332 2011-10-06 09:02 zlib-1.2.7/inffixed.h
+-rw-r--r-- madler/staff  52982 2012-02-13 03:50 zlib-1.2.7/inflate.c
+-rw-r--r-- madler/staff   6399 2009-12-26 06:02 zlib-1.2.7/inflate.h
+-rw-r--r-- madler/staff  13032 2012-02-13 05:45 zlib-1.2.7/inftrees.c
+-rw-r--r-- madler/staff   2928 2010-04-19 09:45 zlib-1.2.7/inftrees.h
+-rw-r--r-- madler/staff  26402 2012-03-10 08:13 zlib-1.2.7/make_vms.com
+-rw-r--r-- madler/staff    100 2011-09-10 12:03 zlib-1.2.7/Makefile
+-rw-r--r-- madler/staff   9004 2012-04-23 11:28 zlib-1.2.7/Makefile.in
+drwxr-xr-x madler/staff      0 2011-11-28 03:45 zlib-1.2.7/msdos/
+-rw-r--r-- madler/staff   3098 2011-11-28 03:45 zlib-1.2.7/msdos/Makefile.bor
+-rw-r--r-- madler/staff   2615 2010-02-14 06:07 zlib-1.2.7/msdos/Makefile.dj2
+-rw-r--r-- madler/staff   1442 2010-02-14 06:07 zlib-1.2.7/msdos/Makefile.emx
+-rw-r--r-- madler/staff   2924 2011-11-28 03:45 zlib-1.2.7/msdos/Makefile.msc
+-rw-r--r-- madler/staff   2657 2011-11-28 03:45 zlib-1.2.7/msdos/Makefile.tc
+drwxr-xr-x madler/staff      0 2009-12-21 11:36 zlib-1.2.7/nintendods/
+-rw-r--r-- madler/staff   4741 2009-12-21 11:33 zlib-1.2.7/nintendods/Makefile
+-rw-r--r-- madler/staff    209 2009-12-21 11:36 zlib-1.2.7/nintendods/README
+drwxr-xr-x madler/staff      0 2012-03-13 11:13 zlib-1.2.7/old/
+-rw-r--r-- madler/staff   1545 1996-01-31 03:01 zlib-1.2.7/old/descrip.mms
+-rw-r--r-- madler/staff   1451 2012-03-13 11:13 zlib-1.2.7/old/Makefile.emx
+-rw-r--r-- madler/staff   3767 2005-07-13 03:46 zlib-1.2.7/old/Makefile.riscos
+drwxr-xr-x madler/staff      0 1998-03-01 14:30 zlib-1.2.7/old/os2/
+-rw-r--r-- madler/staff   4104 1998-03-01 14:30 zlib-1.2.7/old/os2/Makefile.os2
+-rw-r--r-- madler/staff    778 1998-03-01 14:29 zlib-1.2.7/old/os2/zlib.def
+-rw-r--r-- madler/staff    133 2004-09-15 20:10 zlib-1.2.7/old/README
+-rw-r--r-- madler/staff   6060 2003-10-27 08:43 zlib-1.2.7/old/visual-basic.txt
+drwxr-xr-x madler/staff      0 2012-02-13 05:45 zlib-1.2.7/qnx/
+-rw-r--r-- madler/staff   6427 2012-02-13 05:45 zlib-1.2.7/qnx/package.qpg
+-rw-r--r-- madler/staff   5185 2012-02-13 05:45 zlib-1.2.7/README
+drwxr-xr-x madler/staff      0 2012-03-04 12:13 zlib-1.2.7/test/
+-rw-r--r-- madler/staff  16802 2011-11-28 03:45 zlib-1.2.7/test/example.c
+-rw-r--r-- madler/staff  24700 2011-12-01 09:49 zlib-1.2.7/test/infcover.c
+-rw-r--r-- madler/staff  15223 2012-03-04 12:13 zlib-1.2.7/test/minigzip.c
+-rw-r--r-- madler/staff   3135 2012-02-13 05:45 zlib-1.2.7/treebuild.xml
+-rw-r--r-- madler/staff  44161 2012-01-08 03:38 zlib-1.2.7/trees.c
+-rw-r--r-- madler/staff   8472 2010-04-18 23:02 zlib-1.2.7/trees.h
+-rw-r--r-- madler/staff   1994 2010-01-17 23:04 zlib-1.2.7/uncompr.c
+drwxr-xr-x madler/staff      0 2010-02-14 06:11 zlib-1.2.7/watcom/
+-rw-r--r-- madler/staff   1439 2010-02-14 06:11 zlib-1.2.7/watcom/watcom_f.mak
+-rw-r--r-- madler/staff   1407 2010-02-14 06:10 zlib-1.2.7/watcom/watcom_l.mak
+drwxr-xr-x madler/staff      0 2012-05-03 08:47 zlib-1.2.7/win32/
+-rw-r--r-- madler/staff  17921 2006-03-03 06:04 zlib-1.2.7/win32/DLL_FAQ.txt
+-rw-r--r-- madler/staff   2587 2011-11-28 03:45 zlib-1.2.7/win32/Makefile.bor
+-rw-r--r-- madler/staff   5117 2012-05-03 08:47 zlib-1.2.7/win32/Makefile.gcc
+-rw-r--r-- madler/staff   4190 2012-01-17 08:21 zlib-1.2.7/win32/Makefile.msc
+-rw-r--r-- madler/staff   4868 2012-02-20 12:06 zlib-1.2.7/win32/README-WIN32.txt
+-rw-r--r-- madler/staff    117 2004-05-31 09:30 zlib-1.2.7/win32/VisualC.txt
+-rw-r--r-- madler/staff   1352 2012-03-17 09:23 zlib-1.2.7/win32/zlib.def
+-rw-r--r-- madler/staff   1138 2006-05-21 09:25 zlib-1.2.7/win32/zlib1.rc
+-rw-r--r-- madler/staff  15291 2012-04-30 04:48 zlib-1.2.7/zconf.h
+-rw-r--r-- madler/staff  15342 2012-04-30 04:48 zlib-1.2.7/zconf.h.cmakein
+-rw-r--r-- madler/staff  15291 2012-04-30 04:48 zlib-1.2.7/zconf.h.in
+-rw-r--r-- madler/staff   4235 2012-05-03 09:42 zlib-1.2.7/zlib.3
+-rw-r--r-- madler/staff   8760 2012-05-03 09:42 zlib-1.2.7/zlib.3.pdf
+-rw-r--r-- madler/staff  86717 2012-05-03 09:42 zlib-1.2.7/zlib.h
+-rw-r--r-- madler/staff   1119 2012-02-02 12:55 zlib-1.2.7/zlib.map
+-rw-r--r-- madler/staff    294 2012-03-11 22:46 zlib-1.2.7/zlib.pc.cmakein
+-rw-r--r-- madler/staff    254 2010-04-18 12:18 zlib-1.2.7/zlib.pc.in
+-rwxr-xr-x madler/staff   3895 2006-10-14 22:15 zlib-1.2.7/zlib2ansi
+-rw-r--r-- madler/staff   7412 2012-02-13 03:50 zlib-1.2.7/zutil.c
+-rw-r--r-- madler/staff   6765 2012-03-03 13:50 zlib-1.2.7/zutil.h
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd zlib-1.2.7
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.uBZ3yz
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd zlib-1.2.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export AR=arm-sony-linux-gnueabi-ar
++ AR=arm-sony-linux-gnueabi-ar
++ export 'CFLAGS=-O2 -D_REENTRANT -fPIC -ffunction-sections'
++ CFLAGS='-O2 -D_REENTRANT -fPIC -ffunction-sections'
++ ./configure --prefix=/usr --eprefix=/usr --libdir=/usr/lib --includedir=/tool//usr/include --shared
++ tee build.log
+Checking for shared library support...
+Building shared library libz.so.1.2.7 with arm-sony-linux-gnueabi-gcc -tarmv7a.
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+Checking for strerror... Yes.
+Checking for unistd.h... Yes.
+Checking for stdarg.h... Yes.
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+Checking for vsnprintf() in stdio.h... Yes.
+Checking for return value of vsnprintf()... Yes.
+Checking for attribute(visibility) support... Yes.
+./configure: line 719: ./ztest9115: cannot execute binary file
+Looking for a four-byte integer type... Not found.
++ make all libz.a
++ tee -a build.log
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -I. -c -o example.o test/example.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o adler32.o adler32.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o crc32.o crc32.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o deflate.o deflate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o infback.o infback.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o inffast.o inffast.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o inflate.o inflate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o inftrees.o inftrees.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o trees.o trees.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o zutil.o zutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o compress.o compress.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o uncompr.o uncompr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o gzclose.o gzclose.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o gzlib.o gzlib.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o gzread.o gzread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN   -c -o gzwrite.o gzwrite.c
+arm-sony-linux-gnueabi-ar rc libz.a adler32.o crc32.o deflate.o infback.o inffast.o inflate.o inftrees.o trees.o zutil.o compress.o uncompr.o gzclose.o gzlib.o gzread.o gzwrite.o 
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o example example.o -L. libz.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -I. -c -o minigzip.o test/minigzip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o minigzip minigzip.o -L. libz.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/adler32.o adler32.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/crc32.o crc32.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/deflate.o deflate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/infback.o infback.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/inffast.o inffast.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/inflate.o inflate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/inftrees.o inftrees.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/trees.o trees.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/zutil.o zutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/compress.o compress.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/uncompr.o uncompr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/gzclose.o gzclose.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/gzlib.o gzlib.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/gzread.o gzread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -DPIC -c -o objs/gzwrite.o gzwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -O2 -D_REENTRANT -fPIC -ffunction-sections  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o libz.so.1.2.7 adler32.lo crc32.lo deflate.lo infback.lo inffast.lo inflate.lo inftrees.lo trees.lo zutil.lo compress.lo uncompr.lo gzclose.lo gzlib.lo gzread.lo gzwrite.lo  -lc 
+rm -f libz.so libz.so.1
+ln -s libz.so.1.2.7 libz.so
+ln -s libz.so.1.2.7 libz.so.1
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o examplesh example.o -L. libz.so.1.2.7
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o minigzipsh minigzip.o -L. libz.so.1.2.7
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -I. -D_FILE_OFFSET_BITS=64 -c -o example64.o test/example.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o example64 example64.o -L. libz.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -I. -D_FILE_OFFSET_BITS=64 -c -o minigzip64.o test/minigzip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -D_REENTRANT -fPIC -ffunction-sections  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN -o minigzip64 minigzip64.o -L. libz.a
+make: `libz.a' is up to date.
++ cd contrib/minizip
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O -I../.. miniunz.c
+miniunz.c: In function 'change_file_date':
+miniunz.c:100:13: warning: extra tokens at end of #ifdef directive [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O -I../.. unzip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O -I../.. ioapi.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O -I../.. -o miniunz miniunz.o unzip.o ioapi.o ../../libz.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O -I../.. minizip.c
+minizip.c:97:13: warning: extra tokens at end of #ifdef directive [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O -I../.. zip.c
+zip.c: In function 'zipOpenNewFileInZip4_64':
+zip.c:1249:28: warning: assignment from incompatible pointer type [enabled by default]
+arm-sony-linux-gnueabi-gcc -tarmv7a -O -I../.. -o minizip minizip.o zip.o   ioapi.o ../../libz.a
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.i6iOB7
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd zlib-1.2.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ install -m 644 libz.so.1.2.7 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.so.1.2.7
++ ln -s libz.so.1.2.7 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.so.1
++ install -m 644 libz.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.a
++ ln -s libz.so.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.so
++ install -m 644 zlib.h zconf.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
++ cp README LICENSE
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/zlib
++ install -m 755 /home/rpmuser/rpm/SOURCES/sony-zlib-libopt-build-zlib /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/zlib/build
++ install -m 644 adler32.o compress.o crc32.o deflate.o example.o example64.o gzclose.o gzlib.o gzread.o gzwrite.o infback.o inffast.o inflate.o inftrees.o minigzip.o minigzip64.o trees.o uncompr.o zutil.o /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/zlib/
++ install -m 644 zlib.map /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/zlib/
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/zlib
++ umask 022
++ /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-libindex /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.so -o adler32.o compress.o crc32.o deflate.o example.o example64.o gzclose.o gzlib.o gzread.o gzwrite.o infback.o inffast.o inflate.o inftrees.o minigzip.o minigzip64.o trees.o uncompr.o zutil.o
++ umask 022
++ echo /usr/lib/libz.so.1
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libz.a '!=' optinfo -a libz.a '!=' optinfo ']'
++ ln -s ../../tool/usr/lib/libz.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libz.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' optinfo '!=' optinfo -a optinfo '!=' optinfo ']'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-zlib-1.2.7-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-zlib-1.2.7-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-zlib-1.2.7-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.FftDtN
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd zlib-1.2.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-zlib-1.2.7-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/zlib-1.2.7 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.....................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Last login: Mon Feb 24 12:10:14 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/zlib-1.2.7 || echo 'COMMAND''ERROR'
+-bash-3.2# make test | tee /tmp/zlib_test.out
+make: Warning: File `Makefile' has modification time 1.4e+09 s in the future
+hello world
+zlib version 1.2.7 = 0x1270, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+                *** zlib test OK ***
+hello world
+zlib version 1.2.7 = 0x1270, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+                *** zlib shared test OK ***
+hello world
+zlib version 1.2.7 = 0x1270, compile flags = 0x55
+uncompress(): hello, hello!
+gzread(): hello, hello!
+gzgets() after gzseek:  hello!
+inflate(): hello, hello!
+large_inflate(): OK
+after inflateSync(): hello, hello!
+inflate with dictionary: hello, hello!
+                *** zlib 64-bit test OK ***
+make: warning:  Clock skew detected.  Your build may be incomplete.
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/zlib_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp..done
+zlib : TEST_OK

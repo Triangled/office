@@ -1,0 +1,37 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+14 packages can be updated.
+8 updates are security updates.
+
+*** System restart required ***
+Last login: Tue Feb  4 10:07:39 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /tmp 
+]0;rpmuser@Triangle: /tmprpmuser@Triangle:/tmp$ sudo time /usr/local/arm-sony-linux-gnueabi/host/bin/mkfs.axfs /usr/local/arm-sony-linux-gnueabi/target/armv7a /tmp/axfs -test.img || echo 'COMMAND''ERROR'
+/usr/local/arm-sony-linux-gnueabi/host/bin/mkfs.axfs: open failed: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/util-linux-2.23.2/confdefs.h: No such file or directory
+Command exited with non-zero status 8
+17.73user 1.78system 1:21.91elapsed 23%CPU (0avgtext+0avgdata 61376maxresident)k
+106192inputs+0outputs (8290major+169158minor)pagefaults 0swaps
+COMMANDERROR

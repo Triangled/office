@@ -1,0 +1,89 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.pq8vCr
+Patch #1 (libpng-remove-oldso.patch):
+Patch #2 (libpng-cross.patch):
+Patch #3 (libpng-fpic.patch):
+Patch #4 (libpng-so.patch):
+Patch #5 (libpng-neon-changes.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.4hSyx5
+cp scripts/pnglibconf.h.prebuilt pnglibconf.h
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o png.o png.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngset.o pngset.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngget.o pngget.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngrutil.o pngrutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngtrans.o pngtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngwutil.o pngwutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngread.o pngread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngrio.o pngrio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngwio.o pngwio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngwrite.o pngwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngrtran.o pngrtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngwtran.o pngwtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngmem.o pngmem.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngerror.o pngerror.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngpread.o pngpread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o arm/arm_init.o arm/arm_init.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -D__ARM_NEON__   -c -o arm/filter_neon.o arm/filter_neon.S
+arm-sony-linux-gnueabi-ar rc libpng.a png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o pngwtran.o pngmem.o pngerror.o pngpread.o arm/arm_init.o arm/filter_neon.o
+arm-sony-linux-gnueabi-ranlib libpng.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o png.pic.o png.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngset.pic.o pngset.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngget.pic.o pngget.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngrutil.pic.o pngrutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngtrans.pic.o pngtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngwutil.pic.o pngwutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngread.pic.o pngread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngrio.pic.o pngrio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngwio.pic.o pngwio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngwrite.pic.o pngwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngrtran.pic.o pngrtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngwtran.pic.o pngwtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngmem.pic.o pngmem.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngerror.pic.o pngerror.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o pngpread.pic.o pngpread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o arm/arm_init.pic.o arm/arm_init.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -D__ARM_NEON__ -fpic -o arm/filter_neon.pic.o arm/filter_neon.S
+arm-sony-linux-gnueabi-gcc -tarmv7a -shared -Wl,-soname,libpng.so.16 -o libpng.so.16 png.pic.o pngset.pic.o pngget.pic.o pngrutil.pic.o pngtrans.pic.o pngwutil.pic.o pngread.pic.o pngrio.pic.o pngwio.pic.o pngwrite.pic.o pngrtran.pic.o pngwtran.pic.o pngmem.pic.o pngerror.pic.o pngpread.pic.o arm/arm_init.pic.o arm/filter_neon.pic.o \
+	-L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -lz -lm -lc
+ln -sf libpng.so.16 libpng.so
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2 -D__ARM_NEON__   -c -o pngtest.o pngtest.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -o pngtest -g -O2 -D__ARM_NEON__ pngtest.o -L. -Wl,-rpath,. -L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -Wl,-rpath,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -lpng -lz -lm
+arm-sony-linux-gnueabi-gcc -tarmv7a -o pngtest-static -g -O2 -D__ARM_NEON__ pngtest.o -L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -Wl,-rpath,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib libpng.a -lz -lm
+cat scripts/libpng.pc.in | sed -e s!@prefix@!/usr! \
+	-e s!@exec_prefix@!\${prefix}! \
+	-e s!@libdir@!\${exec_prefix}/lib! \
+	-e s!@includedir@!\${prefix}/include! \
+	-e s!-lpng!-lpng\ -lz\ -lm! > libpng.pc
+( cat scripts/libpng-config-head.in; \
+	echo prefix=\$CROSS_COMPILE_PREFIX\"/usr\"; \
+	echo I_opts=\"-I\${prefix}/include\"; \
+	echo L_opts=\"-L\${prefix}/lib\"; \
+	echo R_opts=\"-Wl,-rpath,\${prefix}/lib\"; \
+	echo libs=\"-lpng -lz -lm\"; \
+	cat scripts/libpng-config-body.in ) > libpng-config
+chmod +x libpng-config
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OJcqno
+cp png.h pngconf.h pnglibconf.h pngstruct.h pnginfo.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/png.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pngconf.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pnglibconf.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pngstruct.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pnginfo.h
+cp libpng.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.a
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.a
+cp libpng.so.16 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.so.16.1
+chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.so.16.1
+(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib; \
+	ln -sf libpng.so.16.1 libpng.so)
+cp libpng.pc /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/pkgconfig/libpng.pc
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/pkgconfig/libpng.pc
+cp libpng.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man3
+cp libpngpf.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man3
+cp png.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man5
+cp libpng-config /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//bin/libpng-config
+chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//bin/libpng-config
+/home/rpmuser/rpm/BUILD/libpng-1.6.1
+... complete.
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-libpng-1.6.1-11000003.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000003.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-libpng-1.6.1-11000003.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-libpng-1.6.1-11000003.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.KcTMXm

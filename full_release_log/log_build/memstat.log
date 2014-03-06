@@ -1,0 +1,360 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+memstat : 0.9
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-memstat-0.9-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-memstatwarning: group rpmuser does not exist - using root
+                                            (  8%)#                                           (  8%)##                                          (  8%)###                                         (  8%)warning: group rpmuser does not exist - using root
+####                                        ( 79%)#####                                       ( 79%)######                                      ( 79%)#######                                     ( 79%)########                                    ( 79%)#########                                   ( 79%)##########                                  ( 79%)###########                                 ( 79%)############                                ( 79%)#############                               ( 79%)##############                              ( 79%)###############                             ( 79%)################                            ( 79%)#################                           ( 79%)##################                          ( 79%)###################                         ( 79%)####################                        ( 79%)#####################                       ( 79%)######################                      ( 79%)#######################                     ( 79%)########################                    ( 79%)#########################                   ( 79%)##########################                  ( 79%)###########################                 ( 79%)############################                ( 79%)#############################               ( 79%)##############################              ( 79%)###############################             ( 79%)################################            ( 79%)#################################           ( 79%)##################################          ( 79%)warning: group rpmuser does not exist - using root
+###################################         ( 99%)####################################        ( 99%)#####################################       ( 99%)######################################      ( 99%)#######################################     ( 99%)########################################    ( 99%)#########################################   ( 99%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-memstat.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.GwQvBn
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf memstat-0.9
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/memstat_0.9.tar.gz
++ /bin/tar -xvvf -
+-rw-r--r-- rpmuser/swss      4 2011-01-31 16:43 memstat-0.9/debian/source/format
+drwxr-xr-x                  Creating directory: memstat-0.9
+drwxr-xr-x                  Creating directory: memstat-0.9/debian
+drwxr-xr-x                  Creating directory: memstat-0.9/debian/source
+-rw-r--r-- rpmuser/swss     21 2011-01-31 16:28 memstat-0.9/debian/docs
+-rw-r--r-- rpmuser/swss      3 2011-01-31 16:28 memstat-0.9/debian/compat
+-rw-r--r-- rpmuser/swss   3776 2011-01-31 16:44 memstat-0.9/debian/changelog
+-rw-r--r-- rpmuser/swss    466 2011-01-31 16:44 memstat-0.9/debian/control
+-rw-r--r-- rpmuser/swss    741 2011-01-31 16:28 memstat-0.9/debian/copyright
+-rw-r--r-- rpmuser/swss     10 2011-01-31 16:28 memstat-0.9/debian/manpages
+-rwxr-xr-x rpmuser/swss     30 2011-01-31 16:28 memstat-0.9/debian/rules
+-rwxr-xr-x rpmuser/swss   1540 2011-01-31 16:28 memstat-0.9/debian/rules.dh
+-rw-r--r-- rpmuser/swss     12 2011-01-31 16:28 memstat-0.9/debian/dirs
+-rw-r--r-- rpmuser/swss    739 2011-01-31 16:28 memstat-0.9/Makefile
+-rw-r--r-- rpmuser/swss    164 2011-01-31 16:28 memstat-0.9/memstat.conf
+-rw-r--r-- rpmuser/swss   8572 2011-01-31 16:29 memstat-0.9/memstat.c
+-rw-r--r-- rpmuser/swss   3183 2011-01-31 16:28 memstat-0.9/memstat.1
+-rw-r--r-- rpmuser/swss   4327 2011-01-31 16:28 memstat-0.9/memstat-tutorial.txt
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd memstat-0.9
++ echo 'Patch (memstat-0.9-makefile.patch):'
+Patch (memstat-0.9-makefile.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/memstat-0.9-makefile.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.rq6huK
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd memstat-0.9
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -Wall -O2    memstat.c   -o memstat
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.GtR707
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd memstat-0.9
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc
++ DEB_BUILD_OPTIONS=--nostrip
++ make install prefix=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+install -p -d -m  755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/
+install -p -m  755 memstat /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/memstat
+install -p -m  644 memstat.conf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/../etc
++ install memstat.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/memstat.1
++ install memstat.conf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/etc
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-memstat-0.9-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-memstat-0.9-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-memstat-0.9-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.2WlURg
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd memstat-0.9
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-memstat-0.9-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/memstat-0.9
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/memstat-0.9 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/memstat/test/memstat-test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 18:13:25 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 18:16:00 UTC 2014
+-bash-3.2# cd /tmp/memstat-0.9 || echo 'COMMAND''ERROR'
+-bash-3.2# patch -p1 < ../memstat-test.patch
+patching file Makefile
+Hunk #1 succeeded at 21 (offset 2 lines).
+patching file tests/memstat-test-main.sh
+patching file tests/memstat-test-PTG1.sh
+patching file tests/memstat-test-PTG2.sh
+patching file tests/memstat-test-PTG3.sh
+patching file tests/Test-Support-FNS
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# make CC=/tool/usr/bin/gcc
+make: `memstat' is up to date.
+-bash-3.2# make check CC=/tool/usr/bin/gcc 2>&1 | tee /tmp/memstat.log ; echo 'COMMAND''DONE'
+cd tests; sh memstat-test-main.sh; cd ../ ;
+                Executing Memstat Test Suite
+                -------------------------------
+
+=================================================================
+                 MEMSTAT Test Cases                        
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Date               : Thu Feb 13 18:16:02 UTC 2014                        
+=================================================================
+[32m Testing TD-memstat-PTG1 [0m
+Cannot read link information for /proc/5571/exe
+Cannot read link information for /proc/5574/exe
+Cannot read link information for /proc/7527/exe
+Cannot read link information for /proc/18016/exe
+Cannot read link information for /proc/18017/exe
+Cannot read link information for /proc/18021/exe
+Cannot read link information for /proc/18022/exe
+Cannot read link information for /proc/18310/exe
+    496k: PID     1 (/bin/busybox)
+    500k: PID   395 (/bin/busybox)
+    496k: PID   398 (/bin/busybox)
+    496k: PID   400 (/bin/busybox)
+   1208k: PID   411 (/usr/sbin/smbd)
+   1164k: PID   413 (/usr/sbin/nmbd)
+    304k: PID   415 (/sbin/portmap)
+    380k: PID   423 (/usr/sbin/rpc.mountd)
+    500k: PID   433 (/bin/busybox)
+   1208k: PID   434 (/usr/sbin/smbd)
+    344k: PID   436 (/usr/bin/bash)
+    348k: PID   509 (/usr/bin/bash)
+    564k: PID  4722 (/usr/bin/make)
+    292k: PID  4723 (/usr/bin/tee)
+    564k: PID  4730 (/usr/bin/make)
+    228k: PID  4741 (/usr/bin/bash)
+    688k: PID  4745 (/usr/bin/make)
+    564k: PID  4753 (/usr/bin/make)
+    272k: PID  4764 (/usr/bin/bash)
+    572k: PID  4768 (/usr/bin/make)
+    308k: PID  5551 (/usr/bin/make)
+    292k: PID  5552 (/usr/bin/tee)
+    228k: PID  5559 (/usr/bin/bash)
+    304k: PID 17961 (/usr/bin/bash)
+    448k: PID 17970 (/usr/bin/bash)
+    352k: PID 18218 (/usr/bin/bash)
+    312k: PID 18314 (/usr/bin/make)
+    292k: PID 18315 (/usr/bin/tee)
+    220k: PID 18317 (/usr/bin/bash)
+    248k: PID 18318 (/usr/bin/bash)
+    344k: PID 18324 (/usr/bin/bash)
+    240k: PID 18341 (/usr/bin/bash)
+    292k: PID 18342 (/usr/bin/tee)
+    328k: PID 18350 (/tmp/memstat-0.9/memstat)
+    348k: PID 18499 (/usr/bin/bash)
+     96k(     24k): /lib/libwrap.so.0.7.6 415 423 415 423
+    128k(    128k): [00:0c]:12726737 411 413 434
+    128k(    128k): [00:0c]:12726741 411 413 434
+     64k(     64k): [00:0c]:12726742 411 413 434
+    984k(    948k): /usr/sbin/nmbd 413
+   3280k(   3176k): /usr/sbin/smbd 411 434 411 434
+     16k(     12k): /sbin/portmap 415
+    104k(     40k): /lib/libpam.so 411 434 411 434 411 434
+    232k(     68k): /usr/sbin/rpc.mountd 423
+    988k(    240k): /usr/lib/libncurses.so.5.9 436 509 4741 4764 5559 5571 1...
+    136k(     40k): /usr/lib/libpopt.so.0.0.0 411 413 434 411 413 434 411 41...
+   1336k(    120k): /usr/lib/libgcc_s.so.1 411 413 415 423 434 436 509 4722 ...
+    468k(    124k): /lib/ld-linux.so.3 1 395 398 400 411 413 415 423 433 434...
+   2888k(   1168k): /lib/libc-2.16.so 1 395 398 400 411 413 415 423 433 434 ...
+    324k(     36k): /lib/libcrypt-2.16.so 1 395 398 400 411 413 433 434 1 39...
+    772k(     16k): /lib/libdl-2.16.so 411 413 423 434 436 509 4741 4764 555...
+    256k(     76k): /lib/libnsl.so.1 411 413 415 423 434 411 413 415 423 434...
+    408k(     48k): /lib/libnss_files-2.16.so 395 411 423 433 434 436 509 18...
+    476k(     80k): /lib/libpthread.so.0 4722 4730 4745 4753 4768 5551 5574 ...
+    196k(     76k): /lib/libresolv.so.2 411 413 434 411 413 434 411 413 434
+    420k(     24k): /lib/librt.so.1 4722 4730 4745 4753 4768 5551 5574 7527 ...
+     28k(     12k): /usr/bin/tee 4723 5552 18315 18342 4723 5552 18315 18342
+    324k(    304k): /bin/umount 1 395 398 400 433 1 395 398 400 433
+    988k(    648k): /bin/sh 436 509 4741 4764 5559 5571 17961 17970 18021 18...
+    176k(    132k): /usr/bin/make 4722 4730 4745 4753 4768 5551 5574 7527 18...
+      8k(      8k): [00:0c]:12730484 411 434
+      4k(      4k): [00:0c]:12730490 411 413 434
+      4k(      4k): [00:0c]:12730493 411 434
+     12k(     12k): [00:0c]:12730494 411 434
+     40k(     40k): [00:0c]:12730495 411 434
+     40k(     40k): [00:0c]:12730496 411 434
+      4k(      4k): [00:0c]:12730497 411 434
+      4k(      4k): [00:0c]:12730500 411 434
+      4k(      4k): [00:0c]:12730501 411 434
+      4k(      4k): [00:0c]:12730502 411 434
+      4k(      4k): [00:0c]:12730503 411 434
+      4k(      4k): [00:0c]:12730504 411 434
+    124k(     16k): [00:0c]:12998527 411 413 434 411 413 434 411 413 434
+    128k(     20k): [00:0c]:12998631 411 413 434 411 413 434 411 413 434
+     12k(      8k): [00:0c]:13250392 18350
+--------
+  31356k (   7908k)
+test1 -TD-memstat-memstat-PTG1-1  PASS  - Checking the functionality of memstat
+
+ Test result
+ Total no of test executed : 1
+ No of Success test cases  :1
+ No of Failed test cases : 0
+
+
+[32m Testing TD-memstat-PTG2 [0m
+Cannot open /etc/memstat.conf
+test1 -TD-memstat-memstat-PTG2-1  PASS  - Checking error condition of memstat
+
+ Test result
+ Total no of test executed : 1
+ No of Success test cases  :1
+ No of Failed test cases : 0
+
+
+[32m Testing TD-memstat-PTG3 [0m
+Cannot read link information for /proc/18519/exe
+Cannot read link information for /proc/18567/exe
+Cannot read link information for /proc/18585/exe
+Cannot read link information for /proc/18586/exe
+Cannot read link information for /proc/18587/exe
+Cannot read link information for /proc/18588/exe
+Cannot read link information for /proc/18589/exe
+input.txt output.txt differ: char 2002, line 51
+test2 -TD-memstat-memstat-PTG3-2  PASS  - Checking the memstat with wide printout option
+
+ Test result
+ Total no of test executed : 1
+ No of Success test cases  :1
+ No of Failed test cases : 0
+
+
+#----------------------------------------#
+# test_memstat_result.log was created    #
+#----------------------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 3
+  ALL TESTS SUCCESSFUL 
+[0m
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/memstat.log to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+memstat : TEST_OK

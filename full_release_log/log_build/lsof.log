@@ -1,0 +1,613 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-lsof-4.87-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-lsof   warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  6%)#                                           (  6%)##                                          (  6%)###                                         ( 12%)####                                        ( 12%)#####                                       ( 18%)######                                      ( 18%)#######                                     ( 18%)########                                    ( 24%)#########                                   ( 24%)##########                                  ( 24%)###########                                 ( 30%)############                                ( 30%)#############                               ( 36%)##############                              ( 36%)###############                             ( 36%)################                            ( 42%)#################                           ( 42%)##################                          ( 42%)###################                         ( 48%)####################                        ( 48%)#####################                       ( 54%)######################                      ( 54%)#######################                     ( 54%)########################                    ( 60%)#########################                   ( 60%)##########################                  ( 60%)###########################                 ( 66%)############################                ( 66%)#############################               ( 72%)##############################              ( 72%)###############################             ( 72%)################################            ( 78%)#################################           ( 78%)##################################          ( 84%)###################################         ( 84%)####################################        ( 84%)#####################################       ( 90%)######################################      ( 90%)#######################################     ( 90%)########################################    ( 96%)#########################################   ( 96%)##########################################  (100%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-lsof.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.5DT2kw
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf lsof_4.87
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/lsof_4.87.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd lsof_4.87
++ tar -xvf lsof_4.87_src.tar
+lsof_4.87_src/
+lsof_4.87_src/00.README.FIRST
+lsof_4.87_src/00CREDITS
+lsof_4.87_src/00DCACHE
+lsof_4.87_src/00DIALECTS
+lsof_4.87_src/00DIST
+lsof_4.87_src/00FAQ
+lsof_4.87_src/00LSOF-L
+lsof_4.87_src/00MANIFEST
+lsof_4.87_src/00PORTING
+lsof_4.87_src/00QUICKSTART
+lsof_4.87_src/00README
+lsof_4.87_src/00TEST
+lsof_4.87_src/00XCONFIG
+lsof_4.87_src/AFSConfig
+lsof_4.87_src/ChangeLog
+lsof_4.87_src/Configure
+lsof_4.87_src/Customize
+lsof_4.87_src/Inventory
+lsof_4.87_src/dialects/
+lsof_4.87_src/dialects/n+os/
+lsof_4.87_src/dialects/n+os/dnode.c
+lsof_4.87_src/dialects/n+os/dnode1.c
+lsof_4.87_src/dialects/n+os/Mksrc
+lsof_4.87_src/dialects/n+os/dproc.c
+lsof_4.87_src/dialects/n+os/dproto.h
+lsof_4.87_src/dialects/n+os/dstore.c
+lsof_4.87_src/dialects/n+os/Makefile
+lsof_4.87_src/dialects/n+os/dlsof.h
+lsof_4.87_src/dialects/n+os/dsock.c
+lsof_4.87_src/dialects/n+os/machine.h
+lsof_4.87_src/dialects/darwin/
+lsof_4.87_src/dialects/darwin/libproc/
+lsof_4.87_src/dialects/darwin/libproc/dproc.c
+lsof_4.87_src/dialects/darwin/libproc/dfile.c
+lsof_4.87_src/dialects/darwin/libproc/dproto.h
+lsof_4.87_src/dialects/darwin/libproc/Makefile
+lsof_4.87_src/dialects/darwin/libproc/Mksrc
+lsof_4.87_src/dialects/darwin/libproc/dmnt.c
+lsof_4.87_src/dialects/darwin/libproc/machine.h
+lsof_4.87_src/dialects/darwin/libproc/dsock.c
+lsof_4.87_src/dialects/darwin/libproc/dlsof.h
+lsof_4.87_src/dialects/darwin/libproc/dstore.c
+lsof_4.87_src/dialects/darwin/libproc/ddev.c
+lsof_4.87_src/dialects/darwin/kmem/
+lsof_4.87_src/dialects/darwin/kmem/ddev.c
+lsof_4.87_src/dialects/darwin/kmem/dnode.c
+lsof_4.87_src/dialects/darwin/kmem/Mksrc
+lsof_4.87_src/dialects/darwin/kmem/machine.h
+lsof_4.87_src/dialects/darwin/kmem/dlsof.h
+lsof_4.87_src/dialects/darwin/kmem/dmnt.c
+lsof_4.87_src/dialects/darwin/kmem/dnode1.c
+lsof_4.87_src/dialects/darwin/kmem/dproc.c
+lsof_4.87_src/dialects/darwin/kmem/dproto.h
+lsof_4.87_src/dialects/darwin/kmem/dsock.c
+lsof_4.87_src/dialects/darwin/kmem/dstore.c
+lsof_4.87_src/dialects/darwin/kmem/Makefile
+lsof_4.87_src/dialects/darwin/kmem/dfile.c
+lsof_4.87_src/dialects/darwin/get-hdr-loc.sh
+lsof_4.87_src/dialects/aix/
+lsof_4.87_src/dialects/aix/aix5/
+lsof_4.87_src/dialects/aix/aix5/j2/
+lsof_4.87_src/dialects/aix/aix5/j2/j2_lock.h
+lsof_4.87_src/dialects/aix/aix5/j2/private_j2_snapshot.h
+lsof_4.87_src/dialects/aix/aix5/README
+lsof_4.87_src/dialects/aix/machine.h
+lsof_4.87_src/dialects/aix/dnode1.c
+lsof_4.87_src/dialects/aix/dstore.c
+lsof_4.87_src/dialects/aix/ddev.c
+lsof_4.87_src/dialects/aix/dproto.h
+lsof_4.87_src/dialects/aix/dmnt.c
+lsof_4.87_src/dialects/aix/Makefile
+lsof_4.87_src/dialects/aix/Mksrc
+lsof_4.87_src/dialects/aix/dproc.c
+lsof_4.87_src/dialects/aix/dlsof.h
+lsof_4.87_src/dialects/aix/dnode.c
+lsof_4.87_src/dialects/aix/dfile.c
+lsof_4.87_src/dialects/aix/dnode2.c
+lsof_4.87_src/dialects/aix/dsock.c
+lsof_4.87_src/dialects/sun/
+lsof_4.87_src/dialects/sun/dsock.c
+lsof_4.87_src/dialects/sun/dnode.c
+lsof_4.87_src/dialects/sun/dlsof.h
+lsof_4.87_src/dialects/sun/dnode1.c
+lsof_4.87_src/dialects/sun/dproc.c
+lsof_4.87_src/dialects/sun/solaris_kaddr_filters
+lsof_4.87_src/dialects/sun/Mksrc
+lsof_4.87_src/dialects/sun/Makefile
+lsof_4.87_src/dialects/sun/dmnt.c
+lsof_4.87_src/dialects/sun/dstore.c
+lsof_4.87_src/dialects/sun/dnode2.c
+lsof_4.87_src/dialects/sun/machine.h
+lsof_4.87_src/dialects/sun/ddev.c
+lsof_4.87_src/dialects/sun/dfile.c
+lsof_4.87_src/dialects/sun/dproto.h
+lsof_4.87_src/dialects/freebsd/
+lsof_4.87_src/dialects/freebsd/include/
+lsof_4.87_src/dialects/freebsd/include/procfs/
+lsof_4.87_src/dialects/freebsd/include/procfs/pfsnode.h
+lsof_4.87_src/dialects/freebsd/dnode2.c
+lsof_4.87_src/dialects/freebsd/dlsof.h
+lsof_4.87_src/dialects/freebsd/machine.h
+lsof_4.87_src/dialects/freebsd/dproc.c
+lsof_4.87_src/dialects/freebsd/dsock.c
+lsof_4.87_src/dialects/freebsd/dproto.h
+lsof_4.87_src/dialects/freebsd/Makefile.zfs
+lsof_4.87_src/dialects/freebsd/dstore.c
+lsof_4.87_src/dialects/freebsd/dmnt.c
+lsof_4.87_src/dialects/freebsd/dzfs.h
+lsof_4.87_src/dialects/freebsd/Mksrc
+lsof_4.87_src/dialects/freebsd/Makefile
+lsof_4.87_src/dialects/freebsd/dnode.c
+lsof_4.87_src/dialects/freebsd/dnode1.c
+lsof_4.87_src/dialects/hpux/
+lsof_4.87_src/dialects/hpux/pstat/
+lsof_4.87_src/dialects/hpux/pstat/dproc.c
+lsof_4.87_src/dialects/hpux/pstat/dlsof.h
+lsof_4.87_src/dialects/hpux/pstat/dfile.c
+lsof_4.87_src/dialects/hpux/pstat/Mksrc
+lsof_4.87_src/dialects/hpux/pstat/Makefile
+lsof_4.87_src/dialects/hpux/pstat/dstore.c
+lsof_4.87_src/dialects/hpux/pstat/dproto.h
+lsof_4.87_src/dialects/hpux/pstat/machine.h
+lsof_4.87_src/dialects/hpux/pstat/dsock.c
+lsof_4.87_src/dialects/hpux/kmem/
+lsof_4.87_src/dialects/hpux/kmem/hpux11/
+lsof_4.87_src/dialects/hpux/kmem/hpux11/proc.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/tcp_s.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/rnode.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/vnode.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/kernbits.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/nfs_clnt.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/lla.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/sth.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/ipc_s.h
+lsof_4.87_src/dialects/hpux/kmem/hpux11/udp_s.h
+lsof_4.87_src/dialects/hpux/kmem/dproc.c
+lsof_4.87_src/dialects/hpux/kmem/dstore.c
+lsof_4.87_src/dialects/hpux/kmem/dsock.c
+lsof_4.87_src/dialects/hpux/kmem/dnode2.c
+lsof_4.87_src/dialects/hpux/kmem/Makefile
+lsof_4.87_src/dialects/hpux/kmem/Mksrc
+lsof_4.87_src/dialects/hpux/kmem/dfile.c
+lsof_4.87_src/dialects/hpux/kmem/dmnt.c
+lsof_4.87_src/dialects/hpux/kmem/dnode1.c
+lsof_4.87_src/dialects/hpux/kmem/dproto.h
+lsof_4.87_src/dialects/hpux/kmem/machine.h
+lsof_4.87_src/dialects/hpux/kmem/dnode.c
+lsof_4.87_src/dialects/hpux/kmem/dlsof.h
+lsof_4.87_src/dialects/linux/
+lsof_4.87_src/dialects/linux/machine.h
+lsof_4.87_src/dialects/linux/Makefile
+lsof_4.87_src/dialects/linux/dproc.c
+lsof_4.87_src/dialects/linux/dproto.h
+lsof_4.87_src/dialects/linux/Mksrc
+lsof_4.87_src/dialects/linux/dmnt.c
+lsof_4.87_src/dialects/linux/dfile.c
+lsof_4.87_src/dialects/linux/dlsof.h
+lsof_4.87_src/dialects/linux/dsock.c
+lsof_4.87_src/dialects/linux/dnode.c
+lsof_4.87_src/dialects/linux/dstore.c
+lsof_4.87_src/dialects/n+obsd/
+lsof_4.87_src/dialects/n+obsd/dnode1.c
+lsof_4.87_src/dialects/n+obsd/dstore.c
+lsof_4.87_src/dialects/n+obsd/dproc.c
+lsof_4.87_src/dialects/n+obsd/dproto.h
+lsof_4.87_src/dialects/n+obsd/machine.h
+lsof_4.87_src/dialects/n+obsd/Mksrc
+lsof_4.87_src/dialects/n+obsd/Makefile
+lsof_4.87_src/dialects/n+obsd/dlsof.h
+lsof_4.87_src/dialects/n+obsd/dsock.c
+lsof_4.87_src/dialects/n+obsd/dmnt.c
+lsof_4.87_src/dialects/n+obsd/dnode.c
+lsof_4.87_src/dialects/du/
+lsof_4.87_src/dialects/du/dlsof.h
+lsof_4.87_src/dialects/du/machine.h
+lsof_4.87_src/dialects/du/dnode.c
+lsof_4.87_src/dialects/du/ddev.c
+lsof_4.87_src/dialects/du/dsock.c
+lsof_4.87_src/dialects/du/dmnt.c
+lsof_4.87_src/dialects/du/dproc.c
+lsof_4.87_src/dialects/du/Mksrc
+lsof_4.87_src/dialects/du/dstore.c
+lsof_4.87_src/dialects/du/dproto.h
+lsof_4.87_src/dialects/du/dfile.c
+lsof_4.87_src/dialects/du/Makefile
+lsof_4.87_src/dialects/osr/
+lsof_4.87_src/dialects/osr/include/
+lsof_4.87_src/dialects/osr/include/sys/
+lsof_4.87_src/dialects/osr/include/sys/cdefs.h
+lsof_4.87_src/dialects/osr/include/netdb.h
+lsof_4.87_src/dialects/osr/dnode.c
+lsof_4.87_src/dialects/osr/machine.h
+lsof_4.87_src/dialects/osr/dmnt.c
+lsof_4.87_src/dialects/osr/dsock.c
+lsof_4.87_src/dialects/osr/dlsof.h
+lsof_4.87_src/dialects/osr/Mksrc
+lsof_4.87_src/dialects/osr/dstore.c
+lsof_4.87_src/dialects/osr/dfile.c
+lsof_4.87_src/dialects/osr/Makefile
+lsof_4.87_src/dialects/osr/dproto.h
+lsof_4.87_src/dialects/osr/dproc.c
+lsof_4.87_src/dialects/uw/
+lsof_4.87_src/dialects/uw/uw7/
+lsof_4.87_src/dialects/uw/uw7/vm/
+lsof_4.87_src/dialects/uw/uw7/sys/
+lsof_4.87_src/dialects/uw/uw7/sys/fs/
+lsof_4.87_src/dialects/uw/uw7/sys/fs/namenode.h
+lsof_4.87_src/dialects/uw/uw7/sys/fs/fifonode.h
+lsof_4.87_src/dialects/uw/uw7/sys/fs/README
+lsof_4.87_src/dialects/uw/uw7/fs/
+lsof_4.87_src/dialects/uw/uw7/fs/procfs/
+lsof_4.87_src/dialects/uw/uw7/fs/procfs/prdata.h
+lsof_4.87_src/dialects/uw/uw7/fs/procfs/README
+lsof_4.87_src/dialects/uw/uw7/fs/nsc_cfs/
+lsof_4.87_src/dialects/uw/uw7/fs/nsc_cfs/cnode.h
+lsof_4.87_src/dialects/uw/uw7/README
+lsof_4.87_src/dialects/uw/Makefile
+lsof_4.87_src/dialects/uw/dmnt.c
+lsof_4.87_src/dialects/uw/dnode1.c
+lsof_4.87_src/dialects/uw/machine.h
+lsof_4.87_src/dialects/uw/dnode2.c
+lsof_4.87_src/dialects/uw/dnode3.c
+lsof_4.87_src/dialects/uw/dsock.c
+lsof_4.87_src/dialects/uw/dnode.c
+lsof_4.87_src/dialects/uw/Mksrc
+lsof_4.87_src/dialects/uw/dfile.c
+lsof_4.87_src/dialects/uw/dstore.c
+lsof_4.87_src/dialects/uw/dproc.c
+lsof_4.87_src/dialects/uw/dproto.h
+lsof_4.87_src/dialects/uw/dlsof.h
+lsof_4.87_src/arg.c
+lsof_4.87_src/lib/
+lsof_4.87_src/lib/rdev.c
+lsof_4.87_src/lib/ptti.c
+lsof_4.87_src/lib/rnch.c
+lsof_4.87_src/lib/prfp.c
+lsof_4.87_src/lib/dvch.c
+lsof_4.87_src/lib/lkud.c
+lsof_4.87_src/lib/regex.c
+lsof_4.87_src/lib/pdvn.c
+lsof_4.87_src/lib/rnmh.c
+lsof_4.87_src/lib/fino.c
+lsof_4.87_src/lib/rnam.c
+lsof_4.87_src/lib/isfn.c
+lsof_4.87_src/lib/snpf.c
+lsof_4.87_src/lib/cvfs.c
+lsof_4.87_src/lib/rmnt.c
+lsof_4.87_src/lib/ckkv.c
+lsof_4.87_src/lib/Makefile.skel
+lsof_4.87_src/lsof.h
+lsof_4.87_src/lsof_fields.h
+lsof_4.87_src/main.c
+lsof_4.87_src/misc.c
+lsof_4.87_src/node.c
+lsof_4.87_src/print.c
+lsof_4.87_src/proc.c
+lsof_4.87_src/proto.h
+lsof_4.87_src/regex.h
+lsof_4.87_src/scripts/
+lsof_4.87_src/scripts/sort_res.perl5
+lsof_4.87_src/scripts/00MANIFEST
+lsof_4.87_src/scripts/list_fields.awk
+lsof_4.87_src/scripts/idrlogin.perl
+lsof_4.87_src/scripts/count_pf.perl5
+lsof_4.87_src/scripts/watch_a_file.perl
+lsof_4.87_src/scripts/00README
+lsof_4.87_src/scripts/list_NULf.perl5
+lsof_4.87_src/scripts/list_fields.perl
+lsof_4.87_src/scripts/count_pf.perl
+lsof_4.87_src/scripts/xusers.awk
+lsof_4.87_src/scripts/identd.perl5
+lsof_4.87_src/scripts/shared.perl5
+lsof_4.87_src/scripts/big_brother.perl5
+lsof_4.87_src/scripts/idrlogin.perl5
+lsof_4.87_src/store.c
+lsof_4.87_src/tests/
+lsof_4.87_src/tests/LTnlink.c
+lsof_4.87_src/tests/LTnfs.c
+lsof_4.87_src/tests/LTunix.c
+lsof_4.87_src/tests/TestDB
+lsof_4.87_src/tests/LTbigf.c
+lsof_4.87_src/tests/LTlib.c
+lsof_4.87_src/tests/LTbasic.c
+lsof_4.87_src/tests/Makefile
+lsof_4.87_src/tests/LTdnlc.c
+lsof_4.87_src/tests/LTlock.c
+lsof_4.87_src/tests/LsofTest.h
+lsof_4.87_src/tests/LTszoff.c
+lsof_4.87_src/tests/LTsock.c
+lsof_4.87_src/tests/00README
+lsof_4.87_src/tests/Add2TestDB
+lsof_4.87_src/tests/CkTestDB
+lsof_4.87_src/usage.c
+lsof_4.87_src/util.c
+lsof_4.87_src/version
+lsof_4.87_src/lsof.8
+lsof_4.87_src/lsof.man
++ cd lsof_4.87_src
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.1VMqWd
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lsof_4.87
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd lsof_4.87_src
++ LSOF_INCLUDE=/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include
++ LSOF_VERS=22016
++ LSOF_VSTR=2.2.16
++ LINUX_BASE=/proc
++ ./Configure -n linux
+Testing C library type with cc ... done
+The C library type is glibc, version "-DGLIBCV=215".
+rm -f ddev.c dfile.c dlsof.h dmnt.c dnode*.c dproc.c dproto.h dsock.c dstore.c dzfs.h kernelbase.h machine.h machine.h.old new_machine.h __lseek.s Makefile Makefile.zfs ./tests/config.cflags
+rm -f ./tests/config.cc ./tests/config.xobj ./tests/config.ldflags
+Testing C library for localtime() and strftime(), using cc ... present
+ln -s dialects/linux/dfile.c dfile.c
+ln -s dialects/linux/dlsof.h dlsof.h
+ln -s dialects/linux/dmnt.c dmnt.c
+ln -s dialects/linux/dnode.c dnode.c
+ln -s dialects/linux/dproc.c dproc.c
+ln -s dialects/linux/dproto.h dproto.h
+ln -s dialects/linux/dsock.c dsock.c
+ln -s dialects/linux/dstore.c dstore.c
+ln -s dialects/linux/machine.h machine.h
+Makefile and lib/Makefile created.
+./tests/config.cc created
+./tests/config.cflags created
+./tests/config.ldflags created
+./tests/config.xobj created
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a' 'RANLIB=arm-sony-linux-gnueabi-ranlib liblsof.a'
+(cd lib; make DEBUG="-O" CFGF="-DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\"")
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o ckkv.o ckkv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o cvfs.o cvfs.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o dvch.o dvch.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o fino.o fino.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o isfn.o isfn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o lkud.o lkud.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o pdvn.o pdvn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o prfp.o prfp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o ptti.o ptti.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o rdev.o rdev.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o regex.o regex.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o rmnt.o rmnt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o rnam.o rnam.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o rnch.o rnch.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o rnmh.o rnmh.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR="3.2.53" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include -O   -c -o snpf.o snpf.c
+ar cr liblsof.a ckkv.o cvfs.o dvch.o fino.o isfn.o lkud.o pdvn.o prfp.o ptti.o rdev.o regex.o rmnt.o rnam.o rnch.o rnmh.o snpf.o
+arm-sony-linux-gnueabi-ranlib liblsof.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dfile.o dfile.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dmnt.o dmnt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dnode.o dnode.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dproc.o dproc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dsock.o dsock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o dstore.o dstore.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o arg.o arg.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o main.o main.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o misc.o misc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o node.o node.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o print.o print.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o proc.o proc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o store.o store.c
+Constructing version.h
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o usage.o usage.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=22016 -DGLIBCV=215 -DHASNORPC_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\" -I/usr/local/arm-sony-linux-gnueabi/cross/target/tool//usr/include   -O   -c -o util.o util.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -o lsof dfile.o dmnt.o dnode.o dproc.o dsock.o dstore.o arg.o main.o misc.o node.o print.o proc.o store.o usage.o util.o -L./lib -llsof 
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.5N2Qa7
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lsof_4.87
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64
++ cd lsof_4.87_src
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
++ install lsof /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin
++ install lsof.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
++ gzip -v9 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/lsof.8
+/home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/lsof.8:	 69.3% -- replaced with /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/lsof.8.gz
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-lsof-4.87-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-lsof-4.87-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-lsof-4.87-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.o2pKAN
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lsof_4.87
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lsof-4.87-11000001.x86_64
++ exit 0
+spawn -nottyinit sh -c export LSOF_INCLUDE=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/
+spawn -nottyinit sh -c export LSOF_VERS=22016
+spawn -nottyinit sh -c export LSOF_VSTR=2.2.16
+spawn -nottyinit sh -c export PATH=$PATH:/usr/local/arm-sony-linux-gnueabi/cross/bin
+spawn -nottyinit sh -c cd /home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src; /home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src/Configure -n linux; make CC="/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a" RANLIB="/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-ranlib-tarmv7a liblsof.a"
+
+Testing C library type with cc ... done
+The C library type is glibc, version "-DGLIBCV=215".
+rm -f ddev.c dfile.c dlsof.h dmnt.c dnode*.c dproc.c dproto.h dsock.c dstore.c dzfs.h kernelbase.h machine.h machine.h.old new_machine.h __lseek.s Makefile Makefile.zfs ./tests/config.cflags
+rm -f ./tests/config.cc ./tests/config.xobj ./tests/config.ldflags
+Testing C library for localtime() and strftime(), using cc ... present
+ln -s dialects/linux/dfile.c dfile.c
+ln -s dialects/linux/dlsof.h dlsof.h
+ln -s dialects/linux/dmnt.c dmnt.c
+ln -s dialects/linux/dnode.c dnode.c
+ln -s dialects/linux/dproc.c dproc.c
+ln -s dialects/linux/dproto.h dproto.h
+ln -s dialects/linux/dsock.c dsock.c
+ln -s dialects/linux/dstore.c dstore.c
+ln -s dialects/linux/machine.h machine.h
+Makefile and lib/Makefile created.
+./tests/config.cc created
+./tests/config.cflags created
+./tests/config.ldflags created
+./tests/config.xobj created
+(cd lib; make DEBUG="-O" CFGF="-DLINUXV=32053 -DGLIBCV=215 -DHASIPv6 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\"")
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src/lib'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/lsof_4.87/lsof_4.87_src/lib'
+Constructing version.h
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a  -DLINUXV=32053 -DGLIBCV=215 -DHASIPv6 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DHAS_STRFTIME -DLSOF_VSTR=\"3.2.53\"    -O   -c -o usage.o usage.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -o lsof dfile.o dmnt.o dnode.o dproc.o dsock.o dstore.o arg.o main.o misc.o node.o print.o proc.o store.o usage.o util.o -L./lib -llsof 
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/lsof_4.87
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/lsof_4.87 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 19:15:24 2014 from localhost.localdomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# umount /dev/sda1
+umount: can't umount /dev/sda1: Invalid argument
+-bash-3.2# echo `/sbin/ifconfig eth0 | grep 'inet addr' | awk '{print $2}' | awk -F':' '{print $2}'` `hostname` >> /etc/hosts
+-bash-3.2# mkfs -t ext3 /dev/sda1 || echo 'COMMAND''ERROR'
+mke2fs 1.42.7 (21-Jan-2013)
+/dev/sda1 is apparently in use by the system; will not make a filesystem here!
+COMMANDERROR
+-bash-3.2# mkdir -p /mnt/lsof-test
+-bash-3.2# mount /dev/sda1 /mnt/lsof-test || echo 'COMMAND''ERROR'
+-bash-3.2# cp -a /tmp/lsof_4.87/lsof_4.87_src /mnt/lsof-test/
+-bash-3.2# cd /mnt/lsof-test/lsof_4.87_src
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd tests
+-bash-3.2# ./Add2TestDB
+"LT_BIGF LT_CC LT_DIAL_linux LT_VERS=32053 _FILE_OFFSET_BITS=64" added to TestDB.
+-bash-3.2# make test 2>&1 | tee /tmp/lsof_test.out
+`cat config.cc`  -I. -I.. `cat config.cflags` -c LTlib.c \
+        -o LTlib.o
+`cat config.cc`  -I. -I.. `cat config.cflags` LTbasic.c \
+        LTlib.o `cat config.xobj` -o LTbasic
+`cat config.cc`  -I. -I.. `cat config.cflags` LTnlink.c \
+        LTlib.o `cat config.xobj` -o LTnlink
+`cat config.cc`  -I. -I.. `cat config.cflags` LTsock.c \
+        LTlib.o `cat config.xobj` -o LTsock `cat config.ldflags`
+`cat config.cc`  -I. -I.. `cat config.cflags` LTszoff.c \
+        LTlib.o `cat config.xobj` -o LTszoff
+`cat config.cc`  -I. -I.. `cat config.cflags` LTunix.c \
+        LTlib.o `cat config.xobj` -o LTunix `cat config.ldflags`
+
+Basic test:
+LTbasic ... OK
+
+Standard tests:
+LTnlink ... OK
+LTsock ... OK
+LTszoff ... OK
+LTunix ... OK
+All standard tests succeeded.
+
+Suggestion: try the optional tests: "make opt"
+
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/lsof_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+lsof-base : TEST_OK

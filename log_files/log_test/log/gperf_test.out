@@ -1,0 +1,136 @@
+cd lib; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/lib'
+gcc -g -O2 -I. -c ./getopt.c
+gcc -g -O2 -I. -c ./getopt1.c
+g++ -g -O2 -I. -c ./getline.cc
+g++ -g -O2 -I. -c ./hash.cc
+rm -f libgp.a
+ar rc libgp.a getopt.o getopt1.o getline.o hash.o
+ranlib libgp.a
+make[1]: Leaving directory `/tmp/gperf-3.0.1/lib'
+cd src; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/src'
+g++ -g -O2 -I. -I./../lib -c ./version.cc
+g++ -g -O2 -I. -I./../lib -c ./positions.cc
+g++ -g -O2 -I. -I./../lib -c ./options.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword.cc
+g++ -g -O2 -I. -I./../lib -c ./keyword-list.cc
+g++ -g -O2 -I. -I./../lib -c ./input.cc
+g++ -g -O2 -I. -I./../lib -c ./bool-array.cc
+g++ -g -O2 -I. -I./../lib -c ./hash-table.cc
+g++ -g -O2 -I. -I./../lib -c ./search.cc
+g++ -g -O2 -I. -I./../lib -c ./output.cc
+g++ -g -O2 -I. -I./../lib -c ./main.cc
+g++ -g -O2  -o gperf version.o positions.o options.o keyword.o keyword-list.o input.o bool-array.o hash-table.o search.o output.o main.o ../lib/libgp.a -lm
+make[1]: Leaving directory `/tmp/gperf-3.0.1/src'
+cd tests; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/tests'
+performing some tests of the perfect hash generator
+gcc -c -g -O2 ./test.c
+../src/gperf -c -l -S1 -I -o ./c.gperf > cinset.c
+gcc -g -O2 -o cout cinset.c test.o
+testing ANSI C reserved words, all items should be found in the set
+./cout -v < ./c.gperf > c.out
+diff ./c.exp c.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1,4,'$' -I ./ada.gperf > adainset.c
+gcc -g -O2 -o aout adainset.c test.o
+testing Ada reserved words, all items should be found in the set
+./aout -v < ./ada.gperf > ada-res.out
+diff ./ada-res.exp ada-res.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -D -k1,'$' -s 2 -I -o ./adadefs.gperf > preinset.c
+gcc -g -O2 -o preout preinset.c test.o
+testing Ada predefined words, all items should be found in the set
+./preout -v < ./adadefs.gperf > ada-pred.out
+diff ./ada-pred.exp ada-pred.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1,2,'$' -I -o ./modula3.gperf > m3inset.c
+gcc -g -O2 -o m3out m3inset.c test.o
+testing Modula3 reserved words, all items should be found in the set
+./m3out -v < ./modula3.gperf > modula.out
+diff ./modula.exp modula.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -o -S2 -I < ./pascal.gperf > pinset.c
+gcc -g -O2 -o pout pinset.c test.o
+testing Pascal reserved words, all items should be found in the set
+./pout -v < ./pascal.gperf > pascal.out
+diff ./pascal.exp pascal.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -k1 -t -I -K foreign_name < ./lang-utf8.gperf > lu8inset.c
+gcc -g -O2 -o lu8out lu8inset.c test.o
+testing UTF-8 encoded languages, all items should be found in the set
+sed -e '1,6d' -e 's/,.*//' < ./lang-utf8.gperf | ./lu8out -v > lang-utf8.out
+diff ./lang-utf8.exp lang-utf8.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+gcc -c -g -O2 ./test2.c
+../src/gperf -k4 -t -l -I -K foreign_name < ./lang-ucs2.gperf > lu2inset.c
+gcc -g -O2 -o lu2out lu2inset.c test2.o
+testing UCS-2 encoded languages, all items should be found in the set
+./lu2out -v < ./lang-ucs2.in > lang-ucs2.out
+diff ./lang-ucs2.exp lang-ucs2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+testing SMTP keywords, case-insensitive
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case --compare-strncmp ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf --struct-type --readonly-table --enum --global -K field_name -N header_entry --ignore-case --compare-lengths ./smtp.gperf > smtp.c
+gcc -g -O2 -o smtp smtp.c
+./smtp
+../src/gperf -L C -F ', 0, 0' -j1 -i 1 -g -o -t -G -N is_reserved_word -k1,3,'$' < ./c-parse.gperf > c-parse.out
+diff ./c-parse.exp c-parse.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -j1 -i 1 -g -o -t -N is_reserved_word -k1,3,'$' < ./objc.gperf > objc.out
+diff ./objc.exp objc.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0, 0, 0' -D -E -S1 -j1 -i 1 -g -o -t -k'*' < ./chill.gperf > chill.out
+diff ./chill.exp chill.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0, 0' -j1 -g -o -t -N is_reserved_word -k1,4,7,'$' < ./cplusplus.gperf > cplusplus.out
+diff ./cplusplus.exp cplusplus.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -L C -F ', 0' -t -j1 -i 1 -g -o -N java_keyword -k1,3,'$' < ./java.gperf > java.out
+diff ./java.exp java.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -n -k1-8 -l < ./modula2.gperf > modula2.out
+diff ./modula2.exp modula2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -D -t -k1,'$' < ./c-parse.gperf > test-4.out
+diff ./test-4.exp test-4.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -g -o -j1 -t -N is_reserved_word < ./gpc.gperf > gpc.out
+diff ./gpc.exp gpc.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 < ./permut2.gperf > permut2.out
+diff ./permut2.exp permut2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 < ./permut3.gperf > permut3.out
+diff ./permut3.exp permut3.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -m5 --ignore-case < ./permutc2.gperf > permutc2.out
+diff ./permutc2.exp permutc2.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -C -E -G -I -t < ./charsets.gperf > charsets.out
+diff ./charsets.exp charsets.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -C -E -G -I -t < ./languages.gperf > languages.out
+diff ./languages.exp languages.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -t < ./incomplete.gperf > incomplete.out
+diff ./incomplete.exp incomplete.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+../src/gperf -h > test-6.out
+diff ./test-6.exp test-6.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+only if, do, for, case, goto, else, while, and return should be found 
+./aout -v < ./c.gperf > test-7.out
+diff ./test-7.exp test-7.out && echo "Test passed" || echo "Test failed" 2>&1 | tee -a gperf-test-log.out
+Test passed
+make[1]: Leaving directory `/tmp/gperf-3.0.1/tests'
+cd doc; make check
+make[1]: Entering directory `/tmp/gperf-3.0.1/doc'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/tmp/gperf-3.0.1/doc'

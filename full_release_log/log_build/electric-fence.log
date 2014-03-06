@@ -1,0 +1,218 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+electric-fence : 2.1.13
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-devtool-electric-fence-2.1.13-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-devtool-elewarning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  3%)warning: group rpmuser does not exist - using root
+#                                           (  4%)warning: group rpmuser does not exist - using root
+##                                          ( 13%)###                                         ( 13%)####                                        ( 13%)#####                                       ( 13%)warning: group rpmuser does not exist - using root
+######                                      ( 46%)#######                                     ( 46%)########                                    ( 46%)#########                                   ( 46%)##########                                  ( 46%)###########                                 ( 46%)############                                ( 46%)#############                               ( 46%)##############                              ( 46%)###############                             ( 46%)################                            ( 46%)#################                           ( 46%)##################                          ( 46%)###################                         ( 46%)warning: group rpmuser does not exist - using root
+####################                        ( 47%)warning: group rpmuser does not exist - using root
+#####################                       ( 96%)######################                      ( 96%)#######################                     ( 96%)########################                    ( 96%)#########################                   ( 96%)##########################                  ( 96%)###########################                 ( 96%)############################                ( 96%)#############################               ( 96%)##############################              ( 96%)###############################             ( 96%)################################            ( 96%)#################################           ( 96%)##################################          ( 96%)###################################         ( 96%)####################################        ( 96%)#####################################       ( 96%)######################################      ( 96%)#######################################     ( 96%)########################################    ( 96%)#########################################   ( 96%)warning: group rpmuser does not exist - using root
+##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-devtool-electric-fence.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.vhfgZV
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf electric-fence-2.1.13
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/electric-fence_2.1.13-0.1.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd electric-fence-2.1.13
++ echo 'Patch #0 (electric-fence-2.1.13-test.patch):'
+Patch #0 (electric-fence-2.1.13-test.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-2.1.13-test.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #1 (electric-fence-sony-env-dev.patch):'
+Patch #1 (electric-fence-sony-env-dev.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-sony-env-dev.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #2 (electric-fence-devtool-non-PIC-armv7.patch):'
+Patch #2 (electric-fence-devtool-non-PIC-armv7.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-devtool-non-PIC-armv7.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #3 (electric-fence-time-interval-measurement-dev.patch):'
+Patch #3 (electric-fence-time-interval-measurement-dev.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-time-interval-measurement-dev.patch
++ echo 'Patch #4 (electric-fence-time-interval-dynamic-abort-test-dev.patch):'
+Patch #4 (electric-fence-time-interval-dynamic-abort-test-dev.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-time-interval-dynamic-abort-test-dev.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #5 (electric-fence-timer-flag-check-added-for-thread-creation-fix-dev.patch):'
+Patch #5 (electric-fence-timer-flag-check-added-for-thread-creation-fix-dev.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/electric-fence-timer-flag-check-added-for-thread-creation-fix-dev.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.8mVjFt
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd electric-fence-2.1.13
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make
+arm-sony-linux-gnueabi-gcc -tarmv7a -g   -c -o efence.o efence.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g   -c -o page.o page.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g   -c -o print.o print.c
+rm -f libefence.a
+arm-sony-linux-gnueabi-ar crv libefence.a efence.o page.o print.o
+a - efence.o
+a - page.o
+a - print.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -fPIC -c efence.c -o efence_pic.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -fPIC -c page.c -o page_pic.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -fPIC -c print.c -o print_pic.o
+rm -f libefence.so
+arm-sony-linux-gnueabi-gcc -tarmv7a -shared -Wl,-soname=libefence.so efence_pic.o page_pic.o print_pic.o -o libefence.so -ldl
+arm-sony-linux-gnueabi-gcc -tarmv7a -g   -c -o tstheap.o tstheap.c
+rm -f tstheap
+arm-sony-linux-gnueabi-gcc -tarmv7a -g tstheap.o libefence.a -o tstheap -lpthread -ldl
+arm-sony-linux-gnueabi-gcc -tarmv7a -g   -c -o eftest.o eftest.c
+rm -f eftest
+arm-sony-linux-gnueabi-gcc -tarmv7a -g eftest.o libefence.a -o eftest -lpthread -ldl
+rm -f time-interval-measurement-test
+arm-sony-linux-gnueabi-gcc -tarmv7a -g electric-fence-time-interval-measurement-test.c libefence.a -o time-interval-measurement-test -lpthread -ldl
+electric-fence-time-interval-measurement-test.c: In function 'main':
+electric-fence-time-interval-measurement-test.c:61:16: warning: assignment makes pointer from integer without a cast [enabled by default]
+electric-fence-time-interval-measurement-test.c:93:15: warning: assignment makes pointer from integer without a cast [enabled by default]
+rm -f dynamic-abort-test
+arm-sony-linux-gnueabi-gcc -tarmv7a -g electric-fence-dynamic-abort-test.c libefence.a -o dynamic-abort-test -lpthread -ldl
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.qhx6D5
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd electric-fence-2.1.13
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib
++ install -m 755 libefence.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/libefence.so
++ install -m 755 libefence.a /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/libefence.a
+Processing files: arm-sony-linux-gnueabi-armv7a-devtool-electric-fence-2.1.13-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-devtool-electric-fence-2.1.13-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-devtool-electric-fence-2.1.13-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.NQv0VV
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd electric-fence-2.1.13
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-electric-fence-2.1.13-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/electric-fence-2.1.13 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.......................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 16:47:15 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/electric-fence-2.1.13 || echo 'COMMAND''ERROR'
+-bash-3.2# make test | tee /tmp/electric-fence_test.out
+
+Testing Electric Fence.
+After the last test, it should print that the test has PASSED.
+./eftest
+
+  Electric Fence 2.1 Copyright (C) 1987-1998 Bruce Perens.
+./tstheap 3072
+
+  Electric Fence 2.1 Copyright (C) 1987-1998 Bruce Perens.
+
+Starting test for time-interval-measurement.
+export EF_ERRTRACK_START=2; export EF_ERRTRACK_END=4; ./time-interval-measurement-test || /bin/true
+
+  Electric Fence 2.1 Copyright (C) 1987-1998 Bruce Perens.
+Efence: Segmentation fault caught as start of time-interval-measurement
+
+ @ð|Next we pause so that the efence time-interval-measurement duration ends
+Time interval measurement duration ends.....
+Time interval measurement test: PASSED
+
+Starting test for dynamic abort.
+export EF_ALLOW_MALLOC_0=1; export EF_NOABORT_NONEFENCE_ADDRESS=1; ./dynamic-abort-test || /bin/true
+
+  Electric Fence 2.1 Copyright (C) 1987-1998 Bruce Perens.
+free(4027dffc): address not from malloc().realloc(678945, 40): address not from malloc()
+ Program has not aborted :-)
+
+
+ Test for dynamic abort PASSED 
+
+Electric Fence confidence test PASSED.
+
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/electric-fence_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+electric-fence : TEST_OK

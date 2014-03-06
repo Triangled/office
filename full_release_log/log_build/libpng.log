@@ -1,0 +1,757 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+libpng : 1.6.1
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-libpng-1.6.1-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-libpng warning: group rpmuser does not exist - using root
+                                            (  5%)#                                           (  5%)##                                          ( 10%)###                                         ( 10%)####                                        ( 10%)#####                                       ( 15%)######                                      ( 15%)#######                                     ( 21%)########                                    ( 21%)#########                                   ( 26%)##########                                  ( 26%)###########                                 ( 31%)############                                ( 31%)#############                               ( 31%)##############                              ( 36%)###############                             ( 36%)################                            ( 41%)#################                           ( 41%)##################                          ( 46%)###################                         ( 46%)####################                        ( 51%)#####################                       ( 51%)######################                      ( 51%)#######################                     ( 57%)########################                    ( 57%)#########################                   ( 62%)##########################                  ( 62%)###########################                 ( 67%)############################                ( 67%)#############################               ( 72%)##############################              ( 72%)###############################             ( 72%)################################            ( 77%)#################################           ( 77%)##################################          ( 82%)###################################         ( 82%)####################################        ( 87%)#####################################       ( 87%)######################################      ( 92%)#######################################     ( 92%)########################################    ( 92%)#########################################   ( 98%)##########################################  ( 98%)warning: group rpmuser does not exist - using root
+########################################### ( 99%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-libpng.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.mL4MOt
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf libpng-1.6.1
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/libpng-1.6.1.tar.bz2
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd libpng-1.6.1
++ cp scripts/makefile.linux makefile
++ echo 'Patch #1 (libpng-remove-oldso.patch):'
+Patch #1 (libpng-remove-oldso.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/libpng-remove-oldso.patch
++ echo 'Patch #2 (libpng-cross.patch):'
+Patch #2 (libpng-cross.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/libpng-cross.patch
++ echo 'Patch #3 (libpng-fpic.patch):'
+Patch #3 (libpng-fpic.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/libpng-fpic.patch
++ echo 'Patch #4 (libpng-so.patch):'
+Patch #4 (libpng-so.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/libpng-so.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.If5Uoh
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd libpng-1.6.1
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ touch .depend
++ make ZLIBLIB=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib ZLIBINC=/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include 'CFLAGS=-g -O2' prefix=/usr
+cp scripts/pnglibconf.h.prebuilt pnglibconf.h
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o png.o png.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngset.o pngset.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngget.o pngget.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngrutil.o pngrutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngtrans.o pngtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngwutil.o pngwutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngread.o pngread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngrio.o pngrio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngwio.o pngwio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngwrite.o pngwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngrtran.o pngrtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngwtran.o pngwtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngmem.o pngmem.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngerror.o pngerror.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngpread.o pngpread.c
+arm-sony-linux-gnueabi-ar rc libpng.a png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o pngwtran.o pngmem.o pngerror.o pngpread.o
+arm-sony-linux-gnueabi-ranlib libpng.a
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o png.pic.o png.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngset.pic.o pngset.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngget.pic.o pngget.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngrutil.pic.o pngrutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngtrans.pic.o pngtrans.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngwutil.pic.o pngwutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngread.pic.o pngread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngrio.pic.o pngrio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngwio.pic.o pngwio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngwrite.pic.o pngwrite.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngrtran.pic.o pngrtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngwtran.pic.o pngwtran.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngmem.pic.o pngmem.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngerror.pic.o pngerror.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -g -O2 -fpic -o pngpread.pic.o pngpread.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -shared -Wl,-soname,libpng.so.16 -o libpng.so.16 png.pic.o pngset.pic.o pngget.pic.o pngrutil.pic.o pngtrans.pic.o pngwutil.pic.o pngread.pic.o pngrio.pic.o pngwio.pic.o pngwrite.pic.o pngrtran.pic.o pngwtran.pic.o pngmem.pic.o pngerror.pic.o pngpread.pic.o \
+	-L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -lz -lm -lc
+ln -sf libpng.so.16 libpng.so
+arm-sony-linux-gnueabi-gcc -tarmv7a -g -O2   -c -o pngtest.o pngtest.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -o pngtest -g -O2 pngtest.o -L. -Wl,-rpath,. -L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -Wl,-rpath,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -lpng -lz -lm
+arm-sony-linux-gnueabi-gcc -tarmv7a -o pngtest-static -g -O2 pngtest.o -L/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib -Wl,-rpath,/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib libpng.a -lz -lm
+cat scripts/libpng.pc.in | sed -e s!@prefix@!/usr! \
+	-e s!@exec_prefix@!\${prefix}! \
+	-e s!@libdir@!\${exec_prefix}/lib! \
+	-e s!@includedir@!\${prefix}/include! \
+	-e s!-lpng!-lpng\ -lz\ -lm! > libpng.pc
+( cat scripts/libpng-config-head.in; \
+	echo prefix=\$CROSS_COMPILE_PREFIX\"/usr\"; \
+	echo I_opts=\"-I\${prefix}/include\"; \
+	echo L_opts=\"-L\${prefix}/lib\"; \
+	echo R_opts=\"-Wl,-rpath,\${prefix}/lib\"; \
+	echo libs=\"-lpng -lz -lm\"; \
+	cat scripts/libpng-config-body.in ) > libpng-config
+chmod +x libpng-config
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.QmvYwL
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd libpng-1.6.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make install prefix=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/ INCPATH=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+cp png.h pngconf.h pnglibconf.h pngstruct.h pnginfo.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/png.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pngconf.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pnglibconf.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pngstruct.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/pnginfo.h
+cp libpng.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.a
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.a
+cp libpng.so.16 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.so.16.1
+chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/libpng.so.16.1
+(cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib; \
+	ln -sf libpng.so.16.1 libpng.so)
+cp libpng.pc /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/pkgconfig/libpng.pc
+chmod 644 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//lib/pkgconfig/libpng.pc
+cp libpng.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man3
+cp libpngpf.3 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man3
+cp png.5 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//man/man5
+cp libpng-config /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//bin/libpng-config
+chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr//bin/libpng-config
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+++ echo 1.6.1
+++ IFS='. 	
+'
+++ read x y z
+++ echo 16
+++ echo 1.6.1
+++ cut -d. -f3
+++ echo 1.6.1
+++ IFS='. 	
+'
+++ read x y z
+++ echo 16
++ ln -s libpng.so.16.1 libpng.so.16
++ cd -
+/home/rpmuser/rpm/BUILD/libpng-1.6.1
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/libpng
++ install -m 755 /home/rpmuser/rpm/SOURCES/sony-libpng-libopt-build-libpng /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/libpng/build
++ install -m 644 png.pic.o pngerror.pic.o pngget.pic.o pngmem.pic.o pngpread.pic.o pngread.pic.o pngrio.pic.o pngrtran.pic.o pngrutil.pic.o pngset.pic.o pngtrans.pic.o pngwio.pic.o pngwrite.pic.o pngwtran.pic.o pngwutil.pic.o /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/libpng/
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/libpng
++ umask 022
++ /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-libindex /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libpng.so -o png.pic.o pngerror.pic.o pngget.pic.o pngmem.pic.o pngpread.pic.o pngread.pic.o pngrio.pic.o pngrtran.pic.o pngrutil.pic.o pngset.pic.o pngtrans.pic.o pngwio.pic.o pngwrite.pic.o pngwtran.pic.o pngwutil.pic.o
++ umask 022
+++ echo 1.6.1
+++ IFS='. 	
+'
+++ read x y z
+++ echo 16
++ echo /usr/lib/libpng.so.16
++ find /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a -name '*.la' -print
++ xargs /usr/local/arm-sony-linux-gnueabi/host/bin/demangle_libtool.sh
+... complete.
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libpng-config /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libpng.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/pkgconfig /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' libpng.a '!=' pkgconfig -a libpng.a '!=' optinfo ']'
++ ln -s ../../tool/usr/lib/libpng.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libpng.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' optinfo '!=' pkgconfig -a optinfo '!=' optinfo ']'
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' pkgconfig '!=' pkgconfig -a pkgconfig '!=' optinfo ']'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-libpng-1.6.1-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-libpng-1.6.1-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-libpng-1.6.1-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.NRjkPh
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd libpng-1.6.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-libpng-1.6.1-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/libpng-1.6.1 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 17:29:45 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ rpmuser
+-sh: rpmuser: command not found
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/libpng-1.6.1 || echo 'COMMAND''ERROR'
+-bash-3.2# ./pngtest | tee /tmp/libpng_shared_with_no_option_test.out
+
+ Testing libpng version 1.6.1
+   with zlib   version 1.2.7
+
+libpng version 1.6.1 - March 28, 2013
+Copyright (c) 1998-2013 Glenn Randers-Pehrson
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+ library (10601): libpng version 1.6.1 - March 28, 2013
+
+ pngtest (10601): libpng version 1.6.1 - March 28, 2013
+
+ Testing pngtest.png:
+ Pass 0: rwrwrwrwrwrwrwrwrw
+ Pass 1: rwrwrwrwrwrwrwrwrw
+ Pass 2: rwrwrwrwrwrwrwrw
+ Pass 3: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+ Pass 4: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+ Pass 5: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+         rwrwrwrw
+ Pass 6: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+         rwrwrwrwrw
+ PASS (9782 zero samples)
+ Filter 0 was used 21 times
+ Filter 1 was used 15 times
+ Filter 2 was used 52 times
+ Filter 3 was used 10 times
+ Filter 4 was used 33 times
+ tIME = 7 Jun 1996 17:58:08 +0000
+ libpng passes test
+-bash-3.2# ./pngtest -m contrib/pngsuite/*.png | tee /tmp/libpng_shared_with_option_test.out
+
+ Testing libpng version 1.6.1
+   with zlib   version 1.2.7
+
+libpng version 1.6.1 - March 28, 2013
+Copyright (c) 1998-2013 Glenn Randers-Pehrson
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+ library (10601): libpng version 1.6.1 - March 28, 2013
+
+ pngtest (10601): libpng version 1.6.1 - March 28, 2013
+
+ Testing contrib/pngsuite/basn0g01.png:
+ PASS (524 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g02.png:
+ PASS (448 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g04.png:
+ PASS (520 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g08.png:
+ PASS (3 zero samples)
+ Filter 1 was used 9 times
+ Filter 4 was used 23 times
+
+ Testing contrib/pngsuite/basn0g16.png:
+ PASS (1 zero samples)
+ Filter 1 was used 1 times
+ Filter 2 was used 31 times
+
+ Testing contrib/pngsuite/basn2c08.png:
+ PASS (6 zero samples)
+ Filter 1 was used 5 times
+ Filter 4 was used 27 times
+
+ Testing contrib/pngsuite/basn2c16.png:
+ PASS (592 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn3p01.png:
+ PASS (512 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p02.png:
+ PASS (448 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p04.png:
+ PASS (544 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p08.png:
+ PASS (4 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn4a08.png:
+ PASS (32 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn4a16.png:
+ PASS (64 zero samples)
+ Filter 0 was used 1 times
+ Filter 1 was used 2 times
+ Filter 2 was used 1 times
+ Filter 4 was used 28 times
+
+ Testing contrib/pngsuite/basn6a08.png:
+ PASS (160 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn6a16.png:
+ PASS (1072 zero samples)
+ Filter 1 was used 4 times
+ Filter 4 was used 28 times
+
+ Testing contrib/pngsuite/ftbbn0g01.png:
+Files contrib/pngsuite/ftbbn0g01.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn0g01.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (743 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn0g02.png:
+Files contrib/pngsuite/ftbbn0g02.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn0g02.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (801 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn0g04.png:
+ PASS (513 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn2c16.png:
+Files contrib/pngsuite/ftbbn2c16.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn2c16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (198 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbgn2c16.png:
+Files contrib/pngsuite/ftbgn2c16.png and pngout.png are different
+   Was contrib/pngsuite/ftbgn2c16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (198 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbgn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbrn2c08.png:
+Files contrib/pngsuite/ftbrn2c08.png and pngout.png are different
+   Was contrib/pngsuite/ftbrn2c08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (258 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbwn0g16.png:
+Files contrib/pngsuite/ftbwn0g16.png and pngout.png are different
+   Was contrib/pngsuite/ftbwn0g16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (0 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbwn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbyn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n0g08.png:
+Files contrib/pngsuite/ftp0n0g08.png and pngout.png are different
+   Was contrib/pngsuite/ftp0n0g08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (0 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n2c08.png:
+Files contrib/pngsuite/ftp0n2c08.png and pngout.png are different
+   Was contrib/pngsuite/ftp0n2c08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (258 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n3p08.png:
+ PASS (2 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp1n3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+ libpng passes test
+-bash-3.2# ./pngtest-static | tee /tmp/libpng_static_with_no_option_test.out
+
+ Testing libpng version 1.6.1
+   with zlib   version 1.2.7
+
+libpng version 1.6.1 - March 28, 2013
+Copyright (c) 1998-2013 Glenn Randers-Pehrson
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+ library (10601): libpng version 1.6.1 - March 28, 2013
+
+ pngtest (10601): libpng version 1.6.1 - March 28, 2013
+
+ Testing pngtest.png:
+ Pass 0: rwrwrwrwrwrwrwrwrw
+ Pass 1: rwrwrwrwrwrwrwrwrw
+ Pass 2: rwrwrwrwrwrwrwrw
+ Pass 3: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+ Pass 4: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+ Pass 5: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+         rwrwrwrw
+ Pass 6: rwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw
+         rwrwrwrwrw
+ PASS (9782 zero samples)
+ Filter 0 was used 21 times
+ Filter 1 was used 15 times
+ Filter 2 was used 52 times
+ Filter 3 was used 10 times
+ Filter 4 was used 33 times
+ tIME = 7 Jun 1996 17:58:08 +0000
+ libpng passes test
+-bash-3.2# ./pngtest-static -m contrib/pngsuite/*.png | tee /tmp/libpng_static_with_option_test.out
+
+ Testing libpng version 1.6.1
+   with zlib   version 1.2.7
+
+libpng version 1.6.1 - March 28, 2013
+Copyright (c) 1998-2013 Glenn Randers-Pehrson
+Copyright (c) 1996-1997 Andreas Dilger
+Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+ library (10601): libpng version 1.6.1 - March 28, 2013
+
+ pngtest (10601): libpng version 1.6.1 - March 28, 2013
+
+ Testing contrib/pngsuite/basn0g01.png:
+ PASS (524 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g02.png:
+ PASS (448 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g04.png:
+ PASS (520 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn0g08.png:
+ PASS (3 zero samples)
+ Filter 1 was used 9 times
+ Filter 4 was used 23 times
+
+ Testing contrib/pngsuite/basn0g16.png:
+ PASS (1 zero samples)
+ Filter 1 was used 1 times
+ Filter 2 was used 31 times
+
+ Testing contrib/pngsuite/basn2c08.png:
+ PASS (6 zero samples)
+ Filter 1 was used 5 times
+ Filter 4 was used 27 times
+
+ Testing contrib/pngsuite/basn2c16.png:
+ PASS (592 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn3p01.png:
+ PASS (512 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p02.png:
+ PASS (448 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p04.png:
+ PASS (544 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn3p08.png:
+ PASS (4 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/basn4a08.png:
+ PASS (32 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn4a16.png:
+ PASS (64 zero samples)
+ Filter 0 was used 1 times
+ Filter 1 was used 2 times
+ Filter 2 was used 1 times
+ Filter 4 was used 28 times
+
+ Testing contrib/pngsuite/basn6a08.png:
+ PASS (160 zero samples)
+ Filter 1 was used 1 times
+ Filter 4 was used 31 times
+
+ Testing contrib/pngsuite/basn6a16.png:
+ PASS (1072 zero samples)
+ Filter 1 was used 4 times
+ Filter 4 was used 28 times
+
+ Testing contrib/pngsuite/ftbbn0g01.png:
+Files contrib/pngsuite/ftbbn0g01.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn0g01.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (743 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn0g02.png:
+Files contrib/pngsuite/ftbbn0g02.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn0g02.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (801 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn0g04.png:
+ PASS (513 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn2c16.png:
+Files contrib/pngsuite/ftbbn2c16.png and pngout.png are different
+   Was contrib/pngsuite/ftbbn2c16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (198 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbbn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbgn2c16.png:
+Files contrib/pngsuite/ftbgn2c16.png and pngout.png are different
+   Was contrib/pngsuite/ftbgn2c16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (198 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbgn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbrn2c08.png:
+Files contrib/pngsuite/ftbrn2c08.png and pngout.png are different
+   Was contrib/pngsuite/ftbrn2c08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (258 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbwn0g16.png:
+Files contrib/pngsuite/ftbwn0g16.png and pngout.png are different
+   Was contrib/pngsuite/ftbwn0g16.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (0 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbwn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftbyn3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n0g08.png:
+Files contrib/pngsuite/ftp0n0g08.png and pngout.png are different
+   Was contrib/pngsuite/ftp0n0g08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (0 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n2c08.png:
+Files contrib/pngsuite/ftp0n2c08.png and pngout.png are different
+   Was contrib/pngsuite/ftp0n2c08.png written with the same maximum IDAT chunk size (8192 bytes),
+   filtering heuristic (libpng default), compression level (zlib default),
+   and zlib version (1.2.7)?
+
+
+ PASS (258 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp0n3p08.png:
+ PASS (2 zero samples)
+ Filter 0 was used 32 times
+
+ Testing contrib/pngsuite/ftp1n3p08.png:
+ PASS (454 zero samples)
+ Filter 0 was used 32 times
+ libpng passes test
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/libpng_shared_with_no_option_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/libpng_shared_with_option_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/libpng_static_with_no_option_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/libpng_static_with_option_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+libpng : TEST_OK

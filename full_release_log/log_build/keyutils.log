@@ -1,0 +1,1323 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+keyutils : 1.2
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/keyutils*
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/keyutils/test/keyutils-tests.tar.gz to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/keyutils/test/rhts_environment.sh to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 17:02:56 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cp /tmp/rhts_environment.sh /usr/bin
+-bash-3.2# chmod 777 /usr/bin/rhts_environment.sh
+-bash-3.2# dos2unix /usr/bin/rhts_environment.sh /usr/bin/rhts_environment.sh.org 
+dos2unix: Unable to access file "/usr/bin/rhts_environment.sh.org".
+-bash-3.2# mv /usr/bin/rhts_environment.sh.org /usr/bin/rhts_environment.sh 
+mv: can't rename '/usr/bin/rhts_environment.sh.org': No such file or directory
+-bash-3.2# cd /dev
+-bash-3.2# ./MAKEDEV sda
+-bash-3.2# umount /dev/sda1 
+umount: can't umount /dev/sda1: Invalid argument
+-bash-3.2# swapoff /dev/sda1 
+swapoff: /dev/sda1: Invalid argument
+-bash-3.2# mke2fs /dev/sda1 
+mke2fs 1.42.7 (21-Jan-2013)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+15269888 inodes, 61049000 blocks
+3052450 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=0
+1864 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+        4096000, 7962624, 11239424, 20480000, 23887872
+
+Allocating group tables:    0/1864  75/1864         done                            
+Writing inode tables:    0/1864  29/1864  41/1864  47/1864  53/1864  58/1864  65/1864  70/1864  76/1864  81/1864  85/1864  90/1864  95/1864 102/1864 108/1864 110/1864 114/1864 120/1864 126/1864 132/1864 138/1864 143/1864 149/1864 155/1864 161/1864 167/1864 173/1864 178/1864 185/1864 192/1864 198/1864 202/1864 211/1864 215/1864 222/1864 228/1864 233/1864 240/1864 246/1864 252/1864 258/1864 264/1864 270/1864 276/1864 281/1864 287/1864 294/1864 300/1864 306/1864 311/1864 317/1864 324/1864 330/1864 335/1864 341/1864 347/1864 353/1864 359/1864 363/1864 367/1864 372/1864 379/1864 385/1864 390/1864 396/1864 402/1864 406/1864 412/1864 418/1864 424/1864 428/1864 434/1864 440/1864 444/1864 449/1864 455/1864 461/1864 465/1864 472/1864 477/1864 482/1864 488/1864 494/1864 499/1864 502/1864 507/1864 512/1864 517/1864 523/1864 528/1864 534/1864 538/1864 544/1864 549/1864 555/1864 559/1864 564/1864 570/1864 576/1864 580/1864 586/1864 592/1864 597/1864 602/1864 608/1864 613/1864 618/1864 624/1864 630/1864 636/1864 642/1864 647/1864 653/1864 658/1864 664/1864 671/1864 676/1864 682/1864 685/1864 690/1864 696/1864 701/1864 706/1864 712/1864 717/1864 722/1864 728/1864 735/1864 740/1864 745/1864 751/1864 756/1864 761/1864 767/1864 772/1864 777/1864 783/1864 788/1864 793/1864 798/1864 804/1864 809/1864 815/1864 821/1864 826/1864 832/1864 838/1864 844/1864 850/1864 856/1864 861/1864 867/1864 874/1864 880/1864 885/1864 890/1864 896/1864 900/1864 906/1864 911/1864 917/1864 923/1864 930/1864 936/1864 940/1864 946/1864 951/1864 958/1864 963/1864 970/1864 975/1864 981/1864 987/1864 991/1864 997/18641004/18641009/18641015/18641021/18641027/18641033/18641038/18641043/18641049/18641054/18641060/18641064/18641070/18641076/18641081/18641086/18641092/18641097/18641103/18641109/18641113/18641118/18641124/18641129/18641135/18641140/18641146/18641151/18641156/18641162/18641167/18641173/18641179/18641180/18641183/18641188/18641193/18641197/18641203/18641208/18641213/18641218/18641224/18641229/18641234/18641240/18641245/18641250/18641255/18641261/18641266/18641272/18641278/18641283/18641288/18641293/18641299/18641304/18641309/18641315/18641320/18641326/18641331/18641336/18641342/18641347/18641353/18641358/18641362/18641367/18641373/18641377/18641382/18641388/18641393/18641398/18641404/18641409/18641415/18641420/18641425/18641431/18641435/18641440/18641446/18641451/18641456/18641461/18641467/18641473/18641478/18641483/18641488/18641492/18641497/18641502/18641505/18641510/18641515/18641521/18641526/18641531/18641537/18641542/18641548/18641552/18641558/18641564/18641569/18641574/18641580/18641585/18641590/18641596/18641601/18641607/18641611/18641617/18641623/18641627/18641634/18641640/18641643/18641648/18641653/18641657/18641663/18641669/18641674/18641679/18641685/18641690/18641695/18641700/18641706/18641710/18641716/18641722/18641727/18641732/18641738/18641744/18641748/18641754/18641759/18641765/18641770/18641775/18641782/18641787/18641791/18641796/18641801/18641806/18641811/18641816/18641820/18641825/18641830/18641835/18641840/18641845/18641851/18641855/18641861/1864         done                            
+Writing superblocks and filesystem accounting information:    0/1864         done
+
+-bash-3.2# mount /dev/sda1 /mnt
+-bash-3.2# mkdir -p /mnt/testarea
+-bash-3.2# cd /tmp
+-bash-3.2# rm -rf keyutils-tests
+-bash-3.2# gzip -dc keyutils-tests.tar.gz | tar -xv
+keyutils-tests/
+keyutils-tests/prepare.inc.sh
+keyutils-tests/toolbox.inc.sh
+keyutils-tests/keyctl/
+keyutils-tests/keyctl/session/
+keyutils-tests/keyctl/session/valid/
+keyutils-tests/keyctl/session/valid/runtest.sh
+keyutils-tests/keyctl/session/valid/Makefile
+keyutils-tests/keyctl/session/valid/testinfo.desc
+keyutils-tests/keyctl/session/bad-args/
+keyutils-tests/keyctl/session/bad-args/runtest.sh
+keyutils-tests/keyctl/session/bad-args/Makefile
+keyutils-tests/keyctl/session/bad-args/testinfo.desc
+keyutils-tests/keyctl/link/
+keyutils-tests/keyctl/link/valid/
+keyutils-tests/keyctl/link/valid/runtest.sh
+keyutils-tests/keyctl/link/valid/Makefile
+keyutils-tests/keyctl/link/valid/testinfo.desc
+keyutils-tests/keyctl/link/noargs/
+keyutils-tests/keyctl/link/noargs/runtest.sh
+keyutils-tests/keyctl/link/noargs/Makefile
+keyutils-tests/keyctl/link/noargs/testinfo.desc
+keyutils-tests/keyctl/link/recursion/
+keyutils-tests/keyctl/link/recursion/runtest.sh
+keyutils-tests/keyctl/link/recursion/Makefile
+keyutils-tests/keyctl/link/recursion/testinfo.desc
+keyutils-tests/keyctl/link/bad-args/
+keyutils-tests/keyctl/link/bad-args/runtest.sh
+keyutils-tests/keyctl/link/bad-args/Makefile
+keyutils-tests/keyctl/link/bad-args/testinfo.desc
+keyutils-tests/keyctl/permitting/
+keyutils-tests/keyctl/permitting/valid/
+keyutils-tests/keyctl/permitting/valid/runtest.sh
+keyutils-tests/keyctl/permitting/valid/Makefile
+keyutils-tests/keyctl/permitting/valid/testinfo.desc
+keyutils-tests/keyctl/permitting/noargs/
+keyutils-tests/keyctl/permitting/noargs/runtest.sh
+keyutils-tests/keyctl/permitting/noargs/Makefile
+keyutils-tests/keyctl/permitting/noargs/testinfo.desc
+keyutils-tests/keyctl/permitting/bad-args/
+keyutils-tests/keyctl/permitting/bad-args/runtest.sh
+keyutils-tests/keyctl/permitting/bad-args/Makefile
+keyutils-tests/keyctl/permitting/bad-args/testinfo.desc
+keyutils-tests/keyctl/search/
+keyutils-tests/keyctl/search/valid/
+keyutils-tests/keyctl/search/valid/runtest.sh
+keyutils-tests/keyctl/search/valid/Makefile
+keyutils-tests/keyctl/search/valid/testinfo.desc
+keyutils-tests/keyctl/search/noargs/
+keyutils-tests/keyctl/search/noargs/runtest.sh
+keyutils-tests/keyctl/search/noargs/Makefile
+keyutils-tests/keyctl/search/noargs/testinfo.desc
+keyutils-tests/keyctl/search/bad-args/
+keyutils-tests/keyctl/search/bad-args/runtest.sh
+keyutils-tests/keyctl/search/bad-args/Makefile
+keyutils-tests/keyctl/search/bad-args/testinfo.desc
+keyutils-tests/keyctl/revoke/
+keyutils-tests/keyctl/revoke/valid/
+keyutils-tests/keyctl/revoke/valid/runtest.sh
+keyutils-tests/keyctl/revoke/valid/Makefile
+keyutils-tests/keyctl/revoke/valid/testinfo.desc
+keyutils-tests/keyctl/revoke/noargs/
+keyutils-tests/keyctl/revoke/noargs/runtest.sh
+keyutils-tests/keyctl/revoke/noargs/Makefile
+keyutils-tests/keyctl/revoke/noargs/testinfo.desc
+keyutils-tests/keyctl/revoke/bad-args/
+keyutils-tests/keyctl/revoke/bad-args/runtest.sh
+keyutils-tests/keyctl/revoke/bad-args/Makefile
+keyutils-tests/keyctl/revoke/bad-args/testinfo.desc
+keyutils-tests/keyctl/padd/
+keyutils-tests/keyctl/padd/noargs/
+keyutils-tests/keyctl/padd/noargs/runtest.sh
+keyutils-tests/keyctl/padd/noargs/Makefile
+keyutils-tests/keyctl/padd/noargs/testinfo.desc
+keyutils-tests/keyctl/padd/useradd/
+keyutils-tests/keyctl/padd/useradd/runtest.sh
+keyutils-tests/keyctl/padd/useradd/Makefile
+keyutils-tests/keyctl/padd/useradd/testinfo.desc
+keyutils-tests/keyctl/padd/bad-args/
+keyutils-tests/keyctl/padd/bad-args/runtest.sh
+keyutils-tests/keyctl/padd/bad-args/Makefile
+keyutils-tests/keyctl/padd/bad-args/testinfo.desc
+keyutils-tests/keyctl/reading/
+keyutils-tests/keyctl/reading/valid/
+keyutils-tests/keyctl/reading/valid/runtest.sh
+keyutils-tests/keyctl/reading/valid/Makefile
+keyutils-tests/keyctl/reading/valid/testinfo.desc
+keyutils-tests/keyctl/reading/noargs/
+keyutils-tests/keyctl/reading/noargs/runtest.sh
+keyutils-tests/keyctl/reading/noargs/Makefile
+keyutils-tests/keyctl/reading/noargs/testinfo.desc
+keyutils-tests/keyctl/reading/bad-args/
+keyutils-tests/keyctl/reading/bad-args/runtest.sh
+keyutils-tests/keyctl/reading/bad-args/Makefile
+keyutils-tests/keyctl/reading/bad-args/testinfo.desc
+keyutils-tests/keyctl/add/
+keyutils-tests/keyctl/add/noargs/
+keyutils-tests/keyctl/add/noargs/runtest.sh
+keyutils-tests/keyctl/add/noargs/Makefile
+keyutils-tests/keyctl/add/noargs/testinfo.desc
+keyutils-tests/keyctl/add/useradd/
+keyutils-tests/keyctl/add/useradd/runtest.sh
+keyutils-tests/keyctl/add/useradd/Makefile
+keyutils-tests/keyctl/add/useradd/testinfo.desc
+keyutils-tests/keyctl/add/bad-args/
+keyutils-tests/keyctl/add/bad-args/runtest.sh
+keyutils-tests/keyctl/add/bad-args/Makefile
+keyutils-tests/keyctl/add/bad-args/testinfo.desc
+keyutils-tests/keyctl/unlink/
+keyutils-tests/keyctl/unlink/valid/
+keyutils-tests/keyctl/unlink/valid/runtest.sh
+keyutils-tests/keyctl/unlink/valid/Makefile
+keyutils-tests/keyctl/unlink/valid/testinfo.desc
+keyutils-tests/keyctl/unlink/noargs/
+keyutils-tests/keyctl/unlink/noargs/runtest.sh
+keyutils-tests/keyctl/unlink/noargs/Makefile
+keyutils-tests/keyctl/unlink/noargs/testinfo.desc
+keyutils-tests/keyctl/unlink/bad-args/
+keyutils-tests/keyctl/unlink/bad-args/runtest.sh
+keyutils-tests/keyctl/unlink/bad-args/Makefile
+keyutils-tests/keyctl/unlink/bad-args/testinfo.desc
+keyutils-tests/keyctl/listing/
+keyutils-tests/keyctl/listing/valid/
+keyutils-tests/keyctl/listing/valid/runtest.sh
+keyutils-tests/keyctl/listing/valid/Makefile
+keyutils-tests/keyctl/listing/valid/testinfo.desc
+keyutils-tests/keyctl/listing/noargs/
+keyutils-tests/keyctl/listing/noargs/runtest.sh
+keyutils-tests/keyctl/listing/noargs/Makefile
+keyutils-tests/keyctl/listing/noargs/testinfo.desc
+keyutils-tests/keyctl/listing/bad-args/
+keyutils-tests/keyctl/listing/bad-args/runtest.sh
+keyutils-tests/keyctl/listing/bad-args/Makefile
+keyutils-tests/keyctl/listing/bad-args/testinfo.desc
+keyutils-tests/keyctl/noargs/
+keyutils-tests/keyctl/noargs/runtest.sh
+keyutils-tests/keyctl/noargs/Makefile
+keyutils-tests/keyctl/noargs/testinfo.desc
+keyutils-tests/keyctl/newring/
+keyutils-tests/keyctl/newring/valid/
+keyutils-tests/keyctl/newring/valid/runtest.sh
+keyutils-tests/keyctl/newring/valid/Makefile
+keyutils-tests/keyctl/newring/valid/testinfo.desc
+keyutils-tests/keyctl/newring/noargs/
+keyutils-tests/keyctl/newring/noargs/runtest.sh
+keyutils-tests/keyctl/newring/noargs/Makefile
+keyutils-tests/keyctl/newring/noargs/testinfo.desc
+keyutils-tests/keyctl/newring/bad-args/
+keyutils-tests/keyctl/newring/bad-args/runtest.sh
+keyutils-tests/keyctl/newring/bad-args/Makefile
+keyutils-tests/keyctl/newring/bad-args/testinfo.desc
+keyutils-tests/keyctl/timeout/
+keyutils-tests/keyctl/timeout/valid/
+keyutils-tests/keyctl/timeout/valid/runtest.sh
+keyutils-tests/keyctl/timeout/valid/Makefile
+keyutils-tests/keyctl/timeout/valid/testinfo.desc
+keyutils-tests/keyctl/timeout/noargs/
+keyutils-tests/keyctl/timeout/noargs/runtest.sh
+keyutils-tests/keyctl/timeout/noargs/Makefile
+keyutils-tests/keyctl/timeout/noargs/testinfo.desc
+keyutils-tests/keyctl/timeout/bad-args/
+keyutils-tests/keyctl/timeout/bad-args/runtest.sh
+keyutils-tests/keyctl/timeout/bad-args/Makefile
+keyutils-tests/keyctl/timeout/bad-args/testinfo.desc
+keyutils-tests/keyctl/clear/
+keyutils-tests/keyctl/clear/valid/
+keyutils-tests/keyctl/clear/valid/runtest.sh
+keyutils-tests/keyctl/clear/valid/Makefile
+keyutils-tests/keyctl/clear/valid/testinfo.desc
+keyutils-tests/keyctl/clear/noargs/
+keyutils-tests/keyctl/clear/noargs/runtest.sh
+keyutils-tests/keyctl/clear/noargs/Makefile
+keyutils-tests/keyctl/clear/noargs/testinfo.desc
+keyutils-tests/keyctl/clear/bad-args/
+keyutils-tests/keyctl/clear/bad-args/runtest.sh
+keyutils-tests/keyctl/clear/bad-args/Makefile
+keyutils-tests/keyctl/clear/bad-args/testinfo.desc
+keyutils-tests/keyctl/pupdate/
+keyutils-tests/keyctl/pupdate/userupdate/
+keyutils-tests/keyctl/pupdate/userupdate/runtest.sh
+keyutils-tests/keyctl/pupdate/userupdate/Makefile
+keyutils-tests/keyctl/pupdate/userupdate/testinfo.desc
+keyutils-tests/keyctl/pupdate/noargs/
+keyutils-tests/keyctl/pupdate/noargs/runtest.sh
+keyutils-tests/keyctl/pupdate/noargs/Makefile
+keyutils-tests/keyctl/pupdate/noargs/testinfo.desc
+keyutils-tests/keyctl/pupdate/bad-args/
+keyutils-tests/keyctl/pupdate/bad-args/runtest.sh
+keyutils-tests/keyctl/pupdate/bad-args/Makefile
+keyutils-tests/keyctl/pupdate/bad-args/testinfo.desc
+keyutils-tests/keyctl/requesting/
+keyutils-tests/keyctl/requesting/valid/
+keyutils-tests/keyctl/requesting/valid/runtest.sh
+keyutils-tests/keyctl/requesting/valid/Makefile
+keyutils-tests/keyctl/requesting/valid/testinfo.desc
+keyutils-tests/keyctl/requesting/noargs/
+keyutils-tests/keyctl/requesting/noargs/runtest.sh
+keyutils-tests/keyctl/requesting/noargs/Makefile
+keyutils-tests/keyctl/requesting/noargs/testinfo.desc
+keyutils-tests/keyctl/requesting/piped/
+keyutils-tests/keyctl/requesting/piped/runtest.sh
+keyutils-tests/keyctl/requesting/piped/Makefile
+keyutils-tests/keyctl/requesting/piped/testinfo.desc
+keyutils-tests/keyctl/requesting/bad-args/
+keyutils-tests/keyctl/requesting/bad-args/runtest.sh
+keyutils-tests/keyctl/requesting/bad-args/Makefile
+keyutils-tests/keyctl/requesting/bad-args/testinfo.desc
+keyutils-tests/keyctl/instantiating/
+keyutils-tests/keyctl/instantiating/noargs/
+keyutils-tests/keyctl/instantiating/noargs/runtest.sh
+keyutils-tests/keyctl/instantiating/noargs/Makefile
+keyutils-tests/keyctl/instantiating/noargs/testinfo.desc
+keyutils-tests/keyctl/instantiating/bad-args/
+keyutils-tests/keyctl/instantiating/bad-args/runtest.sh
+keyutils-tests/keyctl/instantiating/bad-args/Makefile
+keyutils-tests/keyctl/instantiating/bad-args/testinfo.desc
+keyutils-tests/keyctl/show/
+keyutils-tests/keyctl/show/noargs/
+keyutils-tests/keyctl/show/noargs/runtest.sh
+keyutils-tests/keyctl/show/noargs/Makefile
+keyutils-tests/keyctl/show/noargs/testinfo.desc
+keyutils-tests/keyctl/describing/
+keyutils-tests/keyctl/describing/valid/
+keyutils-tests/keyctl/describing/valid/runtest.sh
+keyutils-tests/keyctl/describing/valid/Makefile
+keyutils-tests/keyctl/describing/valid/testinfo.desc
+keyutils-tests/keyctl/describing/noargs/
+keyutils-tests/keyctl/describing/noargs/runtest.sh
+keyutils-tests/keyctl/describing/noargs/Makefile
+keyutils-tests/keyctl/describing/noargs/testinfo.desc
+keyutils-tests/keyctl/describing/bad-args/
+keyutils-tests/keyctl/describing/bad-args/runtest.sh
+keyutils-tests/keyctl/describing/bad-args/Makefile
+keyutils-tests/keyctl/describing/bad-args/testinfo.desc
+keyutils-tests/keyctl/update/
+keyutils-tests/keyctl/update/userupdate/
+keyutils-tests/keyctl/update/userupdate/runtest.sh
+keyutils-tests/keyctl/update/userupdate/Makefile
+keyutils-tests/keyctl/update/userupdate/testinfo.desc
+keyutils-tests/keyctl/update/noargs/
+keyutils-tests/keyctl/update/noargs/runtest.sh
+keyutils-tests/keyctl/update/noargs/Makefile
+keyutils-tests/keyctl/update/noargs/testinfo.desc
+keyutils-tests/keyctl/update/bad-args/
+keyutils-tests/keyctl/update/bad-args/runtest.sh
+keyutils-tests/keyctl/update/bad-args/Makefile
+keyutils-tests/keyctl/update/bad-args/testinfo.desc
+keyutils-tests/Makefile
+keyutils-tests/testinfo.desc
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd keyutils-tests
+-bash-3.2# export PATH=/bin:/sbin:$PATH 
+-bash-3.2# make -i runtest 2>&1 | tee keyutils-test-result.log ; echo 'COMMAND''DONE'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/instantiating/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/25993
+Joined session keyring: 693259434
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXSu8rLT ===
++++ [33mNO ARGS[0m
++++ [33mONE ARG[0m
++++ [33mTWO ARGS[0m
++++ [33mTHREE ARGS[0m
++++ [33mFOUR ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/instantiating/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/instantiating/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26039
+Joined session keyring: 960690290
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXvx2qn9 ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mCHECK ALREADY INSTANTIATED KEY[0m
++++ [33mCHECK NEGATE TIMEOUT[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/instantiating/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/timeout/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26117
+Joined session keyring: 470025854
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXeKpSgt ===
++++ [33mADD NO ARGS[0m
++++ [33mADD ONE ARG[0m
++++ [33mADD THREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/timeout/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/timeout/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26147
+Joined session keyring: 418518458
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXpai6Qe ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING[0m
++++ [33mCHECK VALIDATE KEY[0m
++++ [33mCHECK READ PAYLOAD[0m
++++ [33mSET BIG TIMEOUT[0m
++++ [33mCHECK READ PAYLOAD 2[0m
++++ [33mSET SMALL TIMEOUT[0m
++++ [33mWAIT FOR TIMEOUT[0m
++++ [33mCHECK NO READ PAYLOAD[0m
++++ [33mCHECK NO REVOKE KEY[0m
++++ [33mCHECK NO TIMEOUT KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mADD KEY[0m
++++ [33mSET BIG TIMEOUT[0m
++++ [33mREVOKE KEY[0m
++++ [33mCHECK NO SET KEY TIMEOUT[0m
++++ [33mUNLINK KEY[0m
++++ [33mTIMEOUT KEYRING[0m
++++ [33mWAIT FOR KEYRING TIMEOUT[0m
++++ [33mCHECK NO LIST SESSION KEYRING[0m
++++ [33mCHECK NO VALIDATE KEYRING[0m
++++ [33mUNLINK KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/timeout/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/timeout/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26229
+Joined session keyring: 255752735
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXbse37g ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mDESTROY KEY ID[0m
++++ [33mCHECK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/timeout/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/pupdate/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26280
+Joined session keyring: 67387225
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXzqGbYd ===
++++ [33mPUPDATE NO ARGS[0m
++++ [33mPUPDATE TWO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/pupdate/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/pupdate/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26309
+Joined session keyring: 150526447
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXmGyWig ===
++++ [33mCHECK UPDATE SESSION KEYRING[0m
++++ [33mCHECK UPDATE INVALID KEY[0m
++++ [33mADD USER KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mUPDATE UNLINKED KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/pupdate/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/pupdate/userupdate'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26361
+Joined session keyring: 876222933
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXlGqDEJ ===
++++ [33mADD USER KEY[0m
++++ [33mPRINT PAYLOAD[0m
++++ [33mPUPDATE USER KEY[0m
++++ [33mPRINT UPDATED PAYLOAD[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/pupdate/userupdate'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26408
+Joined session keyring: 738692457
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXCchSQB ===
++++ [33mCHECK NO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/requesting/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26441
+Joined session keyring: 624045913
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX358CcY ===
++++ [33mNO ARGS[0m
++++ [33mONE ARG[0m
++++ [33mTWO ARGS[0m
++++ [33mFOUR ARGS[0m
++++ [33mFIVE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/requesting/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/requesting/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26528
+Joined session keyring: 416046138
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXhMmpPj ===
++++ [33mCREATE KEYRINGS[0m
++++ [33mCHECK REQUEST FAILS[0m
++++ [33mADD USER KEY[0m
++++ [33mREQUEST KEY[0m
++++ [33mDETACH KEY FROM KEYRING[0m
++++ [33mCALL OUT REQUEST KEY TO SESSION[0m
++++ [33mCHECK ATTACHMENT TO SESSION KEYRING[0m
++++ [33mREDO CALL OUT REQUEST KEY TO SESSION[0m
++++ [33mDETACH KEY FROM SESSION[0m
++++ [33mCALL OUT REQUEST KEY TO KEYRING[0m
++++ [33mCHECK ATTACHMENT TO KEYRING[0m
++++ [33mCHECK ATTACHMENT TO SESSION[0m
++++ [33mREDO CALL OUT REQUEST KEY TO KEYRING[0m
++++ [33mDETACH KEY[0m
++++ [33mUNLINK KEYRINGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/requesting/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/requesting/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26648
+Joined session keyring: 640621488
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXRPq2Sd ===
++++ [33mCHECK EMPTY KEY TYPE[0m
++++ [33mCHECK UNSUPPORTED KEY TYPE[0m
++++ [33mCHECK INVALID KEY TYPE[0m
++++ [33mCHECK MAXLEN INVALID KEY TYPE[0m
++++ [33mCHECK OVERLONG KEY TYPE[0m
++++ [33mCHECK MAXLEN DESC[0m
++++ [33mCHECK OVERLONG DESC[0m
++++ [33mCHECK MAXLEN CALLOUT[0m
++++ [33mCHECK OVERLONG CALLOUT[0m
++++ [33mCHECK MAXLEN PIPED CALLOUT[0m
++++ [33mCHECK OVERLONG PIPED CALLOUT[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/requesting/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/requesting/piped'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26797
+Joined session keyring: 120185386
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXE590Ih ===
++++ [33mCREATE KEYRINGS[0m
++++ [33mCHECK REQUEST FAILS[0m
++++ [33mADD USER KEY[0m
++++ [33mREQUEST KEY[0m
++++ [33mDETACH KEY FROM KEYRING[0m
++++ [33mPIPED CALL OUT REQUEST KEY TO SESSION[0m
++++ [33mCHECK ATTACHMENT TO SESSION KEYRING[0m
++++ [33mREDO PIPED CALL OUT REQUEST KEY TO SESSION[0m
++++ [33mDETACH KEY FROM SESSION[0m
++++ [33mPIPED CALL OUT REQUEST KEY TO KEYRING[0m
++++ [33mCHECK ATTACHMENT TO KEYRING[0m
++++ [33mCHECK ATTACHMENT TO SESSION[0m
++++ [33mREDO PIPED CALL OUT REQUEST KEY TO KEYRING[0m
++++ [33mDETACH KEY[0m
++++ [33mUNLINK KEYRINGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/requesting/piped'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/session/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26889
+Joined session keyring: 525551725
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXGa4jb9 ===
++++ [33mANON SESSION[0m
++++ [33mNAMED SESSION[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/session/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/session/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26934
+Joined session keyring: 326257700
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXFWcgfb ===
++++ [33mSESSION WITH EMPTY KEYRING NAME[0m
++++ [33mSESSION WITH OVERLONG KEYRING NAME[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/session/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/link/recursion'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/26977
+Joined session keyring: 434922821
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXi2Wd3V ===
++++ [33mCREATE KEYRING 1[0m
++++ [33mRECURSE 1[0m
++++ [33mCREATE KEYRING 2[0m
++++ [33mRECURSE 2[0m
++++ [33mCREATE KEYRING 3[0m
++++ [33mRECURSE 3[0m
++++ [33mCREATE KEYRING 4[0m
++++ [33mRECURSE 4[0m
++++ [33mCREATE KEYRING 5[0m
++++ [33mRECURSE 5[0m
++++ [33mCREATE KEYRING 6[0m
++++ [33mRECURSE 6[0m
++++ [33mCREATE KEYRING 7[0m
++++ [33mRECURSE 7[0m
++++ [33mCREATE KEYRING 8[0m
++++ [33mRECURSE 8[0m
++++ [33mCREATE KEYRING 9[0m
++++ [33mRECURSE 9[0m
++++ [33mUNLINK KEYRING[0m
++++ [33mCREATE KEYRING STACKS[0m
++++ [33mLINK A TO B[0m
++++ [33mLINK B TO A[0m
++++ [33mUNLINK A FROM B[0m
++++ [33mLINK B TO A[0m
++++ [33mLINK A TO B[0m
++++ [33mUNLINK B FROM A[0m
++++ [33mEXTEND STACKS[0m
++++ [33mCHECK MAXDEPTH A TO B[0m
++++ [33mCHECK MAXDEPTH B TO A[0m
++++ [33mUNLINK STACKS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/link/recursion'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/link/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27111
+Joined session keyring: 920622283
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX8TZgn3 ===
++++ [33mNO ARGS[0m
++++ [33mONE ARGS[0m
++++ [33mTHREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/link/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/link/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27145
+Joined session keyring: 59117733
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX6a6QM3 ===
++++ [33mADD KEYRING[0m
++++ [33mVALIDATE KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING WITH ONE[0m
++++ [33mLINK KEY 1[0m
++++ [33mCHECK KEY LINKAGE[0m
++++ [33mLINK KEY 2[0m
++++ [33mLINK KEY 3[0m
++++ [33mCOUNT LINKS[0m
++++ [33mUNLINK KEY FROM SESSION[0m
++++ [33mUNLINK KEY FROM KEYRING[0m
++++ [33mLINK 2ND KEYRING TO SESSION[0m
++++ [33mCOUNT KEYRING LINKS[0m
++++ [33mUNLINK 2ND KEYRING FROM SESSION[0m
++++ [33mLINK 2ND KEYRING TO SESSION[0m
++++ [33mUNLINK KEYRING[0m
++++ [33mUNLINK 2ND KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/link/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/link/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27240
+Joined session keyring: 36929177
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXynlkVp ===
++++ [33mCHECK LINK FROM BAD KEY ID[0m
++++ [33mCHECK LINK TO BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mCHECK LINK TO NON-KEYRING KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK LINK TO NON-EXISTENT KEY ID[0m
++++ [33mCHECK LINK FROM NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/link/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/add/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27292
+Joined session keyring: 123189347
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXI15vZu ===
++++ [33mADD NO ARGS[0m
++++ [33mADD ONE ARG[0m
++++ [33mADD TWO ARGS[0m
++++ [33mADD THREE ARGS[0m
++++ [33mADD FIVE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/add/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/add/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27325
+Joined session keyring: 478276320
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXPaDYYD ===
++++ [33mCHECK EMPTY KEY TYPE[0m
++++ [33mCHECK UNSUPPORTED KEY TYPE[0m
++++ [33mCHECK INVALID KEY TYPE[0m
++++ [33mCHECK MAXLEN KEY TYPE[0m
++++ [33mCHECK OVERLONG KEY TYPE[0m
++++ [33mCHECK ADD KEYRING WITH PAYLOAD[0m
++++ [33mCHECK MAXLEN DESC[0m
++++ [33mCHECK OVERLONG DESC[0m
++++ [33mCHECK BAD KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/add/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/add/useradd'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27395
+Joined session keyring: 808798921
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXarOr5e ===
++++ [33mADD USER KEY[0m
++++ [33mPRINT PAYLOAD[0m
++++ [33mUPDATE USER KEY[0m
++++ [33mPRINT UPDATED PAYLOAD[0m
++++ [33mADD KEY TO NON-KEYRING[0m
++++ [33mUNLINK KEY[0m
+Session Keyring
+       -3 --alswrv      0     0  keyring: RHTS/keyctl/27395
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/add/useradd'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/padd/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27438
+Joined session keyring: 577638618
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXRw32VH ===
++++ [33mADD NO ARGS[0m
++++ [33mADD ONE ARG[0m
++++ [33mADD TWO ARGS[0m
++++ [33mADD FOUR ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/padd/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/padd/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27469
+Joined session keyring: 407782108
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXoxjYVX ===
++++ [33mCHECK EMPTY KEY TYPE[0m
++++ [33mCHECK UNSUPPORTED KEY TYPE[0m
++++ [33mCHECK INVALID KEY TYPE[0m
++++ [33mCHECK MAXLEN KEY TYPE[0m
++++ [33mCHECK OVERLONG KEY TYPE[0m
++++ [33mCHECK ADD KEYRING WITH PAYLOAD[0m
++++ [33mCHECK MAXLEN DESC[0m
++++ [33mCHECK OVERLONG DESC[0m
++++ [33mCHECK BAD KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/padd/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/padd/useradd'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27536
+Joined session keyring: 988859273
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXeJpUSs ===
++++ [33mADD USER KEY[0m
++++ [33mPRINT PAYLOAD[0m
++++ [33mUPDATE USER KEY[0m
++++ [33mPRINT UPDATED PAYLOAD[0m
++++ [33mUNLINK KEY[0m
+Session Keyring
+       -3 --alswrv      0     0  keyring: RHTS/keyctl/27536
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/padd/useradd'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/update/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27589
+Joined session keyring: 161363430
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX7JPOcf ===
++++ [33mADD NO ARGS[0m
++++ [33mADD ONE ARG[0m
++++ [33mADD THREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/update/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/update/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27619
+Joined session keyring: 671995112
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX394qOz ===
++++ [33mCHECK UPDATE SESSION KEYRING[0m
++++ [33mCHECK UPDATE INVALID KEY[0m
++++ [33mADD USER KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mUPDATE UNLINKED KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/update/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/update/userupdate'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27668
+Joined session keyring: 148683733
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX0pnLwk ===
++++ [33mADD USER KEY[0m
++++ [33mPRINT PAYLOAD[0m
++++ [33mUPDATE USER KEY[0m
++++ [33mPRINT UPDATED PAYLOAD[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/update/userupdate'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/unlink/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27708
+Joined session keyring: 322296727
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXjLs5Gl ===
++++ [33mNO ARGS[0m
++++ [33mONE ARGS[0m
++++ [33mTHREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/unlink/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/unlink/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/27748
+Joined session keyring: 380477581
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXq3BnDW ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING WITH ONE[0m
++++ [33mUNLINK KEY FROM KEYRING[0m
++++ [33mCHECK NO UNLINK KEY FROM KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mADD TWENTY KEYS[0m
++++ [33mADD TWENTY KEYRINGS[0m
++++ [33mCHECK KEYRING ORDERING[0m
++++ [33mSHOW[0m
++++ [33mDELETE CONTENTS OF KEYRING[0m
+Session Keyring
+       -3 --alswrv      0     0  keyring: RHTS/keyctl/27748
+613942300 --alswrv      0     0   \_ keyring: wibble
++++ [33mLIST KEYRING[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/unlink/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/unlink/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28564
+Joined session keyring: 531057287
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXH7quIU ===
++++ [33mCHECK UNLINK BAD KEY ID[0m
++++ [33mCHECK UNLINK FROM BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mCHECK UNLINK FROM NON-KEYRING KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK UNLINK FROM NON-EXISTENT KEY ID[0m
++++ [33mCHECK UNLINK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/unlink/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/revoke/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28647
+Joined session keyring: 362680339
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX2GlxOp ===
++++ [33mADD NO ARGS[0m
++++ [33mADD TWO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/revoke/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/revoke/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28712
+Joined session keyring: 1013929891
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXe0lGAL ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING[0m
++++ [33mCHECK VALIDATE KEY[0m
++++ [33mCHECK READ PAYLOAD[0m
++++ [33mREVOKE KEY[0m
++++ [33mCHECK NO VALIDATE KEY[0m
++++ [33mCHECK NO READ PAYLOAD[0m
++++ [33mUNLINK KEY[0m
++++ [33mREVOKE KEYRING[0m
++++ [33mCHECK NO LIST SESSION KEYRING[0m
++++ [33mCHECK NO VALIDATE KEYRING[0m
++++ [33mUNLINK KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/revoke/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/revoke/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28811
+Joined session keyring: 126423142
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXmDq52u ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCHECK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/revoke/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/describing/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28878
+Joined session keyring: 324919529
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXZIaNTp ===
++++ [33mNO ARGS[0m
++++ [33mTWO ARGS[0m
++++ [33mTHREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/describing/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/describing/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/28933
+Joined session keyring: 100750926
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXjzqDWf ===
++++ [33mADD KEYRING[0m
++++ [33mVALIDATE KEYRING[0m
++++ [33mVALIDATE PRETTY KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mVALIDATE KEY[0m
++++ [33mVALIDATE PRETTY KEY[0m
++++ [33mDISABLE VIEW PERM[0m
++++ [33mREINSTATE VIEW PERM[0m
++++ [33mREVOKE KEY[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/describing/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/describing/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29042
+Joined session keyring: 124130693
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXTcc55a ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/describing/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/clear/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29128
+Joined session keyring: 787064868
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXFstcQ0 ===
++++ [33mNO ARGS[0m
++++ [33mTWO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/clear/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/clear/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29177
+Joined session keyring: 828461365
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXYeg1xq ===
++++ [33mADD KEYRING[0m
++++ [33mVALIDATE KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mCLEAR EMPTY KEYRING[0m
++++ [33mLIST KEYRING 2[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING WITH ONE[0m
++++ [33mCLEAR KEYRING WITH ONE[0m
++++ [33mLIST KEYRING 3[0m
++++ [33mADD FORTY KEYS[0m
++++ [33mCHECK KEYRING ORDERING[0m
++++ [33mSHOW KEYRING[0m
++++ [33mCLEAR KEYRING WITH ONE[0m
++++ [33mLIST KEYRING 4[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/clear/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/clear/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29549
+Joined session keyring: 513210838
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXBjsT8g ===
++++ [33mCHECK CLEAR BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mCHECK CLEAR NON-KEYRING KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK CLEAR NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/clear/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/listing/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29627
+Joined session keyring: 202703485
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXaIwfZw ===
++++ [33mNO ARGS[0m
++++ [33mTWO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/listing/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/listing/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29689
+Joined session keyring: 8700671
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXuMlOiD ===
++++ [33mADD KEYRING[0m
++++ [33mVALIDATE KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mPRETTY LIST KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING WITH ONE[0m
++++ [33mPRETTY LIST KEYRING WITH ONE[0m
++++ [33mADD KEY 2[0m
++++ [33mLIST KEYRING WITH TWO[0m
++++ [33mPRETTY LIST KEYRING WITH TWO[0m
++++ [33mDISABLE READ PERM[0m
++++ [33mDISABLE SEARCH PERM[0m
++++ [33mREINSTATE READ PERM[0m
++++ [33mREVOKE KEYRING[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/listing/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/listing/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29798
+Joined session keyring: 514560169
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXfaRhtQ ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/listing/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/search/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29882
+Joined session keyring: 745574908
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXKqAVEi ===
++++ [33mNO ARGS[0m
++++ [33mONE ARGS[0m
++++ [33mTWO ARGS[0m
++++ [33mFIVE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/search/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/search/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/29942
+Joined session keyring: 85769165
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXB3hJxi ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING WITH ONE[0m
++++ [33mSEARCH SESSION FOR NON-EXISTENT KEY[0m
++++ [33mSEARCH SESSION[0m
++++ [33mSEARCH SESSION AND ATTACH[0m
++++ [33mCHECK ATTACHED[0m
++++ [33mCHECK PAYLOAD[0m
++++ [33mDETACH KEY[0m
++++ [33mCHECK PAYLOADS[0m
++++ [33mSEARCH SESSION AGAIN[0m
++++ [33mSEARCH FIRST KEYRING[0m
++++ [33mSEARCH SECOND KEYRING[0m
++++ [33mLINK FIRST KEYRING TO SECOND[0m
++++ [33mSEARCH FIRST KEYRING AGAIN[0m
++++ [33mUNLINK FIRST KEY[0m
++++ [33mSEARCH FIRST KEYRING AGAIN 2[0m
++++ [33mSEARCH SESSION KEYRING AGAIN 2[0m
++++ [33mUNLINK SECOND KEYRING FROM FIRST[0m
++++ [33mSEARCH FIRST KEYRING FOR FAIL[0m
++++ [33mSEARCH SESSION KEYRING AGAIN 3[0m
++++ [33mMOVE SECOND KEYRING INTO FIRST[0m
++++ [33mSEARCH FIRST KEYRING AGAIN 4[0m
++++ [33mSEARCH WITH NO-SEARCH KEYRING[0m
++++ [33mSEARCH WITH NO-SEARCH KEYRING2[0m
++++ [33mUNLINK KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/search/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/search/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30140
+Joined session keyring: 197350490
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXfp8Wnc ===
++++ [33mCHECK EMPTY KEY TYPE[0m
++++ [33mCHECK UNSUPPORTED KEY TYPE[0m
++++ [33mCHECK INVALID KEY TYPE[0m
++++ [33mCHECK OVERLONG KEY TYPE[0m
++++ [33mCHECK MAXLEN DESC[0m
++++ [33mCHECK OVERLONG DESC[0m
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mSEARCH KEY[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/search/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/newring/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30268
+Joined session keyring: 247725988
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXj4OnBX ===
++++ [33mADD NO ARGS[0m
++++ [33mADD ONE ARG[0m
++++ [33mADD THREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/newring/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/newring/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30329
+Joined session keyring: 355357687
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXEyl1Tv ===
++++ [33mADD KEYRING[0m
++++ [33mLIST KEYRING[0m
++++ [33mADD KEYRING AGAIN[0m
++++ [33mLIST SESSION KEYRING[0m
++++ [33mVALIDATE NEW KEYRING[0m
+grep: /proc/keys: No such file or directory
++++ [33mLIST SESSION KEYRING2[0m
++++ [33mVALIDATE NEW KEYRING2[0m
++++ [33mUNLINK KEY[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/newring/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/newring/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30430
+Joined session keyring: 216060406
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XX4ozmWj ===
++++ [33mCHECK MAXLEN DESC[0m
++++ [33mCHECK OVERLONG DESC[0m
++++ [33mCHECK EMPTY KEYRING NAME[0m
++++ [33mCHECK BAD KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/newring/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/permitting/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30496
+Joined session keyring: 841507439
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXFwET0E ===
++++ [33mNO ARGS[0m
++++ [33mONE ARG[0m
++++ [33mTHREE ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/permitting/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/permitting/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30564
+Joined session keyring: 168289279
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXP4v2aG ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mCHOWN[0m
++++ [33mCHOWN BACK[0m
++++ [33mCHGRP[0m
++++ [33mITERATE PERMISSIONS[0m
++++ [33mVIEW GROUP PERMISSIONS[0m
++++ [33mVIEW OTHER PERMISSIONS[0m
++++ [33mREMOVE SETATTR[0m
++++ [33mREINSTATE SETATTR[0m
++++ [33mUNLINK KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/permitting/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/permitting/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30845
+Joined session keyring: 471249517
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXDiWHj1 ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mCHECK PERMS[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK CLEAR NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/permitting/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/reading/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/30953
+Joined session keyring: 680914106
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXtqpdLn ===
++++ [33mNO ARGS[0m
++++ [33mTWO ARGS[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/reading/noargs'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/reading/valid'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/31032
+Joined session keyring: 87525305
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXDUf4aP ===
++++ [33mADD KEYRING[0m
++++ [33mADD KEY[0m
++++ [33mLIST KEYRING[0m
++++ [33mPRINT KEY[0m
++++ [33mPIPE KEY[0m
++++ [33mREAD KEY[0m
++++ [33mREAD KEYRING[0m
++++ [33mREMOVE READ PERM[0m
++++ [33mREMOVE SEARCH PERM[0m
++++ [33mCHECK POSSESSOR READ[0m
++++ [33mREINSTATE READ PERM[0m
++++ [33mREVOKE KEY[0m
++++ [33mUNLINK KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/reading/valid'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/reading/bad-args'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/31149
+Joined session keyring: 422420857
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXP4VPGD ===
++++ [33mCHECK BAD KEY ID[0m
++++ [33mCREATE KEY[0m
++++ [33mUNLINK KEY[0m
++++ [33mCHECK CLEAR NON-EXISTENT KEY ID[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/reading/bad-args'
+make[1]: Entering directory `/tmp/keyutils-tests/keyctl/show/noargs'
+sh ./runtest.sh
+Running with session keyring RHTS/keyctl/31253
+Joined session keyring: 283396300
+./runtest.sh: line 9: rpm: command not found
+=== /mnt/testarea/tmp.XXiZWiG2 ===
++++ [33mSHOW SESSION KEYRING[0m
+Reporting test DevelopersOwnTest as PASS
+/usr/bin/rhts_environment.sh: line 23: rpm: command not found
+/usr/bin/rhts_environment.sh: line 24: rhts_db_submit_result: command not found
+make[1]: Leaving directory `/tmp/keyutils-tests/keyctl/show/noargs'
+COMMANDDONE
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/keyutils-tests/keyutils-test-result.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+grep -c PASS keyutils-test-result.log | tee keyutils-passnum
+56
+-bash-3.2# make clean
+umount /mnt
+rm -f *~
+rm -f /mnt/testarea/*
+-bash-3.2# umount /mnt
+rm -rf /mnt/testarea
+-bash-3.2# rm -rf /mnt/testarea
+rm -rf /tmp/keyutils-tests.tar.gz
+-bash-3.2# rm -rf /tmp/keyutils-tests.tar.gz
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/keyutils-tests/keyutils-passnum to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+keyutils : TEST_OK

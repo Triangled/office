@@ -1,0 +1,457 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+leaktracer : 2.4
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/Tools_Userland/SRPMS/sony-target-devtool-leaktracer-2.4-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-devtool-leawarning: group rpmuser does not exist - using root
+                                            (  1%)warning: group rpmuser does not exist - using root
+#                                           ( 10%)##                                          ( 10%)###                                         ( 10%)warning: group rpmuser does not exist - using root
+####                                        ( 25%)#####                                       ( 25%)######                                      ( 25%)#######                                     ( 25%)########                                    ( 25%)#########                                   ( 25%)##########                                  ( 25%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+###########                                 ( 28%)warning: group rpmuser does not exist - using root
+############                                ( 30%)warning: group rpmuser does not exist - using root
+#############                               ( 31%)warning: group rpmuser does not exist - using root
+##############                              ( 34%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+###############                             ( 38%)################                            ( 38%)warning: group rpmuser does not exist - using root
+#################                           ( 42%)warning: group rpmuser does not exist - using root
+##################                          ( 42%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+###################                         ( 48%)####################                        ( 48%)warning: group rpmuser does not exist - using root
+#####################                       ( 50%)warning: group rpmuser does not exist - using root
+######################                      ( 58%)#######################                     ( 58%)########################                    ( 58%)warning: group rpmuser does not exist - using root
+#########################                   ( 67%)##########################                  ( 67%)###########################                 ( 67%)############################                ( 67%)warning: group rpmuser does not exist - using root
+#############################               ( 80%)##############################              ( 80%)###############################             ( 80%)################################            ( 80%)#################################           ( 80%)##################################          ( 80%)warning: group rpmuser does not exist - using root
+###################################         ( 82%)warning: group rpmuser does not exist - using root
+####################################        ( 94%)#####################################       ( 94%)######################################      ( 94%)#######################################     ( 94%)########################################    ( 94%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+#########################################   ( 98%)##########################################  ( 98%)warning: group rpmuser does not exist - using root
+########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-devtool-leaktracer.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.TIY74I
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf LeakTracer
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/LeakTracer-2.4.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd LeakTracer
++ mv LeakTracer.cc LeakTracer.cc.org
++ cp /home/rpmuser/rpm/SOURCES/LeakTracer-mf.cc LeakTracer.cc
++ cp /home/rpmuser/rpm/SOURCES/LeakTracer.h .
++ cp /home/rpmuser/rpm/SOURCES/leak-read.cc .
++ cp /home/rpmuser/rpm/SOURCES/LeakInspect .
++ cp /home/rpmuser/rpm/SOURCES/leaktracer_info.h .
++ echo 'Patch #0 (leaktracer-sony-env-dev.patch):'
+Patch #0 (leaktracer-sony-env-dev.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-sony-env-dev.patch
++ echo 'Patch #1 (leaktracer-realtime-dump.patch):'
+Patch #1 (leaktracer-realtime-dump.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-realtime-dump.patch
++ echo 'Patch #3 (leaktracer-delete-ldpreload.patch):'
+Patch #3 (leaktracer-delete-ldpreload.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-delete-ldpreload.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #12 (leaktracer-kinspect.patch):'
+Patch #12 (leaktracer-kinspect.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-kinspect.patch
++ echo 'Patch #13 (leaktracer-kinspect-lightweight.patch):'
+Patch #13 (leaktracer-kinspect-lightweight.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-kinspect-lightweight.patch
++ echo 'Patch #14 (leaktracer-posix-memalign.patch):'
+Patch #14 (leaktracer-posix-memalign.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-posix-memalign.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #15 (leaktracer-pid.patch):'
+Patch #15 (leaktracer-pid.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-pid.patch
++ echo 'Patch #16 (leaktracer-new-nothrow.patch):'
+Patch #16 (leaktracer-new-nothrow.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-new-nothrow.patch
++ /usr/bin/patch -s -p0
++ echo 'Patch #17 (leaktracer-new-nothrow-test.patch):'
+Patch #17 (leaktracer-new-nothrow-test.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-new-nothrow-test.patch
++ echo 'Patch #20 (leaktracer-raw-function.patch):'
+Patch #20 (leaktracer-raw-function.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-raw-function.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #21 (leaktracer-allocate-size.patch):'
+Patch #21 (leaktracer-allocate-size.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-allocate-size.patch
++ echo 'Patch #30 (leaktracer-api-allocate-size.patch):'
+Patch #30 (leaktracer-api-allocate-size.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-api-allocate-size.patch
++ echo 'Patch #31 (leaktracer-output-log-fix.patch):'
+Patch #31 (leaktracer-output-log-fix.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-output-log-fix.patch
++ echo 'Patch #32 (leaktracer-time-interval-measurement-dev.patch):'
+Patch #32 (leaktracer-time-interval-measurement-dev.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/leaktracer-time-interval-measurement-dev.patch
++ echo 'Patch #33 (time-interval-dynamic-abort-test.patch):'
+Patch #33 (time-interval-dynamic-abort-test.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/time-interval-dynamic-abort-test.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.pTCBQc
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd LeakTracer
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make ARCHS=__arm__ D_FLAGS=-L/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+arm-sony-linux-gnueabi-g++ -tarmv7a -fPIC -c -g -pipe -Wall -W -DTHREAD_SAVE -D_REENTRANT -D_THREAD_SAFE -pthread  -D__arm__ LeakTracer.cc -o LeakTracer.o
+In file included from LeakTracer.cc:44:0:
+LeakTracer.h: In function 'bool cache_maps(pid_t)':
+LeakTracer.h:83:44: warning: format '%s' expects argument of type 'char*', but argument 9 has type 'char (*)[128]' [-Wformat]
+LeakTracer.cc: In member function 'void LeakTracer::registerFree(void*, LeakKind, void*, void*)':
+LeakTracer.cc:929:12: warning: enumeration value 'LT_posix_memalign' not handled in switch [-Wswitch]
+LeakTracer.cc: At global scope:
+LeakTracer.cc:864:6: warning: unused parameter 'fp' [-Wunused-parameter]
+LeakTracer.cc: In function 'int posix_memalign(void**, size_t, size_t)':
+LeakTracer.cc:1475:11: warning: converting to non-pointer type 'int' from NULL [-Wconversion-null]
+LeakTracer.cc: In function 'void* timerFunc(void*)':
+LeakTracer.cc:1502:1: warning: no return statement in function returning non-void [-Wreturn-type]
+LeakTracer.cc: At global scope:
+LeakTracer.cc:1484:8: warning: unused parameter 'arg' [-Wunused-parameter]
+arm-sony-linux-gnueabi-g++ -tarmv7a -ldl -g -pipe -Wall -W -DTHREAD_SAVE -D_REENTRANT -D_THREAD_SAFE -pthread  -shared -o LeakTracer.so LeakTracer.o
+arm-sony-linux-gnueabi-g++ -tarmv7a -g leak-read.cc -o leak-read
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.VyBzLH
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd LeakTracer
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include
++ install -m 755 LeakCheck /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/LeakCheck
++ install -m 755 LeakInspect /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/LeakInspect
++ install -m 755 leak-analyze /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/leak-analyze
++ install -m 755 leak-read /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/leak-read
++ install -m 755 LeakTracer.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libLeakTracer.so
++ install -m 755 leaktracer_info.h /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/leaktracer_info.h
+Processing files: arm-sony-linux-gnueabi-armv7a-devtool-leaktracer-2.4-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-devtool-leaktracer-2.4-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-devtool-leaktracer-2.4-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OwNq6c
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd LeakTracer
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-leaktracer-2.4-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/LeakTracer to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..........done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 12:29:13 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /tmp/LeakTracer/ || echo 'COMMAND''ERROR'
+-bash-3.2# spawn -nottyinit sh -c [ -f /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/perl ] && echo "Perl File exists" || echo "0"
+Perl File exists
+echo "perl exists" 
+perl exists
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# make test CC=/tool/usr/bin/g++
+make: Warning: File `Makefile' has modification time 1.4e+09 s in the future
+/tool/usr/bin/g++ -g -pipe -Wall -W -DTHREAD_SAVE -D_REENTRANT -D_THREAD_SAFE -pthread  test.cc -o test
+test.cc: In function 'void foo()':
+test.cc:6:10: warning: unused variable 'x' [-Wunused-variable]
+test.cc: In function 'void foo_new_nothrow()':
+test.cc:10:10: warning: unused variable 'y' [-Wunused-variable]
+test.cc: In function 'void foo_array_new_nothrow()':
+test.cc:14:10: warning: unused variable 'z' [-Wunused-variable]
+./test
+*** glibc detected *** ./test: double free or corruption (fasttop): 0x00011008 ***
+======= Backtrace: =========
+/lib/libc.so.6(+0x6dd6c)[0x4030ad6c]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+./test[0x8878]
+======= Memory map: ========
+00008000-00009000 r-xp 00000000 00:0c 13898293   /tmp/LeakTracer/test
+00010000-00011000 rw-p 00000000 00:0c 13898293   /tmp/LeakTracer/test
+00011000-00032000 rw-p 00000000 00:00 0          [heap]
+400f5000-40114000 r-xp 00000000 00:0c 13509321   /lib/ld-2.16.so
+40114000-40118000 rw-p 00000000 00:00 0 
+4011b000-4011c000 r--p 0001e000 00:0c 13509321   /lib/ld-2.16.so
+4011c000-4011d000 rw-p 0001f000 00:0c 13509321   /lib/ld-2.16.so
+4011d000-401d2000 r-xp 00000000 00:0c 12884437   /usr/lib/libstdc++.so.6.0.17
+401d2000-401d9000 ---p 000b5000 00:0c 12884437   /usr/lib/libstdc++.so.6.0.17
+401d9000-401dd000 r--p 000b4000 00:0c 12884437   /usr/lib/libstdc++.so.6.0.17
+401dd000-401df000 rw-p 000b8000 00:0c 12884437   /usr/lib/libstdc++.so.6.0.17
+401df000-401e5000 rw-p 00000000 00:00 0 
+401e5000-4024f000 r-xp 00000000 00:0c 13509325   /lib/libm-2.16.so
+4024f000-40256000 ---p 0006a000 00:0c 13509325   /lib/libm-2.16.so
+40256000-40257000 r--p 00069000 00:0c 13509325   /lib/libm-2.16.so
+40257000-40258000 rw-p 0006a000 00:0c 13509325   /lib/libm-2.16.so
+40258000-40276000 r-xp 00000000 00:0c 12883964   /usr/lib/libgcc_s.so.1
+40276000-4027d000 ---p 0001e000 00:0c 12883964   /usr/lib/libgcc_s.so.1
+4027d000-4027e000 rw-p 0001d000 00:0c 12883964   /usr/lib/libgcc_s.so.1
+4027e000-40292000 r-xp 00000000 00:0c 13509495   /lib/libpthread-2.16.so
+40292000-40299000 ---p 00014000 00:0c 13509495   /lib/libpthread-2.16.so
+40299000-4029a000 r--p 00013000 00:0c 13509495   /lib/libpthread-2.16.so
+4029a000-4029b000 rw-p 00014000 00:0c 13509495   /lib/libpthread-2.16.so
+4029b000-4029d000 rw-p 00000000 00:00 0 
+4029d000-403c1000 r-xp 00000000 00:0c 13509324   /lib/libc-2.16.so
+403c1000-403c8000 ---p 00124000 00:0c 13509324   /lib/libc-2.16.so
+403c8000-403ca000 r--p 00123000 00:0c 13509324   /lib/libc-2.16.so
+403ca000-403cb000 rw-p 00125000 00:0c 13509324   /lib/libc-2.16.so
+403cb000-403ce000 rw-p 00000000 00:00 0 
+bedce000-bedef000 rw-p 00000000 00:00 0          [stack]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+make: *** [test] Aborted
+-bash-3.2# export LD_LIBRARY_PATH=/tool/usr/lib
+-bash-3.2# export LT_INT_DIR=/tmp/LeakTracer
+-bash-3.2# rm -f leak.out.* ; rm -f leak.log.*
+-bash-3.2# /tool/usr/bin/LeakCheck ./test || echo 'COMMAND''ERROR'
+LeakTracer: to show LeakTracer internal data, type leak-read /tmp/LeakTracer/leak.log.1358 
+LeakTracer: can not show misc info 
+set correct directory to env LT_MISC_DIR
+-bash-3.2# pwd ; ls 
+/tmp/LeakTracer
+cp -r leak.out.* leak.out ; cat leak.out ; echo 'COMMAND''DONE'
+LeakCheck              LeakTracer.cc.orig     Makefile               leak-analyze           leak.out.1358          testAbortCausation.cc
+LeakInspect            LeakTracer.h           README                 leak-read              leaktracer_info.h      testTimer.cc
+LeakTracer.cc          LeakTracer.o           README.html            leak-read.cc           test
+LeakTracer.cc.org      LeakTracer.so          VERSION                leak.log.1358          test.cc
+-bash-3.2# cp -r leak.out.* leak.out ; cat leak.out ; echo 'COMMAND''DONE'
+# starting Thu Jan  1 01:58:38 1970
+
+# memory overrun protection of 4 Bytes
+# initializing new memory with 0xAA
+# sweeping deleted memory with 0xEE
+# aborts on OVERWRITE_MEMORY 
+# thread save
+# Leak measurement starts at start of execution
+# Leak measurement ends at end of execution
+S     0x87f4     0x8870  # new[] but delete ; size 40
+D     0x8878             # delete non alloc or twice pointer    0x11038
+D 0xb6d6e27c             # delete non alloc or twice pointer    0x11020
+# finished Thu Jan  1 01:58:39 1970
+# LeakReport
+# from new @ |      size  # Pointer Addr
+L 0xb6d5a684          15  # 0x11170
+L     0x8804           4  # 0x11068
+L     0x8844          64  # 0x11098
+L     0x8780           4  # 0x110e0
+L     0x8780           4  # 0x110f0
+L     0x87a8           4  # 0x11100
+L     0x87a8           4  # 0x11110
+L     0x87d0          32  # 0x11120
+L     0x87d0          32  # 0x11148
+# total allocation requests:     12 ; max. mem used 0 kBytes
+# leak    163 Bytes     :-(
+COMMANDDONE
+-bash-3.2# /tool/usr/bin/leak-analyze ./test || echo 'COMMAND''ERROR'
+Gathered 11 (8 unique) points of data.
+Reading symbols from /tmp/LeakTracer/test...done.
+(gdb) 
+#-- Alloc: Different allocation schemes
+alloc here :0x87f4 is in main() (test.cc:18).
+17      int main() {
+18          int *z = new int[10];
+..free here :0x8870 is in main() (test.cc:41).
+41          delete z;   // delete value twice
+
+#-- Leak: counted 2x / total Size: 8
+0x8780 is in foo() (test.cc:6).
+5       void foo() {
+6           int *x = new int;
+
+#-- Leak: counted 2x / total Size: 8
+0x87a8 is in foo_new_nothrow() (test.cc:10).
+9       void foo_new_nothrow() {
+10          int *y = new(std::nothrow)int;
+
+#-- Leak: counted 2x / total Size: 64
+0x87d0 is in foo_array_new_nothrow() (test.cc:14).
+13      void foo_array_new_nothrow() {
+14          int *z = new(std::nothrow)int[8];
+
+#-- Leak: counted 1x / total Size: 4
+0x8804 is in main() (test.cc:19).
+18          int *z = new int[10];
+19          char *q = new char[4];
+
+#-- Leak: counted 1x / total Size: 64
+0x8844 is in main() (test.cc:29).
+28      
+29          foo();
+
+#-- delete on not allocated memory: counted 1x
+0x8878 is in main() (test.cc:42).
+41          delete z;   // delete value twice
+42      }
+
+#-- Leak: counted 1x / total Size: 15
+No source file for address 0xb6d5a684.
+
+#-- delete on not allocated memory: counted 1x
+No source file for address 0xb6d6e27c.
+-bash-3.2# /tool/usr/bin/leak-read leak.log.* || echo 'COMMAND''ERROR'
+addr 0x00011170 (pid 1358): size 15, type malloc
+ (0xb6d5a684) -> (0x00000000) -> (0xbed7eb84) -> (0x00000000) -> (0x00000000)
+addr 0x00011068 (pid 1358): size 4, type new[]
+ (0x00008804) -> (0x00000000) -> (0xbed7eb84) -> (0x00000000) -> (0x00000000)
+addr 0x00011098 (pid 1358): size 64, type posix_memalign
+ (0x00008844) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x000110e0 (pid 1358): size 4, type new
+ (0x00008780) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x000110f0 (pid 1358): size 4, type new
+ (0x00008780) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x00011100 (pid 1358): size 4, type new(std::nothrow)
+ (0x000087a8) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x00011110 (pid 1358): size 4, type new(std::nothrow)
+ (0x000087a8) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x00011120 (pid 1358): size 32, type new(std::nothrow)[]
+ (0x000087d0) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+addr 0x00011148 (pid 1358): size 32, type new(std::nothrow)[]
+ (0x000087d0) -> (0x00000000) -> (0x00000000) -> (0x00000000) -> (0x00000000)
+-bash-3.2# TEST_OK, check this log !!

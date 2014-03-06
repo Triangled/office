@@ -1,0 +1,828 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+nginx : 1.2.7
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-nginx-1.2.7-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-nginx  warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  9%)#                                           (  9%)##                                          (  9%)###                                         (  9%)####                                        ( 18%)#####                                       ( 18%)######                                      ( 18%)#######                                     ( 18%)########                                    ( 27%)#########                                   ( 27%)##########                                  ( 27%)###########                                 ( 27%)############                                ( 36%)#############                               ( 36%)##############                              ( 36%)###############                             ( 36%)################                            ( 45%)#################                           ( 45%)##################                          ( 45%)###################                         ( 45%)####################                        ( 54%)#####################                       ( 54%)######################                      ( 54%)#######################                     ( 54%)########################                    ( 63%)#########################                   ( 63%)##########################                  ( 63%)###########################                 ( 63%)############################                ( 72%)#############################               ( 72%)##############################              ( 72%)###############################             ( 72%)################################            ( 81%)#################################           ( 81%)##################################          ( 81%)###################################         ( 89%)####################################        ( 89%)#####################################       ( 89%)######################################      ( 89%)#######################################     ( 98%)########################################    ( 98%)#########################################   ( 98%)##########################################  ( 98%)########################################### (100%)########################################### [100%]
+warning: group rpmuser does not exist - using root
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-nginx.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ItgXPF
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf nginx-1.2.7
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/nginx-1.2.7.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd nginx-1.2.7
++ echo 'Patch #0 (nginx-1.2.7-cross-compile.patch):'
+Patch #0 (nginx-1.2.7-cross-compile.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/nginx-1.2.7-cross-compile.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.yuNOTL
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd nginx-1.2.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export cross_compiling=yes
++ cross_compiling=yes
++ export ngx_cache_NGX_HAVE_STRERROR_R=no
++ ngx_cache_NGX_HAVE_STRERROR_R=no
++ export ngx_cache_NGX_SYS_NERR=sys_nerr
++ ngx_cache_NGX_SYS_NERR=sys_nerr
++ export ngx_cache_sizeof_int=4
++ ngx_cache_sizeof_int=4
++ export ngx_cache_sizeof_long=4
++ ngx_cache_sizeof_long=4
++ export ngx_cache_sizeof_long_long=8
++ ngx_cache_sizeof_long_long=8
++ export ngx_cache_sizeof_void__=4
++ ngx_cache_sizeof_void__=4
++ export ngx_cache_sizeof_sig_atomic_t=4
++ ngx_cache_sizeof_sig_atomic_t=4
++ export ngx_cache_sizeof_size_t=4
++ ngx_cache_sizeof_size_t=4
++ export ngx_cache_sizeof_off_t=8
++ ngx_cache_sizeof_off_t=8
++ export ngx_cache_sizeof_time_t=4
++ ngx_cache_sizeof_time_t=4
++ ./configure '--with-cc=arm-sony-linux-gnueabi-gcc -tarmv7a' --crossbuild=linux --prefix=/usr --conf-path=/var/nginx/nginx.conf --with-ipv6
+building for linux
+checking for C compiler ... found
+ + using GNU C compiler
+checking for gcc builtin atomic operations ... found
+checking for C99 variadic macros ... found
+checking for gcc variadic macros ... found
+checking for unistd.h ... found
+checking for inttypes.h ... found
+checking for limits.h ... found
+checking for sys/filio.h ... not found
+checking for sys/param.h ... found
+checking for sys/mount.h ... found
+checking for sys/statvfs.h ... found
+checking for crypt.h ... found
+checking for linux specific features
+checking for nobody group ... not found
+checking for nogroup group ... found
+checking for poll() ... found
+checking for /dev/poll ... not found
+checking for kqueue ... not found
+checking for crypt() ... not found
+checking for crypt() in libcrypt ... found
+checking for F_READAHEAD ... not found
+checking for posix_fadvise() ... found
+checking for O_DIRECT ... not found
+checking for F_NOCACHE ... not found
+checking for directio() ... not found
+checking for statfs() ... not found
+checking for statvfs() ... found
+checking for dlopen() ... not found
+checking for dlopen() in libdl ... found
+checking for sched_yield() ... found
+checking for SO_SETFIB ... not found
+checking for SO_ACCEPTFILTER ... not found
+checking for TCP_DEFER_ACCEPT ... found
+checking for TCP_KEEPIDLE, TCP_KEEPINTVL, TCP_KEEPCNT ... found
+checking for TCP_INFO ... found
+checking for accept4() ... found
+checking for int size ... 4 bytes
+checking for long size ... 4 bytes
+checking for long long size ... 8 bytes
+checking for void * size ... 4 bytes
+checking for uint64_t ... found
+checking for sig_atomic_t ... found
+checking for sig_atomic_t size ... 4 bytes
+checking for socklen_t ... found
+checking for in_addr_t ... found
+checking for in_port_t ... found
+checking for rlim_t ... found
+checking for uintptr_t ... uintptr_t found
+checking for system byte ordering ... big endian
+checking for size_t size ... 4 bytes
+checking for off_t size ... 8 bytes
+checking for time_t size ... 4 bytes
+checking for AF_INET6 ... found
+checking for setproctitle() ... not found
+checking for pread() ... found
+checking for pwrite() ... found
+checking for sys_nerr ... found
+checking for localtime_r() ... found
+checking for posix_memalign() ... found
+checking for memalign() ... found
+checking for mmap(MAP_ANON|MAP_SHARED) ... found
+checking for mmap("/dev/zero", MAP_SHARED) ... found
+checking for System V shared memory ... found
+checking for POSIX semaphores ... not found
+checking for POSIX semaphores in libpthread ... found
+checking for struct msghdr.msg_control ... found
+checking for ioctl(FIONBIO) ... found
+checking for struct tm.tm_gmtoff ... found
+checking for struct dirent.d_namlen ... not found
+checking for struct dirent.d_type ... found
+checking for sysconf(_SC_NPROCESSORS_ONLN) ... found
+checking for openat(), fstatat() ... found
+checking for PCRE library ... found
+checking for PCRE JIT support ... found
+checking for system md library ... not found
+checking for system md5 library ... not found
+checking for OpenSSL md5 crypto library ... found
+checking for sha1 in system md library ... not found
+checking for OpenSSL sha1 crypto library ... found
+checking for zlib library ... found
+creating objs/Makefile
+
+Configuration summary
+  + using system PCRE library
+  + OpenSSL library is not used
+  + md5: using system crypto library
+  + sha1: using system crypto library
+  + using system zlib library
+
+  nginx path prefix: "/usr"
+  nginx binary file: "/usr/sbin/nginx"
+  nginx configuration prefix: "/var/nginx"
+  nginx configuration file: "/var/nginx/nginx.conf"
+  nginx pid file: "/usr/logs/nginx.pid"
+  nginx error log file: "/usr/logs/error.log"
+  nginx http access log file: "/usr/logs/access.log"
+  nginx http client request body temporary files: "client_body_temp"
+  nginx http proxy temporary files: "proxy_temp"
+  nginx http fastcgi temporary files: "fastcgi_temp"
+  nginx http uwsgi temporary files: "uwsgi_temp"
+  nginx http scgi temporary files: "scgi_temp"
+
++ make
+make -f objs/Makefile
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/nginx.o \
+		src/core/nginx.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_log.o \
+		src/core/ngx_log.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_palloc.o \
+		src/core/ngx_palloc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_array.o \
+		src/core/ngx_array.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_list.o \
+		src/core/ngx_list.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_hash.o \
+		src/core/ngx_hash.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_buf.o \
+		src/core/ngx_buf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_queue.o \
+		src/core/ngx_queue.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_output_chain.o \
+		src/core/ngx_output_chain.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_string.o \
+		src/core/ngx_string.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_parse.o \
+		src/core/ngx_parse.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_inet.o \
+		src/core/ngx_inet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_file.o \
+		src/core/ngx_file.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_crc32.o \
+		src/core/ngx_crc32.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_murmurhash.o \
+		src/core/ngx_murmurhash.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_md5.o \
+		src/core/ngx_md5.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_rbtree.o \
+		src/core/ngx_rbtree.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_radix_tree.o \
+		src/core/ngx_radix_tree.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_slab.o \
+		src/core/ngx_slab.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_times.o \
+		src/core/ngx_times.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_shmtx.o \
+		src/core/ngx_shmtx.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_connection.o \
+		src/core/ngx_connection.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_cycle.o \
+		src/core/ngx_cycle.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_spinlock.o \
+		src/core/ngx_spinlock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_cpuinfo.o \
+		src/core/ngx_cpuinfo.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_conf_file.o \
+		src/core/ngx_conf_file.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_resolver.o \
+		src/core/ngx_resolver.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_open_file_cache.o \
+		src/core/ngx_open_file_cache.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_crypt.o \
+		src/core/ngx_crypt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event.o \
+		src/event/ngx_event.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_timer.o \
+		src/event/ngx_event_timer.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_posted.o \
+		src/event/ngx_event_posted.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_busy_lock.o \
+		src/event/ngx_event_busy_lock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_accept.o \
+		src/event/ngx_event_accept.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_connect.o \
+		src/event/ngx_event_connect.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/ngx_event_pipe.o \
+		src/event/ngx_event_pipe.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_time.o \
+		src/os/unix/ngx_time.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_errno.o \
+		src/os/unix/ngx_errno.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_alloc.o \
+		src/os/unix/ngx_alloc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_files.o \
+		src/os/unix/ngx_files.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_socket.o \
+		src/os/unix/ngx_socket.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_recv.o \
+		src/os/unix/ngx_recv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_readv_chain.o \
+		src/os/unix/ngx_readv_chain.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_udp_recv.o \
+		src/os/unix/ngx_udp_recv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_send.o \
+		src/os/unix/ngx_send.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_writev_chain.o \
+		src/os/unix/ngx_writev_chain.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_channel.o \
+		src/os/unix/ngx_channel.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_shmem.o \
+		src/os/unix/ngx_shmem.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_process.o \
+		src/os/unix/ngx_process.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_daemon.o \
+		src/os/unix/ngx_daemon.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_setaffinity.o \
+		src/os/unix/ngx_setaffinity.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_setproctitle.o \
+		src/os/unix/ngx_setproctitle.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_posix_init.o \
+		src/os/unix/ngx_posix_init.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_user.o \
+		src/os/unix/ngx_user.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/os/unix/ngx_process_cycle.o \
+		src/os/unix/ngx_process_cycle.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/modules/ngx_select_module.o \
+		src/event/modules/ngx_select_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/event/modules/ngx_poll_module.o \
+		src/event/modules/ngx_poll_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/src/core/ngx_regex.o \
+		src/core/ngx_regex.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http.o \
+		src/http/ngx_http.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_core_module.o \
+		src/http/ngx_http_core_module.c
+src/http/ngx_http_core_module.c: In function 'ngx_http_core_directio':
+src/http/ngx_http_core_module.c:4469:9: warning: overflow in implicit constant conversion [-Woverflow]
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_special_response.o \
+		src/http/ngx_http_special_response.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_request.o \
+		src/http/ngx_http_request.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_parse.o \
+		src/http/ngx_http_parse.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_header_filter_module.o \
+		src/http/ngx_http_header_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_write_filter_module.o \
+		src/http/ngx_http_write_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_copy_filter_module.o \
+		src/http/ngx_http_copy_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_log_module.o \
+		src/http/modules/ngx_http_log_module.c
+src/http/modules/ngx_http_log_module.c: In function 'ngx_http_log_script_write':
+src/http/modules/ngx_http_log_module.c:492:5: warning: overflow in implicit constant conversion [-Woverflow]
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_request_body.o \
+		src/http/ngx_http_request_body.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_variables.o \
+		src/http/ngx_http_variables.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_script.o \
+		src/http/ngx_http_script.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_upstream.o \
+		src/http/ngx_http_upstream.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_upstream_round_robin.o \
+		src/http/ngx_http_upstream_round_robin.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_parse_time.o \
+		src/http/ngx_http_parse_time.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_static_module.o \
+		src/http/modules/ngx_http_static_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_index_module.o \
+		src/http/modules/ngx_http_index_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_chunked_filter_module.o \
+		src/http/modules/ngx_http_chunked_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_range_filter_module.o \
+		src/http/modules/ngx_http_range_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_headers_filter_module.o \
+		src/http/modules/ngx_http_headers_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_not_modified_filter_module.o \
+		src/http/modules/ngx_http_not_modified_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_busy_lock.o \
+		src/http/ngx_http_busy_lock.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_file_cache.o \
+		src/http/ngx_http_file_cache.c
+src/http/ngx_http_file_cache.c: In function 'ngx_http_file_cache_open':
+src/http/ngx_http_file_cache.c:330:5: warning: overflow in implicit constant conversion [-Woverflow]
+src/http/ngx_http_file_cache.c: In function 'ngx_http_file_cache_set_slot':
+src/http/ngx_http_file_cache.c:1617:5: warning: overflow in implicit constant conversion [-Woverflow]
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_gzip_filter_module.o \
+		src/http/modules/ngx_http_gzip_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/ngx_http_postpone_filter_module.o \
+		src/http/ngx_http_postpone_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_ssi_filter_module.o \
+		src/http/modules/ngx_http_ssi_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_charset_filter_module.o \
+		src/http/modules/ngx_http_charset_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_userid_filter_module.o \
+		src/http/modules/ngx_http_userid_filter_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_autoindex_module.o \
+		src/http/modules/ngx_http_autoindex_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_auth_basic_module.o \
+		src/http/modules/ngx_http_auth_basic_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_access_module.o \
+		src/http/modules/ngx_http_access_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_limit_conn_module.o \
+		src/http/modules/ngx_http_limit_conn_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_limit_req_module.o \
+		src/http/modules/ngx_http_limit_req_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_geo_module.o \
+		src/http/modules/ngx_http_geo_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_map_module.o \
+		src/http/modules/ngx_http_map_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_split_clients_module.o \
+		src/http/modules/ngx_http_split_clients_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_referer_module.o \
+		src/http/modules/ngx_http_referer_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_rewrite_module.o \
+		src/http/modules/ngx_http_rewrite_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_proxy_module.o \
+		src/http/modules/ngx_http_proxy_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_fastcgi_module.o \
+		src/http/modules/ngx_http_fastcgi_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_uwsgi_module.o \
+		src/http/modules/ngx_http_uwsgi_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_scgi_module.o \
+		src/http/modules/ngx_http_scgi_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_memcached_module.o \
+		src/http/modules/ngx_http_memcached_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_empty_gif_module.o \
+		src/http/modules/ngx_http_empty_gif_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_browser_module.o \
+		src/http/modules/ngx_http_browser_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
+		src/http/modules/ngx_http_upstream_ip_hash_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
+		src/http/modules/ngx_http_upstream_least_conn_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs -I src/http -I src/http/modules \
+		-o objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
+		src/http/modules/ngx_http_upstream_keepalive_module.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2  -I src/core -I src/event -I src/event/modules -I src/os/unix -I objs \
+		-o objs/ngx_modules.o \
+		objs/ngx_modules.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -o objs/nginx \
+	objs/src/core/nginx.o \
+	objs/src/core/ngx_log.o \
+	objs/src/core/ngx_palloc.o \
+	objs/src/core/ngx_array.o \
+	objs/src/core/ngx_list.o \
+	objs/src/core/ngx_hash.o \
+	objs/src/core/ngx_buf.o \
+	objs/src/core/ngx_queue.o \
+	objs/src/core/ngx_output_chain.o \
+	objs/src/core/ngx_string.o \
+	objs/src/core/ngx_parse.o \
+	objs/src/core/ngx_inet.o \
+	objs/src/core/ngx_file.o \
+	objs/src/core/ngx_crc32.o \
+	objs/src/core/ngx_murmurhash.o \
+	objs/src/core/ngx_md5.o \
+	objs/src/core/ngx_rbtree.o \
+	objs/src/core/ngx_radix_tree.o \
+	objs/src/core/ngx_slab.o \
+	objs/src/core/ngx_times.o \
+	objs/src/core/ngx_shmtx.o \
+	objs/src/core/ngx_connection.o \
+	objs/src/core/ngx_cycle.o \
+	objs/src/core/ngx_spinlock.o \
+	objs/src/core/ngx_cpuinfo.o \
+	objs/src/core/ngx_conf_file.o \
+	objs/src/core/ngx_resolver.o \
+	objs/src/core/ngx_open_file_cache.o \
+	objs/src/core/ngx_crypt.o \
+	objs/src/event/ngx_event.o \
+	objs/src/event/ngx_event_timer.o \
+	objs/src/event/ngx_event_posted.o \
+	objs/src/event/ngx_event_busy_lock.o \
+	objs/src/event/ngx_event_accept.o \
+	objs/src/event/ngx_event_connect.o \
+	objs/src/event/ngx_event_pipe.o \
+	objs/src/os/unix/ngx_time.o \
+	objs/src/os/unix/ngx_errno.o \
+	objs/src/os/unix/ngx_alloc.o \
+	objs/src/os/unix/ngx_files.o \
+	objs/src/os/unix/ngx_socket.o \
+	objs/src/os/unix/ngx_recv.o \
+	objs/src/os/unix/ngx_readv_chain.o \
+	objs/src/os/unix/ngx_udp_recv.o \
+	objs/src/os/unix/ngx_send.o \
+	objs/src/os/unix/ngx_writev_chain.o \
+	objs/src/os/unix/ngx_channel.o \
+	objs/src/os/unix/ngx_shmem.o \
+	objs/src/os/unix/ngx_process.o \
+	objs/src/os/unix/ngx_daemon.o \
+	objs/src/os/unix/ngx_setaffinity.o \
+	objs/src/os/unix/ngx_setproctitle.o \
+	objs/src/os/unix/ngx_posix_init.o \
+	objs/src/os/unix/ngx_user.o \
+	objs/src/os/unix/ngx_process_cycle.o \
+	objs/src/event/modules/ngx_select_module.o \
+	objs/src/event/modules/ngx_poll_module.o \
+	objs/src/core/ngx_regex.o \
+	objs/src/http/ngx_http.o \
+	objs/src/http/ngx_http_core_module.o \
+	objs/src/http/ngx_http_special_response.o \
+	objs/src/http/ngx_http_request.o \
+	objs/src/http/ngx_http_parse.o \
+	objs/src/http/ngx_http_header_filter_module.o \
+	objs/src/http/ngx_http_write_filter_module.o \
+	objs/src/http/ngx_http_copy_filter_module.o \
+	objs/src/http/modules/ngx_http_log_module.o \
+	objs/src/http/ngx_http_request_body.o \
+	objs/src/http/ngx_http_variables.o \
+	objs/src/http/ngx_http_script.o \
+	objs/src/http/ngx_http_upstream.o \
+	objs/src/http/ngx_http_upstream_round_robin.o \
+	objs/src/http/ngx_http_parse_time.o \
+	objs/src/http/modules/ngx_http_static_module.o \
+	objs/src/http/modules/ngx_http_index_module.o \
+	objs/src/http/modules/ngx_http_chunked_filter_module.o \
+	objs/src/http/modules/ngx_http_range_filter_module.o \
+	objs/src/http/modules/ngx_http_headers_filter_module.o \
+	objs/src/http/modules/ngx_http_not_modified_filter_module.o \
+	objs/src/http/ngx_http_busy_lock.o \
+	objs/src/http/ngx_http_file_cache.o \
+	objs/src/http/modules/ngx_http_gzip_filter_module.o \
+	objs/src/http/ngx_http_postpone_filter_module.o \
+	objs/src/http/modules/ngx_http_ssi_filter_module.o \
+	objs/src/http/modules/ngx_http_charset_filter_module.o \
+	objs/src/http/modules/ngx_http_userid_filter_module.o \
+	objs/src/http/modules/ngx_http_autoindex_module.o \
+	objs/src/http/modules/ngx_http_auth_basic_module.o \
+	objs/src/http/modules/ngx_http_access_module.o \
+	objs/src/http/modules/ngx_http_limit_conn_module.o \
+	objs/src/http/modules/ngx_http_limit_req_module.o \
+	objs/src/http/modules/ngx_http_geo_module.o \
+	objs/src/http/modules/ngx_http_map_module.o \
+	objs/src/http/modules/ngx_http_split_clients_module.o \
+	objs/src/http/modules/ngx_http_referer_module.o \
+	objs/src/http/modules/ngx_http_rewrite_module.o \
+	objs/src/http/modules/ngx_http_proxy_module.o \
+	objs/src/http/modules/ngx_http_fastcgi_module.o \
+	objs/src/http/modules/ngx_http_uwsgi_module.o \
+	objs/src/http/modules/ngx_http_scgi_module.o \
+	objs/src/http/modules/ngx_http_memcached_module.o \
+	objs/src/http/modules/ngx_http_empty_gif_module.o \
+	objs/src/http/modules/ngx_http_browser_module.o \
+	objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
+	objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
+	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
+	objs/ngx_modules.o \
+	-lpthread -lcrypt -lpcre -lcrypto -lcrypto -lz
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
+make -f objs/Makefile manpage
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
+sed -e "s|%%PREFIX%%|/usr|" \
+		-e "s|%%PID_PATH%%|/usr/logs/nginx.pid|" \
+		-e "s|%%CONF_PATH%%|/var/nginx/nginx.conf|" \
+		-e "s|%%ERROR_LOG_PATH%%|/usr/logs/error.log|" \
+		< man/nginx.8 > objs/nginx.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ZGb6og
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd nginx-1.2.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
+make -f objs/Makefile install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr' || mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin' 		|| mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin'
+test ! -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/nginx' 		|| mv '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/nginx' 			'/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/nginx.old'
+cp objs/nginx '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/nginx'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx' 		|| mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/koi-win '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/koi-utf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/win-utf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/mime.types' 		|| cp conf/mime.types '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/mime.types '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/mime.types.default'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/fastcgi_params' 		|| cp conf/fastcgi_params '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/fastcgi_params 		'/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/fastcgi_params.default'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/fastcgi.conf' 		|| cp conf/fastcgi.conf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/fastcgi.conf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/fastcgi.conf.default'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/uwsgi_params' 		|| cp conf/uwsgi_params '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/uwsgi_params 		'/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/uwsgi_params.default'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/scgi_params' 		|| cp conf/scgi_params '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx'
+cp conf/scgi_params 		'/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/scgi_params.default'
+test -f '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/nginx.conf' 		|| cp conf/nginx.conf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/nginx.conf'
+cp conf/nginx.conf '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/nginx/nginx.conf.default'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs' 		|| mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs' || 		mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/html' 		|| cp -R html '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr'
+test -d '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs' || 		mkdir -p '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/logs'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/nginx-1.2.7'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-nginx-1.2.7-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-nginx-1.2.7-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-nginx-1.2.7-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.Ib6AfL
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd nginx-1.2.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-nginx-1.2.7-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/nginx-1.2.7 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 15:07:06 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# mkdir /usr/html
+mkdir: can't create directory '/usr/html': File exists
+-bash-3.2# cd /usr/html
+-bash-3.2# echo "<HTML>" >> index.html
+-bash-3.2# echo "<BODY>" >> index.html
+-bash-3.2# echo HELLO_NGINX >> index.html
+-bash-3.2# echo "</BODY>" >> index.html
+-bash-3.2# echo "</HTML>" >> index.html
+-bash-3.2# mkdir /usr/logs
+-bash-3.2# cd /tmp/nginx-1.2.7/ || echo 'COMMAND''ERROR'
+-bash-3.2# nginx
+-bash-3.2# nginx -v
+nginx version: nginx/1.2.7
+-bash-3.2# nginx -t
+nginx: the configuration file /var/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/nginx/nginx.conf test is successful
+-bash-3.2# curl http://10.0.6.39/ | tee /tmp/nginx_test.out
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   654  100   654    0     0  14201      0 --:--:-- --:--:-- --:--:-- 27250
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+<HTML>
+<BODY>
+HELLO_NGINX
+</BODY>
+</HTML>
+-bash-3.2# rm /usr/html/index.html
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/nginx_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+nginx : TEST_OK

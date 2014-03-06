@@ -1,0 +1,945 @@
+rpmuser@Triangle:~/MAIN/dist/pkg/tcp-wrappers/test$ sudo ./tcp-wrappers-ptest.exp $TEST_SRPM_DIR_RELDEV/sony-target-dev-acl-2.2.39-11000001.src.rpm | tee 2>&1 ~/log_files/log_auto/tcp_auto.log
+tee: /home/rpmuser/log_files/log_auto/tcp_auto.log: Permission denied
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.1-RC4/Tools_Userland/SRPMS/sony-target-dev-acl-2.2.39-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-acl    warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-acl.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.7NJEyg
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf acl-2.2.39
++ /bin/tar -xvvf -
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/acl_2.2.39.tar.gz
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/build/
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/build/rpm/
+-r--r--r-- nathans/999     861 2006-06-20 12:21 acl-2.2.39/build/rpm/macros.template
+-r--r--r-- nathans/999     739 2006-06-20 12:21 acl-2.2.39/build/rpm/rpm-2.rc.template
+-r--r--r-- nathans/999    2216 2006-06-20 12:21 acl-2.2.39/build/rpm/Makefile
+-r--r--r-- nathans/999    2220 2006-06-20 12:21 acl-2.2.39/build/rpm/acl.spec.in
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/build/tar/
+-r--r--r-- nathans/999     544 2006-06-20 12:21 acl-2.2.39/build/tar/Makefile
+-r--r--r-- nathans/999    1419 2006-06-20 12:21 acl-2.2.39/build/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/chacl/
+-r--r--r-- nathans/999     394 2006-06-20 12:21 acl-2.2.39/chacl/Makefile
+-r--r--r-- nathans/999    8525 2006-06-20 12:21 acl-2.2.39/chacl/chacl.c
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/debian/
+-r--r--r-- nathans/999     737 2006-06-20 12:21 acl-2.2.39/debian/copyright
+-r--r--r-- nathans/999     958 2006-06-20 12:21 acl-2.2.39/debian/Makefile
+-r-xr-xr-x nathans/999    1650 2006-06-20 12:21 acl-2.2.39/debian/rules
+-r--r--r-- nathans/root   7619 2006-06-20 12:21 acl-2.2.39/debian/changelog
+-r--r--r-- nathans/root   1266 2006-06-20 12:21 acl-2.2.39/debian/control
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/doc/
+-r--r--r-- nathans/999   44956 2006-06-20 12:21 acl-2.2.39/doc/COPYING
+-r--r--r-- nathans/999    1613 2006-06-20 12:21 acl-2.2.39/doc/INSTALL
+-r--r--r-- nathans/999    3208 2006-06-20 12:21 acl-2.2.39/doc/PORTING
+-r--r--r-- nathans/999     140 2006-06-20 12:21 acl-2.2.39/doc/TODO
+-r--r--r-- nathans/999    2257 2006-06-20 12:21 acl-2.2.39/doc/extensions.txt
+-r--r--r-- nathans/999    2961 2006-06-20 12:21 acl-2.2.39/doc/libacl.txt
+-r--r--r-- nathans/999   10572 2006-06-20 12:21 acl-2.2.39/doc/old-acl.5
+-r--r--r-- nathans/999     596 2006-06-20 12:21 acl-2.2.39/doc/Makefile
+-r--r--r-- nathans/root  16813 2006-06-20 12:21 acl-2.2.39/doc/CHANGES
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/examples/
+-r--r--r-- nathans/999     116 2006-06-20 12:21 acl-2.2.39/examples/Makefile.examples
+-r--r--r-- nathans/999     318 2006-06-20 12:21 acl-2.2.39/examples/README
+-r--r--r-- nathans/999    1220 2006-06-20 12:21 acl-2.2.39/examples/copy-acl.c
+-r--r--r-- nathans/999     738 2006-06-20 12:21 acl-2.2.39/examples/copyperm.c
+-r--r--r-- nathans/999    1631 2006-06-20 12:21 acl-2.2.39/examples/get-acl.c
+-r--r--r-- nathans/999     866 2006-06-20 12:21 acl-2.2.39/examples/set-acl.c
+-r--r--r-- nathans/999     291 2006-06-20 12:21 acl-2.2.39/examples/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/getfacl/
+-r--r--r-- nathans/999    1581 2006-06-20 12:21 acl-2.2.39/getfacl/user_group.c
+-r--r--r-- nathans/999    1027 2006-06-20 12:21 acl-2.2.39/getfacl/user_group.h
+-r--r--r-- nathans/999     456 2006-06-20 12:21 acl-2.2.39/getfacl/Makefile
+-r--r--r-- nathans/root  18521 2006-06-20 12:21 acl-2.2.39/getfacl/getfacl.c
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/include/
+-r--r--r-- nathans/999    3756 2006-06-20 12:21 acl-2.2.39/include/acl.h
+-r--r--r-- nathans/999     779 2006-06-20 12:21 acl-2.2.39/include/acl_ea.h
+-r--r--r-- nathans/999     766 2006-06-20 12:21 acl-2.2.39/include/config.h.in
+-r--r--r-- nathans/999    1896 2006-06-20 12:21 acl-2.2.39/include/libacl.h
+-r--r--r-- nathans/999     340 2006-06-20 12:21 acl-2.2.39/include/misc.h
+-r--r--r-- nathans/999     587 2006-06-20 12:21 acl-2.2.39/include/Makefile
+-r--r--r-- nathans/999    1416 2006-06-20 12:21 acl-2.2.39/include/buildrules
+-r--r--r-- nathans/root   1840 2006-06-20 12:21 acl-2.2.39/include/builddefs.in
+-r--r--r-- nathans/root   4547 2006-06-20 12:21 acl-2.2.39/include/buildmacros
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/libacl/
+-r--r--r-- nathans/999    2346 2006-06-20 12:21 acl-2.2.39/libacl/__acl_from_xattr.c
+-r--r--r-- nathans/999      60 2006-06-20 12:21 acl-2.2.39/libacl/__acl_from_xattr.h
+-r--r--r-- nathans/999    3399 2006-06-20 12:21 acl-2.2.39/libacl/__acl_reorder_obj_p.c
+-r--r--r-- nathans/999    7898 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_any_text.c
+-r--r--r-- nathans/999    1777 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_xattr.c
+-r--r--r-- nathans/999      62 2006-06-20 12:21 acl-2.2.39/libacl/__acl_to_xattr.h
+-r--r--r-- nathans/999    1997 2006-06-20 12:21 acl-2.2.39/libacl/__apply_mask_to_mode.c
+-r--r--r-- nathans/999    2061 2006-06-20 12:21 acl-2.2.39/libacl/__libobj.c
+-r--r--r-- nathans/999    1130 2006-06-20 12:21 acl-2.2.39/libacl/acl_add_perm.c
+-r--r--r-- nathans/999    1705 2006-06-20 12:21 acl-2.2.39/libacl/acl_calc_mask.c
+-r--r--r-- nathans/999    3110 2006-06-20 12:21 acl-2.2.39/libacl/acl_check.c
+-r--r--r-- nathans/999    1081 2006-06-20 12:21 acl-2.2.39/libacl/acl_clear_perms.c
+-r--r--r-- nathans/999    1529 2006-06-20 12:21 acl-2.2.39/libacl/acl_cmp.c
+-r--r--r-- nathans/999    1211 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_entry.c
+-r--r--r-- nathans/999    1613 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_ext.c
+-r--r--r-- nathans/999    1816 2006-06-20 12:21 acl-2.2.39/libacl/acl_copy_int.c
+-r--r--r-- nathans/999    1935 2006-06-20 12:21 acl-2.2.39/libacl/acl_create_entry.c
+-r--r--r-- nathans/999    1131 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_def_file.c
+-r--r--r-- nathans/999    1316 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_entry.c
+-r--r--r-- nathans/999    1138 2006-06-20 12:21 acl-2.2.39/libacl/acl_delete_perm.c
+-r--r--r-- nathans/999    1481 2006-06-20 12:21 acl-2.2.39/libacl/acl_dup.c
+-r--r--r-- nathans/999     980 2006-06-20 12:21 acl-2.2.39/libacl/acl_entries.c
+-r--r--r-- nathans/999    1687 2006-06-20 12:21 acl-2.2.39/libacl/acl_equiv_mode.c
+-r--r--r-- nathans/999    1268 2006-06-20 12:21 acl-2.2.39/libacl/acl_error.c
+-r--r--r-- nathans/999    1376 2006-06-20 12:21 acl-2.2.39/libacl/acl_extended_fd.c
+-r--r--r-- nathans/999    1398 2006-06-20 12:21 acl-2.2.39/libacl/acl_extended_file.c
+-r--r--r-- nathans/999    1848 2006-06-20 12:21 acl-2.2.39/libacl/acl_free.c
+-r--r--r-- nathans/999    1881 2006-06-20 12:21 acl-2.2.39/libacl/acl_from_mode.c
+-r--r--r-- nathans/999    5742 2006-06-20 12:21 acl-2.2.39/libacl/acl_from_text.c
+-r--r--r-- nathans/999    1568 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_entry.c
+-r--r--r-- nathans/999    1816 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_fd.c
+-r--r--r-- nathans/999    2181 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_file.c
+-r--r--r-- nathans/999    1113 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_perm.c
+-r--r--r-- nathans/999    1184 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_permset.c
+-r--r--r-- nathans/999    1331 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_qualifier.c
+-r--r--r-- nathans/999    1130 2006-06-20 12:21 acl-2.2.39/libacl/acl_get_tag_type.c
+-r--r--r-- nathans/999    1975 2006-06-20 12:21 acl-2.2.39/libacl/acl_init.c
+-r--r--r-- nathans/999    1338 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_fd.c
+-r--r--r-- nathans/999    1804 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_file.c
+-r--r--r-- nathans/999    1181 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_permset.c
+-r--r--r-- nathans/999    1328 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_qualifier.c
+-r--r--r-- nathans/999    1297 2006-06-20 12:21 acl-2.2.39/libacl/acl_set_tag_type.c
+-r--r--r-- nathans/999    1052 2006-06-20 12:21 acl-2.2.39/libacl/acl_size.c
+-r--r--r-- nathans/999    1129 2006-06-20 12:21 acl-2.2.39/libacl/acl_to_any_text.c
+-r--r--r-- nathans/999    1046 2006-06-20 12:21 acl-2.2.39/libacl/acl_to_text.c
+-r--r--r-- nathans/999    1065 2006-06-20 12:21 acl-2.2.39/libacl/acl_valid.c
+-r--r--r-- nathans/999     794 2006-06-20 12:21 acl-2.2.39/libacl/byteorder.h
+-r--r--r-- nathans/999    2972 2006-06-20 12:21 acl-2.2.39/libacl/libacl.h
+-r--r--r-- nathans/999    2328 2006-06-20 12:21 acl-2.2.39/libacl/libobj.h
+-r--r--r-- nathans/999     512 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy.h
+-r--r--r-- nathans/999    5047 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy_fd.c
+-r--r--r-- nathans/999    6103 2006-06-20 12:21 acl-2.2.39/libacl/perm_copy_file.c
+-r--r--r-- nathans/999    1456 2006-06-20 12:21 acl-2.2.39/libacl/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/libmisc/
+-r--r--r-- nathans/999    1380 2006-06-20 12:21 acl-2.2.39/libmisc/high_water_alloc.c
+-r--r--r-- nathans/999    1670 2006-06-20 12:21 acl-2.2.39/libmisc/quote.c
+-r--r--r-- nathans/999    1402 2006-06-20 12:21 acl-2.2.39/libmisc/unquote.c
+-r--r--r-- nathans/999     300 2006-06-20 12:21 acl-2.2.39/libmisc/Makefile
+-r--r--r-- nathans/999     731 2006-06-20 12:21 acl-2.2.39/libmisc/next_line.c
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/m4/
+-r--r--r-- nathans/999     489 2006-06-20 12:21 acl-2.2.39/m4/manual_format.m4
+-r--r--r-- nathans/999     726 2006-06-20 12:21 acl-2.2.39/m4/visibility_hidden.m4
+-r--r--r-- nathans/999    3515 2006-06-20 12:21 acl-2.2.39/m4/package_utilies.m4
+-r--r--r-- nathans/root    338 2006-06-20 12:21 acl-2.2.39/m4/Makefile
+-r--r--r-- nathans/root   1836 2006-06-20 12:21 acl-2.2.39/m4/multilib.m4
+-r--r--r-- nathans/root   3067 2006-06-20 12:21 acl-2.2.39/m4/package_attrdev.m4
+-r--r--r-- nathans/root   1313 2006-06-20 12:21 acl-2.2.39/m4/package_globals.m4
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/man/
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/man/man1/
+-r--r--r-- nathans/999    3882 2006-06-20 12:21 acl-2.2.39/man/man1/chacl.1
+-r--r--r-- nathans/999    4914 2006-06-20 12:21 acl-2.2.39/man/man1/getfacl.1
+-r--r--r-- nathans/999    8970 2006-06-20 12:21 acl-2.2.39/man/man1/setfacl.1
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man1/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 07:35 acl-2.2.39/man/man3/
+-r--r--r-- nathans/999    2363 2006-06-20 12:21 acl-2.2.39/man/man3/acl_add_perm.3
+-r--r--r-- nathans/999    3124 2006-06-20 12:21 acl-2.2.39/man/man3/acl_calc_mask.3
+-r--r--r-- nathans/999    3438 2006-06-20 12:21 acl-2.2.39/man/man3/acl_check.3
+-r--r--r-- nathans/999    2163 2006-06-20 12:21 acl-2.2.39/man/man3/acl_clear_perms.3
+-r--r--r-- nathans/999    2240 2006-06-20 12:21 acl-2.2.39/man/man3/acl_cmp.3
+-r--r--r-- nathans/999    2134 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_entry.3
+-r--r--r-- nathans/999    3182 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_ext.3
+-r--r--r-- nathans/999    2580 2006-06-20 12:21 acl-2.2.39/man/man3/acl_copy_int.3
+-r--r--r-- nathans/999    3233 2006-06-20 12:21 acl-2.2.39/man/man3/acl_create_entry.3
+-r--r--r-- nathans/999    2678 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_def_file.3
+-r--r--r-- nathans/999    2428 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_entry.3
+-r--r--r-- nathans/999    2387 2006-06-20 12:21 acl-2.2.39/man/man3/acl_delete_perm.3
+-r--r--r-- nathans/999    2360 2006-06-20 12:21 acl-2.2.39/man/man3/acl_dup.3
+-r--r--r-- nathans/999    2020 2006-06-20 12:21 acl-2.2.39/man/man3/acl_entries.3
+-r--r--r-- nathans/999    2615 2006-06-20 12:21 acl-2.2.39/man/man3/acl_equiv_mode.3
+-r--r--r-- nathans/999    2120 2006-06-20 12:21 acl-2.2.39/man/man3/acl_error.3
+-r--r--r-- nathans/999    3006 2006-06-20 12:21 acl-2.2.39/man/man3/acl_extended_fd.3
+-r--r--r-- nathans/999    3441 2006-06-20 12:21 acl-2.2.39/man/man3/acl_extended_file.3
+-r--r--r-- nathans/999    2276 2006-06-20 12:21 acl-2.2.39/man/man3/acl_free.3
+-r--r--r-- nathans/999    2252 2006-06-20 12:21 acl-2.2.39/man/man3/acl_from_mode.3
+-r--r--r-- nathans/999    2655 2006-06-20 12:21 acl-2.2.39/man/man3/acl_from_text.3
+-r--r--r-- nathans/999    3810 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_entry.3
+-r--r--r-- nathans/999    2767 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_fd.3
+-r--r--r-- nathans/999    3970 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_file.3
+-r--r--r-- nathans/999    2561 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_perm.3
+-r--r--r-- nathans/999    2409 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_permset.3
+-r--r--r-- nathans/999    3850 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_qualifier.3
+-r--r--r-- nathans/999    2332 2006-06-20 12:21 acl-2.2.39/man/man3/acl_get_tag_type.3
+-r--r--r-- nathans/999    2489 2006-06-20 12:21 acl-2.2.39/man/man3/acl_init.3
+-r--r--r-- nathans/999    2734 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_fd.3
+-r--r--r-- nathans/999    4745 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_file.3
+-r--r--r-- nathans/999    2721 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_permset.3
+-r--r--r-- nathans/999    3274 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_qualifier.3
+-r--r--r-- nathans/999    2292 2006-06-20 12:21 acl-2.2.39/man/man3/acl_set_tag_type.3
+-r--r--r-- nathans/999    2443 2006-06-20 12:21 acl-2.2.39/man/man3/acl_size.3
+-rw-r--r-- nathans/999    4901 2006-06-21 07:35 acl-2.2.39/man/man3/acl_to_any_text.3
+-r--r--r-- nathans/999    3033 2006-06-20 12:21 acl-2.2.39/man/man3/acl_to_text.3
+-r--r--r-- nathans/999    2416 2006-06-20 12:21 acl-2.2.39/man/man3/acl_valid.3
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man3/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 07:30 acl-2.2.39/man/man5/
+-rw-r--r-- nathans/999   15687 2006-06-21 07:30 acl-2.2.39/man/man5/acl.5
+-r--r--r-- nathans/999     398 2006-06-20 12:21 acl-2.2.39/man/man5/Makefile
+-r--r--r-- nathans/999     247 2006-06-20 12:21 acl-2.2.39/man/Makefile
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/po/
+-r--r--r-- nathans/999    6725 2006-06-20 12:21 acl-2.2.39/po/acl.pot
+-r--r--r-- nathans/999   10989 2006-06-20 12:21 acl-2.2.39/po/de.po
+-r--r--r-- nathans/999   11627 2006-06-20 12:21 acl-2.2.39/po/pl.po
+-r--r--r-- nathans/999   11532 2006-06-20 12:21 acl-2.2.39/po/fr.po
+-r--r--r-- nathans/root    551 2006-06-20 12:21 acl-2.2.39/po/Makefile
+-r--r--r-- nathans/root  10959 2006-06-20 12:21 acl-2.2.39/po/sv.po
+drwxr-xr-x nathans/999       0 2006-06-21 09:20 acl-2.2.39/setfacl/
+-r--r--r-- nathans/999   11702 2006-06-20 12:21 acl-2.2.39/setfacl/do_set.c
+-r--r--r-- nathans/999    9772 2006-06-20 12:21 acl-2.2.39/setfacl/parse.c
+-r--r--r-- nathans/999    1798 2006-06-20 12:21 acl-2.2.39/setfacl/parse.h
+-r--r--r-- nathans/999    2650 2006-06-20 12:21 acl-2.2.39/setfacl/sequence.c
+-r--r--r-- nathans/999    2103 2006-06-20 12:21 acl-2.2.39/setfacl/sequence.h
+-r--r--r-- nathans/999     477 2006-06-20 12:21 acl-2.2.39/setfacl/Makefile
+-r--r--r-- nathans/root  16811 2006-06-20 12:21 acl-2.2.39/setfacl/setfacl.c
+drwxr-xr-x nathans/999       0 2006-06-20 12:21 acl-2.2.39/test/
+-r--r--r-- nathans/999     657 2006-06-20 12:21 acl-2.2.39/test/cp.test
+-r--r--r-- nathans/999     924 2006-06-20 12:21 acl-2.2.39/test/getfacl-noacl.test
+-r--r--r-- nathans/999     757 2006-06-20 12:21 acl-2.2.39/test/make-tree
+-r--r--r-- nathans/999    7065 2006-06-20 12:21 acl-2.2.39/test/misc.test
+-r--r--r-- nathans/999    1161 2006-06-20 12:21 acl-2.2.39/test/nfs-dir.test
+-r--r--r-- nathans/999     984 2006-06-20 12:21 acl-2.2.39/test/nfsacl.test
+-r--r--r-- nathans/999    5229 2006-06-20 12:21 acl-2.2.39/test/permissions.test
+-r--r--r-- nathans/999    6196 2006-06-20 12:21 acl-2.2.39/test/run
+-r--r--r-- nathans/999    1834 2006-06-20 12:21 acl-2.2.39/test/setfacl-X.test
+-r--r--r-- nathans/999    2836 2006-06-20 12:21 acl-2.2.39/test/setfacl.test
+-r--r--r-- nathans/999     322 2006-06-20 12:21 acl-2.2.39/test/Makefile
+-r-xr-xr-x nathans/999    1849 2006-06-20 12:21 acl-2.2.39/Makepkgs
+-r--r--r-- nathans/999     616 2006-06-20 12:21 acl-2.2.39/README
+-r--r--r-- nathans/999    1099 2006-06-20 12:21 acl-2.2.39/exports
+-r-xr-xr-x nathans/999    6931 2006-06-20 12:21 acl-2.2.39/install-sh
+-r--r--r-- nathans/root   1502 2006-06-20 12:21 acl-2.2.39/Makefile
+-r--r--r-- nathans/root    116 2006-06-20 12:21 acl-2.2.39/VERSION
+-r--r--r-- nathans/root  11371 2006-06-20 12:21 acl-2.2.39/aclocal.m4
+-r--r--r-- nathans/root    739 2006-06-20 12:21 acl-2.2.39/configure.in
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd acl-2.2.39
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.7c5pIK
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd acl-2.2.39
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/arm-sony-linux-gnueabi/cross/devel/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/usr/bin/:/usr/local/arm-sony-linux-gnueabi/host/usr/bin:/usr/local/arm-sony-linux-gnueabi/cross/usr/bin
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ LIBTOOL=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool
++ LIBUUID=/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libuuid.a
+++ pwd
++ LIBATTR_LA=/home/rpmuser/rpm/BUILD/acl-2.2.39/local-libattr.la
++ export LIBTOOL LIBUUID LIBATTR_LA
++ autoconf
++ ./configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --exec_prefix=/usr
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+./configure: line 2872: test: arm-sony-linux-gnueabi-gcc: binary operator expected
+checking for gmake... no
+checking for make... /usr/bin/make
+checking for tar... /bin/tar
+checking for gzip... /bin/gzip
+checking for makedepend... /bin/true
+checking for awk... /usr/bin/awk
+checking for sed... /bin/sed
+checking for echo... /bin/echo
+checking for sort... /usr/bin/sort
+checking whether ln -s works... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for msgmerge... /usr/bin/msgmerge
+checking for rpm... /usr/bin/rpm
+checking for rpmbuild... /usr/bin/rpmbuild
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking attr/xattr.h usability... yes
+checking attr/xattr.h presence... yes
+checking for attr/xattr.h... yes
+checking attr/error_context.h usability... yes
+checking attr/error_context.h presence... yes
+checking for attr/error_context.h... yes
+checking for getxattr in -lattr... yes
+checking whether __attribute__((visibility())) is supported... yes
+configure: creating ./config.status
+config.status: creating include/builddefs
+config.status: WARNING:  'include/builddefs.in' seems to ignore the --datarootdir setting
+config.status: creating include/config.h
++ --libexecdir=/usr/lib --sbindir=/sbin --bindir=/usr/bin --includedir=/tool//usr/include
+/home/rpmuser/rpm/tmp/rpm-tmp.7c5pIK: line 61: --libexecdir=/usr/lib: No such file or directory
++ tee build.log
++ make
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c quote.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c  -fPIC -DPIC -o .libs/quote.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c quote.c -o quote.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c unquote.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c  -fPIC -DPIC -o .libs/unquote.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c unquote.c -o unquote.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c high_water_alloc.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c  -fPIC -DPIC -o .libs/high_water_alloc.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c high_water_alloc.c -o high_water_alloc.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64   -c next_line.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c  -fPIC -DPIC -o .libs/next_line.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -c next_line.c -o next_line.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a  -o libmisc.la quote.lo unquote.lo high_water_alloc.lo next_line.lo 
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libmisc.a .libs/quote.o .libs/unquote.o .libs/high_water_alloc.o .libs/next_line.o 
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libmisc.a
+libtool: link: ( cd ".libs" && rm -f "libmisc.la" && ln -s "../libmisc.la" "libmisc.la" )
+=== libacl ===
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_add_perm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c  -fPIC -DPIC -o .libs/acl_add_perm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_add_perm.c -o acl_add_perm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_calc_mask.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c  -fPIC -DPIC -o .libs/acl_calc_mask.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_calc_mask.c -o acl_calc_mask.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_clear_perms.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_clear_perms.c  -fPIC -DPIC -o .libs/acl_clear_perms.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_clear_perms.c -o acl_clear_perms.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_entry.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c  -fPIC -DPIC -o .libs/acl_copy_entry.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_entry.c -o acl_copy_entry.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_ext.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_ext.c  -fPIC -DPIC -o .libs/acl_copy_ext.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_ext.c -o acl_copy_ext.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_copy_int.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_int.c  -fPIC -DPIC -o .libs/acl_copy_int.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_copy_int.c -o acl_copy_int.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_create_entry.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_create_entry.c  -fPIC -DPIC -o .libs/acl_create_entry.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_create_entry.c -o acl_create_entry.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_def_file.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_def_file.c  -fPIC -DPIC -o .libs/acl_delete_def_file.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_def_file.c -o acl_delete_def_file.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_entry.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_entry.c  -fPIC -DPIC -o .libs/acl_delete_entry.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_entry.c -o acl_delete_entry.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_delete_perm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c  -fPIC -DPIC -o .libs/acl_delete_perm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_delete_perm.c -o acl_delete_perm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_dup.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_dup.c  -fPIC -DPIC -o .libs/acl_dup.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_dup.c -o acl_dup.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_free.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c  -fPIC -DPIC -o .libs/acl_free.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_free.c -o acl_free.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_from_text.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_text.c  -fPIC -DPIC -o .libs/acl_from_text.o
+acl_from_text.c: In function 'parse_acl_entry':
+acl_from_text.c:300:30: warning: the address of 'entry_obj' will always evaluate as 'true' [-Waddress]
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_text.c -o acl_from_text.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_entry.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c  -fPIC -DPIC -o .libs/acl_get_entry.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_entry.c -o acl_get_entry.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_fd.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_fd.c  -fPIC -DPIC -o .libs/acl_get_fd.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_fd.c -o acl_get_fd.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_file.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c  -fPIC -DPIC -o .libs/acl_get_file.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_file.c -o acl_get_file.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_perm.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_perm.c  -fPIC -DPIC -o .libs/acl_get_perm.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_perm.c -o acl_get_perm.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_permset.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c  -fPIC -DPIC -o .libs/acl_get_permset.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_permset.c -o acl_get_permset.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_qualifier.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c  -fPIC -DPIC -o .libs/acl_get_qualifier.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_qualifier.c -o acl_get_qualifier.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_get_tag_type.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_tag_type.c  -fPIC -DPIC -o .libs/acl_get_tag_type.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_get_tag_type.c -o acl_get_tag_type.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_init.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_init.c  -fPIC -DPIC -o .libs/acl_init.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_init.c -o acl_init.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_fd.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_fd.c  -fPIC -DPIC -o .libs/acl_set_fd.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_fd.c -o acl_set_fd.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_file.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_file.c  -fPIC -DPIC -o .libs/acl_set_file.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_file.c -o acl_set_file.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_permset.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_permset.c  -fPIC -DPIC -o .libs/acl_set_permset.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_permset.c -o acl_set_permset.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_qualifier.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_qualifier.c  -fPIC -DPIC -o .libs/acl_set_qualifier.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_qualifier.c -o acl_set_qualifier.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_set_tag_type.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_tag_type.c  -fPIC -DPIC -o .libs/acl_set_tag_type.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_set_tag_type.c -o acl_set_tag_type.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_to_text.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_text.c  -fPIC -DPIC -o .libs/acl_to_text.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_text.c -o acl_to_text.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_valid.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c  -fPIC -DPIC -o .libs/acl_valid.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_valid.c -o acl_valid.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_size.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_size.c  -fPIC -DPIC -o .libs/acl_size.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_size.c -o acl_size.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_to_any_text.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_any_text.c  -fPIC -DPIC -o .libs/acl_to_any_text.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_to_any_text.c -o acl_to_any_text.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_entries.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c  -fPIC -DPIC -o .libs/acl_entries.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_entries.c -o acl_entries.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_check.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c  -fPIC -DPIC -o .libs/acl_check.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_check.c -o acl_check.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_error.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_error.c  -fPIC -DPIC -o .libs/acl_error.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_error.c -o acl_error.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_cmp.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_cmp.c  -fPIC -DPIC -o .libs/acl_cmp.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_cmp.c -o acl_cmp.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_extended_fd.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_fd.c  -fPIC -DPIC -o .libs/acl_extended_fd.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_fd.c -o acl_extended_fd.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_extended_file.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file.c  -fPIC -DPIC -o .libs/acl_extended_file.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_extended_file.c -o acl_extended_file.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_equiv_mode.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_equiv_mode.c  -fPIC -DPIC -o .libs/acl_equiv_mode.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_equiv_mode.c -o acl_equiv_mode.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c acl_from_mode.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_mode.c  -fPIC -DPIC -o .libs/acl_from_mode.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c acl_from_mode.c -o acl_from_mode.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_to_any_text.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c  -fPIC -DPIC -o .libs/__acl_to_any_text.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_any_text.c -o __acl_to_any_text.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_to_xattr.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_xattr.c  -fPIC -DPIC -o .libs/__acl_to_xattr.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_to_xattr.c -o __acl_to_xattr.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_from_xattr.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_from_xattr.c  -fPIC -DPIC -o .libs/__acl_from_xattr.o
+__acl_from_xattr.c: In function '__acl_from_xattr':
+__acl_from_xattr.c:36:15: warning: variable 'error' set but not used [-Wunused-but-set-variable]
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_from_xattr.c -o __acl_from_xattr.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __acl_reorder_obj_p.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_reorder_obj_p.c  -fPIC -DPIC -o .libs/__acl_reorder_obj_p.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __acl_reorder_obj_p.c -o __acl_reorder_obj_p.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __libobj.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c  -fPIC -DPIC -o .libs/__libobj.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __libobj.c -o __libobj.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c __apply_mask_to_mode.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __apply_mask_to_mode.c  -fPIC -DPIC -o .libs/__apply_mask_to_mode.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c __apply_mask_to_mode.c -o __apply_mask_to_mode.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c perm_copy_fd.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_fd.c  -fPIC -DPIC -o .libs/perm_copy_fd.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_fd.c -o perm_copy_fd.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=compile arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h  -c perm_copy_file.c
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_file.c  -fPIC -DPIC -o .libs/perm_copy_file.o
+libtool: compile:  arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -include perm_copy.h -c perm_copy_file.c -o perm_copy_file.o >/dev/null 2>&1
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -Wl,--version-script,../exports -rpath /usr/lib -version-info 2:0:1 -o libacl.la acl_add_perm.lo acl_calc_mask.lo acl_clear_perms.lo acl_copy_entry.lo acl_copy_ext.lo acl_copy_int.lo acl_create_entry.lo acl_delete_def_file.lo acl_delete_entry.lo acl_delete_perm.lo acl_dup.lo acl_free.lo acl_from_text.lo acl_get_entry.lo acl_get_fd.lo acl_get_file.lo acl_get_perm.lo acl_get_permset.lo acl_get_qualifier.lo acl_get_tag_type.lo acl_init.lo acl_set_fd.lo acl_set_file.lo acl_set_permset.lo acl_set_qualifier.lo acl_set_tag_type.lo acl_to_text.lo acl_valid.lo acl_size.lo acl_to_any_text.lo acl_entries.lo acl_check.lo acl_error.lo acl_cmp.lo acl_extended_fd.lo acl_extended_file.lo acl_equiv_mode.lo acl_from_mode.lo __acl_to_any_text.lo __acl_to_xattr.lo __acl_from_xattr.lo __acl_reorder_obj_p.lo __libobj.lo __apply_mask_to_mode.lo perm_copy_fd.lo perm_copy_file.lo -lattr ../libmisc/libmisc.la
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -shared  -fPIC -DPIC  .libs/acl_add_perm.o .libs/acl_calc_mask.o .libs/acl_clear_perms.o .libs/acl_copy_entry.o .libs/acl_copy_ext.o .libs/acl_copy_int.o .libs/acl_create_entry.o .libs/acl_delete_def_file.o .libs/acl_delete_entry.o .libs/acl_delete_perm.o .libs/acl_dup.o .libs/acl_free.o .libs/acl_from_text.o .libs/acl_get_entry.o .libs/acl_get_fd.o .libs/acl_get_file.o .libs/acl_get_perm.o .libs/acl_get_permset.o .libs/acl_get_qualifier.o .libs/acl_get_tag_type.o .libs/acl_init.o .libs/acl_set_fd.o .libs/acl_set_file.o .libs/acl_set_permset.o .libs/acl_set_qualifier.o .libs/acl_set_tag_type.o .libs/acl_to_text.o .libs/acl_valid.o .libs/acl_size.o .libs/acl_to_any_text.o .libs/acl_entries.o .libs/acl_check.o .libs/acl_error.o .libs/acl_cmp.o .libs/acl_extended_fd.o .libs/acl_extended_file.o .libs/acl_equiv_mode.o .libs/acl_from_mode.o .libs/__acl_to_any_text.o .libs/__acl_to_xattr.o .libs/__acl_from_xattr.o .libs/__acl_reorder_obj_p.o .libs/__libobj.o .libs/__apply_mask_to_mode.o .libs/perm_copy_fd.o .libs/perm_copy_file.o  -Wl,--whole-archive ../libmisc/.libs/libmisc.a -Wl,--no-whole-archive  -lattr  -Wl,--version-script -Wl,../exports   -Wl,-soname -Wl,libacl.so.1 -o .libs/libacl.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libacl.so.1" && ln -s "libacl.so.1.1.0" "libacl.so.1")
+libtool: link: (cd ".libs" && rm -f "libacl.so" && ln -s "libacl.so.1.1.0" "libacl.so")
+libtool: link: (cd .libs/libacl.lax/libmisc.a && arm-sony-linux-gnueabi-ar x "/home/rpmuser/rpm/BUILD/acl-2.2.39/libacl/../libmisc/.libs/libmisc.a")
+libtool: link: arm-sony-linux-gnueabi-ar cru .libs/libacl.a  acl_add_perm.o acl_calc_mask.o acl_clear_perms.o acl_copy_entry.o acl_copy_ext.o acl_copy_int.o acl_create_entry.o acl_delete_def_file.o acl_delete_entry.o acl_delete_perm.o acl_dup.o acl_free.o acl_from_text.o acl_get_entry.o acl_get_fd.o acl_get_file.o acl_get_perm.o acl_get_permset.o acl_get_qualifier.o acl_get_tag_type.o acl_init.o acl_set_fd.o acl_set_file.o acl_set_permset.o acl_set_qualifier.o acl_set_tag_type.o acl_to_text.o acl_valid.o acl_size.o acl_to_any_text.o acl_entries.o acl_check.o acl_error.o acl_cmp.o acl_extended_fd.o acl_extended_file.o acl_equiv_mode.o acl_from_mode.o __acl_to_any_text.o __acl_to_xattr.o __acl_from_xattr.o __acl_reorder_obj_p.o __libobj.o __apply_mask_to_mode.o perm_copy_fd.o perm_copy_file.o  .libs/libacl.lax/libmisc.a/high_water_alloc.o .libs/libacl.lax/libmisc.a/next_line.o .libs/libacl.lax/libmisc.a/quote.o .libs/libacl.lax/libmisc.a/unquote.o 
+libtool: link: arm-sony-linux-gnueabi-ranlib .libs/libacl.a
+libtool: link: rm -fr .libs/libacl.lax
+libtool: link: ( cd ".libs" && rm -f "libacl.la" && ln -s "../libacl.la" "libacl.la" )
+=== getfacl ===
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o getfacl.o getfacl.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o user_group.o user_group.c
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -o getfacl       getfacl.o user_group.o   ../libacl/libacl.la -lattr ../libmisc/libmisc.la  
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -o .libs/getfacl getfacl.o user_group.o  ../libacl/.libs/libacl.so -lattr ../libmisc/.libs/libmisc.a
+=== setfacl ===
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o setfacl.o setfacl.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o do_set.o do_set.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o sequence.o sequence.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o parse.o parse.c
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -o setfacl       setfacl.o do_set.o sequence.o parse.o   ../libacl/libacl.la -lattr ../libmisc/libmisc.la  
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -o .libs/setfacl setfacl.o do_set.o sequence.o parse.o  ../libacl/.libs/libacl.so -lattr ../libmisc/.libs/libmisc.a
+=== chacl ===
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I./include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64  -g -O2 -DDEBUG -funsigned-char -fno-strict-aliasing -Wall -DVERSION=\"2.2.39\" -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"acl\" -I../include -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64    -c -o chacl.o chacl.c
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=link arm-sony-linux-gnueabi-gcc -tarmv7a -o chacl       chacl.o   ../libacl/libacl.la -lattr  
+libtool: link: arm-sony-linux-gnueabi-gcc -tarmv7a -o .libs/chacl chacl.o  ../libacl/.libs/libacl.so -lattr
+=== m4 ===
+make[1]: Nothing to be done for `default'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `default'.
+=== man3 ===
+make[2]: Nothing to be done for `default'.
+=== man5 ===
+make[2]: Nothing to be done for `default'.
+=== doc ===
+/bin/gzip --best -c < CHANGES > CHANGES.gz
+=== po ===
+/usr/bin/msgfmt -o de.mo de.po
+/usr/bin/msgfmt -o fr.mo fr.po
+/usr/bin/msgfmt -o pl.mo pl.po
+/usr/bin/msgfmt -o sv.mo sv.po
+=== test ===
+make[1]: Nothing to be done for `default'.
+=== examples ===
+make[1]: Nothing to be done for `default'.
+=== build ===
+make[1]: Nothing to be done for `default'.
+=== debian ===
+make[1]: Nothing to be done for `default'.
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.XJM8FJ
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd acl-2.2.39
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/arm-sony-linux-gnueabi/cross/devel/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/usr/bin/:/usr/local/arm-sony-linux-gnueabi/host/usr/bin:/usr/local/arm-sony-linux-gnueabi/cross/usr/bin
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64
++ DIST_ROOT=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+++ pwd
++ DIST_INSTALL=/home/rpmuser/rpm/BUILD/acl-2.2.39/install.manifest
+++ pwd
++ DIST_INSTALL_DEV=/home/rpmuser/rpm/BUILD/acl-2.2.39/install-dev.manifest
+++ pwd
++ DIST_INSTALL_LIB=/home/rpmuser/rpm/BUILD/acl-2.2.39/install-lib.manifest
++ export DIST_ROOT DIST_INSTALL DIST_INSTALL_DEV DIST_INSTALL_LIB
++ make install prefix=/usr exec_prefix=/usr bindir=/usr/bin sbindir=/sbin sysconfdir=/etc datadir=/usr/share includedir=/tool//usr/include libdir=/lib libexecdir=/usr/lib localstatedir=/var sharedstatedir=/usr/share mandir=/usr/man infodir=/usr/info DIST_MANIFEST=/home/rpmuser/rpm/BUILD/acl-2.2.39/install.manifest
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+make[1]: Nothing to be done for `default'.
+=== libacl ===
+make[1]: Nothing to be done for `default'.
+=== getfacl ===
+make[1]: Nothing to be done for `default'.
+=== setfacl ===
+make[1]: Nothing to be done for `default'.
+=== chacl ===
+make[1]: Nothing to be done for `default'.
+=== m4 ===
+make[1]: Nothing to be done for `default'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `default'.
+=== man3 ===
+make[2]: Nothing to be done for `default'.
+=== man5 ===
+make[2]: Nothing to be done for `default'.
+=== doc ===
+make[1]: Nothing to be done for `default'.
+=== po ===
+make[1]: Nothing to be done for `default'.
+=== test ===
+make[1]: Nothing to be done for `default'.
+=== examples ===
+make[1]: Nothing to be done for `default'.
+=== build ===
+make[1]: Nothing to be done for `default'.
+=== debian ===
+make[1]: Nothing to be done for `default'.
+=== include ===
+make[1]: Nothing to be done for `install'.
+=== libmisc ===
+make[1]: Nothing to be done for `install'.
+=== libacl ===
+make[1]: Nothing to be done for `install'.
+=== getfacl ===
+../install-sh -o 0 -g 0 -m 755 -d /usr/bin
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=install ../install-sh -o 0 -g 0 -m 755 getfacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/usr/lib'
+libtool: install: ../install-sh -o 0 -g 0 -m 755 .libs/getfacl /usr/bin/getfacl
+=== setfacl ===
+../install-sh -o 0 -g 0 -m 755 -d /usr/bin
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=install ../install-sh -o 0 -g 0 -m 755 setfacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/usr/lib'
+libtool: install: ../install-sh -o 0 -g 0 -m 755 .libs/setfacl /usr/bin/setfacl
+=== chacl ===
+../install-sh -o 0 -g 0 -m 755 -d /usr/bin
+/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/libtool --mode=install ../install-sh -o 0 -g 0 -m 755 chacl /usr/bin
+libtool: install: warning: `../libacl/libacl.la' has not been installed in `/usr/lib'
+libtool: install: ../install-sh -o 0 -g 0 -m 755 .libs/chacl /usr/bin/chacl
+=== m4 ===
+make[1]: Nothing to be done for `install'.
+=== man ===
+=== man1 ===
+../../install-sh -o 0 -g 0 -m 755 -d /usr/share/man/man1
+../../install-sh -o 0 -g 0 -m 644 chacl.1.gz /usr/share/man/man1/chacl.1.gz
+../../install-sh -o 0 -g 0 -m 644 getfacl.1.gz /usr/share/man/man1/getfacl.1.gz
+../../install-sh -o 0 -g 0 -m 644 setfacl.1.gz /usr/share/man/man1/setfacl.1.gz
+=== man3 ===
+make[2]: Nothing to be done for `install'.
+=== man5 ===
+../../install-sh -o 0 -g 0 -m 755 -d /usr/share/man/man5
+../../install-sh -o 0 -g 0 -m 644 acl.5.gz /usr/share/man/man5/acl.5.gz
+=== doc ===
+../install-sh -o 0 -g 0 -m 755 -d /usr/share/doc/acl
+../install-sh -o 0 -g 0 -m 644 PORTING CHANGES.gz /usr/share/doc/acl
+../install-sh -o 0 -g 0 -m 644 COPYING /usr/share/doc/acl
+=== po ===
+=== test ===
+make[1]: Nothing to be done for `install'.
+=== examples ===
+make[1]: Nothing to be done for `install'.
+=== build ===
+make[1]: Nothing to be done for `install'.
+=== debian ===
+make[1]: Nothing to be done for `install'.
+./install-sh -o 0 -g 0 -m 755 -d /usr/share/doc/acl
+./install-sh -o 0 -g 0 -m 644 README /usr/share/doc/acl
++ make install-dev prefix=/usr exec_prefix=/usr bindir=/usr/bin sbindir=/sbin sysconfdir=/etc datadir=/usr/share includedir=/tool//usr/include libdir=/lib libexecdir=/usr/lib localstatedir=/var sharedstatedir=/usr/share mandir=/usr/man infodir=/usr/info DIST_MANIFEST=/home/rpmuser/rpm/BUILD/acl-2.2.39/install-dev.manifest
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+make[1]: Nothing to be done for `default'.
+=== libacl ===
+make[1]: Nothing to be done for `default'.
+=== getfacl ===
+make[1]: Nothing to be done for `default'.
+=== setfacl ===
+make[1]: Nothing to be done for `default'.
+=== chacl ===
+make[1]: Nothing to be done for `default'.
+=== m4 ===
+make[1]: Nothing to be done for `default'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `default'.
+=== man3 ===
+make[2]: Nothing to be done for `default'.
+=== man5 ===
+make[2]: Nothing to be done for `default'.
+=== doc ===
+make[1]: Nothing to be done for `default'.
+=== po ===
+make[1]: Nothing to be done for `default'.
+=== test ===
+make[1]: Nothing to be done for `default'.
+=== examples ===
+make[1]: Nothing to be done for `default'.
+=== build ===
+make[1]: Nothing to be done for `default'.
+=== debian ===
+make[1]: Nothing to be done for `default'.
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+../install-sh -o 0 -g 0 -m 755 -d /usr/include
+../install-sh -o 0 -g 0 -m 755 -d /usr/include/sys
+../install-sh -o 0 -g 0 -m 644 acl.h /usr/include/sys/acl.h
+../install-sh -o 0 -g 0 -m 755 -d /usr/include/acl
+../install-sh -o 0 -g 0 -m 644 libacl.h /usr/include/acl/libacl.h
+=== libmisc ===
+make[1]: Nothing to be done for `install-dev'.
+=== libacl ===
+cd ../libacl/.libs; ../../install-sh -o 0 -g 0 -m 755 -d /usr/libexec; ../../install-sh -o 0 -g 0 -m 644 -T old_lib libacl.lai /usr/libexec; ../../install-sh -o 0 -g 0 -m 644 libacl.lai /usr/libexec/libacl.la ; ../../install-sh -o 0 -g 0 -m 755 -d /usr/lib; ../../install-sh -o 0 -g 0 -T so_base libacl.lai /usr/lib; ../../install-sh -o 0 -g 0 -S /usr/libexec/libacl.a /usr/lib/libacl.a; ../../install-sh -o 0 -g 0 -S /usr/libexec/libacl.la /usr/lib/libacl.la; ../../install-sh -o 0 -g 0 -S /usr/lib/libacl.so /usr/libexec/libacl.so
+=== getfacl ===
+make[1]: Nothing to be done for `install-dev'.
+=== setfacl ===
+make[1]: Nothing to be done for `install-dev'.
+=== chacl ===
+make[1]: Nothing to be done for `install-dev'.
+=== m4 ===
+make[1]: Nothing to be done for `install-dev'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `install-dev'.
+=== man3 ===
+../../install-sh -o 0 -g 0 -m 755 -d /usr/share/man/man3
+../../install-sh -o 0 -g 0 -m 644 acl_add_perm.3.gz /usr/share/man/man3/acl_add_perm.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_calc_mask.3.gz /usr/share/man/man3/acl_calc_mask.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_check.3.gz /usr/share/man/man3/acl_check.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_clear_perms.3.gz /usr/share/man/man3/acl_clear_perms.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_cmp.3.gz /usr/share/man/man3/acl_cmp.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_copy_entry.3.gz /usr/share/man/man3/acl_copy_entry.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_copy_ext.3.gz /usr/share/man/man3/acl_copy_ext.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_copy_int.3.gz /usr/share/man/man3/acl_copy_int.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_create_entry.3.gz /usr/share/man/man3/acl_create_entry.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_delete_def_file.3.gz /usr/share/man/man3/acl_delete_def_file.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_delete_entry.3.gz /usr/share/man/man3/acl_delete_entry.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_delete_perm.3.gz /usr/share/man/man3/acl_delete_perm.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_dup.3.gz /usr/share/man/man3/acl_dup.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_entries.3.gz /usr/share/man/man3/acl_entries.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_equiv_mode.3.gz /usr/share/man/man3/acl_equiv_mode.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_error.3.gz /usr/share/man/man3/acl_error.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_extended_fd.3.gz /usr/share/man/man3/acl_extended_fd.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_extended_file.3.gz /usr/share/man/man3/acl_extended_file.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_free.3.gz /usr/share/man/man3/acl_free.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_from_mode.3.gz /usr/share/man/man3/acl_from_mode.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_from_text.3.gz /usr/share/man/man3/acl_from_text.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_entry.3.gz /usr/share/man/man3/acl_get_entry.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_fd.3.gz /usr/share/man/man3/acl_get_fd.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_file.3.gz /usr/share/man/man3/acl_get_file.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_perm.3.gz /usr/share/man/man3/acl_get_perm.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_permset.3.gz /usr/share/man/man3/acl_get_permset.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_qualifier.3.gz /usr/share/man/man3/acl_get_qualifier.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_get_tag_type.3.gz /usr/share/man/man3/acl_get_tag_type.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_init.3.gz /usr/share/man/man3/acl_init.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_set_fd.3.gz /usr/share/man/man3/acl_set_fd.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_set_file.3.gz /usr/share/man/man3/acl_set_file.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_set_permset.3.gz /usr/share/man/man3/acl_set_permset.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_set_qualifier.3.gz /usr/share/man/man3/acl_set_qualifier.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_set_tag_type.3.gz /usr/share/man/man3/acl_set_tag_type.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_size.3.gz /usr/share/man/man3/acl_size.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_to_any_text.3.gz /usr/share/man/man3/acl_to_any_text.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_to_text.3.gz /usr/share/man/man3/acl_to_text.3.gz
+../../install-sh -o 0 -g 0 -m 644 acl_valid.3.gz /usr/share/man/man3/acl_valid.3.gz
+=== man5 ===
+make[2]: Nothing to be done for `install-dev'.
+=== doc ===
+make[1]: Nothing to be done for `install-dev'.
+=== po ===
+make[1]: Nothing to be done for `install-dev'.
+=== test ===
+make[1]: Nothing to be done for `install-dev'.
+=== examples ===
+make[1]: Nothing to be done for `install-dev'.
+=== build ===
+make[1]: Nothing to be done for `install-dev'.
+=== debian ===
+make[1]: Nothing to be done for `install-dev'.
++ make install-lib prefix=/usr exec_prefix=/usr bindir=/usr/bin sbindir=/sbin sysconfdir=/etc datadir=/usr/share includedir=/tool//usr/include libdir=/lib libexecdir=/usr/lib localstatedir=/var sharedstatedir=/usr/share mandir=/usr/man infodir=/usr/info DIST_MANIFEST=/home/rpmuser/rpm/BUILD/acl-2.2.39/install-lib.manifest
+=== include ===
+rm -f sys acl
+ln -s . sys
+ln -s . acl
+=== libmisc ===
+make[1]: Nothing to be done for `default'.
+=== libacl ===
+make[1]: Nothing to be done for `default'.
+=== getfacl ===
+make[1]: Nothing to be done for `default'.
+=== setfacl ===
+make[1]: Nothing to be done for `default'.
+=== chacl ===
+make[1]: Nothing to be done for `default'.
+=== m4 ===
+make[1]: Nothing to be done for `default'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `default'.
+=== man3 ===
+make[2]: Nothing to be done for `default'.
+=== man5 ===
+make[2]: Nothing to be done for `default'.
+=== doc ===
+make[1]: Nothing to be done for `default'.
+=== po ===
+make[1]: Nothing to be done for `default'.
+=== test ===
+make[1]: Nothing to be done for `default'.
+=== examples ===
+make[1]: Nothing to be done for `default'.
+=== build ===
+make[1]: Nothing to be done for `default'.
+=== debian ===
+make[1]: Nothing to be done for `default'.
+=== include ===
+make[1]: Nothing to be done for `install-lib'.
+=== libmisc ===
+make[1]: Nothing to be done for `install-lib'.
+=== libacl ===
+cd ../libacl/.libs; ../../install-sh -o 0 -g 0 -m 755 -d /usr/lib; ../../install-sh -o 0 -g 0 -m 644 -T so_dot_version libacl.lai /usr/lib; ../../install-sh -o 0 -g 0 -T so_dot_current libacl.lai /usr/lib
+=== getfacl ===
+make[1]: Nothing to be done for `install-lib'.
+=== setfacl ===
+make[1]: Nothing to be done for `install-lib'.
+=== chacl ===
+make[1]: Nothing to be done for `install-lib'.
+=== m4 ===
+make[1]: Nothing to be done for `install-lib'.
+=== man ===
+=== man1 ===
+make[2]: Nothing to be done for `install-lib'.
+=== man3 ===
+make[2]: Nothing to be done for `install-lib'.
+=== man5 ===
+make[2]: Nothing to be done for `install-lib'.
+=== doc ===
+make[1]: Nothing to be done for `install-lib'.
+=== po ===
+make[1]: Nothing to be done for `install-lib'.
+=== test ===
+make[1]: Nothing to be done for `install-lib'.
+=== examples ===
+make[1]: Nothing to be done for `install-lib'.
+=== build ===
+make[1]: Nothing to be done for `install-lib'.
+=== debian ===
+make[1]: Nothing to be done for `install-lib'.
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
++ rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libacl.la
++ rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib/libacl.a
++ rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libacl.la
++ chmod 0755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libacl.so.1.1.0
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ for b in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin`'
++ case $b in
++ for b in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin`'
++ case $b in
++ for b in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin`'
++ case $b in
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib`'
++ case $l in
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/libacl.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib`'
++ case $l in
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib`'
++ case $l in
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib`'
++ case $l in
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libacl.a
++ rm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/libacl.so
++ rm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec/libacl.la
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/libexec`'
++ '[' libacl.a '!=' pkgconfig ']'
++ ln -s ../../../usr/libexec/libacl.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libacl.a
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-acl-2.2.39-11000001.arm
+warning: File listed twice: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/acl/libacl.h
+warning: File listed twice: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/include/sys/acl.h
+warning: File listed twice: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libacl.a
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-acl-2.2.39-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-acl-2.2.39-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.BYUBr2
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd acl-2.2.39
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-acl-2.2.39-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/acl-2.2.39
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/acl-2.2.39 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp..........................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/tcp-wrappers/test/tcp_wrappers_tests.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+spawn ssh 10.0.6.38
+root@10.0.6.38's password: root123
+^C
+

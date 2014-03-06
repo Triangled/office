@@ -1,0 +1,59 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.LvPdpW
+Patch #1 (dosfstools-2.11-dosfsckYoption.patch):
+Patch #2 (dosfstools-corrupts-root-dir-fix.patch):
+Patch #3 (dosfstools-2.11-fix-types.patch):
+Patch #4 (dosfstools-2.11-ubuntu-integer-overflow-fix.patch):
+Patch #5 (dosfstools-2.11-fix-zero-slot-crashes.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.YDxXq5
+make -C mkdosfs all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/mkdosfs'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  -c mkdosfs.c -o mkdosfs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a  mkdosfs.o -o mkdosfs
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/mkdosfs'
+make -C dosfsck all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/dosfsck'
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  boot.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  check.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  common.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  dosfsck.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  fat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  file.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  io.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -O2 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -Wall  lfn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -o dosfsck  boot.o check.o common.o dosfsck.o fat.o file.o io.o lfn.o
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/dosfsck'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.YgthOk
+make -C mkdosfs install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/mkdosfs'
+mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
+install -m 755 mkdosfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 644 mkdosfs.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs.msdos
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs.vfat
+ln -s mkdosfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs.msdos
+ln -s mkdosfs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/mkfs.vfat
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/mkfs.msdos.8
+ln -s mkdosfs.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/mkfs.msdos.8
+ln -s mkdosfs.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/mkfs.vfat.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/mkdosfs'
+make -C dosfsck install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/dosfsck'
+mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
+install -m 755 dosfsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
+install -m 644 dosfsck.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck.msdos
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck.vfat
+ln -s dosfsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck.msdos
+ln -s dosfsck /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/fsck.vfat
+rm -f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/fsck.msdos.8
+ln -s dosfsck.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/fsck.msdos.8
+ln -s dosfsck.8 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man8/fsck.vfat.8
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/dosfstools-2.11/dosfsck'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-dosfstools-2.11-11000002.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-dosfstools-2.11-11000002.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-dosfstools-2.11-11000002.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-dosfstools-2.11-11000002.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OLCgC5

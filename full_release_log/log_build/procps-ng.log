@@ -1,0 +1,755 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Wed Feb 19 18:30:43 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+-sh: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log: Permission denied
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Tue Feb 18 13:05:00 UTC 2014
+-bash-3.2# export PATH=//bin://sbin:/usr/bin/:$PATH
+-bash-3.2# cd /tmp
+-bash-3.2# cat <<EOF > procps-ng-test.c
+> int main()
+> {
+>     while(1)
+>     {
+>     }
+>     return 0;
+> }
+> EOF
+-bash-3.2# /tool/usr/bin/gcc procps-ng-test.c -o procps-ng-test
+-bash-3.2# ./procps-ng-test &
+[1] 476
+-bash-3.2# ps -aef || echo 'COMMAND''ERROR'
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 12:53 ?        00:00:00 /bin/busybox sh /sbin/init
+root         2     0  0 12:53 ?        00:00:00 [kthreadd]
+root         3     2  0 12:53 ?        00:00:00 [ksoftirqd/0]
+root         4     2  0 12:53 ?        00:00:00 [kworker/0:0]
+root         5     2  0 12:53 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 12:53 ?        00:00:00 [kworker/u:0]
+root         7     2  0 12:53 ?        00:00:00 [kworker/u:0H]
+root         8     2  0 12:53 ?        00:00:00 [migration/0]
+root         9     2  0 12:53 ?        00:00:00 [migration/1]
+root        10     2  0 12:53 ?        00:00:00 [kworker/1:0]
+root        11     2  0 12:53 ?        00:00:00 [kworker/1:0H]
+root        12     2  0 12:53 ?        00:00:00 [ksoftirqd/1]
+root        13     2  0 12:53 ?        00:00:00 [khelper]
+root        14     2  0 12:53 ?        00:00:00 [kdevtmpfs]
+root        15     2  0 12:53 ?        00:00:02 [kworker/0:1]
+root        16     2  0 12:53 ?        00:00:00 [kworker/1:1]
+root        17     2  0 12:53 ?        00:00:00 [kworker/u:1]
+root       135     2  0 12:53 ?        00:00:00 [sync_supers]
+root       137     2  0 12:53 ?        00:00:00 [bdi-default]
+root       139     2  0 12:53 ?        00:00:00 [kblockd]
+root       151     2  0 12:53 ?        00:00:00 [khubd]
+root       239     2  0 12:53 ?        00:00:00 [rpciod]
+root       244     2  0 12:53 ?        00:00:00 [kswapd0]
+root       245     2  0 12:53 ?        00:00:00 [fsnotify_mark]
+root       246     2  0 12:53 ?        00:00:00 [nfsiod]
+root       301     2  0 12:53 ?        00:00:00 [ehci-wq]
+root       313     2  0 12:53 ?        00:00:00 [deferwq]
+root       316     2  0 12:54 ?        00:00:00 [scsi_eh_0]
+root       317     2  0 12:54 ?        00:00:00 [usb-storage]
+root       326     2  0 12:54 ?        00:00:00 [kworker/0:1H]
+root       356     1  0 12:54 ?        00:00:00 /usr/sbin/telnetd
+root       357     1  0 12:54 ?        00:00:00 /sbin/klogd
+root       361     1  0 12:54 ?        00:00:00 /sbin/syslogd
+root       363     1  0 12:54 ?        00:00:00 /usr/sbin/smbd -D
+root       365     1  0 12:54 ?        00:00:00 /usr/sbin/nmbd -D
+bin        367     1  0 12:54 ?        00:00:00 /sbin/portmap
+root       376     1  0 12:54 ?        00:00:00 /usr/sbin/rpc.mountd
+root       386     1  0 12:54 ttyS1    00:00:00 /bin/ash --
+root       387   363  0 12:54 ?        00:00:00 /usr/sbin/smbd -D
+root       388     2  0 12:54 ?        00:00:00 [flush-0:12]
+root       389   356  0 12:56 pts/0    00:00:00 -bash
+root       467   356  3 13:04 pts/1    00:00:00 -bash
+root       476   467  0 13:05 pts/1    00:00:00 ./procps-ng-test
+root       477   467  0 13:05 pts/1    00:00:00 ps -aef
+-bash-3.2# ps -A | grep procps-ng-test
+  476 pts/1    00:00:00 procps-ng-test
+-bash-3.2# pgrep procps-ng-test || echo 'COMMAND''ERROR'
+476
+-bash-3.2# pkill procps-ng-test || echo 'COMMAND''ERROR'
+[1]+  Terminated              ./procps-ng-test
+-bash-3.2# ps -A | grep procps-ng-test
+-bash-3.2# ./procps-ng-test &
+[1] 484
+-bash-3.2# pmap ` ps -A | grep procps-ng-test | awk  '{print $1}'` || echo 'COMMAND''ERROR'
+484:   ./procps-ng-test
+00008000      4K r-x-- procps-ng-test
+00010000      4K rw--- procps-ng-test
+00011000      4K rwx--   [ anon ]
+b6e36000   1168K r-x-- libc-2.16.so
+b6f5a000     28K ----- libc-2.16.so
+b6f61000      8K r---- libc-2.16.so
+b6f63000      4K rw--- libc-2.16.so
+b6f64000     12K rw---   [ anon ]
+b6f67000    120K r-x-- libgcc_s.so.1
+b6f85000     28K ----- libgcc_s.so.1
+b6f8c000      4K rw--- libgcc_s.so.1
+b6f8d000    124K r-x-- ld-2.16.so
+b6fb1000      8K rw---   [ anon ]
+b6fb3000      4K r---- ld-2.16.so
+b6fb4000      4K rw--- ld-2.16.so
+beecb000    132K rw---   [ stack ]
+ffff0000      4K r-x--   [ anon ]
+ total     1660K
+-bash-3.2# ps -A | grep procps-ng-test
+  484 pts/1    00:00:00 procps-ng-test
+-bash-3.2# /tmp/procps-ng-test &
+[2] 492
+-bash-3.2# cd ; pwd
+/root
+-bash-3.2# /tmp/procps-ng-test &
+[3] 493
+-bash-3.2# pwdx $(echo `ps -A | grep procps-ng-test | awk '{print $1}'`| awk '{print $1}')  || echo 'COMMAND''ERROR'
+484: /tmp
+-bash-3.2# pwdx $(echo `ps -A | grep procps-ng-test | awk '{print $1}'`| awk '{print $2}')  || echo 'COMMAND''ERROR'
+492: /tmp
+-bash-3.2# top
+[?25l[?1c[H[J[0;10mtop - 13:05:01 up 11 min,  0 users,  load average: 0.14, 0.27, 0.15[0;10m[39;49m[0;10m[39;49m[K
+Tasks:[0;10m[39;49m[1m  46 [0;10m[39;49mtotal,[0;10m[39;49m[1m   4 [0;10m[39;49mrunning,[0;10m[39;49m[1m  42 [0;10m[39;49msleeping,[0;10m[39;49m[1m   0 [0;10m[39;49mstopped,[0;10m[39;49m[1m   0 [0;10m[39;49mzombie[0;10m[39;49m[0;10m[39;49m[K
+%Cpu(s):[0;10m[39;49m[1m 12.0 [0;10m[39;49mus,[0;10m[39;49m[1m  0.2 [0;10m[39;49msy,[0;10m[39;49m[1m  0.0 [0;10m[39;49mni,[0;10m[39;49m[1m 86.9 [0;10m[39;49mid,[0;10m[39;49m[1m  0.6 [0;10m[39;49mwa,[0;10m[39;49m[1m  0.0 [0;10m[39;49mhi,[0;10m[39;49m[1m  0.2 [0;10m[39;49msi,[0;10m[39;49m[1m  0.0 [0;10m[39;49mst[0;10m[39;49m[0;10m[39;49m[K
+KiB Mem: [0;10m[39;49m[1m   391836 [0;10m[39;49mtotal,[0;10m[39;49m[1m    30804 [0;10m[39;49mused,[0;10m[39;49m[1m   361032 [0;10m[39;49mfree,[0;10m[39;49m[1m        0 [0;10m[39;49mbuffers[0;10m[39;49m[0;10m[39;49m[K
+KiB Swap:[0;10m[39;49m[1m        0 [0;10m[39;49mtotal,[0;10m[39;49m[1m        0 [0;10m[39;49mused,[0;10m[39;49m[1m        0 [0;10m[39;49mfree,[0;10m[39;49m[1m    21024 [0;10m[39;49mcached[0;10m[39;49m[0;10m[39;49m[K
+
+[7m  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                   [0;10m[39;49m[K
+[0;10m[1m  493 root      20   0    1660    312    260 R 100.0 0.080   0:00.32 procps-ng-test                                                            [0;10m[39;49m[K
+[0;10m[1m  484 root      20   0    1660    312    260 R 50.17 0.080   0:00.32 procps-ng-test                                                            [0;10m[39;49m[K
+[0;10m[1m  492 root      20   0    1660    312    260 R 50.17 0.080   0:00.22 procps-ng-test                                                            [0;10m[39;49m[K
+[0;10m[1m  510 root      20   0    2956   1088    812 R 5.575 0.278   0:00.01 top                                                                       [0;10m[39;49m[K
+[0;10m    1 root      20   0    2216    608    528 S 0.000 0.155   0:00.07 init                                                                      [0;10m[39;49m[K
+[0;10m    2 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kthreadd                                                                  [0;10m[39;49m[K
+[0;10m    3 root      20   0       0      0      0 S 0.000 0.000   0:00.00 ksoftirqd/0                                                               [0;10m[39;49m[K
+[0;10m    4 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kworker/0:0                                                               [0;10m[39;49m[K
+[0;10m    5 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 kworker/0:0H                                                              [0;10m[39;49m[K
+[0;10m    6 root      20   0       0      0      0 S 0.000 0.000   0:00.03 kworker/u:0                                                               [0;10m[39;49m[K
+[0;10m    7 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 kworker/u:0H                                                              [0;10m[39;49m[K
+[0;10m    8 root      rt   0       0      0      0 S 0.000 0.000   0:00.00 migration/0                                                               [0;10m[39;49m[K
+[0;10m    9 root      rt   0       0      0      0 S 0.000 0.000   0:00.00 migration/1                                                               [0;10m[39;49m[K
+[0;10m   10 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kworker/1:0                                                               [0;10m[39;49m[K
+[0;10m   11 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 kworker/1:0H                                                              [0;10m[39;49m[K
+[0;10m   12 root      20   0       0      0      0 S 0.000 0.000   0:00.00 ksoftirqd/1                                                               [0;10m[39;49m[K
+[0;10m   13 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 khelper                                                                   [0;10m[39;49m[K
+[0;10m   14 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kdevtmpfs                                                                 [0;10m[39;49m[K
+[0;10m   15 root      20   0       0      0      0 S 0.000 0.000   0:02.06 kworker/0:1                                                               [0;10m[39;49m[K
+[0;10m   16 root      20   0       0      0      0 S 0.000 0.000   0:00.10 kworker/1:1                                                               [0;10m[39;49m[K
+[0;10m   17 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kworker/u:1                                                               [0;10m[39;49m[K
+[0;10m  135 root      20   0       0      0      0 S 0.000 0.000   0:00.00 sync_supers                                                               [0;10m[39;49m[K
+[0;10m  137 root      20   0       0      0      0 S 0.000 0.000   0:00.00 bdi-default                                                               [0;10m[39;49m[K
+[0;10m  139 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 kblockd                                                                   [0;10m[39;49m[K
+[0;10m  151 root      20   0       0      0      0 S 0.000 0.000   0:00.00 khubd                                                                     [0;10m[39;49m[K
+[0;10m  239 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 rpciod                                                                    [0;10m[39;49m[K
+[0;10m  244 root      20   0       0      0      0 S 0.000 0.000   0:00.00 kswapd0                                                                   [0;10m[39;49m[K
+[0;10m  245 root      20   0       0      0      0 S 0.000 0.000   0:00.00 fsnotify_mark                                                             [0;10m[39;49m[K
+[0;10m  246 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 nfsiod                                                                    [0;10m[39;49m[K
+[0;10m  301 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 ehci-wq                                                                   [0;10m[39;49m[K
+[0;10m  313 root       0 -20       0      0      0 S 0.000 0.000   0:00.00 deferwq                                                                   [0;10m[39;49m[K
+[0;10m  316 root      20   0       0      0      0 S 0.000 0.000   0:00.00 scsi_eh_0                                                                 [0;10m[39;49m[K[6;1H[K[40;1H
+[?25h[?0c-bash-3.2# killall procps-ng-test || echo 'COMMAND''ERROR'
+[3]+  Terminated              /tmp/procps-ng-test
+[1]-  Terminated              ./procps-ng-test  (wd: /tmp)
+(wd now: ~)
+-bash-3.2# sysctl -A || echo 'COMMAND''ERROR'
+dev.scsi.logging_level = 0
+fs.aio-max-nr = 65536
+fs.aio-nr = 0
+fs.dentry-state = 2912  1191    45      0       0       0
+fs.dir-notify-enable = 1
+fs.epoll.max_user_watches = 148517
+fs.file-max = 35856
+fs.file-nr = 160        0       35856
+fs.inode-nr = 2731      4
+fs.inode-state = 2731   4       0       0       0       0       0
+fs.inotify.max_queued_events = 16384
+fs.inotify.max_user_instances = 128
+fs.inotify.max_user_watches = 8192
+fs.lease-break-time = 45
+fs.leases-enable = 1
+fs.mqueue.msg_max = 10
+fs.mqueue.msgsize_max = 8192
+fs.mqueue.queues_max = 256
+fs.nfs.nfs_congestion_kb = 19968
+fs.nfs.nfs_mountpoint_timeout = 500
+fs.nfs.nlm_grace_period = 0
+fs.nfs.nlm_tcpport = 0
+fs.nfs.nlm_timeout = 10
+fs.nfs.nlm_udpport = 0
+fs.nfs.nsm_local_state = 0
+fs.nfs.nsm_use_hostnames = 0
+fs.nr_open = 1048576
+fs.overflowgid = 65534
+fs.overflowuid = 65534
+fs.pipe-max-size = 1048576
+fs.suid_dumpable = 0
+kernel.auto_msgmni = 1
+kernel.blk_iopoll = 1
+kernel.cad_pid = 1
+kernel.cap_last_cap = 35
+kernel.core_pattern = core
+kernel.core_pipe_limit = 0
+kernel.core_uses_pid = 0
+kernel.ctrl-alt-del = 1
+kernel.dmesg_restrict = 0
+kernel.domainname = (none)
+kernel.ftrace_dump_on_oops = 0
+kernel.hostname = 10.0.6.39
+kernel.hotplug = /sbin/hotplug
+kernel.keys.gc_delay = 300
+kernel.keys.maxbytes = 20000
+kernel.keys.maxkeys = 200
+kernel.keys.root_maxbytes = 20000
+kernel.keys.root_maxkeys = 200
+kernel.kptr_restrict = 0
+kernel.max_lock_depth = 1024
+kernel.modprobe = /sbin/modprobe
+kernel.modules_disabled = 0
+kernel.msgmax = 8192
+kernel.msgmnb = 16384
+kernel.msgmni = 764
+kernel.ngroups_max = 65536
+kernel.osrelease = 3.4.60_nl-kzm-a9-00073-ge5c404a
+kernel.ostype = Linux
+kernel.overflowgid = 65534
+kernel.overflowuid = 65534
+kernel.panic = 0
+kernel.panic_on_oops = 0
+kernel.pid_max = 32768
+kernel.poweroff_cmd = /sbin/poweroff
+kernel.print-fatal-signals = 0
+kernel.printk = 7       4       1       7
+kernel.printk_delay = 0
+kernel.printk_ratelimit = 5
+kernel.printk_ratelimit_burst = 10
+kernel.pty.max = 4096
+kernel.pty.nr = 2
+kernel.pty.reserve = 1024
+kernel.random.boot_id = 393e701f-9b1a-4c1b-8ab3-f771d63d1673
+kernel.random.entropy_avail = 161
+kernel.random.poolsize = 4096
+kernel.random.read_wakeup_threshold = 64
+kernel.random.uuid = 25e7821e-6a83-4d72-9ea4-f5511698b378
+kernel.random.write_wakeup_threshold = 128
+kernel.randomize_va_space = 1
+kernel.real-root-dev = 0
+kernel.sched_child_runs_first = 0
+kernel.sched_domain.cpu0.domain0.busy_factor = 64
+kernel.sched_domain.cpu0.domain0.busy_idx = 2
+kernel.sched_domain.cpu0.domain0.cache_nice_tries = 1
+kernel.sched_domain.cpu0.domain0.flags = 4143
+kernel.sched_domain.cpu0.domain0.forkexec_idx = 0
+kernel.sched_domain.cpu0.domain0.idle_idx = 1
+kernel.sched_domain.cpu0.domain0.imbalance_pct = 125
+kernel.sched_domain.cpu0.domain0.max_interval = 4
+kernel.sched_domain.cpu0.domain0.min_interval = 1
+kernel.sched_domain.cpu0.domain0.name = CPU
+kernel.sched_domain.cpu0.domain0.newidle_idx = 0
+kernel.sched_domain.cpu0.domain0.wake_idx = 0
+kernel.sched_domain.cpu1.domain0.busy_factor = 64
+kernel.sched_domain.cpu1.domain0.busy_idx = 2
+kernel.sched_domain.cpu1.domain0.cache_nice_tries = 1
+kernel.sched_domain.cpu1.domain0.flags = 4143
+kernel.sched_domain.cpu1.domain0.forkexec_idx = 0
+kernel.sched_domain.cpu1.domain0.idle_idx = 1
+kernel.sched_domain.cpu1.domain0.imbalance_pct = 125
+kernel.sched_domain.cpu1.domain0.max_interval = 4
+kernel.sched_domain.cpu1.domain0.min_interval = 1
+kernel.sched_domain.cpu1.domain0.name = CPU
+kernel.sched_domain.cpu1.domain0.newidle_idx = 0
+kernel.sched_domain.cpu1.domain0.wake_idx = 0
+kernel.sched_latency_ns = 12000000
+kernel.sched_migration_cost = 500000
+kernel.sched_min_granularity_ns = 1500000
+kernel.sched_nr_migrate = 32
+kernel.sched_rt_period_us = 1000000
+kernel.sched_rt_runtime_us = 950000
+kernel.sched_shares_window = 10000000
+kernel.sched_time_avg = 1000
+kernel.sched_tunable_scaling = 1
+kernel.sched_wakeup_granularity_ns = 2000000
+kernel.sem = 250        32000   32      128
+kernel.shm_rmid_forced = 0
+kernel.shmall = 2097152
+kernel.shmmax = 33554432
+kernel.shmmni = 4096
+kernel.sysrq = 1
+kernel.tainted = 0
+kernel.thread_rss_threshold = 8192
+kernel.threads-max = 5607
+kernel.timer_migration = 1
+kernel.usermodehelper.bset = 4294967295 4294967295
+kernel.usermodehelper.inheritable = 4294967295  4294967295
+kernel.version = #1 SMP Wed Feb 19 12:40:08 IST 2014
+net.core.dev_weight = 64
+net.core.message_burst = 10
+net.core.message_cost = 5
+net.core.netdev_budget = 300
+net.core.netdev_max_backlog = 1000
+net.core.netdev_tstamp_prequeue = 1
+net.core.optmem_max = 10240
+net.core.rmem_default = 163840
+net.core.rmem_max = 163840
+net.core.rps_sock_flow_entries = 0
+net.core.somaxconn = 128
+net.core.warnings = 1
+net.core.wmem_default = 163840
+net.core.wmem_max = 163840
+net.ipv4.conf.all.accept_local = 0
+net.ipv4.conf.all.accept_redirects = 1
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.arp_accept = 0
+net.ipv4.conf.all.arp_announce = 0
+net.ipv4.conf.all.arp_filter = 0
+net.ipv4.conf.all.arp_ignore = 0
+net.ipv4.conf.all.arp_notify = 0
+net.ipv4.conf.all.bootp_relay = 0
+net.ipv4.conf.all.disable_policy = 0
+net.ipv4.conf.all.disable_xfrm = 0
+net.ipv4.conf.all.force_igmp_version = 0
+net.ipv4.conf.all.forwarding = 0
+net.ipv4.conf.all.log_martians = 0
+net.ipv4.conf.all.mc_forwarding = 0
+net.ipv4.conf.all.medium_id = 0
+net.ipv4.conf.all.promote_secondaries = 0
+net.ipv4.conf.all.proxy_arp = 0
+net.ipv4.conf.all.proxy_arp_pvlan = 0
+net.ipv4.conf.all.rp_filter = 0
+net.ipv4.conf.all.secure_redirects = 1
+net.ipv4.conf.all.send_redirects = 1
+net.ipv4.conf.all.shared_media = 1
+net.ipv4.conf.all.src_valid_mark = 0
+net.ipv4.conf.all.tag = 0
+net.ipv4.conf.default.accept_local = 0
+net.ipv4.conf.default.accept_redirects = 1
+net.ipv4.conf.default.accept_source_route = 1
+net.ipv4.conf.default.arp_accept = 0
+net.ipv4.conf.default.arp_announce = 0
+net.ipv4.conf.default.arp_filter = 0
+net.ipv4.conf.default.arp_ignore = 0
+net.ipv4.conf.default.arp_notify = 0
+net.ipv4.conf.default.bootp_relay = 0
+net.ipv4.conf.default.disable_policy = 0
+net.ipv4.conf.default.disable_xfrm = 0
+net.ipv4.conf.default.force_igmp_version = 0
+net.ipv4.conf.default.forwarding = 0
+net.ipv4.conf.default.log_martians = 0
+net.ipv4.conf.default.mc_forwarding = 0
+net.ipv4.conf.default.medium_id = 0
+net.ipv4.conf.default.promote_secondaries = 0
+net.ipv4.conf.default.proxy_arp = 0
+net.ipv4.conf.default.proxy_arp_pvlan = 0
+net.ipv4.conf.default.rp_filter = 0
+net.ipv4.conf.default.secure_redirects = 1
+net.ipv4.conf.default.send_redirects = 1
+net.ipv4.conf.default.shared_media = 1
+net.ipv4.conf.default.src_valid_mark = 0
+net.ipv4.conf.default.tag = 0
+net.ipv4.conf.eth0.accept_local = 0
+net.ipv4.conf.eth0.accept_redirects = 1
+net.ipv4.conf.eth0.accept_source_route = 1
+net.ipv4.conf.eth0.arp_accept = 0
+net.ipv4.conf.eth0.arp_announce = 0
+net.ipv4.conf.eth0.arp_filter = 0
+net.ipv4.conf.eth0.arp_ignore = 0
+net.ipv4.conf.eth0.arp_notify = 0
+net.ipv4.conf.eth0.bootp_relay = 0
+net.ipv4.conf.eth0.disable_policy = 0
+net.ipv4.conf.eth0.disable_xfrm = 0
+net.ipv4.conf.eth0.force_igmp_version = 0
+net.ipv4.conf.eth0.forwarding = 0
+net.ipv4.conf.eth0.log_martians = 0
+net.ipv4.conf.eth0.mc_forwarding = 0
+net.ipv4.conf.eth0.medium_id = 0
+net.ipv4.conf.eth0.promote_secondaries = 0
+net.ipv4.conf.eth0.proxy_arp = 0
+net.ipv4.conf.eth0.proxy_arp_pvlan = 0
+net.ipv4.conf.eth0.rp_filter = 0
+net.ipv4.conf.eth0.secure_redirects = 1
+net.ipv4.conf.eth0.send_redirects = 1
+net.ipv4.conf.eth0.shared_media = 1
+net.ipv4.conf.eth0.src_valid_mark = 0
+net.ipv4.conf.eth0.tag = 0
+net.ipv4.conf.lo.accept_local = 0
+net.ipv4.conf.lo.accept_redirects = 1
+net.ipv4.conf.lo.accept_source_route = 1
+net.ipv4.conf.lo.arp_accept = 0
+net.ipv4.conf.lo.arp_announce = 0
+net.ipv4.conf.lo.arp_filter = 0
+net.ipv4.conf.lo.arp_ignore = 0
+net.ipv4.conf.lo.arp_notify = 0
+net.ipv4.conf.lo.bootp_relay = 0
+net.ipv4.conf.lo.disable_policy = 1
+net.ipv4.conf.lo.disable_xfrm = 1
+net.ipv4.conf.lo.force_igmp_version = 0
+net.ipv4.conf.lo.forwarding = 0
+net.ipv4.conf.lo.log_martians = 0
+net.ipv4.conf.lo.mc_forwarding = 0
+net.ipv4.conf.lo.medium_id = 0
+net.ipv4.conf.lo.promote_secondaries = 0
+net.ipv4.conf.lo.proxy_arp = 0
+net.ipv4.conf.lo.proxy_arp_pvlan = 0
+net.ipv4.conf.lo.rp_filter = 0
+net.ipv4.conf.lo.secure_redirects = 1
+net.ipv4.conf.lo.send_redirects = 1
+net.ipv4.conf.lo.shared_media = 1
+net.ipv4.conf.lo.src_valid_mark = 0
+net.ipv4.conf.lo.tag = 0
+net.ipv4.icmp_echo_ignore_all = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_errors_use_inbound_ifaddr = 0
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.icmp_ratelimit = 1000
+net.ipv4.icmp_ratemask = 6168
+net.ipv4.igmp_max_memberships = 20
+net.ipv4.igmp_max_msf = 10
+net.ipv4.inet_peer_maxttl = 600
+net.ipv4.inet_peer_minttl = 120
+net.ipv4.inet_peer_threshold = 65664
+net.ipv4.ip_default_ttl = 64
+net.ipv4.ip_dynaddr = 0
+net.ipv4.ip_forward = 0
+net.ipv4.ip_local_port_range = 32768    61000
+net.ipv4.ip_local_reserved_ports = 
+net.ipv4.ip_no_pmtu_disc = 0
+net.ipv4.ip_nonlocal_bind = 0
+net.ipv4.ipfrag_high_thresh = 262144
+net.ipv4.ipfrag_low_thresh = 196608
+net.ipv4.ipfrag_max_dist = 64
+net.ipv4.ipfrag_secret_interval = 600
+net.ipv4.ipfrag_time = 30
+net.ipv4.neigh.default.anycast_delay = 100
+net.ipv4.neigh.default.app_solicit = 0
+net.ipv4.neigh.default.base_reachable_time_ms = 30000
+net.ipv4.neigh.default.delay_first_probe_time = 5
+net.ipv4.neigh.default.gc_interval = 30
+net.ipv4.neigh.default.gc_stale_time = 60
+net.ipv4.neigh.default.gc_thresh1 = 128
+net.ipv4.neigh.default.gc_thresh2 = 512
+net.ipv4.neigh.default.gc_thresh3 = 1024
+net.ipv4.neigh.default.locktime = 100
+net.ipv4.neigh.default.mcast_solicit = 3
+net.ipv4.neigh.default.proxy_delay = 79
+net.ipv4.neigh.default.proxy_qlen = 64
+net.ipv4.neigh.default.retrans_time_ms = 1000
+net.ipv4.neigh.default.ucast_solicit = 3
+net.ipv4.neigh.default.unres_qlen = 35
+net.ipv4.neigh.default.unres_qlen_bytes = 65536
+net.ipv4.neigh.eth0.anycast_delay = 100
+net.ipv4.neigh.eth0.app_solicit = 0
+net.ipv4.neigh.eth0.base_reachable_time_ms = 30000
+net.ipv4.neigh.eth0.delay_first_probe_time = 5
+net.ipv4.neigh.eth0.gc_stale_time = 60
+net.ipv4.neigh.eth0.locktime = 100
+net.ipv4.neigh.eth0.mcast_solicit = 3
+net.ipv4.neigh.eth0.proxy_delay = 79
+net.ipv4.neigh.eth0.proxy_qlen = 64
+net.ipv4.neigh.eth0.retrans_time_ms = 1000
+net.ipv4.neigh.eth0.ucast_solicit = 3
+net.ipv4.neigh.eth0.unres_qlen = 35
+net.ipv4.neigh.eth0.unres_qlen_bytes = 65536
+net.ipv4.neigh.lo.anycast_delay = 100
+net.ipv4.neigh.lo.app_solicit = 0
+net.ipv4.neigh.lo.base_reachable_time_ms = 30000
+net.ipv4.neigh.lo.delay_first_probe_time = 5
+net.ipv4.neigh.lo.gc_stale_time = 60
+net.ipv4.neigh.lo.locktime = 100
+net.ipv4.neigh.lo.mcast_solicit = 3
+net.ipv4.neigh.lo.proxy_delay = 79
+net.ipv4.neigh.lo.proxy_qlen = 64
+net.ipv4.neigh.lo.retrans_time_ms = 1000
+net.ipv4.neigh.lo.ucast_solicit = 3
+net.ipv4.neigh.lo.unres_qlen = 35
+net.ipv4.neigh.lo.unres_qlen_bytes = 65536
+net.ipv4.netfilter.ip_conntrack_buckets = 6144
+net.ipv4.netfilter.ip_conntrack_checksum = 1
+net.ipv4.netfilter.ip_conntrack_count = 3
+net.ipv4.netfilter.ip_conntrack_generic_timeout = 600
+net.ipv4.netfilter.ip_conntrack_icmp_timeout = 30
+net.ipv4.netfilter.ip_conntrack_log_invalid = 0
+net.ipv4.netfilter.ip_conntrack_max = 24476
+net.ipv4.netfilter.ip_conntrack_tcp_be_liberal = 0
+net.ipv4.netfilter.ip_conntrack_tcp_loose = 1
+net.ipv4.netfilter.ip_conntrack_tcp_max_retrans = 3
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_close = 10
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_close_wait = 60
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_established = 432000
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_fin_wait = 120
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_last_ack = 30
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_max_retrans = 300
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_syn_recv = 60
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_syn_sent = 120
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_syn_sent2 = 120
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_time_wait = 120
+net.ipv4.netfilter.ip_conntrack_udp_timeout = 30
+net.ipv4.netfilter.ip_conntrack_udp_timeout_stream = 180
+net.ipv4.ping_group_range = 1   0
+net.ipv4.route.error_burst = 640
+net.ipv4.route.error_cost = 128
+net.ipv4.route.gc_elasticity = 8
+net.ipv4.route.gc_interval = 60
+net.ipv4.route.gc_min_interval = 0
+net.ipv4.route.gc_min_interval_ms = 500
+net.ipv4.route.gc_thresh = 4096
+net.ipv4.route.gc_timeout = 300
+net.ipv4.route.max_size = 65536
+net.ipv4.route.min_adv_mss = 256
+net.ipv4.route.min_pmtu = 552
+net.ipv4.route.mtu_expires = 600
+net.ipv4.route.redirect_load = 2
+net.ipv4.route.redirect_number = 9
+net.ipv4.route.redirect_silence = 2048
+net.ipv4.rt_cache_rebuild_count = 4
+net.ipv4.tcp_abc = 0
+net.ipv4.tcp_abort_on_overflow = 0
+net.ipv4.tcp_adv_win_scale = 1
+net.ipv4.tcp_allowed_congestion_control = cubic reno
+net.ipv4.tcp_app_win = 31
+net.ipv4.tcp_available_congestion_control = cubic reno
+net.ipv4.tcp_base_mss = 512
+net.ipv4.tcp_challenge_ack_limit = 100
+net.ipv4.tcp_congestion_control = cubic
+net.ipv4.tcp_cookie_size = 0
+net.ipv4.tcp_dsack = 1
+net.ipv4.tcp_ecn = 2
+net.ipv4.tcp_fack = 1
+net.ipv4.tcp_fin_timeout = 60
+net.ipv4.tcp_frto = 2
+net.ipv4.tcp_frto_response = 0
+net.ipv4.tcp_keepalive_intvl = 75
+net.ipv4.tcp_keepalive_probes = 9
+net.ipv4.tcp_keepalive_time = 7200
+net.ipv4.tcp_low_latency = 0
+net.ipv4.tcp_max_orphans = 8192
+net.ipv4.tcp_max_ssthresh = 0
+net.ipv4.tcp_max_syn_backlog = 128
+net.ipv4.tcp_max_tw_buckets = 8192
+net.ipv4.tcp_mem = 9198 12266   18396
+net.ipv4.tcp_moderate_rcvbuf = 1
+net.ipv4.tcp_mtu_probing = 0
+net.ipv4.tcp_no_metrics_save = 0
+net.ipv4.tcp_orphan_retries = 0
+net.ipv4.tcp_reordering = 3
+net.ipv4.tcp_retrans_collapse = 1
+net.ipv4.tcp_retries1 = 3
+net.ipv4.tcp_retries2 = 15
+net.ipv4.tcp_rfc1337 = 0
+net.ipv4.tcp_rmem = 4096        87380   3158016
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_slow_start_after_idle = 1
+net.ipv4.tcp_stdurg = 0
+net.ipv4.tcp_syn_retries = 5
+net.ipv4.tcp_synack_retries = 5
+net.ipv4.tcp_thin_dupack = 0
+net.ipv4.tcp_thin_linear_timeouts = 0
+net.ipv4.tcp_timestamps = 1
+net.ipv4.tcp_tso_win_divisor = 3
+net.ipv4.tcp_tw_recycle = 0
+net.ipv4.tcp_tw_reuse = 0
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_wmem = 4096        16384   3158016
+net.ipv4.tcp_workaround_signed_windows = 0
+net.ipv4.udp_mem = 9252 12336   18504
+net.ipv4.udp_rmem_min = 4096
+net.ipv4.udp_wmem_min = 4096
+net.netfilter.nf_conntrack_acct = 0
+net.netfilter.nf_conntrack_buckets = 6144
+net.netfilter.nf_conntrack_checksum = 1
+net.netfilter.nf_conntrack_count = 3
+net.netfilter.nf_conntrack_expect_max = 96
+net.netfilter.nf_conntrack_generic_timeout = 600
+net.netfilter.nf_conntrack_icmp_timeout = 30
+net.netfilter.nf_conntrack_log_invalid = 0
+net.netfilter.nf_conntrack_max = 24476
+net.netfilter.nf_conntrack_tcp_be_liberal = 0
+net.netfilter.nf_conntrack_tcp_loose = 1
+net.netfilter.nf_conntrack_tcp_max_retrans = 3
+net.netfilter.nf_conntrack_tcp_timeout_close = 10
+net.netfilter.nf_conntrack_tcp_timeout_close_wait = 60
+net.netfilter.nf_conntrack_tcp_timeout_established = 432000
+net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 120
+net.netfilter.nf_conntrack_tcp_timeout_last_ack = 30
+net.netfilter.nf_conntrack_tcp_timeout_max_retrans = 300
+net.netfilter.nf_conntrack_tcp_timeout_syn_recv = 60
+net.netfilter.nf_conntrack_tcp_timeout_syn_sent = 120
+net.netfilter.nf_conntrack_tcp_timeout_time_wait = 120
+net.netfilter.nf_conntrack_tcp_timeout_unacknowledged = 300
+net.netfilter.nf_conntrack_udp_timeout = 30
+net.netfilter.nf_conntrack_udp_timeout_stream = 180
+net.netfilter.nf_log.0 = NONE
+net.netfilter.nf_log.1 = NONE
+net.netfilter.nf_log.10 = NONE
+net.netfilter.nf_log.11 = NONE
+net.netfilter.nf_log.12 = NONE
+net.netfilter.nf_log.2 = ipt_ULOG
+net.netfilter.nf_log.3 = NONE
+net.netfilter.nf_log.4 = NONE
+net.netfilter.nf_log.5 = NONE
+net.netfilter.nf_log.6 = NONE
+net.netfilter.nf_log.7 = NONE
+net.netfilter.nf_log.8 = NONE
+net.netfilter.nf_log.9 = NONE
+net.nf_conntrack_max = 24476
+net.unix.max_dgram_qlen = 10
+vm.block_dump = 0
+vm.dirty_background_bytes = 0
+vm.dirty_background_ratio = 10
+vm.dirty_bytes = 0
+vm.dirty_expire_centisecs = 3000
+vm.dirty_ratio = 20
+vm.dirty_writeback_centisecs = 500
+vm.drop_caches = 0
+vm.laptop_mode = 0
+vm.legacy_va_layout = 0
+vm.lowmem_reserve_ratio = 32
+vm.max_map_count = 65530
+vm.min_free_kbytes = 2513
+vm.min_free_order_shift = 1
+vm.mmap_min_addr = 4096
+vm.nr_pdflush_threads = 0
+vm.oom_dump_tasks = 1
+vm.oom_kill_allocating_task = 0
+vm.overcommit_memory = 0
+vm.overcommit_ratio = 50
+vm.page-cluster = 3
+vm.panic_on_oom = 0
+vm.percpu_pagelist_fraction = 0
+vm.scan_unevictable_pages = 0
+vm.stat_interval = 1
+vm.swappiness = 60
+vm.vfs_cache_pressure = 100
+[2]+  Terminated              /tmp/procps-ng-test  (wd: /tmp)
+(wd now: ~)
+-bash-3.2# watch date
+[1;39r[0;10m[4l[?7h[H[JEvery 2.0s: date[1;120HTue Feb 18 13:05:03 2014[3;1HTue Feb 18 13:05:03 UTC 2014[39;143H[39;1H-bash-3.2# 
+-bash-3.2# w
+ 13:05:05 up 11 min,  0 users,  load average: 0.13, 0.27, 0.15
+USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+-bash-3.2# uptime
+ 13:05:05 up 11 min,  0 users,  load average: 0.13, 0.27, 0.15
+vmstat 1 5
+-bash-3.2# vmstat 1 5
+procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa
+ 0  0      0 361272      0  21024    0    0     0     0  140   22 12  0 87  1
+ls -l
+ 0  0      0 361336      0  21024    0    0     0     0  268   15  0  0 100  0
+ 0  0      0 361336      0  21024    0    0     0     0  262    9  0  0 100  0
+ 0  0      0 361336      0  21024    0    0     0     0  262    9  0  0 100  0
+ 0  0      0 361336      0  21024    0    0     0     0  262   16  0  0 100  0
+-bash-3.2# ls -l
+pwd
+-rwxr-xr-x    1 root     root          3582 Feb 19  2014 hostname-ptest.exp
+-r--------    1 root     root          1675 Feb 19  2014 id_rsa
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb.org
+-rwxr-xr-x    1 root     root          4848 Feb 19  2014 procps-ng-ptest.exp
+-rw-r--r--    1 root     root             0 Feb 19  2014 test.txt
+-bash-3.2# pwd
+/root
+-bash-3.2# cd .
+-bash-3.2# ls -l
+slabtop 
+-rwxr-xr-x    1 root     root          3582 Feb 19  2014 hostname-ptest.exp
+-r--------    1 root     root          1675 Feb 19  2014 id_rsa
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb.org
+-rwxr-xr-x    1 root     root          4848 Feb 19  2014 procps-ng-ptest.exp
+-rw-r--r--    1 root     root             0 Feb 19  2014 test.txt
+-bash-3.2# slabtop 
+[1;39r[0;10m[4l[?7h[H[J Active / Total Objects (% used)    : 19788 / 22620 (87.5%)
+ Active / Total Slabs (% used)[37G: 970 / 972 (99.8%)
+ Active / Total Caches (% used)     : 71 / 135 (52.6%)
+ Active / Total Size (% used)[37G: 3504.33K / 3851.91K (91.0%)
+ Minimum / Average / Maximum Object : 0.01K / 0.17K / 16384.00K
+
+[0;10;7m  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   
+[3G[0;10m5133   4859  94%    0.06K     87[42G59[51G348K size-32
+  3060   2977  97%    0.12K    102[42G30[51G408K dentry
+  1947   1941  99%    0.06K     33[42G59[51G132K sysfs_dir_cache
+  1524   1524 100%    0.32K    127[42G12[51G508K inode_cache
+  1410   1398  99%    0.12K     47[42G30[51G188K size-128
+  1015    822  80%    0.02K[34G7[41G145[13;52H28K anon_vma_chain
+  1003    996  99%    0.06K     17[42G59[14;52H68K size-64
+   880    803  91%    0.35K     80[42G11[51G320K proc_inode_cache
+   748    676  90%    0.09K     17[42G44[16;52H68K vm_area_struct
+   552    418  75%    0.04K[34G6[42G92[17;52H24K anon_vma
+   500    452  90%    0.19K     25[42G20[51G100K filp
+   460    460 100%    0.19K     23[42G20[19;52H92K size-192
+   322    312  96%    0.55K     46[20;43H7[51G184K nfs_inode_cache
+   300    300 100%    0.25K     20[42G15[21;52H80K size-256
+   300    126  42%    0.12K     10[42G30[22;52H40K cred_jar
+   264    261  98%    0.50K     33[23;43H8[51G132K size-512
+   236     51  21%    0.06K[34G4[42G59[24;52H16K pid
+   208    194  93%    0.15K[34G8[42G26[25;52H32K idr_layer_cache
+   208    195  93%    0.29K     16[42G13[26;52H64K radix_tree_node
+   180    134  74%    0.12K[34G6[42G30[27;52H24K kmem_cache
+   177     27  15%    0.06K[34G3[42G59[28;52H12K fs_cache
+   145[13G1   0%    0.02K[34G1[41G145[29;53H4K nsproxy
+   145[13G9   6%    0.02K[34G1[41G145[30;53H4K ip_fib_alias
+   132    126  95%    1.00K     33[31;43H4[51G132K size-1024
+   121    106  87%    0.35K     11[42G11[32;52H44K shmem_inode_cache
+   113[13G8   7%    0.03K[34G1[41G113[33;53H4K ip_fib_trie
+   113[13G5   4%    0.03K[34G1[41G113[34;53H4K tcp_bind_bucket
+   113[13G2   1%    0.03K[34G1[41G113[35;53H4K sd_ext_cdb
+   104     47  45%    0.50K     13[36;43H8[36;52H52K signal_cache
+[5G98     98 100%    2.00K     49[37;43H2[51G196K size-2048
+[5G90     27  30%    0.25K[34G6[42G15[38;52H24K files_cache
+[39;1H-bash-3.2# pwd
+/root
+-bash-3.2# cd .
+-bash-3.2# ls -l
+-rwxr-xr-x    1 root     root          3582 Feb 19  2014 hostname-ptest.exp
+-r--------    1 root     root          1675 Feb 19  2014 id_rsa
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb.org
+-rwxr-xr-x    1 root     root          4848 Feb 19  2014 procps-ng-ptest.exp
+-rw-r--r--    1 root     root             0 Feb 19  2014 test.txt
+-bash-3.2# pwd
+/root
+-bash-3.2# cd .
+-bash-3.2# ls -l
+-rwxr-xr-x    1 root     root          3582 Feb 19  2014 hostname-ptest.exp
+-r--------    1 root     root          1675 Feb 19  2014 id_rsa
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb
+-rw-r--r--    1 root     root           259 Feb 18 09:17 ohdb.org
+-rwxr-xr-x    1 root     root          4848 Feb 19  2014 procps-ng-ptest.exp
+-rw-r--r--    1 root     root             0 Feb 19  2014 test.txt
+-bash-3.2# tload -s 10
+[H 0.12, 0.26, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *                                                                                                                                             [H 0.11, 0.26, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      --                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    --                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    --                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     **                                                                                                                                            [H 0.10, 0.25, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ***                                                                                                                                           [H 0.09, 0.25, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ***                                                                                                                                           [H 0.08, 0.25, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -----                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ***                                                                                                                                           [H 0.08, 0.24, 0.15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ***                                                                                                                                           ^C
+
+-bash-3.2# 
+-bash-3.2# procps-ng test completed!
+procps-ng : TEST_OK

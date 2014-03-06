@@ -1,0 +1,94 @@
+## ------------------------ ##
+## GNU tar 1.17 test suite. ##
+## ------------------------ ##
+  1: tar version                                   FAILED (version.at:21)
+  2: decompressing from stdin                      FAILED (pipe.at:33)
+  3: mixing options                                ok
+  4: interspersed options                          ok
+  5: files-from: empty entries                     FAILED (T-empty.at:36)
+  6: files-from: 0-separated file without -0       skipped (T-null.at:24)
+  7: tar --index-file=FILE --file=-                FAILED (indexfile.at:29)
+  8: tar cvf -                                     ok
+  9: append                                        FAILED (append.at:24)
+ 10: appending files with long names               FAILED (append01.at:34)
+ 11: append vs. create                             FAILED (append02.at:43)
+ 12: exclude                                       FAILED (exclude.at:26)
+ 13: deleting a member after a big one             FAILED (delete01.at:26)
+ 14: deleting a member from stdin archive          FAILED (delete02.at:26)
+ 15: deleting members with long names              FAILED (delete03.at:26)
+ 16: deleting a large last member                  FAILED (delete04.at:26)
+ 17: deleting non-existing member                  FAILED (delete05.at:30)
+ 18: extract over an existing directory            ok
+ 19: extracting symlinks over an existing file     FAILED (extrac02.at:28)
+ 20: extraction loops                              FAILED (extrac03.at:26)
+ 21: extract + fnmatch                             FAILED (extrac04.at:26)
+ 22: extracting selected members from pax          FAILED (extrac05.at:38)
+ 23: mode of extracted directories                 FAILED (extrac06.at:36)
+ 24: extracting symlinks to a read-only dir        FAILED (extrac07.at:30)
+ 25: gzip                                          FAILED (gzip.at:28)
+ 26: incremental                                   FAILED (incremental.at:26)
+ 27: restore broken symlinks from incremental      FAILED (incr01.at:30)
+ 28: restoring timestamps from incremental         FAILED (incr02.at:35)
+ 29: --listed for individual files                 FAILED (listed01.at:29)
+ 30: working --listed                              FAILED (listed02.at:31)
+ 31: renamed files in incrementals                 FAILED (incr03.at:31)
+ 32: proper icontents initialization               FAILED (incr04.at:34)
+ 33: renamed dirs in incrementals                  FAILED (rename01.at:27)
+ 34: move between hierarchies                      FAILED (rename02.at:27)
+ 35: cyclic renames                                FAILED (rename03.at:26)
+ 36: changed file types in incrementals            FAILED (chtype.at:30)
+ 37: ignfail                                       skipped (ignfail.at:26)
+ 38: link count gt 2                               skipped (link01.at:36)
+ 39: long names in V7 archives                     FAILED (longv7.at:30)
+ 40: long file names divisible by block size       FAILED (long01.at:36)
+ 41: ustar: unsplittable file name                 FAILED (lustar01.at:27)
+ 42: ustar: unsplittable path name                 FAILED (lustar02.at:32)
+ 43: ustar: splitting long names                   FAILED (lustar03.at:29)
+ 44: multivolume dumps from pipes                  FAILED (multiv01.at:30)
+ 45: skipping a straddling member                  FAILED (multiv02.at:31)
+ 46: MV archive & long filenames                   FAILED (multiv03.at:33)
+ 47: split directory members in a MV archive       FAILED (multiv04.at:39)
+ 48: Restoring after an out of sync folume         FAILED (multiv05.at:30)
+ 49: old archives                                  FAILED (old.at:27)
+ 50: recurse                                       FAILED (recurse.at:24)
+ 51: working -C with --same-order                  FAILED (same-order01.at:29)
+ 52: multiple -C options                           FAILED (same-order02.at:28)
+ 53: short records                                 FAILED (shortrec.at:28)
+ 54: sparse files                                  skipped (sparse01.at:24)
+ 55: extracting sparse file over a pipe            skipped (sparse02.at:28)
+ 56: storing sparse files > 8G                     skipped (sparse03.at:29)
+ 57: sparse files in MV archives                   skipped (sparsemv.at:31)
+ 58: sparse files in PAX MV archives, v.0.0        skipped (spmvp00.at:24)
+ 59: sparse files in PAX MV archives, v.0.1        skipped (spmvp01.at:24)
+ 60: sparse files in PAX MV archives, v.1.0        skipped (spmvp10.at:24)
+ 61: update unchanged directories                  FAILED (update.at:30)
+ 62: volume                                        FAILED (volume.at:26)
+ 63: volume header size                            skipped (volsize.at:32)
+ 64: compressed format recognition                 FAILED (comprec.at:25)
+ 65: truncate                                      FAILED (truncate.at:32)
+ 66: grow                                          FAILED (grow.at:27)
+ 67: gtarfail                                      skipped (gtarfail.at:26)
+ 68: gtarfail2                                     skipped (gtarfail2.at:26)
+ 69: multi-fail                                    skipped (multi-fail.at:26)
+ 70: ustar-big-2g                                  skipped (ustar-big-2g.at:26)
+ 71: ustar-big-8g                                  skipped (ustar-big-8g.at:26)
+ 72: pax-big-10g                                   skipped (pax-big-10g.at:26)
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+## -------------------------- ##
+## testsuite.log was created. ##
+## -------------------------- ##
+
+Please send `tests/testsuite.log' and all information you think might help:
+
+   To: <bug-tar@gnu.org>
+   Subject: [GNU tar 1.17] testsuite: 1 2 5 7 9 10 11 12 13 14 15 16 17 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 61 62 64 65 66 failed
+
+
+You may investigate any problem if you feel able to do so, in which
+case the test suite provides a good starting point.  Its output may
+be found below `tests/testsuite.dir'.
+

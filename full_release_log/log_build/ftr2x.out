@@ -1,0 +1,167 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-cross-ftr2axfsxml-1.0.0-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-cross-ftr2axfsxml warning: group rpmuser does not exist - using root
+                                            ( 90%)#                                           ( 90%)##                                          ( 90%)###                                         ( 90%)####                                        ( 90%)#####                                       ( 90%)######                                      ( 90%)#######                                     ( 90%)########                                    ( 90%)#########                                   ( 90%)##########                                  ( 90%)###########                                 ( 90%)############                                ( 90%)#############                               ( 90%)##############                              ( 90%)###############                             ( 90%)################                            ( 90%)#################                           ( 90%)##################                          ( 90%)###################                         ( 90%)####################                        ( 90%)#####################                       ( 90%)######################                      ( 90%)#######################                     ( 90%)########################                    ( 90%)#########################                   ( 90%)##########################                  ( 90%)###########################                 ( 90%)############################                ( 90%)#############################               ( 90%)##############################              ( 90%)###############################             ( 90%)################################            ( 90%)#################################           ( 90%)##################################          ( 90%)###################################         ( 90%)####################################        ( 90%)#####################################       ( 90%)######################################      ( 90%)#######################################     ( 90%)warning: group rpmuser does not exist - using root
+########################################    ( 99%)#########################################   ( 99%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-cross-ftr2axfsxml.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.DVmlYq
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf ftr2axfsxml-1.0.0
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/ftr2axfsxml-1.0.0.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd ftr2axfsxml-1.0.0
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.9MiQlo
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr2axfsxml-1.0.0
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.zGtFJl
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr2axfsxml-1.0.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/cross/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/cross/bin
++ mv ftr2axfsxml arm-sony-linux-gnueabi-ftr2axfsxml
++ install -m 755 arm-sony-linux-gnueabi-ftr2axfsxml /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-ftr2axfsxml
++ ln -s arm-sony-linux-gnueabi-ftr2axfsxml /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-ftr2axfsxml
+Processing files: arm-sony-linux-gnueabi-cross-ftr2axfsxml-1.0.0-11000001.x86_64
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-cross-ftr2axfsxml-1.0.0-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/x86_64/arm-sony-linux-gnueabi-cross-ftr2axfsxml-1.0.0-11000001.x86_64.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.3ly56d
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr2axfsxml-1.0.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-cross-ftr2axfsxml-1.0.0-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 21 18:02:12 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/ftr2axfsxml-1.0.0/test/
+]0;rpmuser@Triangle: ~/rpm/BUILD/ftr2axfsxml-1.0.0/testrpmuser@Triangle:~/rpm/BUILD/ftr2axfsxml-1.0.0/test$ sed -i "s/PREFIX=\${TRIPLET}-dev-/PREFIX=arm-sony-linux-gnueabi-armv7a-/g" test-ftr2axfsxm l.sh
+]0;rpmuser@Triangle: ~/rpm/BUILD/ftr2axfsxml-1.0.0/testrpmuser@Triangle:~/rpm/BUILD/ftr2axfsxml-1.0.0/test$ sed -i "s/GCC=\${PREFIX}gcc/GCC=\"\${PREFIX}gcc -tarmv7a\"/g" test-ftr2axfsxml.sh
+]0;rpmuser@Triangle: ~/rpm/BUILD/ftr2axfsxml-1.0.0/testrpmuser@Triangle:~/rpm/BUILD/ftr2axfsxml-1.0.0/test$ sed -i "s/GCC=\${TRIPLET}-gcc/GCC=\"\${TRIPLET}-gcc -tarmv7a\"/g" test-ftr2axfsxml.sh
+]0;rpmuser@Triangle: ~/rpm/BUILD/ftr2axfsxml-1.0.0/testrpmuser@Triangle:~/rpm/BUILD/ftr2axfsxml-1.0.0/test$ sh test-ftr2axfsxml.sh -t arm-sony-linux-gnueabi | tee /tmp/ftr2axfsxml.log
+========== TEST CASE (FTR input file) for devel version ==========
+test-ftr2axfsxml.sh: checking the basic function
+Success
+test-ftr2axfsxml.sh: checking -c option
+Success
+test-ftr2axfsxml.sh: checking -s option
+./ref/test_prog.in1: bar1 not found, ignored.
+./ref/test_lib.in1: foo1 not found, ignored.
+./ref/test_lib.in1: foo5 not found, ignored.
+Success
+test-ftr2axfsxml.sh: checking -e option
+Success
+test-ftr2axfsxml.sh: checking -b option
+Success
+test-ftr2axfsxml.sh: checking -w option
+Success
+test-ftr2axfsxml.sh: checking -m option
+Success
+test-ftr2axfsxml.sh: checking -A option
+Success
+test-ftr2axfsxml.sh: checking -a option
+Success
+========== TEST CASE (User input file) for devel version =========
+test-ftr2axfsxml.sh: checking the basic function
+Success
+test-ftr2axfsxml.sh: checking -c option
+Success
+test-ftr2axfsxml.sh: checking -s option
+Success
+test-ftr2axfsxml.sh: checking -e option
+Success
+test-ftr2axfsxml.sh: checking -b option
+Success
+test-ftr2axfsxml.sh: checking -w option
+Success
+test-ftr2axfsxml.sh: checking -m option
+Success
+test-ftr2axfsxml.sh: checking -A option
+Success
+test-ftr2axfsxml.sh: checking -a option
+Success
+========== TEST CASE (FTR input file) for rel version ==========
+test-ftr2axfsxml.sh: checking the basic function
+Success
+test-ftr2axfsxml.sh: checking -c option
+Success
+test-ftr2axfsxml.sh: checking -s option
+./ref/test_prog.in1: bar1 not found, ignored.
+./ref/test_lib.in1: foo1 not found, ignored.
+./ref/test_lib.in1: foo5 not found, ignored.
+Success
+test-ftr2axfsxml.sh: checking -e option
+Success
+test-ftr2axfsxml.sh: checking -b option
+Success
+test-ftr2axfsxml.sh: checking -w option
+Success
+test-ftr2axfsxml.sh: checking -m option
+Success
+test-ftr2axfsxml.sh: checking -A option
+Success
+test-ftr2axfsxml.sh: checking -a option
+Success
+========== TEST CASE (User input file) for rel version =========
+test-ftr2axfsxml.sh: checking the basic function
+Success
+test-ftr2axfsxml.sh: checking -c option
+Success
+test-ftr2axfsxml.sh: checking -s option
+Success
+test-ftr2axfsxml.sh: checking -e option
+Success
+test-ftr2axfsxml.sh: checking -b option
+Success
+test-ftr2axfsxml.sh: checking -w option
+Success
+test-ftr2axfsxml.sh: checking -m option
+Success
+test-ftr2axfsxml.sh: checking -A option
+Success
+test-ftr2axfsxml.sh: checking -a option
+Success
+Passed: 36
+Failed: 0
+All tests Success!
+]0;rpmuser@Triangle: ~/rpm/BUILD/ftr2axfsxml-1.0.0/testrpmuser@Triangle:~/rpm/BUILD/ftr2axfsxml-1.0.0/test$ sending 10.0.6.38:/tmp/ftr2axfsxml.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+ftr2axfsxml : TEST_OK

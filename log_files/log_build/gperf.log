@@ -1,0 +1,153 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.3izx2b
+Patch #1 (gperf-3.0.1-gcc4.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.dxglAa
+checking whether make sets $(MAKE)... yes
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in lib
+configure: running /bin/sh '../../lib/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../lib
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+checking for ranlib... arm-sony-linux-gnueabi-ranlib
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in src
+configure: running /bin/sh '../../src/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../src
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking for stack-allocated variable-size arrays... yes
+checking for rand in -lm... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+configure: configuring in tests
+configure: running /bin/sh '../../tests/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../tests
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ANSI C... none needed
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for arm-sony-linux-gnueabi-g++... arm-sony-linux-gnueabi-g++ -tarmv7a
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-sony-linux-gnueabi-g++ -tarmv7a accepts -g... yes
+checking how to run the C++ preprocessor... arm-sony-linux-gnueabi-g++ -tarmv7a -E
+configure: creating ./config.status
+config.status: creating Makefile
+configure: configuring in doc
+configure: running /bin/sh '../../doc/configure' --prefix=/usr  '--host=arm-sony-linux-gnueabi' '--build=x86_64-pc-linux-gnu' '--prefix=/usr' '--includedir=/tool//usr/include' '--disable-nls' 'build_alias=x86_64-pc-linux-gnu' 'host_alias=arm-sony-linux-gnueabi' --cache-file=/dev/null --srcdir=../../doc
+checking whether make sets $(MAKE)... yes
+checking for a BSD compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+cd lib; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I../../lib -c ../../lib/getopt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -I../../lib -c ../../lib/getopt1.c
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I../../lib -c ../../lib/getline.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I../../lib -c ../../lib/hash.cc
+rm -f libgp.a
+ar rc libgp.a getopt.o getopt1.o getline.o hash.o
+arm-sony-linux-gnueabi-ranlib libgp.a
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+cd src; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/version.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/positions.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/options.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/keyword.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/keyword-list.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/input.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/bool-array.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/hash-table.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/search.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/output.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2 -I. -I../../src/../lib -c ../../src/main.cc
+arm-sony-linux-gnueabi-g++ -tarmv7a -O2  -o gperf version.o positions.o options.o keyword.o keyword-list.o input.o bool-array.o hash-table.o search.o output.o main.o ../lib/libgp.a -lm
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+cd tests; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+cd doc; make all
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.h4DlPo
+cd lib; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/lib'
+cd src; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+/bin/sh ../../src/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
+/usr/bin/install -c gperf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/gperf
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/src'
+cd tests; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/tests'
+cd doc; make install
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+/usr/bin/install -c -m 644 ../../doc/gperf.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/gperf.info
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1
+/usr/bin/install -c -m 644 ../../doc/gperf.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/gperf.1
+/bin/sh ../../doc/../mkinstalldirs /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc
+mkdir /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf
+/usr/bin/install -c -m 644 ../../doc/gperf.html /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/doc/gperf/gperf.html
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gperf-3.0.1/objdir/doc'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-gperf-3.0.1-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-gperf-3.0.1-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-gperf-3.0.1-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-gperf-3.0.1-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.kYovh6

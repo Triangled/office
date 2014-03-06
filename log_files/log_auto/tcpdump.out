@@ -1,0 +1,1229 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-tcpdump-4.3.0-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-tcpdumpwarning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            (  8%)#                                           (  8%)##                                          (  8%)###                                         ( 15%)####                                        ( 15%)#####                                       ( 15%)######                                      ( 15%)#######                                     ( 23%)########                                    ( 23%)#########                                   ( 23%)##########                                  ( 30%)###########                                 ( 30%)############                                ( 30%)#############                               ( 37%)##############                              ( 37%)###############                             ( 37%)################                            ( 45%)#################                           ( 45%)##################                          ( 45%)###################                         ( 45%)####################                        ( 52%)#####################                       ( 52%)######################                      ( 52%)#######################                     ( 59%)########################                    ( 59%)#########################                   ( 59%)##########################                  ( 67%)###########################                 ( 67%)############################                ( 67%)#############################               ( 74%)##############################              ( 74%)###############################             ( 74%)################################            ( 74%)#################################           ( 81%)##################################          ( 81%)###################################         ( 81%)####################################        ( 89%)#####################################       ( 89%)######################################      ( 89%)#######################################     ( 96%)########################################    ( 96%)#########################################   ( 96%)##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-tcpdump.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.0bufBs
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf tcpdump-4.3.0
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/tcpdump-4.3.0.tar.gz
++ /bin/tar -xvvf -
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/
+-rw-r--r-- mcr/mcr       29664 2012-04-05 19:42 tcpdump-4.3.0/print-lmp.c
+-rw-r--r-- mcr/mcr        2631 2012-04-05 19:42 tcpdump-4.3.0/print-enc.c
+-rw-r--r-- mcr/mcr        4645 2012-04-05 19:42 tcpdump-4.3.0/print-sunrpc.c
+-rw-r--r-- mcr/mcr        8298 2012-04-05 19:42 tcpdump-4.3.0/print-dvmrp.c
+-rw-r--r-- mcr/mcr       11342 2012-04-05 19:42 tcpdump-4.3.0/print-stp.c
+-rw-r--r-- mcr/mcr        8507 2012-04-05 19:42 tcpdump-4.3.0/ieee802_11.h
+-rw-r--r-- mcr/mcr        3575 2012-04-05 19:42 tcpdump-4.3.0/strcasecmp.c
+-rw-r--r-- mcr/mcr        8166 2012-04-05 19:42 tcpdump-4.3.0/bootp.h
+-rw-r--r-- mcr/mcr        3487 2012-04-05 19:42 tcpdump-4.3.0/print-sunatm.c
+-rw-r--r-- mcr/mcr        8789 2012-04-05 19:42 tcpdump-4.3.0/print-gre.c
+-rw-r--r-- mcr/mcr       26661 2012-04-05 19:42 tcpdump-4.3.0/print-fr.c
+-rwxr-xr-x mcr/mcr        2350 2012-04-05 19:42 tcpdump-4.3.0/mkdep
+-rwxr-xr-x mcr/mcr      359630 2012-04-05 19:42 tcpdump-4.3.0/configure
+-rw-r--r-- mcr/mcr        3853 2012-04-05 19:42 tcpdump-4.3.0/print-symantec.c
+-rw-r--r-- mcr/mcr       61023 2012-04-05 19:42 tcpdump-4.3.0/print-rx.c
+-rw-r--r-- mcr/mcr        1083 2012-04-05 19:42 tcpdump-4.3.0/signature.h
+-rw-r--r-- mcr/mcr        1046 2012-04-05 19:42 tcpdump-4.3.0/Readme.Win32
+-rw-r--r-- mcr/mcr        4141 2012-04-05 19:42 tcpdump-4.3.0/print-vjc.c
+-rw-r--r-- mcr/mcr       29768 2012-04-05 19:42 tcpdump-4.3.0/print-tcp.c
+-rw-r--r-- mcr/mcr        8338 2012-04-05 19:42 tcpdump-4.3.0/print-rip.c
+-rw-r--r-- mcr/mcr        6654 2012-04-05 19:42 tcpdump-4.3.0/ipsec_doi.h
+-rw-r--r-- mcr/mcr        2653 2012-04-05 19:42 tcpdump-4.3.0/esp.h
+-rw-r--r-- mcr/mcr        3573 2012-04-05 19:42 tcpdump-4.3.0/rx.h
+-rw-r--r-- mcr/mcr       17492 2012-04-05 19:42 tcpdump-4.3.0/print-domain.c
+-rw-r--r-- mcr/mcr       12041 2012-04-05 19:42 tcpdump-4.3.0/print-tipc.c
+-rw-r--r-- mcr/mcr        1375 2012-04-05 19:42 tcpdump-4.3.0/ipfc.h
+-rw-r--r-- mcr/mcr        6069 2012-04-05 19:42 tcpdump-4.3.0/print-cnfp.c
+-rw-r--r-- mcr/mcr        5606 2012-04-05 19:42 tcpdump-4.3.0/oakley.h
+-rw-r--r-- mcr/mcr        4547 2012-04-05 19:42 tcpdump-4.3.0/print-udld.c
+-rw-r--r-- mcr/mcr       30537 2012-04-05 19:42 tcpdump-4.3.0/print-sflow.c
+-rw-r--r-- mcr/mcr        1829 2012-04-05 19:42 tcpdump-4.3.0/enc.h
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/win32/
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/win32/Include/
+-rw-r--r-- mcr/mcr        2006 2012-04-05 19:42 tcpdump-4.3.0/win32/Include/w32_fzs.h
+-rw-r--r-- mcr/mcr        6162 2012-04-05 19:42 tcpdump-4.3.0/win32/Include/errno.h
+-rw-r--r-- mcr/mcr        4570 2012-04-05 19:42 tcpdump-4.3.0/win32/Include/getopt.h
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/win32/prj/
+-rw-r--r-- mcr/mcr         510 2012-04-05 19:42 tcpdump-4.3.0/win32/prj/WinDump.dsw
+-rw-r--r-- mcr/mcr       14138 2012-04-05 19:42 tcpdump-4.3.0/win32/prj/WinDump.dsp
+-rw-r--r-- mcr/mcr        4123 2012-04-05 19:42 tcpdump-4.3.0/win32/prj/GNUmakefile
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/win32/Src/
+-rw-r--r-- mcr/mcr        3882 2012-04-05 19:42 tcpdump-4.3.0/win32/Src/getopt.c
+-rw-r--r-- mcr/mcr        2716 2012-04-05 19:42 tcpdump-4.3.0/print-cip.c
+-rw-r--r-- mcr/mcr        2228 2012-04-05 19:42 tcpdump-4.3.0/addrtoname.h
+-rw-r--r-- mcr/mcr        1813 2012-04-05 19:42 tcpdump-4.3.0/vfprintf.c
+-rwxr-xr-x mcr/mcr       34469 2012-04-05 19:42 tcpdump-4.3.0/config.sub
+-rw-r--r-- mcr/mcr        7532 2012-04-05 19:42 tcpdump-4.3.0/ip6.h
+-rw-r--r-- mcr/mcr        2337 2012-04-05 19:42 tcpdump-4.3.0/cpack.h
+-rw-r--r-- mcr/mcr        3269 2012-04-05 19:42 tcpdump-4.3.0/ppp.h
+-rw-r--r-- mcr/mcr        5565 2012-04-05 19:42 tcpdump-4.3.0/print-ascii.c
+-rw-r--r-- mcr/mcr        3724 2012-04-05 19:42 tcpdump-4.3.0/oui.c
+-rw-r--r-- mcr/mcr        9870 2012-04-05 19:42 tcpdump-4.3.0/print-igmp.c
+-rw-r--r-- mcr/mcr        7109 2012-04-05 19:42 tcpdump-4.3.0/print-ip6.c
+-rw-r--r-- mcr/mcr       11322 2012-04-05 19:42 tcpdump-4.3.0/print-cdp.c
+-rw-r--r-- mcr/mcr       19598 2012-04-05 19:42 tcpdump-4.3.0/print-olsr.c
+-rw-r--r-- mcr/mcr        7516 2012-04-05 19:42 tcpdump-4.3.0/sctpHeader.h
+-rw-r--r-- mcr/mcr       13435 2012-06-12 22:26 tcpdump-4.3.0/print-lwapp.c
+-rw-r--r-- mcr/mcr       12406 2012-04-05 19:42 tcpdump-4.3.0/print-vtp.c
+-rw-r--r-- mcr/mcr        2064 2012-04-05 19:42 tcpdump-4.3.0/mpls.h
+-rw-r--r-- mcr/mcr       11873 2012-04-05 19:42 tcpdump-4.3.0/print-sctp.c
+-rw-r--r-- mcr/mcr        4632 2012-04-05 19:42 tcpdump-4.3.0/print-pflog.c
+-rw-r--r-- mcr/mcr        5793 2012-04-05 19:42 tcpdump-4.3.0/extract.h
+-rw-r--r-- mcr/mcr       15231 2012-04-05 19:42 tcpdump-4.3.0/print-atalk.c
+-rw-r--r-- mcr/mcr        9196 2012-04-05 19:42 tcpdump-4.3.0/print-fddi.c
+-rw-r--r-- mcr/mcr       16588 2012-04-05 19:42 tcpdump-4.3.0/interface.h
+-rw-r--r-- mcr/mcr        2961 2012-04-05 19:42 tcpdump-4.3.0/fddi.h
+-rw-r--r-- mcr/mcr        5613 2012-04-05 19:42 tcpdump-4.3.0/sll.h
+-rw-r--r-- mcr/mcr        2454 2012-04-05 19:42 tcpdump-4.3.0/token.h
+-rw-r--r-- mcr/mcr       48138 2012-04-05 19:42 tcpdump-4.3.0/print-lldp.c
+-rw-r--r-- mcr/mcr        4180 2012-04-05 19:42 tcpdump-4.3.0/print-tftp.c
+-rw-r--r-- mcr/mcr       24256 2012-04-05 19:42 tcpdump-4.3.0/print-decnet.c
+-rw-r--r-- mcr/mcr       36909 2012-04-05 19:42 tcpdump-4.3.0/print-icmp6.c
+-rw-r--r-- mcr/mcr        6998 2012-04-05 19:42 tcpdump-4.3.0/print-arcnet.c
+-rw-r--r-- mcr/mcr       11738 2012-04-05 19:42 tcpdump-4.3.0/ieee802_11_radio.h
+-rw-r--r-- mcr/mcr       16737 2012-04-05 19:42 tcpdump-4.3.0/isakmp.h
+-rw-r--r-- mcr/mcr       19166 2012-04-05 19:42 tcpdump-4.3.0/print-cfm.c
+-rw-r--r-- mcr/mcr        2344 2012-04-05 19:42 tcpdump-4.3.0/print-ipnet.c
+-rw-r--r-- mcr/mcr        2836 2012-04-05 19:42 tcpdump-4.3.0/print-rt6.c
+-rw-r--r-- mcr/mcr        1598 2012-04-05 19:42 tcpdump-4.3.0/send-ack.awk
+-rw-r--r-- mcr/mcr        4267 2012-04-05 19:42 tcpdump-4.3.0/appletalk.h
+-rw-r--r-- mcr/mcr        2405 2012-04-05 19:42 tcpdump-4.3.0/ah.h
+-rw-r--r-- mcr/mcr        2721 2012-04-05 19:42 tcpdump-4.3.0/nfsfh.h
+-rw-r--r-- mcr/mcr       92918 2012-04-05 19:42 tcpdump-4.3.0/print-isoclns.c
+-rw-r--r-- mcr/mcr       17038 2012-04-05 19:42 tcpdump-4.3.0/sctpConstants.h
+-rw-r--r-- mcr/mcr       20935 2012-04-05 19:42 tcpdump-4.3.0/print-bootp.c
+-rw-r--r-- mcr/mcr       12911 2012-04-05 19:42 tcpdump-4.3.0/parsenfsfh.c
+-rw-r--r-- mcr/mcr        3955 2012-04-05 19:42 tcpdump-4.3.0/dccp.h
+-rw-r--r-- mcr/mcr        5505 2012-04-05 19:42 tcpdump-4.3.0/print-ipx.c
+-rw-r--r-- mcr/mcr        6005 2012-04-05 19:42 tcpdump-4.3.0/ip.h
+-rw-r--r-- mcr/mcr        1254 2012-04-05 19:42 tcpdump-4.3.0/atm.h
+-rw-r--r-- mcr/mcr        6119 2012-04-05 19:42 tcpdump-4.3.0/gmpls.c
+-rw-r--r-- mcr/mcr        7317 2012-04-05 19:42 tcpdump-4.3.0/ospf6.h
+-rw-r--r-- mcr/mcr        8723 2012-04-05 19:42 tcpdump-4.3.0/print-rpki-rtr.c
+-rw-r--r-- mcr/mcr        6691 2012-04-05 19:42 tcpdump-4.3.0/print-vqp.c
+-rwxr-xr-x mcr/mcr         832 2012-04-05 19:42 tcpdump-4.3.0/l2vpn.h
+-rw-r--r-- mcr/mcr        5740 2012-04-05 19:42 tcpdump-4.3.0/print-token.c
+-rw-r--r-- mcr/mcr        3924 2012-04-05 19:42 tcpdump-4.3.0/print-ipfc.c
+-rw-r--r-- mcr/mcr       19473 2012-04-05 19:42 tcpdump-4.3.0/print-dhcp6.c
+-rw-r--r-- mcr/mcr       20284 2012-04-05 19:42 tcpdump-4.3.0/print-l2tp.c
+-rw-r--r-- mcr/mcr        3823 2012-04-05 19:42 tcpdump-4.3.0/llc.h
+-rw-r--r-- mcr/mcr       10705 2012-04-05 19:42 tcpdump-4.3.0/ospf.h
+-rw-r--r-- mcr/mcr       16449 2012-04-05 19:42 tcpdump-4.3.0/decnet.h
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/tests/
+-rw-r--r-- mcr/mcr        1190 2012-04-05 19:42 tcpdump-4.3.0/tests/lspping-fec-ldp.pcap
+-rw-r--r-- mcr/mcr       28583 2012-04-05 19:42 tcpdump-4.3.0/tests/print-capX.out
+-rw-r--r-- mcr/mcr        2504 2012-04-05 19:42 tcpdump-4.3.0/tests/e1000g.pcap
+-rw-r--r-- mcr/mcr        6621 2012-04-05 19:42 tcpdump-4.3.0/tests/print-flags.pcap
+-rw-r--r-- mcr/mcr           0 2012-04-05 19:42 tcpdump-4.3.0/tests/forces2v.out
+-rw-r--r-- mcr/mcr         114 2012-04-05 19:42 tcpdump-4.3.0/tests/mpls-ldp-hello.pcap
+-rw-r--r-- mcr/mcr       10128 2012-04-05 19:42 tcpdump-4.3.0/tests/forces1vvv.out
+-rw-r--r-- mcr/mcr        2063 2012-04-05 19:42 tcpdump-4.3.0/tests/babel1.out
+-rw-r--r-- mcr/mcr          42 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp1.out
+-rw-r--r-- mcr/mcr          24 2012-04-05 19:42 tcpdump-4.3.0/tests/eapon1.gdbinit
+-rw-r--r-- mcr/mcr        1139 2012-04-05 19:42 tcpdump-4.3.0/tests/bgp_vpn_attrset.out
+-rw-r--r-- mcr/mcr       21271 2012-04-05 19:42 tcpdump-4.3.0/tests/print-x.out
+-rw-r--r-- mcr/mcr       16205 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2fourv4.out
+-rw-r--r-- mcr/mcr          74 2012-04-05 19:42 tcpdump-4.3.0/tests/pppoe.out
+-rw-r--r-- mcr/mcr         454 2012-04-05 19:42 tcpdump-4.3.0/tests/isis-infinite-loop.pcap
+-rw-r--r-- mcr/mcr         356 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp-identification-segfault.pcap
+-rw-r--r-- mcr/mcr       78264 2012-04-05 19:42 tcpdump-4.3.0/tests/QinQpacket.pcap
+-rw-r--r-- mcr/mcr         272 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2pI2-secrets.txt
+-rw-r--r-- mcr/mcr         721 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp-delete-segfault.pcap
+-rw-r--r-- mcr/mcr         159 2012-04-05 19:42 tcpdump-4.3.0/tests/dio.out
+-rwxr-xr-x mcr/mcr         147 2012-04-05 19:42 tcpdump-4.3.0/tests/lmp.sh
+-rw-r--r-- mcr/mcr       16412 2012-04-05 19:42 tcpdump-4.3.0/tests/eapon1.pcap
+-rw-r--r-- mcr/mcr         112 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp-pointer-loop.pcap
+-rw-r--r-- mcr/mcr          58 2012-04-05 19:42 tcpdump-4.3.0/tests/chdlc-slarp-short.pcap
+-rw-r--r-- mcr/mcr        2629 2012-06-12 22:27 tcpdump-4.3.0/tests/lmp.new
+-rw-r--r-- mcr/mcr       20801 2012-04-05 19:42 tcpdump-4.3.0/tests/forces2vv.out
+-rw-r--r-- mcr/mcr        7845 2012-04-05 19:42 tcpdump-4.3.0/tests/print-A.out
+-rw-r--r-- mcr/mcr         544 2012-04-05 19:42 tcpdump-4.3.0/tests/esp0.out
+-rw-r--r-- mcr/mcr        1416 2012-04-05 19:42 tcpdump-4.3.0/tests/espudp1.pcap
+-rw-r--r-- mcr/mcr         384 2012-04-05 19:42 tcpdump-4.3.0/tests/rsvp-infinite-loop.pcap
+-rw-r--r-- mcr/mcr        5167 2012-04-05 19:42 tcpdump-4.3.0/tests/babel1v.out
+-rw-r--r-- mcr/mcr         414 2012-04-05 19:42 tcpdump-4.3.0/tests/ldp-infinite-loop.pcap
+-rw-r--r-- mcr/mcr        2488 2012-04-05 19:42 tcpdump-4.3.0/tests/forces1.pcap
+-rw-r--r-- mcr/mcr        1560 2012-04-05 19:42 tcpdump-4.3.0/tests/e1000g.out
+-rw-r--r-- mcr/mcr        1272 2012-04-05 19:42 tcpdump-4.3.0/tests/esp1.out
+-rw-r--r-- mcr/mcr         120 2012-04-05 19:42 tcpdump-4.3.0/tests/dio.pcap
+-rw-r--r-- mcr/mcr        4056 2012-04-05 19:42 tcpdump-4.3.0/tests/ospf-gmpls.out
+-rw-r--r-- mcr/mcr        5856 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2four.pcap
+-rw-r--r-- mcr/mcr        3320 2012-04-05 19:42 tcpdump-4.3.0/tests/babel.pcap
+-rw-r--r-- mcr/mcr        1352 2012-04-05 19:42 tcpdump-4.3.0/tests/02-sunrise-sunset-esp.pcap
+-rw-r--r-- mcr/mcr        3372 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2pI2.out
+-rw-r--r-- mcr/mcr        6411 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2four.out
+-rw-r--r-- mcr/mcr         298 2012-04-05 19:42 tcpdump-4.3.0/tests/esp-secrets.txt
+-rw-r--r-- mcr/mcr        2587 2012-04-05 19:42 tcpdump-4.3.0/tests/forces1.out
+-rw-r--r-- mcr/mcr         554 2012-04-05 19:42 tcpdump-4.3.0/tests/bgp-infinite-loop.pcap
+-rw-r--r-- mcr/mcr        1732 2012-04-05 19:42 tcpdump-4.3.0/tests/lmp.pcap
+-rw-r--r-- mcr/mcr       46823 2012-04-05 19:42 tcpdump-4.3.0/tests/QinQpacket.out
+-rw-r--r-- mcr/mcr        2629 2012-04-05 19:42 tcpdump-4.3.0/tests/lmp.out
+-rw-r--r-- mcr/mcr         774 2012-04-05 19:42 tcpdump-4.3.0/tests/icmpv6.pcap
+-rw-r--r-- mcr/mcr         119 2012-04-05 19:42 tcpdump-4.3.0/tests/esp3.gdbinit
+-rw-r--r-- mcr/mcr         854 2012-04-05 19:42 tcpdump-4.3.0/tests/icmpv6.out
+-rw-r--r-- mcr/mcr      130398 2012-04-05 19:42 tcpdump-4.3.0/tests/sflow_multiple_counter_30_pdus.out
+-rw-r--r-- mcr/mcr        1480 2012-04-05 19:42 tcpdump-4.3.0/tests/08-sunrise-sunset-aes.pcap
+-rw-r--r-- mcr/mcr        1272 2012-04-05 19:42 tcpdump-4.3.0/tests/esp5.out
+-rwxr-xr-x mcr/mcr         689 2012-04-05 19:42 tcpdump-4.3.0/tests/print-flags.sh
+-rw-r--r-- mcr/mcr         640 2012-04-05 19:42 tcpdump-4.3.0/tests/ospf-gmpls.pcap
+-rw-r--r-- mcr/mcr        2675 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp4.out
+-rw-r--r-- mcr/mcr       21721 2012-04-05 19:42 tcpdump-4.3.0/tests/print-xx.out
+-rw-r--r-- mcr/mcr        7985 2012-04-05 19:42 tcpdump-4.3.0/tests/print-AA.out
+-rw-r--r-- mcr/mcr         984 2012-04-05 19:42 tcpdump-4.3.0/tests/lspping-fec-rsvp.pcap
+-rw-r--r-- mcr/mcr        1956 2012-04-05 19:42 tcpdump-4.3.0/tests/mpls-traceroute.pcap
+-rw-r--r-- mcr/mcr       29523 2012-04-05 19:42 tcpdump-4.3.0/tests/forces3vvv.out
+-rw-r--r-- mcr/mcr        1451 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp3.out
+-rw-r--r-- mcr/mcr        2836 2012-04-05 22:29 tcpdump-4.3.0/tests/TESTLIST
+-rw-r--r-- mcr/mcr        6830 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp4500.pcap
+-rw-r--r-- mcr/mcr         140 2012-04-05 19:42 tcpdump-4.3.0/tests/esp1.gdbinit
+-rw-r--r-- mcr/mcr          74 2012-04-05 19:42 tcpdump-4.3.0/tests/esp4.gdbinit
+-rw-r--r-- mcr/mcr         667 2012-04-05 19:42 tcpdump-4.3.0/tests/mpls-ldp-hello.out
+-rw-r--r-- mcr/mcr          74 2012-04-05 19:42 tcpdump-4.3.0/tests/esp5.gdbinit
+-rw-r--r-- mcr/mcr          78 2012-04-05 19:42 tcpdump-4.3.0/tests/pppoe.pcap
+-rwxr-xr-x mcr/mcr        1065 2012-04-05 19:42 tcpdump-4.3.0/tests/TESTrun.sh
+-rw-r--r-- mcr/mcr      135935 2012-04-05 19:42 tcpdump-4.3.0/tests/QinQpacketv.out
+-rwxr-xr-x mcr/mcr         929 2012-04-05 19:42 tcpdump-4.3.0/tests/TESTonce
+-rw-r--r-- mcr/mcr        7159 2012-04-05 19:42 tcpdump-4.3.0/tests/eapon1.out
+-rw-r--r-- mcr/mcr        1800 2012-04-05 19:42 tcpdump-4.3.0/tests/08-sunrise-sunset-esp2.pcap
+-rw-r--r-- mcr/mcr       29308 2012-04-05 19:42 tcpdump-4.3.0/tests/sflow_multiple_counter_30_pdus.pcap
+-rw-r--r-- mcr/mcr          26 2012-04-05 19:42 tcpdump-4.3.0/tests/empty.uu
+-rw-r--r-- mcr/mcr       29243 2012-04-05 19:42 tcpdump-4.3.0/tests/print-capXX.out
+-rw-r--r-- mcr/mcr        1936 2012-04-05 19:42 tcpdump-4.3.0/tests/esp2.out
+-rw-r--r-- mcr/mcr         229 2012-04-05 19:42 tcpdump-4.3.0/tests/esp2.gdbinit
+-rw-r--r-- mcr/mcr          62 2012-04-05 19:42 tcpdump-4.3.0/tests/chdlc-slarp.pcap
+-rw-r--r-- mcr/mcr         912 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2pI2.pcap
+-rw-r--r-- mcr/mcr       12807 2012-04-05 19:42 tcpdump-4.3.0/tests/forces1vvvv.out
+-rw-r--r-- mcr/mcr       15068 2012-04-05 19:42 tcpdump-4.3.0/tests/ikev2fourv.out
+-rw-r--r-- mcr/mcr         802 2012-04-08 06:44 tcpdump-4.3.0/tests/espudp1.out
+-rw-r--r-- mcr/mcr          68 2012-04-05 19:42 tcpdump-4.3.0/tests/isakmp2.out
+-rw-r--r-- mcr/mcr         217 2012-04-05 19:42 tcpdump-4.3.0/tests/bgp_vpn_attrset.pcap
+-rw-r--r-- mcr/mcr        1480 2012-04-05 19:42 tcpdump-4.3.0/pcap_dump_ftell.c
+-rw-r--r-- mcr/mcr        2977 2012-04-05 19:42 tcpdump-4.3.0/print-lane.c
+-rw-r--r-- mcr/mcr        5447 2012-04-05 19:42 tcpdump-4.3.0/print-mpls.c
+-rw-r--r-- mcr/mcr        4520 2012-04-05 19:42 tcpdump-4.3.0/print-vrrp.c
+-rw-r--r-- mcr/mcr        8404 2012-04-05 19:42 tcpdump-4.3.0/print-ip6opts.c
+-rw-r--r-- mcr/mcr       42273 2012-04-05 19:42 tcpdump-4.3.0/print-nfs.c
+-rwxr-xr-x mcr/mcr        4255 2012-04-05 19:42 tcpdump-4.3.0/print-syslog.c
+-rw-r--r-- mcr/mcr       26956 2012-04-05 19:42 tcpdump-4.3.0/mib.h
+-rw-r--r-- mcr/mcr        2704 2012-04-05 19:42 tcpdump-4.3.0/print-dtp.c
+-rw-r--r-- mcr/mcr        8434 2012-04-05 19:42 tcpdump-4.3.0/print-ntp.c
+-rw-r--r-- mcr/mcr        5656 2012-04-05 19:42 tcpdump-4.3.0/print-sl.c
+-rw-r--r-- mcr/mcr        4343 2012-04-05 19:42 tcpdump-4.3.0/tcp.h
+-rw-r--r-- mcr/mcr       38304 2012-04-05 19:42 tcpdump-4.3.0/print-ospf.c
+-rw-r--r-- mcr/mcr        2106 2012-04-05 19:42 tcpdump-4.3.0/bpf_dump.c
+-rw-r--r-- mcr/mcr           6 2012-06-12 22:30 tcpdump-4.3.0/VERSION
+-rw-r--r-- mcr/mcr       24951 2012-06-12 22:26 tcpdump-4.3.0/print-forces.c
+-rwxr-xr-x mcr/mcr        1414 2012-04-05 19:42 tcpdump-4.3.0/nlpid.c
+-rw-r--r-- mcr/mcr       32789 2012-04-05 19:42 tcpdump-4.3.0/print-radius.c
+-rw-r--r-- mcr/mcr        3393 2012-04-05 19:42 tcpdump-4.3.0/print-timed.c
+-rw-r--r-- mcr/mcr        1334 2012-04-05 19:42 tcpdump-4.3.0/gmt2local.h
+-rw-r--r-- mcr/mcr        1935 2012-04-05 19:42 tcpdump-4.3.0/acconfig.h
+-rw-r--r-- mcr/mcr       56152 2012-06-12 22:26 tcpdump-4.3.0/tcpdump.1.in
+-rw-r--r-- mcr/mcr        1906 2012-04-05 19:42 tcpdump-4.3.0/af.h
+-rw-r--r-- mcr/mcr        9202 2012-04-05 19:42 tcpdump-4.3.0/print-eap.c
+-rw-r--r-- mcr/mcr        3447 2012-04-05 19:42 tcpdump-4.3.0/setsignal.c
+-rw-r--r-- mcr/mcr        4182 2012-04-05 19:42 tcpdump-4.3.0/signature.c
+-rw-r--r-- mcr/mcr       11920 2012-04-05 19:42 tcpdump-4.3.0/INSTALL.txt
+-rw-r--r-- mcr/mcr        6082 2012-04-05 19:42 tcpdump-4.3.0/print-krb.c
+-rw-r--r-- mcr/mcr       22892 2012-06-12 22:26 tcpdump-4.3.0/print-ldp.c
+-rw-r--r-- mcr/mcr        4007 2012-04-05 19:42 tcpdump-4.3.0/print-usb.c
+-rw-r--r-- mcr/mcr        3679 2012-04-05 19:42 tcpdump-4.3.0/oui.h
+-rw-r--r-- mcr/mcr        1363 2012-04-05 19:42 tcpdump-4.3.0/setsignal.h
+-rw-r--r-- mcr/mcr         603 2012-04-05 19:42 tcpdump-4.3.0/Makefile-devel-adds
+-rw-r--r-- mcr/mcr       34932 2012-04-05 19:42 tcpdump-4.3.0/aclocal.m4
+-rw-r--r-- mcr/mcr       63619 2012-04-05 19:42 tcpdump-4.3.0/smbutil.c
+-rwxr-xr-x mcr/mcr        5585 2012-04-05 19:42 tcpdump-4.3.0/install-sh
+-rwxr-xr-x mcr/mcr        2120 2012-04-05 19:42 tcpdump-4.3.0/l2vpn.c
+-rw-r--r-- mcr/mcr        3808 2012-04-05 19:42 tcpdump-4.3.0/print-igrp.c
+-rw-r--r-- mcr/mcr        2593 2012-04-05 19:42 tcpdump-4.3.0/route6d.h
+-rw-r--r-- mcr/mcr        5047 2012-06-12 22:26 tcpdump-4.3.0/print-rrcp.c
+-rwxr-xr-x mcr/mcr        1912 2012-04-05 19:42 tcpdump-4.3.0/ipproto.c
+-rw-r--r-- mcr/mcr        3849 2012-04-05 19:42 tcpdump-4.3.0/timed.h
+-rw-r--r-- mcr/mcr        1919 2012-06-12 22:26 tcpdump-4.3.0/decode_prefix.h
+-rw-r--r-- mcr/mcr        5895 2012-04-05 19:42 tcpdump-4.3.0/print-chdlc.c
+-rw-r--r-- mcr/mcr        4221 2012-04-05 19:42 tcpdump-4.3.0/print-null.c
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/missing/
+-rw-r--r-- mcr/mcr        2445 2012-04-05 19:42 tcpdump-4.3.0/missing/inet_aton.c
+-rw-r--r-- mcr/mcr        5078 2012-04-05 19:42 tcpdump-4.3.0/missing/dlnames.c
+-rw-r--r-- mcr/mcr        2312 2012-04-05 19:42 tcpdump-4.3.0/missing/strdup.c
+-rw-r--r-- mcr/mcr        2564 2012-04-05 19:42 tcpdump-4.3.0/missing/strlcpy.c
+-rw-r--r-- mcr/mcr        2298 2012-04-05 19:42 tcpdump-4.3.0/missing/inet_pton.c
+-rw-r--r-- mcr/mcr        2985 2012-04-05 19:42 tcpdump-4.3.0/missing/strsep.c
+-rw-r--r-- mcr/mcr        1752 2012-04-05 19:42 tcpdump-4.3.0/missing/sockstorage.h
+-rw-r--r-- mcr/mcr        2592 2012-04-05 19:42 tcpdump-4.3.0/missing/datalinks.c
+-rw-r--r-- mcr/mcr        7384 2012-04-05 19:42 tcpdump-4.3.0/missing/getnameinfo.c
+-rw-r--r-- mcr/mcr        2630 2012-04-05 19:42 tcpdump-4.3.0/missing/strlcat.c
+-rw-r--r-- mcr/mcr       13088 2012-04-05 19:42 tcpdump-4.3.0/missing/snprintf.c
+-rw-r--r-- mcr/mcr        5905 2012-04-05 19:42 tcpdump-4.3.0/missing/inet_ntop.c
+-rw-r--r-- mcr/mcr        4603 2012-04-05 19:42 tcpdump-4.3.0/missing/addrinfo.h
+-rw-r--r-- mcr/mcr        1434 2012-04-05 19:42 tcpdump-4.3.0/chdlc.h
+-rw-r--r-- mcr/mcr        1668 2012-04-05 19:42 tcpdump-4.3.0/print-beep.c
+-rwxr-xr-x mcr/mcr       44959 2012-04-05 19:42 tcpdump-4.3.0/config.guess
+-rw-r--r-- mcr/mcr       22946 2012-04-05 19:42 tcpdump-4.3.0/print-slow.c
+-rw-r--r-- mcr/mcr        1510 2012-04-05 19:42 tcpdump-4.3.0/gmpls.h
+-rw-r--r-- mcr/mcr        5827 2012-04-05 19:42 tcpdump-4.3.0/print-pppoe.c
+-rw-r--r-- mcr/mcr        3733 2012-04-05 19:42 tcpdump-4.3.0/cpack.c
+-rw-r--r-- mcr/mcr        3846 2012-04-05 19:42 tcpdump-4.3.0/print-ap1394.c
+-rw-r--r-- mcr/mcr       48730 2012-04-05 19:42 tcpdump-4.3.0/tcpdump.c
+-rw-r--r-- mcr/mcr       61679 2012-06-12 22:26 tcpdump-4.3.0/print-802_11.c
+-rw-r--r-- mcr/mcr        4038 2012-04-05 19:42 tcpdump-4.3.0/udp.h
+-rw-r--r-- mcr/mcr         145 2012-04-05 19:42 tcpdump-4.3.0/ppi.h
+-rw-r--r-- mcr/mcr       94161 2012-06-12 22:26 tcpdump-4.3.0/print-bgp.c
+-rw-r--r-- mcr/mcr        3697 2012-04-05 19:42 tcpdump-4.3.0/arcnet.h
+-rw-r--r-- mcr/mcr       63792 2012-04-05 19:42 tcpdump-4.3.0/print-isakmp.c
+-rw-r--r-- mcr/mcr       14144 2012-04-05 19:42 tcpdump-4.3.0/util.c
+-rw-r--r-- mcr/mcr        1915 2012-04-05 19:42 tcpdump-4.3.0/pcap-missing.h
+-rw-r--r-- mcr/mcr        2618 2012-04-05 19:42 tcpdump-4.3.0/print-ipcomp.c
+-rw-r--r-- mcr/mcr        1366 2012-04-05 19:42 tcpdump-4.3.0/nlpid.h
+-rw-r--r-- mcr/mcr        1103 2012-04-05 19:42 tcpdump-4.3.0/igrp.h
+-rw-r--r-- mcr/mcr        2563 2012-04-05 19:42 tcpdump-4.3.0/print-netbios.c
+-rw-r--r-- mcr/mcr        6445 2012-04-05 19:42 tcpdump-4.3.0/tcpdump-stdinc.h
+-rw-r--r-- mcr/mcr       30700 2012-04-05 19:42 tcpdump-4.3.0/addrtoname.c
+-rw-r--r-- mcr/mcr       15488 2012-04-05 19:42 tcpdump-4.3.0/print-esp.c
+-rw-r--r-- mcr/mcr        2205 2012-04-05 19:42 tcpdump-4.3.0/print-ah.c
+-rw-r--r-- mcr/mcr        5578 2012-04-05 19:42 tcpdump-4.3.0/checksum.c
+-rw-r--r-- mcr/mcr        7529 2012-04-05 19:42 tcpdump-4.3.0/print-zephyr.c
+-rw-r--r-- mcr/mcr       42318 2012-04-05 19:42 tcpdump-4.3.0/print-lspping.c
+-rw-r--r-- mcr/mcr       11289 2012-04-05 19:42 tcpdump-4.3.0/telnet.h
+-rw-r--r-- mcr/mcr       13897 2012-04-05 19:42 tcpdump-4.3.0/print-lwres.c
+-rw-r--r-- mcr/mcr       42085 2012-04-05 19:42 tcpdump-4.3.0/print-snmp.c
+-rw-r--r-- mcr/mcr       47247 2012-04-05 19:42 tcpdump-4.3.0/print-juniper.c
+-rw-r--r-- mcr/mcr        2204 2012-04-05 19:42 tcpdump-4.3.0/gmt2local.c
+-rw-r--r-- mcr/mcr       16499 2012-04-05 19:42 tcpdump-4.3.0/icmp6.h
+-rw-r--r-- mcr/mcr        1363 2012-04-05 19:42 tcpdump-4.3.0/machdep.h
+-rw-r--r-- mcr/mcr       22848 2012-04-05 19:42 tcpdump-4.3.0/print-icmp.c
+-rw-r--r-- mcr/mcr        8168 2012-04-05 19:42 tcpdump-4.3.0/print-egp.c
+-rw-r--r-- mcr/mcr        1428 2012-04-05 19:42 tcpdump-4.3.0/packetdat.awk
+-rw-r--r-- mcr/mcr        6352 2012-04-05 19:42 tcpdump-4.3.0/print-telnet.c
+-rw-r--r-- mcr/mcr        3497 2012-04-05 19:42 tcpdump-4.3.0/pmap_prot.h
+-rw-r--r-- mcr/mcr       38558 2012-04-05 19:42 tcpdump-4.3.0/CHANGES
+-rwxr-xr-x mcr/mcr         831 2012-04-05 19:42 tcpdump-4.3.0/bgp.h
+-rw-r--r-- mcr/mcr        3489 2012-04-05 19:42 tcpdump-4.3.0/print-mobile.c
+-rw-r--r-- mcr/mcr        9699 2012-04-05 19:42 tcpdump-4.3.0/README
+-rw-r--r-- mcr/mcr        8621 2012-04-05 19:42 tcpdump-4.3.0/config.h.in
+-rw-r--r-- mcr/mcr       27999 2012-04-05 19:42 tcpdump-4.3.0/configure.in
+-rw-r--r-- mcr/mcr       16596 2012-04-08 06:16 tcpdump-4.3.0/print-ip.c
+-rw-r--r-- mcr/mcr        5832 2012-04-05 19:42 tcpdump-4.3.0/print-sll.c
+-rw-r--r-- mcr/mcr       10400 2012-04-05 19:42 tcpdump-4.3.0/print-dccp.c
+-rw-r--r-- mcr/mcr        4850 2012-04-05 19:42 tcpdump-4.3.0/ipproto.h
+-rw-r--r-- mcr/mcr        3148 2012-04-05 19:42 tcpdump-4.3.0/tftp.h
+-rw-r--r-- mcr/mcr       13835 2012-04-05 19:42 tcpdump-4.3.0/nfs.h
+-rw-r--r-- mcr/mcr       11426 2012-04-05 19:42 tcpdump-4.3.0/nameser.h
+-rw-r--r-- mcr/mcr         873 2012-04-05 19:42 tcpdump-4.3.0/LICENSE
+-rw-r--r-- mcr/mcr        3355 2012-04-05 19:42 tcpdump-4.3.0/rpc_msg.h
+-rw-r--r-- mcr/mcr        2565 2012-04-05 19:42 tcpdump-4.3.0/print-frag6.c
+-rw-r--r-- mcr/mcr       19774 2012-04-05 19:42 tcpdump-4.3.0/print-ospf6.c
+-rw-r--r-- mcr/mcr        2155 2012-04-05 19:42 tcpdump-4.3.0/af.c
+-rw-r--r-- mcr/mcr        5088 2012-04-05 19:42 tcpdump-4.3.0/ethertype.h
+drwxr-xr-x mcr/mcr           0 2012-06-12 22:35 tcpdump-4.3.0/lbl/
+-rw-r--r-- mcr/mcr        6265 2012-04-05 19:42 tcpdump-4.3.0/lbl/os-sunos4.h
+-rw-r--r-- mcr/mcr        1771 2012-04-05 19:42 tcpdump-4.3.0/lbl/os-ultrix4.h
+-rw-r--r-- mcr/mcr        1434 2012-04-05 19:42 tcpdump-4.3.0/lbl/os-osf4.h
+-rw-r--r-- mcr/mcr        1525 2012-04-05 19:42 tcpdump-4.3.0/lbl/os-solaris2.h
+-rw-r--r-- mcr/mcr        3736 2012-04-05 19:42 tcpdump-4.3.0/slcompress.h
+-rw-r--r-- mcr/mcr        1137 2012-04-05 19:42 tcpdump-4.3.0/lane.h
+-rw-r--r-- mcr/mcr         988 2012-04-05 19:42 tcpdump-4.3.0/ipx.h
+-rw-r--r-- mcr/mcr        4057 2012-04-05 19:42 tcpdump-4.3.0/atmuni31.h
+-rw-r--r-- mcr/mcr        2232 2012-04-05 19:42 tcpdump-4.3.0/print-ppi.c
+-rw-r--r-- mcr/mcr        2337 2012-04-05 19:42 tcpdump-4.3.0/machdep.c
+-rw-r--r-- mcr/mcr       20204 2012-04-05 19:42 tcpdump-4.3.0/print-pgm.c
+-rw-r--r-- mcr/mcr       12366 2012-04-05 19:42 tcpdump-4.3.0/print-atm.c
+-rw-r--r-- mcr/mcr        1280 2012-04-05 19:42 tcpdump-4.3.0/slip.h
+-rw-r--r-- mcr/mcr       12681 2012-04-05 19:42 tcpdump-4.3.0/CREDITS
+-rw-r--r-- mcr/mcr       12558 2012-04-05 19:42 tcpdump-4.3.0/print-aodv.c
+-rw-r--r-- mcr/mcr        4522 2012-04-05 19:42 tcpdump-4.3.0/print-hsrp.c
+-rw-r--r-- mcr/mcr        2907 2012-04-05 19:42 tcpdump-4.3.0/rpc_auth.h
+-rw-r--r-- mcr/mcr       18121 2012-04-05 19:42 tcpdump-4.3.0/print-udp.c
+-rw-r--r-- mcr/mcr         332 2012-04-05 19:42 tcpdump-4.3.0/ipnet.h
+-rw-r--r-- mcr/mcr        2767 2012-04-05 19:42 tcpdump-4.3.0/print-msdp.c
+-rw-r--r-- mcr/mcr        2536 2012-04-05 19:42 tcpdump-4.3.0/ether.h
+-rw-r--r-- mcr/mcr        8328 2012-04-05 19:42 tcpdump-4.3.0/print-mpcp.c
+-rw-r--r-- mcr/mcr        2389 2012-04-05 19:42 tcpdump-4.3.0/print-carp.c
+-rw-r--r-- mcr/mcr        1685 2012-04-05 19:42 tcpdump-4.3.0/print-sip.c
+-rw-r--r-- mcr/mcr       30222 2012-06-12 22:26 tcpdump-4.3.0/print-pim.c
+-rw-r--r-- mcr/mcr        1710 2012-04-05 19:42 tcpdump-4.3.0/print-raw.c
+-rw-r--r-- mcr/mcr        8529 2012-04-05 19:42 tcpdump-4.3.0/print-mobility.c
+-rw-r--r-- mcr/mcr         529 2012-04-05 19:42 tcpdump-4.3.0/atime.awk
+-rw-r--r-- mcr/mcr       12393 2012-04-05 19:42 tcpdump-4.3.0/print-babel.c
+-rw-r--r-- mcr/mcr        3744 2012-04-05 19:42 tcpdump-4.3.0/print-ripng.c
+-rw-r--r-- mcr/mcr        6596 2012-04-05 19:42 tcpdump-4.3.0/in_cksum.c
+-rw-r--r-- mcr/mcr       11264 2012-04-05 19:42 tcpdump-4.3.0/print-bfd.c
+-rw-r--r-- mcr/mcr        3900 2012-04-05 19:42 tcpdump-4.3.0/print-802_15_4.c
+-rw-r--r-- mcr/mcr       19550 2012-04-05 19:42 tcpdump-4.3.0/forces.h
+-rw-r--r-- mcr/mcr        2394 2012-04-05 19:42 tcpdump-4.3.0/print-bt.c
+-rw-r--r-- mcr/mcr        5555 2012-04-05 19:42 tcpdump-4.3.0/smb.h
+-rwxr-xr-x mcr/mcr        6632 2012-04-05 19:42 tcpdump-4.3.0/makemib
+-rw-r--r-- mcr/mcr       10468 2012-04-05 19:42 tcpdump-4.3.0/print-wb.c
+-rw-r--r-- mcr/mcr       17312 2012-04-05 19:42 tcpdump-4.3.0/print-eigrp.c
+-rw-r--r-- mcr/mcr       76779 2012-04-05 19:42 tcpdump-4.3.0/print-rsvp.c
+-rw-r--r-- mcr/mcr       23973 2012-04-05 19:42 tcpdump-4.3.0/print-pptp.c
+-rw-r--r-- mcr/mcr       12015 2012-06-12 22:26 tcpdump-4.3.0/Makefile.in
+-rw-r--r-- mcr/mcr       42092 2012-04-05 19:42 tcpdump-4.3.0/print-smb.c
+-rw-r--r-- mcr/mcr       12467 2012-04-05 19:42 tcpdump-4.3.0/print-ether.c
+-rw-r--r-- mcr/mcr       13472 2012-04-05 19:42 tcpdump-4.3.0/print-arp.c
+-rw-r--r-- mcr/mcr       14320 2012-04-05 19:42 tcpdump-4.3.0/print-llc.c
+-rw-r--r-- mcr/mcr       42919 2012-04-05 19:42 tcpdump-4.3.0/print-ppp.c
+-rw-r--r-- mcr/mcr       20565 2012-04-05 19:42 tcpdump-4.3.0/netdissect.h
+-rw-r--r-- mcr/mcr         287 2012-04-05 19:42 tcpdump-4.3.0/netbios.h
+-rw-r--r-- mcr/mcr        7118 2012-04-05 19:42 tcpdump-4.3.0/aodv.h
+-rw-r--r-- mcr/mcr        2866 2012-04-05 19:42 tcpdump-4.3.0/l2tp.h
+-rw-r--r-- mcr/mcr        5028 2012-04-05 19:42 tcpdump-4.3.0/ntp.h
+-rw-r--r-- mcr/mcr         567 2012-04-05 19:42 tcpdump-4.3.0/stime.awk
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd tcpdump-4.3.0
++ echo 'Patch #1 (tcpdump-4.3.0-portnumbers.patch):'
+Patch #1 (tcpdump-4.3.0-portnumbers.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/tcpdump-4.3.0-portnumbers.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #2 (tcpdump-4.3.0-ip6opts.patch):'
+Patch #2 (tcpdump-4.3.0-ip6opts.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/tcpdump-4.3.0-ip6opts.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.8MiLTD
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcpdump-4.3.0
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ export ac_cv_linux_vers=2
++ ac_cv_linux_vers=2
++ export ac_cv_lbl_unaligned_fail=yes
++ ac_cv_lbl_unaligned_fail=yes
++ export td_cv_buggygetaddrinfo=no
++ td_cv_buggygetaddrinfo=no
++ export CFLAGS=
++ CFLAGS=
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --enable-ipv6 --without-crypto
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking gcc version... 4
+checking for inline... inline
+checking for __attribute__... yes
+checking whether __attribute__((format)) can be applied to function pointers... yes
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking rpc/rpc.h usability... yes
+checking rpc/rpc.h presence... yes
+checking for rpc/rpc.h... yes
+checking rpc/rpcent.h usability... no
+checking rpc/rpcent.h presence... no
+checking for rpc/rpcent.h... no
+checking netdnet/dnetdb.h usability... no
+checking netdnet/dnetdb.h presence... no
+checking for netdnet/dnetdb.h... no
+checking for net/pfvar.h... no
+checking for netinet/if_ether.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking Linux kernel version... (cached) 2
+checking smi.h usability... no
+checking smi.h presence... no
+checking for smi.h... no
+checking for smiInit in -lsmi... no
+checking whether to enable the possibly-buggy SMB printer... yes
+configure: WARNING: The SMB printer may have exploitable buffer overflows!!!
+checking whether to drop root privileges by default... no
+checking whether to chroot... no
+checking whether to enable ipv6... yes
+checking ipv6 stack type... linux-glibc
+checking for library containing getaddrinfo... none required
+checking getaddrinfo bug... (cached) good
+checking for getnameinfo... yes
+checking for dnet_htoa declaration in netdnet/dnetdb.h... no
+checking for addrinfo... yes
+checking for NI_MAXSERV... yes
+checking for NI_NAMEREQD... yes
+checking for sockaddr_storage... yes
+checking for vfprintf... yes
+checking for strcasecmp... yes
+checking for strlcat... no
+checking for strlcpy... no
+checking for strdup... yes
+checking for strsep... yes
+checking for fork... yes
+checking for vfork... yes
+checking for strftime... yes
+checking for setlinebuf... yes
+checking for alarm... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking return type of signal handlers... void
+checking for sigaction... yes
+checking for library containing dnet_htoa... no
+checking for main in -lrpc... no
+checking for library containing getrpcbynumber... none required
+checking for library containing gethostbyname... none required
+checking for library containing socket... none required
+checking for library containing putmsg... none required
+checking for local pcap library... not found
+checking for arm-sony-linux-gnueabi-pcap-config... no
+checking for pcap-config... no
+checking for main in -lpcap... yes
+checking for extraneous pcap header directories... not found
+checking for pcap_loop... yes
+checking for pcap_list_datalinks... yes
+checking for pcap_set_datalink... yes
+checking for pcap_datalink_name_to_val... yes
+checking for pcap_datalink_val_to_description... yes
+checking for pcap_breakloop... yes
+checking for pcap_dump_ftell... yes
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for inet_aton... yes
+checking for ether_ntohost... yes
+checking for buggy ether_ntohost... not while cross-compiling
+checking for dlpi_walk in -ldlpi... no
+checking if sockaddr struct has sa_len member... no
+checking for pcap_create... yes
+checking for pcap_set_tstamp_type... yes
+checking for pcap_findalldevs... yes
+checking for pcap_dump_flush... yes
+checking for pcap_lib_version... yes
+checking for pcap_if_t... yes
+checking whether pcap_debug is defined by libpcap... no
+checking whether yydebug is defined by libpcap... no
+checking for bpf_dump... yes
+checking sys/bitypes.h usability... yes
+checking sys/bitypes.h presence... yes
+checking for sys/bitypes.h... yes
+checking for int8_t... yes
+checking for u_int8_t... yes
+checking for int16_t... yes
+checking for u_int16_t... yes
+checking for int32_t... yes
+checking for u_int32_t... yes
+checking for int64_t... yes
+checking for u_int64_t... yes
+checking for inttypes.h... (cached) yes
+checking whether inttypes.h defines the PRI[doxu]64 macros... yes
+checking for pcap/bluetooth.h... yes
+checking for pcap/usb.h... yes
+checking for arm-sony-linux-gnueabi-ranlib... arm-sony-linux-gnueabi-ranlib
+checking if sockaddr struct has the sa_len member... no
+checking if unaligned accesses fail... (cached) yes
+checking for h_errno... yes
+checking whether to use SSLeay libcrypto... no
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating tcpdump.1
+config.status: creating config.h
+config.status: executing default-1 commands
++ DEFS='-g  -D_U_="" -DHAVE_CONFIG_H'
++ make 'DEFS=-g  -D_U_="" -DHAVE_CONFIG_H'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../addrtoname.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../af.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../checksum.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../cpack.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../gmpls.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../oui.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../gmt2local.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../ipproto.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../nlpid.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../l2vpn.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../machdep.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../parsenfsfh.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../in_cksum.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-802_11.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-802_15_4.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ap1394.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ah.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-arcnet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-aodv.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-arp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ascii.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-atalk.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-atm.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-beep.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-bfd.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-bgp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-bootp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-bt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-carp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-cdp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-cfm.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-chdlc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-cip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-cnfp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-dccp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-decnet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-domain.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-dtp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-dvmrp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-enc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-egp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-eap.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-eigrp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-esp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ether.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-fddi.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-forces.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-fr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-gre.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-hsrp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-icmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-igmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-igrp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ipcomp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ipfc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ipnet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ipx.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-isoclns.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-juniper.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-krb.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-l2tp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lane.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ldp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lldp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-llc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lspping.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lwapp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-lwres.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-mobile.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-mpcp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-mpls.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-msdp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-nfs.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ntp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-null.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-olsr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ospf.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-pgm.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-pim.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ppi.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ppp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-pppoe.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-pptp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-radius.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-raw.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rpki-rtr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rrcp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rsvp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rx.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sctp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sflow.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sip.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sl.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sll.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-slow.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-snmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-stp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sunatm.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-sunrpc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-symantec.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-syslog.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-tcp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-telnet.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-tftp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-timed.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-tipc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-token.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-udld.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-udp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-usb.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-vjc.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-vqp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-vrrp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-vtp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-wb.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-zephyr.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../signature.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../setsignal.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../tcpdump.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../util.c
+if grep GIT ../VERSION >/dev/null; then \
+		read ver <../VERSION; \
+		echo $ver | tr -d '\012'; \
+		date +_%Y_%m_%d; \
+	else \
+		cat ../VERSION; \
+	fi | sed -e 's/.*/const char version[] = "&";/' > version.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c version.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ip6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ip6opts.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-mobility.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ripng.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-icmp6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-frag6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-rt6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-ospf6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-dhcp6.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-babel.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-smb.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../smbutil.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -o strlcat.o -c ../missing/strlcat.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -o strlcpy.o -c ../missing/strlcpy.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6  -c ../print-isakmp.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2  -g  -D_U_="" -DHAVE_CONFIG_H -I. -I.. -I../missing -DINET6   -o tcpdump addrtoname.o af.o checksum.o cpack.o gmpls.o oui.o gmt2local.o ipproto.o nlpid.o l2vpn.o machdep.o parsenfsfh.o in_cksum.o print-802_11.o print-802_15_4.o print-ap1394.o print-ah.o print-arcnet.o print-aodv.o print-arp.o print-ascii.o print-atalk.o print-atm.o print-beep.o print-bfd.o print-bgp.o print-bootp.o print-bt.o print-carp.o print-cdp.o print-cfm.o print-chdlc.o print-cip.o print-cnfp.o print-dccp.o print-decnet.o print-domain.o print-dtp.o print-dvmrp.o print-enc.o print-egp.o print-eap.o print-eigrp.o print-esp.o print-ether.o print-fddi.o print-forces.o print-fr.o print-gre.o print-hsrp.o print-icmp.o print-igmp.o print-igrp.o print-ip.o print-ipcomp.o print-ipfc.o print-ipnet.o print-ipx.o print-isoclns.o print-juniper.o print-krb.o print-l2tp.o print-lane.o print-ldp.o print-lldp.o print-llc.o print-lmp.o print-lspping.o print-lwapp.o print-lwres.o print-mobile.o print-mpcp.o print-mpls.o print-msdp.o print-nfs.o print-ntp.o print-null.o print-olsr.o print-ospf.o print-pgm.o print-pim.o print-ppi.o print-ppp.o print-pppoe.o print-pptp.o print-radius.o print-raw.o print-rip.o print-rpki-rtr.o print-rrcp.o print-rsvp.o print-rx.o print-sctp.o print-sflow.o print-sip.o print-sl.o print-sll.o print-slow.o print-snmp.o print-stp.o print-sunatm.o print-sunrpc.o print-symantec.o print-syslog.o print-tcp.o print-telnet.o print-tftp.o print-timed.o print-tipc.o print-token.o print-udld.o print-udp.o print-usb.o print-vjc.o print-vqp.o print-vrrp.o print-vtp.o print-wb.o print-zephyr.o signature.o setsignal.o tcpdump.o util.o version.o print-ip6.o print-ip6opts.o print-mobility.o print-ripng.o print-icmp6.o print-frag6.o print-rt6.o print-ospf6.o print-dhcp6.o print-babel.o print-smb.o smbutil.o strlcat.o strlcpy.o print-isakmp.o -lpcap 
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.HrObKa
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcpdump-4.3.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ cd objdir
++ make DESTDIR=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a install
+[ -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin ] || \
+	    (mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin; chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin)
+/usr/bin/install -c tcpdump /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/tcpdump
+/usr/bin/install -c tcpdump /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/tcpdump.`cat ../VERSION`
+[ -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1 ] || \
+	    (mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1; chmod 755 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1)
+/usr/bin/install -c -m 644 tcpdump.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1/tcpdump.1
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/sbin/tcpdump.4.3.0
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-tcpdump-4.3.0-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-tcpdump-4.3.0-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-tcpdump-4.3.0-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.l6NVBN
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd tcpdump-4.3.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-tcpdump-4.3.0-11000001.x86_64
++ exit 0
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Tue Feb 18 19:06:15 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin:$PATH
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export CC="/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a"
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export LD=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-ld
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ export AR=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-ar
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser/rpm/BUILD/tcpdump-4.3.0
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ patch -p1 < /home/rpmuser//MAIN/dist/pkg/tcpdump/test/tcpdump-test.patch
+patching file Makefile.in
+Hunk #1 succeeded at 449 (offset 253 lines).
+patching file tests/broadcast.c
+patching file tests/config.vars
+patching file tests/filter_file
+patching file tests/Makefile
+patching file tests/multicast.c
+patching file tests/run_tcpdump.sh
+patching file tests/sendicmp.sh
+patching file tests/Servers/start_servers.sh
+patching file tests/Servers/stop_servers.sh
+patching file tests/Servers/tcpserver.c
+patching file tests/Servers/udpserver.c
+patching file tests/tcpclient.c
+patching file tests/tcpclient_urg.c
+patching file tests/tcpdump-PTG1.sh
+patching file tests/tcpdump-PTG2.sh
+patching file tests/tcpdump-PTG3.sh
+patching file tests/udpclient.c
+patching file tests/tcpclient_rst.c
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ cd tests/Servers/
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0/tests/Serversrpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0/tests/Servers$ chmod +x start_servers.sh
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0/tests/Serversrpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0/tests/Servers$ ./start_servers.sh
+Running TCP and UDP servers...
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0/tests/Serversrpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0/tests/Servers$ cd /home/rpmuser/rpm/BUILD/tcpdump-4.3.0
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ export ac_cv_linux_vers=2
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ export ac_cv_lbl_unaligned_fail=yes
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ export ac_cv_buggygetaddrinfo=no
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ ./configure --host=x86_64-pc-linux-gnu --enable-ipv5 --without-crypto
+configure: WARNING: If you wanted to set the --build type, don't use --host.
+    If a cross compiler is detected then cross compile mode will be used.
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-pc-linux-gnu-gcc... /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a accepts -g... yes
+checking for /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a option to accept ISO C89... none needed
+checking gcc version... 4
+checking for inline... inline
+checking for __attribute__... yes
+checking whether __attribute__((format)) can be applied to function pointers... yes
+checking how to run the C preprocessor... /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking rpc/rpc.h usability... yes
+checking rpc/rpc.h presence... yes
+checking for rpc/rpc.h... yes
+checking rpc/rpcent.h usability... no
+checking rpc/rpcent.h presence... no
+checking for rpc/rpcent.h... no
+checking netdnet/dnetdb.h usability... no
+checking netdnet/dnetdb.h presence... no
+checking for netdnet/dnetdb.h... no
+checking for net/pfvar.h... no
+checking for netinet/if_ether.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking Linux kernel version... (cached) 2
+checking smi.h usability... no
+checking smi.h presence... no
+checking for smi.h... no
+checking for smiInit in -lsmi... no
+checking whether to enable the possibly-buggy SMB printer... yes
+configure: WARNING: The SMB printer may have exploitable buffer overflows!!!
+checking whether to drop root privileges by default... no
+checking whether to chroot... no
+checking whether to enable ipv6... no
+checking for dnet_htoa declaration in netdnet/dnetdb.h... no
+checking for addrinfo... yes
+checking for NI_MAXSERV... yes
+checking for NI_NAMEREQD... yes
+checking for sockaddr_storage... yes
+checking for vfprintf... yes
+checking for strcasecmp... yes
+checking for strlcat... no
+checking for strlcpy... no
+checking for strdup... yes
+checking for strsep... yes
+checking for fork... yes
+checking for vfork... yes
+checking for strftime... yes
+checking for setlinebuf... yes
+checking for alarm... yes
+checking for vsnprintf... yes
+checking for snprintf... yes
+checking return type of signal handlers... void
+checking for sigaction... yes
+checking for library containing dnet_htoa... no
+checking for main in -lrpc... no
+checking for library containing getrpcbynumber... none required
+checking for library containing gethostbyname... none required
+checking for library containing socket... none required
+checking for library containing putmsg... none required
+checking for local pcap library... not found
+checking for x86_64-pc-linux-gnu-pcap-config... no
+checking for pcap-config... no
+checking for main in -lpcap... yes
+checking for extraneous pcap header directories... not found
+checking for pcap_loop... yes
+checking for pcap_list_datalinks... yes
+checking for pcap_set_datalink... yes
+checking for pcap_datalink_name_to_val... yes
+checking for pcap_datalink_val_to_description... yes
+checking for pcap_breakloop... yes
+checking for pcap_dump_ftell... yes
+checking for inet_ntop... yes
+checking for inet_pton... yes
+checking for inet_aton... yes
+checking for ether_ntohost... yes
+checking for buggy ether_ntohost... not while cross-compiling
+checking for dlpi_walk in -ldlpi... no
+checking if sockaddr struct has sa_len member... no
+checking for pcap_create... yes
+checking for pcap_set_tstamp_type... yes
+checking for pcap_findalldevs... yes
+checking for pcap_dump_flush... yes
+checking for pcap_lib_version... yes
+checking for pcap_if_t... yes
+checking whether pcap_debug is defined by libpcap... no
+checking whether yydebug is defined by libpcap... no
+checking for bpf_dump... yes
+checking sys/bitypes.h usability... yes
+checking sys/bitypes.h presence... yes
+checking for sys/bitypes.h... yes
+checking for int8_t... yes
+checking for u_int8_t... yes
+checking for int16_t... yes
+checking for u_int16_t... yes
+checking for int32_t... yes
+checking for u_int32_t... yes
+checking for int64_t... yes
+checking for u_int64_t... yes
+checking for inttypes.h... (cached) yes
+checking whether inttypes.h defines the PRI[doxu]64 macros... yes
+checking for pcap/bluetooth.h... no
+checking for pcap/usb.h... no
+checking for x86_64-pc-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+configure: WARNING: In the future, Autoconf will not detect cross-tools
+whose name does not start with the host triplet.  If you think this
+configuration is useful to you, please write to autoconf@gnu.org.
+checking if sockaddr struct has the sa_len member... no
+checking if unaligned accesses fail... (cached) yes
+checking for h_errno... yes
+checking whether to use SSLeay libcrypto... no
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating tcpdump.1
+config.status: creating config.h
+config.status: executing default-1 commands
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ DEFS="-g  -D_U_="" -DHAVE_CONFIG_H"
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ make DEFS="$DEFS"
+Makefile:454: warning: overriding commands for target `check'
+Makefile:435: warning: ignoring old commands for target `check'
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./addrtoname.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./af.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./checksum.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./cpack.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./gmpls.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./oui.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./gmt2local.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./ipproto.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./nlpid.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./l2vpn.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./machdep.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./parsenfsfh.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./in_cksum.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-802_11.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-802_15_4.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ap1394.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ah.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-arcnet.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-aodv.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-arp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ascii.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-atalk.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-atm.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-beep.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-bfd.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-bgp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-bootp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-bt.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-carp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-cdp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-cfm.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-chdlc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-cip.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-cnfp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-dccp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-decnet.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-domain.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-dtp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-dvmrp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-enc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-egp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-eap.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-eigrp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-esp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ether.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-fddi.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-forces.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-fr.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-gre.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-hsrp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-icmp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-igmp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-igrp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ip.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ipcomp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ipfc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ipnet.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ipx.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-isoclns.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-juniper.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-krb.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-l2tp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lane.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ldp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lldp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-llc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lmp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lspping.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lwapp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-lwres.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-mobile.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-mpcp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-mpls.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-msdp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-nfs.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ntp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-null.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-olsr.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ospf.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-pgm.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-pim.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ppi.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-ppp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-pppoe.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-pptp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-radius.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-raw.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-rip.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-rpki-rtr.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-rrcp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-rsvp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-rx.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sctp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sflow.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sip.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sl.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sll.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-slow.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-snmp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-stp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sunatm.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-sunrpc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-symantec.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-syslog.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-tcp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-telnet.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-tftp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-timed.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-tipc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-token.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-udld.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-udp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-usb.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-vjc.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-vqp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-vrrp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-vtp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-wb.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-zephyr.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./signature.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./setsignal.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./tcpdump.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./util.c
+if grep GIT ./VERSION >/dev/null; then \
+		read ver <./VERSION; \
+		echo $ver | tr -d '\012'; \
+		date +_%Y_%m_%d; \
+	else \
+		cat ./VERSION; \
+	fi | sed -e 's/.*/const char version[] = "&";/' > version.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c version.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-smb.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./smbutil.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -o strlcat.o -c ./missing/strlcat.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -o strlcpy.o -c ./missing/strlcpy.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2 -c ./print-isakmp.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-dev-gcc -tarmv7a -O2 -g  -D_U_= -DHAVE_CONFIG_H -I.  -I./missing -g -O2  -o tcpdump addrtoname.o af.o checksum.o cpack.o gmpls.o oui.o gmt2local.o ipproto.o nlpid.o l2vpn.o machdep.o parsenfsfh.o in_cksum.o print-802_11.o print-802_15_4.o print-ap1394.o print-ah.o print-arcnet.o print-aodv.o print-arp.o print-ascii.o print-atalk.o print-atm.o print-beep.o print-bfd.o print-bgp.o print-bootp.o print-bt.o print-carp.o print-cdp.o print-cfm.o print-chdlc.o print-cip.o print-cnfp.o print-dccp.o print-decnet.o print-domain.o print-dtp.o print-dvmrp.o print-enc.o print-egp.o print-eap.o print-eigrp.o print-esp.o print-ether.o print-fddi.o print-forces.o print-fr.o print-gre.o print-hsrp.o print-icmp.o print-igmp.o print-igrp.o print-ip.o print-ipcomp.o print-ipfc.o print-ipnet.o print-ipx.o print-isoclns.o print-juniper.o print-krb.o print-l2tp.o print-lane.o print-ldp.o print-lldp.o print-llc.o print-lmp.o print-lspping.o print-lwapp.o print-lwres.o print-mobile.o print-mpcp.o print-mpls.o print-msdp.o print-nfs.o print-ntp.o print-null.o print-olsr.o print-ospf.o print-pgm.o print-pim.o print-ppi.o print-ppp.o print-pppoe.o print-pptp.o print-radius.o print-raw.o print-rip.o print-rpki-rtr.o print-rrcp.o print-rsvp.o print-rx.o print-sctp.o print-sflow.o print-sip.o print-sl.o print-sll.o print-slow.o print-snmp.o print-stp.o print-sunatm.o print-sunrpc.o print-symantec.o print-syslog.o print-tcp.o print-telnet.o print-tftp.o print-timed.o print-tipc.o print-token.o print-udld.o print-udp.o print-usb.o print-vjc.o print-vqp.o print-vrrp.o print-vtp.o print-wb.o print-zephyr.o signature.o setsignal.o tcpdump.o util.o version.o print-smb.o smbutil.o strlcat.o strlcpy.o print-isakmp.o -lpcap 
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ spawn -nottyinit sh -c for i in 0 1 ; do /sbin/ifconfig eth$i | grep "inet addr:" | grep "inet addr:10.*" > /dev/null; if [ $? == 0 ]  ; then echo eth$i ; break ; fi ; done
+eth0
+/sbin/ifconfig eth1 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'> /usr/local/arm-sony-linux -gnueabi/target/armv7a/tmp/destin_host.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ /sbin/ifconfig eth1 | /bin/grep HWaddr | /usr/bin/awk '{print $5}'> /usr/local/arm-sony-linux-gnuea bi/target/armv7a/tmp/destin_macadd.log 
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+-sh: /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log: Permission denied
+]0;rpmuser@Triangle: ~/rpm/BUILD/tcpdump-4.3.0rpmuser@Triangle:~/rpm/BUILD/tcpdump-4.3.0$ sending 10.0.6.38:/home/rpmuser/rpm/BUILD/tcpdump-4.3.0 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Tue Feb 18 13:05:00 UTC 2014
+-bash-3.2# export destin_host=`cat /tmp/destin_host.log`
+-bash-3.2# export destin_macadd=`cat /tmp/destin_macadd.log`
+-bash-3.2# export source_host=`/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'`
+-bash-3.2# export source_macadd=`/sbin/ifconfig eth0 | /bin/grep HWaddr | awk '{print $5}'`
+-bash-3.2# export r=`echo $destin_host | cut -d. -f1 | awk '{print $1}'`
+-bash-3.2# export s=`echo $destin_host | cut -d. -f2 | awk '{print $1}'`
+-bash-3.2# export v=`echo $destin_host | cut -d. -f3 | awk '{print $1}'`
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/tcpdump-4.3.0/tests
+-bash-3.2# sed -i "s/destin_host=.*/destin_host=$destin_host/g" config.vars
+-bash-3.2# sed -i "s/source_host=.*/source_host=$source_host/g" config.vars
+-bash-3.2# sed -i "s/destin_ip=.*/destin_ip=$destin_host/g" config.vars
+-bash-3.2# sed -i "s/source_ip=.*/source_ip=$source_host/g" config.vars
+-bash-3.2# sed -i "s/destin_macadd=.*/destin_macadd=$destin_macadd/g" config.vars
+-bash-3.2# sed -i "s/source_macadd=.*/source_macadd=$source_macadd/g" config.vars
+-bash-3.2# sed -i "s/destin_ip_sn=.*/destin_ip_sn=`echo $r`/g" config.vars
+-bash-3.2# sed -i "s/destin_ip_dp=.*/destin_ip_dp=`echo $r.$s`/g" config.vars
+-bash-3.2# sed -i "s/destin_ip_dt=.*/destin_ip_dt=`echo $r.$s.$v`/g" config.vars
+-bash-3.2# cd /tmp/tcpdump-4.3.0
+-bash-3.2# make check CC=/tool/usr/bin/gcc | tee /tmp/tcpdump-test.log
+Makefile:454: warning: overriding commands for target `check'
+Makefile:435: warning: ignoring old commands for target `check'
+make: Warning: File `Makefile' has modification time 2e+03 s in the future
+cd tests;  make; chmod +x run_tcpdump.sh; ./run_tcpdump.sh
+make[1]: make[1]: Entering directory `/tmp/tcpdump-4.3.0/tests'
+Warning: File `Makefile' has modification time 2e+03 s in the future
+/tool/usr/bin/gcc -g -O2    broadcast.c   -o broadcast
+/tool/usr/bin/gcc -g -O2    multicast.c   -o multicast
+/tool/usr/bin/gcc -g -O2    tcpclient.c   -o tcpclient
+/tool/usr/bin/gcc -g -O2    tcpclient_rst.c   -o tcpclient_rst
+/tool/usr/bin/gcc -g -O2    tcpclient_urg.c   -o tcpclient_urg
+/tool/usr/bin/gcc -g -O2    udpclient.c   -o udpclient
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory `/tmp/tcpdump-4.3.0/tests'
+Logging machin details
+Linux 3.4.60_nl-kzm-a9 armv7l
+Testing... ../tcpdump
+checking... ../tcpdump version
+tcpdump version : tcpdump version 4.3.0
+libpcap version : libpcap version 1.3.0
+
+
+Running tests from /tmp/tcpdump-4.3.0/tests/tcpdump-PTG1.sh
+TD-tcpdump-PTG1-001: tcpdump without any options
+Test Pass
+
+TD-tcpdump-PTG1-002: tcpdump with qualifier - type and premitive - host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-003: tcpdump with qualifier - type and premitive - src host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-004: tcpdump with qualifier - type and premitive - dst host
+Testing with valid hostname
+Test Pass
+
+TD-tcpdump-PTG1-005: tcpdump with qualifier - type and premitive - ether host
+Testing with valid mac address

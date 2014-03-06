@@ -1,0 +1,91 @@
+rpmuser@Triangle:~/MAIN/dist/pkg/mkcramfs/test$ ./mkcramfs-ptest.exp dev
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 19:33:34 2014 from kzm-a9.mydomain
+rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# cd /
+-bash-3.2# umount /dev/sda1
+umount: can't umount /dev/sda1: Invalid argument
+-bash-3.2# swapoff /dev/sda1
+swapoff: /dev/sda1: Invalid argument
+-bash-3.2# mkswap /dev/sda1
+mkswap: /dev/sda1: warning: wiping old vfat signature.
+Setting up swapspace version 1, size = 244195996 KiB
+no label, UUID=74822378-8b16-4e6d-9022-d9ad72a74baf
+-bash-3.2# swapon /dev/sda1
+-bash-3.2# /usr/bin/mkcramfs -rb usr image-file-rbh
+warning: estimate of required size (upper bound) is 377MB, but maximum image size is 272MB, we might die prematurely
+Directory data: 381860 bytes
+Everything: 163456 kilobytes
+Super block: 76 bytes
+CRC: 70141c2b
+-bash-3.2# /usr/bin/mkcramfs -rl usr image-file-rlh
+warning: estimate of required size (upper bound) is 377MB, but maximum image size is 272MB, we might die prematurely
+Directory data: 381860 bytes
+Everything: 163456 kilobytes
+Super block: 76 bytes
+CRC: a7ce9864
+-bash-3.2# /usr/bin/mkcramfs -rh usr image-file-rhh
+warning: estimate of required size (upper bound) is 377MB, but maximum image size is 272MB, we might die prematurely
+Directory data: 381860 bytes
+Everything: 163456 kilobytes
+Super block: 76 bytes
+CRC: a7ce9864
+-bash-3.2# /usr/bin/mkcramfs -rr usr image-file-rrh
+warning: estimate of required size (upper bound) is 377MB, but maximum image size is 272MB, we might die prematurely
+Directory data: 381860 bytes
+Everything: 163456 kilobytes
+Super block: 76 bytes
+CRC: 70141c2b
+-bash-3.2# mkdir -p /mnt
+-bash-3.2# umount /dev/loop1
+umount: can't umount /dev/loop1: Invalid argument
+-bash-3.2# umount /dev/loop0
+umount: can't umount /dev/loop0: Invalid argument
+-bash-3.2# mount -o loop image-file-rbh /mnt || echo 'COMMAND''ERROR'
+mount: mounting /dev/loop0 on /mnt failed: Invalid argument
+COMMANDERROR
+-bash-3.2# mount -o loop image-file-rlh /mnt || echo 'COMMAND''ERROR'
+-bash-3.2# mount -o loop image-file-rhh /mnt || echo 'COMMAND''ERROR'
+-bash-3.2# mount -o loop image-file-rrh /mnt || echo 'COMMAND''ERROR'
+mount: mounting /dev/loop2 on /mnt failed: Invalid argument
+COMMANDERROR
+-bash-3.2# df | egrep "loop" | cut -d/ -f3 | awk '{print $1}' > /tmp/mkcramfs-df.log
+-bash-3.2# cat /proc/mounts | egrep "loop" | cut -d/ -f3 | awk '{print $1}' > /tmp/mkcramfs-cat.log
+-bash-3.2# sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/mkcramfs-df.log to 10.0.6.38:/home/rpmuser/rpm/tmp.....done
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/mkcramfs-cat.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+Mkcramfs test completed!
+mkcramfs : TEST_OK
+

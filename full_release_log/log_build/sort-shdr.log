@@ -1,0 +1,40 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 10:19:05 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ cd /home/rpmuser//MAIN/dist/pkg/prelink/test/sort-shdr/
+]0;rpmuser@Triangle: ~/MAIN/dist/pkg/prelink/test/sort-shdrrpmuser@Triangle:~/MAIN/dist/pkg/prelink/test/sort-shdr$ make CROSS=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-armv7a-
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-armv7a-gcc test-elf-shdr.c -Wl,--verbose -o test-elf-shdr.exe | awk '/==========/{COUNT = COUNT + 1; next; } /\.text.*:/{print ". = . + 0x200;"; print "  .world : {*(.world)}"; print ". = . - 0x200;"; print "  .hello : {*(.hello)}"; print ". = . + 0x400;"; print ; next; } // { if (COUNT == 1) print ; }' > ldscript
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-armv7a-gcc test-elf-shdr.c -Wl,--script=ldscript -o test-elf-shdr.exe
+]0;rpmuser@Triangle: ~/MAIN/dist/pkg/prelink/test/sort-shdrrpmuser@Triangle:~/MAIN/dist/pkg/prelink/test/sort-shdr$ make CROSS=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-armv7a-  check | tee /tmp/sort-shdr.log
+Sample Test File: OK.
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-armv7a-sort-shdr test-elf-shdr.exe
+Sort Test Result: OK.
+]0;rpmuser@Triangle: ~/MAIN/dist/pkg/prelink/test/sort-shdrrpmuser@Triangle:~/MAIN/dist/pkg/prelink/test/sort-shdr$ sending 10.0.6.38:/tmp/sort-shdr.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+sort-shdr test completed!
+sort-shdr : TEST_OK

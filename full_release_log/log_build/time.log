@@ -1,0 +1,357 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+time : 1.7
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-time-1.7-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-time   warning: group rpmuser does not exist - using root
+                                            (  2%)warning: group rpmuser does not exist - using root
+#                                           ( 24%)##                                          ( 24%)###                                         ( 24%)####                                        ( 24%)#####                                       ( 24%)######                                      ( 24%)#######                                     ( 24%)########                                    ( 24%)#########                                   ( 24%)warning: group rpmuser does not exist - using root
+##########                                  ( 24%)warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+###########                                 ( 73%)############                                ( 73%)#############                               ( 73%)##############                              ( 73%)###############                             ( 73%)################                            ( 73%)#################                           ( 73%)##################                          ( 73%)###################                         ( 73%)####################                        ( 73%)#####################                       ( 73%)######################                      ( 73%)#######################                     ( 73%)########################                    ( 73%)#########################                   ( 73%)##########################                  ( 73%)###########################                 ( 73%)############################                ( 73%)#############################               ( 73%)##############################              ( 73%)###############################             ( 73%)################################            (100%)#################################           (100%)##################################          (100%)###################################         (100%)####################################        (100%)#####################################       (100%)######################################      (100%)#######################################     (100%)########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-time.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.DNePyD
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf time-1.7
++ /bin/tar -xf -
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/time-1.7.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd time-1.7
++ echo 'Patch (time-1.7-diff):'
+Patch (time-1.7-diff):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/time-1.7-diff
++ echo 'Patch #1 (time-1.7-glibc.patch):'
+Patch #1 (time-1.7-glibc.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/time-1.7-glibc.patch
++ echo 'Patch #2 (time-1.7-eglibc-2.16-fix.patch):'
+Patch #2 (time-1.7-eglibc-2.16-fix.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/time-1.7-eglibc-2.16-fix.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.DghWP3
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd time-1.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ '[' '!' -f objdir ']'
++ mkdir -p objdir
++ cd objdir
++ ../configure --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls
+creating cache ./config.cache
+checking for gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether we are using GNU C... yes
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether cross-compiling... yes
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for unistd.h... yes
+checking for string.h... yes
+checking for sys/rusage.h... no
+checking for working const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking return type of signal handlers... void
+checking for struct timeval in sys/time.h... yes
+checking for vprintf... yes
+checking for wait3 that fills in rusage... no
+checking for strerror... yes
+checking for getpagesize... yes
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
++ make
+echo "@set UPDATED `cd .. \
+	  && /bin/sh ./mdate-sh time.texi`" > vti.tmp
+echo "@set EDITION 1.7" >> vti.tmp
+echo "@set VERSION 1.7" >> vti.tmp
+if cmp -s vti.tmp ../version.texi; then \
+	  rm vti.tmp;			\
+	else					\
+	  mv vti.tmp ../version.texi; \
+	fi
+echo timestamp > ../stamp-vti
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 ../time.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 ../getopt.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 ../getopt1.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 ../error.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 ../resuse.c
+rm -f t-version.c
+echo 'const char *version_string = "'GNU time 1.7'";' \
+		> t-version.c
+if cmp -s version.c t-version.c; then	\
+	  rm t-version.c;			\
+	else					\
+	  mv t-version.c version.c;		\
+	fi
+echo timestamp > stamp-v
+arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I..    -O2 version.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -o time time.o getopt.o getopt1.o error.o resuse.o version.o  
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.pNYtRw
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd time-1.7
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64
++ for i in /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1 /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin
++ for i in /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1 /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1
++ for i in /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1 /usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
++ cd objdir
++ install -m 755 time /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin/time
++ install -m 644 debian/time.1 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/time.1
++ install -m 644 time.info /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/time.info
++ gzip -9f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man/man1/time.1
++ gzip -9f /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info/time.info
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/man
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/info
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-time-1.7-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-time-1.7-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-time-1.7-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.fZVhnW
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd time-1.7
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-time-1.7-11000001.x86_64
++ exit 0
+spawn -nottyinit sh -c cd /home/rpmuser/rpm/BUILD/time-1.7; patch -p1 < /home/rpmuser//MAIN/dist/pkg/time/test/time-tests.patch; export PATH=/usr/local/arm-sony-linux-gnueabi/cross/bin/:$PATH; export LD=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-ld; export AR=/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-ar, export CC='/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a';./configure --host=i386-redhat-linux; make
+patching file Makefile.in
+patching file tests/Functionality.c
+patching file tests/Test-Support-Fns
+patching file tests/time-test-main.sh
+patching file tests/time-test-PTG1.sh
+patching file tests/time-test-PTG2.sh
+patching file tests/time-test-PTG3.sh
+creating cache ./config.cache
+checking for gcc... /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a
+checking whether we are using GNU C... yes
+checking whether /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking how to run the C preprocessor... /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether cross-compiling... yes
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for unistd.h... yes
+checking for string.h... yes
+checking for sys/rusage.h... no
+checking for working const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking return type of signal handlers... void
+checking for struct timeval in sys/time.h... yes
+checking for vprintf... yes
+checking for wait3 that fills in rusage... no
+checking for strerror... yes
+checking for getpagesize... yes
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+makeinfo -I. time.texi -o ./time.info
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O time.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O getopt.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O getopt1.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O error.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O resuse.c
+rm -f t-version.c
+echo 'const char *version_string = "'GNU time 1.7'";' \
+		> t-version.c
+if cmp -s version.c t-version.c; then	\
+	  rm t-version.c;			\
+	else					\
+	  mv t-version.c version.c;		\
+	fi
+echo timestamp > stamp-v
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a -c -DSTDC_HEADERS=1 -DHAVE_SYS_WAIT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_STRING_H=1 -DRETSIGTYPE=void -DHAVE_TIMEVAL=1 -DHAVE_VPRINTF=1 -DHAVE_STRERROR=1 -DHAVE_GETPAGESIZE=1  -I. -I.    -g -O version.c
+/usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-gcc -tarmv7a  -o time time.o getopt.o getopt1.o error.o resuse.o version.o  
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/time-1.7 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp.........................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 15:30:34 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/time-1.7/ || echo 'COMMAND''ERROR'
+-bash-3.2# make check > /tmp/time_test.out
+-bash-3.2# cat /tmp/time_test.out
+cd tests; sh time-test-main.sh; cd ../ ;
+
+=================================================================
+                 TIME Test Cases                           
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Date               : Fri Feb 14 15:30:59 UTC 2014                        
+=================================================================
+ Testing TD-time-PTG1 
+ -----------------------
+PASS: test1 -TD-time-PTG1-1  - Functionality Test
+PASS: test2 -TD-time-PTG1-2  - Testing Exit status of a valid command
+
+ Test result
+ Total no of test executed : 2
+ No of Success test cases  :2
+ No of Failed test cases : 0
+
+
+ Testing TD-time-PTG2 
+ -----------------------
+PASS: test3 -TD-time-PTG2-3  - Testing Exit status of an unknown command
+PASS: test4 -TD-time-PTG2-4  - Testing Exit status of a command with wrong format
+PASS: test5 -TD-time-PTG2-5  - Testing Exit status of a command which could not be invoked
+
+ Test result
+ Total no of test executed : 3
+ No of Success test cases  :3
+ No of Failed test cases : 0
+
+
+ Testing TD-time-PTG3 
+ -----------------------
+PASS: test6 -TD-time-PTG3-6  - Testing functionality of the %x option
+PASS: test7 -TD-time-PTG3-7  - Testing functionality of %C option 
+PASS: test8 -TD-time-PTG3-8  - Testing Exit status of a command which could not be invoked
+PASS: test9 -TD-time-PTG3-9  - Testing Version option
+PASS: test10 -TD-time-PTG3-10  - Testing Functionality of -p option
+PASS: test11 -TD-time-PTG3-11  - Testing Testing --help option
+PASS: test12 -TD-time-PTG3-12  - Testing Testing --verbose option
+
+ Test result
+ Total no of test executed : 7
+ No of Success test cases  :7
+ No of Failed test cases : 0
+
+
+#----------------------------#
+# result.log was created #
+#---------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 12
+  ALL TESTS SUCCESSFUL 
+[0m
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/time_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp...done
+time : TEST_OK

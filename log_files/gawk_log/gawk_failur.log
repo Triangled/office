@@ -1,0 +1,38 @@
+-bash-3.2# make check | tee /tmp/gawk_test.out
+cd .. && make  am--refresh
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+cd .. && /bin/sh /home/rpmuser/rpm/BUILD/gawk-3.1.5/missing --run aclocal-1.9 -I m4
+/home/rpmuser/rpm/BUILD/gawk-3.1.5/missing: line 52: aclocal-1.9: command not found
+WARNING: `aclocal-1.9' is missing on your system.  You should only need it if
+         you modified `acinclude.m4' or `configure.ac'.  You might want
+         to install the `Automake' and `Perl' packages.  Grab them from
+         any GNU archive site.
+ cd .. && /bin/sh /home/rpmuser/rpm/BUILD/gawk-3.1.5/missing --run automake-1.9 --gnu 
+/home/rpmuser/rpm/BUILD/gawk-3.1.5/missing: line 52: automake-1.9: command not found
+WARNING: `automake-1.9' is missing on your system.  You should only need it if
+         you modified `Makefile.am', `acinclude.m4' or `configure.ac'.
+         You might want to install the `Automake' and `Perl' packages.
+         Grab them from any GNU archive site.
+cd .. && /bin/sh /home/rpmuser/rpm/BUILD/gawk-3.1.5/missing --run autoconf
+/bin/sh ./config.status --recheck
+running /bin/sh ../configure  --host=arm-sony-linux-gnueabi --build=x86_64-pc-linux-gnu --prefix=/usr --includedir=/tool//usr/include --disable-nls --libexecdir=/usr/lib --datadir=/usr CC=arm-sony-linux-gnueabi-gcc -tarmv7a CFLAGS=-O2 CPP=arm-sony-linux-gnueabi-cpp -tarmv7a LDFLAGS= build_alias=x86_64-pc-linux-gnu host_alias=arm-sony-linux-gnueabi  --no-create --no-recursion
+checking for a BSD-compatible install... ../install-sh -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for arm-sony-linux-gnueabi-strip... no
+checking for strip... strip
+configure: WARNING: using cross tools not prefixed with host triplet
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for bison... bison -y
+checking whether ln -s works... yes
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... 
+configure: error: in `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir':
+configure: error: C compiler cannot create executables
+See `config.log' for more details.
+make[1]: *** [config.status] Error 77
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/gawk-3.1.5/objdir'
+make: *** [../../aclocal.m4] Error 2
+

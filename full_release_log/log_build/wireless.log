@@ -1,0 +1,80 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Fri Feb 14 14:58:10 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# ifrename
+Error: Can't open configuration file `/etc/iftab': No such file or directory
+-bash-3.2# iwconfig || echo 'COMMAND''ERROR'
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+-bash-3.2# iwevent &
+[1] 5337
+-bash-3.2# ps -a | killall -9 iwevent
+Waiting for Wireless Events from interfaces...
+[1]+  Killed                  iwevent
+-bash-3.2# iwgetid 
+-bash-3.2# iwlist 
+Usage: iwlist [interface] scanning [essid NNN] [last]
+              [interface] frequency 
+              [interface] channel 
+              [interface] bitrate 
+              [interface] rate 
+              [interface] encryption 
+              [interface] keys 
+              [interface] power 
+              [interface] txpower 
+              [interface] retry 
+              [interface] ap 
+              [interface] accesspoints 
+              [interface] peers 
+              [interface] event 
+              [interface] auth 
+              [interface] wpakeys 
+              [interface] genie 
+              [interface] modulation 
+-bash-3.2# iwpriv || echo 'COMMAND''ERROR'
+lo        no private ioctls.
+
+eth0      no private ioctls.
+
+-bash-3.2# iwspy || echo 'COMMAND''ERROR'
+lo        Interface doesn't support wireless statistic collection
+
+eth0      Interface doesn't support wireless statistic collection
+
+-bash-3.2# Wireless-tools tests completed!
+wireless-tools : TEST_OK

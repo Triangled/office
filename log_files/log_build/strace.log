@@ -1,0 +1,302 @@
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.10nth9
+Patch #1 (strace-4.7-arm-unknown-syscall-trap.patch):
+Patch #2 (strace-4.7-drop-ctl-proc.patch):
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.NpD4lY
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-sony-linux-gnueabi-strip... true
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-sony-linux-gnueabi
+checking for arm-sony-linux-gnueabi-gcc... arm-sony-linux-gnueabi-gcc -tarmv7a
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-sony-linux-gnueabi-gcc -tarmv7a accepts -g... yes
+checking for arm-sony-linux-gnueabi-gcc -tarmv7a option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of arm-sony-linux-gnueabi-gcc -tarmv7a... gcc3
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for supported architecture... arm
+checking for primary include directory... /usr/local/arm-sony-linux-gnueabi/cross/../target/armv7a/tool/usr/include
+checking whether compiler handles -Wall... yes
+checking whether compiler handles -Wwrite-strings... yes
+checking how to run the C preprocessor... arm-sony-linux-gnueabi-cpp -tarmv7a
+checking for an ANSI C-conforming const... yes
+checking whether byte ordering is bigendian... no
+checking for ANSI C header files... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether stat file-mode macros are broken... no
+checking for struct stat.st_aclcnt... no
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking for struct stat.st_flags... no
+checking for struct stat.st_fstype... no
+checking for struct stat.st_gen... no
+checking for struct stat.st_level... no
+checking for struct stat.st_rdev... yes
+checking for stat64 in (asm|sys)/stat.h... yes
+checking for statfs64 in sys/vfs.h... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for mode_t... yes
+checking type of array argument to getgroups... gid_t
+checking whether sys/types.h defines makedev... yes
+checking for sig_atomic_t... yes
+checking for siginfo_t... yes
+checking for struct sockaddr_in6.sin6_scope_id... yes
+checking for long long... yes
+checking for little endian long long... yes
+checking for long long off_t... no
+checking for struct opthdr... no
+checking for struct t_opthdr... no
+checking for fork... yes
+checking for if_indextoname... yes
+checking for inet_ntop... yes
+checking for prctl... yes
+checking for process_vm_readv... yes
+checking for sendmsg... yes
+checking for sigaction... yes
+checking for stpcpy... yes
+checking for strerror... yes
+checking for strsignal... yes
+checking for _sys_siglist... yes
+checking for sys_siglist... yes
+checking asm/cachectl.h usability... no
+checking asm/cachectl.h presence... no
+checking for asm/cachectl.h... no
+checking asm/sysmips.h usability... no
+checking asm/sysmips.h presence... no
+checking for asm/sysmips.h... no
+checking for inttypes.h... (cached) yes
+checking ioctls.h usability... no
+checking ioctls.h presence... no
+checking for ioctls.h... no
+checking libaio.h usability... yes
+checking libaio.h presence... yes
+checking for libaio.h... yes
+checking linux/capability.h usability... yes
+checking linux/capability.h presence... yes
+checking for linux/capability.h... yes
+checking linux/ptrace.h usability... yes
+checking linux/ptrace.h presence... yes
+checking for linux/ptrace.h... yes
+checking linux/utsname.h usability... yes
+checking linux/utsname.h presence... yes
+checking for linux/utsname.h... yes
+checking mqueue.h usability... yes
+checking mqueue.h presence... yes
+checking for mqueue.h... yes
+checking netinet/sctp.h usability... no
+checking netinet/sctp.h presence... no
+checking for netinet/sctp.h... no
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking sys/acl.h usability... yes
+checking sys/acl.h presence... yes
+checking for sys/acl.h... yes
+checking sys/asynch.h usability... no
+checking sys/asynch.h presence... no
+checking for sys/asynch.h... no
+checking sys/conf.h usability... no
+checking sys/conf.h presence... no
+checking for sys/conf.h... no
+checking sys/epoll.h usability... yes
+checking sys/epoll.h presence... yes
+checking for sys/epoll.h... yes
+checking sys/filio.h usability... no
+checking sys/filio.h presence... no
+checking for sys/filio.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/poll.h usability... yes
+checking sys/poll.h presence... yes
+checking for sys/poll.h... yes
+checking sys/ptrace.h usability... yes
+checking sys/ptrace.h presence... yes
+checking for sys/ptrace.h... yes
+checking sys/reg.h usability... no
+checking sys/reg.h presence... no
+checking for sys/reg.h... no
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking sys/vfs.h usability... yes
+checking sys/vfs.h presence... yes
+checking for sys/vfs.h... yes
+checking for linux/icmp.h... yes
+checking for linux/in6.h... yes
+checking for linux/netlink.h... yes
+checking for linux/if_packet.h... yes
+checking for asm/sigcontext.h... yes
+checking for struct sigcontext_struct... yes
+checking for struct sigcontext... yes
+checking for netinet/tcp.h... yes
+checking for netinet/udp.h... yes
+checking for struct msghdr.msg_control... yes
+checking for struct T_conn_res.QUEUE_ptr... no
+checking for struct T_conn_res.ACCEPTOR_id... no
+checking for struct __old_kernel_stat... yes
+checking for struct pt_all_user_regs... no
+checking for struct ia64_fpreg... no
+checking for struct user_desc... no
+checking for struct dqblk.dqb_curblocks... no
+checking for struct sigcontext.sc_hi2... no
+checking for struct utsname.domainname... yes
+checking whether sys_errlist is declared... yes
+checking whether sys_siglist is declared... yes
+checking whether _sys_siglist is declared... yes
+checking whether PTRACE_EVENT_CLONE is declared... yes
+checking whether PTRACE_EVENT_EXEC is declared... yes
+checking whether PTRACE_EVENT_EXIT is declared... yes
+checking whether PTRACE_EVENT_FORK is declared... yes
+checking whether PTRACE_EVENT_VFORK is declared... yes
+checking whether PTRACE_EVENT_VFORK_DONE is declared... yes
+checking whether PTRACE_GETEVENTMSG is declared... yes
+checking whether PTRACE_GETSIGINFO is declared... yes
+checking whether PTRACE_O_TRACECLONE is declared... yes
+checking whether PTRACE_O_TRACEEXEC is declared... yes
+checking whether PTRACE_O_TRACEEXIT is declared... yes
+checking whether PTRACE_O_TRACEFORK is declared... yes
+checking whether PTRACE_O_TRACESYSGOOD is declared... yes
+checking whether PTRACE_O_TRACEVFORK is declared... yes
+checking whether PTRACE_SETOPTIONS is declared... yes
+checking whether LO_FLAGS_AUTOCLEAR is declared... yes
+checking whether LO_FLAGS_PARTSCAN is declared... yes
+checking for BLKGETSIZE64... yes
+checking size of long... 4
+checking size of rlim_t... 4
+checking for perl... /usr/local/arm-sony-linux-gnueabi/host/bin/perl
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+/bin/mkdir -p ./linux
+cat ../linux/ioctlent.h.in ../linux/arm/ioctlent.h.in | \
+		arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -E -P - | \
+		LC_ALL=C sort -u -k3,3 -k2,2 > linux/ioctlent.h
+make  all-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+Making all in tests
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT strace.o -MD -MP -MF .deps/strace.Tpo -c -o strace.o ../strace.c
+mv -f .deps/strace.Tpo .deps/strace.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT syscall.o -MD -MP -MF .deps/syscall.Tpo -c -o syscall.o ../syscall.c
+mv -f .deps/syscall.Tpo .deps/syscall.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT count.o -MD -MP -MF .deps/count.Tpo -c -o count.o ../count.c
+mv -f .deps/count.Tpo .deps/count.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o ../util.c
+mv -f .deps/util.Tpo .deps/util.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT desc.o -MD -MP -MF .deps/desc.Tpo -c -o desc.o ../desc.c
+mv -f .deps/desc.Tpo .deps/desc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT file.o -MD -MP -MF .deps/file.Tpo -c -o file.o ../file.c
+mv -f .deps/file.Tpo .deps/file.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT ipc.o -MD -MP -MF .deps/ipc.Tpo -c -o ipc.o ../ipc.c
+mv -f .deps/ipc.Tpo .deps/ipc.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT io.o -MD -MP -MF .deps/io.Tpo -c -o io.o ../io.c
+mv -f .deps/io.Tpo .deps/io.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT ioctl.o -MD -MP -MF .deps/ioctl.Tpo -c -o ioctl.o ../ioctl.c
+mv -f .deps/ioctl.Tpo .deps/ioctl.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT mem.o -MD -MP -MF .deps/mem.Tpo -c -o mem.o ../mem.c
+mv -f .deps/mem.Tpo .deps/mem.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT net.o -MD -MP -MF .deps/net.Tpo -c -o net.o ../net.c
+mv -f .deps/net.Tpo .deps/net.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT process.o -MD -MP -MF .deps/process.Tpo -c -o process.o ../process.c
+mv -f .deps/process.Tpo .deps/process.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT bjm.o -MD -MP -MF .deps/bjm.Tpo -c -o bjm.o ../bjm.c
+mv -f .deps/bjm.Tpo .deps/bjm.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT quota.o -MD -MP -MF .deps/quota.Tpo -c -o quota.o ../quota.c
+mv -f .deps/quota.Tpo .deps/quota.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT resource.o -MD -MP -MF .deps/resource.Tpo -c -o resource.o ../resource.c
+mv -f .deps/resource.Tpo .deps/resource.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT signal.o -MD -MP -MF .deps/signal.Tpo -c -o signal.o ../signal.c
+mv -f .deps/signal.Tpo .deps/signal.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT sock.o -MD -MP -MF .deps/sock.Tpo -c -o sock.o ../sock.c
+mv -f .deps/sock.Tpo .deps/sock.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT system.o -MD -MP -MF .deps/system.Tpo -c -o system.o ../system.c
+mv -f .deps/system.Tpo .deps/system.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT term.o -MD -MP -MF .deps/term.Tpo -c -o term.o ../term.c
+mv -f .deps/term.Tpo .deps/term.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT time.o -MD -MP -MF .deps/time.Tpo -c -o time.o ../time.c
+mv -f .deps/time.Tpo .deps/time.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT scsi.o -MD -MP -MF .deps/scsi.Tpo -c -o scsi.o ../scsi.c
+mv -f .deps/scsi.Tpo .deps/scsi.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT stream.o -MD -MP -MF .deps/stream.Tpo -c -o stream.o ../stream.c
+mv -f .deps/stream.Tpo .deps/stream.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT block.o -MD -MP -MF .deps/block.Tpo -c -o block.o ../block.c
+mv -f .deps/block.Tpo .deps/block.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT pathtrace.o -MD -MP -MF .deps/pathtrace.Tpo -c -o pathtrace.o ../pathtrace.c
+mv -f .deps/pathtrace.Tpo .deps/pathtrace.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT mtd.o -MD -MP -MF .deps/mtd.Tpo -c -o mtd.o ../mtd.c
+mv -f .deps/mtd.Tpo .deps/mtd.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT vsprintf.o -MD -MP -MF .deps/vsprintf.Tpo -c -o vsprintf.o ../vsprintf.c
+mv -f .deps/vsprintf.Tpo .deps/vsprintf.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -DHAVE_CONFIG_H -I. -I..  -I../linux/arm -I../linux -I./linux  -Wall -Wwrite-strings -O2 -MT loop.o -MD -MP -MF .deps/loop.Tpo -c -o loop.o ../loop.c
+mv -f .deps/loop.Tpo .deps/loop.Po
+arm-sony-linux-gnueabi-gcc -tarmv7a -Wall -Wwrite-strings -O2   -o strace strace.o syscall.o count.o util.o desc.o file.o ipc.o io.o ioctl.o mem.o net.o process.o bjm.o quota.o resource.o signal.o sock.o system.o term.o time.o scsi.o stream.o block.o pathtrace.o mtd.o vsprintf.o loop.o  
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.IHjNpG
+make  install-recursive
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+Making install in tests
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir/tests'
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+  /usr/bin/install -c strace '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+test -z "/usr/bin" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin"
+ /usr/bin/install -c ../strace-graph ../strace-log-merge '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/bin'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1"
+ /usr/bin/install -c -m 644 ../strace.1 '/home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/share/man/man1'
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/strace-4.7/objdir'
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-strace-4.7-11000002.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-strace-4.7-11000002.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-strace-4.7-11000002.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-strace-4.7-11000002.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.LJ8T1P

@@ -1,0 +1,267 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+lz77 : 1.0
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-lz77-1.0-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-lz77   warning: group rpmuser does not exist - using root
+                                            ( 46%)#                                           ( 46%)##                                          ( 46%)###                                         ( 46%)####                                        ( 46%)#####                                       ( 46%)######                                      ( 46%)#######                                     ( 46%)########                                    ( 46%)#########                                   ( 46%)##########                                  ( 46%)###########                                 ( 46%)############                                ( 46%)#############                               ( 46%)##############                              ( 46%)###############                             ( 46%)################                            ( 46%)#################                           ( 46%)##################                          ( 46%)###################                         ( 46%)warning: group rpmuser does not exist - using root
+####################                        ( 52%)#####################                       ( 52%)######################                      ( 52%)warning: group rpmuser does not exist - using root
+#######################                     ( 64%)########################                    ( 64%)#########################                   ( 64%)##########################                  ( 64%)###########################                 ( 64%)warning: group rpmuser does not exist - using root
+############################                ( 99%)#############################               ( 99%)##############################              ( 99%)###############################             ( 99%)################################            ( 99%)#################################           ( 99%)##################################          ( 99%)###################################         ( 99%)####################################        ( 99%)#####################################       ( 99%)######################################      ( 99%)#######################################     ( 99%)########################################    ( 99%)#########################################   ( 99%)##########################################  ( 99%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-lz77.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.sTjR7U
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf lz77-1.0
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/lz77-1.0.tar.gz
++ /bin/tar -xvvf -
+drwxr-xr-x sawa/sawa         0 2007-08-01 15:10 lz77-1.0/
+-rw-r--r-- sawa/sawa      3856 2007-07-31 17:05 lz77-1.0/lz77.h
+-rw-r--r-- sawa/sawa      1050 2007-07-31 17:05 lz77-1.0/Makefile
+-rw-r--r-- sawa/sawa      6046 2007-08-01 09:36 lz77-1.0/lz77_deflate.c
+-rw-r--r-- sawa/sawa      4617 2007-07-31 17:05 lz77-1.0/lz77_inflate.c
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd lz77-1.0
++ echo 'Patch #1 (lz77-fix-buffer-overrun.patch):'
+Patch #1 (lz77-fix-buffer-overrun.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/lz77-fix-buffer-overrun.patch
++ /usr/bin/patch -s -p1
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.14S4TF
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lz77-1.0
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make 'CFLAGS=-O2 -Wall -I. -ffunction-sections ' 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -I. -ffunction-sections  -c lz77_inflate.c -o lz77_inflate.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -I. -ffunction-sections  -c lz77_deflate.c -o lz77_deflate.o
+ar crs liblz77.a lz77_inflate.o lz77_deflate.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -I. -ffunction-sections  -fPIC -c lz77_inflate.c -o lz77_inflate.po
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -I. -ffunction-sections  -fPIC -c lz77_deflate.c -o lz77_deflate.po
+arm-sony-linux-gnueabi-gcc -tarmv7a -shared -Wl,-soname,liblz77.so.1 -o liblz77.so.1.0.0 lz77_inflate.po lz77_deflate.po
+ln -sf liblz77.so.1.0.0 liblz77.so
+ln -sf liblz77.so.1.0.0 liblz77.so.1
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.d35BDr
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lz77-1.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make INSTROOT=/home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr install
+install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+install liblz77.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+install liblz77.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib
+ln -sf liblz77.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/liblz77.so
+ln -sf liblz77.so.1.0.0 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/liblz77.so.1
+install -d /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/lz77
+install -m 644 lz77.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/lz77
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/lib
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/lz77
++ install -m 755 /home/rpmuser/rpm/SOURCES/sony-lz77-libopt-build-lz77 /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/lz77/build
++ install -m 644 lz77_deflate.po lz77_inflate.po /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/lz77/
++ cd /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/optinfo/lz77
++ umask 022
++ /usr/local/arm-sony-linux-gnueabi/cross/bin/arm-sony-linux-gnueabi-libindex /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/liblz77.so -o lz77_deflate.po lz77_inflate.po
++ umask 022
++ echo /usr/lib/liblz77.so.1
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/liblz77.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' liblz77.a '!=' pkgconfig -a liblz77.a '!=' optinfo ']'
++ ln -s ../../tool/usr/lib/liblz77.a /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/lib/liblz77.a
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib`'
++ '[' optinfo '!=' pkgconfig -a optinfo '!=' optinfo ']'
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/lz77
+++ ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/lz77/
++ for l in '`ls /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/lz77/`'
++ mv /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/usr/include/lz77/lz77.h /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool//usr/include/lz77/lz77.h
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-lz77-1.0-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-lz77-1.0-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-lz77-1.0-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.ki9p9L
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd lz77-1.0
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-lz77-1.0-11000001.x86_64
++ exit 0
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/lz77-1.0 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/lz77/test/lz77-testsuite.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 18:09:59 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/lz77-1.0 || echo 'COMMAND''ERROR'
+-bash-3.2# patch -p1 < /tmp/lz77-testsuite.patch
+patching file Makefile
+patching file tests/lz77_invalid_test.c
+patching file tests/lz77_test_deflate.c
+patching file tests/lz77_test_inflate.c
+patching file tests/lz77-test-main.sh
+patching file tests/lz77-test-PTG1.sh
+patching file tests/lz77-test-PTG2.sh
+patching file tests/Testfile
+patching file tests/Test-Support-Fns
+-bash-3.2# make clean
+rm -rf lz77_inflate.o lz77_deflate.o lz77_inflate.po lz77_deflate.po liblz77.*
+-bash-3.2# make check > /tmp/lz77_test.out
+-bash-3.2# cat /tmp/lz77_test.out
+gcc -O2 -Wall -I. -c lz77_inflate.c -o lz77_inflate.o
+gcc -O2 -Wall -I. -c lz77_deflate.c -o lz77_deflate.o
+ar crs liblz77.a lz77_inflate.o lz77_deflate.o
+gcc -O2 -Wall -I. -fPIC -c lz77_inflate.c -o lz77_inflate.po
+gcc -O2 -Wall -I. -fPIC -c lz77_deflate.c -o lz77_deflate.po
+gcc -shared -Wl,-soname,liblz77.so.1 -o liblz77.so.1.0.0 lz77_inflate.po lz77_deflate.po
+ln -sf liblz77.so.1.0.0 liblz77.so
+ln -sf liblz77.so.1.0.0 liblz77.so.1
+cd tests; sh lz77-test-main.sh; cd ../ ;
+          Executing LZ77 Test Suite
+          ------------------------------
+
+=================================================================
+                     LZ77 Test Cases                       
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Userland           : Sony CE Linux 11.0.0.0 armv7a                    
+         Date               : Thu Feb 13 18:10:32 UTC 2014                        
+=================================================================
+[32m Testing TD-lz77-PTG1 [0m
+PASS: test1-TD-lz77-PTG1-1  - Testing basic functionality of lz77 dynamic library
+PASS: test2-TD-lz77-PTG1-2  - Testing basic functionality of lz77 static library
+
+[32m Testing TD-lz77-PTG2 [0m
+PASS: test3-TD-lz77-PTG2-3  - Testing fail scenario of lz77 dynamic library 
+PASS: test4-TD-lz77-PTG2-4  - Testing fail scenario of lz77 static library 
+
+#-------------------------------#
+# test_lz77.log was created #
+#-------------------------------#
+[32m TEST RESULT
+  NO OF TEST EXECUTED : 4
+  ALL TESTS SUCCESSFUL 
+[0m
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/lz77_test.out to 10.0.6.38:/home/rpmuser/rpm/tmp....done
+lz77 : TEST_OK

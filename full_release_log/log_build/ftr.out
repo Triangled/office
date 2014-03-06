@@ -1,0 +1,419 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+ftr : 1.4.4
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-devtool-ftr-1.4.4-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-devtool-ftrwarning: group rpmuser does not exist - using root
+                                            (  3%)warning: group rpmuser does not exist - using root
+#                                           ( 94%)##                                          ( 94%)###                                         ( 94%)####                                        ( 94%)#####                                       ( 94%)######                                      ( 94%)#######                                     ( 94%)########                                    ( 94%)#########                                   ( 94%)##########                                  ( 94%)###########                                 ( 94%)############                                ( 94%)#############                               ( 94%)##############                              ( 94%)###############                             ( 94%)################                            ( 94%)#################                           ( 94%)##################                          ( 94%)###################                         ( 94%)####################                        ( 94%)#####################                       ( 94%)######################                      ( 94%)#######################                     ( 94%)########################                    ( 94%)#########################                   ( 94%)##########################                  ( 94%)###########################                 ( 94%)############################                ( 94%)#############################               ( 94%)##############################              ( 94%)###############################             ( 94%)################################            ( 94%)#################################           ( 94%)##################################          ( 94%)###################################         ( 94%)####################################        ( 94%)#####################################       ( 94%)######################################      ( 94%)#######################################     ( 94%)########################################    ( 94%)warning: group rpmuser does not exist - using root
+#########################################   ( 95%)warning: group rpmuser does not exist - using root
+##########################################  (100%)########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-devtool-ftr.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.OGen1p
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf ftr-1.4.4
++ /bin/bzip2 -dc /home/rpmuser/rpm/SOURCES/ftr-1.4.4.tar.bz2
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd ftr-1.4.4
++ echo 'Patch #1 (ftr-fixed-path-WITHOUTSSLIBC.patch):'
+Patch #1 (ftr-fixed-path-WITHOUTSSLIBC.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/ftr-fixed-path-WITHOUTSSLIBC.patch
++ /usr/bin/patch -s -p1
++ echo 'Patch #2 (ftr-1.4.4-fix-gcc-4.7.X.patch):'
+Patch #2 (ftr-1.4.4-fix-gcc-4.7.X.patch):
++ /usr/bin/patch -s -p1
++ /bin/cat /home/rpmuser/rpm/SOURCES/ftr-1.4.4-fix-gcc-4.7.X.patch
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.TdnB1E
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr-1.4.4
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make ARCH=arm-eabi
+make -C  libftr
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr'
+make -C  sys/arm-eabi
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr/sys/arm-eabi'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr/sys/arm-eabi'
+make -C  netbsd31
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr/netbsd31'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr/netbsd31'
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c sys/arm-eabi/raise.c -o sys/arm-eabi/raise.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c sys/arm-eabi/sys_error.c -o sys/arm-eabi/sys_error.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/bcopy.c -o netbsd31/bcopy.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/getenv.c -o netbsd31/getenv.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/malloc.c -o netbsd31/malloc.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/memcpy.c -o netbsd31/memcpy.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/memset.c -o netbsd31/memset.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/strcat.c -o netbsd31/strcat.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/strcpy.c -o netbsd31/strcpy.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/strlen.c -o netbsd31/strlen.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/strncmp.c -o netbsd31/strncmp.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/strtoul.c -o netbsd31/strtoul.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c netbsd31/xprintf.c -o netbsd31/xprintf.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c libftr.c -o libftr.o
+/tmp/ccCNqtsa.s: Assembler messages:
+/tmp/ccCNqtsa.s:362: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:364: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:432: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:434: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:500: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:502: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2519: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2521: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2589: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2591: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2719: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2721: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2826: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:2828: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3078: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3080: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3141: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3143: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3728: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3730: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3798: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3800: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3893: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+/tmp/ccCNqtsa.s:3895: Warning: swp{b} use is deprecated for ARMv6 and ARMv7
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c sys/arm-eabi/mcount.S -o sys/arm-eabi/mcount.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c sys/arm-eabi/mmap.S -o sys/arm-eabi/mmap.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Isys/arm-eabi -Isys -Inetbsd31 -I.. -I. -fPIC -Wall -Werror -g -O2     -c sys/arm-eabi/syscalls.S -o sys/arm-eabi/syscalls.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -Wl,--version-script=libftr.def -nodefaultlibs  -shared -o libftr.so sys/arm-eabi/raise.o sys/arm-eabi/sys_error.o netbsd31/bcopy.o netbsd31/getenv.o netbsd31/malloc.o netbsd31/memcpy.o netbsd31/memset.o netbsd31/strcat.o netbsd31/strcpy.o netbsd31/strlen.o netbsd31/strncmp.o netbsd31/strtoul.o netbsd31/xprintf.o libftr.o  sys/arm-eabi/mcount.o sys/arm-eabi/mmap.o sys/arm-eabi/syscalls.o -lgcc -lgcc_eh
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/libftr'
+make -C  tests
+make[1]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests'
+make -C  vol1
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c test1.c -o test1.o
+arm-sony-linux-gnueabi-gcc -tarmv7a     -o vol1 test1.o   
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol1'
+make -C  vol2
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2'
+make -C  lib0
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2/lib0'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+arm-sony-linux-gnueabi-gcc -tarmv7a      -shared -o ../.libs/libvol2_1.so  c0.o  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2/lib0'
+make -C  lib1
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2/lib1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+arm-sony-linux-gnueabi-gcc -tarmv7a      -shared -o ../.libs/libvol2_2.so  c0.o  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2/lib1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c funcs.c -o funcs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+arm-sony-linux-gnueabi-gcc -tarmv7a     -o vol2 funcs.o main.o   -L.libs -lvol2_1 -lvol2_2 "-lstdc++"
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol2'
+make -C  vol3
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3'
+make -C  lib0
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3/lib0'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+arm-sony-linux-gnueabi-gcc -tarmv7a      -shared -o ../.libs/libvol3_1.so  c0.o  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3/lib0'
+make -C  lib1
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3/lib1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+arm-sony-linux-gnueabi-gcc -tarmv7a      -shared -o ../.libs/libvol3_2.so  c0.o  
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3/lib1'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c funcs.c -o funcs.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+arm-sony-linux-gnueabi-gcc -tarmv7a     -o vol3 funcs.o main.o   -L.libs -lvol3_1 -lvol3_2 "-lstdc++" -L../../libftr -lftr
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol3'
+make -C  vol4
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol4'
+make -C  lib0
+make[3]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol4/lib0'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -fPIC -Wall -Werror -O0     -c foo.c -o foo.o
+arm-sony-linux-gnueabi-gcc -tarmv7a      -shared -o ../foo.so foo.o   
+make[3]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol4/lib0'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+arm-sony-linux-gnueabi-gcc -tarmv7a     -o vol4 main.o   -ldl
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol4'
+make -C  vol5
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol5'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -c main.c -o main.o
+arm-sony-linux-gnueabi-gcc -tarmv7a    -o vol5 main.o 
+rm -f vol5.link
+ln -s vol5 vol5.link
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol5'
+make -C  vol6
+make[2]: Entering directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol6'
+arm-sony-linux-gnueabi-gcc -tarmv7a -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+arm-sony-linux-gnueabi-gcc -tarmv7a     -o vol6 main.o   
+make[2]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests/vol6'
+make[1]: Leaving directory `/home/rpmuser/rpm/BUILD/ftr-1.4.4/tests'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -Werror -g -O2     -c ftr.c -o ftr.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -Werror -g -O2     -c nm.c -o nm.o
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -Wall -Werror -g -O2     -c which.c -o which.o
+arm-sony-linux-gnueabi-gcc -tarmv7a   -o ftr ftr.o nm.o which.o   -lbfd -liberty
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.rEehi2
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr-1.4.4
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib
++ install -m 755 ftr /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/bin/ftr
++ install -m 755 libftr/libftr.so /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/tool/usr/lib/libftr.so
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/var/log/ftr
+Processing files: arm-sony-linux-gnueabi-armv7a-devtool-ftr-1.4.4-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-devtool-ftr-1.4.4-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-devtool-ftr-1.4.4-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.X7UiOa
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd ftr-1.4.4
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-devtool-ftr-1.4.4-11000001.x86_64
++ exit 0
+spawn -nottyinit rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/ftr-1.4.4
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/ftr-1.4.4 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp......................................................................................................................................................................................................................................done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 20 19:07:45 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp
+-bash-3.2# cd /tmp/ftr-1.4.4/tests || echo 'COMMAND''ERROR'
+-bash-3.2# make clean
+make -C  vol1 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol1'
+rm -rf *.[oa] *~ core *.bak vol1 
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol1'
+make -C  vol2 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol2'
+make -C  lib0 clean
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol2/lib0'
+rm -rf *.[oa] *~ core *.bak  ../.libs/libvol2_1.so
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2/lib0'
+make -C  lib1 clean
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol2/lib1'
+rm -rf *.[oa] *~ core *.bak  ../.libs/libvol2_2.so
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2/lib1'
+rm -rf *.[oa] *~ core *.bak vol2 
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2'
+make -C  vol3 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol3'
+make -C  lib0 clean
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol3/lib0'
+rm -rf *.[oa] *~ core *.bak  ../.libs/libvol3_1.so
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3/lib0'
+make -C  lib1 clean
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol3/lib1'
+rm -rf *.[oa] *~ core *.bak  ../.libs/libvol3_2.so
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3/lib1'
+rm -rf *.[oa] *~ core *.bak vol3 
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3'
+make -C  vol4 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol4'
+make -C  lib0 clean
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol4/lib0'
+rm -rf *.[oa] *~ core *.bak  ../foo.so
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol4/lib0'
+rm -rf *.[oa] *~ core *.bak vol4 
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol4'
+make -C  vol5 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol5'
+rm -f *.[oa] *~ core *.bak vol5 vol5.link
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol5'
+make -C  vol6 clean
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol6'
+rm -rf *.[oa] *~ core *.bak vol6 
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol6'
+rm -rf *.[oa] *~ core *.bak  
+-bash-3.2# make CC=/tool/usr/bin/gcc 
+make -C  vol1
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol1'
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c test1.c -o test1.o
+/tool/usr/bin/gcc  -o vol1 test1.o   
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol1'
+make -C  vol2
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol2'
+make -C  lib0
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol2/lib0'
+/tool/usr/bin/gcc -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+/tool/usr/bin/gcc  -shared -o ../.libs/libvol2_1.so  c0.o  
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2/lib0'
+make -C  lib1
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol2/lib1'
+/tool/usr/bin/gcc -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+/tool/usr/bin/gcc  -shared -o ../.libs/libvol2_2.so  c0.o  
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2/lib1'
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c funcs.c -o funcs.o
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+/tool/usr/bin/gcc  -o vol2 funcs.o main.o   -L.libs -lvol2_1 -lvol2_2 "-lstdc++"
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol2'
+make -C  vol3
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol3'
+make -C  lib0
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol3/lib0'
+/tool/usr/bin/gcc -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+/tool/usr/bin/gcc  -shared -o ../.libs/libvol3_1.so  c0.o  
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3/lib0'
+make -C  lib1
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol3/lib1'
+/tool/usr/bin/gcc -finstrument-functions -fPIC -Wall -Werror -O0     -c c0.cpp -o c0.o
+/tool/usr/bin/gcc  -shared -o ../.libs/libvol3_2.so  c0.o  
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3/lib1'
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c funcs.c -o funcs.o
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+/tool/usr/bin/gcc  -o vol3 funcs.o main.o   -L.libs -lvol3_1 -lvol3_2 "-lstdc++" -L../../libftr -lftr
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol3'
+make -C  vol4
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol4'
+make -C  lib0
+make[2]: Entering directory `/tmp/ftr-1.4.4/tests/vol4/lib0'
+/tool/usr/bin/gcc -finstrument-functions -fPIC -Wall -Werror -O0     -c foo.c -o foo.o
+/tool/usr/bin/gcc  -shared -o ../foo.so foo.o   
+make[2]: Leaving directory `/tmp/ftr-1.4.4/tests/vol4/lib0'
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+/tool/usr/bin/gcc  -o vol4 main.o   -ldl
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol4'
+make -C  vol5
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol5'
+/tool/usr/bin/gcc -finstrument-functions -c main.c -o main.o
+/tool/usr/bin/gcc  -o vol5 main.o 
+rm -f vol5.link
+ln -s vol5 vol5.link
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol5'
+make -C  vol6
+make[1]: Entering directory `/tmp/ftr-1.4.4/tests/vol6'
+/tool/usr/bin/gcc -finstrument-functions -Wall -Werror -O0     -c main.c -o main.o
+/tool/usr/bin/gcc  -o vol6 main.o   
+make[1]: Leaving directory `/tmp/ftr-1.4.4/tests/vol6'
+-bash-3.2# sed -i 's/version" !=/version" <=/g' run.sh
+-bash-3.2# ./run.sh glibc 2>&1 | tee /tmp/ftr-test.log && echo 'COMMAND''DONE'
+./run.sh: line 216: =: No such file or directory
+start to build glibc test files ...
+Build glibc test files fails!
+COMMANDDONE
+-bash-3.2# TEST INTERIM CHECK OK
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/ftr-test.log to 10.0.6.38:/home/rpmuser/rpm/tmp....done

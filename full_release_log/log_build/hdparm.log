@@ -1,0 +1,340 @@
+targetName=a9
+arch=arm
+runHost=10.0.6.38
+runHostPrompt=*$* 
+target=10.0.6.39
+targetRoot=/usr/local/arm-sony-linux-gnueabi/target/armv7a
+rpmDir=/home/rpmuser/rpm
+testSoucreDir=/home/rpmuser//MAIN/dist/pkg
+rpmBuild=/home/rpmuser/MAIN/dist/pkg/sony-rpmbuild
+rpmBuildPatch=/home/rpmuser///MAIN/dist/pkg/sony-rpmbuild -p
+hddDev=sda
+device=sda1
+cmplrs=/home/rpmuser/MAIN/cmplrs
+triplet=arm-sony-linux-gnueabi
+dialect=armv7a
+currentHost=10.0.6.38
+majorVersion=11
+withoutsslibcFlag=yes
+targetTop=/usr/local/arm-sony-linux-gnueabi
+tempDir=/home/rpmuser/rpm/tmp
+hdparm : 9.43
+spawn -nottyinit rpm -ivh /home/rpmuser/CE-Linux-11.0.0.0-RC1/Tools_Userland/SRPMS/sony-target-dev-hdparm-9.43-11000001.src.rpm
+rpm: RPM should not be used directly install RPM packages, use Alien instead!
+rpm: However assuming you know what you are doing...
+   1:sony-target-dev-hdparm warning: group rpmuser does not exist - using root
+warning: group rpmuser does not exist - using root
+                                            ( 50%)#                                           ( 50%)##                                          ( 50%)###                                         ( 50%)####                                        ( 50%)#####                                       ( 50%)######                                      ( 50%)#######                                     ( 50%)########                                    ( 50%)#########                                   ( 50%)##########                                  ( 50%)###########                                 ( 50%)############                                ( 50%)#############                               ( 50%)##############                              ( 50%)###############                             ( 50%)################                            ( 50%)#################                           ( 50%)##################                          ( 50%)###################                         ( 50%)####################                        ( 50%)#####################                       ( 50%)######################                      ( 98%)#######################                     ( 98%)########################                    ( 98%)#########################                   ( 98%)##########################                  ( 98%)###########################                 ( 98%)############################                ( 98%)#############################               ( 98%)##############################              ( 98%)###############################             ( 98%)################################            ( 98%)#################################           ( 98%)##################################          ( 98%)###################################         ( 98%)####################################        ( 98%)#####################################       ( 98%)######################################      ( 98%)#######################################     ( 98%)########################################    ( 98%)#########################################   ( 98%)##########################################  ( 98%)warning: group rpmuser does not exist - using root
+########################################### (100%)########################################### [100%]
+spawn -nottyinit /home/rpmuser/MAIN/dist/pkg/sony-rpmbuild arm-sony-linux-gnueabi-armv7a /home/rpmuser/rpm/SPECS/sony-target-dev-hdparm.spec
+RPM Package building for Sony CE Linux 11.0
+Building target platforms: arm-sony-linux
+Building for target arm-sony-linux
+Executing(%prep): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.uN3hs2
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd /home/rpmuser/rpm/BUILD
++ rm -rf hdparm-9.43
++ /bin/gzip -dc /home/rpmuser/rpm/SOURCES/hdparm-9.43.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd hdparm-9.43
++ echo 'Patch #0 (hdparm-9.43-nostrip.patch):'
+Patch #0 (hdparm-9.43-nostrip.patch):
++ /bin/cat /home/rpmuser/rpm/SOURCES/hdparm-9.43-nostrip.patch
++ /usr/bin/patch -s -p1
++ exit 0
+Executing(%build): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.xj850X
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd hdparm-9.43
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ make 'CC=arm-sony-linux-gnueabi-gcc -tarmv7a'
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o hdparm.o hdparm.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o identify.o identify.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o sgio.o sgio.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o sysfs.o sysfs.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o geom.o geom.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o fallocate.o fallocate.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o fibmap.o fibmap.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o fwdownload.o fwdownload.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o dvdspeed.o dvdspeed.c
+arm-sony-linux-gnueabi-gcc -tarmv7a -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs -O2   -c -o wdidle3.o wdidle3.c
+arm-sony-linux-gnueabi-gcc -tarmv7a  -o hdparm hdparm.o identify.o sgio.o sysfs.o geom.o fallocate.o fibmap.o fwdownload.o dvdspeed.o wdidle3.o
+true hdparm
++ exit 0
+Executing(%install): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.AdkV71
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd hdparm-9.43
++ PATH=/usr/local/arm-sony-linux-gnueabi/host/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/arm-sony-linux-gnueabi/cross/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
++ export PATH
++ CONFIG_SHELL=/bin/sh
++ export CONFIG_SHELL
++ CC='arm-sony-linux-gnueabi-gcc -tarmv7a'
++ export CC
++ AS=arm-sony-linux-gnueabi-as
++ export AS
++ LD=arm-sony-linux-gnueabi-ld
++ export LD
++ AR=arm-sony-linux-gnueabi-ar
++ export AR
++ RANLIB=arm-sony-linux-gnueabi-ranlib
++ export RANLIB
++ CPP='arm-sony-linux-gnueabi-cpp -tarmv7a'
++ export CPP
++ CXX='arm-sony-linux-gnueabi-g++ -tarmv7a'
++ export CXX
++ NM=arm-sony-linux-gnueabi-nm
++ export NM
++ STRIP=true
++ export STRIP
++ OBJCOPY=arm-sony-linux-gnueabi-objcopy
++ export OBJCOPY
++ OBJDUMP=arm-sony-linux-gnueabi-objdump
++ export OBJDUMP
++ CFLAGS=-O2
++ export CFLAGS
++ CXXFLAGS=-O2
++ export CXXFLAGS
++ FFLAGS=-O2
++ export FFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ CROSS_COMPILE_PREFIX=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export CROSS_COMPILE_PREFIX
++ PKG_CONFIG_SYSROOT_DIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a
++ export PKG_CONFIG_SYSROOT_DIR
++ PKG_CONFIG_LIBDIR=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_LIBDIR
++ PKG_CONFIG_PATH=/usr/local/arm-sony-linux-gnueabi/target/armv7a//tool/usr/lib/pkgconfig
++ export PKG_CONFIG_PATH
++ true
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-hdparm-9.43-11000001.x86_64
++ mkdir -p /home/rpmuser/rpm/BUILDROOT/sony-target-dev-hdparm-9.43-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin
++ install -c -m 755 hdparm /home/rpmuser/rpm/BUILDROOT/sony-target-dev-hdparm-9.43-11000001.x86_64/usr/local/arm-sony-linux-gnueabi/target/armv7a/sbin/hdparm
+Processing files: arm-sony-linux-gnueabi-armv7a-dev-hdparm-9.43-11000001.arm
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/rpmuser/rpm/BUILDROOT/sony-target-dev-hdparm-9.43-11000001.x86_64
+Wrote: /home/rpmuser/rpm/SRPMS/sony-target-dev-hdparm-9.43-11000001.src.rpm
+Wrote: /home/rpmuser/rpm/RPMS/arm/arm-sony-linux-gnueabi-armv7a-dev-hdparm-9.43-11000001.arm.rpm
+Executing(%clean): /bin/sh -e /home/rpmuser/rpm/tmp/rpm-tmp.mtiqIe
++ umask 022
++ cd /home/rpmuser/rpm/BUILD
++ cd hdparm-9.43
++ rm -rf /home/rpmuser/rpm/BUILDROOT/sony-target-dev-hdparm-9.43-11000001.x86_64
++ exit 0
+spawn -nottyinit sudo rm -rf /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/hdparm-9.43
+sending 10.0.6.38:/home/rpmuser/rpm/BUILD/hdparm-9.43 to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp...........done
+sending 10.0.6.38:/home/rpmuser//MAIN/dist/pkg/hdparm/test/hdparm-test.patch to 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp....done
+spawn ssh 10.0.6.38
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.8.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+Last login: Thu Feb 13 15:55:52 2014 from kzm-a9.mydomain
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ date '+%m%d%H%M%Y' > /usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/date.log
+]0;rpmuser@Triangle: ~rpmuser@Triangle:~$ telnet 10.0.6.39
+Trying 10.0.6.39...
+Connected to 10.0.6.39.
+Escape character is '^]'.
+
+10.0.6.39 login: root
+Sony CE Linux 11.0.0.0 armv7a
+-bash-3.2# date `cat /tmp/date.log`
+Thu Feb 13 16:02:00 UTC 2014
+-bash-3.2# export PATH=/tool/usr/bin:$PATH
+-bash-3.2# cd /tmp/hdparm-9.43
+-bash-3.2# patch -p1 < /tmp/hdparm-test.patch
+patching file Makefile
+Hunk #1 FAILED at 29.
+1 out of 1 hunk FAILED -- saving rejects to file Makefile.rej
+patching file tests/hdparm-test-main.sh
+patching file tests/hdparm-test-PTG1.sh
+patching file tests/hdparm-test-PTG2.sh
+patching file tests/hdparm-test-PTG3.sh
+patching file tests/Test-Support-Fns
+-bash-3.2# chmod +x hdparm
+-bash-3.2# cd tests
+-bash-3.2# sh hdparm-test-main.sh 2>&1 | tee /tmp/hdparm.log ; echo 'COMMAND''DONE'
+          Execuiting hdparm Test Suite
+          -----------------------------
+
+=================================================================
+                 HDPARM Test Cases                        
+         Board Architecture : armv7l                     
+         Kernel             : 3.4.60_nl-kzm-a9-00073-ge5c404a                      
+         Useland            : Sony CE Linux 11.0.0.0 armv7a                    
+         Date               : Thu Feb 13 16:02:01 UTC 2014                        
+=================================================================
+[32m Testing TD-hdparm-PTG1 [0m
+
+hdparm - get/set hard disk parameters - version v9.43, by Mark Lord.
+
+Usage:  hdparm  [options] [device ...]
+
+Options:
+ -a   Get/set fs readahead
+ -A   Get/set the drive look-ahead flag (0/1)
+ -b   Get/set bus state (0 == off, 1 == on, 2 == tristate)
+ -B   Set Advanced Power Management setting (1-255)
+ -c   Get/set IDE 32-bit IO setting
+ -C   Check drive power mode status
+ -d   Get/set using_dma flag
+ -D   Enable/disable drive defect management
+ -E   Set cd/dvd drive speed
+ -f   Flush buffer cache for device on exit
+ -F   Flush drive write cache
+ -g   Display drive geometry
+ -h   Display terse usage information
+ -H   Read temperature from drive (Hitachi only)
+ -i   Display drive identification
+ -I   Detailed/current information directly from drive
+ -J   Get/set Western DIgital "Idle3" timeout for a WDC "Green" drive (DANGEROUS)
+ -k   Get/set keep_settings_over_reset flag (0/1)
+ -K   Set drive keep_features_over_reset flag (0/1)
+ -L   Set drive doorlock (0/1) (removable harddisks only)
+ -m   Get/set multiple sector count
+ -M   Get/set acoustic management (0-254, 128: quiet, 254: fast)
+ -n   Get/set ignore-write-errors flag (0/1)
+ -N   Get/set max visible number of sectors (HPA) (VERY DANGEROUS)
+ -p   Set PIO mode on IDE interface chipset (0,1,2,3,4,...)
+ -P   Set drive prefetch count
+ -q   Change next setting quietly
+ -Q   Get/set DMA queue_depth (if supported)
+ -r   Get/set device readonly flag (DANGEROUS to set)
+ -R   Get/set device write-read-verify flag
+ -s   Set power-up in standby flag (0/1) (DANGEROUS)
+ -S   Set standby (spindown) timeout
+ -t   Perform device read timings
+ -T   Perform cache read timings
+ -u   Get/set unmaskirq flag (0/1)
+ -U   Obsolete
+ -v   Use defaults; same as -acdgkmur for IDE drives
+ -V   Display program version and exit immediately
+ -w   Perform device reset (DANGEROUS)
+ -W   Get/set drive write-caching flag (0/1)
+ -x   Obsolete
+ -X   Set IDE xfer mode (DANGEROUS)
+ -y   Put drive in standby mode
+ -Y   Put drive to sleep
+ -z   Re-read partition table
+ -Z   Disable Seagate auto-powersaving mode
+ --dco-freeze      Freeze/lock current device configuration until next power cycle
+ --dco-identify    Read/dump device configuration identify data
+ --dco-restore     Reset device configuration back to factory defaults
+ --direct          Use O_DIRECT to bypass page cache for timings
+ --drq-hsm-error   Crash system with a "stuck DRQ" error (VERY DANGEROUS)
+ --fallocate       Create a file without writing data to disk
+ --fibmap          Show device extents (and fragmentation) for a file
+ --fwdownload            Download firmware file to drive (EXTREMELY DANGEROUS)
+ --fwdownload-mode3      Download firmware using min-size segments (EXTREMELY DANGEROUS)
+ --fwdownload-mode3-max  Download firmware using max-size segments (EXTREMELY DANGEROUS)
+ --fwdownload-mode7      Download firmware using a single segment (EXTREMELY DANGEROUS)
+ --idle-immediate  Idle drive immediately
+ --idle-unload     Idle immediately and unload heads
+ --Istdin          Read identify data from stdin as ASCII hex
+ --Istdout         Write identify data to stdout as ASCII hex
+ --make-bad-sector Deliberately corrupt a sector directly on the media (VERY DANGEROUS)
+ --offset          use with -t, to begin timings at given offset (in GiB) from start of drive
+ --prefer-ata12    Use 12-byte (instead of 16-byte) SAT commands when possible
+ --read-sector     Read and dump (in hex) a sector directly from the media
+ --security-help   Display help for ATA security commands
+ --trim-sector-ranges        Tell SSD firmware to discard unneeded data sectors: lba:count ..
+ --trim-sector-ranges-stdin  Same as above, but reads lba:count pairs from stdin
+ --verbose         Display extra diagnostics from some commands
+ --write-sector    Repair/overwrite a (possibly bad) sector directly on the media (VERY DANGEROUS)
+
+ -g   Display drive geometry
+PASS: test1-TD-hdparm-PTG1-1  - Checking basic functionality 
+
+ Test result
+   Total no of test executed : 1
+   No of Success test cases  :1
+   No of Failed test cases : 0
+
+
+[32m Testing TD-hdparm-PTG2 [0m
+PASS: test2-TD-hdparm-PTG2-2  - Checking error scenario using wrong disk name
+FAILED: [31mtest3-TD-hdparm-PTG2-3 - Checking error scenario with -U option and wrong disk name [0m
+Test Result      =  0
+Expected Result  =  1
+
+ Test result
+   Total no of test executed : 2
+   No of Success test cases  :1
+   No of Failed test cases : 1
+
+
+[32m Testing TD-hdparm-PTG3 [0m
+FAILED: [31mtest4-TD-hdparm-PTG3-4 - Checking -t option [0m
+Test Result      =  0
+Expected Result  =  1
+FAILED: [31mtest5-TD-hdparm-PTG3-5 - Checking -T option [0m
+Test Result      =  0
+Expected Result  =  1
+PASS: test6-TD-hdparm-PTG3-6  - Checking -g option
+FAILED: [31mtest7-TD-hdparm-PTG3-7 - Checking -I option [0m
+Test Result      =  0
+Expected Result  =  1
+FAILED: [31mtest8-TD-hdparm-PTG3-8 - Checking -C option [0m
+Test Result      =  0
+Expected Result  =  1
+PASS: test9-TD-hdparm-PTG3-9  - Checking -v option
+PASS: test10-TD-hdparm-PTG3-10  - Checking -a option
+
+ Test result
+   Total no of test executed : 7
+   No of Success test cases  :3
+   No of Failed test cases : 4
+
+
+#------------------------------#
+# test_hdparm.log was created #
+#-----------------------------#
+sending 10.0.6.38:/usr/local/arm-sony-linux-gnueabi/target/armv7a/tmp/hdparm.log to 10.0.6.38:/home/rpmuser/rpm/tmp...done
