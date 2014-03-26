@@ -1,0 +1,95 @@
+\section{pkg\-Cache\-:\-:\-Package \-Struct \-Reference}
+\label{structpkgCache_1_1Package}\index{pkg\-Cache\-::\-Package@{pkg\-Cache\-::\-Package}}
+
+
+contains information for a single unique package  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-Name}\label{structpkgCache_1_1Package_a003b2b80c083e7b91263d147956addcf}
+
+\begin{DoxyCompactList}\small\item\em \-Name of the package. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Arch}\label{structpkgCache_1_1Package_a2e910588b2690a85a3df03019b908ee4}
+
+\begin{DoxyCompactList}\small\item\em \-Architecture of the package. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Version\-List}
+\begin{DoxyCompactList}\small\item\em \-Base of a singly linked list of versions. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Current\-Ver}\label{structpkgCache_1_1Package_a344440386fa2d17bc8476798d3373b78}
+
+\begin{DoxyCompactList}\small\item\em index to the installed version \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Section}
+\begin{DoxyCompactList}\small\item\em indicates the deduced section \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Group}\label{structpkgCache_1_1Package_ac37594153b8d9ceda78b60334b7ada1f}
+
+\begin{DoxyCompactList}\small\item\em index of the group this package belongs to \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Package}\label{structpkgCache_1_1Package_a4ec644fc338c1d5f45d333e30662902b}
+
+\begin{DoxyCompactList}\small\item\em \-Link to the next package in the same bucket. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Rev\-Depends}\label{structpkgCache_1_1Package_a6aaa13ff725d69576594c42b68072dd8}
+
+\begin{DoxyCompactList}\small\item\em \-List of all dependencies on this package. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Provides\-List}\label{structpkgCache_1_1Package_a7791e7b34c83057cd1ff0eaae4623581}
+
+\begin{DoxyCompactList}\small\item\em \-List of all \char`\"{}packages\char`\"{} this package provide. \end{DoxyCompactList}\item 
+unsigned char {\bf \-Selected\-State}\label{structpkgCache_1_1Package_a2984caf65c886858e175753430305178}
+
+\begin{DoxyCompactList}\small\item\em state that the user wishes the package to be in \end{DoxyCompactList}\item 
+unsigned char {\bf \-Inst\-State}
+\begin{DoxyCompactList}\small\item\em installation state of the package \end{DoxyCompactList}\item 
+unsigned char {\bf \-Current\-State}\label{structpkgCache_1_1Package_a2682fe5679606457c71fdaccc9642201}
+
+\begin{DoxyCompactList}\small\item\em indicates if the package is installed \end{DoxyCompactList}\item 
+unsigned int {\bf \-I\-D}
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\item 
+unsigned long {\bf \-Flags}\label{structpkgCache_1_1Package_a15eb852dd5568416ca012c6dcbff021b}
+
+\begin{DoxyCompactList}\small\item\em some useful indicators of the package's state \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+contains information for a single unique package 
+
+\-There can be any number of versions of a given package. \doxyref{\-Package}{p.}{structpkgCache_1_1Package} exists in a singly linked list of package records starting at the hash index of the name in the \doxyref{pkg\-Cache\-::\-Header\-::\-Pkg\-Hash\-Table}{p.}{structpkgCache_1_1Header_a32cd30c95a099e40e2199ecb1036d744}
+
+\-A package can be created for every architecture so package names are not unique, but it is garanteed that packages with the same name are sequencel ordered in the list. \-Packages with the same name can be accessed with the \doxyref{\-Group}{p.}{structpkgCache_1_1Group}. 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Package@{pkg\-Cache\-::\-Package}!\-I\-D@{\-I\-D}}
+\index{\-I\-D@{\-I\-D}!pkgCache::Package@{pkg\-Cache\-::\-Package}}
+\subsubsection[{\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-I\-D}}\label{structpkgCache_1_1Package_a0dd14fb57e3d3cc6b6fc5633c6ce65d5}
+
+
+unique sequel \-I\-D 
+
+\-I\-D is a unique value from 0 to \-Header-\/$>$\-Package\-Count assigned by the generator. \-This allows clients to create an array of size \-Package\-Count and use it to store state information for the package map. \-For instance the status file emitter uses this to track which packages have been emitted already. \index{pkg\-Cache\-::\-Package@{pkg\-Cache\-::\-Package}!\-Inst\-State@{\-Inst\-State}}
+\index{\-Inst\-State@{\-Inst\-State}!pkgCache::Package@{pkg\-Cache\-::\-Package}}
+\subsubsection[{\-Inst\-State}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf \-Inst\-State}}\label{structpkgCache_1_1Package_a376e6de183b0beab37276a03fb649db9}
+
+
+installation state of the package 
+
+\-This should be \char`\"{}ok\char`\"{} but in case the installation failed it will be different. \index{pkg\-Cache\-::\-Package@{pkg\-Cache\-::\-Package}!\-Section@{\-Section}}
+\index{\-Section@{\-Section}!pkgCache::Package@{pkg\-Cache\-::\-Package}}
+\subsubsection[{\-Section}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Section}}\label{structpkgCache_1_1Package_a4bb6ae3e0b912e661c9589ec803b67c3}
+
+
+indicates the deduced section 
+
+\-Should be the index to the string \char`\"{}\-Unknown\char`\"{} or to the section of the last parsed item. \index{pkg\-Cache\-::\-Package@{pkg\-Cache\-::\-Package}!\-Version\-List@{\-Version\-List}}
+\index{\-Version\-List@{\-Version\-List}!pkgCache::Package@{pkg\-Cache\-::\-Package}}
+\subsubsection[{\-Version\-List}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Version\-List}}\label{structpkgCache_1_1Package_a0db38a745a66e41dbca43d3b5adf8c7d}
+
+
+\-Base of a singly linked list of versions. 
+
+\-Each structure represents a unique version of the package. \-The version structures contain links into \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} and the original text file as well as detailed information about the size and dependencies of the specific package. \-In this way multiple versions of a package can be cleanly handled by the system. \-Furthermore, this linked list is guaranteed to be sorted from \-Highest version to lowest version with no duplicate entries. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

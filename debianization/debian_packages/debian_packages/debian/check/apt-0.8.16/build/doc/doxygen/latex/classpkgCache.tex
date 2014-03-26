@@ -1,0 +1,206 @@
+\section{pkg\-Cache \-Class \-Reference}
+\label{classpkgCache}\index{pkg\-Cache@{pkg\-Cache}}
+
+
+\-Collaboration diagram for pkg\-Cache\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Dep}
+\item 
+struct {\bf \-Dependency}
+\begin{DoxyCompactList}\small\item\em information for a single dependency record \end{DoxyCompactList}\item 
+class {\bf \-Dep\-Iterator}
+\item 
+struct {\bf \-Desc\-File}
+\begin{DoxyCompactList}\small\item\em associates a description with a \-Translation file \end{DoxyCompactList}\item 
+class {\bf \-Desc\-File\-Iterator}
+\item 
+class {\bf \-Desc\-Iterator}
+\item 
+struct {\bf \-Description}
+\begin{DoxyCompactList}\small\item\em datamember of a linked list of available description for a version \end{DoxyCompactList}\item 
+struct {\bf \-Flag}
+\item 
+struct {\bf \-Group}
+\begin{DoxyCompactList}\small\item\em groups architecture depending packages together \end{DoxyCompactList}\item 
+class {\bf \-Grp\-Iterator}
+\item 
+struct {\bf \-Header}
+\item 
+class {\bf \-Iterator}
+\item 
+class {\bf \-Namespace}
+\item 
+struct {\bf \-Package}
+\begin{DoxyCompactList}\small\item\em contains information for a single unique package \end{DoxyCompactList}\item 
+struct {\bf \-Package\-File}
+\begin{DoxyCompactList}\small\item\em stores information about the files used to generate the cache \end{DoxyCompactList}\item 
+class {\bf \-Pkg\-File\-Iterator}
+\item 
+class {\bf \-Pkg\-Iterator}
+\item 
+struct {\bf \-Provides}
+\begin{DoxyCompactList}\small\item\em handles virtual packages \end{DoxyCompactList}\item 
+class {\bf \-Prv\-Iterator}
+\item 
+struct {\bf \-State}
+\item 
+struct {\bf \-String\-Item}
+\begin{DoxyCompactList}\small\item\em used for generating single instances of strings \end{DoxyCompactList}\item 
+struct {\bf \-Ver\-File}
+\begin{DoxyCompactList}\small\item\em associates a version with a \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} \end{DoxyCompactList}\item 
+class {\bf \-Ver\-File\-Iterator}
+\item 
+class {\bf \-Ver\-Iterator}
+\item 
+struct {\bf \-Version}
+\begin{DoxyCompactList}\small\item\em information for a single version of a package \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries \-Re\-Map} (bool const \&\-Errorchecks=true)\label{classpkgCache_a4cf662c1f76107e7748992b6bad42f9e}
+
+\item 
+bool {\bfseries \-Sync} ()\label{classpkgCache_a071d010e76ac762ffab420fcf90656a4}
+
+\item 
+{\bf \-M\-Map} \& {\bfseries \-Get\-Map} ()\label{classpkgCache_a9d84abc7fff745f3604e6b2207191860}
+
+\item 
+void $\ast$ {\bfseries \-Data\-End} ()\label{classpkgCache_a7f7082d67a22410f5495553db90f6d83}
+
+\item 
+unsigned long {\bfseries \-Hash} (const std\-::string \&\-S) const \label{classpkgCache_a11b282c011ed216362dd636cdad899af}
+
+\item 
+unsigned long {\bfseries \-Hash} (const char $\ast$\-S) const \label{classpkgCache_abc5a336d7beb40c71b7329d9580cb34d}
+
+\item 
+const char $\ast$ {\bfseries \-Priority} (unsigned char \-Priority)\label{classpkgCache_a7610075e44969e1c368fb11d16b89a85}
+
+\item 
+{\bf \-Grp\-Iterator} {\bfseries \-Find\-Grp} (const std\-::string \&\-Name)\label{classpkgCache_a11f65694fc03fc3dffa09c182c8dedc2}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Find\-Pkg} (const std\-::string \&\-Name)\label{classpkgCache_a33e84958ea12f15bdd667d319e309257}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Find\-Pkg} (const std\-::string \&\-Name, const std\-::string \&\-Arch)\label{classpkgCache_afa734415a805190a60d69528851e7606}
+
+\item 
+{\bf \-Header} \& {\bfseries \-Head} ()\label{classpkgCache_af5a108652a9ac34318c144fae4b2cffb}
+
+\item 
+{\bf \-Grp\-Iterator} {\bfseries \-Grp\-Begin} ()\label{classpkgCache_a71d756d8acd2e5306b048746bfdca513}
+
+\item 
+{\bf \-Grp\-Iterator} {\bfseries \-Grp\-End} ()\label{classpkgCache_a71c8a0441a0fc4ead47f33be81dbb2ce}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Pkg\-Begin} ()\label{classpkgCache_aa51b85d5681e4212160abe7bb4e59720}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Pkg\-End} ()\label{classpkgCache_a2cc5aedf3a8310cb6a489402f8fa106e}
+
+\item 
+{\bf \-Pkg\-File\-Iterator} {\bfseries \-File\-Begin} ()\label{classpkgCache_a56d76843ddb9766a6f5e34f459018ad0}
+
+\item 
+{\bf \-Pkg\-File\-Iterator} {\bfseries \-File\-End} ()\label{classpkgCache_a0f98cf357d01a679ac1fb689c6b380b4}
+
+\item 
+bool {\bfseries \-Multi\-Arch\-Cache} () const \label{classpkgCache_a1a3b36b19738593db10f405e19d3934c}
+
+\item 
+char const $\ast$const {\bfseries \-Native\-Arch} () const \label{classpkgCache_ae89e15c81810d6d95136e15bcd308fb7}
+
+\item 
+{\bfseries pkg\-Cache} ({\bf \-M\-Map} $\ast$\-Map, bool \-Do\-Map=true)\label{classpkgCache_ae5299d5a3b62c70ef86fa3f7b0c917da}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \-Comp\-Type\-Deb} (unsigned char \-Comp)\label{classpkgCache_a4300d4d40b9c0c4ff1f85964a85fda0b}
+
+\item 
+static const char $\ast$ {\bfseries \-Comp\-Type} (unsigned char \-Comp)\label{classpkgCache_ab3848b12d5aeb9bc06f3d40a260c1427}
+
+\item 
+static const char $\ast$ {\bfseries \-Dep\-Type} (unsigned char {\bf \-Dep})\label{classpkgCache_a8cdefbdbce93d70bfaff4da3a32b4bb8}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Header} $\ast$ {\bfseries \-Header\-P}\label{classpkgCache_a7f026dc33e7f7e3f84f74b8aa94a5d13}
+
+\item 
+{\bf \-Group} $\ast$ {\bfseries \-Grp\-P}\label{classpkgCache_a4bb20cb876f381c20debf7e0bc7d8b9e}
+
+\item 
+{\bf \-Package} $\ast$ {\bfseries \-Pkg\-P}\label{classpkgCache_a3c4157e73a99db10471ed007f4806a17}
+
+\item 
+{\bf \-Ver\-File} $\ast$ {\bfseries \-Ver\-File\-P}\label{classpkgCache_ac223bd8fb1bc037c106c76e37dbd395a}
+
+\item 
+{\bf \-Desc\-File} $\ast$ {\bfseries \-Desc\-File\-P}\label{classpkgCache_a7b22a07ea8deffb7d177a165745581c7}
+
+\item 
+{\bf \-Package\-File} $\ast$ {\bfseries \-Pkg\-File\-P}\label{classpkgCache_aadc3a58e551bcba8e8ce73020e8386ab}
+
+\item 
+{\bf \-Version} $\ast$ {\bfseries \-Ver\-P}\label{classpkgCache_a449196a475653b52ec24176ef317bfae}
+
+\item 
+{\bf \-Description} $\ast$ {\bfseries \-Desc\-P}\label{classpkgCache_a48aec5aaa03c997082e3b28b60dff5c4}
+
+\item 
+{\bf \-Provides} $\ast$ {\bfseries \-Provide\-P}\label{classpkgCache_a099ed22106a00b4caae231e3d60f1e27}
+
+\item 
+{\bf \-Dependency} $\ast$ {\bfseries \-Dep\-P}\label{classpkgCache_a25b2d31e0686c8f680c16d27d044bab0}
+
+\item 
+{\bf \-String\-Item} $\ast$ {\bfseries \-String\-Item\-P}\label{classpkgCache_ad28c967c4b016c2e8653c004819a9839}
+
+\item 
+char $\ast$ {\bfseries \-Str\-P}\label{classpkgCache_a975342bda734181b57ae5ad0fd5b4ae9}
+
+\item 
+{\bf pkg\-Versioning\-System} $\ast$ {\bfseries \-V\-S}\label{classpkgCache_a3f4191ee956a08d06a8aecf064d03c1e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bfseries s\-Hash} (const std\-::string \&\-S) const \label{classpkgCache_aac506604c3d63e414f11026bb78bac3c}
+
+\item 
+unsigned long {\bfseries s\-Hash} (const char $\ast$\-S) const \label{classpkgCache_a3bf58c3ada8fe481f5fda56804929172}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bfseries \-Cache\-File}\label{classpkgCache_af3721b25c85f85153d335229c9f4b269}
+
+\item 
+{\bf \-M\-Map} \& {\bfseries \-Map}\label{classpkgCache_a8e3b0003f27b72d31dc7217653034e23}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-cc\end{DoxyCompactItemize}

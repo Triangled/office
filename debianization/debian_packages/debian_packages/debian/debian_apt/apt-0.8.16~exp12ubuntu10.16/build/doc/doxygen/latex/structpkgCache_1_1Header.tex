@@ -1,0 +1,183 @@
+\section{pkg\-Cache\-:\-:\-Header \-Struct \-Reference}
+\label{structpkgCache_1_1Header}\index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}}
+
+
+\-Collaboration diagram for pkg\-Cache\-:\-:\-Header\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{structpkgCache_1_1Header__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Check\-Sizes} ({\bf \-Header} \&\-Against) const \label{structpkgCache_1_1Header_ad0e088d60a3bb2663dc370d59090631c}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bf \-Signature}
+\begin{DoxyCompactList}\small\item\em \-Signature information. \end{DoxyCompactList}\item 
+short {\bf \-Major\-Version}
+\item 
+short {\bfseries \-Minor\-Version}\label{structpkgCache_1_1Header_a00d89157a01db904d3fac2d6c8831033}
+
+\item 
+bool {\bf \-Dirty}
+\begin{DoxyCompactList}\small\item\em indicates if the cache should be erased \end{DoxyCompactList}\item 
+unsigned short {\bf \-Header\-Sz}
+\begin{DoxyCompactList}\small\item\em \-Size of structure values. \end{DoxyCompactList}\item 
+unsigned short {\bfseries \-Group\-Sz}\label{structpkgCache_1_1Header_a2c64efb60e00cd944925147f02f7efd3}
+
+\item 
+unsigned short {\bfseries \-Package\-Sz}\label{structpkgCache_1_1Header_aa4af76628fc9cc9121703febe789d4ea}
+
+\item 
+unsigned short {\bfseries \-Package\-File\-Sz}\label{structpkgCache_1_1Header_aa1b7e2697498d65df93e8abcc57d44d1}
+
+\item 
+unsigned short {\bfseries \-Version\-Sz}\label{structpkgCache_1_1Header_ac4b712879fbf4d354d2ee79a5e54ba78}
+
+\item 
+unsigned short {\bfseries \-Description\-Sz}\label{structpkgCache_1_1Header_ab435c1e1b411fc402757298b5a44c42a}
+
+\item 
+unsigned short {\bfseries \-Dependency\-Sz}\label{structpkgCache_1_1Header_a3b629bdafd5281ebda872884b7544772}
+
+\item 
+unsigned short {\bfseries \-Provides\-Sz}\label{structpkgCache_1_1Header_ae6acd0d17285f710d3136abfe0364c1d}
+
+\item 
+unsigned short {\bfseries \-Ver\-File\-Sz}\label{structpkgCache_1_1Header_acdbda3dee291f35353c5b7876bc0df46}
+
+\item 
+unsigned short {\bfseries \-Desc\-File\-Sz}\label{structpkgCache_1_1Header_ac7d1199465c5f5acc47d22a8b125a1df}
+
+\item 
+unsigned long {\bf \-Group\-Count}
+\begin{DoxyCompactList}\small\item\em \-Structure counts. \end{DoxyCompactList}\item 
+unsigned long {\bfseries \-Package\-Count}\label{structpkgCache_1_1Header_a251d22ba0903ec57adad74fc49d5d8b0}
+
+\item 
+unsigned long {\bfseries \-Version\-Count}\label{structpkgCache_1_1Header_a49cd29757291670c6e9a137b4edf480a}
+
+\item 
+unsigned long {\bfseries \-Description\-Count}\label{structpkgCache_1_1Header_af2e63c0f41296176cf7458e4c3b8a1f9}
+
+\item 
+unsigned long {\bfseries \-Depends\-Count}\label{structpkgCache_1_1Header_ab0d143e7fec78ba6dd5e0421627c4809}
+
+\item 
+unsigned long {\bfseries \-Package\-File\-Count}\label{structpkgCache_1_1Header_a10ba34050faaae6948a8a538ad25d4af}
+
+\item 
+unsigned long {\bfseries \-Ver\-File\-Count}\label{structpkgCache_1_1Header_a4ab2caea7a3da90f3669d7b68eeb9b62}
+
+\item 
+unsigned long {\bfseries \-Desc\-File\-Count}\label{structpkgCache_1_1Header_a1127732d4c056dbffb817dc3ddf1d5bf}
+
+\item 
+unsigned long {\bfseries \-Provides\-Count}\label{structpkgCache_1_1Header_aa90a4741d301ee9617b62236ab340ea4}
+
+\item 
+map\-\_\-ptrloc {\bf \-File\-List}
+\begin{DoxyCompactList}\small\item\em index of the first \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} structure \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-String\-List}
+\begin{DoxyCompactList}\small\item\em index of the first \doxyref{\-String\-Item}{p.}{structpkgCache_1_1StringItem} structure \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Ver\-Sys\-Name}\label{structpkgCache_1_1Header_ae928f3cbebd90e31845a89def4e91829}
+
+\begin{DoxyCompactList}\small\item\em \-String representing the version system used. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Architecture}\label{structpkgCache_1_1Header_a10f1e4fdcbbe55cb6a13376e7e9b6b8e}
+
+\begin{DoxyCompactList}\small\item\em \-Architecture(s) the cache was built against. \end{DoxyCompactList}\item 
+unsigned long {\bf \-Max\-Ver\-File\-Size}\label{structpkgCache_1_1Header_af7e9f6273f7e6539bc978db0a38659a2}
+
+\begin{DoxyCompactList}\small\item\em \-The maximum size of a raw entry from the original \doxyref{\-Package}{p.}{structpkgCache_1_1Package} file. \end{DoxyCompactList}\item 
+unsigned long {\bf \-Max\-Desc\-File\-Size}\label{structpkgCache_1_1Header_a3afdbc3928690be112bc34cf1b7fc3f9}
+
+\begin{DoxyCompactList}\small\item\em \-The maximum size of a raw entry from the original \-Translation file. \end{DoxyCompactList}\item 
+{\bf \-Dynamic\-M\-Map\-::\-Pool} {\bf \-Pools} [9]
+\begin{DoxyCompactList}\small\item\em \-The \-Pool structures manage the allocation pools that the generator uses. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Pkg\-Hash\-Table} [2 $\ast$1048]
+\begin{DoxyCompactList}\small\item\em hash tables providing rapid group/package name lookup \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bfseries \-Grp\-Hash\-Table} [2 $\ast$1048]\label{structpkgCache_1_1Header_a68cd417ffe790ca8f423487d71bea99e}
+
+\item 
+unsigned long {\bf \-Cache\-File\-Size}\label{structpkgCache_1_1Header_ae6cc1c9562a593e8eb28bfd96531ff17}
+
+\begin{DoxyCompactList}\small\item\em \-Size of the complete cache file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Dirty@{\-Dirty}}
+\index{\-Dirty@{\-Dirty}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Dirty}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Dirty}}\label{structpkgCache_1_1Header_afe520d20f313629f90bcee509ed7ba66}
+
+
+indicates if the cache should be erased 
+
+\-Dirty is true if the cache file was opened for reading, the client expects to have written things to it and have not fully synced it. \-The file should be erased and rebuilt if it is true. \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-File\-List@{\-File\-List}}
+\index{\-File\-List@{\-File\-List}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-File\-List}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-File\-List}}\label{structpkgCache_1_1Header_a4b6b2b9ea64d554abffb8e2897932892}
+
+
+index of the first \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} structure 
+
+\-The \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} structures are singly linked lists that represent all package files that have been merged into the cache. \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Group\-Count@{\-Group\-Count}}
+\index{\-Group\-Count@{\-Group\-Count}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Group\-Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf \-Group\-Count}}\label{structpkgCache_1_1Header_a72d30bea36bb90d15378d4b663588687}
+
+
+\-Structure counts. 
+
+\-These indicate the number of each structure contained in the cache. \-Package\-Count is especially useful for generating user state structures. \-See \-Package\-::\-Id for more info. \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Header\-Sz@{\-Header\-Sz}}
+\index{\-Header\-Sz@{\-Header\-Sz}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Header\-Sz}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf \-Header\-Sz}}\label{structpkgCache_1_1Header_a3310955da894cf25b3665cbd15ba6d1f}
+
+
+\-Size of structure values. 
+
+\-All $\ast$\-Sz variables contains the sizeof() that particular structure. \-It is used as an extra consistency check on the structure of the file.
+
+\-If any of the size values do not exactly match what the client expects then the client should refuse the load the file. \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Major\-Version@{\-Major\-Version}}
+\index{\-Major\-Version@{\-Major\-Version}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Major\-Version}]{\setlength{\rightskip}{0pt plus 5cm}short {\bf \-Major\-Version}}\label{structpkgCache_1_1Header_a0fca2ab93414262262749932287f19bc}
+\-These contain the version of the cache file \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Pkg\-Hash\-Table@{\-Pkg\-Hash\-Table}}
+\index{\-Pkg\-Hash\-Table@{\-Pkg\-Hash\-Table}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Pkg\-Hash\-Table}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Pkg\-Hash\-Table}[2 $\ast$1048]}\label{structpkgCache_1_1Header_a32cd30c95a099e40e2199ecb1036d744}
+
+
+hash tables providing rapid group/package name lookup 
+
+\-Each group/package name is inserted into the hash table using pkg\-Cache\-::\-Hash(const \&string) \-By iterating over each entry in the hash table it is possible to iterate over the entire list of packages. \-Hash \-Collisions are handled with a singly linked list of packages based at the hash item. \-The linked list contains only packages that match the hashing function. \-In the \-Pkg\-Hash\-Table is it possible that multiple packages have the same name -\/ these packages are stored as a sequence in the list.
+
+\-Beware\-: \-The \-Hashmethod assumes that the hash table sizes are equal \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Pools@{\-Pools}}
+\index{\-Pools@{\-Pools}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Pools}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dynamic\-M\-Map\-::\-Pool} {\bf \-Pools}[9]}\label{structpkgCache_1_1Header_a42dc118ad6d9dfed5cf48617345781aa}
+
+
+\-The \-Pool structures manage the allocation pools that the generator uses. 
+
+\-Start indicates the first byte of the pool, \-Count is the number of objects remaining in the pool and \-Item\-Size is the structure size (alignment factor) of the pool. \-An \-Item\-Size of 0 indicates the pool is empty. \-There should be the same number of pools as there are structure types. \-The generator stores this information so future additions can make use of any unused pool blocks. \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-Signature@{\-Signature}}
+\index{\-Signature@{\-Signature}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf \-Signature}}\label{structpkgCache_1_1Header_a8f10f33c3f605e92d79d6c90809746dd}
+
+
+\-Signature information. 
+
+\-This must contain the hex value 0x98\-F\-E76\-D\-C which is designed to verify that the system loading the image has the same byte order and byte size as the system saving the image \index{pkg\-Cache\-::\-Header@{pkg\-Cache\-::\-Header}!\-String\-List@{\-String\-List}}
+\index{\-String\-List@{\-String\-List}!pkgCache::Header@{pkg\-Cache\-::\-Header}}
+\subsubsection[{\-String\-List}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-String\-List}}\label{structpkgCache_1_1Header_adf6361fae3bb6ffe2551964a647038a3}
+
+
+index of the first \doxyref{\-String\-Item}{p.}{structpkgCache_1_1StringItem} structure 
+
+\-The cache contains a list of all the unique strings (\-String\-Items). \-The parser reads this list into memory so it can match strings against it. 
+
+\-The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-cc\end{DoxyCompactItemize}

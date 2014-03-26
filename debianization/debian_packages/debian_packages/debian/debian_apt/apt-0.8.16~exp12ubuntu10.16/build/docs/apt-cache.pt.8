@@ -1,0 +1,501 @@
+'\" t
+.\"     Title: apt-cache
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 04
+February 2011
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-CACHE" "8" "04 February 2011" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-cache \- query the APT cache
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-cache\fR\ 'u
+\fBapt\-cache\fR [\fB\-hvsn\fR] [\fB\-o=\fR\fB\fIconfig\ string\fR\fR] [\fB\-c=\fR\fB\fIfile\fR\fR] {[gencaches] | [showpkg\ \fIpkg\fR...] | [showsrc\ \fIpkg\fR...] | [stats] | [dump] | [dumpavail] | [unmet] | [search\ \fIregex\fR] | [show\ \fIpkg\fR...] | [depends\ \fIpkg\fR...] | [rdepends\ \fIpkg\fR...] | [pkgnames\ \fIprefix\fR] | [dotty\ \fIpkg\fR...] | [xvcg\ \fIpkg\fR...] | [policy\ \fIpkgs\fR...] | [madison\ \fIpkgs\fR...]}
+.SH "DESCRIçãO"
+.PP
+\fBapt\-cache\fR
+executa uma variedade de operações na cache de pacotes do APT\&.
+\fBapt\-cache\fR
+não manipula o estado do sistema mas fornece operações para procurar e gerar resultados interessantes a partir dos metadados do pacote\&.
+.PP
+A menos que a opção
+\fB\-h\fR, ou
+\fB\-\-help\fR
+seja fornecida, um dos comandos abaixo têm que estar presentes\&.
+.PP
+gencaches
+.RS 4
+gencaches
+executa a mesma operação que o
+\fBapt\-get check\fR\&. Constrói as caches de fonte e pacote a partir das fontes em
+\fBsources.list\fR(5)
+e a partir de
+/var/lib/dpkg/status\&.
+.RE
+.PP
+showpkg \fIpacote(s)\fR
+.RS 4
+showpkg
+mostra informação acerca dos pacotes listados na linha de comandos\&. Os argumentos restantes são nomes de pacotes\&. São listadas as versões disponíveis e dependências reversas de cada pacote listado, assim como as dependências dianteiras de cada versão\&. Dependências dianteiras (normais) são aqueles pacotes de que o pacote em questão depende; dependências reversas são aqueles pacotes que dependem do pacote em questão\&. Assim, as dependências dianteiras de um pacote têm de ser satisfeitas, mas as dependências reversas não precisam de ser\&. Por exemplo,
+\fBapt\-cache showpkg libreadline2\fR
+deverá produzir resultados semelhantes ao seguinte:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pacote: libreadline2
+Versões: 2\&.1\-12(/var/state/apt/lists/foo_Packages),
+Dependências Reversas Depends: 
+  libreadlineg2,libreadline2
+  libreadline2\-altdev,libreadline2
+Dependências:
+2\&.1\-12 \- libc5 (2 5\&.4\&.0\-0) ncurses3\&.0 (0 (null))
+Fornecimentos:
+2\&.1\-12 \- 
+Fornecimentos Reversos: 
+.fi
+.if n \{\
+.RE
+.\}
+Assim pode\-se ver que libreadline2, versão 2\&.1\-12, depende de libc5 e ncurses3\&.0 que têm que ser instalados para que libreadline2 funcione\&. Por sua vez, libreadlineg2 e libreadline2\-altdev dependem de libreadline2\&. Se libreadline2 for instalado, libc5 e ncurses3\&.0 (e ldso) também têm que ser instalados; libreadlineg2 e libreadline2\-altdev não precisam de ser instalados\&. Para o significado específico do lembrete da saída é melhor consultar o código fonte do apt\&.
+.RE
+.PP
+stats
+.RS 4
+stats
+mostra algumas estatísticas acerca da cache\&. Não são esperados mais argumentos\&. As estatísticas reportadas são:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Total package names
+é o número de nomes de pacotes encontrados na cache\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Normal packages
+é o número de nomes de pacotes regulares e ordinários; estes são pacotes que têm uma correspondência de um\-para\-um entre os seus nomes e os nomes usados por outros pacotes para eles nas dependências\&. A maioria dos pacotes caem nesta categoria\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Pure virtual packages
+é o número de pacotes que existem apenas como nome de pacote virtual; isto é, os pacotes apenas "disponibilizam" o nome do pacote virtual, e nenhum pacote usa realmente o nome\&. Por exemplo, "mail\-transport\-agent" no sistema Debian GNU/Linux é um pacote puramente virtual; vários pacotes disponibilizam "mail\-transport\-agent", mas não existe um existe um pacote chamado "mail\-transport\-agent"\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Single virtual packages
+é o número de pacotes com apenas um pacote a disponibilizar um pacote virtual particular\&. Por exemplo, no sistema Debian GNU/Linux, "X11\-text\-viewer" é um pacote virtual, mas apenas um pacote, xless, disponibiliza "X11\-text\-viewer"\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Mixed virtual packages
+é o número de pacotes que ou disponibilizam um pacote virtual particular ou têm o nome de pacote virtual como o nome de pacote\&. Por exemplo, no sistema Debian GNU/Linux, "debconf" é tanto um pacote real, como também disponibilizado pelo pacote debconf\-tiny\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Missing
+é o número de nomes de pacotes que são referenciados numa dependência mas não foram disponibilizados por nenhum pacote\&. Os pacotes em falta podem ser uma evidência de que não se está a aceder ao total de uma distribuição, ou que um pacote (real ou virtual) foi removido da distribuição\&. Normalmente são referenciados a partir de declarações de Conflitos ou Breaks\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Total distinct versions
+é o número de versões de pacotes encontrados na cache; este valor é portanto pelo menos igual ao número do total de nomes de pacotes\&. Se mais do que uma distribuição (ambas "stable" e "unstable", por exemplo) está a ser acedida, este valor pode ser consideravelmente maior que o número do total de nomes de pacotes\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Total dependencies
+é o número de relacionamentos com dependências reivindicadas por todos os pacotes na cache\&.
+.RE
+.sp
+.RE
+.PP
+showsrc \fIpacote(s)\fR
+.RS 4
+showsrc
+mostra todos os registos de pacotes fonte que correspondem aos nomes de pacotes fornecidos\&. Todas as versões são mostradas, assim como todos os registos que declaram o nome como sendo um Binário\&.
+.RE
+.PP
+dump
+.RS 4
+dump
+mostra uma listagem curta de todos os pacotes na cache\&. É principalmente para depuração\&.
+.RE
+.PP
+dumpavail
+.RS 4
+dumpavail
+escreve uma lista de disponibilidades no stdout\&. Isto é apropriado para usar com o
+\fBdpkg\fR(1)
+e é usado pelo método
+\fBdselect\fR(1)\&.
+.RE
+.PP
+unmet
+.RS 4
+unmet
+mostra um sumário de todas as dependências insatisfeitas na cache do pacote\&.
+.RE
+.PP
+show \fIpacote(s)\fR
+.RS 4
+show
+executa uma função semelhante ao
+\fBdpkg \-\-print\-avail\fR; mostra os registos do pacote para os pacotes nomeados\&.
+.RE
+.PP
+search \fIregex [ regex \&.\&.\&. ]\fR
+.RS 4
+search
+executa uma busca de texto completo em todas as listas de pacotes disponíveis para o padrão POSIX regex fornecido, veja
+\fBregex\fR(7)\&. Procura nos nomes de pacotes e nas descrições por uma ocorrência da expressão regular e escreve o nome do pacote e a descrição curta, incluindo nomes de pacotes virtuais\&. Se for fornecido
+\fB\-\-full\fR
+então são produzidos resultados idênticos ao
+show
+para cada pacote correspondente, e se for fornecido
+\fB\-\-names\-only\fR
+então não há procura na descrição longa, apenas no nome do pacote\&.
+.sp
+Podem ser usados argumentos separados para especificar múltiplos padrões de busca os quais são lidados em conjunto\&.
+.RE
+.PP
+depends \fIpacote(s)\fR
+.RS 4
+depends
+mostra uma listagem de cada dependência que um pacote tem e todos os outros pacotes possíveis que podem satisfazer essa dependência\&.
+.RE
+.PP
+rdepends \fIpacote(s)\fR
+.RS 4
+rdepends
+mostra uma listagem de cada dependência reversa que um pacote tem\&.
+.RE
+.PP
+pkgnames \fI[ prefixo ]\fR
+.RS 4
+Este comando escreve o nome de cada pacote que o APT conhece\&. O argumento opcional é um prefixo de correspondência para filtrar a lista de nomes\&. O resultado é apropriado para usar numa função completa de consola e o resultado é gerado com extrema rapidez\&. Este comando fica melhor usado com a opção
+\fB\-\-generate\fR\&.
+.sp
+Note que um pacote que o APT conheça não está necessariamente disponível para download, instalável ou instalado, por exemplo, os pacotes virtuais também são listados na lista gerada\&.
+.RE
+.PP
+dotty \fIpacote(s)\fR
+.RS 4
+dotty
+recebe uma lista de pacotes na linha de comandos e gera resultados apropriados para uso pelo dotty do pacote
+\m[blue]\fBGraphViz\fR\m[]\&\s-2\u[1]\d\s+2\&. O resultado será um conjunto de nós e orlas que representam os relacionamentos entre os pacotes\&. Por predefinição, os pacotes fornecidos irão seguir todos os pacotes dependentes; isto pode produzir um gráfico muito grande\&. Para limitar os resultados apenas aos pacotes listados na linha de comandos, defina a opção
+APT::Cache::GivenOnly\&.
+.sp
+Os nós resultantes irão ter várias formas; pacotes normais são caixas, fornecimentos puros são triângulos, fornecimentos mistos são diamantes, pacotes desaparecidos são hexágonos\&. Caixas cor de laranja significa que a recursão parou [pacotes leaf], linhas azuis são pré\-dependências, linhas verdes são conflitos\&.
+.sp
+Atenção, o dotty não consegue fazer gráficos com grandes conjuntos de pacotes\&.
+.RE
+.PP
+xvcg \fIpacote(s)\fR
+.RS 4
+O mesmo que
+dotty, apenas para xvcg a partir de
+\m[blue]\fBFerramenta VCG\fR\m[]\&\s-2\u[2]\d\s+2\&.
+.RE
+.PP
+policy \fI[ pacote(s) ]\fR
+.RS 4
+policy
+destina\-se a ajudar a depurar problemas relacionados com o ficheiro de preferências\&. Sem argumentos irá escrever as propriedades de cada fonte\&. Caso contrário escreve informação detalhada acerca da selecção de prioridade do pacote nomeado\&.
+.RE
+.PP
+madison \fI[ pacote(s) ]\fR
+.RS 4
+O comando
+madison
+do
+apt\-cache
+tenta imitar o formato de saída e um subconjunto das funcionalidades da ferramenta
+madison
+de gestão de pacotes da Debian\&. Mostra versões disponíveis de um pacote num formato tabular\&. Ao contrário do
+madison
+original, apenas pode mostrar informação para a arquitectura que o APT recolheu listas de pacotes (APT::Architecture)\&.
+.RE
+.SH "OPçõES"
+.PP
+Todas as opções de linha de comandos podem ser definidas usando o ficheiro de configuração, as descrições indicam a opção de configuração a definir\&. Para opções booleanas você pode sobre por o ficheiro de configuração usando algo como
+\fB\-f\-\fR,\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+ou várias outras variantes\&.
+.PP
+\fB\-p\fR, \fB\-\-pkg\-cache\fR
+.RS 4
+Selecciona o ficheiro para armazenar a cache do pacote\&. A cache do pacote é a cache principal usada por todas as operações\&. Item de Configuração:
+Dir::Cache::pkgcache\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-src\-cache\fR
+.RS 4
+Selecciona o ficheiro para armazenar a cache de fonte\&. A fonte é usada apenas pelo
+gencaches
+e armazena uma versão analisada da informação do pacote a partir de fontes remotas\&. Ao construir a cache de pacote é usada a cache fonte para evitar reanalisar todos os ficheiros do pacote\&. Item de Configuração:
+Dir::Cache::srcpkgcache\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Quiet; produz resultados apropriados para registar em logs, omitindo os indicadores de progresso\&. Mais q\*(Aqs irão produzir mais serenidade até um máximo de 2\&. Você também pode usar
+\fB\-q=#\fR
+para definir o nível de serenidade, sobrepondo o ficheiro de configuração\&. Item de Configuração:
+quiet\&.
+.RE
+.PP
+\fB\-i\fR, \fB\-\-important\fR
+.RS 4
+Escreve apenas dependências importantes; para usar com unmet e depends\&. Separa apenas relações de Depends e Pre\-Depends para serem escritas\&. Item de Configuração:
+APT::Cache::Important\&.
+.RE
+.PP
+\fB\-\-no\-pre\-depends\fR, \fB\-\-no\-depends\fR, \fB\-\-no\-recommends\fR, \fB\-\-no\-suggests\fR, \fB\-\-no\-conflicts\fR, \fB\-\-no\-breaks\fR, \fB\-\-no\-replaces\fR, \fB\-\-no\-enhances\fR
+.RS 4
+Per default the
+depends
+and
+rdepends
+print all dependencies\&. This can be tweaked with these flags which will omit the specified dependency type\&. Configuration Item:
+APT::Cache::Show\fIDependencyType\fR
+e\&.g\&.
+APT::Cache::ShowRecommends\&.
+.RE
+.PP
+\fB\-f\fR, \fB\-\-full\fR
+.RS 4
+Escreve registos de pacote completos quando procura\&. Item de Configuração:
+APT::Cache::ShowFull\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-all\-versions\fR
+.RS 4
+Escreve registos completos para todas as versões disponíveis\&. Isto é a predefinição; para a desligar, use
+\fB\-\-no\-all\-versions\fR\&. Se
+\fB\-\-no\-all\-versions\fR
+for especificada, apenas a versão candidata será mostrada (aquela que seria seleccionada para instalação)\&. Esta opção é aplicável apenas ao comando
+show\&. Item de Configuração:
+APT::Cache::AllVersions\&.
+.RE
+.PP
+\fB\-g\fR, \fB\-\-generate\fR
+.RS 4
+Executa regeneração automática da cache de pacote, em vez de usar a cache como está\&. Isto é a predefinição; para a desligar, use
+\fB\-\-no\-generate\fR\&. Item de Configuração:
+APT::Cache::Generate\&.
+.RE
+.PP
+\fB\-\-names\-only\fR, \fB\-n\fR
+.RS 4
+Apenas procura nos nomes dos pacotes, e não nas descrições longas\&. Item de Configuração:
+APT::Cache::NamesOnly\&.
+.RE
+.PP
+\fB\-\-all\-names\fR
+.RS 4
+Faz com que o
+pkgnames
+escreva todos os nomes, incluindo pacotes virtuais e dependências em falta\&. Item de configuração:
+APT::Cache::AllNames\&.
+.RE
+.PP
+\fB\-\-recurse\fR
+.RS 4
+Torna
+depends
+e
+rdepends
+recursivo para que todos os pacotes mencionados sejam escritos uma vez\&. Item de Configuração
+APT::Cache::RecurseDepends\&.
+.RE
+.PP
+\fB\-\-installed\fR
+.RS 4
+Limita a saída de
+depends
+e
+rdepends
+aos pacotes que estão actualmente instalados\&. Item de Configuração:
+APT::Cache::Installed\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Mostra um sumário curto da utilização\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Mostra a versão do programa\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Ficheiro de Configuração; Especifica o ficheiro de configuração a usar\&. O programa irá ler o ficheiro de configuração predefinido e depois este ficheiro de configuração\&. Se as definições de configuração precisarem de ser definidas antes, os ficheiros de configuração predefinidos são analisados especificando um ficheiro com a variável de ambiente
+\fBAPT_CONFIG\fR\&. Veja
+\fBapt.conf\fR(5)
+para informação de sintaxe\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Define uma Opção de Configuração; Isto irá definir uma opção de configuração arbitrária\&. A sintaxe é
+\fB\-o Foo::Bar=bar\fR\&.
+\fB\-o\fR
+e
+\fB\-\-option\fR
+podem ser usadas várias vezes para definir opções diferentes\&.
+.RE
+.SH "FICHEIROS"
+.PP
+/etc/apt/sources\&.list
+.RS 4
+Localizações de onde obter pacotes\&. Item de Configuração:
+Dir::Etc::SourceList\&.
+.RE
+.PP
+/etc/apt/sources\&.list\&.d/
+.RS 4
+Ficheiros fragmentados para localizações de onde obter pacotes\&. Item de Configuração:
+Dir::Etc::SourceParts\&.
+.RE
+.PP
+/var/lib/apt/lists/
+.RS 4
+Área de armazenamento para informação de estado para cada recurso de pacote especificado em
+\fBsources.list\fR(5)
+Tem de Configuração:
+Dir::State::Lists\&.
+.RE
+.PP
+/var/lib/apt/lists/partial/
+.RS 4
+Área de armazenamento para informação de estado em trânsito\&. Item de Configuração:
+Dir::State::Lists
+(parcial implícito)\&.
+.RE
+.SH "VEJA TAMBéM"
+.PP
+\fBapt.conf\fR(5),
+\fBsources.list\fR(5),
+\fBapt-get\fR(8)
+.SH "DIAGNóSTICO"
+.PP
+\fBapt\-cache\fR
+devolve zero em operação normal, 100 decimal em erro\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[3]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBAPT team\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+GraphViz
+.RS 4
+\%http://www.research.att.com/sw/tools/graphviz/
+.RE
+.IP " 2." 4
+Ferramenta VCG
+.RS 4
+\%http://rw4.cs.uni-sb.de/users/sander/html/gsvcg1.html
+.RE
+.IP " 3." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

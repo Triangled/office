@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product;
+<date>29 lutego 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-extracttemplates</refentrytitle>
+   <manvolnum>1</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-extracttemplates</refname>
+    <refpurpose>Narzędzie wyciągające z pakietów Debiana skrypty konfiguracyjne i szablony
+DebConf</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-extracttemplates</command> <arg><option>-hv</option></arg>
+<arg><option>-t=<replaceable>katalog_tymczasowy</replaceable></option></arg>
+<arg choice="plain" rep="repeat"><replaceable>plik</replaceable></arg></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Opis</title>
+   <para><command>apt-extracttemplates</command> pobiera jeden lub więcej pakietów
+Debiana i zapisuje (w katalogu tymczasowym) wszystkie skojarzone z nimi
+skrypty konfiguracyjne i pliki szablonów. Dla każdego pakietu zawierającego
+te skrypty i szablony, zostanie wypisana linia w następującym formacie:</para>
+   <para>pakiet wersja plik-template skrypt-config</para>
+   <para>plik-template i skrypt-config są zapisywane w katalogu tymczasowym podanym
+jako argument opcji <option>-t</option> lub <option>--tempdir</option>
+(<literal>APT::ExtractTemplates::TempDir</literal>). Nazwy tych plików są w
+postaci <filename>pakiet.template.XXXX</filename> oraz
+<filename>pakiet.config.XXXX</filename>.</para>
+ </refsect1>
+ 
+ <refsect1><title>opcje</title>
+   &apt-cmdblurb;
+
+   <variablelist>
+     <varlistentry><term><option>-t</option></term><term><option>--tempdir</option></term>
+     <listitem><para>
+     Katalog tymczasowy, w którym zapisywane będą wyciągnięte szablony debconf i
+pliki konfiguracyjne. Pozycja w pliku konfiguracyjnym:
+<literal>APT::ExtractTemplates::TempDir</literal>.</para></listitem>
+     </varlistentry>
+
+&apt-commonoptions;</variablelist>
+     
+   
+ </refsect1>
+
+ <refsect1><title>Zobacz także</title>
+   <para>&apt-conf;</para>
+ </refsect1>
+
+ <refsect1><title>Diagnostyka</title>
+   <para><command>apt-extracttemplates</command> zwraca zero, gdy zakończyło się
+pomyślnie, 100 - w przypadku błędu.</para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

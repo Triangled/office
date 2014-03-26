@@ -1,0 +1,58 @@
+Format: 1.8
+Date: Fri, 15 Nov 2013 15:16:45 +0000
+Source: apt
+Binary: apt libapt-pkg4.12 libapt-inst1.4 apt-doc libapt-pkg-dev libapt-pkg-doc apt-utils apt-transport-https
+Architecture: source all amd64
+Version: 0.8.16~exp12ubuntu10.16
+Distribution: precise
+Urgency: low
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Changed-By: Adam Conrad <adconrad@ubuntu.com>
+Description: 
+ apt        - commandline package manager
+ apt-doc    - documentation for APT
+ apt-transport-https - https download transport for APT
+ apt-utils  - package managment related utility programs
+ libapt-inst1.4 - deb package format runtime library
+ libapt-pkg-dev - development files for APT's libapt-pkg and libapt-inst
+ libapt-pkg-doc - documentation for APT development
+ libapt-pkg4.12 - package managment runtime library
+Launchpad-Bugs-Fixed: 1205284
+Changes: 
+ apt (0.8.16~exp12ubuntu10.16) precise; urgency=low
+ .
+   * Keep linux-tools packages matching installed kernels (LP: #1205284)
+Checksums-Sha1: 
+ 49ed4861cb96211eed9a6b314b9bc2bc2520a462 1543 apt_0.8.16~exp12ubuntu10.16.dsc
+ 1fab167591ab581ad0180146ab3d79fc67831989 3441416 apt_0.8.16~exp12ubuntu10.16.tar.gz
+ 7f29e7eb0dcebdbeb77f846e2cce04e0ab4e7c18 269368 apt-doc_0.8.16~exp12ubuntu10.16_all.deb
+ f1a9118ea9bea816350c4e32508287b6f14789c4 7852644 libapt-pkg-doc_0.8.16~exp12ubuntu10.16_all.deb
+ 8359c46dca16b2669e8c493833efd054c8ce54dd 1046126 libapt-pkg4.12_0.8.16~exp12ubuntu10.16_amd64.deb
+ 48495d257a6dfb5aa741b530332eb692d63df7e5 202250 libapt-inst1.4_0.8.16~exp12ubuntu10.16_amd64.deb
+ dac4edcdd7d5ca7e50d03b7225fe71c7cd274a2d 1202396 apt_0.8.16~exp12ubuntu10.16_amd64.deb
+ fc2abc48e7deec5690e0cd96a252acfd49767dee 191524 libapt-pkg-dev_0.8.16~exp12ubuntu10.16_amd64.deb
+ 8a66fb9bc90990602b4b49335500e41d1a51d040 284232 apt-utils_0.8.16~exp12ubuntu10.16_amd64.deb
+ 5338229b3e9bd386baff4fbfbbc6453728aa010a 115056 apt-transport-https_0.8.16~exp12ubuntu10.16_amd64.deb
+Checksums-Sha256: 
+ 001866e1054a8fb5b030470937181b04d0caf1b6900f6cb201699fc2225373b5 1543 apt_0.8.16~exp12ubuntu10.16.dsc
+ e3c3fd8371ce0e2e4f25ebb602181c31196fdc7fce785f8cb78aaf9319d2f824 3441416 apt_0.8.16~exp12ubuntu10.16.tar.gz
+ 6c6817fde451b1fd13984011fa2551e833d371677767dc3a5805d5b4b62202e4 269368 apt-doc_0.8.16~exp12ubuntu10.16_all.deb
+ 20cca65eb1cceb025a0caeac4821675a375029ff941eddfd746a46641336c347 7852644 libapt-pkg-doc_0.8.16~exp12ubuntu10.16_all.deb
+ fb5762b9db43056ddf9224afdff633d7676f12db9514d8be342ece94e51fc4f2 1046126 libapt-pkg4.12_0.8.16~exp12ubuntu10.16_amd64.deb
+ 290db0069e498a1ea9adf2493112e081be691b3cdf51ede508909580979341fa 202250 libapt-inst1.4_0.8.16~exp12ubuntu10.16_amd64.deb
+ a47a85baf7ecbbcee549a985557fb7d216a2fee5e46d70cfad7874eab48b9f78 1202396 apt_0.8.16~exp12ubuntu10.16_amd64.deb
+ 42aa09bafb5b6243e3193b083ce47b1dfbb319815ca891d1a5de495d6108f9f5 191524 libapt-pkg-dev_0.8.16~exp12ubuntu10.16_amd64.deb
+ 8ea55009db13203fcd56ce4ef45640e828d4dbfb3780ac4fe5b13ee3a2919c3a 284232 apt-utils_0.8.16~exp12ubuntu10.16_amd64.deb
+ 11c0bb86421df9f245774e50b6f450b023fa9d89142489d5ad9cdbc63499dcb7 115056 apt-transport-https_0.8.16~exp12ubuntu10.16_amd64.deb
+Files: 
+ 4cd14534ee36c543c8e789773e3abe5a 1543 admin important apt_0.8.16~exp12ubuntu10.16.dsc
+ e45c9c45587b78247b8f0e338fc5bf23 3441416 admin important apt_0.8.16~exp12ubuntu10.16.tar.gz
+ 49820acb50b1241637267523265b9fc0 269368 doc optional apt-doc_0.8.16~exp12ubuntu10.16_all.deb
+ b8a37c1ad6d566497829e75e4cad828a 7852644 doc optional libapt-pkg-doc_0.8.16~exp12ubuntu10.16_all.deb
+ b347f86c30f0bbf322d5a17db5ebf9fb 1046126 admin important libapt-pkg4.12_0.8.16~exp12ubuntu10.16_amd64.deb
+ fb53fbb09c00cfa0a0b9d7125b2a6883 202250 admin important libapt-inst1.4_0.8.16~exp12ubuntu10.16_amd64.deb
+ f9e440d65874475cc9369619408b2325 1202396 admin important apt_0.8.16~exp12ubuntu10.16_amd64.deb
+ 3f5e938719aa67df7839b1d1a5da6eb5 191524 libdevel optional libapt-pkg-dev_0.8.16~exp12ubuntu10.16_amd64.deb
+ 0eb2cb5272fa0a9a78f8b6384d3a1131 284232 admin important apt-utils_0.8.16~exp12ubuntu10.16_amd64.deb
+ 34320b9f652608a9f18152880f8e7edc 115056 admin optional apt-transport-https_0.8.16~exp12ubuntu10.16_amd64.deb
+Original-Maintainer: APT Development Team <deity@lists.debian.org>

@@ -1,0 +1,111 @@
+\section{pkg\-Acquire\-:\-:\-Method\-Config \-Struct \-Reference}
+\label{structpkgAcquire_1_1MethodConfig}\index{pkg\-Acquire\-::\-Method\-Config@{pkg\-Acquire\-::\-Method\-Config}}
+
+
+\-Information about the properties of a single acquire method. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire.\-h$>$}
+
+
+
+\-Collaboration diagram for pkg\-Acquire\-:\-:\-Method\-Config\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{structpkgAcquire_1_1MethodConfig__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Method\-Config} ()
+\begin{DoxyCompactList}\small\item\em \-Set up the default method parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bf d}\label{structpkgAcquire_1_1MethodConfig_ac948f13dbf1ed6a8ad17f9b44a1343d1}
+
+\begin{DoxyCompactList}\small\item\em dpointer placeholder (for later in case we need it) \end{DoxyCompactList}\item 
+{\bf \-Method\-Config} $\ast$ {\bf \-Next}
+\begin{DoxyCompactList}\small\item\em \-The next link on the acquire method list. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Access}\label{structpkgAcquire_1_1MethodConfig_a006a979c4801f6b6ceb33cb3acd6dc89}
+
+\begin{DoxyCompactList}\small\item\em \-The name of this acquire method (e.\-g., http). \end{DoxyCompactList}\item 
+std\-::string {\bf \-Version}\label{structpkgAcquire_1_1MethodConfig_a9128f413b7890b2493b88f88fe258259}
+
+\begin{DoxyCompactList}\small\item\em \-The implementation version of this acquire method. \end{DoxyCompactList}\item 
+bool {\bf \-Single\-Instance}\label{structpkgAcquire_1_1MethodConfig_a73e5dd8b9abd83a562ded9c050af4fc5}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, only one download queue should be created for this method. \end{DoxyCompactList}\item 
+bool {\bf \-Pipeline}\label{structpkgAcquire_1_1MethodConfig_a184f137ba7f14f7867d1480d05645973}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, this method supports pipelined downloading. \end{DoxyCompactList}\item 
+bool {\bf \-Send\-Config}\label{structpkgAcquire_1_1MethodConfig_aeb5234a93cf150f464001a2768eb7b27}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the worker process should send the entire \-A\-P\-T configuration tree to the fetch subprocess when it starts up. \end{DoxyCompactList}\item 
+bool {\bf \-Local\-Only}\label{structpkgAcquire_1_1MethodConfig_a8b6e3669e200451d5531db670a0b7be8}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, this fetch method does not require network access; all files are to be acquired from the local disk. \end{DoxyCompactList}\item 
+bool {\bf \-Needs\-Cleanup}
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the subprocess has to carry out some cleanup actions before shutting down. \end{DoxyCompactList}\item 
+bool {\bf \-Removable}\label{structpkgAcquire_1_1MethodConfig_a871cd013ae63d288941eb4bc3db93ae7}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, this fetch method acquires files from removable media. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Information about the properties of a single acquire method. \{\{\{. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acquire\-::\-Method\-Config@{pkg\-Acquire\-::\-Method\-Config}!\-Method\-Config@{\-Method\-Config}}
+\index{\-Method\-Config@{\-Method\-Config}!pkgAcquire::MethodConfig@{pkg\-Acquire\-::\-Method\-Config}}
+\subsubsection[{\-Method\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Method\-Config} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{structpkgAcquire_1_1MethodConfig_a29c0cb60fa0c1e5f67d911bed92f2006}
+
+
+\-Set up the default method parameters. 
+
+\-All fields are initialized to \-N\-U\-L\-L, \char`\"{}\char`\"{}, or {\bfseries false} as appropriate. 
+
+\-References \-Local\-Only, \-Next, \-Pipeline, \-Removable, \-Send\-Config, and \-Single\-Instance.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-::\-Method\-Config@{pkg\-Acquire\-::\-Method\-Config}!\-Needs\-Cleanup@{\-Needs\-Cleanup}}
+\index{\-Needs\-Cleanup@{\-Needs\-Cleanup}!pkgAcquire::MethodConfig@{pkg\-Acquire\-::\-Method\-Config}}
+\subsubsection[{\-Needs\-Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Needs\-Cleanup}}\label{structpkgAcquire_1_1MethodConfig_a18ab15b6a105e10118c35973765cce34}
+
+
+\-If {\bfseries true}, the subprocess has to carry out some cleanup actions before shutting down. 
+
+\-For instance, the cdrom method needs to unmount the \-C\-D after it finishes. 
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Shutdown().
+
+\index{pkg\-Acquire\-::\-Method\-Config@{pkg\-Acquire\-::\-Method\-Config}!\-Next@{\-Next}}
+\index{\-Next@{\-Next}!pkgAcquire::MethodConfig@{pkg\-Acquire\-::\-Method\-Config}}
+\subsubsection[{\-Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Method\-Config}$\ast$ {\bf \-Next}}\label{structpkgAcquire_1_1MethodConfig_add1daf6c866236479bdac390ed41f80a}
+
+
+\-The next link on the acquire method list. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why not an \-S\-T\-L container? \end{DoxyRefDesc}
+
+
+\-Referenced by pkg\-Acquire\-::\-Get\-Config(), \-Method\-Config(), and pkg\-Acquire\-::$\sim$pkg\-Acquire().
+
+
+
+\-The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire.\-cc\end{DoxyCompactItemize}

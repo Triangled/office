@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product;
+<date>29. Februar 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>sources.list</refentrytitle>
+   <manvolnum>5</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>sources.list</refname>
+    <refpurpose>Paketressourcenliste für APT</refpurpose>
+ </refnamediv>
+ 
+ <refsect1><title>Beschreibung</title>
+   <para>Die Paketquellenliste wird benutzt, um Archive des Paketverteilungssystems,
+das auf dem System benutzt wird, zu finden. Momentan dokumentiert diese
+Handbuchseite nur das vom Debian-GNU/Linux-System benutzte
+Paketierungssystem. Diese Steuerungsdatei ist
+<filename>/etc/apt/sources.list</filename>.</para>
+
+   <para>Die Quellenliste wurde entworfen, um eine beliebige Anzahl von aktiven
+Quellen und eine Vielzahl von Quellmedien zu unterstützen. Die Datei listet
+eine Quelle pro Zeile auf, wobei die bevorzugten Quellen zuerst aufgelistet
+sind. Das Format jeder Zeile lautet: <literal>Typ URI
+Argumente</literal>. Das erste Element <literal>Typ</literal> legt das
+Format für <literal>Argumente</literal> fest. <literal>URI</literal> ist ein
+universeller Quellenbezeichner »Universal Resource Identifier« (URI), der
+eine Obermenge des spezielleren und besser bekannten Universal Resource
+Locator (URL) ist. Der Rest der Zeile kann unter Verwendung von # als
+Kommentar markiert werden.</para>
+ </refsect1>
+ 
+ <refsect1><title>sources.list.d</title>
+   <para>Das Verzeichnis <filename>/etc/apt/sources.list.d</filename> stellt eine
+Möglichkeit bereit, sources.list-Einträge in separaten Dateien
+hinzuzufügen. Das Format ist das gleiche wie für die normale
+<filename>sources.list</filename>-Datei. Dateinamen müssen mit
+<filename>.list</filename> enden und können nur Buchstaben (a-z und A-Z),
+Ziffern (0-9), Unterstriche (_), Bindestriche (-) und Punkte (.)
+enthalten. Andernfalls wird APT einen Hinweis ausgeben, dass es eine Datei
+ignoriert hat, falls die Datei nicht auf ein Muster in der
+Konfigurationsliste <literal>Dir::Ignore-Files-Silently</literal> passt – in
+diesem Fall wird sie stillschweigend ignoriert.</para>
+ </refsect1>
+
+ <refsect1><title>Die Typen deb und deb-src</title>
+   <para>Der <literal>deb</literal>-Typ beschreibt ein typisches zweistufiges
+Debian-Archiv,
+<filename>Distribution/Komponente</filename>.
+<literal>Distribution</literal> ist typischerweise ein Archivname wie
+<literal>stable</literal> oder <literal>testing</literal> oder ein Kodename
+wie <literal>&stable-codename;</literal> oder
+<literal>&testing-codename;</literal> während Komponente entweder
+<literal>main</literal>, <literal>contrib</literal> oder
+<literal>non-free</literal> ist. Der <literal>deb-src</literal>-Typ
+beschreibt den Quellcode einer Debian-Distribution in der gleichen Form wie
+den <literal>deb</literal>-Typ. Eine <literal>deb-src</literal>-Zeile wird
+benötigt, um Quellindizes herunterzuladen.</para>
+
+
+   <para>Das Format für einen <filename>sources.list</filename>-Eintrag, der die
+<literal>deb</literal>- und <literal>deb-src</literal>-Typen benutzt, ist:</para>
+
+   <literallayout>deb [ options ] uri distribution [component1] [component2] [...]</literallayout>
+
+   <para>Die URI für den <literal>deb</literal>-Typ muss die Basis der
+Debian-Distribution angeben, wo APT die Informationen findet, die es
+benötigt. <literal>Distribution</literal> kann einen genauen Pfad
+angeben. In diesem Fall müssen die Komponenten weggelassen werden und
+<literal>Distribution</literal> muss mit einem Schrägstrich (/) enden. Dies
+ist nützlich, wenn nur ein bestimmter Unterabschnitt des von der URI
+angegebenen Archivs von Interesse ist. Wenn <literal>Distribution</literal>
+keinen genauen Pfad angibt, muss mindestens eine
+<literal>Komponente</literal> angegeben sein.</para>
+
+   <para><literal>Distribution</literal> könnte außerdem eine Variable,
+<literal>$(ARCH)</literal>, enthalten, die zur Debian-Architektur (i386,
+m68k, powerpc, …) expandiert wird, die auf dem System benutzt wird. Dies
+erlaubt es, architekturabhängige <filename>sources.list</filename>-Dateien
+zu benutzen. Im Allgemeinen ist dies nur von Interesse, wenn ein genauer
+Pfad angegeben wird, andernfalls wird <literal>APT</literal> automatisch
+eine URI mit der aktuellen Architektur generieren.</para>
+
+   <para>Da pro Zeile nur eine Distribution angegeben werden kann, könnte es nötig
+sein, mehrere Zeilen für die gleiche URI zu haben, falls eine Untermenge
+aller verfügbarer Distributionen oder Komponenten von diesem Ort gewünscht
+wird. APT wird die URI-Liste sortieren, nachdem es intern eine komplette
+Zusammenstellung generiert hat und es wird mehrere Bezüge zum gleichen
+Internet-Host zusammenfassen, zum Beispiel zu einer einzigen Verbindung, so
+dass es nicht ineffizient FTP-Verbindungen herstellt, sie schließt, sonst
+etwas tut und dann erneut eine Verbindung zum gleichen Host herstellt. Diese
+Funktion ist nützlich für den Zugriff auf ausgelastete FTP-Sites mit
+Begrenzungen der Anzahl gleichzeitiger anonymer Anwender. APT parallelisiert
+außerdem Verbindungen zu verschiedenen Hosts, um effektiver mit Orten
+niedriger Bandbreite hauszuhalten.</para>
+
+   <para><literal>options</literal> ist immer optional und muss in eckige Klammern
+eingeschlossen werden. Es kann aus mehreren Einstellungen in der Form
+<literal><replaceable>Einstellung</replaceable>=<replaceable>Wert</replaceable></literal>
+bestehen. Mehrere Einstellungen werden durch Leerzeichen getrennt. Die
+folgenden Einstellungen werden von APT unterstützt. Beachten Sie allerdings,
+dass nicht unterstützte Einstellungen stillschweigend ignoriert werden.
+   <itemizedlist><listitem><para><literal>arch=<replaceable>Architektur1</replaceable>,<replaceable>Architektur2</replaceable>,
+…</literal> kann benutzt werden, um anzugeben, für welche Architekturen
+Paketinformationen heruntergeladen werden sollen. Falls diese Option nicht
+gesetzt ist, werden alle durch die Option
+<literal>APT::Architectures</literal> definierten Architekturen
+heruntergeladen.</para></listitem>
+   <listitem><para><literal>trusted=yes</literal> can be set to indicate that packages from
+this source are always authenificated even if the
+<filename>Release</filename> file is not signed or the signature can't be
+checked. This disables parts of &apt-secure; and should therefore only be
+used in a local and trusted context. <literal>trusted=no</literal> is the
+opposite which handles even correctly authenificated sources as not
+authenificated.</para></listitem>
+   </itemizedlist></para>
+
+   <para>Es ist wichtig, die Quellen in der Reihenfolge ihrer Wichtigkeit
+aufzulisten, die bevorzugte Quelle zuerst. Typischerweise resultiert dies in
+einer Sortierung nach Geschwindigkeit, vom schnellsten zum langsamsten
+(CD-ROM, gefolgt von Rechnern im lokalen Netzwerk, gefolgt von
+Internet-Rechnern, zum Beispiel).</para>
+
+   <para>Einige Beispiele:</para>
+   <literallayout>
+deb http://ftp.debian.org/debian &stable-codename; main contrib non-free
+deb http://security.debian.org/ &stable-codename;/updates main contrib non-free
+   </literallayout>
+
+ </refsect1>
+
+ <refsect1><title>URI-Beschreibung</title>
+
+   <para>Die aktuell erkannten URI-Typen sind »cdrom«, »file«, »http«, »ftp«, »copy«,
+»ssh«, »rsh«. <variablelist>
+    <varlistentry><term>file</term>
+    <listitem><para>
+    Das file-Schema erlaubt es einem beliebigen Verzeichnis im Dateisystem, als
+Archiv betrachtet zu werden. Dies ist nützlich für eingehängtes NFS und
+lokale Spiegel oder Archive.</para></listitem>
+    </varlistentry>
+    
+    <varlistentry><term>cdrom</term>
+    <listitem><para>
+    Das cdrom-Schema erlaubt APT ein lokales CD-ROM-Laufwerk mit Medienwechsel
+zu benutzen. Benutzen Sie das Programm &apt-cdrom;, um CD-ROM-Einträge in
+der Quellenliste zu erstellen.</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>http</term>
+    <listitem><para>
+    Das http-Schema gibt einen HTTP-Server für das Archiv an. Wenn eine
+Umgebungsvariable <envar>http_proxy</envar> mit dem Format
+http://Server:Port/ gesetzt ist, wird der in <envar>http_proxy</envar>
+angegebene Proxy-Server benutzt. Anwender eines HTTP/1.1-authentifizierten
+Proxys können eine Zeichenkette mit dem Format
+http://Anwender:Passwort@Server:Port/ benutzt. Beachten Sie, dass dies eine
+unsichere Authentifizierungsmethode ist.</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>ftp</term>
+    <listitem><para>
+    Das ftp-Schema gibt einen FTP-Server für das Archiv an. Das FTP-Verhalten
+von APT ist in hohem Maße konfigurierbar. Um weitere Informationen zu
+erhalten, lesen Sie die &apt-conf;-Handbuchseite. Bitte beachten Sie, dass
+ein FTP-Proxy durch Benutzung der
+<envar>ftp_proxy</envar>-Umgebungsvariablen angegeben werden kann. Es ist
+mit dieser Methode und NUR dieser Methode möglich, einen HTTP-Proxy
+anzugeben (HTTP-Proxy-Server verstehen oft auch FTP-URLs). FTP-Proxys, die
+gemäß Angabe in der Konfigurationsdatei HTTP benutzen, werden ignoriert.</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>copy</term>
+    <listitem><para>
+    Das copy-Schema ist identisch mit dem file-Schema, außer dass Pakete in das
+Zwischenspeicherverzeichnis kopiert werden, anstatt direkt von ihrem
+Herkunftsort benutzt zu werden. Dies ist für Leute nützlich, die eine
+ZIP-Platte benutzen, um Dateien mit APT umherzukopieren.</para></listitem>
+    </varlistentry>
+    
+    <varlistentry><term>rsh</term><term>ssh</term>
+    <listitem><para>
+    Die rsh/ssh-Methode ruft rsh/ssh auf, um sich als angegebener Benutzer mit
+einem Rechner in der Ferne zu verbinden und auf die Dateien zuzugreifen. Es
+ist eine gute Idee, vorher Vorbereitungen mit RSA-Schlüsseln oder rhosts zu
+treffen. Der Zugriff auf Dateien in der Ferne benutzt die Standardbefehle
+<command>find</command> und <command>dd</command>, um die Datenübertragung
+aus der Ferne durchzuführen.</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>weitere erkennbare URI-Typen</term>
+    <listitem><para>
+    APT kann mit weiteren Methoden, die in anderen optionalen Paketen geliefert
+werden, die dem Namensschema
+<literal>apt-transport-<replaceable>Methode</replaceable></literal> folgen
+sollten, erweitert werden. Das APT-Team betreut z.B. außerdem das Paket
+<literal>apt-transport-https</literal>, das Zugriffsmethoden für HTTPS-URIs
+mit Funktionen bereitstellt, die denen der HTTP-Methode ähneln, bei der aber
+andere Methoden für z.B. debtorrent verfügbar sind, siehe <citerefentry>
+<refentrytitle><filename>apt-transport-debtorrent</filename></refentrytitle>
+<manvolnum>1</manvolnum></citerefentry>.
+    </para></listitem>
+    </varlistentry>
+  </variablelist>
+ </para>
+ </refsect1>
+ 
+ <refsect1><title>Beispiele</title>
+   <para>Benutzt die lokal gespeicherten (oder per NFS eingehängten) Archive in
+/home/jason/debian für stable/main, stable/contrib und stable/non-free.</para>
+   <literallayout>deb file:/home/jason/debian stable main contrib non-free</literallayout>
+
+   <para>Wie oben, außer das dies die »unstable«- (Entwicklungs-) Distribution
+benutzt.</para>
+   <literallayout>deb file:/home/jason/debian unstable main contrib non-free</literallayout>
+
+   <para>Quellzeile für obiges</para>
+   <literallayout>deb-src file:/home/jason/debian unstable main contrib non-free</literallayout>
+
+   <para>Die erste Zeile bekommt Paketinformationen für die Architekturen in
+<literal>APT::Architectures</literal>, während die zweite immer
+<literal>amd64</literal> und <literal>armel</literal> holt.</para>
+   <literallayout>deb http://ftp.debian.org/debian &stable-codename; main
+deb [ arch=amd64,armel ] http://ftp.debian.org/debian &stable-codename; main</literallayout>
+
+   <para>Benutzt HTTP, um auf das Archiv auf archive.debian.org zuzugreifen und nur
+den hamm/main-Bereich zu benutzen.</para>
+   <literallayout>deb http://archive.debian.org/debian-archive hamm main</literallayout>
+
+   <para>Benutzt FTP, um auf das Archiv auf archive.debian.org unter dem
+debian-Verzeichnis zuzugreifen und nur den &stable-codename;/contrib-Bereich
+zu benutzen.</para>
+   <literallayout>deb ftp://ftp.debian.org/debian &stable-codename; contrib</literallayout>
+
+   <para>Benutzt FTP, um auf das Archiv auf ftp.debian.org unter dem
+debian-Verzeichnis zuzugreifen und nur den unstable/contrib-Bereich zu
+benutzen. Falls diese Zeile zusammen mit der aus dem vorherigen Beispiel in
+der Datei <filename>sources.list</filename> auftaucht, wird eine einzelne
+FTP-Sitzung für beide Quellzeilen benutzt.</para>
+   <literallayout>deb ftp://ftp.debian.org/debian unstable contrib</literallayout>
+
+   <para>Benutzt HTTP, um auf das Archiv auf ftp.tlh.debian.org unter dem
+universe-Verzeichnis zuzugreifen und benutzt nur Dateien, die unter
+<filename>unstable/binary-i386</filename> auf i386-Maschinen,
+<filename>unstable/binary-amd64</filename> auf amd64 und so weiter für
+andere unterstützte Architekturen, gefunden werden. [Beachten Sie, dass
+dieses Beispiel nur anschaulich macht, wie die Platzhaltervariable benutzt
+wird. Offizielle Debian-Archive sind nicht so strukturiert.] <literallayout>deb http://ftp.tlh.debian.org/universe unstable/binary-$(ARCH)/</literallayout>
+   </para>
+ </refsect1>
+ 
+ <refsect1><title>Siehe auch</title>
+   <para>&apt-cache; &apt-conf;
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

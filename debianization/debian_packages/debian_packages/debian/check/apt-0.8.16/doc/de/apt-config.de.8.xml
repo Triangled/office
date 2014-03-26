@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product;
+<date>29. Februar 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-config</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-config</refname>
+    <refpurpose>APT-Konfigurationsabfrageprogramm</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-config</command><arg><option>-hv</option></arg><arg><option>-o=<replaceable>Konfigurationszeichenkette</replaceable></option></arg><arg><option>-c=<replaceable>Datei</replaceable></option></arg><group
+choice="req"> <arg>shell</arg> <arg>dump</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Beschreibung</title>
+   <para><command>apt-config</command> ist ein internes Programm, das von vielen
+Teilen des APT-Pakets benutzt wird, um durchgängige Konfigurierbarkeit
+bereitzustellen. Es greift auf die Hauptkonfigurationsdatei
+<filename>/etc/apt/apt.conf</filename> auf eine Art zu, die leicht für
+geskriptete Anwendungen zu benutzen ist.</para>
+
+   <para>Außer, wenn die <option>-h</option>- oder <option>--help</option>-Option
+angegeben wurde, muss einer der Befehle unterhalb vorkommen.
+   </para>
+   
+   <variablelist>
+     <varlistentry><term>shell</term>
+     <listitem><para>
+     shell wird benutzt, um aus einem Shellskript auf Konfigurationsinformationen
+zuzugreifen. Es wird ein Paar aus Argumenten angegeben – das erste als
+Shell-Variable und das zweite als Konfigurationswert zum Abfragen. Als
+Ausgabe listet es eine Serie von Shell-Zuweisungsbefehlen für jeden
+vorhandenen Wert auf. In einen Shellskript sollte es wie folgt benutzt
+werden:
+     </para>
+     
+<informalexample><programlisting>
+OPTS="-f"
+RES=`apt-config shell OPTS MyApp::options`
+eval $RES
+</programlisting></informalexample>
+
+     <para>Dies wird die Shell-Umgebungsvariable $OPT auf den Wert von MyApp::options
+mit einer Vorgabe von <option>-f</option> setzen.</para>
+
+     
+     <para>An das Konfigurationselement kann /[fdbi] angehängt werden. »f« gibt
+Dateinamen zurück, »d« gibt Verzeichnisse zurück, »b« gibt true oder false
+zurück und »i« gibt eine Ganzzahl zurück. Jede Rückgabe ist normiert und
+intern geprüft.</para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>dump</term>
+     <listitem><para>
+     Nur der Inhalt des Konfigurationsbereichs wird angezeigt.</para>
+     </listitem>
+     </varlistentry>
+
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>Optionen</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+   
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Siehe auch</title>
+   <para>&apt-conf;
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnose</title>
+   <para><command>apt-config</command> gibt bei normalen Operationen 0 zurück,
+dezimal 100 bei Fehlern.
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

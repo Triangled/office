@@ -1,0 +1,113 @@
+\section{pkg\-Dep\-Cache\-:\-:\-State\-Cache \-Struct \-Reference}
+\label{structpkgDepCache_1_1StateCache}\index{pkg\-Dep\-Cache\-::\-State\-Cache@{pkg\-Dep\-Cache\-::\-State\-Cache}}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bfseries \-Strip\-Epoch} (const char $\ast$\-Ver)\label{structpkgDepCache_1_1StateCache_aca19a5636f50c40058e91316cab84be9}
+
+\item 
+void {\bfseries \-Update} ({\bf \-Pkg\-Iterator} \-Pkg, {\bf pkg\-Cache} \&\-Cache)\label{structpkgDepCache_1_1StateCache_a8d9f9687a35e9607dcce1b2a7d6af7d9}
+
+\item 
+bool {\bfseries \-New\-Install} () const \label{structpkgDepCache_1_1StateCache_ad4a1215c7ed89873af8139511789ca8d}
+
+\item 
+bool {\bfseries \-Delete} () const \label{structpkgDepCache_1_1StateCache_ad24d6db7dad2945c8ab0e42276a7e1ae}
+
+\item 
+bool {\bfseries \-Purge} () const \label{structpkgDepCache_1_1StateCache_a361e8407fcd6ef049bcd3d5838d0b65f}
+
+\item 
+bool {\bfseries \-Keep} () const \label{structpkgDepCache_1_1StateCache_a435688518d8cc9666b2d86bcec6d0e91}
+
+\item 
+bool {\bfseries \-Protect} () const \label{structpkgDepCache_1_1StateCache_a74525a81ebba30c5fb39b59afa179c1c}
+
+\item 
+bool {\bfseries \-Upgrade} () const \label{structpkgDepCache_1_1StateCache_a22808a0ccbf211d163e3b5c54942a7b6}
+
+\item 
+bool {\bfseries \-Upgradable} () const \label{structpkgDepCache_1_1StateCache_a488b60acf864f461f16bbd771da39376}
+
+\item 
+bool {\bfseries \-Downgrade} () const \label{structpkgDepCache_1_1StateCache_a36eab471702c87683250095cbaf6a13e}
+
+\item 
+bool {\bfseries \-Held} () const \label{structpkgDepCache_1_1StateCache_a60edf8e29c301b1eeaf19b2cc860f72f}
+
+\item 
+bool {\bfseries \-Now\-Broken} () const \label{structpkgDepCache_1_1StateCache_aa912e2f9188df7ccffaeeb70d37ccd95}
+
+\item 
+bool {\bfseries \-Now\-Policy\-Broken} () const \label{structpkgDepCache_1_1StateCache_a901ac54b2ed3de37a746ad7e9fbc8931}
+
+\item 
+bool {\bfseries \-Inst\-Broken} () const \label{structpkgDepCache_1_1StateCache_ae2da4c0d2d7193d5e0edff3a0beb2dc6}
+
+\item 
+bool {\bfseries \-Inst\-Policy\-Broken} () const \label{structpkgDepCache_1_1StateCache_aceddbf96dc768ef9d24f8d5946269b45}
+
+\item 
+bool {\bfseries \-Install} () const \label{structpkgDepCache_1_1StateCache_a21cf14ab16215d8ad91c6ec7b2bf926c}
+
+\item 
+bool {\bfseries \-Re\-Install} () const \label{structpkgDepCache_1_1StateCache_a8bc399149ceb901f46be18f8bc250c96}
+
+\item 
+{\bf \-Ver\-Iterator} {\bfseries \-Inst\-Ver\-Iter} ({\bf pkg\-Cache} \&\-Cache)\label{structpkgDepCache_1_1StateCache_a5fbcf2356dabff9992198d662d950104}
+
+\item 
+{\bf \-Ver\-Iterator} {\bfseries \-Candidate\-Ver\-Iter} ({\bf pkg\-Cache} \&\-Cache)\label{structpkgDepCache_1_1StateCache_a66b3aa1fa6a6c6ac3ab7edf69274d1a6}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bfseries \-Cand\-Version}\label{structpkgDepCache_1_1StateCache_a7b7e13a61226a89b317de880d66d19ae}
+
+\item 
+const char $\ast$ {\bfseries \-Cur\-Version}\label{structpkgDepCache_1_1StateCache_abd627173573938035ec5718f37422df1}
+
+\item 
+\-Version $\ast$ {\bfseries \-Candidate\-Ver}\label{structpkgDepCache_1_1StateCache_ac0abe130ddf9e8e71df2659f668102bb}
+
+\item 
+\-Version $\ast$ {\bfseries \-Install\-Ver}\label{structpkgDepCache_1_1StateCache_ae064b826053c7041005a51c10e272ff2}
+
+\item 
+unsigned short {\bfseries \-Flags}\label{structpkgDepCache_1_1StateCache_a77e8fee5c449ae3ab846d14a8b8341f7}
+
+\item 
+unsigned short {\bfseries i\-Flags}\label{structpkgDepCache_1_1StateCache_aabe5ec8e85dc3c87c43fa79a7235c52b}
+
+\item 
+bool {\bf \-Marked}\label{structpkgDepCache_1_1StateCache_a72d73f7024c40960ff644d3270bb482c}
+
+\begin{DoxyCompactList}\small\item\em {\bfseries true} if this package can be reached from the root set. \end{DoxyCompactList}\item 
+bool {\bf \-Garbage}
+\begin{DoxyCompactList}\small\item\em {\bfseries true} if this package is unused and should be removed. \end{DoxyCompactList}\item 
+signed char {\bfseries \-Status}\label{structpkgDepCache_1_1StateCache_a9a5365ea6302607a9648607d894195b1}
+
+\item 
+unsigned char {\bfseries \-Mode}\label{structpkgDepCache_1_1StateCache_a2bc4b5d8101ed56cddb0aa08aa4516bc}
+
+\item 
+unsigned char {\bfseries \-Dep\-State}\label{structpkgDepCache_1_1StateCache_adc6d84ada4c7ba2728a4fb9f945de12a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Dep\-Cache\-::\-State\-Cache@{pkg\-Dep\-Cache\-::\-State\-Cache}!\-Garbage@{\-Garbage}}
+\index{\-Garbage@{\-Garbage}!pkgDepCache::StateCache@{pkg\-Dep\-Cache\-::\-State\-Cache}}
+\subsubsection[{\-Garbage}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Garbage}}\label{structpkgDepCache_1_1StateCache_a568795a48143af2663ad3dc310d3074c}
+
+
+{\bfseries true} if this package is unused and should be removed. 
+
+\-This differs from !\doxyref{\-Marked}{p.}{structpkgDepCache_1_1StateCache_a72d73f7024c40960ff644d3270bb482c}, because it is possible that some unreachable packages will be protected from becoming garbage. 
+
+\-The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/depcache.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/depcache.\-cc\end{DoxyCompactItemize}

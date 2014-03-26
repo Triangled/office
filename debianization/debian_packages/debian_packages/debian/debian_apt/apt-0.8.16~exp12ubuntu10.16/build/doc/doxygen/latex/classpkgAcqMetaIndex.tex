@@ -1,0 +1,334 @@
+\section{pkg\-Acq\-Meta\-Index \-Class \-Reference}
+\label{classpkgAcqMetaIndex}\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}}
+
+
+\-An item that is responsible for downloading the meta-\/index \{\{\{ file (i.\-e., \-Release) itself and verifying its signature.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-Meta\-Index\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classpkgAcqMetaIndex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-Meta\-Index\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqMetaIndex__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} (std\-::string \-Message, unsigned long long \-Size, std\-::string \-Hash, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object was fetched successfully. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Custom600\-Headers} ()
+\begin{DoxyCompactList}\small\item\em \-Custom headers to be sent to the fetch process. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Desc\-U\-R\-I} ()
+\begin{DoxyCompactList}\small\item\em \-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. \end{DoxyCompactList}\item 
+{\bf pkg\-Acq\-Meta\-Index} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, std\-::string {\bf \-U\-R\-I}, std\-::string \-U\-R\-I\-Desc, std\-::string {\bf \-Short\-Desc}, std\-::string {\bf \-Sig\-File}, const std\-::vector$<$ struct {\bf \-Index\-Target} $\ast$ $>$ $\ast${\bf \-Index\-Targets}, {\bf index\-Records} $\ast${\bf \-Meta\-Index\-Parser})\label{classpkgAcqMetaIndex_ae7643417a3ec7af99c8a878615cd8fcd}
+
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{pkg\-Acq\-Meta\-Index}{p.}{classpkgAcqMetaIndex}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Verify\-Vendor} (std\-::string \-Message)
+\begin{DoxyCompactList}\small\item\em \-Check that the release file is a release file for the correct distribution. \end{DoxyCompactList}\item 
+void {\bf \-Retrieval\-Done} (std\-::string \-Message)
+\begin{DoxyCompactList}\small\item\em \-Called when a file is finished being retrieved. \end{DoxyCompactList}\item 
+void {\bf \-Auth\-Done} (std\-::string \-Message)
+\begin{DoxyCompactList}\small\item\em \-Called when authentication succeeded. \end{DoxyCompactList}\item 
+void {\bf \-Queue\-Indexes} (bool verify)
+\begin{DoxyCompactList}\small\item\em \-Starts downloading the individual index files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Acquire\-::\-Item\-Desc} {\bf \-Desc}\label{classpkgAcqMetaIndex_a63a8c90526aa28ea8a9c2458a53846bc}
+
+\begin{DoxyCompactList}\small\item\em \-The fetch command that is currently being processed. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Real\-U\-R\-I}\label{classpkgAcqMetaIndex_a60820e30470dce6f22aa8ced3fd96628}
+
+\begin{DoxyCompactList}\small\item\em \-The \doxyref{\-U\-R\-I}{p.}{classURI} that is actually being downloaded; never modified by \doxyref{pkg\-Acq\-Meta\-Index}{p.}{classpkgAcqMetaIndex}. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Sig\-File}
+\begin{DoxyCompactList}\small\item\em \-The file in which the signature for this index was stored. \end{DoxyCompactList}\item 
+const std\-::vector$<$ struct \*
+{\bf \-Index\-Target} $\ast$ $>$ $\ast$ {\bf \-Index\-Targets}\label{classpkgAcqMetaIndex_ae7334ddd48c9dc42da62f2c1d833c3fb}
+
+\begin{DoxyCompactList}\small\item\em \-The index files to download. \end{DoxyCompactList}\item 
+{\bf index\-Records} $\ast$ {\bf \-Meta\-Index\-Parser}\label{classpkgAcqMetaIndex_ae85ea3739b9be18225e6e0f56b71d50b}
+
+\begin{DoxyCompactList}\small\item\em \-The parser for the meta-\/index file. \end{DoxyCompactList}\item 
+bool {\bf \-Auth\-Pass}\label{classpkgAcqMetaIndex_a443405c4d5dd2d2473f185ee7d6a838b}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the index's signature is currently being verified. \end{DoxyCompactList}\item 
+bool {\bfseries \-I\-M\-S\-Hit}\label{classpkgAcqMetaIndex_ae187d769df7a9f266e452c9c1aa04289}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An item that is responsible for downloading the meta-\/index \{\{\{ file (i.\-e., \-Release) itself and verifying its signature. 
+
+\-Once the download and verification are complete, the downloads of the individual index files are queued up using \doxyref{pkg\-Acq\-Diff\-Index}{p.}{classpkgAcqDiffIndex}. \-If the meta-\/index file had a valid signature, the expected hashsums of the index files will be the md5sums listed in the meta-\/index; otherwise, the expected hashsums will be \char`\"{}\char`\"{} (causing the authentication of the index files to be bypassed). 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Auth\-Done@{\-Auth\-Done}}
+\index{\-Auth\-Done@{\-Auth\-Done}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Auth\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Auth\-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqMetaIndex_ae5a8b94d40f7894e3d49379fea419909}
+
+
+\-Called when authentication succeeded. 
+
+\-Sanity-\/checks the authenticated file, queues up the individual index files for download, and saves the signature in the lists directory next to the authenticated list file.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-The message block received from the fetch subprocess. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Error\-Text, \-Queue\-Indexes(), \-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-::\-Rename(), \-Sig\-File, pkg\-Acquire\-::\-Item\-::\-Stat\-Auth\-Error, and \-Verify\-Vendor().
+
+
+
+\-Referenced by \-Done().
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Custom600\-Headers@{\-Custom600\-Headers}}
+\index{\-Custom600\-Headers@{\-Custom600\-Headers}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Custom600\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Custom600\-Headers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqMetaIndex_a00fc58f7709000dd60501e4d9034b7b0}
+
+
+\-Custom headers to be sent to the fetch process. 
+
+\begin{DoxyReturn}{\-Returns}
+a string containing \-R\-F\-C822-\/style headers that are to be inserted into the 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message sent to the fetch subprocess. \-The headers are inserted after a newline-\/less line, so they should (if nonempty) have a leading newline and no trailing newline. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_acf5f0479651c9e527657e5a4e76a35f9}.
+
+
+
+\-Reimplemented in {\bf pkg\-Acq\-Meta\-Clear\-Sig} \doxyref{}{p.}{classpkgAcqMetaClearSig_a00fc58f7709000dd60501e4d9034b7b0}.
+
+
+
+\-References \-Real\-U\-R\-I.
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}}
+\index{\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Desc\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Desc\-U\-R\-I} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqMetaIndex_a853c32904fff75b1a5d2c68441f41cad}
+
+
+\-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. 
+
+\begin{DoxyReturn}{\-Returns}
+a \doxyref{\-U\-R\-I}{p.}{classURI} that should be used to describe what is being fetched. 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a33630be55b62e4648f24c83378105c6f}.
+
+
+
+\-References \-Real\-U\-R\-I.
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Done@{\-Done}}
+\index{\-Done@{\-Done}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Hash, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqMetaIndex_a688635545a65b9a4bebed86627574d41}
+
+
+\-Invoked by the acquire worker when the object was fetched successfully. 
+
+\-Note that the object might {\itshape not\/} have been written to \-Dest\-File; check for the presence of an \-Alt-\/\-Filename entry in \-Message to find the file to which it was really written.
+
+\-Done is often used to switch from one stage of the processing to the next (e.\-g. fetching, unpacking, copying). \-It is one branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-Data from the acquire method. \-Use \-Lookup\-Tag() to parse it. \\
+\hline
+{\em \-Size} & \-The size of the object that was fetched. \\
+\hline
+{\em \-Hash} & \-The \-Hash\-Sum of the object that was fetched. \\
+\hline
+{\em \-Cnf} & \-The method via which the object was fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41}.
+
+
+
+\-References \-Auth\-Done(), \-Auth\-Pass, pkg\-Acquire\-::\-Item\-::\-Complete, \-Desc, pkg\-Acquire\-::\-Item\-::\-Dest\-File, \-Failed(), pkg\-Acquire\-::\-Item\-::\-Mode, \-Queue\-Indexes(), pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I(), \-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-::\-Rename(), \-Retrieval\-Done(), \-Sig\-File, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqMetaIndex_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-Reimplemented in {\bf pkg\-Acq\-Meta\-Clear\-Sig} \doxyref{}{p.}{classpkgAcqMetaClearSig_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References \-Auth\-Pass, \-Desc, pkg\-Acquire\-::\-Item\-Desc\-::\-Description, pkg\-Acquire\-::\-Item\-::\-Dest\-File, \-Queue\-Indexes(), \-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-::\-Rename(), pkg\-Acquire\-::\-Item\-::\-Report\-Mirror\-Failure(), \-Sig\-File, and pkg\-Acquire\-::\-Item\-::\-Stat\-Transient\-Network\-Error.
+
+
+
+\-Referenced by \-Done().
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Queue\-Indexes@{\-Queue\-Indexes}}
+\index{\-Queue\-Indexes@{\-Queue\-Indexes}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Queue\-Indexes}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Queue\-Indexes} (
+\begin{DoxyParamCaption}
+\item[{bool}]{verify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqMetaIndex_ac040add5e06f223c1cf7dfc5e38efe4f}
+
+
+\-Starts downloading the individual index files. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em verify} & \-If {\bfseries true}, only indices whose expected hashsum can be determined from the meta-\/index will be downloaded, and the hashsums of indices will be checked (reporting \doxyref{\-Stat\-Auth\-Error}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a19728efb594f55c57218604ad77b25db} if there is a mismatch). \-If verify is {\bfseries false}, no hashsum checking will be performed. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Error\-Text, index\-Records\-::\-Exists(), \-Index\-Targets, pkg\-Acquire\-::\-Item\-::\-Stat\-Auth\-Error, and pkg\-Acquire\-::\-Item\-::\-Stat\-Error.
+
+
+
+\-Referenced by \-Auth\-Done(), \-Done(), and \-Failed().
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Retrieval\-Done@{\-Retrieval\-Done}}
+\index{\-Retrieval\-Done@{\-Retrieval\-Done}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Retrieval\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Retrieval\-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqMetaIndex_a0b806d6a9c2ae24912345a631a4ffc57}
+
+
+\-Called when a file is finished being retrieved. 
+
+\-If the file was not downloaded to \-Dest\-File, a copy process is set up to copy it to \-Dest\-File; otherwise, \-Complete is set to {\bfseries true} and the file is moved to its final location.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-The message block received from the fetch subprocess. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Complete, \-Desc, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Error\-Text, pkg\-Acquire\-::\-Item\-::\-Local, pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I(), \-Real\-U\-R\-I, \-Sig\-File, pkg\-Acquire\-::\-Item\-::\-Stat\-Error, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\-Referenced by \-Done().
+
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Verify\-Vendor@{\-Verify\-Vendor}}
+\index{\-Verify\-Vendor@{\-Verify\-Vendor}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Verify\-Vendor}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Verify\-Vendor} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqMetaIndex_ab15f52aa17be38260f7247cf43991de3}
+
+
+\-Check that the release file is a release file for the correct distribution. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if no fatal errors were encountered. 
+\end{DoxyReturn}
+
+
+\-References \-Desc, pkg\-Acquire\-::\-Item\-Desc\-::\-Description, and \-Real\-U\-R\-I.
+
+
+
+\-Referenced by \-Auth\-Done().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acq\-Meta\-Index@{pkg\-Acq\-Meta\-Index}!\-Sig\-File@{\-Sig\-File}}
+\index{\-Sig\-File@{\-Sig\-File}!pkgAcqMetaIndex@{pkg\-Acq\-Meta\-Index}}
+\subsubsection[{\-Sig\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Sig\-File}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqMetaIndex_aeb332f63be8cadaca2f22ab8cdc9a938}
+
+
+\-The file in which the signature for this index was stored. 
+
+\-If empty, the signature and the md5sums of the individual indices will not be checked. 
+
+\-Referenced by \-Auth\-Done(), \-Done(), \-Failed(), pkg\-Acq\-Meta\-Clear\-Sig\-::pkg\-Acq\-Meta\-Clear\-Sig(), and \-Retrieval\-Done().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

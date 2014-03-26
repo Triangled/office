@@ -1,0 +1,46 @@
+\section{pkg\-Cache\-:\-:\-Dep \-Struct \-Reference}
+\label{structpkgCache_1_1Dep}\index{pkg\-Cache\-::\-Dep@{pkg\-Cache\-::\-Dep}}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Dep\-Type} \{ \*
+{\bfseries \-Depends} = 1, 
+{\bfseries \-Pre\-Depends} = 2, 
+{\bfseries \-Suggests} = 3, 
+{\bfseries \-Recommends} = 4, 
+\*
+{\bfseries \-Conflicts} = 5, 
+{\bfseries \-Replaces} = 6, 
+{\bfseries \-Obsoletes} = 7, 
+{\bfseries \-Dpkg\-Breaks} = 8, 
+\*
+{\bfseries \-Enhances} = 9
+ \}
+\item 
+enum {\bf \-Dep\-Compare\-Op} \{ \*
+{\bfseries \-Or} = 0x10, 
+{\bfseries \-No\-Op} = 0, 
+{\bfseries \-Less\-Eq} = 0x1, 
+{\bfseries \-Greater\-Eq} = 0x2, 
+\*
+{\bfseries \-Less} = 0x3, 
+{\bfseries \-Greater} = 0x4, 
+{\bfseries \-Equals} = 0x5, 
+{\bfseries \-Not\-Equals} = 0x6
+ \}
+\begin{DoxyCompactList}\small\item\em available compare operators \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Cache\-::\-Dep@{pkg\-Cache\-::\-Dep}!\-Dep\-Compare\-Op@{\-Dep\-Compare\-Op}}
+\index{\-Dep\-Compare\-Op@{\-Dep\-Compare\-Op}!pkgCache::Dep@{pkg\-Cache\-::\-Dep}}
+\subsubsection[{\-Dep\-Compare\-Op}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Dep\-Compare\-Op}}\label{structpkgCache_1_1Dep_aa3b0f58e581c41bc31d4b96cc4281ad6}
+
+
+available compare operators 
+
+\-The lower 4 bits are used to indicate what operator is being specified and the upper 4 bits are flags. \-O\-R indicates that the next package is or'd with the current package. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

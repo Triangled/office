@@ -1,0 +1,57 @@
+
+\begin{DoxyRefList}
+\item[\label{todo__todo000013}%
+\-Group \doxyref{acquire}{p.}{group__acquire} ]\-Acquire supports inserting an object into several queues at once, but it is not clear what its behavior in this case is, and no subclass of \doxyref{pkg\-Acquire\-::\-Item}{p.}{classpkgAcquire_1_1Item} seems to actually use this capability.  
+\item[\label{todo__todo000001}%
+\-Class \doxyref{pkg\-Acq\-Index}{p.}{classpkgAcqIndex} ]\-Why does \doxyref{pkg\-Acq\-Index}{p.}{classpkgAcqIndex} have protected members?  
+\item[\label{todo__todo000004}%
+\-Member \doxyref{pkg\-Acq\-Index\-Diffs\-:\-:available\-\_\-patches}{p.}{classpkgAcqIndexDiffs_a6822b4355d68d4683938302c3c4bee8b} ]\-These are indexed by sha1sum; why not use some sort of dictionary instead of relying on ordering and stripping them off the front?  
+\item[\label{todo__todo000002}%
+\-Class \doxyref{pkg\-Acq\-Meta\-Sig}{p.}{classpkgAcqMetaSig} ]\-Why protected members? 
+\item[\label{todo__todo000005}%
+\-Member \doxyref{pkg\-Acq\-Meta\-Sig\-:\-:\-Index\-Targets}{p.}{classpkgAcqMetaSig_ae7334ddd48c9dc42da62f2c1d833c3fb} ]\-Why a list of pointers instead of a list of structs?  
+\item[\label{todo__todo000014}%
+\-Class \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} ]\-Why all the protected data items and methods?  
+\item[\label{todo__todo000019}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Configs}{p.}{classpkgAcquire_ab04e9ee398f825f50e4f1ea7eaf37f77} ]why a hand-\/managed config dictionary instead of std\-::map?  
+\item[\label{todo__todo000003}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Item\-:\-:\-I\-D}{p.}{classpkgAcquire_1_1Item_a7fc877a36248a6101304994352d1ad87} ]it's unused in apt itself  
+\item[\label{todo__todo000025}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Method\-Config\-:\-:\-Next}{p.}{structpkgAcquire_1_1MethodConfig_add1daf6c866236479bdac390ed41f80a} ]\-Why not an \-S\-T\-L container?  
+\item[\label{todo__todo000015}%
+\-Class \doxyref{pkg\-Acquire\-:\-:\-Queue}{p.}{classpkgAcquire_1_1Queue} ]\-Why so many protected values?  
+\item[\label{todo__todo000024}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Queue\-:\-:\-Bump}{p.}{classpkgAcquire_1_1Queue_abf4fe627ab803887ecd2a8af30f17147} ()]\-Why both this and \-Cycle()? \-Are they expected to be different someday?  
+\item[\label{todo__todo000020}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Queue\-:\-:\-Items}{p.}{classpkgAcquire_1_1Queue_a2f4e8b582eeece0747d3fee5858b1a27} ]why a by-\/hand list instead of an \-S\-T\-L structure?  
+\item[\label{todo__todo000023}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Queue\-:\-:\-Item\-Start}{p.}{classpkgAcquire_1_1Queue_a76f3403ec41517cce48d96a5b1f54e1e} (\-Q\-Item $\ast$\-Itm, unsigned long long \-Size)]\-Unimplemented. \-Implement it or remove?  
+\item[\label{todo__todo000021}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Queue\-:\-:\-Workers}{p.}{classpkgAcquire_1_1Queue_ae49de4816f8591cf1ccb70329d4dcb8c} ]\-This is plural because support exists in \-Queue for multiple workers. \-However, it does not appear that there is any way to actually associate more than one worker with a queue.
+
+\-Why not just use a std\-::set?  
+\item[\label{todo__todo000017}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Queues}{p.}{classpkgAcquire_a9e42b66f176afafc1c75e78289e80e76} ]why a hand-\/managed list of queues instead of std\-::list or std\-::set?  
+\item[\label{todo__todo000006}%
+\-Class \doxyref{pkg\-Acquire\-:\-:\-Worker}{p.}{classpkgAcquire_1_1Worker} ]\-Like everything else in the \-Acquire system, this has way too many protected items. 
+\item[\label{todo__todo000008}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-Access}{p.}{classpkgAcquire_1_1Worker_a006a979c4801f6b6ceb33cb3acd6dc89} ]\-Doesn't this duplicate \-Config-\/$>$\-Access?  
+\item[\label{todo__todo000009}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-In\-Ready}{p.}{classpkgAcquire_1_1Worker_a849bc65c54e1bcbe8a7f053ce2cec672} ]\-Is this right? \-It's a guess.  
+\item[\label{todo__todo000007}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-Next\-Queue}{p.}{classpkgAcquire_1_1Worker_a70b012fdfb38bfe94b52924d45c5462d} ]\-This is always \-N\-U\-L\-L; is it just for future use?  
+\item[\label{todo__todo000011}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-Out\-Queue}{p.}{classpkgAcquire_1_1Worker_a27ee7762ef1caaf3ec8c3598c15e7886} ]\-Wouldn't a std\-::dequeue be more appropriate?  
+\item[\label{todo__todo000010}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-Out\-Ready}{p.}{classpkgAcquire_1_1Worker_a0b8717fb6d062212c251900cee4e6004} ]\-Is this right?  
+\item[\label{todo__todo000012}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Worker\-:\-:\-Run\-Messages}{p.}{classpkgAcquire_1_1Worker_a26a68d57a249a042c1e32186ce2fce8b} ()]\-Several message types lack separate handlers. 
+\item[\label{todo__todo000018}%
+\-Member \doxyref{pkg\-Acquire\-:\-:\-Workers}{p.}{classpkgAcquire_adfb69296d9a50a92927df7c30e56be2e} ]why a hand-\/managed list of workers instead of std\-::list or std\-::set?  
+\item[\label{todo__todo000016}%
+\-Class \doxyref{pkg\-Acquire\-Status}{p.}{classpkgAcquireStatus} ]\-Why protected members?  
+\item[\label{todo__todo000026}%
+\-Member \doxyref{pkg\-Acquire\-Status\-:\-:\-Media\-Change}{p.}{classpkgAcquireStatus_a61c6f568f6582836223430d117a62e69} (std\-::string \-Media, std\-::string \-Drive)=0]\-This is a horrible blocking monster; it should be \-C\-P\-Sed with prejudice.  
+\item[\label{todo__todo000027}%
+\-Member \doxyref{pkg\-Dep\-Cache\-:\-:\-Get\-Root\-Set\-Func}{p.}{classpkgDepCache_a1ab9378572dc74fc8088fd690d494570} ()]\-Is this the best place for this function? \-Perhaps the settings for mark-\/and-\/sweep should be stored in a single external class? 
+\end{DoxyRefList}

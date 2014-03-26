@@ -1,0 +1,77 @@
+\section{index\-Records \-Class \-Reference}
+\label{classindexRecords}\index{index\-Records@{index\-Records}}
+
+
+\-Collaboration diagram for index\-Records\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classindexRecords__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf check\-Sum}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries index\-Records} (const std\-::string \-Expected\-Dist)\label{classindexRecords_a2a54bd287d5c6f9615f59318f390b5cd}
+
+\item 
+virtual const {\bf check\-Sum} $\ast$ {\bfseries \-Lookup} (const std\-::string \-Meta\-Key)\label{classindexRecords_a76da07fe7a37cb6f4a6b0a04b2d59308}
+
+\item 
+bool {\bf \-Exists} (std\-::string const \&\-Meta\-Key) const \label{classindexRecords_a0fe19e3ada59252ff7768805a63bc01b}
+
+\begin{DoxyCompactList}\small\item\em tests if a checksum for this file is available \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries \-Meta\-Keys} ()\label{classindexRecords_a7757688e441f23c4f6112a088a98dce6}
+
+\item 
+virtual bool {\bfseries \-Load} (std\-::string \-Filename)\label{classindexRecords_a65965e86389d4e2a0d31c65b3c822cad}
+
+\item 
+std\-::string {\bfseries \-Get\-Dist} () const \label{classindexRecords_ad7f1e2efc1ba821ab21deba001976172}
+
+\item 
+time\-\_\-t {\bfseries \-Get\-Valid\-Until} () const \label{classindexRecords_a58d2f0ab255c3d73a988318693a168ba}
+
+\item 
+virtual bool {\bfseries \-Check\-Dist} (const std\-::string \-Maybe\-Dist) const \label{classindexRecords_afbda102eb169bed9d4c86e5f20f3641a}
+
+\item 
+std\-::string {\bfseries \-Get\-Expected\-Dist} () const \label{classindexRecords_ad54a11f71c42e4fd15402b9800b82926}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bfseries \-Error\-Text}\label{classindexRecords_ab2638de684977037618d65aa009384b1}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bfseries \-Dist}\label{classindexRecords_a33081b77174947a0be46935e0defd3c5}
+
+\item 
+std\-::string {\bfseries \-Suite}\label{classindexRecords_a283df0e74e9dc749a4270bca1f132f27}
+
+\item 
+std\-::string {\bfseries \-Expected\-Dist}\label{classindexRecords_a2f188246ad92053727c4e6e6e215ef17}
+
+\item 
+time\-\_\-t {\bfseries \-Valid\-Until}\label{classindexRecords_aa699673f2c2f7bc7a02eb5784bd14efd}
+
+\item 
+std\-::map$<$ std\-::string, {\bf check\-Sum} $\ast$ $>$ {\bfseries \-Entries}\label{classindexRecords_ac95ce47c30383ce5d50ed834b9e198f7}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/indexrecords.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/indexrecords.\-cc\end{DoxyCompactItemize}

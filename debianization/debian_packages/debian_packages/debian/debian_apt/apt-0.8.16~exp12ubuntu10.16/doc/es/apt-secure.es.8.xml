@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+ &apt-docinfo;
+ 
+ <refmeta>
+   <refentrytitle>apt-secure</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+
+
+ 
+
+ 
+ 
+ <!-- NOTE: This manpage has been written based on the
+     Securing Debian Manual ("Debian Security
+     Infrastructure" chapter) and on documentation
+     available at the following sites:
+     http://wiki.debian.net/?apt06
+     http://www.syntaxpolice.org/apt-secure/
+     http://www.enyo.de/fw/software/apt-secure/
+-->
+<!-- TODO: write a more verbose example of how it works with 
+     a sample similar to 
+     http://www.debian-administration.org/articles/174
+     ?
+-->
+<!-- Man page title -->
+<refnamediv>
+    <refname>apt-secure</refname>
+    <refpurpose>Compatibilidad con la autenticación en el archivo para APT</refpurpose>
+ </refnamediv>
+
+ <refsect1><title>Descripción</title>
+   <para>
+   Desde la versión 0.6, <command>apt</command> contiene el código que realiza
+la comprobación de la firma del fichero «Release» para todos los
+archivos. Esto asegura que los paquetes del archivo no se han modificado por
+alguien sin acceso a la clave con la que se firmó el fichero «Release».
+   </para>
+
+   <para>
+   Si el paquete viene de un archivo sin una firma o con una firma de la que
+apt no tiene su clave, el paquete se considerará no fiable y su instalación
+provocará un gran aviso. <command>apt-get</command> actualmente sólo avisa
+de los archivos sin firmar, las próximas versiones puede que fuercen a
+verificar todas las fuentes antes de descargar paquetes desde ellas.
+   </para>
+
+   <para>
+   Las interfaces de gestión de paquetes &apt-get;, &aptitude; y &synaptic;
+pueden usar esta nueva funcionalidad de autenticación.
+   </para>
+</refsect1>
+
+ <refsect1><title>Archivos de confianza</title> 
+
+   <para> 
+   La cadena de confianza desde un archivo apt a un usuario final se realiza en
+diferentes pasos. <command>apt-secure</command> es el último paso en esta
+cadena, confiar en un archivo no significa que los paquetes en los que se
+confía no haya código malicioso, pero significa que se confía en el
+mantenedor del archivo. El mantenedor del archivo es el responsable de
+asegurar que la integridad del archivo es correcta.
+   </para>
+
+   <para>apt-secure no revisa las firmas a nivel de paquete. Si necesita herramientas
+para realizar esto, debería ver <command>debsig-verify</command> y
+<command>debsign</command> (proporcionados en los paquetes debsig-verify y
+devscripts respectivamente).</para>
+
+   <para>
+   La cadena de confianza de Debian comienza cuando un mantenedor sube un nuevo
+paquete o una nueva versión de un paquete al archivo de Debian. Para que la
+subida sea efectiva, se debe firmar con una clave de un mantenedor del
+registro de claves de los mantenedores de Debian (disponible en el paquete
+debian-keyring). Las claves del mantenedor se firman por otros mantenedores
+siguiendo unos procedimientos pre-establecidos para asegurar la identidad
+del propietario de la clave.
+   </para>
+
+   <para>
+   Una vez subido el paquete se comprueba y se incluye en el archivo, se
+elimina la firma del mantenedor, se genera un resumen MD5 del paquete y se
+coloca en el fichero «Packages». Se genera el resumen MD5 de todos los
+ficheros de paquetes y se coloca en el fichero «Release». Entonces se firma
+el fichero «Release» con la clave del archivo (que se crea una vez al año) y
+se distribuye mediante un servidor FTP. Esta clave también está en el
+registro de claves de Debian.
+   </para>
+
+   <para>
+   Cualquier usuario final puede comprobar la firma del fichero «Release»,
+extraer el resumen MD5 de un paquete y compararlo con el resumen MD5 del
+paquete que haya descargado. Antes de la versión 0.6, sólo se comprobaba el
+resumen MD5 del paquete de Debian descargado. Ahora se comprueban el resumen
+MD5 y la firma del fichero «Release».
+   </para>
+
+   <para>Tenga en cuenta que esto es distinto a comprobar las firmas de cada paquete
+individualmente. Se diseñó para prevenir dos posible ataques:
+   </para>
+
+    <itemizedlist>
+       <listitem><para><literal>Ataques de red «man in the middle» (persona entre
+medias)</literal>. Sin la comprobación de las firmas, una persona malvada
+puede introducirse en el proceso de descarga del paquete y proporcionar
+programas con contenido malicioso para controlar un elemento de la red
+(enrutador, switch, etc) o para redirigir el tráfico a un servidor ficticio
+(mediante ataques de envenenamiento de arp o de DNS).</para></listitem>
+ 
+       <listitem><para><literal>Réplica de la red comprometida</literal>. Sin la comprobación de la
+firma, una persona malvada puede comprometer una réplica y modificar los
+ficheros de ésta para propagar programas con contenido malicioso a todos los
+usuarios que descarguen paquetes de dicha réplica.</para></listitem>
+    </itemizedlist>
+
+   <para>Sin embargo, esto no protege de un servidor maestro de Debian (que firma los
+paquetes) comprometido o contra una clave usada para firmar los ficheros
+«Release» comprometida. En cualquier caso, este mecanismo puede complementar
+una firma por paquete.</para>
+</refsect1>
+
+ <refsect1><title>Configuración de usuario</title>
+   <para>
+   <command>apt-key</command> es el programa que gestiona la lista de claves
+usadas por apt. Se puede usar para añadir o eliminar claves, aunque la
+instalación de esta versión proporciona automáticamente las claves
+predeterminadas del archivo de Debian que se usan en los repositorios de
+paquetes de Debian.
+   </para>
+   <para>
+   In order to add a new key you need to first download it (you should make
+sure you are using a trusted communication channel when retrieving it), add
+it with <command>apt-key</command> and then run <command>apt-get
+update</command> so that apt can download and verify the
+<filename>InRelease</filename> or <filename>Release.gpg</filename> files
+from the archives you have configured.
+   </para>
+</refsect1>
+
+<refsect1><title>Configuración del archivo</title>
+   <para>
+   Si quiere proporcionar firmas de archivo en un archivo bajo su control tiene
+que:
+   </para>
+
+     <itemizedlist>
+       <listitem><para><emphasis>Crear un fichero «Release»</emphasis>, si no existe. Para ello se
+ejecuta <command>apt-ftparchive release</command> (proporcionado en
+apt-utils).</para></listitem>
+   
+      <listitem><para><emphasis>Sign it</emphasis>. You can do this by running <command>gpg
+--clearsign -o InRelease Release</command> and <command>gpg -abs -o
+Release.gpg Release</command>.</para></listitem>
+
+      <listitem><para><emphasis>Publicar la huella digital de la clave</emphasis>, de modo que los
+usuarios conozcan qué clave necesitan importar para autenticar los ficheros
+del archivo.</para></listitem>
+
+    </itemizedlist>
+
+    <para>Cuando los contenidos del archivo cambien (se añadan paquetes nuevos o se
+eliminen) el mantenedor del archivo tiene que seguir los dos primeros pasos
+explicados anteriormente.</para>
+
+</refsect1>
+
+<refsect1><title>Véase también</title> 
+<para> 
+&apt-conf;, &apt-get;, &sources-list;, &apt-key;, &apt-ftparchive;,
+&debsign; &debsig-verify;, &gpg;
+</para>
+
+<para>Para más información puede que quiera revisar el capítulo de la <ulink
+url="http://www.debian.org/doc/manuals/securing-debian-howto/ch7.en.html">Infraestructura
+de Seguridad de Debian</ulink> del Manual de Seguridad de Debian (también
+disponible en el paquete harden-doc) y el <ulink
+url="http://www.cryptnet.net/fdp/crypto/strong_distro.html" >COMO Fortificar
+una Distribución</ulink> de V. Alex Brennen.  </para>
+
+</refsect1>
+
+ &manbugs;
+ &manauthor;
+
+<refsect1><title>Autores de la página del manual</title> 
+
+<para>Esta página del manual se basa en el trabajo de Javier Fernández-Sanguino
+Peña, Isaac Jones, Colin Walters, Florian Weimer y Michael Vogt.
+</para>
+
+</refsect1>
+ 
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

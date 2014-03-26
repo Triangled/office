@@ -1,0 +1,56 @@
+\section{pkg\-Cache\-:\-:\-State \-Struct \-Reference}
+\label{structpkgCache_1_1State}\index{pkg\-Cache\-::\-State@{pkg\-Cache\-::\-State}}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Ver\-Priority} \{ \*
+{\bfseries \-Important} = 1, 
+{\bfseries \-Required} = 2, 
+{\bfseries \-Standard} = 3, 
+{\bfseries \-Optional} = 4, 
+\*
+{\bfseries \-Extra} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em priority of a package version \end{DoxyCompactList}\item 
+enum {\bfseries \-Pkg\-Selected\-State} \{ \*
+{\bfseries \-Unknown} = 0, 
+{\bfseries \-Install} = 1, 
+{\bfseries \-Hold} = 2, 
+{\bfseries \-De\-Install} = 3, 
+\*
+{\bfseries \-Purge} = 4
+ \}
+\item 
+enum {\bfseries \-Pkg\-Inst\-State} \{ {\bfseries \-Ok} = 0, 
+{\bfseries \-Re\-Inst\-Req} = 1, 
+{\bfseries \-Hold\-Inst} = 2, 
+{\bfseries \-Hold\-Re\-Inst\-Req} = 3
+ \}
+\item 
+enum {\bfseries \-Pkg\-Current\-State} \{ \*
+{\bfseries \-Not\-Installed} = 0, 
+{\bfseries \-Un\-Packed} = 1, 
+{\bfseries \-Half\-Configured} = 2, 
+{\bfseries \-Half\-Installed} = 4, 
+\*
+{\bfseries \-Config\-Files} = 5, 
+{\bfseries \-Installed} = 6, 
+{\bfseries \-Triggers\-Awaited} = 7, 
+{\bfseries \-Triggers\-Pending} = 8
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Cache\-::\-State@{pkg\-Cache\-::\-State}!\-Ver\-Priority@{\-Ver\-Priority}}
+\index{\-Ver\-Priority@{\-Ver\-Priority}!pkgCache::State@{pkg\-Cache\-::\-State}}
+\subsubsection[{\-Ver\-Priority}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Ver\-Priority}}\label{structpkgCache_1_1State_a2583b563902f3753ad4de31828b03773}
+
+
+priority of a package version 
+
+\-Zero is used for unparsable or absent \-Priority fields. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

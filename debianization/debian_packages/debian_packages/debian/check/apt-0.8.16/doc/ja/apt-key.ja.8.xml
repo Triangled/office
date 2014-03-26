@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+ &apt-docinfo;
+ 
+ <refmeta>
+   <refentrytitle>apt-key</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-key</refname>
+    <refpurpose>APT キー管理ユーティリティ</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-key</command> <arg><option>--keyring
+<replaceable>filename</replaceable></option></arg>
+<arg><replaceable>command</replaceable></arg> <arg
+rep="repeat"><option><replaceable>arguments</replaceable></option></arg></cmdsynopsis>
+ </refsynopsisdiv>
+
+ <refsect1><title>説明</title>
+   <para>
+   <command>apt-key</command> は、apt が
+パッケージを認証するのに使用するキーの一覧を管理するのに使用します。このキーで認証されたパッケージは、信頼するに足ると見なせるでしょう。
+   </para>
+</refsect1>
+
+<refsect1><title>コマンド</title>
+   <variablelist>
+     <varlistentry><term>add <replaceable>filename</replaceable></term>
+     <listitem>
+     <para>
+
+       信頼キー一覧に新しいキーを追加します。このキーは <replaceable>filename</replaceable>
+から読み込みますが、<replaceable>filename</replaceable> を <literal>-</literal>
+とすると、標準入力から読み込みます。
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>del <replaceable>keyid</replaceable></term>
+     <listitem>
+     <para>
+
+       信頼キー一覧からキーを削除します。
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>export <replaceable>keyid</replaceable></term>
+     <listitem>
+     <para>
+
+        キー <replaceable>keyid</replaceable> を標準出力に出力します。
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>exportall</term>
+     <listitem>
+     <para>
+
+        信頼するキーをすべて標準出力に出力します。
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>list</term>
+     <listitem>
+     <para>
+
+       信頼キーを一覧表示します。
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+	 <varlistentry><term>finger</term>
+     <listitem>
+     <para>
+
+     信頼キーのフィンガープリントを一覧表示します。
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+	 <varlistentry><term>adv</term>
+     <listitem>
+     <para>
+
+     gpg に上級オプションを渡します。adv --recv-key とすると、公開鍵をダウンロードできます。  
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>update</term>
+     <listitem>
+     <para>
+
+       Update the local keyring with the archive keyring and remove from the local
+keyring the archive keys which are no longer valid.  The archive keyring is
+shipped in the <literal>archive-keyring</literal> package of your
+distribution, e.g. the <literal>ubuntu-archive-keyring</literal> package in
+Ubuntu.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term>net-update</term>
+     <listitem>
+     <para>
+
+       Work similar to the <command>update</command> command above, but get the
+archive keyring from an URI instead and validate it against a master key.
+This requires an installed &wget; and an APT build configured to have a
+server to fetch from and a master keyring to validate.  APT in Debian does
+not support this command and relies on <command>update</command> instead,
+but Ubuntu's APT does.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+   </variablelist>
+</refsect1>
+
+ <refsect1><title>オプション</title>
+<para>前節で説明したコマンドの前に、このオプションを定義する必要があることに注意してください。</para>
+   <variablelist>
+      <varlistentry><term>--keyring <replaceable>filename</replaceable></term>
+      <listitem><para>With this option it is possible to specify a specific keyring file the
+command should operate on. The default is that a command is executed on the
+<filename>trusted.gpg</filename> file as well as on all parts in the
+<filename>trusted.gpg.d</filename> directory, though
+<filename>trusted.gpg</filename> is the primary keyring which means that
+e.g. new keys are added to this one.
+      </para></listitem>
+      </varlistentry>
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>ファイル</title>
+   <variablelist>
+
+     &file-trustedgpg;
+
+     <varlistentry><term><filename>/etc/apt/trustdb.gpg</filename></term>
+     <listitem><para>アーカイブキーのローカル信頼データベースです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/usr/share/keyrings/ubuntu-archive-keyring.gpg</filename></term>
+     <listitem><para>Keyring of Ubuntu archive trusted keys.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/usr/share/keyrings/ubuntu-archive-removed-keys.gpg</filename></term>
+     <listitem><para>Keyring of Ubuntu archive removed trusted keys.</para></listitem>
+     </varlistentry>
+
+   </variablelist>
+
+</refsect1>
+
+<refsect1><title>関連項目</title>
+<para>
+&apt-get;, &apt-secure;
+</para>
+</refsect1>
+
+ &manbugs;
+ &manauthor;
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

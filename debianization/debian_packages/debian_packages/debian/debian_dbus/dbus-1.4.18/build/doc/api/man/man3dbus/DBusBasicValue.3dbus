@@ -1,0 +1,58 @@
+.TH "DBusBasicValue" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusBasicValue \- 
+.PP
+A simple 8-byte value union that lets you access 8 bytes as if they were various types; useful when dealing with basic types via void pointers and varargs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus-marshal-basic\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "dbus_int16_t \fBi16\fP"
+.br
+.RI "\fIas int16 \fP"
+.ti -1c
+.RI "dbus_uint16_t \fBu16\fP"
+.br
+.RI "\fIas int16 \fP"
+.ti -1c
+.RI "dbus_int32_t \fBi32\fP"
+.br
+.RI "\fIas int32 \fP"
+.ti -1c
+.RI "dbus_uint32_t \fBu32\fP"
+.br
+.RI "\fIas int32 \fP"
+.ti -1c
+.RI "\fBDBus8ByteStruct\fP \fBu64\fP"
+.br
+.RI "\fIas 8-byte-struct \fP"
+.ti -1c
+.RI "double \fBdbl\fP"
+.br
+.RI "\fIas double \fP"
+.ti -1c
+.RI "unsigned char \fBbyt\fP"
+.br
+.RI "\fIas byte \fP"
+.ti -1c
+.RI "char * \fBstr\fP"
+.br
+.RI "\fIas char* \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A simple 8-byte value union that lets you access 8 bytes as if they were various types; useful when dealing with basic types via void pointers and varargs\&. 
+.PP
+Definition at line 166 of file dbus-marshal-basic\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

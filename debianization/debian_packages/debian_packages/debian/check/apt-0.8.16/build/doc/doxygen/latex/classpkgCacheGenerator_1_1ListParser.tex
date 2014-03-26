@@ -1,0 +1,93 @@
+\section{pkg\-Cache\-Generator\-:\-:\-List\-Parser \-Class \-Reference}
+\label{classpkgCacheGenerator_1_1ListParser}\index{pkg\-Cache\-Generator\-::\-List\-Parser@{pkg\-Cache\-Generator\-::\-List\-Parser}}
+
+
+\-Inheritance diagram for pkg\-Cache\-Generator\-:\-:\-List\-Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classpkgCacheGenerator_1_1ListParser__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string {\bfseries \-Package} ()=0\label{classpkgCacheGenerator_1_1ListParser_a2e0b5cd74f84a9edec31ca030134e4f8}
+
+\item 
+virtual std\-::string {\bfseries \-Architecture} ()=0\label{classpkgCacheGenerator_1_1ListParser_acf1dd9ea8e5546798bec7b729b773c0c}
+
+\item 
+virtual bool {\bfseries \-Architecture\-All} ()=0\label{classpkgCacheGenerator_1_1ListParser_a0218489a9fa787ee8dce5d99baf79c37}
+
+\item 
+virtual std\-::string {\bfseries \-Version} ()=0\label{classpkgCacheGenerator_1_1ListParser_afb76862b95ba65a4ee16e15f7afb92da}
+
+\item 
+virtual bool {\bfseries \-New\-Version} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)=0\label{classpkgCacheGenerator_1_1ListParser_ac6f8699a43b22f6081743a07d76f7df6}
+
+\item 
+virtual std\-::string {\bfseries \-Description} ()=0\label{classpkgCacheGenerator_1_1ListParser_a27d4c993fe4e0f2f075a14f2585c7f87}
+
+\item 
+virtual std\-::string {\bfseries \-Description\-Language} ()=0\label{classpkgCacheGenerator_1_1ListParser_a259b467391afc3006c612e4d97f6a569}
+
+\item 
+virtual {\bf \-M\-D5\-Sum\-Value} {\bfseries \-Description\-\_\-md5} ()=0\label{classpkgCacheGenerator_1_1ListParser_a5ee0fdb197e728dd46710f9da0112680}
+
+\item 
+virtual unsigned short {\bfseries \-Version\-Hash} ()=0\label{classpkgCacheGenerator_1_1ListParser_a69057f8e3006a1e812832801c899a8f9}
+
+\item 
+virtual bool {\bfseries \-Use\-Package} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} \&\-Pkg, {\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)=0\label{classpkgCacheGenerator_1_1ListParser_a039d6aa626b055198686eba53ed03566}
+
+\item 
+virtual unsigned long {\bfseries \-Offset} ()=0\label{classpkgCacheGenerator_1_1ListParser_afbff141d2144e3af657c2d86eff2574e}
+
+\item 
+virtual unsigned long {\bfseries \-Size} ()=0\label{classpkgCacheGenerator_1_1ListParser_ab510031011ec4c694af0f34f747e504b}
+
+\item 
+virtual bool {\bfseries \-Step} ()=0\label{classpkgCacheGenerator_1_1ListParser_a8924e033a9be582dfccaf68f84812f03}
+
+\item 
+bool {\bfseries \-Has\-File\-Deps} ()\label{classpkgCacheGenerator_1_1ListParser_a9e0b5c33f099ed1cee4a02f892862459}
+
+\item 
+virtual bool {\bfseries \-Collect\-File\-Provides} ({\bf pkg\-Cache} \&\-Cache, {\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)\label{classpkgCacheGenerator_1_1ListParser_ac8e52265927872cf8e62a1ae5202f0d9}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bfseries \-Write\-Uniq\-String} (std\-::string \-S)\label{classpkgCacheGenerator_1_1ListParser_a2fd10049fca512620eefaa30a6c342c1}
+
+\item 
+unsigned long {\bfseries \-Write\-Uniq\-String} (const char $\ast$\-S, unsigned int \-Size)\label{classpkgCacheGenerator_1_1ListParser_a7d30e2b172fba6814b3d036cfd9d5edf}
+
+\item 
+unsigned long {\bfseries \-Write\-String} (const std\-::string \&\-S)\label{classpkgCacheGenerator_1_1ListParser_a0329447b4c2764617ff943a89213b0c6}
+
+\item 
+unsigned long {\bfseries \-Write\-String} (const char $\ast$\-S, unsigned int \-Size)\label{classpkgCacheGenerator_1_1ListParser_a69995749f8bff97c113406876312a47a}
+
+\item 
+bool {\bfseries \-New\-Depends} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver, const std\-::string \&\-Package, const std\-::string \&\-Arch, const std\-::string \&\-Version, unsigned int \-Op, unsigned int \-Type)\label{classpkgCacheGenerator_1_1ListParser_acd4435888f96d969607e9d74127dd208}
+
+\item 
+bool {\bfseries \-New\-Provides} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver, const std\-::string \&\-Pkg\-Name, const std\-::string \&\-Pkg\-Arch, const std\-::string \&\-Version)\label{classpkgCacheGenerator_1_1ListParser_a47d169cee60b75ad1ecaf9e1a4142313}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries pkg\-Cache\-Generator}\label{classpkgCacheGenerator_1_1ListParser_a6490b678234fceca3f2391d055076b60}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcachegen.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcachegen.\-cc\end{DoxyCompactItemize}

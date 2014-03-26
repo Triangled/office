@@ -1,0 +1,79 @@
+\section{pkg\-System \-Class \-Reference}
+\label{classpkgSystem}\index{pkg\-System@{pkg\-System}}
+
+
+\-Inheritance diagram for pkg\-System\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classpkgSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-System\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classpkgSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries \-Lock} ()=0\label{classpkgSystem_a1d3709369d7c357964a48a05c1f3dcf3}
+
+\item 
+virtual bool {\bfseries \-Un\-Lock} (bool \-No\-Errors=false)=0\label{classpkgSystem_a610beeab96963e5e302f326a4dae5a73}
+
+\item 
+virtual {\bf pkg\-Package\-Manager} $\ast$ {\bfseries \-Create\-P\-M} ({\bf pkg\-Dep\-Cache} $\ast$\-Cache) const =0\label{classpkgSystem_a0ef2a3583d74dd973e68fa9099ca4ff2}
+
+\item 
+virtual bool {\bfseries \-Initialize} ({\bf \-Configuration} \&)\label{classpkgSystem_ac354b4434a312f8ef66798255052a9bf}
+
+\item 
+virtual bool {\bfseries \-Archive\-Supported} (const char $\ast$\-Type)=0\label{classpkgSystem_ab76b287a260a4c596f5bd95b91b54556}
+
+\item 
+virtual bool {\bfseries \-Add\-Status\-Files} (std\-::vector$<$ {\bf pkg\-Index\-File} $\ast$ $>$ \&\-List)=0\label{classpkgSystem_a351ca496c37c276759eff746c79020de}
+
+\item 
+virtual bool {\bfseries \-Find\-Index} ({\bf pkg\-Cache\-::\-Pkg\-File\-Iterator} \-File, {\bf pkg\-Index\-File} $\ast$\&\-Found) const =0\label{classpkgSystem_a620a6f4cfdcc499a565882a928d73adc}
+
+\item 
+virtual signed {\bfseries \-Score} ({\bf \-Configuration} const \&)\label{classpkgSystem_af28ca6f635afb5e4d34fc354cc3a8594}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pkg\-System} $\ast$ {\bfseries \-Get\-System} (const char $\ast$\-Label)\label{classpkgSystem_affdd450f38b92e772cf691a1bc02262d}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bfseries \-Label}\label{classpkgSystem_a2c28600dbc88e9535c6e44b111829cc2}
+
+\item 
+{\bf pkg\-Versioning\-System} $\ast$ {\bfseries \-V\-S}\label{classpkgSystem_a3f4191ee956a08d06a8aecf064d03c1e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pkg\-System} $\ast$$\ast$ {\bfseries \-Global\-List} = \-Sys\-List\label{classpkgSystem_a542925237c099179536321affde78ea6}
+
+\item 
+static unsigned long {\bfseries \-Global\-List\-Len} = 0\label{classpkgSystem_acdd1750df964c2a94afe622abfe15d7b}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgsystem.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgsystem.\-cc\end{DoxyCompactItemize}

@@ -1,0 +1,269 @@
+\section{pkg\-Acq\-Index\-Diffs \-Class \-Reference}
+\label{classpkgAcqIndexDiffs}\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}
+
+
+\-An item that is responsible for fetching all the patches \{\{\{ that need to be applied to a given package index file.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-Index\-Diffs\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{classpkgAcqIndexDiffs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-Index\-Diffs\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqIndexDiffs__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Called when the patch file failed to be downloaded. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} (std\-::string \-Message, unsigned long long \-Size, std\-::string \-Md5\-Hash, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object was fetched successfully. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Desc\-U\-R\-I} ()
+\begin{DoxyCompactList}\small\item\em \-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. \end{DoxyCompactList}\item 
+{\bf pkg\-Acq\-Index\-Diffs} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, std\-::string {\bf \-U\-R\-I}, std\-::string \-U\-R\-I\-Desc, std\-::string {\bf \-Short\-Desc}, {\bf \-Hash\-String} {\bf \-Expected\-Hash}, std\-::string {\bf \-Server\-Sha1}, std\-::vector$<$ {\bf \-Diff\-Info} $>$ diffs=std\-::vector$<$ {\bf \-Diff\-Info} $>$())
+\begin{DoxyCompactList}\small\item\em \-Create an index diff item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Diff\-State} \{ {\bf \-State\-Fetch\-Unkown}, 
+{\bf \-State\-Fetch\-Diff}, 
+{\bf \-State\-Unzip\-Diff}, 
+{\bf \-State\-Apply\-Diff}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Debug}\label{classpkgAcqIndexDiffs_acdf3472c9b75f32dae88032d42d1cb6c}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, debugging output will be written to std\-::clog. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-::\-Item\-Desc} {\bf \-Desc}\label{classpkgAcqIndexDiffs_a63a8c90526aa28ea8a9c2458a53846bc}
+
+\begin{DoxyCompactList}\small\item\em \-A description of the item that is currently being downloaded. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Real\-U\-R\-I}\label{classpkgAcqIndexDiffs_a60820e30470dce6f22aa8ced3fd96628}
+
+\begin{DoxyCompactList}\small\item\em \-The \doxyref{\-U\-R\-I}{p.}{classURI} of the package index file that is being reconstructed. \end{DoxyCompactList}\item 
+{\bf \-Hash\-String} {\bf \-Expected\-Hash}\label{classpkgAcqIndexDiffs_a30ce4163915317207b0c3ce437725e07}
+
+\begin{DoxyCompactList}\small\item\em \-The \-Hash\-Sum of the package index file that is being reconstructed. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Description}
+\item 
+std\-::vector$<$ {\bf \-Diff\-Info} $>$ {\bf available\-\_\-patches}
+\item 
+std\-::string {\bf \-Server\-Sha1}
+\item 
+enum {\bf pkg\-Acq\-Index\-Diffs\-::\-Diff\-State} {\bfseries \-State}\label{classpkgAcqIndexDiffs_a9039273ef3cb4b07493c2ef919f5a876}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An item that is responsible for fetching all the patches \{\{\{ that need to be applied to a given package index file. 
+
+\-After downloading and applying a single patch, this item will enqueue a new \doxyref{pkg\-Acq\-Index\-Diffs}{p.}{classpkgAcqIndexDiffs} to download and apply the remaining patches. \-If no patch can be found that applies to an intermediate file or if one of the patches cannot be downloaded, falls back to downloading the entire package index file using \doxyref{pkg\-Acq\-Index}{p.}{classpkgAcqIndex}.
+
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Diff\-Index}{p.}{classpkgAcqDiffIndex}, \doxyref{pkg\-Acq\-Index}{p.}{classpkgAcqIndex} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Diff\-State@{\-Diff\-State}}
+\index{\-Diff\-State@{\-Diff\-State}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Diff\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Diff\-State}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqIndexDiffs_ab2898413cf073f60c8ea280c811c3edf}
+\-The current status of this patch. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-State\-Fetch\-Unkown@{\-State\-Fetch\-Unkown}!pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-State\-Fetch\-Unkown@{\-State\-Fetch\-Unkown}}\item[{\em 
+\-State\-Fetch\-Unkown\label{classpkgAcqIndexDiffs_ab2898413cf073f60c8ea280c811c3edfa82b287c62411f8b692402f8df1e68cc8}
+}]\-The diff is in an unknown state. \index{\-State\-Fetch\-Diff@{\-State\-Fetch\-Diff}!pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-State\-Fetch\-Diff@{\-State\-Fetch\-Diff}}\item[{\em 
+\-State\-Fetch\-Diff\label{classpkgAcqIndexDiffs_ab2898413cf073f60c8ea280c811c3edfaec3dbb53054bff15ce3c49882de26f84}
+}]\-The diff is currently being fetched. \index{\-State\-Unzip\-Diff@{\-State\-Unzip\-Diff}!pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-State\-Unzip\-Diff@{\-State\-Unzip\-Diff}}\item[{\em 
+\-State\-Unzip\-Diff\label{classpkgAcqIndexDiffs_ab2898413cf073f60c8ea280c811c3edfa41b47b46b061b0d7b111045af4f2e727}
+}]\-The diff is currently being uncompressed. \index{\-State\-Apply\-Diff@{\-State\-Apply\-Diff}!pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-State\-Apply\-Diff@{\-State\-Apply\-Diff}}\item[{\em 
+\-State\-Apply\-Diff\label{classpkgAcqIndexDiffs_ab2898413cf073f60c8ea280c811c3edfa85e95bc535755d0bcc1421d7daa90f0e}
+}]\-The diff is currently being applied. \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}}
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{pkg\-Acq\-Index\-Diffs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acq\-Index\-Diffs} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner, }
+\item[{std\-::string}]{\-U\-R\-I, }
+\item[{std\-::string}]{\-U\-R\-I\-Desc, }
+\item[{std\-::string}]{\-Short\-Desc, }
+\item[{{\bf \-Hash\-String}}]{\-Expected\-Hash, }
+\item[{std\-::string}]{\-Server\-Sha1, }
+\item[{std\-::vector$<$ {\bf \-Diff\-Info} $>$}]{diffs = {\ttfamily std\-:\-:vector$<${\bf \-Diff\-Info}$>$()}}
+\end{DoxyParamCaption}
+)}\label{classpkgAcqIndexDiffs_a399edc6f336ab0cd08ce630e49e8a95f}
+
+
+\-Create an index diff item. 
+
+\-After filling in its basic fields, this invokes \-Finish(true) if \#diffs is empty, or \-Queue\-Next\-Diff() otherwise.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner} & \-The \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object that owns this item.\\
+\hline
+{\em \doxyref{\-U\-R\-I}{p.}{classURI}} & \-The \doxyref{\-U\-R\-I}{p.}{classURI} of the package index file being reconstructed.\\
+\hline
+{\em \-U\-R\-I\-Desc} & \-A long description of this item.\\
+\hline
+{\em \-Short\-Desc} & \-A brief description of this item.\\
+\hline
+{\em \-Expected\-Hash} & \-The expected md5sum of the completely reconstructed package index file; the index file will be tested against this value when it is entirely reconstructed.\\
+\hline
+{\em diffs} & \-The remaining diffs from the index of diffs. \-They should be ordered so that each diff appears before any diff that depends on it. \\
+\hline
+\end{DoxyParams}
+
+
+\-References available\-\_\-patches, \-Debug, \-Desc, \-Description, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-::\-Item\-::\-Short\-Desc(), pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc, and \-State\-Fetch\-Diff.
+
+
+
+\-Referenced by \-Done().
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}}
+\index{\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Desc\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Desc\-U\-R\-I} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqIndexDiffs_a853c32904fff75b1a5d2c68441f41cad}
+
+
+\-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. 
+
+\begin{DoxyReturn}{\-Returns}
+a \doxyref{\-U\-R\-I}{p.}{classURI} that should be used to describe what is being fetched. 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a33630be55b62e4648f24c83378105c6f}.
+
+
+
+\-References \-Real\-U\-R\-I.
+
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Done@{\-Done}}
+\index{\-Done@{\-Done}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Hash, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqIndexDiffs_aa3ae904a406da88bc67dd2e9e556dffa}
+
+
+\-Invoked by the acquire worker when the object was fetched successfully. 
+
+\-Note that the object might {\itshape not\/} have been written to \-Dest\-File; check for the presence of an \-Alt-\/\-Filename entry in \-Message to find the file to which it was really written.
+
+\-Done is often used to switch from one stage of the processing to the next (e.\-g. fetching, unpacking, copying). \-It is one branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-Data from the acquire method. \-Use \-Lookup\-Tag() to parse it. \\
+\hline
+{\em \-Size} & \-The size of the object that was fetched. \\
+\hline
+{\em \-Hash} & \-The \-Hash\-Sum of the object that was fetched. \\
+\hline
+{\em \-Cnf} & \-The method via which the object was fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41}.
+
+
+
+\-References available\-\_\-patches, \-Debug, \-Desc, \-Description, pkg\-Acquire\-::\-Item\-::\-Dest\-File, \-Expected\-Hash, pkg\-Acquire\-::\-Item\-::\-Local, pkg\-Acquire\-::\-Item\-::\-Mode, pkg\-Acquire\-::\-Item\-::\-Owner, pkg\-Acq\-Index\-Diffs(), pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I(), \-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-::\-Rename(), \-Server\-Sha1, pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc, \-State\-Apply\-Diff, \-State\-Fetch\-Diff, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqIndexDiffs_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Called when the patch file failed to be downloaded. 
+
+\-This method will fall back to downloading the whole index file outright; its arguments are ignored. 
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References \-Debug, \-Desc, \-Description, \-Expected\-Hash, pkg\-Acquire\-::\-Item\-::\-Owner, \-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!available\-\_\-patches@{available\-\_\-patches}}
+\index{available\-\_\-patches@{available\-\_\-patches}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{available\-\_\-patches}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Diff\-Info}$>$ {\bf available\-\_\-patches}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqIndexDiffs_a6822b4355d68d4683938302c3c4bee8b}
+\-The patches that remain to be downloaded, including the patch being downloaded right now. \-This list should be ordered so that each diff appears before any diff that depends on it.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-These are indexed by sha1sum; why not use some sort of dictionary instead of relying on ordering and stripping them off the front? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Done(), and pkg\-Acq\-Index\-Diffs().
+
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Description@{\-Description}}
+\index{\-Description@{\-Description}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Description}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Description}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqIndexDiffs_a72a1a381861908396ddca53a1fa28f97}
+\-A description of the file being downloaded. 
+
+\-Referenced by \-Done(), \-Failed(), and pkg\-Acq\-Index\-Diffs().
+
+\index{pkg\-Acq\-Index\-Diffs@{pkg\-Acq\-Index\-Diffs}!\-Server\-Sha1@{\-Server\-Sha1}}
+\index{\-Server\-Sha1@{\-Server\-Sha1}!pkgAcqIndexDiffs@{pkg\-Acq\-Index\-Diffs}}
+\subsubsection[{\-Server\-Sha1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Server\-Sha1}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqIndexDiffs_aa21f20c0300cbd25b4b4a51802f5ad80}
+\-Stop applying patches when reaching that sha1 
+
+\-Referenced by \-Done().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

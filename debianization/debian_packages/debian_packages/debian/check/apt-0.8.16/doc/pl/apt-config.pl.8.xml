@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product;
+<date>29 lutego 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-config</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-config</refname>
+    <refpurpose>Program odpytywania konfiguracji APT</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-config</command> <arg><option>-hv</option></arg>
+<arg><option>-o=<replaceable>opcja konfiguracji</replaceable></option></arg>
+<arg><option>-c=<replaceable>plik</replaceable></option></arg> <group
+choice="req"> <arg>shell</arg> <arg>dump</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Opis</title>
+   <para><command>apt-config</command> jest wewnętrznym programem używanym przez
+różne części pakietu APT w celu zapewnienia spójności konfiguracji. Uzyskuje
+dostęp do głównego pliku konfiguracyjnego
+<filename>/etc/apt/apt.conf</filename> w sposób łatwy do użycia w programach
+skryptowych.</para>
+
+   <para>Jedno z poniższych poleceń musi być użyte, chyba że została podana opcja
+<option>-h</option> albo <option>--help</option>.
+   </para>
+   
+   <variablelist>
+     <varlistentry><term>shell</term>
+     <listitem><para>
+     shell pozwala skryptom powłoki na uzyskanie informacji o
+konfiguracji. Wymaga podania pary argumentów: pierwszym z nich jest zmienna
+powłoki, a drugim nazwa zmiennej konfiguracyjnej do odczytania. Wyjściem
+jest lista przypisań zmiennych powłoki dla każdej odczytanej  wartości
+konfiguracji. Przykład użycia w skrypcie powłoki:
+     </para>
+     
+<informalexample><programlisting>
+OPTS="-f"
+RES=`apt-config shell OPTS MojaAplikacja::opcje`
+eval $RES
+</programlisting></informalexample>
+
+     <para>Powyższe ustawi wartość zmiennej środowiskowej powłoki $OPTS na wartość
+zmiennej MojaAplikacja::opcje, z domyślną wartością <option>-f</option>.</para>
+
+     
+     <para>Do zmienna konfiguracji można dołączyć /[fbdi]. f zwraca nazwy plików, d -
+katalogi, b - true lub false, a i - liczbę. Każda ze zwracanych wartości
+jest ujednolicana i weryfikowana.</para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>dump</term>
+     <listitem><para>
+     Wyświetla zawartość przestrzeni konfiguracji.</para>
+     </listitem>
+     </varlistentry>
+
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>opcje</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+   
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Zobacz także</title>
+   <para>&apt-conf;
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnostyka</title>
+   <para><command>apt-config</command> zwraca zero, gdy zakończyło się pomyślnie, 100
+- w przypadku błędu.
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

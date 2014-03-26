@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>29
+février 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-config</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-config</refname>
+    <refpurpose>Programme d'interrogation de la configuration d'APT</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-config</command> <arg><option>-hv</option></arg>
+<arg><option>-o=<replaceable>option de
+configuration</replaceable></option></arg>
+<arg><option>-c=<replaceable>fichier</replaceable></option></arg> <group
+choice="req"> <arg>shell</arg> <arg>dump</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Description</title>
+   <para><command>apt-config</command> est un programme interne utilisé par
+différents composants d'APT ; il offre la possibilité d'une configuration
+cohérente et permet aux applications conçues sous forme de script une
+utilisation simple du fichier de configuration principal
+<filename>/etc/apt/apt.conf</filename>.</para>
+
+   <para>À moins que l'option <option>-h</option> ou <option>--help</option> ne soit
+donnée, l'une des commandes suivantes doit être présente.
+   </para>
+   
+   <variablelist>
+     <varlistentry><term>shell</term>
+     <listitem><para>
+     Le terme shell est utilisé pour accéder aux informations de configuration
+depuis un script shell. Deux arguments doivent lui être donnés ; le premier
+est une variable du shell et le second une valeur de configuration à
+demander. La sortie standard consiste en une liste de commandes
+d'assignation de shell pour chaque valeur présente. Dans un script shell,
+cette commande devrait être utilisée comme suit :
+     </para>
+     
+<informalexample><programlisting>
+OPTS="-f"
+RES=`apt-config shell OPTS MyApp::Options`
+eval $RES
+</programlisting></informalexample>
+
+     <para>La variable d'environnement du shell $OPTS sera définie par la valeur de
+MyApp::Options ou, par défaut, la valeur -f.</para>
+
+     
+     <para>L'élément de configuration peut être suivi par /[fdbi]. « f » renvoie un nom
+de fichier, « d » un nom de répertoire, « b » renvoie « true » ou « false »
+et « i » renvoie un entier. Chacune de ses valeurs est normalisée et
+vérifiée.</para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>dump</term>
+     <listitem><para>
+     Affiche seulement le contenu de l'espace de configuration.</para>
+     </listitem>
+     </varlistentry>
+
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>options</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+   
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Voir aussi</title>
+   <para>&apt-conf;
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnostics</title>
+   <para><command>apt-config</command> retourne zéro après un déroulement normal, et
+le nombre 100 en cas d'erreur.
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

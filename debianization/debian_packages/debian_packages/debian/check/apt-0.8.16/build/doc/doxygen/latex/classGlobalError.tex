@@ -1,0 +1,507 @@
+\section{\-Global\-Error \-Class \-Reference}
+\label{classGlobalError}\index{\-Global\-Error@{\-Global\-Error}}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries \-Item}
+\item 
+struct {\bfseries \-Msg\-Stack}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Msg\-Type} \{ \*
+{\bf \-F\-A\-T\-A\-L} =  40, 
+{\bf \-E\-R\-R\-O\-R} =  30, 
+{\bf \-W\-A\-R\-N\-I\-N\-G} =  20, 
+{\bf \-N\-O\-T\-I\-C\-E} =  10, 
+\*
+{\bf \-D\-E\-B\-U\-G} =  0
+ \}
+\begin{DoxyCompactList}\small\item\em a message can have one of following severity \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Fatal\-E} (const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a fatal error message with errno to the list \end{DoxyCompactList}\item 
+bool {\bf \-Errno} (const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add an \-Error message with errno to the list \end{DoxyCompactList}\item 
+bool {\bf \-Warning\-E} (const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a warning message with errno to the list \end{DoxyCompactList}\item 
+bool {\bf \-Notice\-E} (const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a notice message with errno to the list \end{DoxyCompactList}\item 
+bool {\bf \-Debug\-E} (const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a debug message with errno to the list \end{DoxyCompactList}\item 
+bool {\bf \-Insert\-Errno} ({\bf \-Msg\-Type} const \&type, const char $\ast$\-Function, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(4) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em adds an errno message with the given type \end{DoxyCompactList}\item 
+bool {\bf \-Fatal} (const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(2) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add an fatal error message to the list \end{DoxyCompactList}\item 
+bool {\bf \-Error} (const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(2) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add an \-Error message to the list \end{DoxyCompactList}\item 
+bool {\bf \-Warning} (const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(2) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a warning message to the list \end{DoxyCompactList}\item 
+bool {\bf \-Notice} (const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(2) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a notice message to the list \end{DoxyCompactList}\item 
+bool {\bf \-Debug} (const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(2) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em add a debug message to the list \end{DoxyCompactList}\item 
+bool {\bf \-Insert} ({\bf \-Msg\-Type} const \&type, const char $\ast$\-Description,...) \-\_\-\-\_\-like\-\_\-printf(3) \-\_\-\-\_\-cold
+\begin{DoxyCompactList}\small\item\em adds an error message with the given type \end{DoxyCompactList}\item 
+bool {\bf \-Pending\-Error} () const 
+\begin{DoxyCompactList}\small\item\em is an error in the list? \end{DoxyCompactList}\item 
+bool {\bf empty} ({\bf \-Msg\-Type} const \&trashhold={\bf \-W\-A\-R\-N\-I\-N\-G}) const 
+\begin{DoxyCompactList}\small\item\em is the list empty? \end{DoxyCompactList}\item 
+bool {\bf \-Pop\-Message} (std\-::string \&\-Text)
+\begin{DoxyCompactList}\small\item\em returns and removes the first (or last) message in the list \end{DoxyCompactList}\item 
+void {\bf \-Discard} ()\label{classGlobalError_a41190a6896a09de84c7b7aa32a9573ba}
+
+\begin{DoxyCompactList}\small\item\em clears the list of messages \end{DoxyCompactList}\item 
+void {\bf \-Dump\-Errors} (std\-::ostream \&out, {\bf \-Msg\-Type} const \&threshold={\bf \-W\-A\-R\-N\-I\-N\-G}, bool const \&merge\-Stack=true)
+\begin{DoxyCompactList}\small\item\em outputs the list of messages to the given stream \end{DoxyCompactList}\item 
+void {\bf \-Dump\-Errors} ({\bf \-Msg\-Type} const \&threshold)
+\begin{DoxyCompactList}\small\item\em dumps the list of messages to std\-::cerr \end{DoxyCompactList}\item 
+void {\bf \-Dump\-Errors} ()
+\begin{DoxyCompactList}\small\item\em dumps the messages of type \-W\-A\-R\-N\-I\-N\-G or higher to std\-::cerr \end{DoxyCompactList}\item 
+void {\bf \-Push\-To\-Stack} ()
+\begin{DoxyCompactList}\small\item\em put the current \-Messages into the stack \end{DoxyCompactList}\item 
+void {\bf \-Revert\-To\-Stack} ()\label{classGlobalError_a545a1a225fd4c4cf0ba9b3778c7ba974}
+
+\begin{DoxyCompactList}\small\item\em throw away all current messages \end{DoxyCompactList}\item 
+void {\bf \-Merge\-With\-Stack} ()\label{classGlobalError_ad673c5ed8a108766a94f4d50d663c57c}
+
+\begin{DoxyCompactList}\small\item\em merge current and stack together \end{DoxyCompactList}\item 
+size\-\_\-t {\bf \-Stack\-Count} () const \label{classGlobalError_a5899d10ec4abae5a4b17552f535e4352}
+
+\begin{DoxyCompactList}\small\item\em return the deep of the stack \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{\-Global\-Error@{\-Global\-Error}!\-Msg\-Type@{\-Msg\-Type}}
+\index{\-Msg\-Type@{\-Msg\-Type}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Msg\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Msg\-Type}}\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561b}
+
+
+a message can have one of following severity 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-F\-A\-T\-A\-L@{\-F\-A\-T\-A\-L}!\-Global\-Error@{\-Global\-Error}}\index{\-Global\-Error@{\-Global\-Error}!\-F\-A\-T\-A\-L@{\-F\-A\-T\-A\-L}}\item[{\em 
+\-F\-A\-T\-A\-L\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561ba651d8a47a6976d6fe05c0e03fb4cd2d0}
+}]\-Message will be printed instantly as it is likely that this error will lead to a complete crash. \index{\-E\-R\-R\-O\-R@{\-E\-R\-R\-O\-R}!\-Global\-Error@{\-Global\-Error}}\index{\-Global\-Error@{\-Global\-Error}!\-E\-R\-R\-O\-R@{\-E\-R\-R\-O\-R}}\item[{\em 
+\-E\-R\-R\-O\-R\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561ba2fd6f336d08340583bd620a7f5694c90}
+}]\-An error does hinder the correct execution and should be corrected. \index{\-W\-A\-R\-N\-I\-N\-G@{\-W\-A\-R\-N\-I\-N\-G}!\-Global\-Error@{\-Global\-Error}}\index{\-Global\-Error@{\-Global\-Error}!\-W\-A\-R\-N\-I\-N\-G@{\-W\-A\-R\-N\-I\-N\-G}}\item[{\em 
+\-W\-A\-R\-N\-I\-N\-G\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561ba984de77c680eaff141ec910e25568a81}
+}]indicates problem that can lead to errors later on \index{\-N\-O\-T\-I\-C\-E@{\-N\-O\-T\-I\-C\-E}!\-Global\-Error@{\-Global\-Error}}\index{\-Global\-Error@{\-Global\-Error}!\-N\-O\-T\-I\-C\-E@{\-N\-O\-T\-I\-C\-E}}\item[{\em 
+\-N\-O\-T\-I\-C\-E\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561baed8762ff982b982ce3d67f81ab34f1d4}
+}]deprecation warnings, old fallback behavior, … \index{\-D\-E\-B\-U\-G@{\-D\-E\-B\-U\-G}!\-Global\-Error@{\-Global\-Error}}\index{\-Global\-Error@{\-Global\-Error}!\-D\-E\-B\-U\-G@{\-D\-E\-B\-U\-G}}\item[{\em 
+\-D\-E\-B\-U\-G\label{classGlobalError_a2ea0bb09adcce7f655e8f8ee8d30561ba0593585da9181e972974c1274d8f2b4f}
+}]for developers only in areas it is hard to print something directly \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-Global\-Error@{\-Global\-Error}!\-Debug@{\-Debug}}
+\index{\-Debug@{\-Debug}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Debug} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a0e6333ebf6f526daec323378a34ddfa2}
+
+
+add a debug message to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Description} & \-Format string for the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Debug\-E@{\-Debug\-E}}
+\index{\-Debug\-E@{\-Debug\-E}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Debug\-E}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Debug\-E} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_af556d12f2aed97b7b369193505ac61e4}
+
+
+add a debug message with errno to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Function} & name of the function generating the error \\
+\hline
+{\em \-Description} & format string for the error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Dump\-Errors@{\-Dump\-Errors}}
+\index{\-Dump\-Errors@{\-Dump\-Errors}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Dump\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dump\-Errors} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{{\bf \-Msg\-Type} const \&}]{threshold = {\ttfamily {\bf \-W\-A\-R\-N\-I\-N\-G}}, }
+\item[{bool const \&}]{merge\-Stack = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a48d82d44e64c773efe753735c61768a6}
+
+
+outputs the list of messages to the given stream 
+
+\-Note that all messages are discarded, also the notices displayed or not.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em out} & output stream to write the messages in \\
+\hline
+ & {\em threshold} & minimim level considered \\
+\hline
+ & {\em merge\-Stack} & \\
+\hline
+\end{DoxyParams}
+\index{\-Global\-Error@{\-Global\-Error}!\-Dump\-Errors@{\-Dump\-Errors}}
+\index{\-Dump\-Errors@{\-Dump\-Errors}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Dump\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dump\-Errors} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Msg\-Type} const \&}]{threshold}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classGlobalError_a92db7530702b6110f3727ac3404543bd}
+
+
+dumps the list of messages to std\-::cerr 
+
+\-Note that all messages are discarded, also the notices displayed or not.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em threshold} & minimum level printed \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Dump\-Errors().
+
+\index{\-Global\-Error@{\-Global\-Error}!\-Dump\-Errors@{\-Dump\-Errors}}
+\index{\-Dump\-Errors@{\-Dump\-Errors}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Dump\-Errors}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Dump\-Errors} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classGlobalError_a81be42602b9ad2301c54674471818908}
+
+
+dumps the messages of type \-W\-A\-R\-N\-I\-N\-G or higher to std\-::cerr 
+
+\-Note that all messages are discarded, displayed or not. 
+
+\-References \-W\-A\-R\-N\-I\-N\-G.
+
+
+
+\-Referenced by \-Dump\-Errors().
+
+\index{\-Global\-Error@{\-Global\-Error}!empty@{empty}}
+\index{empty@{empty}!GlobalError@{\-Global\-Error}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf empty} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Msg\-Type} const \&}]{trashhold = {\ttfamily {\bf \-W\-A\-R\-N\-I\-N\-G}}}
+\end{DoxyParamCaption}
+) const}\label{classGlobalError_a687a994ade50597a60825688019a8686}
+
+
+is the list empty? 
+
+\-The default checks if the list is empty or contains only notices, if you want to check if also no notices happend set the parameter flag to {\bfseries false}.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Without\-Notice} & does notices count, default is {\bfseries true}, so no\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if an the list is empty, {\bfseries false} otherwise 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Errno@{\-Errno}}
+\index{\-Errno@{\-Errno}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Errno}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Errno} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_af3468439eba6dc7f422df463eb2338bd}
+
+
+add an \-Error message with errno to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Function} & name of the function generating the error \\
+\hline
+{\em \-Description} & format string for the error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Error@{\-Error}}
+\index{\-Error@{\-Error}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Error} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_af704b5beaf3d42a1c746136b9a680411}
+
+
+add an \-Error message to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Description} & \-Format string for the error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Fatal@{\-Fatal}}
+\index{\-Fatal@{\-Fatal}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Fatal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Fatal} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a491e7fd37f57e6ff7e2acbf16911dab8}
+
+
+add an fatal error message to the list 
+
+\-Most of the stuff we consider as \char`\"{}error\char`\"{} is also \char`\"{}fatal\char`\"{} for the user as the application will not have the expected result, but a fatal message here means that it gets printed directly to stderr in addiction to adding it to the list as the error leads sometimes to crashes and a maybe duplicated message is better than \char`\"{}\-Segfault\char`\"{} as the only displayed text
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Description} & \-Format string for the fatal error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Fatal\-E@{\-Fatal\-E}}
+\index{\-Fatal\-E@{\-Fatal\-E}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Fatal\-E}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Fatal\-E} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a5e19d13d17b43407dd0fa23168a4db72}
+
+
+add a fatal error message with errno to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Function} & name of the function generating the error \\
+\hline
+{\em \-Description} & format string for the error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Insert@{\-Insert}}
+\index{\-Insert@{\-Insert}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Insert} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Msg\-Type} const \&}]{type, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a41321e1bf13f39fd3cad337c7ff1879c}
+
+
+adds an error message with the given type 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em type} & of the error message \\
+\hline
+{\em \-Description} & of the error \\
+\hline
+\end{DoxyParams}
+\index{\-Global\-Error@{\-Global\-Error}!\-Insert\-Errno@{\-Insert\-Errno}}
+\index{\-Insert\-Errno@{\-Insert\-Errno}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Insert\-Errno}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Insert\-Errno} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Msg\-Type} const \&}]{type, }
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a1d402f473a80ae16f765cb661fb82426}
+
+
+adds an errno message with the given type 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em type} & of the error message \\
+\hline
+{\em \-Function} & which failed \\
+\hline
+{\em \-Description} & of the error \\
+\hline
+\end{DoxyParams}
+\index{\-Global\-Error@{\-Global\-Error}!\-Notice@{\-Notice}}
+\index{\-Notice@{\-Notice}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Notice}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Notice} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_af5d78e8196ab80060de9aaf8eeac2404}
+
+
+add a notice message to the list 
+
+\-A notice should be considered less severe than an error or a warning and can be ignored by the client without further problems for some times, but he should consider fixing the problem. \-This error type can be used for e.\-g. deprecation warnings of options.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Description} & \-Format string for the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Notice\-E@{\-Notice\-E}}
+\index{\-Notice\-E@{\-Notice\-E}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Notice\-E}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Notice\-E} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a386d970ef094ac39ef385d40b430fdcf}
+
+
+add a notice message with errno to the list 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Function} & name of the function generating the error \\
+\hline
+{\em \-Description} & format string for the error message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Pending\-Error@{\-Pending\-Error}}
+\index{\-Pending\-Error@{\-Pending\-Error}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Pending\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Pending\-Error} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classGlobalError_aa47d1e2f74cf3fa2258ff4a6fbb9f8a9}
+
+
+is an error in the list? 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if an error is included in the list, {\bfseries false} otherwise 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Pop\-Message@{\-Pop\-Message}}
+\index{\-Pop\-Message@{\-Pop\-Message}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Pop\-Message}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Pop\-Message} (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{\-Text}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a74cc65f991d28b468016924af691f8c0}
+
+
+returns and removes the first (or last) message in the list 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em \-Text} & message of the first/last item\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the message was an error, {\bfseries false} otherwise 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Push\-To\-Stack@{\-Push\-To\-Stack}}
+\index{\-Push\-To\-Stack@{\-Push\-To\-Stack}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Push\-To\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Push\-To\-Stack} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a45bab2f436ea354b8e642d7f16fffb00}
+
+
+put the current \-Messages into the stack 
+
+\-All \char`\"{}old\char`\"{} messages will be pushed into a stack to them later back, but for now the \-Message query will be empty and performs as no messages were present before.
+
+\-The stack can be as deep as you want -\/ all stack operations will only operate on the last element in the stack. \index{\-Global\-Error@{\-Global\-Error}!\-Warning@{\-Warning}}
+\index{\-Warning@{\-Warning}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Warning} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_a76d48d2beda3edc24bd6165361746bbd}
+
+
+add a warning message to the list 
+
+\-A warning should be considered less severe than an error and may be ignored by the client.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Description} & \-Format string for the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+\index{\-Global\-Error@{\-Global\-Error}!\-Warning\-E@{\-Warning\-E}}
+\index{\-Warning\-E@{\-Warning\-E}!GlobalError@{\-Global\-Error}}
+\subsubsection[{\-Warning\-E}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Warning\-E} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\-Function, }
+\item[{const char $\ast$}]{\-Description, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classGlobalError_ae1520f61be7dc922b8190ca0922a9a60}
+
+
+add a warning message with errno to the list 
+
+\-A warning should be considered less severe than an error and may be ignored by the client.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Function} & \-Name of the function generates the warning. \\
+\hline
+{\em \-Description} & \-Format string for the warning message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/error.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/error.\-cc\end{DoxyCompactItemize}

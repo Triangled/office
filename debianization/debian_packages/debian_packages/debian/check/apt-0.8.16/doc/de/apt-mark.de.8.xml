@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.moconnor; &apt-author.team; &apt-email; &apt-product;
+<date>21. April 2011</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-mark</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-mark</refname>
+    <refpurpose>ein Paket als automatisch installiert markieren oder diese Markierung
+entfernen</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+  <command>apt-mark</command> <arg><option>-hv</option></arg>
+<arg><option>-f=<replaceable>DATEINAME</replaceable></option></arg> <group
+choice="plain"> <arg choice="plain"> <group choice="req"> <arg
+choice="plain">auto</arg> <arg choice="plain">manual</arg> <arg
+choice="plain">showauto</arg> <arg choice="plain">showmanual</arg> </group>
+<arg choice="plain" rep="repeat"><replaceable>Paket</replaceable></arg>
+</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Beschreibung</title>
+   <para><command>apt-mark</command> wird ändern, ob ein Paket als automatisch
+installiert markiert ist.
+   </para>
+   <para>
+     Wenn Sie die Installation eines Paketes anfordern und andere Pakete
+installiert werden, um dessen Abhängigkeiten zu erfüllen, werden die
+Abhängigkeiten als automatisch installiert markiert. Sobald keine manuell
+installierten Pakete mehr von diesen automatisch installierten Paketen
+abhängen, werden sie z.B durch <command>apt-get</command> oder
+<command>aptitude</command> entfernt.
+   </para>
+     <variablelist>
+       <varlistentry><term>auto</term>
+	 <listitem><para><literal>auto</literal> wird benutzt, um ein Paket als automatisch
+installiert zu markieren, was veranlasst, dass das Paket entfernt wird, wenn
+keine manuell installierten Pakete von ihm abhängen.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>manual</term>
+	 <listitem><para><literal>manual</literal> wird benutzt, um ein Paket als manuell installiert
+zu markieren, was verhindert, dass das Paket automatisch entfernt wird, wenn
+kein anderes Paket von ihm abhängt.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>hold</term>
+	 <listitem><para><literal>hold</literal> wird benutzt, um ein Paket als zurückgehalten zu
+markieren, was verhindert, dass das Paket automatisch installiert, ein
+Upgrade davon durchgeführt oder es entfernt wird. Der Befehl ist nur ein
+Wrapper um <command>dpkg --set-selections</command> und der Status wird
+daher durch &dpkg; verwaltet und nicht durch die Option
+<option>--filename</option>.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>unhold</term>
+	 <listitem><para><literal>unhold</literal> wird benutzt, um ein vorher gesetztes »hold« auf
+ein Paket aufzuheben, um alle Aktionen wieder zu erlauben.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>showauto</term>
+	 <listitem><para><literal>showauto</literal> wird benutzt, um eine Liste automatisch
+installierter Pakete – mit einem Paket in jeder neuen Zeile –
+auszugeben. Wenn kein Paket angegeben ist, werden alle automatisch
+installierten Pakete aufgelistet. Falls Pakete angegeben sind, werden nur
+diejenigen angezeigt, die automatisch installiert wurden.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>showmanual</term>
+	 <listitem><para><literal>showmanual</literal> kann auf die gleiche Weise wie
+<literal>showauto</literal> benutzt werden, mit der Ausnahme, dass es
+stattdessen eine Liste manuell installierter Pakete ausgibt.
+       </para></listitem>
+       </varlistentry>
+
+       <varlistentry><term>showhold</term>
+	 <listitem><para><literal>showhold</literal> wird benutzt, um eine Liste auf »hold« gesetzter
+Pakete auf die gleiche Art wie für andere Anzeigebefehle auszugeben.
+       </para></listitem>
+       </varlistentry>
+
+
+     </variablelist>
+ </refsect1>
+ 
+ <refsect1><title>Optionen</title>
+   
+   <variablelist>
+	<varlistentry>
+		<term><option>-f=<filename><replaceable>DATEINAME</replaceable></filename></option></term>
+		<term><option>--file=<filename><replaceable>DATEINAME</replaceable></filename></option></term>
+     <listitem><para>
+      
+     Paketstatus von <filename><replaceable>DATEINAME</replaceable></filename>
+lesen/schreiben, anstatt vom Standardort, der
+<filename>extended_status</filename> im von Konfigurationselement
+<literal>Dir::State</literal> definierten Verzeichnis, ist.</para></listitem>
+     </varlistentry>
+
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Dateien</title>
+   <variablelist>
+  &file-extended_states;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Siehe auch</title>
+   <para>&apt-get;,&aptitude;,&apt-conf;</para>
+ </refsect1>
+
+ <refsect1><title>Diagnose</title>
+   <para><command>apt-mark</command> gibt bei normalen Operationen Null zurück, bei
+Fehlern nicht Null.</para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

@@ -1,0 +1,1046 @@
+# translation of apt-ku.po to Kurdish
+# Kurdish translation for apt
+# This file is distributed under the same license as the apt package.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-ku\n"
+"Report-Msgid-Bugs-To: deity@lists.debian.org\n"
+"POT-Creation-Date: 2014-03-26 10:55+0530\n"
+"PO-Revision-Date: 2008-05-08 12:48+0200\n"
+"Last-Translator: Erdal Ronahi <erdal dot ronahi at gmail dot com>\n"
+"Language-Team: ku <ubuntu-l10n-kur@lists.ubuntu.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KAider 0.1\n"
+"Plural-Forms: nplurals=2; plural= n != 1;\n"
+
+#: apt-inst/contrib/extracttar.cc:117
+#, fuzzy
+msgid "Failed to create pipes"
+msgstr "%s ji hev nehate veçirandin"
+
+#: apt-inst/contrib/extracttar.cc:144
+msgid "Failed to exec gzip "
+msgstr "Xebitandina gzip biserneket"
+
+#: apt-inst/contrib/extracttar.cc:181 apt-inst/contrib/extracttar.cc:211
+msgid "Corrupted archive"
+msgstr ""
+
+#: apt-inst/contrib/extracttar.cc:196
+msgid "Tar checksum failed, archive corrupted"
+msgstr ""
+
+#: apt-inst/contrib/extracttar.cc:303
+#, c-format
+msgid "Unknown TAR header type %u, member %s"
+msgstr ""
+
+#: apt-inst/contrib/arfile.cc:74
+msgid "Invalid archive signature"
+msgstr ""
+
+#: apt-inst/contrib/arfile.cc:82
+msgid "Error reading archive member header"
+msgstr ""
+
+#: apt-inst/contrib/arfile.cc:94
+#, c-format
+msgid "Invalid archive member header %s"
+msgstr ""
+
+#: apt-inst/contrib/arfile.cc:106
+msgid "Invalid archive member header"
+msgstr ""
+
+#: apt-inst/contrib/arfile.cc:132
+msgid "Archive is too short"
+msgstr "Arşîv zêde kin e"
+
+#: apt-inst/contrib/arfile.cc:136
+msgid "Failed to read the archive headers"
+msgstr ""
+
+#: apt-inst/filelist.cc:382
+msgid "DropNode called on still linked node"
+msgstr ""
+
+#: apt-inst/filelist.cc:414
+msgid "Failed to locate the hash element!"
+msgstr ""
+
+#: apt-inst/filelist.cc:461
+#, fuzzy
+msgid "Failed to allocate diversion"
+msgstr "%s venebû"
+
+#: apt-inst/filelist.cc:466
+msgid "Internal error in AddDiversion"
+msgstr ""
+
+#: apt-inst/filelist.cc:479
+#, c-format
+msgid "Trying to overwrite a diversion, %s -> %s and %s/%s"
+msgstr ""
+
+#: apt-inst/filelist.cc:508
+#, c-format
+msgid "Double add of diversion %s -> %s"
+msgstr ""
+
+#: apt-inst/filelist.cc:551
+#, c-format
+msgid "Duplicate conf file %s/%s"
+msgstr ""
+
+#: apt-inst/dirstream.cc:43 apt-inst/dirstream.cc:49 apt-inst/dirstream.cc:55
+#, c-format
+msgid "Failed to write file %s"
+msgstr "Nivîsîna pelê %s biserneket"
+
+#: apt-inst/dirstream.cc:100 apt-inst/dirstream.cc:108
+#, c-format
+msgid "Failed to close file %s"
+msgstr "Girtina pelê %s biserneket"
+
+#: apt-inst/extract.cc:96 apt-inst/extract.cc:167
+#, c-format
+msgid "The path %s is too long"
+msgstr "Rêça %s zêde dirêj e"
+
+#: apt-inst/extract.cc:127
+#, c-format
+msgid "Unpacking %s more than once"
+msgstr ""
+
+#: apt-inst/extract.cc:137
+#, c-format
+msgid "The directory %s is diverted"
+msgstr ""
+
+#: apt-inst/extract.cc:147
+#, c-format
+msgid "The package is trying to write to the diversion target %s/%s"
+msgstr ""
+
+#: apt-inst/extract.cc:157 apt-inst/extract.cc:300
+#, fuzzy
+msgid "The diversion path is too long"
+msgstr "Lîsteya dirêjahiya çavkaniyê zêde dirêj e"
+
+#: apt-inst/extract.cc:181 apt-inst/extract.cc:193 apt-inst/extract.cc:210
+#: apt-inst/deb/dpkgdb.cc:121
+#, c-format
+msgid "Failed to stat %s"
+msgstr ""
+
+#: apt-inst/extract.cc:188
+#, c-format
+msgid "Failed to rename %s to %s"
+msgstr ""
+
+#: apt-inst/extract.cc:243
+#, c-format
+msgid "The directory %s is being replaced by a non-directory"
+msgstr ""
+
+#: apt-inst/extract.cc:283
+msgid "Failed to locate node in its hash bucket"
+msgstr ""
+
+#: apt-inst/extract.cc:287
+msgid "The path is too long"
+msgstr "Rêç zêde dirêj e"
+
+#: apt-inst/extract.cc:415
+#, c-format
+msgid "Overwrite package match with no version for %s"
+msgstr ""
+
+#: apt-inst/extract.cc:432
+#, c-format
+msgid "File %s/%s overwrites the one in the package %s"
+msgstr ""
+
+#: apt-inst/extract.cc:465
+#, c-format
+msgid "Unable to read %s"
+msgstr "Nikare %s bixwîne"
+
+#: apt-inst/extract.cc:492
+#, fuzzy, c-format
+msgid "Unable to stat %s"
+msgstr "Nivîsandin ji bo %s ne pêkane"
+
+#: apt-inst/deb/dpkgdb.cc:55 apt-inst/deb/dpkgdb.cc:61
+#, c-format
+msgid "Failed to remove %s"
+msgstr "Rakirina %s biserneket"
+
+#: apt-inst/deb/dpkgdb.cc:110 apt-inst/deb/dpkgdb.cc:112
+#, c-format
+msgid "Unable to create %s"
+msgstr "Nikare %s biafirîne"
+
+#: apt-inst/deb/dpkgdb.cc:118
+#, fuzzy, c-format
+msgid "Failed to stat %sinfo"
+msgstr "%s venebû"
+
+#: apt-inst/deb/dpkgdb.cc:123
+msgid "The info and temp directories need to be on the same filesystem"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:139
+msgid "Reading package lists"
+msgstr "Lîsteya pakêtan tê xwendin"
+
+#: apt-inst/deb/dpkgdb.cc:180
+#, c-format
+msgid "Failed to change to the admin dir %sinfo"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:201 apt-inst/deb/dpkgdb.cc:355
+#: apt-inst/deb/dpkgdb.cc:448
+msgid "Internal error getting a package name"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:205 apt-inst/deb/dpkgdb.cc:386
+msgid "Reading file listing"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:216
+#, c-format
+msgid ""
+"Failed to open the list file '%sinfo/%s'. If you cannot restore this file "
+"then make it empty and immediately re-install the same version of the "
+"package!"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:229 apt-inst/deb/dpkgdb.cc:242
+#, c-format
+msgid "Failed reading the list file %sinfo/%s"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:266
+msgid "Internal error getting a node"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:309
+#, c-format
+msgid "Failed to open the diversions file %sdiversions"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:324
+msgid "The diversion file is corrupted"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:331 apt-inst/deb/dpkgdb.cc:336
+#: apt-inst/deb/dpkgdb.cc:341
+#, c-format
+msgid "Invalid line in the diversion file: %s"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:362
+msgid "Internal error adding a diversion"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:383
+msgid "The pkg cache must be initialized first"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:443
+#, c-format
+msgid "Failed to find a Package: header, offset %lu"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:465
+#, c-format
+msgid "Bad ConfFile section in the status file. Offset %lu"
+msgstr ""
+
+#: apt-inst/deb/dpkgdb.cc:470
+#, c-format
+msgid "Error parsing MD5. Offset %lu"
+msgstr ""
+
+#: apt-inst/deb/debfile.cc:42 apt-inst/deb/debfile.cc:47
+#, c-format
+msgid "This is not a valid DEB archive, missing '%s' member"
+msgstr ""
+
+#. FIXME: add data.tar.xz here - adding it now would require a Translation round for a very small gain
+#: apt-inst/deb/debfile.cc:56
+#, c-format
+msgid "This is not a valid DEB archive, it has no '%s', '%s' or '%s' member"
+msgstr ""
+
+#: apt-inst/deb/debfile.cc:116
+#, c-format
+msgid "Couldn't change to %s"
+msgstr "Nikarî li %s biguherîne"
+
+#: apt-inst/deb/debfile.cc:157
+#, c-format
+msgid "Internal error, could not locate member %s"
+msgstr ""
+
+#: apt-inst/deb/debfile.cc:192
+msgid "Failed to locate a valid control file"
+msgstr ""
+
+#: apt-inst/deb/debfile.cc:277
+msgid "Unparsable control file"
+msgstr ""
+
+#~ msgid "Total package names: "
+#~ msgstr "Navên paketan bi giştî :"
+
+#, fuzzy
+#~ msgid "Total package structures: "
+#~ msgstr "Navên paketan bi giştî :"
+
+#~ msgid "  Normal packages: "
+#~ msgstr "  Pakêtên normal:"
+
+#~ msgid "  Pure virtual packages: "
+#~ msgstr "  Pakêtên farazî yên safî:"
+
+#~ msgid "  Single virtual packages: "
+#~ msgstr "  Pakêta tenê ya farazî:"
+
+#~ msgid "  Mixed virtual packages: "
+#~ msgstr "  Pakêtên hevbeş yên farazî:"
+
+#~ msgid "  Missing: "
+#~ msgstr "  Winda: "
+
+#~ msgid "Total distinct versions: "
+#~ msgstr "Guhertoyên vekirî yên giştî:"
+
+#, fuzzy
+#~ msgid "Total distinct descriptions: "
+#~ msgstr "Guhertoyên vekirî yên giştî:"
+
+#~ msgid "Total dependencies: "
+#~ msgstr "Bindestên giştî:"
+
+#, fuzzy
+#~ msgid "Total Desc/File relations: "
+#~ msgstr "Guhertoyên vekirî yên giştî:"
+
+#~ msgid "Total slack space: "
+#~ msgstr "Cihê giştî yê sist:"
+
+#~ msgid "Total space accounted for: "
+#~ msgstr "Cihê giştî yê veqetandî: "
+
+#~ msgid "Package file %s is out of sync."
+#~ msgstr "Pakêta dosya %s li derveyî demê ye."
+
+#~ msgid "No packages found"
+#~ msgstr "Pakêt nayên dîtin"
+
+#, fuzzy
+#~ msgid "You must give at least one search pattern"
+#~ msgstr "Pêwist e tu mînakekê bidî"
+
+#~ msgid "Unable to locate package %s"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#~ msgid "Package files:"
+#~ msgstr "Pelgehên Pakêt:"
+
+#~ msgid "(not found)"
+#~ msgstr "(nehate dîtin)"
+
+#~ msgid "  Installed: "
+#~ msgstr "  Sazkirî: "
+
+#~ msgid "  Candidate: "
+#~ msgstr "  Berendam: "
+
+#~ msgid "(none)"
+#~ msgstr "(ne tiştek)"
+
+#~ msgid "  Package pin: "
+#~ msgstr "  Destika pakêtê:"
+
+#~ msgid "  Version table:"
+#~ msgstr "  Tabloya guhertoyan:"
+
+#, fuzzy
+#~ msgid "%s %s for %s compiled on %s %s\n"
+#~ msgstr "%s %s ji bo %s %s komkirî di %s %s de\n"
+
+#, fuzzy
+#~ msgid "Please provide a name for this Disc, such as 'Debian 5.0.3 Disk 1'"
+#~ msgstr ""
+#~ "Ji kerema xwe re navekî li vî Dîsketî bike, wekî 'Debian 2.1r1 Disk 1'"
+
+#~ msgid "Please insert a Disc in the drive and press enter"
+#~ msgstr "Dîsketê siwar bike û piştre bişkoja derbaskirinê bitikîne"
+
+#, fuzzy
+#~ msgid "Failed to mount '%s' to '%s'"
+#~ msgstr "Anîna %s %s biserneket\n"
+
+#~ msgid ""
+#~ "Usage: apt-config [options] command\n"
+#~ "\n"
+#~ "apt-config is a simple tool to read the APT config file\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   shell - Shell mode\n"
+#~ "   dump - Show the configuration\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text.\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ msgstr ""
+#~ "Bikaranîn: apt-config [vebijark] ferman\n"
+#~ "apt-config, amûra xwendina dosyeya mîhengên APTê ye\n"
+#~ "\n"
+#~ "Ferman\n"
+#~ "  shell - moda shell\n"
+#~ "  dump - Mîhengan nîşan dide\n"
+#~ "\n"
+#~ "Vebijark:\n"
+#~ "  -h Ev dosyeya alîkariyê ye.\n"
+#~ "  -c=? Dosyeya mîhengan nîşan dide\n"
+#~ "  -o=? Rê li ber vedike ku tu karibe li gorî dilê xwe vebijarkan diyar "
+#~ "bike. mînak -o dir::cache=/tmp\n"
+
+#~ msgid "%s not a valid DEB package."
+#~ msgstr "%s ne paketeke DEB ya derbasdar e."
+
+#~ msgid "Unable to write to %s"
+#~ msgstr "Nivîsandin ji bo %s ne pêkane"
+
+#~ msgid "Cannot get debconf version. Is debconf installed?"
+#~ msgstr "Guhertoya debconf nehate stendin. debconf sazkirî ye?"
+
+#~ msgid "Package extension list is too long"
+#~ msgstr "Lîsteya dirêjahiya pakêtê zêde dirêj e"
+
+#~ msgid "Error processing directory %s"
+#~ msgstr "Di şixulandina pêrista %s de çewtî"
+
+#~ msgid "Source extension list is too long"
+#~ msgstr "Lîsteya dirêjahiya çavkaniyê zêde dirêj e"
+
+#~ msgid "Error writing header to contents file"
+#~ msgstr "Dema li dosyeya naverokê joreagahî dihate nivîsîn çewtî"
+
+#~ msgid "Error processing contents %s"
+#~ msgstr "Dema şixulandina naveroka %s çewtî"
+
+#~ msgid "Some files are missing in the package file group `%s'"
+#~ msgstr "Di koma pelgehên pakêta '%s' de hin pelgeh kêm in"
+
+#~ msgid "DB was corrupted, file renamed to %s.old"
+#~ msgstr "DB xerabe ye, navê dosyeyê weke %s.old hate guherandin"
+
+#~ msgid "DB is old, attempting to upgrade %s"
+#~ msgstr "Danegir kevn e, ji bo bilindkirina %s hewl dide"
+
+#~ msgid "Unable to open DB file %s: %s"
+#~ msgstr "Danegira %s nehate vekirin: %s"
+
+#~ msgid "Archive has no control record"
+#~ msgstr "Tomara kontrola arşîvê tuneye"
+
+#~ msgid "W: Unable to read directory %s\n"
+#~ msgstr "W: pelrêça %s nayê xwendin\n"
+
+#~ msgid "E: "
+#~ msgstr "E: "
+
+#~ msgid "W: "
+#~ msgstr "W: "
+
+#~ msgid "Failed to resolve %s"
+#~ msgstr "%s ji hev nehate veçirandin"
+
+#~ msgid "Failed to open %s"
+#~ msgstr "%s venebû"
+
+#~ msgid "Archive had no package field"
+#~ msgstr "Di arşîvê de qada pakêtê tuneye"
+
+#~ msgid "Unable to open %s"
+#~ msgstr "%s venebû"
+
+#~ msgid "Y"
+#~ msgstr "E"
+
+#~ msgid "but %s is installed"
+#~ msgstr "lê %s sazkirî ye"
+
+#~ msgid "but %s is to be installed"
+#~ msgstr "lê %s dê were sazkirin"
+
+#~ msgid "but it is not installable"
+#~ msgstr "lê sazkirina wê ne gengaz e"
+
+#~ msgid "but it is a virtual package"
+#~ msgstr "lê paketeke farazî ye"
+
+#~ msgid "but it is not installed"
+#~ msgstr "lê ne sazkirî ye"
+
+#~ msgid "but it is not going to be installed"
+#~ msgstr "lê dê neyê sazkirin"
+
+#~ msgid " or"
+#~ msgstr " û"
+
+#~ msgid "The following NEW packages will be installed:"
+#~ msgstr "Ev pakêtên NÛ dê werine sazkirin:"
+
+#~ msgid "The following packages will be REMOVED:"
+#~ msgstr "Ev pakêt dê werine RAKIRIN:"
+
+#~ msgid "The following packages will be upgraded:"
+#~ msgstr "Ev paket dê werine bilindkirin:"
+
+#~ msgid "%s (due to %s) "
+#~ msgstr "%s (ji ber %s)"
+
+#~ msgid "%lu upgraded, %lu newly installed, "
+#~ msgstr "%lu hatine bilindkirin, %lu nû hatine sazkirin."
+
+#~ msgid "%lu reinstalled, "
+#~ msgstr "%lu ji nû ve sazkirî,"
+
+#~ msgid "%lu downgraded, "
+#~ msgstr "%lu hatine nizmkirin."
+
+#~ msgid "%lu to remove and %lu not upgraded.\n"
+#~ msgstr "%lu werin rakirin û %lu neyên bilindkirin. \n"
+
+#~ msgid " [Installed]"
+#~ msgstr " [Sazkirî]"
+
+#, fuzzy
+#~ msgid " [Not candidate version]"
+#~ msgstr "Guhartoyên berendam"
+
+#~ msgid "%s is already the newest version.\n"
+#~ msgstr "%s jixwe guhertoya nûtirîn e.\n"
+
+#, fuzzy
+#~ msgid "%s set to manually installed.\n"
+#~ msgstr "lê %s dê were sazkirin"
+
+#~ msgid "Correcting dependencies..."
+#~ msgstr "Bindestî tên serrastkirin..."
+
+#~ msgid " failed."
+#~ msgstr " neserketî."
+
+#~ msgid "Unable to correct dependencies"
+#~ msgstr "Nikare bindestiyan rast kirin"
+
+#~ msgid " Done"
+#~ msgstr " Temam"
+
+#~ msgid "Need to get %sB/%sB of archives.\n"
+#~ msgstr "Anîna %sB/%sB ji arşîvan pêwist e.\n"
+
+#~ msgid "Need to get %sB of archives.\n"
+#~ msgstr "Anîna %sB ji arşîvan pêwist e.\n"
+
+#~ msgid "Couldn't determine free space in %s"
+#~ msgstr "Nikarî cihê vala li %s tesbît bike"
+
+#~ msgid "You don't have enough free space in %s."
+#~ msgstr "Cihê vala li %s têre nake."
+
+#~ msgid "Yes, do as I say!"
+#~ msgstr "Erê, wusa bike!"
+
+#~ msgid "Abort."
+#~ msgstr "Betal."
+
+#~ msgid "Do you want to continue [Y/n]? "
+#~ msgstr "Dixwazî bidomînî [E/n]?"
+
+#~ msgid "Failed to fetch %s  %s\n"
+#~ msgstr "Anîna %s %s biserneket\n"
+
+#~ msgid "Some files failed to download"
+#~ msgstr "Daxistina çend pelan biserneket"
+
+#~ msgid "Aborting install."
+#~ msgstr "Sazkirin tê betalkirin."
+
+#, fuzzy
+#~ msgid ""
+#~ "The following package was automatically installed and is no longer "
+#~ "required:"
+#~ msgid_plural ""
+#~ "The following packages were automatically installed and are no longer "
+#~ "required:"
+#~ msgstr[0] "Ev pakêtên NÛ dê werine sazkirin:"
+#~ msgstr[1] "Ev pakêtên NÛ dê werine sazkirin:"
+
+#, fuzzy
+#~ msgid "%lu package was automatically installed and is no longer required.\n"
+#~ msgid_plural ""
+#~ "%lu packages were automatically installed and are no longer required.\n"
+#~ msgstr[0] "Ev pakêtên NÛ dê werine sazkirin:"
+#~ msgstr[1] "Ev pakêtên NÛ dê werine sazkirin:"
+
+#~ msgid "Broken packages"
+#~ msgstr "Paketên şikestî"
+
+#~ msgid "Suggested packages:"
+#~ msgstr "Paketên tên pêşniyaz kirin:"
+
+#~ msgid "Recommended packages:"
+#~ msgstr "Paketên tên tawsiyê kirin:"
+
+#~ msgid "Couldn't find package %s"
+#~ msgstr "Nikarî pakêta %s bibîne"
+
+#, fuzzy
+#~ msgid "%s set to automatically installed.\n"
+#~ msgstr "lê %s dê were sazkirin"
+
+#~ msgid "Calculating upgrade... "
+#~ msgstr "Bilindkirin tê hesibandin..."
+
+#~ msgid "Failed"
+#~ msgstr "Serneket"
+
+#~ msgid "Done"
+#~ msgstr "Temam"
+
+#~ msgid "Unable to lock the download directory"
+#~ msgstr "Pelrêça daxistinê nayê quflekirin"
+
+#~ msgid "You don't have enough free space in %s"
+#~ msgstr "Cihê vala li %s têre nake"
+
+#~ msgid "Fetch source %s\n"
+#~ msgstr "Çavkanîna %s bîne\n"
+
+#~ msgid "Failed to fetch some archives."
+#~ msgstr "Anîna çend arşîvan biserneket."
+
+#, fuzzy
+#~ msgid "Changelog for %s (%s)"
+#~ msgstr "Girêdan bi %s (%s) re pêk tê"
+
+#~ msgid "Get:"
+#~ msgstr "Anîn:"
+
+#~ msgid "Err "
+#~ msgstr "Çewt"
+
+#, fuzzy
+#~ msgid "Fetched %sB in %s (%sB/s)\n"
+#~ msgstr "%s hatine anîn..."
+
+#~ msgid " [Working]"
+#~ msgstr " [Dixebite]"
+
+#, fuzzy
+#~ msgid "%s can not be marked as it is not installed.\n"
+#~ msgstr "lê ne sazkirî ye"
+
+#, fuzzy
+#~ msgid "%s was already set to manually installed.\n"
+#~ msgstr "lê %s dê were sazkirin"
+
+#, fuzzy
+#~ msgid "%s was already set to automatically installed.\n"
+#~ msgstr "lê %s dê were sazkirin"
+
+#, fuzzy
+#~ msgid "%s was already set on hold.\n"
+#~ msgstr "%s jixwe guhertoya nûtirîn e.\n"
+
+#, fuzzy
+#~ msgid "%s was already not hold.\n"
+#~ msgstr "%s jixwe guhertoya nûtirîn e.\n"
+
+#, fuzzy
+#~ msgid "%s set on hold.\n"
+#~ msgstr "lê %s dê were sazkirin"
+
+#, fuzzy
+#~ msgid "Canceled hold on %s.\n"
+#~ msgstr "%s venebû"
+
+#, fuzzy
+#~ msgid "Couldn't open pipe for %s"
+#~ msgstr "Nikarî pelê %s veke"
+
+#, fuzzy
+#~ msgid "Failed to stat"
+#~ msgstr "%s venebû"
+
+#, fuzzy
+#~ msgid "Unable to read the cdrom database %s"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#~ msgid "Wrong CD-ROM"
+#~ msgstr "CD-ROM a şaş"
+
+#~ msgid "Disk not found."
+#~ msgstr "Dîsk nehate dîtin."
+
+#~ msgid "File not found"
+#~ msgstr "Pel nehate dîtin"
+
+#~ msgid "Logging in"
+#~ msgstr "Têketin"
+
+#~ msgid "Unable to determine the local name"
+#~ msgstr "Nikare navê herêmî tesbît bike"
+
+#~ msgid "Read error"
+#~ msgstr "Çewiya xwendinê"
+
+#~ msgid "Write error"
+#~ msgstr "Çewtiya nivîsînê"
+
+#, fuzzy
+#~ msgid "Unable to fetch file, server said '%s'"
+#~ msgstr "Danegira %s nehate vekirin: %s"
+
+#~ msgid "Query"
+#~ msgstr "Lêpirsîn"
+
+#, fuzzy
+#~ msgid "Unable to invoke "
+#~ msgstr "%s venebû"
+
+#~ msgid "Connecting to %s (%s)"
+#~ msgstr "Girêdan bi %s (%s) re pêk tê"
+
+#~ msgid "[IP: %s %s]"
+#~ msgstr "[IP: %s %s]"
+
+#~ msgid "Connecting to %s"
+#~ msgstr "Bi %s re tê girêdan"
+
+#~ msgid "Could not resolve '%s'"
+#~ msgstr "Nikarî '%s' çareser bike"
+
+#, fuzzy
+#~ msgid "Unable to connect to %s:%s:"
+#~ msgstr "Nikare bi %s re girêdan pêk bîne %s:"
+
+#~ msgid "Unknown error executing gpgv"
+#~ msgstr "Di xebitandina gpgv de çewtiya nenas"
+
+#, fuzzy
+#~ msgid "The following signatures were invalid:\n"
+#~ msgstr "Ev pakêtên NÛ dê werine sazkirin:"
+
+#~ msgid "Select failed"
+#~ msgstr "Hilbijartin neserketî"
+
+#, fuzzy
+#~ msgid "Error writing to output file"
+#~ msgstr "Dema li dosyeya naverokê joreagahî dihate nivîsîn çewtî"
+
+#~ msgid "Error writing to file"
+#~ msgstr "Dema li pelî dihate nivîsîn çewtî"
+
+#~ msgid "Error writing to the file"
+#~ msgstr "Dema li pelî dihate nivîsîn çewtî"
+
+#~ msgid "Connection failed"
+#~ msgstr "Girêdan pêk nehatiye"
+
+#~ msgid "Internal error"
+#~ msgstr "Çewtiya hundirîn"
+
+#, fuzzy
+#~ msgid "Couldn't make mmap of %llu bytes"
+#~ msgstr "Nikarî li %s biguherîne"
+
+#, fuzzy
+#~ msgid "Unable to close mmap"
+#~ msgstr "%s venebû"
+
+#, fuzzy
+#~ msgid "Unable to synchronize mmap"
+#~ msgstr "%s venebû"
+
+#, fuzzy
+#~ msgid "Failed to truncate file"
+#~ msgstr "Nivîsîna pelê %s biserneket"
+
+#~ msgid "Selection %s not found"
+#~ msgstr "Hilbijartina %s nehatiye dîtin"
+
+#~ msgid "%c%s... Error!"
+#~ msgstr "%c%s... Çewtî!"
+
+#~ msgid "%c%s... Done"
+#~ msgstr "%c%s... Çêbû"
+
+#~ msgid "Option '%s' is too long"
+#~ msgstr "Opsiyona '%s' zêde dirêj e"
+
+#, fuzzy
+#~ msgid "Unable to stat the mount point %s"
+#~ msgstr "Nivîsandin ji bo %s ne pêkane"
+
+#~ msgid "Unable to change to %s"
+#~ msgstr "Nikarî derbasa %s bike"
+
+#~ msgid "Could not open lock file %s"
+#~ msgstr "Nikarî qufila pelê %s veke"
+
+#~ msgid "Could not open file %s"
+#~ msgstr "Nikarî pelê %s veke"
+
+#, fuzzy
+#~ msgid "Could not open file descriptor %d"
+#~ msgstr "Nikarî pelê %s veke"
+
+#, fuzzy
+#~ msgid "Problem closing the gzip file %s"
+#~ msgstr "Di girtina pelî de pirsgirêkek derket"
+
+#, fuzzy
+#~ msgid "Problem closing the file %s"
+#~ msgstr "Di girtina pelî de pirsgirêkek derket"
+
+#, fuzzy
+#~ msgid "Problem renaming the file %s to %s"
+#~ msgstr "Di girtina pelî de pirsgirêkek derket"
+
+#, fuzzy
+#~ msgid "Problem unlinking the file %s"
+#~ msgstr "Di girtina pelî de pirsgirêkek derket"
+
+#~ msgid "Depends"
+#~ msgstr "Bindest"
+
+#~ msgid "PreDepends"
+#~ msgstr "PêşBindest"
+
+#~ msgid "Suggests"
+#~ msgstr "Pêşniyaz dike"
+
+#~ msgid "Recommends"
+#~ msgstr "Tawsiye dike"
+
+#~ msgid "Conflicts"
+#~ msgstr "Nakokî"
+
+#~ msgid "Replaces"
+#~ msgstr "Dikeve şunve"
+
+#~ msgid "Obsoletes"
+#~ msgstr "Kevin dike"
+
+#~ msgid "Breaks"
+#~ msgstr "Dişkîne"
+
+#~ msgid "important"
+#~ msgstr "girîng"
+
+#~ msgid "required"
+#~ msgstr "pêwist"
+
+#~ msgid "standard"
+#~ msgstr "standard"
+
+#~ msgid "optional"
+#~ msgstr "opsiyonel"
+
+#~ msgid "extra"
+#~ msgstr "ekstra"
+
+#~ msgid "Candidate versions"
+#~ msgstr "Guhartoyên berendam"
+
+#~ msgid "Failed to open StateFile %s"
+#~ msgstr "Vekirina StateFile %s biserneket"
+
+#, fuzzy
+#~ msgid "Failed to write temporary StateFile %s"
+#~ msgstr "%s ji hev nehate veçirandin"
+
+#, fuzzy
+#~ msgid "Unable to parse package file %s (1)"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#, fuzzy
+#~ msgid "Unable to parse package file %s (2)"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#~ msgid "Opening %s"
+#~ msgstr "%s tê vekirin"
+
+#, fuzzy
+#~ msgid "Could not configure '%s'. "
+#~ msgstr "Nikarî pelê %s veke"
+
+#, fuzzy
+#~ msgid "List directory %spartial is missing."
+#~ msgstr "Peldanka '%s' kêm e"
+
+#, fuzzy
+#~ msgid "Archives directory %spartial is missing."
+#~ msgstr "Peldanka '%s' kêm e"
+
+#, fuzzy
+#~ msgid "Unable to lock directory %s"
+#~ msgstr "W: pelrêça %s nayê xwendin\n"
+
+#~ msgid "Retrieving file %li of %li"
+#~ msgstr "Pel tê anîn %li ji %li"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please insert the disc labeled: '%s' in the drive '%s' and press enter."
+#~ msgstr "Dîsketê siwar bike û piştre bişkoja derbaskirinê bitikîne"
+
+#, fuzzy
+#~ msgid "Unable to stat %s."
+#~ msgstr "Nivîsandin ji bo %s ne pêkane"
+
+#, fuzzy
+#~ msgid "Error occurred while processing %s (%s%d)"
+#~ msgstr "Dema şixulandina naveroka %s çewtî"
+
+#~ msgid "rename failed, %s (%s -> %s)."
+#~ msgstr "nav guherandin biserneket, %s (%s -> %s)"
+
+#~ msgid "MD5Sum mismatch"
+#~ msgstr "MD5Sum li hev nayên"
+
+#~ msgid "Hash Sum mismatch"
+#~ msgstr "Hash Sum li hev nayên"
+
+#, fuzzy
+#~ msgid "Unable to find hash sum for '%s' in Release file"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#~ msgid "Size mismatch"
+#~ msgstr "Mezinahî li hev nayên"
+
+#, fuzzy
+#~ msgid "Unable to parse Release file %s"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#, fuzzy
+#~ msgid "Invalid 'Date' entry in Release file %s"
+#~ msgstr "Pakêt nehate dîtin %s"
+
+#~ msgid "Found label '%s'\n"
+#~ msgstr "Etîketa '%s' hatiye dîtin\n"
+
+#~ msgid ""
+#~ "This disc is called: \n"
+#~ "'%s'\n"
+#~ msgstr ""
+#~ "Navê dîskê: \n"
+#~ "'%s'\n"
+
+#~ msgid "Copying package lists..."
+#~ msgstr "Lîsteyên pakêtan tên jibergirtin..."
+
+#~ msgid "Wrote %i records.\n"
+#~ msgstr "%i tomar hatin nivîsîn.\n"
+
+#, fuzzy
+#~ msgid "Hash mismatch for: %s"
+#~ msgstr "Hash Sum li hev nayên"
+
+#, fuzzy
+#~ msgid "No keyring installed in %s."
+#~ msgstr "Sazkirin tê betalkirin."
+
+#, fuzzy
+#~ msgid "Couldn't find task '%s'"
+#~ msgstr "Peywira %s nehate dîtin"
+
+#, fuzzy
+#~ msgid "Couldn't find any package by regex '%s'"
+#~ msgstr "Nikarî pakêta %s bibîne"
+
+#, fuzzy
+#~ msgid "Installing %s"
+#~ msgstr "%s hatine sazkirin"
+
+#~ msgid "Configuring %s"
+#~ msgstr "%s tê mîhengkirin"
+
+#~ msgid "Removing %s"
+#~ msgstr "%s tê rakirin"
+
+#, fuzzy
+#~ msgid "Completely removing %s"
+#~ msgstr "%s bi tevahî hatine rakirin"
+
+#~ msgid "Directory '%s' missing"
+#~ msgstr "Peldanka '%s' kêm e"
+
+#, fuzzy
+#~ msgid "Could not open file '%s'"
+#~ msgstr "Nikarî pelê %s veke"
+
+#~ msgid "Preparing %s"
+#~ msgstr "%s tê amadekirin"
+
+#~ msgid "Unpacking %s"
+#~ msgstr "%s tê derxistin"
+
+#~ msgid "Preparing to configure %s"
+#~ msgstr "Mîhengkirina %s tê amadekirin"
+
+#~ msgid "Installed %s"
+#~ msgstr "%s hatine sazkirin"
+
+#~ msgid "Preparing for removal of %s"
+#~ msgstr "Rakirina %s tê amadekirin"
+
+#~ msgid "Removed %s"
+#~ msgstr "%s hatine rakirin"
+
+#~ msgid "Preparing to completely remove %s"
+#~ msgstr "Bi tevahî rakirina %s tê amadekirin"
+
+#~ msgid "Completely removed %s"
+#~ msgstr "%s bi tevahî hatine rakirin"
+
+#, fuzzy
+#~ msgid "Unable to lock the administration directory (%s), are you root?"
+#~ msgstr "Pelrêça daxistinê nayê quflekirin"
+
+#, fuzzy
+#~ msgid "Can not read mirror file '%s'"
+#~ msgstr "Nikarî pelê %s veke"
+
+#~ msgid "Connection closed prematurely"
+#~ msgstr "Girêdan zû hatiye girtin"
+
+#, fuzzy
+#~ msgid "Could not patch file"
+#~ msgstr "Danegira %s nehate vekirin: %s"
+
+#~ msgid "       %4i %s\n"
+#~ msgstr "       %4i %s\n"
+
+#~ msgid "%4i %s\n"
+#~ msgstr "%4i %s\n"
+
+#, fuzzy
+#~ msgid "Processing triggers for %s"
+#~ msgstr "Di şixulandina pêrista %s de çewtî"

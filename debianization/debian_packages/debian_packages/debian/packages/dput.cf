@@ -1,0 +1,19 @@
+# Put this file in $HOME/.dput.cf
+
+[DEFAULT]
+login = joe
+method = scp
+allow_unsigned_uploads = 0
+run_lintian = 0
+run_dinstall = 0
+check_version = 0
+post_upload_command =
+pre_upload_command =
+progress_indicator = 2
+scp_compress = 0
+
+[local]
+fqdn = localhost
+method = local
+incoming = /home/joe/packages/mini-dinstall/incoming
+post_upload_command = mini-dinstall --batch

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>The APT project design document - Data flow and conversions analysis.</title>
+
+<link href="index.html" rel="start">
+<link href="ch4.html" rel="prev">
+<link href="index.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch-introduction.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Requirements">
+<link href="ch3.html" rel="chapter" title="3 Procedural description">
+<link href="ch4.html" rel="chapter" title="4 Modules and interfaces">
+<link href="ch5.html" rel="chapter" title="5 Data flow and conversions analysis.">
+
+</head>
+
+<body>
+
+<p><a name="ch5"></a></p>
+<hr>
+
+<p>
+[ <a href="ch4.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch4.html">4</a> ]
+[ 5 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+The APT project design document
+<br>Chapter 5 - Data flow and conversions analysis.
+</h1>
+
+<hr>
+
+<pre>
+                                                               ____________
+                                                            __\|ftp modules|
+                                                           /  /|___________|
+                                         _ ____________   /     ________________
+                                         |    update   | /     |mount/local file|
+             |==========================&gt;|   module    |/_____\|  traversals    |
+             |                           |_____________|      /|________________|
+             |                             ^        ^
+             |                             |        |               ______________
+       ______|_______    _ _____ ______    |   _____v________      \|            |
+      |Configuration |   |configuration|   |   |Packages Files|  ===|Status file |
+      |  module      |&lt;=&gt;|    data     |   |   |______________| /  /|____________|
+      |______________|   |_____________|   |        ^          /
+              ^                            |        |         /
+              |                            | _______v_______|/_
+              |                            | |              |    ________________
+              |                            | |              |/_\|   Dependency  |
+              |                            | |backing store |\ /|     Module    |
+              |                            | |______________|  _|_______________|
+              |                             \       ^          /|       ^
+              |                              \      |         /         |
+              |                              _\|____v_______|/__    ____v_______
+              |_____________________________\| User interaction|    |    dpkg   |
+                                            /|_________________|&lt;==&gt;|  Invoker  |
+                                                                    |___________|
+</pre>
+
+<p>
+dpkg also interacts with status and available files.
+</p>
+
+<p>
+The backing store and the associated data structures are the core of APT.  All
+modules essentially revolve around the backing store, feeding it data, adding
+and manipulating links and relationships between data in the backing store,
+allowing the user to interact with and modify the data in the backing store,
+and finally writing it out as the status file and possibly issuing directives
+to dpkg.
+</p>
+
+<p>
+The other focal point for APT is the user interface.
+</p>
+
+<hr>
+
+<p>
+[ <a href="ch4.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch4.html">4</a> ]
+[ 5 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+The APT project design document
+</p>
+
+<address>
+$Id: design.sgml,v 1.4 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Manoj Srivastava <code><a href="mailto:srivasta@debian.org">srivasta@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

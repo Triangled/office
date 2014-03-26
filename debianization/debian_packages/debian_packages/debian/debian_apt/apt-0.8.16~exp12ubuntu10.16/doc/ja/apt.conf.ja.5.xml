@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; <author>
+<firstname>Daniel</firstname> <surname>Burrows</surname>
+<contrib>Debug::*. の最初のドキュメント</contrib> <email>dburrows@debian.org</email>
+</author> &apt-email; &apt-product; <date>16 January 2010</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt.conf</refentrytitle>
+   <manvolnum>5</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt.conf</refname>
+    <refpurpose>APT の設定ファイル</refpurpose>
+ </refnamediv>
+ 
+ <refsect1><title>説明</title>
+ <para><filename>apt.conf</filename> は、APT
+ツールスイートのメイン設定ファイルですが、間違いなくオプションの変更を指定するだけの場所などではありません。そのため、すべてのツールは設定ファイルを共有し、統一環境を提供するため、共通のコマンドラインパーサも使用します。</para>
+   <orderedlist>
+      <para>APT ツールの起動時に、設定ファイルを以下の順番で読み込みます。</para>
+      <listitem><para><envar>APT_CONFIG</envar> 環境変数で指定したファイル (存在する場合)</para></listitem>
+      <listitem><para>all files in <literal>Dir::Etc::Parts</literal> in alphanumeric ascending
+order which have either no or "<literal>conf</literal>" as filename
+extension and which only contain alphanumeric, hyphen (-), underscore (_)
+and period (.) characters.  Otherwise APT will print a notice that it has
+ignored a file if the file doesn't match a pattern in the
+<literal>Dir::Ignore-Files-Silently</literal> configuration list - in this
+case it will be silently ignored.</para></listitem>
+      <listitem><para><literal>Dir::Etc::Main</literal> で指定される、メイン設定ファイル</para></listitem>
+      <listitem><para>コマンドラインオプションにより、設定ディレクティブの上書きや設定ファイルの追加読み込みができます。</para></listitem>
+   </orderedlist>
+   </refsect1>
+   <refsect1><title>構文</title>
+   <para>設定ファイルは、機能グループごとに系統立てられたオプションを木構造で表します。オプションの指定は、2 つのコロンで区切ります。例えば
+<literal>APT::Get::Assume-Yes</literal> は、APT ツールグループの Get
+ツール用オプションです。オプションは、親グループから継承しません。</para> 
+
+   <para>設定言語の構文は、bind や dhcp のような ISC ツールをモデルにしています。<literal>//</literal>
+で始まる行はコメントとして扱われます (無視)。同様に C/C++ のコメントのような <literal>/*</literal> と
+<literal>*/</literal>
+の間もコメントとして扱います。いずれの行も、<literallayout>APT::Get::Assume-Yes
+"true";</literallayout>
+のような形式です。行末のセミコロンとクォートは必要です。値は1行でなければならず、文字列結合はありません。値の中にクォートは使えません。値中のバックスラッシュ
+"\" とエスケープ文字は、未定義で使用するべきではありません。オプション名は、英数字と "/-:._+"
+が使用できます。以下のように中カッコを使うと、新しいスコープを開くことができます。</para>
+
+<informalexample><programlisting>   
+APT {
+  Get {
+    Assume-Yes "true";
+    Fix-Broken "true";
+  };
+};
+</programlisting></informalexample>
+
+   <para>また適宜改行することで、より読みやすくなります。リストは、開いたスコープ、クォートで囲まれた 1
+単語、そしてセミコロンと続けることで作成できます。セミコロンで区切ると、複数のエントリを表せます。</para>
+
+<informalexample><programlisting>   
+DPkg::Pre-Install-Pkgs {"/usr/sbin/dpkg-preconfigure --apt";};
+
+</programlisting></informalexample>
+
+   <para><filename>&docdir;examples/apt.conf</filename> &configureindex;
+は一般的な設定ファイルのサンプルです。どのように設定するか参考になるでしょう。</para>
+
+   <para>設定項目の名前は、文字の大小を区別しません。そのため、前述の例を <literal>dpkg::pre-install-pkgs</literal>
+とできます。</para>
+
+   <para>前述した <literal>DPkg::Pre-Install-Pkgs</literal>
+の例で見られるように、リストを定義した場合、設定項目名はオプションになります。名前を指定しない場合、新しいエントリは、単純に新しいオプションをリストに追加します。名前を指定すると、あらゆる他の選択肢をオプションに再割り当てし、オプションを上書きできます。</para>
+
+   <para><literal>#include</literal> (これは廃止予定でサポートしない他の実装もあります) と
+<literal>#clear</literal> の 2 つの特別な記法があります。<literal>#include</literal>
+は指定したファイルを取り込みます。ファイル名がスラッシュで終わった場合には、そのディレクトリをすべて取り込みます。<literal>#clear</literal>
+は、設定ツリーの一部を削除するにに使用します。指定した要素と、それ以下の要素を削除します
+(これらの行も、セミコロンで終わる必要があることに注意してください)。</para>
+
+   <para>#clear コマンドは、リストや完全なスコープを削除する唯一の方法です。スコープの再オープンや後述する ::
+スタイルは、それまで書いたエントリを<emphasis>上書きしません</emphasis>。新しい値を与えて上書きするしかありません。リストやスコープは上書きできません。クリアされるだけです。</para>
+
+   <para>すべての APT ツールで、コマンドラインで任意の設定ディレクティブを指定できる -o オプションが使用できます。構文は、完全なオプション名 (例:
+<literal>APT::Get::Assume-Yes</literal>)、等号、続いてオプションの新しい値となります。リスト名に続き ::
+を加えることで、リストを追加できます (疑問に思われたように、スコープ構文はコマンドラインで使用できません)。</para>
+
+   <para>1 行で 1 項目の場合にのみ :: は使用でき、スコープ構文と組み合わせるべきではないことに注意してください (スコープ構文には暗黙で ::
+が挿入されます)。両方の構文を同時に使用すると、「他のオプションと同様に名前と共に動作する、普通ではない名前
+"<literal>::</literal>" のオプションである」といった、(残念なことに)
+複数のユーザに渡るバグの引き金になります。問題の中には、リストに追加しようと<emphasis>誤った</emphasis>構文で複数行書くユーザが、このオプション
+"<literal>::</literal>" を最後に割り当てようとして、正反対の結果を得るということも含まれます。APT
+の次期バージョンでは、この誤用を検出すると、動作を停止しエラーを上げるようになります。そのため、APT
+がこの件で明白にエラーを吐かない限りは、自分でそのような構文を修正してください。</para>
+ </refsect1>
+
+ <refsect1><title>APT グループ</title>
+   <para>このオプショングループは、ツール全体に影響のある、一般的な APT の振る舞いを制御します。</para>
+
+   <variablelist>
+     <varlistentry><term>Architecture</term>
+     <listitem><para>システムアーキテクチャ - ファイルを取得したり、パッケージリストを解析するときに使用するアーキテクチャをセットします。内部でのデフォルトは、apt
+をコンパイルしたアーキテクチャです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Architectures</term>
+     <listitem><para>All Architectures the system supports. Processors implementing the
+<literal>amd64</literal> are e.g. also able to execute binaries compiled for
+<literal>i386</literal>; This list is use when fetching files and parsing
+package lists. The internal default is always the native architecture
+(<literal>APT::Architecture</literal>)  and all foreign architectures it can
+retrieve by calling <command>dpkg --print-foreign-architectures</command>.
+     </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Default-Release</term>
+     <listitem><para>ひとつ以上のバージョンがある場合に、パッケージをインストールを行うデフォルトリリースです。リリース名や、コード名、リリースバージョンがあります。例えば
+'stable', 'testing', 'unstable', '&stable-codename;', '&testing-codename;',
+'4.0', '5.0*'  となります。&apt-preferences; も参照してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Ignore-Hold</term>
+     <listitem><para>保留パッケージの無視 - このグローバルオプションは、問題解決器に保留と指定したパッケージを無視します。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Clean-Installed</term>
+     <listitem><para>デフォルトで有効です。autoclean 機能が on の時、ダウンロードできなくなったパッケージをキャッシュから削除します。off
+の場合、ローカルにインストールされているパッケージは、削除対象から外します。しかし、 APT
+はキャッシュから削除したパッケージの再インストール方法を、直接提供するわけではないことに注意してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Immediate-Configure</term>
+     <listitem><para>デフォルトで有効で、インストールやアップグレード処理中に、APT
+が不可欠パッケージや重要パッケージのインストールを、可能な限り早く行うようになります。&dpkg;
+の呼び出す際の失敗回数に制限があるため、このようなオプションがあります。このオプションが無効の場合、APT
+は重要パッケージを、特別パッケージと同様に扱うようになります。重要パッケージ A
+を展開していて、その設定中に他の展開や設定をたくさん呼び出すと、パッケージ B は A とはなんの関係もないにもかかわらず、dpkg
+の呼び出しが失敗します (つまり B のメンテナスクリプトがエラーを返します)。この結果、システムの状態として、パッケージ A
+は展開済みで未設定となります。A に依存するパッケージは、動作の保証がなくなり、A に対する依存関係は、もう満たせなくなります。
+即時設定マーカは、たとえば環状の依存関係といった問題が発生しそうな、すべての依存関係に先行依存と同等の即時フラグを適用します。そのため理論上では、APT
+が即時設定できない、エラーが発生する、このオプションを参照するといった状況になる可能性があるのは、ユーザが即時設定を一時的に無効にして、インストールやアップグレードを行った場合です。「理論上」と言う単語を使ったのは、現在現実世界でこの問題に遭遇したのは、不安定版を使用しており、問題になっていたパッケージの間違った依存関係が原因だったり、システムが既に破損状態であったりした数回だけだからです。前述のシナリオが、即時設定が主に回避する問題のすべてというわけではないため、このオプションを闇雲に無効にするべきではありません。<literal>dist-upgrade</literal>
+のような大きな操作を、このオプションを無効にして行う前に、APT がすぐに設定できないパッケージを、明示的に
+<literal>install</literal>
+してみてください。ですが、アップグレードプロセスの改善のため、バグのリンクにあるディストリビューションと APT
+チームにも、問題のレポートをおねがいします。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Force-LoopBreak</term>
+     <listitem><para>何をしようとしているのか「本当に」判っているのでなければ、絶対にこのオプションを有効にしないでください。不可欠 (essential)
+パッケージ同士で、競合 (Conflicts) /競合や競合/事前依存 (Pre-Depend)
+のループに落ち込んだときに、不可欠パッケージを一時的に削除してループを抜けられるようにします。<emphasis>そんなループはあり得ないはずで、あるとすれば重大なバグです。</emphasis>このオプションは、tar,
+gzip, libc, dpkg, bash とそれらが依存しているパッケージ以外の不可欠パッケージで動作します。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Cache-Start, Cache-Grow and Cache-Limit</term>
+     <listitem><para>APT uses since version 0.7.26 a resizable memory mapped cache file to store
+the 'available' information. <literal>Cache-Start</literal> acts as a hint
+to which size the Cache will grow and is therefore the amount of memory APT
+will request at startup. The default value is 20971520 bytes (~20 MB). Note
+that these amount of space need to be available for APT otherwise it will
+likely fail ungracefully, so for memory restricted devices these value
+should be lowered while on systems with a lot of configured sources this
+might be increased.  <literal>Cache-Grow</literal> defines in byte with the
+default of 1048576 (~1 MB) how much the Cache size will be increased in the
+event the space defined by <literal>Cache-Start</literal> is not
+enough. These value will be applied again and again until either the cache
+is big enough to store all information or the size of the cache reaches the
+<literal>Cache-Limit</literal>.  The default of
+<literal>Cache-Limit</literal> is 0 which stands for no limit.  If
+<literal>Cache-Grow</literal> is set to 0 the automatic grow of the cache is
+disabled.
+     </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Build-Essential</term>
+     <listitem><para>構築依存関係で不可欠なパッケージを定義します。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Get</term>
+     <listitem><para>Get サブセクションは &apt-get; ツールを制御します。このオプションの詳細は &apt-get; の文書を参照してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Cache</term>
+     <listitem><para>Cache サブセクションは &apt-cache; ツールを制御します。このオプションの詳細は &apt-cache; の文書を参照してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>CDROM</term>
+     <listitem><para>CDROM サブセクションは &apt-cdrom; ツールを制御します。このオプションの詳細は &apt-cdrom; の文書を参照してください。</para></listitem>
+     </varlistentry>
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>Acquire グループ</title>
+   <para>オプションの <literal>Acquire</literal> グループは、パッケージのダウンロードや URI
+ハンドラの制御を行います。<variablelist>
+     <varlistentry><term>Check-Valid-Until</term>
+	 <listitem><para>Security related option defaulting to true as an expiring validation for a
+Release file prevents longtime replay attacks and can e.g. also help users
+to identify no longer updated mirrors - but the feature depends on the
+correctness of the time on the user system.  Archive maintainers are
+encouraged to create Release files with the <literal>Valid-Until</literal>
+header, but if they don't or a stricter value is volitional the following
+<literal>Max-ValidTime</literal> option can be used.
+	 </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Max-ValidTime</term>
+	 <listitem><para>Seconds the Release file should be considered valid after it was created
+(indicated by the <literal>Date</literal> header).  If the Release file
+itself includes a <literal>Valid-Until</literal> header the earlier date of
+the two is used as the expiration date.  The default value is
+<literal>0</literal> which stands for "for ever".  Archive specific settings
+can be made by appending the label of the archive to the option name.
+	 </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Min-ValidTime</term>
+	 <listitem><para>Minimum of seconds the Release file should be considered valid after it was
+created (indicated by the <literal>Date</literal> header).  Use this if you
+need to use a seldomly updated (local) mirror of a more regular updated
+archive with a <literal>Valid-Until</literal> header instead of completely
+disabling the expiration date checking.  Archive specific settings can and
+should be used by appending the label of the archive to the option name.
+	 </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>PDiffs</term>
+	 <listitem><para>Packages ファイルや Sources ファイルの全体をダウンロードするのではなく、<literal>PDiffs</literal>
+と呼ばれる差分をダウンロードしようとします。デフォルトでは True です。</para>
+	 <para>Two sub-options to limit the use of PDiffs are also available: With
+<literal>FileLimit</literal> can be specified how many PDiff files are
+downloaded at most to patch a file. <literal>SizeLimit</literal> on the
+other hand is the maximum percentage of the size of all patches compared to
+the size of the targeted file. If one of these limits is exceeded the
+complete file is downloaded instead of the patches.
+	 </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Queue-Mode</term>
+     <listitem><para>キューモード - <literal>Queue-Mode</literal> は、APT
+がどのように並列接続を行うか、<literal>host</literal> か <literal>access</literal>
+で指定できます。<literal>host</literal> は、ターゲットホストごとに 1
+接続を開きます。<literal>access</literal> は、URI タイプごとに 1 接続を開きます。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Retries</term>
+     <listitem><para>リトライの回数を設定します。0 でない場合、APT は失敗したファイルに対して、与えられた回数だけリトライを行います。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Source-Symlinks</term>
+     <listitem><para>ソースアーカイブのシンボリックリンクを使用します。true がセットされているとき、可能ならコピーの代わりにシンボリックリンクを張ります。true
+がデフォルトです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>http</term>
+     <listitem><para>HTTP URI - http::Proxy は、デフォルトで使用する http
+プロキシです。<literal>http://[[user][:pass]@]host[:port]/</literal>
+という標準形で表します。ホストごとのプロキシの場合は、<literal>http::Proxy::&lt;host&gt;</literal>
+という形と、プロキシを使用しないという意味の特殊キーワード <literal>DIRECT</literal>
+を使用して指定することもできます。上記の設定をなにも指定しないと、環境変数 <envar>http_proxy</envar> を使用します。</para>
+
+     <para>HTTP/1.1 準拠のプロキシキャッシュの制御について 3 種類の設定があります。<literal>No-Cache</literal>
+はプロキシに対して、いかなる時もキャッシュを使用しないと伝えます。<literal>Max-Age</literal>
+は、インデックスファイル用のときだけ送信し、得られた時間よりも古かった場合に、オブジェクトをリフレッシュするようキャッシュに指示します。デフォルトでは
+1 日となっているため、Debian は日毎にそのインデックスファイルを更新します。<literal>No-Store</literal>
+は、キャッシュがこのリクエストを格納せず、アーカイブファイルのみ設定するよう指定します。これは、非常に大きな .deb
+ファイルで、プロキシキャッシュが汚れるのを防ぐのに便利かもしれません。注) Squid 2.0.2 では、これらのオプションをサポートしていません。</para>
+
+     <para><literal>timeout</literal>
+オプションは、この方法でのタイムアウトまでの時間を設定します。これには、接続のタイムアウトとデータのタイムアウトが含まれています。</para>
+
+     <para>リモートサーバが RFC 準拠でなかったり、(Squid 2.0.2 のように)
+バグがあったりしたときのために、パイプラインの深さの制御を設定します。<literal>Acquire::http::Pipeline-Depth</literal>
+により、APT が送信できるリクエストの回数を 0 から 5 の値で設定できます。リモートサーバが適切でなく、TCP
+接続に時間がかかるときは、<emphasis>必ず</emphasis> 0
+の値を設定しなければなりません。そうでなければデータが破損してしまいます。これが必要なホストは RFC 2068 に違反しています。</para>
+
+     <para>使用する帯域を制限するには、<literal>Acquire::http::Dl-Limit</literal>
+にキロバイトで整数値を与えます。デフォルト値は 0 で、制限を解除し、使用できる帯域をすべて使おうとします
+(このオプションは暗黙的に、同時に複数のサーバからダウンロードしなくなることに注意してください)。</para>
+
+     <para>クライアントが既知の識別子を使用する場合にのみ、プロキシがアクセスを許可する場合、<literal>Acquire::http::User-Agent</literal>
+を使用して、http でダウンロードするための、異なる User-Agent を設定できます。</para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>https</term>
+	 <listitem><para>HTTPS URI - キャッシュ制御、タイムアウト、AllowRedirect、Dl-Limit、プロキシオプションは
+<literal>http</literal> メソッドと同様です。また、https 用に明示的に設定されない場合、オプションのデフォルト値は
+<literal>http</literal> メソッドと同じです。<literal>Pipeline-Depth</literal>
+オプションはまだサポートしていません。</para>
+
+	 <para><literal>CaInfo</literal>
+サブオプションは、信頼済み証明書情報の保持場所を指定します。<literal>&lt;host&gt;::CaInfo</literal>
+は、対応するホストごとのオプションです。<literal>Verify-Peer</literal>
+真偽値サブオプションは、信頼済み証明書に対してサーバのホスト証明書を、検証するかどうかを決定します。<literal>&lt;host&gt;::Verify-Peer</literal>
+は、対応するホストごとのオプションです。<literal>Verify-Host</literal>
+真偽値サブオプションは、サーバのホスト名を検証するかどうかを決定します。<literal>&lt;host&gt;::Verify-Host</literal>
+は、対応するホストごとのオプションです。<literal>SslCert</literal>
+は、クライアント認証に使用する証明書を決定します。<literal>&lt;host&gt;::SslCert</literal>
+は、対応するホストごとのオプションです。<literal>SslKey</literal>
+は、クライアント認証に使用する秘密鍵を決定します。<literal>&lt;host&gt;::SslKey</literal>
+は、対応するホストごとのオプションです。<literal>SslForceVersion</literal> は、デフォルトで使用する SSL
+のバージョンを上書きします。'TLSv1' か 'SSLv3'
+という文字列を指定できます。<literal>&lt;host&gt;::SslForceVersion</literal>
+は、対応するホストごとのオプションです。
+	 </para></listitem></varlistentry>
+
+     <varlistentry><term>ftp</term>
+     <listitem><para>FTP URI - ftp::Proxy
+は、デフォルトで使用するプロキシサーバです。<literal>ftp://[[user][:pass]@]host[:port]/</literal>
+という標準形で表します。ホストごとのプロキシの場合は、<literal>ftp::Proxy::&lt;host&gt;</literal>
+という形と、プロキシを使用しないという意味の特殊キーワード <literal>DIRECT</literal>
+を使用して指定することもできます。上記の設定をなにも指定しないと、環境変数 <envar>ftp_proxy</envar> を使用します。ftp
+プロキシを使用するには、設定ファイルに <literal>ftp::ProxyLogin</literal>
+スクリプトを設定する必要があります。接続する際にプロキシサーバに送信するコマンドをこのエントリに設定します。どのようにするのかは
+&configureindex; の例を参照してください。その他にも、<literal>$(PROXY_USER)</literal>
+<literal>$(PROXY_PASS)</literal> <literal>$(SITE_USER)</literal>
+<literal>$(SITE_PASS)</literal> <literal>$(SITE)</literal>
+<literal>$(SITE_PORT)</literal> が代わりに利用可能です。いずれも、それぞれ URI を構成するトークンです。</para>
+
+     <para><literal>timeout</literal>
+オプションは、この方法でのタイムアウトまでの時間を設定します。これには、接続のタイムアウトとデータのタイムアウトが含まれています。</para>
+
+     <para>設定のいくつかは、パッシブモードを制御するものです。一般的に、パッシブモードのままにしておく方が安全で、ほぼどんな環境でも動作します。しかしある状況下では、パッシブモードが無効のため、代わりにポートモード
+ftp を使用する必要があります。この設定は、プロキシを通る接続や特定のホストへの接続全般に有効です
+(設定例はサンプル設定ファイルを参照してください)。</para>
+
+     <para>環境変数 <envar>ftp_proxy</envar> の http url により FTP over HTTP
+のプロキシが利用可能になります。構文は前述の http
+についての説明を参照してください。設定ファイルの中でこれをセットすることはできません。また、効率が悪いため FTP over HTTP
+を使用するのは推奨しません。</para>
+
+     <para><literal>ForceExtended</literal> の設定は RFC2428 の <literal>EPSV</literal>
+コマンドと <literal>EPRT</literal> コマンドの使用を制御します。デフォルトでは false で、コントロールコネクションが
+IPv6 の時にのみ、このコマンドを使用するということです。これを true にセットすると、IPv4
+コネクションでも、強制的にこのコマンドを使用します。ほとんどの FTP サーバは RFC2428 をサポートしていないことに注意してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>cdrom</term>
+     <listitem><para>CDROM URI - CDROM URI はマウントポイントの設定のみを行います。<filename>/etc/fstab</filename>
+で設定されているように、CDROM ドライブのマウントポイントを <literal>cdrom::Mount</literal>
+に設定しなければなりません。(SMB マウントや古い mount パッケージなど) マウントポイントが fstab
+に記述できない場合、かわりにマウント・アンマウントコマンドも使用できます。構文は、cdrom ブロックを <literallayout>/cdrom/::Mount "foo";</literallayout> の形で記述します。スラッシュを後につけるのが重要です。アンマウントコマンドは UMount
+で指定することができます。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>gpgv</term>
+     <listitem><para>GPGV URI - GPGV URI 用の唯一のオプションは、gpgv
+に渡す追加パラメータのオプションです。<literal>gpgv::Options</literal> が gpgv に渡す追加オプションです。
+     </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>CompressionTypes</term>
+     <listitem><para>acquire メソッドが理解できる、圧縮法のリストです。<filename>Packages</filename>
+のようなファイルは、さまざまな圧縮形式が利用できます。デフォルト acquire メソッドごとに、<command>bzip2</command>,
+<command>lzma</command>, <command>gzip</command>
+で圧縮されたファイルを伸張できます。この設定では、より多くの形式を、オンザフライで追加したり、使用するメソッドで変更したりできます。構文は以下のようになります。<synopsis>Acquire::CompressionTypes::<replaceable>FileExtension</replaceable> "<replaceable>Methodname</replaceable>";</synopsis>
+     </para><para>また、<literal>Order</literal>
+サブグループを使用して、取得システムが圧縮ファイルのダウンロードを試みる順番を、定義できます。取得システムは先頭のものを試行し、エラーが発生すると次の圧縮タイプのダウンロードを開始します。そのため、どれかを他のものより優先したい場合、単にそのタイプを先頭に追加してください。まだ追加していないデフォルトタイプは、実行時にリストの最後に追加されます。つまり、<synopsis>Acquire::CompressionTypes::Order:: "gz";</synopsis> とすると、<command>gzip</command> で圧縮されたファイルを
+<command>bzip2</command> や <command>lzma</command> よりも優先的に使用します。もし
+<command>lzma</command> を <command>gzip</command> や <command>bzip2</command>
+よりも優先するべきなら、設定を以下のようにしてください。<synopsis>Acquire::CompressionTypes::Order { "lzma"; "gz"; };</synopsis>
+<literal>bz2</literal> は自動的に追加されるため、明示する必要はありません。</para>
+     <para>Note that at run time the
+<literal>Dir::Bin::<replaceable>Methodname</replaceable></literal> will be
+checked: If this setting exists the method will only be used if this file
+exists, e.g. for the bzip2 method (the inbuilt) setting is: <literallayout>Dir::Bin::bzip2 "/bin/bzip2";</literallayout> Note also that list entries specified on the
+command line will be added at the end of the list specified in the
+configuration files, but before the default entries. To prefer a type in
+this case over the ones specified in the configuration files you can set the
+option direct - not in list style.  This will not override the defined list,
+it will only prefix the list with this type.</para>
+     <para>The special type <literal>uncompressed</literal> can be used to give
+uncompressed files a preference, but note that most archives don't provide
+uncompressed files so this is mostly only useable for local mirrors.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>GzipIndexes</term>
+	 <listitem><para>
+	 When downloading <literal>gzip</literal> compressed indexes (Packages,
+Sources, or Translations), keep them gzip compressed locally instead of
+unpacking them. This saves quite a lot of disk space at the expense of more
+CPU requirements when building the local package caches. False by default.
+	 </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Languages</term>
+     <listitem><para>The Languages subsection controls which <filename>Translation</filename>
+files are downloaded and in which order APT tries to display the
+Description-Translations. APT will try to display the first available
+Description in the Language which is listed at first. Languages can be
+defined with their short or long Languagecodes. Note that not all archives
+provide <filename>Translation</filename> files for every Language -
+especially the long Languagecodes are rare, so please inform you which ones
+are available before you set here impossible values.</para>
+     <para>The default list includes "environment" and
+"en". "<literal>environment</literal>" has a special meaning here: It will
+be replaced at runtime with the languagecodes extracted from the
+<literal>LC_MESSAGES</literal> environment variable.  It will also ensure
+that these codes are not included twice in the list. If
+<literal>LC_MESSAGES</literal> is set to "C" only the
+<filename>Translation-en</filename> file (if available) will be used.  To
+force apt to use no Translation file use the setting
+<literal>Acquire::Languages=none</literal>. "<literal>none</literal>" is
+another special meaning code which will stop the search for a fitting
+<filename>Translation</filename> file.  This can be used by the system
+administrator to let APT know that it should download also this files
+without actually use them if the environment doesn't specify this
+languages. So the following example configuration will result in the order
+"en, de" in an english and in "de, en" in a german localization. Note that
+"fr" is downloaded, but not used if APT is not used in a french
+localization, in such an environment the order would be "fr, de, en".
+<programlisting>Acquire::Languages { "environment"; "de"; "en"; "none"; "fr"; };</programlisting></para></listitem>
+     </varlistentry>
+
+   </variablelist>
+  </para>
+ </refsect1>
+
+ <refsect1><title>ディレクトリ</title>
+
+   <para><literal>Dir::State</literal>
+セクションは、ローカル状態情報に関するディレクトリを保持します。<literal>lists</literal>
+は、ダウンロードしたパッケージ一覧を格納するディレクトリで、<literal>status</literal> は dpkg
+の状態ファイルの名前を表します。<literal>preferences</literal> は APT の
+設定ファイルの名前です。<literal>Dir::State</literal> には、<filename>/</filename> や
+<filename>./</filename> で始まらないサブアイテムすべてに、前に付加するデフォルトディレクトリを含んでいます。</para>
+
+   <para><literal>Dir::Cache</literal>
+は、ローカルキャッシュ情報に関する場所を格納しています。これは、ダウンロード済アーカイブの場所を示す
+<literal>Dir::Cache::archives</literal> と同様に、<literal>srcpkgcache</literal>
+と <literal>pkgcache</literal>
+のパッケージキャッシュの場所になります。それぞれを空にセットすることで、キャッシュの生成を無効にできます。これにより起動時に遅くなりますが、ディスク容量を節約できます。おそらく、srcpkgcache
+よりも pkgcache を無効にすることが多いと思います。<literal>Dir::State</literal>
+と同様、<literal>Dir::Cache</literal> はデフォルトディレクトリを含んでいます。</para>
+
+   <para><literal>Dir::Etc</literal> は設定ファイルの場所を格納しています。<literal>sourcelist</literal>
+はソースリストの場所を示し、<literal>main</literal>
+はデフォルトの設定ファイルです。(<envar>APT_CONFIG</envar> で設定ファイルを指定された場合のみ、この設定の効果があります)</para>
+
+   <para><literal>Dir::Parts</literal>
+設定は、指定されたディレクトリから、字句単位の全ての設定断片を読みこみます。これを設定した後に、メイン設定ファイルをロードします。</para>
+
+   <para>バイナリプログラムは <literal>Dir::Bin</literal>
+で指定します。<literal>Dir::Bin::Methods</literal>
+はメソッドハンドラの場所を指定し、<literal>gzip</literal>, <literal>bzip2</literal>,
+<literal>lzma</literal>, <literal>dpkg</literal>, <literal>apt-get</literal>
+<literal>dpkg-source</literal> <literal>dpkg-buildpackage</literal>,
+<literal>apt-cache</literal> はそれぞれプログラムの場所を指定します。</para>
+
+   <para>
+     設定項目 <literal>RootDir</literal>
+は特別な意味を持ちます。設定されていると、<literal>Dir::</literal>
+のすべてのパスは、<emphasis>絶対パスとして指定しても</emphasis><literal>RootDir</literal>
+からの相対パスとなります。そのため例えば、<literal>RootDir</literal> が
+<filename>/tmp/staging</filename>
+にセットされており、<literal>Dir::State::status</literal> が
+<filename>/var/lib/dpkg/status</filename> にセットされている場合、status ファイルを
+<filename>/tmp/staging/var/lib/dpkg/status</filename> から探します。
+   </para>
+
+   <para>
+      The <literal>Ignore-Files-Silently</literal> list can be used to specify
+which files APT should silently ignore while parsing the files in the
+fragment directories. Per default a file which end with
+<literal>.disabled</literal>, <literal>~</literal>, <literal>.bak</literal>
+or <literal>.dpkg-[a-z]+</literal> is silently ignored. As seen in the last
+default value these patterns can use regular expression syntax.
+   </para>
+ </refsect1>
+ 
+ <refsect1><title>DSelect での APT</title>
+   <para>   
+   &dselect; 上で APT を使用する際、<literal>DSelect</literal>
+セクション以下の設定項目で、デフォルトの動作を制御します。</para>
+   
+   <variablelist>
+     <varlistentry><term>Clean</term>
+     <listitem><para>キャッシュクリーンモード - この値は always, prompt, auto, pre-auto, never のうちひとつを取ります。always
+と prompt は更新後、全パッケージをキャッシュから削除します。prompt (デフォルト) では条件付きで削除します。auto
+はダウンロード不能パッケージ (例えば新バージョンで置き換えられたもの) を削除します。pre-auto
+はこの動作を、新パッケージをダウンロードする直前に行います。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>オプション</term>
+     <listitem><para>この変数の内容は、install 時のコマンドラインオプションと同様に &apt-get; に渡されます。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Updateoptions</term>
+     <listitem><para>この変数の内容は、update 時のコマンドラインオプションと同様に &apt-get; に渡されます。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>PromptAfterUpdate</term>
+     <listitem><para>true の場合、&dselect; の [U]pdate 実行時に、続行のためのプロンプトを毎回表示します。デフォルトはエラーが発生した場合のみです。</para></listitem>
+     </varlistentry>
+   </variablelist>
+ </refsect1>
+ 
+ <refsect1><title>APT が dpkg を呼ぶ方法</title>
+   <para>いくつかの設定項目で APT がどのように &dpkg; を呼び出すかを制御できます。<literal>DPkg</literal>
+セクションにあります。</para>
+
+   <variablelist>
+     <varlistentry><term>オプション</term>
+     <listitem><para>dpkg に渡すオプションのリストです。オプションは、リスト記法を使用して指定しなければなりません。また、各リストは単一の引数として &dpkg;
+に渡されます。</para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>Pre-Invoke</term><term>Post-Invoke</term>
+     <listitem><para>&dpkg; を呼び出す前後で実行するシェルコマンドのリストです。<literal>options</literal>
+のようにリスト記法で指定しなければなりません。コマンドは <filename>/bin/sh</filename>
+を使用して呼び出され、何か問題があれば APT は異常終了します。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Pre-Install-Pkgs</term>
+     <listitem><para>&dpkg; を呼び出す前に実行するシェルコマンドのリストです。<literal>options</literal>
+のようにリスト記法で指定しなければなりません。コマンドは <filename>/bin/sh</filename>
+を通して呼び出され、何か問題があれば、APT は異常終了します。APT はインストールしようとする全 .deb
+ファイルのファイル名を、ひとつずつコマンドの標準入力に送ります。</para>
+
+     <para>このプロトコルのバージョン 2 では、(プロトコルのバージョンや APT 設定スペース、パッケージを含む)
+詳細情報やファイル、変更されているバージョンを出力します。<literal>DPkg::Tools::options::cmd::Version</literal>
+に 2 を設定すると、バージョン 2 を有効にできます。<literal>cmd</literal> は
+<literal>Pre-Install-Pkgs</literal> で与えられるコマンドです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Run-Directory</term>
+     <listitem><para>APT は dpkg を呼び出す前にこのディレクトリに移動します。デフォルトは <filename>/</filename> です。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>Build-options</term>
+     <listitem><para>これらのオプションは、パッケージのコンパイル時に &dpkg-buildpackage;
+に渡されます。デフォルトでは署名を無効にし、全バイナリを生成します。</para></listitem>
+     </varlistentry>
+   </variablelist>
+
+   <refsect2><title>dpkg トリガの使い方 (および関連オプション)</title>
+     <para>APT can call dpkg in a way so it can make aggressive use of triggers over
+multiple calls of dpkg. Without further options dpkg will use triggers only
+in between his own run. Activating these options can therefore decrease the
+time needed to perform the install / upgrade. Note that it is intended to
+activate these options per default in the future, but as it changes the way
+APT calling dpkg drastically it needs a lot more testing.  <emphasis>These
+options are therefore currently experimental and should not be used in
+productive environments.</emphasis> Also it breaks the progress reporting so
+all frontends will currently stay around half (or more) of the time in the
+100% state while it actually configures all packages.</para>
+     <para>Note that it is not guaranteed that APT will support these options or that
+these options will not cause (big) trouble in the future. If you have
+understand the current risks and problems with these options, but are brave
+enough to help testing them create a new configuration file and test a
+combination of options. Please report any bugs, problems and improvements
+you encounter and make sure to note which options you have used in your
+reports. Asking dpkg for help could also be useful for debugging proposes,
+see e.g. <command>dpkg --audit</command>. A defensive option combination
+would be <literallayout>DPkg::NoTriggers "true";
+PackageManager::Configure "smart";
+DPkg::ConfigurePending "true";
+DPkg::TriggersPending "true";</literallayout></para>
+
+     <variablelist>
+       <varlistentry><term>DPkg::NoTriggers</term>
+       <listitem><para>Add the no triggers flag to all dpkg calls (except the ConfigurePending
+call).  See &dpkg; if you are interested in what this actually means. In
+short: dpkg will not run the triggers when this flag is present unless it is
+explicitly called to do so in an extra call.  Note that this option exists
+(undocumented) also in older apt versions with a slightly different meaning:
+Previously these option only append --no-triggers to the configure calls to
+dpkg - now apt will add these flag also to the unpack and remove calls.</para></listitem>
+       </varlistentry>
+       <varlistentry><term>PackageManager::Configure</term>
+       <listitem><para>Valid values are "<literal>all</literal>", "<literal>smart</literal>" and
+"<literal>no</literal>".  "<literal>all</literal>" is the default value and
+causes APT to configure all packages explicit.  The
+"<literal>smart</literal>" way is it to configure only packages which need
+to be configured before another package can be unpacked (Pre-Depends) and
+let the rest configure by dpkg with a call generated by the next
+option. "<literal>no</literal>" on the other hand will not configure
+anything and totally rely on dpkg for configuration (which will at the
+moment fail if a Pre-Depends is encountered).  Setting this option to
+another than the all value will implicitly activate also the next option per
+default as otherwise the system could end in an unconfigured status which
+could be unbootable!
+       </para></listitem>
+       </varlistentry>
+       <varlistentry><term>DPkg::ConfigurePending</term>
+       <listitem><para>If this option is set apt will call <command>dpkg --configure
+--pending</command> to let dpkg handle all required configurations and
+triggers. This option is activated automatic per default if the previous
+option is not set to <literal>all</literal>, but deactivating could be
+useful if you want to run APT multiple times in a row - e.g. in an
+installer. In these sceneries you could deactivate this option in all but
+the last run.</para></listitem>
+       </varlistentry>
+       <varlistentry><term>DPkg::TriggersPending</term>
+       <listitem><para>Useful for <literal>smart</literal> configuration as a package which has
+pending triggers is not considered as <literal>installed</literal> and dpkg
+treats them as <literal>unpacked</literal> currently which is a dealbreaker
+for Pre-Dependencies (see debbugs #526774). Note that this will process all
+triggers, not only the triggers needed to configure this package.</para></listitem>
+       </varlistentry>
+       <varlistentry><term>PackageManager::UnpackAll</term>
+       <listitem><para>As the configuration can be deferred to be done at the end by dpkg it can be
+tried to order the unpack series only by critical needs, e.g. by
+Pre-Depends. Default is true and therefore the "old" method of ordering in
+various steps by everything. While both method were present in earlier APT
+versions the <literal>OrderCritical</literal> method was unused, so this
+method is very experimental and needs further improvements before becoming
+really useful.
+       </para></listitem>
+       </varlistentry>
+       <varlistentry><term>OrderList::Score::Immediate</term>
+       <listitem><para>Essential packages (and there dependencies) should be configured immediately
+after unpacking. It will be a good idea to do this quite early in the
+upgrade process as these these configure calls require currently also
+<literal>DPkg::TriggersPending</literal> which will run quite a few triggers
+(which maybe not needed). Essentials get per default a high score but the
+immediate flag is relatively low (a package which has a Pre-Depends is
+higher rated).  These option and the others in the same group can be used to
+change the scoring. The following example shows the settings with there
+default values.  <literallayout>OrderList::Score {
+	Delete 500;
+	Essential 200;
+	Immediate 10;
+	PreDepends 50;
+};</literallayout>
+       </para></listitem>
+       </varlistentry>
+     </variablelist>
+   </refsect2>
+ </refsect1>
+
+ <refsect1>
+   <title>Periodic オプションと Archives オプション</title>
+   <para>オプションの <literal>APT::Periodic</literal> グループと
+<literal>APT::Archives</literal>
+グループは、<literal>/etc/cron.daily/apt</literal> スクリプトを使用して、apt
+の定期更新の挙動を設定します。このオプションのドキュメントは、このスクリプトの先頭を参照してください。
+   </para>
+ </refsect1>
+
+ <refsect1>
+   <title>デバッグオプション</title>
+   <para>
+     Enabling options in the <literal>Debug::</literal> section will cause
+debugging information to be sent to the standard error stream of the program
+utilizing the <literal>apt</literal> libraries, or enable special program
+modes that are primarily useful for debugging the behavior of
+<literal>apt</literal>.  Most of these options are not interesting to a
+normal user, but a few may be:
+
+     <itemizedlist>
+       <listitem>
+	 <para>
+	   <literal>Debug::pkgProblemResolver</literal> は、<literal>dist-upgrade,
+upgrade, install, remove, purge</literal> で行われた判断についての出力を有効にします。
+	 </para>
+       </listitem>
+
+       <listitem>
+	 <para>
+	   <literal>Debug::NoLocking</literal> はファイルロックをすべて無効にします。これは、非 root ユーザとして操作
+(例えば <literal>apt-get -s install</literal>) を行う場合に使用します。
+	 </para>
+       </listitem>
+
+       <listitem>
+	 <para>
+	   <literal>Debug::pkgDPkgPM</literal> は <literal>apt</literal> が実際に &dpkg;
+を起動する際の各コマンドラインを表示します。
+	 </para>
+       </listitem>
+
+       <listitem>
+	 <para>
+	   <!-- TODO: provide a
+	   motivating example, except I haven't a clue why you'd want
+	   to do this. -->
+<literal>Debug::IdentCdrom</literal> は CDROM ID にある statfs データの方gainを無効にします。  
+	 </para>
+       </listitem>
+     </itemizedlist>
+   </para>
+
+   <para>
+     以下は apt に対するデバッグオプションのすべてです。
+   </para>
+
+   <variablelist>
+     <varlistentry>
+       <term><literal>Debug::Acquire::cdrom</literal></term>
+
+       <listitem>
+	 <para>
+	   <literal>cdrom://</literal> ソースへのアクセスに関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::Acquire::ftp</literal></term>
+
+       <listitem>
+	 <para>
+	   FTP を用いたパッケージのダウンロードに関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::Acquire::http</literal></term>
+
+       <listitem>
+	 <para>
+	   HTTP を用いたパッケージのダウンロードに関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::Acquire::https</literal></term>
+
+       <listitem>
+	 <para>
+	   HTTPS を用いたパッケージのダウンロードに関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::Acquire::gpgv</literal></term>
+
+       <listitem>
+	 <para>
+	   <literal>gpg</literal> を用いた暗号署名の検証に関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::aptcdrom</literal></term>
+
+       <listitem>
+	 <para>
+	   CD-ROM にあるパッケージ集合に対して、アクセスするプロセスについての情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::BuildDeps</literal></term>
+       <listitem>
+	 <para>
+	   &apt-get; での構築依存関係解決のプロセスを説明します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::Hashes</literal></term>
+       <listitem>
+	 <para>
+	   <literal>apt</literal> ライブラリが生成した、暗号化ハッシュを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::IdentCDROM</literal></term>
+       <listitem>
+	 <para>
+	   CD-ROM の ID を生成する際に <literal>statfs</literal> という、CD-ROM
+ファイルシステムにある使用済・未使用ブロックの数からの情報を含めないようにします。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::NoLocking</literal></term>
+       <listitem>
+	 <para>
+	   ファイルのロックをすべて無効にします。例えば、同時にふたつの <quote><literal>apt-get
+update</literal></quote> を実行できるようになります。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAcquire</literal></term>
+
+       <listitem>
+	 <para>
+	   グローバルダウンロードキューに対する項目の追加・削除の際にログを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAcquire::Auth</literal></term>
+       <listitem>
+	 <para>
+	   ダウンロードしたファイルのチェックサムや暗号署名の確認に関する、状態メッセージやエラーを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAcquire::Diffs</literal></term>
+       <listitem>
+	 <para>
+	   パッケージインデックスリスト差分のダウンロード・適用時の、情報やエラーを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAcquire::RRed</literal></term>
+
+       <listitem>
+	 <para>
+	   インデックス全体ではなくインデックス差分のダウンロードの際に、apt パッケージリストへのパッチ適用に関する情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAcquire::Worker</literal></term>
+
+       <listitem>
+	 <para>
+	   実際のダウンロードを行う際の、サブプロセスとのやりとりをログに出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgAutoRemove</literal></term>
+
+       <listitem>
+	 <para>
+	   パッケージの自動インストールや、不要パッケージの削除に関するイベントを、ログに出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgDepCache::AutoInstall</literal></term>
+       <listitem>
+	 <para>
+	   依存関係解決のために、どのパッケージが自動的にインストールされたかのデバッグメッセージを生成します。これは完全な
+<literal>apt</literal> 依存関係解決プログラム
+(<literal>Debug::pkgProblemResolver</literal> を参照) ではなく、例えば <literal>apt-get
+install</literal> で実行された、初期の自動インストール経路に対応しています。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgDepCache::Marker</literal></term>
+       <listitem>
+        <para>
+           Generate debug messages describing which package is marked as
+keep/install/remove while the ProblemResolver does his work.  Each addition
+or deletion may trigger additional actions; they are shown indented two
+additional space under the original entry.  The format for each line is
+<literal>MarkKeep</literal>, <literal>MarkDelete</literal> or
+<literal>MarkInstall</literal> followed by <literal>package-name &lt;a.b.c
+-&gt; d.e.f | x.y.z&gt; (section)</literal> where <literal>a.b.c</literal>
+is the current version of the package, <literal>d.e.f</literal> is the
+version considered for installation and <literal>x.y.z</literal> is a newer
+version, but not considered for installation (because of a low pin
+score). The later two can be omitted if there is none or if it is the same
+version as the installed.  <literal>section</literal> is the name of the
+section the package appears in.
+        </para>
+       </listitem>
+     </varlistentry>
+
+     
+     <!-- Question: why doesn't this do anything?  The code says it should. -->
+<varlistentry>
+       <term><literal>Debug::pkgInitConfig</literal></term>
+       <listitem>
+	 <para>
+	   起動時に、標準エラー出力へデフォルト設定を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgDPkgPM</literal></term>
+       <listitem>
+	 <para>
+	   &dpkg; 起動時に、起動した際の正確なコマンドラインを出力します。引数は空白で区切られます。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgDPkgProgressReporting</literal></term>
+       <listitem>
+	 <para>
+	   状態ファイルディスクリプタに、&dpkg; から受信したすべてのデータと、そのデータを解析中に発生したエラーを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgOrderList</literal></term>
+
+       <listitem>
+	 <para>
+	   <literal>apt</literal> が &dpkg; にパッケージを渡す順番を決める、アルゴリズムのトレースを生成します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgPackageManager</literal></term>
+
+       <listitem>
+	 <para>
+	   &dpkg; を呼び出す際に、実行手順を追跡した状態メッセージを出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgPolicy</literal></term>
+
+       <listitem>
+	 <para>
+	   起動時の各パッケージの優先度を表示します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgProblemResolver</literal></term>
+
+       <listitem>
+	 <para>
+	   依存関係解決システムの実行内容を追跡します (これは複雑な依存関係の問題に遭遇した場合にのみ、適用されます)。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::pkgProblemResolver::ShowScores</literal></term>
+       <listitem>
+        <para>
+          Display a list of all installed packages with their calculated score used by
+the pkgProblemResolver. The description of the package is the same as
+described in <literal>Debug::pkgDepCache::Marker</literal>
+        </para>
+       </listitem>
+     </varlistentry>
+
+     <varlistentry>
+       <term><literal>Debug::sourceList</literal></term>
+
+       <listitem>
+	 <para>
+	   <filename>/etc/apt/vendors.list</filename> から読み込んだ、ベンダの情報を出力します。
+	 </para>
+       </listitem>
+     </varlistentry>
+
+<!-- 2009/07/11 Currently used nowhere. The corresponding code
+is commented.
+     <varlistentry>
+
+       <term><literal>Debug::Vendor</literal></term>
+
+       <listitem>
+	 <para>
+	   Print information about each vendor.
+	 </para>
+       </listitem>
+     </varlistentry>
+-->
+
+
+   </variablelist>
+ </refsect1>
+ 
+ <refsect1><title>サンプル</title>
+   <para>&configureindex; に、全利用可能オプションのデフォルト値を参照できる、設定ファイルのサンプルがあります。</para>
+ </refsect1>
+ 
+ <refsect1><title>ファイル</title>
+   <variablelist>
+&file-aptconf;</variablelist>
+ </refsect1>
+ 
+ <refsect1><title>関連項目</title>
+   <para><!-- ? reading apt.conf -->
+&apt-cache;, &apt-config;, &apt-preferences;.</para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

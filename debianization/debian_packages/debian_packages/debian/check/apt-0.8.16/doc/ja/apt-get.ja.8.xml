@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>08
+November 2008</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-get</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-get</refname>
+    <refpurpose>APT パッケージ操作ユーティリティ -- コマンドラインインターフェース</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-get</command> <arg><option>-sqdyfmubV</option></arg> <arg>
+<option>-o= <replaceable>config_string</replaceable> </option> </arg> <arg>
+<option>-c= <replaceable>config_file</replaceable> </option> </arg> <arg>
+<option>-t=</option> <arg choice='plain'>
+<replaceable>target_release</replaceable> </arg> </arg> <arg>
+<option>-a=</option> <arg choice='plain'>
+<replaceable>default_architecture</replaceable> </arg> </arg> <group
+choice="req"> <arg choice='plain'>update</arg> <arg
+choice='plain'>upgrade</arg> <arg choice='plain'>dselect-upgrade</arg> <arg
+choice='plain'>dist-upgrade</arg> <arg choice='plain'>install <arg
+choice="plain" rep="repeat"><replaceable>pkg</replaceable> <arg> <group
+choice='req'> <arg choice='plain'>
+=<replaceable>pkg_version_number</replaceable> </arg> <arg choice='plain'>
+/<replaceable>target_release</replaceable> </arg> </group> </arg> </arg>
+</arg> <arg choice='plain'>remove <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg
+choice='plain'>purge <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg
+choice='plain'>source <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable> <arg> <group choice='req'> <arg
+choice='plain'> =<replaceable>pkg_version_number</replaceable> </arg> <arg
+choice='plain'> /<replaceable>target_release</replaceable> </arg> </group>
+</arg> </arg> </arg> <arg choice='plain'>build-dep <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg
+choice='plain'>check</arg> <arg choice='plain'>clean</arg> <arg
+choice='plain'>autoclean</arg> <arg choice='plain'>autoremove</arg> <arg
+choice='plain'> <group choice='req'> <arg choice='plain'>-v</arg> <arg
+choice='plain'>--version</arg> </group> </arg> <arg choice='plain'> <group
+choice='req'> <arg choice='plain'>-h</arg> <arg choice='plain'>--help</arg>
+</group> </arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>説明</title>
+   <para><command>apt-get</command> は、パッケージを操作するコマンドラインツールで、APT
+ライブラリを用いる他のツールのユーザ側「バックエンド」といえるものです。「フロントエンド」インターフェースには、&dselect;,
+&aptitude;, &synaptic;, &wajig; などがあります。</para>
+
+   <para><option>-h</option> オプションや <option>--help</option> オプションを除き、以下に挙げるコマンドが必要です。</para>
+   
+   <variablelist>
+     <varlistentry><term>update</term>
+     <listitem><para><literal>update</literal>は、取得元からパッケージインデックスファイルの再同期を行うのに使用します。利用可能なパッケージのインデックスは、<filename>/etc/apt/sources.list</filename>
+に記述した場所から取得します。例えば Debian アーカイブを利用する際、このコマンドが
+<filename>Packages.gz</filename>
+ファイルを検索することで、新規または更新されたパッケージの情報が利用可能となります。<literal>update</literal>
+は、<literal>upgrade</literal> や <literal>dist-upgrade</literal>
+を行う前に常に実行してください。前もってパッケージファイルのサイズを知ることができないため、全体の進捗メータは正しく表示されません。</para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>upgrade</term>
+     <listitem><para><literal>upgrade</literal>
+は、現在システムにインストールされている全パッケージの最新バージョンを、<filename>/etc/apt/sources.list</filename>
+に列挙した取得元からインストールするのに使用します。現在インストール中のパッケージに新しいバージョンがあれば更新しますが、いかなる時も現在インストール中のパッケージの削除は行いません。対象のパッケージが、他のパッケージのインストール状態を変更せずに更新できない場合は、現在のバージョンのままとなります。最初に
+<literal>update</literal> を実行しておき、<command>apt-get</command>
+にパッケージの新しいバージョンがあることを知らせる必要があります。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>dselect-upgrade</term>
+     <listitem><para><literal>dselect-upgrade</literal> は、伝統的な Debian GNU/Linux パッケージ管理フロントエンドの
+&dselect; と共に使用されます。<literal>dselect-upgrade</literal> は、&dselect;
+で作られた利用可能パッケージの<literal>Status</literal>
+フィールドの変更を追跡し、その状態を反映させるのに必要なアクションを実行します。(例えば、古いパッケージの削除や新しいパッケージのインストールなど)</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>dist-upgrade</term>
+     <listitem><para><literal>dist-upgrade</literal> は、<literal>upgrade</literal>
+の機能に加え、新バージョンのパッケージに対する依存関係の変更を知的に操作します。<command>apt-get</command>
+は「洗練された」競合解決システムを持ち、必要とあらば比較的重要でないパッケージを犠牲にして、最重要パッケージの更新を試みます。そのため
+<literal>dist-upgrade</literal>
+は、いくつかのパッケージを削除する可能性があります。<filename>/etc/apt/sources.list</filename>
+ファイルには、必要なパッケージファイルを検索する場所のリストが含まれています。特定のパッケージ向けに、一般的な設定を上書きする機構については、&apt-preferences;
+をご覧ください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>install</term>
+     <listitem>
+	 <para><literal>install</literal> の後には、インストールするパッケージを 1
+つ以上指定します。指定するパッケージは、完全なファイル名ではなくパッケージ名です (例えば Debian GNU/Linux
+システムでは、<literal>libc6_1.9.6-2.deb</literal> ではなく libc6
+を引数として与えます)。インストールするよう指定したすべてのパッケージに対し、取得・インストールを行います。<filename>/etc/apt/sources.list</filename>
+ファイルを、要求するパッケージの場所を特定するのに使用します。パッケージ名の後ろに (空白を含まず)
+ハイフンが追加されている場合、そのパッケージがインストールされていれば削除します。同様に、インストールするパッケージを明示するのにプラス記号も使用できます。この記号は
+apt-get の競合解決システムの判断を上書きするのに利用される可能性があります。
+	 </para>
+
+     <para>パッケージにイコール記号とバージョンを続けることで、選択したバージョンのパッケージをインストールすることができます。つまり、指定のバージョンのパッケージをインストールするように選択する、ということです。別の方法としては、ディストリビューションを特定するのに、パッケージ名に続けて、スラッシュとディストリビューションのバージョンやアーカイブ名
+(stable, testing, unstable) を記述できます。</para>
+
+     <para>バージョン選択機構はダウングレードにも使用できるため、注意して使用しなければなりません。</para>
+
+	<para>システムにインストール済みのパッケージを、すべてアップグレードするのではなく、いくつかのパッケージをアップグレードする場合にも、このターゲットを使用できます。現在インストールされているパッケージすべての最新版をインストールする
+"upgrade" ターゲットと異なり、"install"
+は指定したパッケージの最新版のみをインストールします。単純にアップグレードしたいパッケージ名をしてください。より新しいバージョンが利用できる場合、そのパッケージ
+(と前述の依存関係にあるパッケージ) をダウンロード・インストールします。
+	</para>
+
+     <para>最後に、&apt-preferences; 機構により、特定のパッケージに対するインストールポリシーを作成できます。</para>
+
+     <para>構文に '.', '?', '*' を含み、パッケージ名がマッチしなかった場合、POSIX
+正規表現であると見なし、データベース内の全パッケージ名に対して適用します。マッチしたパッケージすべてがインストール(もしくは削除)されます。'lo.*'
+のような文字列は、'how-lo' や 'lowest' にマッチすることに注意してください。そうしたくなければ、'^' や '$'
+を付けるか、もっと詳しい正規表現を指定してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>remove</term>
+     <listitem><para><literal>remove</literal> は、パッケージが削除されることを除き、<literal>install</literal>
+と同様です。削除されたパッケージの設定ファイルは、システムに残ったままになることに注意してください。プラス記号がパッケージ名に (間に空白を含まずに)
+付加されると、識別されたパッケージを、削除ではなくインストールします。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>purge</term>
+     <listitem><para>パッケージが削除かつ完全削除 (すべての設定ファイルも削除) されるのを除き、<literal>purge</literal> は
+<literal>remove</literal> と同じです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>source</term>
+     <listitem><para><literal>source</literal> は、<command>apt-get</command> にソースパッケージを取得させます。APT
+はどのソースパッケージを取得するか決めるため、利用可能なパッケージを検査します。その後、デフォルトリリースから最新の利用可能なソースパッケージを見つけ、カレントディレクトリへダウンロードします。デフォルトリリースは、可能であれば、<literal>APT::Default-Release</literal>
+オプション、<option>-t</option> オプション、パッケージごとの <literal>pkg/release</literal>
+構文で指定します。</para>
+
+     <para>ソースパッケージは、&sources-list; ファイルの <literal>deb-src</literal>
+タイプにより、バイナリパッケート分けて管理されます。つまり、ソースを取得したいリポジトリを、それぞれ追加する必要があるということです。こうしないと、インストール済み・インストール可能なものとは違う
+(新しい、または古い、存在しない) もっと適切なものを取得します。</para>
+
+     <para>If the <option>--compile</option> option is specified then the package will
+be compiled to a binary .deb using <command>dpkg-buildpackage</command> for
+the architecture as defined by the <command>--host-architecture</command>
+option.  If <option>--download-only</option> is specified then the source
+package will not be unpacked.</para>
+
+     <para>パッケージと同様に、ソース名の後ろにイコールと取得したいバージョンを置くと、指定したバージョンのソースを取得できます。<literal>APT::Get::Only-Source</literal>
+オプションが暗黙のうちに有効になっているため、ソースパッケージ名とバージョンに厳密に一致させています。</para>
+     
+     <para>tar ball はカレントディレクトリにのみダウンロードされ、カレントディレクトリに展開されることに注意してください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>build-dep</term>
+     <listitem><para><literal>build-dep</literal> causes apt-get to install/remove packages in an
+attempt to satisfy the build dependencies for a source package. By default
+the dependencies are satisfied to build the package natively. If desired a
+host-architecture can be specified with the
+<option>--host-architecture</option> option instead.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>check</term>
+     <listitem><para><literal>check</literal> は、パッケージキャッシュの更新や壊れた依存関係をチェックする診断ツールです。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>download</term>
+       <listitem><para><literal>download</literal> will download the given binary package into the
+current directory.
+       </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>clean</term>
+     <listitem><para><literal>clean</literal>
+は、取得したパッケージのローカルリポジトリを掃除します。<filename>&cachedir;/archives/</filename> と
+<filename>&cachedir;/archives/partial/</filename> からロックファイル以外すべて削除します。APT が
+&dselect; から呼ばれるときには、自動的に <literal>clean</literal>
+が実行されます。dselectを使用しない場合は、ディスクスペースを解放するため、時々 <literal>apt-get clean</literal>
+を実行したくなるでしょう。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>autoclean</term>
+     <listitem><para><literal>clean</literal> と同様に、<literal>autoclean</literal>
+は取得したパッケージのローカルリポジトリを掃除します。違いは、もうダウンロードされることがないパッケージファイルや、ほとんど不要なパッケージファイルのみを削除することです。このため、長い期間、キャッシュが管理できずに肥大化することなく、維持することができます。設定オプション
+<literal>APT::Clean-Installed</literal> に off
+をセットしていれば、インストール済のパッケージファイルが削除されるのを防げます。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>autoremove</term>
+     <listitem><para><literal>autoremove</literal> is used to remove packages that were
+automatically installed to satisfy dependencies for other packages and are
+now no longer needed.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>changelog</term>
+       <listitem><para><literal>changelog</literal> downloads a package changelog and displays it
+through <command>sensible-pager</command>. The server name and base
+directory is defined in the <literal>APT::Changelogs::Server</literal>
+variable (e. g. <ulink>http://packages.debian.org/changelogs</ulink> for
+Debian or <ulink>http://changelogs.ubuntu.com/changelogs</ulink> for
+Ubuntu).  By default it displays the changelog for the version that is
+installed.  However, you can specify the same options as for the
+<option>install</option> command.
+         </para>
+       </listitem>
+     </varlistentry>
+
+
+
+   </variablelist>
+ </refsect1>
+ 
+ <refsect1><title>オプション</title>
+   &apt-cmdblurb;
+
+   <variablelist>
+     <varlistentry><term><option>--no-install-recommends</option></term>
+     <listitem><para>「推奨」パッケージをインストールする依存関係と見なしません。設定項目 -
+<literal>APT::Install-Recommends</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--install-suggests</option></term>
+     <listitem><para>Consider suggested packages as a dependency for installing.  Configuration
+Item: <literal>APT::Install-Suggests</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-d</option></term><term><option>--download-only</option></term>
+     <listitem><para>ダウンロードのみ - パッケージファイルの取得のみを行い、展開・インストールを行いません。設定項目 -
+<literal>APT::Get::Download-Only</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-f</option></term><term><option>--fix-broken</option></term>
+     <listitem><para>修復 - 依存関係が壊れたシステムの修正を試みます。このオプションを install や remove と一緒に使うときは、APT
+が解決法を推測するので、パッケージを指定しなくてもかまいません。どのパッケージを指定しても、完全に問題を解決します。APT
+自体は、システムに存在する破損したパッケージ依存関係を許すことができないので、初めて APT
+を実行する場合、このオプションが必要になることがあります。システムの依存関係構造にかなり問題がある場合は、手動で修正するよう要求することもあります。(通常は、問題のあるパッケージを取り除くのに
+&dselect; や <command>dpkg --remove</command> を使用します) このオプションを
+<option>-m</option> オプションと同時に使用すると、エラーになる状況があるかもしれません。設定項目 -
+<literal>APT::Get::Fix-Broken</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-m</option></term><term><option>--ignore-missing</option></term>
+     <term><option>--fix-missing</option></term>
+     <listitem><para>欠落パッケージの無視 - パッケージが取得できなかったり、(パッケージの破損で)
+取得した後の整合性チェックを通らなかった場合、そのパッケージの処理を保留し最後まで処理を続けます。このオプションを
+<option>-f</option>
+オプションと同時に使用すると、エラーになる状況があるかもしれません。パッケージをインストールするよう選択している場合 (特にコマンドラインでの操作時)
+や、ダウンロードできなかった場合に、なにも表示せず保留することになります。設定項目 -
+<literal>APT::Get::Fix-Missing</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--no-download</option></term>
+     <listitem><para>パッケージのダウンロードを無効にします。これはすでにダウンロードした .deb に対してのみ APT
+を行う場合に、<option>--ignore-missing</option> と併せて使うのがよいでしょう。設定項目 -
+<literal>APT::Get::Download</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-q</option></term><term><option>--quiet</option></term>
+     <listitem><para>静粛 - 進捗表示を省略し、ログをとるのに便利な出力を行います。最大 2 つまで q
+を重ねることでより静粛にできます。また、<option>-q=#</option>
+のように静粛レベルを指定して、設定ファイルを上書きすることもできます。静粛レベル 2 は <option>-y</option>
+を含んでいることに注意してください。APT が意図しない決定を行うかもしれないので -d, --print-uris, -s
+のような操作を行わないオプションをつけずに -qq を使用するべきではありません。設定項目 - <literal>quiet</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-s</option></term>
+                   <term><option>--simulate</option></term>
+		   <term><option>--just-print</option></term>
+		   <term><option>--dry-run</option></term>
+		   <term><option>--recon</option></term>
+		   <term><option>--no-act</option></term>
+     <listitem><para>動作なし - なにが起こるのかのシミュレーションを行い、実際にはシステムの変更を行いません。設定項目 -
+<literal>APT::Get::Simulate</literal></para>
+
+     <para>シミュレーションは、自動ではロックを行わず (<literal>Debug::NoLocking</literal>)
+ユーザ権限で実行します。また、<literal>APT::Get::Show-User-Simulation-Note</literal> オプション
+(デフォルト: true) をセットすると、これがシミュレーションであるという注意を表示したりもします。root 権限で実行すると、NoLocking
+も 注意も行われません (root は <literal>apt-get</literal>
+による警告などなくても、何をしているのか知っているべきです)。</para>
+
+     <para>シミュレートの結果、dpkg の動作を表す一連の行のそれぞれに、設定 (Conf)、削除 (Remv)、展開 (Inst)
+を表示します。角カッコは壊れたパッケージを表し、(まれに) 空の角カッコは大した問題ではないことを表します。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-y</option></term><term><option>--yes</option></term>
+                   <term><option>--assume-yes</option></term>
+     <listitem><para>プロンプトへの自動承諾 - すべてのプロンプトに自動的に "yes"
+と答え、非対話的に実行します。保留したパッケージの状態を変更したり、必須パッケージを削除するような不適切な状況の場合、<literal>apt-get</literal>
+は処理を中断します。設定項目 - <literal>APT::Get::Assume-Yes</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--assume-no</option></term>
+     <listitem><para>Automatic "no" to all prompts.  Configuration Item:
+<literal>APT::Get::Assume-No</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-u</option></term><term><option>--show-upgraded</option></term>
+     <listitem><para>更新パッケージ表示 - 更新される全パッケージを一覧表示します。設定項目 -
+<literal>APT::Get::Show-Upgraded</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-V</option></term><term><option>--verbose-versions</option></term>
+     <listitem><para>更新・インストールするパッケージのバージョンをすべて表示します。設定項目 -
+<literal>APT::Get::Show-Versions</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-a</option></term>
+                   <term><option>--host-architecture</option></term>
+     <listitem><para>This option controls the architecture packages are built for by
+<command>apt-get source --compile</command> and how cross-builddependencies
+are satisfied. By default is it not set which means that the host
+architecture is the same as the build architecture (which is defined by
+<literal>APT::Architecture</literal>).  Configuration Item:
+<literal>APT::Get::Host-Architecture</literal>
+     </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-b</option></term><term><option>--compile</option></term>
+                   <term><option>--build</option></term>
+     <listitem><para>ソースパッケージをダウンロード後、コンパイルします。設定項目 - <literal>APT::Get::Compile</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--ignore-hold</option></term>
+     <listitem><para>保留パッケージの無視 - パッケージの保留指示を無視して <command>apt-get</command>
+を行います。<literal>dist-upgrade</literal> と共に、大量のパッケージを保留の解除をするのに使用すると便利です。設定項目
+- <literal>APT::Ignore-Hold</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--no-upgrade</option></term>
+     <listitem><para>パッケージ更新なし -  <literal>install</literal>
+と同時に使用すると、<literal>no-upgrade</literal>
+は、指定したパッケージがすでにインストールしてある場合に更新を行いません。設定項目 -
+<literal>APT::Get::Upgrade</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--only-upgrade</option></term>
+     <listitem><para>Do not install new packages; When used in conjunction with
+<literal>install</literal>, <literal>only-upgrade</literal> will prevent
+packages on the command line from being upgraded if they are not already
+installed.  Configuration Item: <literal>APT::Get::Only-Upgrade</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--force-yes</option></term>
+     <listitem><para>強制承諾 - APT
+が何か損傷を与えかねない動作をしようとした場合でも、確認の入力なしで実行してしまう危険なオプションです。よほどの状況でなければ、使用しない方がいいでしょう。<literal>force-yes</literal>
+は、あなたのシステムを破壊しかねません! 設定項目 - <literal>APT::Get::force-yes</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--print-uris</option></term>
+     <listitem><para>インストールするファイルを取得する代わりに、その URI を表示します。URI には、パス、対象ファイル名、ファイルサイズ、予測される md5
+ハッシュが含まれています。出力したファイル名が、常にリモートサイトのファイル名と一致するわけではない、ということに注意してください! これは
+<literal>source</literal> コマンド、<literal>update</literal>
+コマンドでも動作します。<literal>update</literal> で使用したときには、MD5
+やファイルサイズを含みません。このとき、圧縮ファイルの展開はユーザの責任において行ってください。設定項目 -
+<literal>APT::Get::Print-URIs</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--purge</option></term>
+     <listitem><para>削除する際、「削除」ではなく「完全削除」を行います。「完全削除」を行うと指示したパッケージ名の後には、アスタリスク ("*")
+が付きます。<option>remove --purge</option> は <option>purge</option> コマンドと等価です。
+設定項目 - <literal>APT::Get::Purge</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--reinstall</option></term>
+     <listitem><para>すでに最新版がインストールされていても、パッケージを再インストールします。設定項目 -
+<literal>APT::Get::ReInstall</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--list-cleanup</option></term>
+     <listitem><para>この機能はデフォルトで ON になっています。OFF にするには <literal>--no-list-cleanup</literal>
+としてください。ON の場合、<command>apt-get</command> は古くなったファイルを確実に消去するため、自動的に
+<filename>&statedir;/lists</filename> の中身を管理します。これを OFF
+にするのは、取得元リストを頻繁に変更する時ぐらいでしょう。設定項目 -
+<literal>APT::Get::List-Cleanup</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-t</option></term>
+                   <term><option>--target-release</option></term>
+                   <term><option>--default-release</option></term>
+     <listitem><para>このオプションは、ポリシーエンジンへのデフォルト入力を制御します。これは、指定されたリリース文字列を使用し、デフォルト pin を優先度 990
+で作成します。<filename>/etc/apt/preferences</filename> にある一般設定を上書きします。pin
+で留めるのを明示されたパッケージには、このオプションの値は影響を与えません。つまりこのオプションで、どの配布パッケージを取得するかを簡単に管理します。一般的な例としては、<option>-t
+'2.1*'</option> や <option>-t unstable</option>、<option>-t sid</option>
+でしょう。設定項目 - <literal>APT::Default-Release</literal>。&apt-preferences;
+のマニュアルページもご覧ください。</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--trivial-only</option></term>
+     <listitem><para>
+     「重要でない」操作のみを行います。これは論理的に <option>--assume-yes</option>
+の仲間と見なせます。<option>--assume-yes</option> は質問にすべて yes
+と答えますが、<option>--trivial-only</option> はすべて no と答えます。設定項目 -
+<literal>APT::Get::Trivial-Only</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--no-remove</option></term>
+     <listitem><para>パッケージが削除される状況になったとき、プロンプトを表示せず中断します。設定項目 -
+<literal>APT::Get::Remove</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--auto-remove</option></term>
+     <listitem><para>コマンドが <literal>install</literal> か <literal>remove</literal>
+である場合、このオプションは使用していないパッケージを削除し、<literal>autoremove</literal> のように動作します。設定項目
+- <literal>APT::Get::AutomaticRemove</literal>
+     </para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--only-source</option></term>
+     <listitem><para><literal>source</literal> コマンドと <literal>build-dep</literal>
+コマンドでのみ意味があります。指定されたソース名がバイナリテーブルにマップされないようにします。これは、このオプションを指定すると、バイナリパッケージ名を受け付けて対応するソースパッケージを探すのではなく、引数にソースパッケージ名しか受け付けなくなる、ということです。設定項目
+- <literal>APT::Get::Only-Source</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--diff-only</option></term><term><option>--dsc-only</option></term><term><option>--tar-only</option></term>
+     <listitem><para>ソースアーカイブの diff ファイルや tar ファイルのダウンロードのみを行います。設定項目 -
+<literal>APT::Get::Diff-Only</literal>,
+<literal>APT::Get::Tar-Only</literal></para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>--arch-only</option></term>
+     <listitem><para>構築依存関係の解決を、アーキテクチャに依存したもののみ行います。設定項目 -
+<literal>APT::Get::Arch-Only</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--allow-unauthenticated</option></term>
+     <listitem><para>パッケージを確認できない場合に無視し、それについて質問しません。pbuilder のようなツールで便利です。設定項目 -
+<literal>APT::Get::AllowUnauthenticated</literal></para></listitem>
+     </varlistentry>
+     
+
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>ファイル</title>
+   <variablelist>
+&file-sourceslist; &file-aptconf; &file-preferences; &file-cachearchives;
+&file-statelists;</variablelist>
+ </refsect1>
+
+ <refsect1><title>関連項目</title>
+   <para>&apt-cache;, &apt-cdrom;, &dpkg;, &dselect;, &sources-list;, &apt-conf;,
+&apt-config;, &apt-secure;, &guidesdir; の APT ユーザーズガイド, &apt-preferences;,
+APT Howto</para>
+ </refsect1>
+
+ <refsect1><title>診断メッセージ</title>
+   <para><command>apt-get</command> は正常終了時に 0 を返します。エラー時には十進の 100 を返します。</para>
+ </refsect1>
+ <refsect1>
+	 <title>原著者</title>
+	 <para>&apt-author.jgunthorpe;</para>
+ </refsect1>
+ <refsect1>
+	 <title>現著者</title>
+	 <para>
+		 &apt-author.team;
+	 </para>
+		 &apt-qapage;
+ </refsect1>
+ &manbugs;
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

@@ -1,0 +1,31 @@
+.TH "DBusMutexPThread" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusMutexPThread \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBlock\fP"
+.br
+.RI "\fIlock protecting count field \fP"
+.ti -1c
+.RI "volatile int \fBcount\fP"
+.br
+.RI "\fIcount of how many times lock holder has recursively locked \fP"
+.ti -1c
+.RI "volatile pthread_t \fBholder\fP"
+.br
+.RI "\fIholder of the lock if count >0, valid but arbitrary thread if count has ever been >0, uninitialized memory if count has never been >0 \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 46 of file dbus-sysdeps-pthread\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

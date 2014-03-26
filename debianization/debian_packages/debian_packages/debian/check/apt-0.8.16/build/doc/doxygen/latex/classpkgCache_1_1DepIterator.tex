@@ -1,0 +1,120 @@
+\section{pkg\-Cache\-:\-:\-Dep\-Iterator \-Class \-Reference}
+\label{classpkgCache_1_1DepIterator}\index{pkg\-Cache\-::\-Dep\-Iterator@{pkg\-Cache\-::\-Dep\-Iterator}}
+
+
+\-Inheritance diagram for pkg\-Cache\-:\-:\-Dep\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classpkgCache_1_1DepIterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Cache\-:\-:\-Dep\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgCache_1_1DepIterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries operator++} (int)\label{classpkgCache_1_1DepIterator_a2aefc5a84a51687145f8514f4029c26c}
+
+\item 
+void {\bfseries operator++} ()\label{classpkgCache_1_1DepIterator_a00f008b80917746917b874d00abd02a9}
+
+\item 
+const char $\ast$ {\bfseries \-Target\-Ver} () const \label{classpkgCache_1_1DepIterator_acdebc19115a677d6981e173355d4b62e}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Target\-Pkg} () const \label{classpkgCache_1_1DepIterator_a292b7333713728fc54d123783ff32588}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Smart\-Target\-Pkg} () const \label{classpkgCache_1_1DepIterator_ade3078ab617c9a08b8edee45fea5c692}
+
+\item 
+{\bf \-Ver\-Iterator} {\bfseries \-Parent\-Ver} () const \label{classpkgCache_1_1DepIterator_a751ff2d2c5c751725b7d89761c5829f3}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Parent\-Pkg} () const \label{classpkgCache_1_1DepIterator_a7ad112c30ff8b8f7916e332c5041f3ec}
+
+\item 
+bool {\bfseries \-Reverse} () const \label{classpkgCache_1_1DepIterator_a65ae318fa2fa17547bb60923c0588b54}
+
+\item 
+bool {\bfseries \-Is\-Critical} () const \label{classpkgCache_1_1DepIterator_a1f6988f6d6d63049ac1b5ae63c984e93}
+
+\item 
+bool {\bfseries \-Is\-Negative} () const \label{classpkgCache_1_1DepIterator_a2cde68f87d793c6dc90a3f05476241aa}
+
+\item 
+bool {\bfseries \-Is\-Ignorable} ({\bf \-Prv\-Iterator} const \&\-Prv) const \label{classpkgCache_1_1DepIterator_aee60c58a8f69ed327ccf4b3fee39b660}
+
+\item 
+bool {\bfseries \-Is\-Ignorable} ({\bf \-Pkg\-Iterator} const \&\-Pkg) const \label{classpkgCache_1_1DepIterator_a61a4fc218ad8e6c8e61d5f40af01c9e9}
+
+\item 
+void {\bfseries \-Glob\-Or} ({\bf \-Dep\-Iterator} \&\-Start, {\bf \-Dep\-Iterator} \&\-End)\label{classpkgCache_1_1DepIterator_a859942e4131cc211e4f76e9b39790382}
+
+\item 
+{\bf \-Version} $\ast$$\ast$ {\bfseries \-All\-Targets} () const \label{classpkgCache_1_1DepIterator_aafbc8004135c935652b3dc7e8077d442}
+
+\item 
+bool {\bfseries \-Smart\-Target\-Pkg} ({\bf \-Pkg\-Iterator} \&\-Result) const \label{classpkgCache_1_1DepIterator_a729217987caca9c41d17f0378dcb70fa}
+
+\item 
+const char $\ast$ {\bfseries \-Comp\-Type} () const \label{classpkgCache_1_1DepIterator_a7a634dd7972cd05d6d156ba5bad75378}
+
+\item 
+const char $\ast$ {\bfseries \-Dep\-Type} () const \label{classpkgCache_1_1DepIterator_aa0a833c15d4b201ae352e38197960ddd}
+
+\item 
+{\bfseries \-Dep\-Iterator} ({\bf pkg\-Cache} \&\-Owner, {\bf \-Dependency} $\ast$\-Trg, {\bf \-Version} $\ast$=0)\label{classpkgCache_1_1DepIterator_a6b5f8eb9f75b1b806fe5b05083e263c1}
+
+\item 
+{\bfseries \-Dep\-Iterator} ({\bf pkg\-Cache} \&\-Owner, {\bf \-Dependency} $\ast$\-Trg, {\bf \-Package} $\ast$)\label{classpkgCache_1_1DepIterator_ad2f0fd15cddfe89c0c45156cc9f671e4}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Dependency} $\ast$ {\bf \-Owner\-Pointer} () const 
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& {\bfseries operator$<$$<$} (std\-::ostream \&out, {\bf \-Dep\-Iterator} \-D)\label{classpkgCache_1_1DepIterator_a1333560243fe748854b43ec8e1702afb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Cache\-::\-Dep\-Iterator@{pkg\-Cache\-::\-Dep\-Iterator}!\-Owner\-Pointer@{\-Owner\-Pointer}}
+\index{\-Owner\-Pointer@{\-Owner\-Pointer}!pkgCache::DepIterator@{pkg\-Cache\-::\-Dep\-Iterator}}
+\subsubsection[{\-Owner\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Dependency}$\ast$ {\bf \-Owner\-Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classpkgCache_1_1DepIterator_ad8c9e49a8ee257a69302070d16c77e96}
+
+
+\-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to the first structure of this type 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Cache\-::\-Iterator$<$ Dependency, Dep\-Iterator $>$} \doxyref{}{p.}{classpkgCache_1_1Iterator_ac5f859168a3ef5a04d97c141fdb6d80d}.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheiterators.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-cc\end{DoxyCompactItemize}

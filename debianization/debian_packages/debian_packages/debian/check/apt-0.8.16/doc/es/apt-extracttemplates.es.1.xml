@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>29
+de Febrero de 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-extracttemplates</refentrytitle>
+   <manvolnum>1</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-extracttemplates</refname>
+    <refpurpose>Herramienta para extraer la configuración de DebConf y las plantillas de los
+paquetes de Debian</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-extracttemplates</command> <arg><option>-hv</option></arg>
+<arg><option>-t=<replaceable>directorio-temporal</replaceable></option></arg>
+<arg choice="plain" rep="repeat"><replaceable>fichero</replaceable></arg></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Descripción</title>
+   <para><command>apt-extracttemplates</command> tomará uno o más ficheros de
+paquetes de Debian como entrada para escribir (a un directorio temporal)
+todos los scripts de configuración asociados y los ficheros de
+plantilla. Para cada paquete proporcionado que contenga scripts de
+configuración y plantillas, se generará una salida de una línea con el
+formato:</para>
+   <para>paquete versión fichero-de-plantilla script-de-configuración</para>
+   <para>El fichero de plantilla y el script de configuración se escribirán en el
+directorio temporal definido mediante la opción «-t» o «--tempdir»
+(<literal>APT::ExtractTemplates::TempDir</literal>), los nombres de los
+ficheros tendrán la forma <filename>paquete.template.XXXX</filename> y
+<filename>paquete.config.XXXX</filename></para>
+ </refsect1>
+ 
+ <refsect1><title>Opciones</title>
+   &apt-cmdblurb;
+
+   <variablelist>
+     <varlistentry><term><option>-t</option></term><term><option>--tempdir</option></term>
+     <listitem><para>
+     El directorio temporal en el que se escribirán los ficheros de plantillas
+debconf y los scripts de configuración extraídos. Opción de configuración:
+<literal>APT::ExtractTemplates::TempDir</literal></para></listitem>
+     </varlistentry>
+
+&apt-commonoptions;</variablelist>
+     
+   
+ </refsect1>
+
+ <refsect1><title>Véase también</title>
+   <para>&apt-conf;</para>
+ </refsect1>
+
+ <refsect1><title>Diagnósticos</title>
+   <para><command>apt-extracttemplates</command> devuelve cero si no hay ningún
+error, y el valor 100 en caso de error.</para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

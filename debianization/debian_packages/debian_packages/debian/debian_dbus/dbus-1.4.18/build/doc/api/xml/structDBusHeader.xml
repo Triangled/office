@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structDBusHeader" kind="struct" prot="public">
+    <compoundname>DBusHeader</compoundname>
+    <includes refid="dbus-marshal-header_8h" local="no">dbus-marshal-header.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusString" kindref="compound">DBusString</ref></type>
+        <definition>DBusString DBusHeader::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Header network data, stored separately from body so we can independently realloc it. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" line="52" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1ga4427247494fc5c988498c5a87d42092d" compoundref="dbus-marshal-header_8c" startline="370" endline="378">_dbus_header_get_message_type</referencedby>
+        <referencedby refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="388" endline="402">_dbus_header_set_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" compoundref="dbus-marshal-header_8c" startline="411" endline="417">_dbus_header_get_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacb9244bf214bcb53d851d2ce640b3931" compoundref="dbus-marshal-header_8c" startline="428" endline="437">_dbus_header_reinit</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf939f7ccf175ff3056f76b7673b20ccb" compoundref="dbus-marshal-header_8c" startline="448" endline="457">_dbus_header_init</referencedby>
+        <referencedby refid="group__DBusMarshal_1gab90a814a27aeeace7e02c4ed130539cf" compoundref="dbus-marshal-header_8c" startline="465" endline="468">_dbus_header_free</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0d5aad82f8bf5a314dcf3f70930e254b" compoundref="dbus-marshal-header_8c" startline="479" endline="498">_dbus_header_copy</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacabc7d2698ec08845d1af23f3409a7a9" compoundref="dbus-marshal-header_8c" startline="516" endline="638">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="954" endline="1172">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1181" endline="1188">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1245" endline="1310">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1323" endline="1348">_dbus_header_get_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf4661ba8e7067f349ba03c9f5776bbb0" compoundref="dbus-marshal-header_8c" startline="1364" endline="1378">_dbus_header_get_field_raw</referencedby>
+        <referencedby refid="group__DBusMarshal_1gad2073f8f2f2ba3b710aa929dced34cc3" compoundref="dbus-marshal-header_8c" startline="1429" endline="1441">_dbus_header_toggle_flag</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga56619efed3088554b8760edd246b4157" compoundref="dbus-marshal-header_8c" startline="1451" endline="1459">_dbus_header_get_flag</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae5277c7b7bfb7b85e421baceac0398c8" compoundref="dbus-marshal-header_8c" startline="1468" endline="1486">_dbus_header_byteswap</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga617811b117ac5eb31151ffb7dabea7a8" compoundref="dbus-message_8c" startline="157" endline="165">_dbus_message_get_network_data</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="224" endline="256">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessage_1ga3f90a918ada328450fcfe9ac403b8807" compoundref="dbus-message_8c" startline="4542" endline="4589">dbus_message_marshal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusHeaderField" kindref="compound">DBusHeaderField</ref></type>
+        <definition>DBusHeaderField DBusHeader::fields[DBUS_HEADER_FIELD_LAST+1]</definition>
+        <argsstring>[DBUS_HEADER_FIELD_LAST+1]</argsstring>
+        <name>fields</name>
+        <briefdescription>
+<para>Track the location of each field in header. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" line="56" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="954" endline="1172">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1323" endline="1348">_dbus_header_get_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaf4661ba8e7067f349ba03c9f5776bbb0" compoundref="dbus-marshal-header_8c" startline="1364" endline="1378">_dbus_header_get_field_raw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" prot="public" static="no" mutable="no">
+        <type>dbus_uint32_t</type>
+        <definition>dbus_uint32_t DBusHeader::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <bitfield> 3</bitfield>
+        <briefdescription>
+<para>bytes of alignment in header </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" line="58" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gacb9244bf214bcb53d851d2ce640b3931" compoundref="dbus-marshal-header_8c" startline="428" endline="437">_dbus_header_reinit</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacabc7d2698ec08845d1af23f3409a7a9" compoundref="dbus-marshal-header_8c" startline="516" endline="638">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="954" endline="1172">_dbus_header_load</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusHeader_1abb64abdf3c7f3fbf77c511ccf1f07aa1" prot="public" static="no" mutable="no">
+        <type>dbus_uint32_t</type>
+        <definition>dbus_uint32_t DBusHeader::byte_order</definition>
+        <argsstring></argsstring>
+        <name>byte_order</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+<para>byte order of header </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" line="59" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="group__DBusMarshal_1gad92e0b1992cf96a4da642a4a54a5d26d" compoundref="dbus-marshal-header_8c" startline="388" endline="402">_dbus_header_set_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga7ec7222423db42935aae4a24499ee0fb" compoundref="dbus-marshal-header_8c" startline="411" endline="417">_dbus_header_get_serial</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacb9244bf214bcb53d851d2ce640b3931" compoundref="dbus-marshal-header_8c" startline="428" endline="437">_dbus_header_reinit</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacabc7d2698ec08845d1af23f3409a7a9" compoundref="dbus-marshal-header_8c" startline="516" endline="638">_dbus_header_create</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0c3a3f95d9a53b91a0cd0b260196685b" compoundref="dbus-marshal-header_8c" startline="954" endline="1172">_dbus_header_load</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga0cff04252f97f6a25552c368199897f5" compoundref="dbus-marshal-header_8c" startline="1181" endline="1188">_dbus_header_update_lengths</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga4349de00b7754a337526e36fda133464" compoundref="dbus-marshal-header_8c" startline="1245" endline="1310">_dbus_header_set_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga499973a18dcb17d854eaf14101a66736" compoundref="dbus-marshal-header_8c" startline="1323" endline="1348">_dbus_header_get_field_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae5277c7b7bfb7b85e421baceac0398c8" compoundref="dbus-marshal-header_8c" startline="1468" endline="1486">_dbus_header_byteswap</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Message header data and some cached details of it. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="168">
+        <label>DBusHeader</label>
+        <link refid="structDBusHeader"/>
+        <childnode refid="169" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>fields</edgelabel>
+        </childnode>
+      </node>
+      <node id="170">
+        <label>DBusHeaderField</label>
+        <link refid="structDBusHeaderField"/>
+      </node>
+      <node id="169">
+        <label>DBusString</label>
+        <link refid="structDBusString"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" line="48" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-marshal-header.h" bodystart="47" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structDBusHeader_1abb64abdf3c7f3fbf77c511ccf1f07aa1" prot="public" virt="non-virtual"><scope>DBusHeader</scope><name>byte_order</name></member>
+      <member refid="structDBusHeader_1a67df8bff43c10e2d4f6ae36b56ee5814" prot="public" virt="non-virtual"><scope>DBusHeader</scope><name>data</name></member>
+      <member refid="structDBusHeader_1ac58a309593d0dc7e8d5a02f3b3442384" prot="public" virt="non-virtual"><scope>DBusHeader</scope><name>fields</name></member>
+      <member refid="structDBusHeader_1aa22a8d00f061310e12716f656b4d9b8f" prot="public" virt="non-virtual"><scope>DBusHeader</scope><name>padding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

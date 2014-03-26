@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>14
+février 2004</date></refentryinfo>
+
+ <refmeta>
+   <refentrytitle>apt-cdrom</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-cdrom</refname>
+    <refpurpose>Utilitaire de gestion des CD d'APT</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-cdrom</command> <arg><option>-hvrmfan</option></arg>
+<arg><option>-d=<replaceable>point de montage du
+CD</replaceable></option></arg> <arg><option>-o=<replaceable>option de
+configuration</replaceable></option></arg>
+<arg><option>-c=<replaceable>fichier</replaceable></option></arg> <group>
+<arg>add</arg> <arg>ident</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+
+ <refsect1><title>Description</title>
+   <para><command>apt-cdrom</command> est utilisé pour ajouter un nouveau CD à la
+liste des sources disponibles. <command>apt-cdrom</command> prend soin de
+déterminer la structure du disque, de corriger de possibles erreurs de
+gravure et de vérifier les fichiers d'index.   
+   </para>
+
+   <para>Il est nécessaire d'utiliser <command>apt-cdrom</command> pour ajouter des
+CD au système APT car cela ne peut être réalisé manuellement. Par ailleurs,
+chaque disque d'un ensemble de CD doit être séparément inséré et parcouru
+pour prendre en compte de possibles erreurs de gravure.
+   </para>
+
+   <para>À moins que l'option <option>-h</option> ou <option>--help</option> ne soit
+donnée, l'une des commandes suivantes doit être présente. <variablelist>
+     <varlistentry><term>add</term>
+     <listitem><para>La commande <literal>add</literal> est utilisée pour ajouter un nouveau
+disque à la liste des sources. Elle démonte le CD, réclame l'insertion d'un
+disque, parcourt ensuite le disque et copie les fichiers d'index. Si le
+disque ne possède pas de répertoire <filename>disk/</filename> correct, un
+titre descriptif est demandé.
+     </para>
+
+     <para>APT utilise un identifiant de CD pour reconnaître le disque qui se trouve
+actuellement dans le lecteur et maintient une base de données de ces
+identifiants dans <filename>&statedir;/cdroms.list</filename>.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term>ident</term>
+     <listitem><para>Cette commande de débogage retourne l'identifiant du disque actuel ainsi que
+le nom du fichier stocké.
+     </para>
+     </listitem>
+     </varlistentry>
+    </variablelist>
+   </para>
+ </refsect1>
+
+ <refsect1><title>Options</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+     <varlistentry><term><option>-d</option></term><term><option>--cdrom</option></term>
+     <listitem><para>Point de montage ; spécifie l'emplacement de montage du CD. Ce point de
+montage doit être spécifié dans <filename>/etc/fstab</filename> et
+correctement configuré. Élément de configuration :
+<literal>Acquire::cdrom::mount</literal>.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-r</option></term><term><option>--rename</option></term>
+     <listitem><para>Change le nom d'un disque ; change le nom d'un disque ou remplace un disque
+pour un nom donné. Cette option oblige <command>apt-cdrom</command> à
+demander un nouveau nom à l'utilisateur. Élément de configuration :
+<literal>APT::CDROM::Rename</literal>.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-m</option></term><term><option>--no-mount</option></term>
+     <listitem><para>Pas de montage ; empêche <command>apt-cdrom</command> de monter ou démonter
+le point de montage. Élément de configuration : <literal
+>APT::CDROM::NoMount</literal>.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-f</option></term><term><option>--fast</option></term>
+     <listitem><para>Copie rapide ; suppose que les fichiers de paquets sont valables et ne
+vérifie pas chaque paquet. Cette option ne devrait être utilisée que si
+<command>apt-cdrom</command> a préalablement utilisé ce disque et n'a trouvé
+aucune erreur. Élément de configuration :
+<literal>APT::CDROM::Fast</literal>.
+     </para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-a</option></term><term><option>--thorough</option></term>
+     <listitem><para>Parcours minutieux des paquets ; cette option peut être nécessaire avec des
+CD d'anciens systèmes Debian 1.1 ou 1.2 dont les fichiers Packages sont
+situés dans des endroits inhabituels. Il faudra plus de temps pour parcourir
+le CD mais tous les paquets seront repérés.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-n</option></term>
+                   <term><option>--just-print</option></term>
+                   <term><option>--recon</option></term>
+                   <term><option>--no-act</option></term>
+     <listitem><para>Aucune modification ; ne pas modifier le fichier &sources-list; ni les
+fichiers d'index. Cependant, tout est vérifié. Élément de configuration :
+<literal>APT::CDROM::NoAct</literal>.
+     </para>
+     </listitem>
+     </varlistentry> 
+
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Voir aussi</title>
+   <para>&apt-conf;, &apt-get;, &sources-list;.
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnostics</title>
+   <para><command>apt-cdrom</command> renvoie zéro après un déroulement normal, et le
+nombre décimal 100 en cas d'erreur.
+   </para>
+ </refsect1>
+
+ &manbugs;
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

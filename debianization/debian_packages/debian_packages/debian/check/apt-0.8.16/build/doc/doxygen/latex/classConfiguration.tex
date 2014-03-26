@@ -1,0 +1,99 @@
+\section{\-Configuration \-Class \-Reference}
+\label{classConfiguration}\index{\-Configuration@{\-Configuration}}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Item}
+\item 
+class {\bf \-Match\-Against\-Config}
+\begin{DoxyCompactList}\small\item\em match a string against a configurable list of patterns \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bfseries \-Find} (const char $\ast$\-Name, const char $\ast$\-Default=0) const \label{classConfiguration_a5a232433925061eee25bfd7da061676a}
+
+\item 
+std\-::string {\bfseries \-Find} (std\-::string const \&\-Name, const char $\ast$\-Default=0) const \label{classConfiguration_ab36795f5f418ee9ce536ac7088e4d1e7}
+
+\item 
+std\-::string {\bfseries \-Find} (std\-::string const \&\-Name, std\-::string const \&\-Default) const \label{classConfiguration_a47b7799639f8df36713531f842a40103}
+
+\item 
+std\-::string {\bfseries \-Find\-File} (const char $\ast$\-Name, const char $\ast$\-Default=0) const \label{classConfiguration_a07142b1420bf7e2ce0a2229f95bb84eb}
+
+\item 
+std\-::string {\bfseries \-Find\-Dir} (const char $\ast$\-Name, const char $\ast$\-Default=0) const \label{classConfiguration_ab3d5638ac63eef657a1e85689d52f6a1}
+
+\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries \-Find\-Vector} (const char $\ast$\-Name) const \label{classConfiguration_a78f58f96088f0b7cbb3b1b8dd4c00584}
+
+\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries \-Find\-Vector} (std\-::string const \&\-Name) const \label{classConfiguration_aa065d8ed54209a194fa6bcb4b511e2b9}
+
+\item 
+int {\bfseries \-Find\-I} (const char $\ast$\-Name, int const \&\-Default=0) const \label{classConfiguration_a1759eee00312ae05456741bd4dc22a52}
+
+\item 
+int {\bfseries \-Find\-I} (std\-::string const \&\-Name, int const \&\-Default=0) const \label{classConfiguration_a92db0b3f37d548d964dac09ce51aaa15}
+
+\item 
+bool {\bfseries \-Find\-B} (const char $\ast$\-Name, bool const \&\-Default=false) const \label{classConfiguration_ac2e09bee1ba20cff2cab8c5aaf80996a}
+
+\item 
+bool {\bfseries \-Find\-B} (std\-::string const \&\-Name, bool const \&\-Default=false) const \label{classConfiguration_aa6e5fb38c30060990257624bda6e3960}
+
+\item 
+std\-::string {\bfseries \-Find\-Any} (const char $\ast$\-Name, const char $\ast$\-Default=0) const \label{classConfiguration_a1682075e96a38ce53067bc34d3edbb4b}
+
+\item 
+void {\bfseries \-Set} (const std\-::string \&\-Name, const std\-::string \&\-Value)\label{classConfiguration_a5c8d07c5cc53218a1b3fb3659128d5d3}
+
+\item 
+void {\bfseries \-Cnd\-Set} (const char $\ast$\-Name, const std\-::string \&\-Value)\label{classConfiguration_ae3d0ea4eb16eb609c544bb305ec0016e}
+
+\item 
+void {\bfseries \-Cnd\-Set} (const char $\ast$\-Name, const int \-Value)\label{classConfiguration_a38668d470479b51d926069ba2294e091}
+
+\item 
+void {\bfseries \-Set} (const char $\ast$\-Name, const std\-::string \&\-Value)\label{classConfiguration_a51dd0c6878731bdf68eea3e31a214b52}
+
+\item 
+void {\bfseries \-Set} (const char $\ast$\-Name, const int \&\-Value)\label{classConfiguration_a698036176655aadb406228c39780c5e0}
+
+\item 
+bool {\bfseries \-Exists} (const std\-::string \&\-Name) const \label{classConfiguration_a0812b41f51d492c3b873dccbd7e8df0e}
+
+\item 
+bool {\bfseries \-Exists} (const char $\ast$\-Name) const \label{classConfiguration_aff619979652f706bf8342bb05055bc43}
+
+\item 
+bool {\bfseries \-Exists\-Any} (const char $\ast$\-Name) const \label{classConfiguration_a940c54d2f08a52a25166021ce2be40ba}
+
+\item 
+void {\bfseries \-Clear} (const std\-::string \&\-Name)\label{classConfiguration_ac6219214a423e6371727e1794b25bf33}
+
+\item 
+void {\bfseries \-Clear} (std\-::string const \&\-List, std\-::string const \&\-Value)\label{classConfiguration_a248ff420b60b5b6e8f1bf8443b64b4ac}
+
+\item 
+void {\bfseries \-Clear} (std\-::string const \&\-List, int const \&\-Value)\label{classConfiguration_a2c9d5bbe2426dd5fa2b38f7323d70cd8}
+
+\item 
+const {\bf \-Item} $\ast$ {\bfseries \-Tree} (const char $\ast$\-Name) const \label{classConfiguration_a48f29adb8ef9215ae99ff0fb25498712}
+
+\item 
+void {\bfseries \-Dump} ()\label{classConfiguration_a793169e06e9183e678805ce0663b6000}
+
+\item 
+void {\bfseries \-Dump} (std\-::ostream \&str)\label{classConfiguration_a70b2730c72d8c133ff3acca2fd366d59}
+
+\item 
+{\bfseries \-Configuration} (const {\bf \-Item} $\ast$\-Root)\label{classConfiguration_aa7589283aa8058ca4c15e27bcff331aa}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/configuration.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/configuration.\-cc\end{DoxyCompactItemize}

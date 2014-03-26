@@ -1,0 +1,669 @@
+<!-- -*- mode: sgml; mode: fold -*- -->
+<!doctype debiandoc  PUBLIC  "-//DebianDoc//DTD DebianDoc//EN"><debiandoc>
+ <book>
+  <titlepag>
+   <title>
+     Guide d'utilisation d'APT
+   </title>
+   <author>
+     <name>Jason Gunthorpe </name><email>jgg@debian.org</email>
+   </author>
+   <version>
+     $Id: guide.sgml,v 1.7 2003/04/26 23:26:13 doogie Exp $
+   </version>
+   <abstract>
+     Ce document fournit un aperçu des méthode d'utilisation du gestionnaire
+     de paquets APT.
+   </abstract>
+   <copyright>
+    <copyrightsummary>
+      Copyright &copy; Jason Gunthorpe, 1998.
+    </copyrightsummary>
+    <p>
+      APT, ainsi que ce document, sont libres. Vous pouvez les redistribuer
+      et les modifier en respectant les conditions de la licence publique
+      générale GNU telle que publiée par la Free Software Foundation, en
+      version 2 ou ultérieure.
+    </p>
+    <p>
+      Les détails complets de cette licence sont, sur les systèmes Debian
+      GNU/Linux, consultables dans le fichier usr/share/common-licenses/GPL.
+    </p>
+   </copyright>
+  </titlepag>
+  <toc detail="sect">
+ 
+ <chapt>
+  <heading>
+    Généralités
+  </heading>
+  <p>
+    Le paquet APT comporte actuellement deux parties&nbsp;:&nbsp;la méthode APT pour
+    <prgn>dselect</prgn> et l'interface en ligne de commande
+    <prgn>apt-get</prgn>. Les deux fournissent des méthodes d'installation
+    et de suppression de paquets ainsi que de téléchargement de nouveaux
+    paquets par Internet.
+  </p>
+  <sect>
+   <heading>
+     Anatomie du système de gestion des paquets
+   </heading>
+   <p>
+     Le système de gestion de paquets de Debian intègre de nombreuses
+     informations associées à chaque paquet afin de garantir qu'il s'intègre
+     proprement et facilement sur le système. Une des fonctionnalités les
+     plus immédiatement visibles est le système de gestion des dépendances.
+   </p>
+   <p>
+     Le système de gestion des dépendances permet aux programmes de partage
+     des éléments du système, tels que les bibliothèques de fonctions. Il
+     permet d'isoler dans des paquets spécifiques certains parties moins
+     utilisées des programmes afin de limiter le nombre d'éléments que
+     l'utilisateur ordinaire a besoin d'installer. Ce système de gestion des
+     dépendances permet également d'effectuer des choix parmi les divers
+     agents de transport de courrier électronique, les serveurs X et
+     d'autres cxomposants du système.
+   </p>
+   <p>
+     La première étape de compréhension de la gestion de dépendances est
+     d'examiner le fonctionnement d'une dépendance simple. Une dépendance
+     simple est le cas où un paquet donné a besoin qu'un autre paquet soit
+     installé simultanément pour pouvoir fonctionner correctement.
+   </p>
+   <p>
+     Par example, mailcrypt est une extension à Emacs qui permet de gérer le
+     courrier électronique chiffré avec GPG. Si GPG n'est pas installé,
+     mailcrypt est inutile. Donc le paquet mailcrypt a une dépendance simple
+     sur GPG. De plus, étant une extension à Emacs sans lequel il est
+     totalement inutile, il a une dépendance simple sur emacs.
+   </p>
+   <p>
+     Un autre type de dépendance importante est la dépendance en
+     conflit. Cela signifie qu'un paquet ne fonctionne pas lorsqu'il est
+     installé en même temps qu'un autre paquet donné, ce qui peut même être
+     dommageable pour le système. Un exemple est par exemple constitué par
+     les agents de transport de courrier tels que sendmail, exim ou
+     qmail. Il n'est pas possible d'installer deux agents de transport de
+     courrier simultanément puisque les deux ont besoin d'être à l'écoute
+     sur le réseau pour recevoir le courrier électronique. Installer deux
+     programmes de ce type sur le même système pourrait conduire à des
+     pertes de données, ce qui explique que tous les agents de transport de
+     courrier électronique soient établis comme étant en conflit les uns
+     avec les autres.
+   </p>
+   <p>
+     Il existe également la possibilité pour un paquet donné de prétendre
+     être un autre paquet. Par exemple, exim et sendmail sont analogues sur
+     de nombreux aspects&nbsp;;&nbsp;ils servent tous deux à acheminer le courrier
+     électronique et leur interface d'utilisation est la même. Pour cette
+     raison, le système de gestion des paquets leur fournit la possibilité
+     d'indiquer qu'ils sont chacun un agent de transport de courrier («&nbsp;mail
+     transport agent&nbsp;») en indiquant qu'ils fournissent («&nbsp;Provides&nbsp;»)
+     «&nbsp;mail-transport-agent&nbsp;». Ainsi, un paquet qui a besoin de cette
+     fonctionnalité peut dépendre simplement d'un paquet
+     «&nbsp;mail-transprot-agent&nbsp;». Cette fonctionnalité utile peut toutefois
+     rendre la correction de certains défauts des paquets plus complexe.
+   </p>
+   <p>
+     À un instant donné, une dépendance donnée peut être ou pas remplie par
+     des paquets installés ou pas encore installés. APT tente donc de
+     résoudre les problèmes de dépendances par l'intermédiaire d'un certain
+     nombre d'algorithmes automatiques qui simplifient le choix des paquets
+     à installer.
+   </p>
+  </sect>
+ </chapt>
+ <chapt>
+  <heading>
+    apt-get
+  </heading>
+  <p>
+    Le programme <prgn>apt-get</prgn> offre une méthode simple pour
+    installer des paquets à la ligne de commande. À la différence de
+    <prgn>dpkg</prgn>, <prgn>apt-get</prgn> ne gère pas directement les
+    fichiers .deb files. Il travaille avec le nom des paquets et ne peut
+    installer les archives .deb que depuis une <em>Source</em>.
+  </p>
+  <p>
+    La première action <footnote><p>Si vous utilisez un serveur mandataire
+    («&nbsp;proxy&nbsp;») HTTP, vous devez d'abord positionner la variable
+    d'environnement http_proxy, voir sources.list(5)</p></footnote> à
+    effectuer avant d'utiliser <prgn>apt-get</prgn> est de récupérer les
+    listes de paquets depuis les <em>Sources</em> afin que le programme
+    sache quels sont les paquets disponibles. Cela peut être effectué avec
+    la commande <tt>apt-get update</tt>. Par exemple,
+  </p>
+  <p>
+   <example>
+# apt-get update
+Réception de http://ftp.de.debian.org/debian-non-US/ stable/binary-i386/ Packages
+Réception de http://llug.sep.bnl.gov/debian/ testing/contrib Packages
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances... Fait
+</example>
+  </p>
+  <p>
+    Une fois cette mise à jour effectuée, plusieurs commandes peuvent être
+    utilisées&nbsp;:
+   <taglist>
+    <tag>
+      upgrade
+    </tag>
+    <item>
+     <p>
+       La commande «&nbsp;upgrade&nbsp;» permet de mettre à jour le système de manière
+       non invasive. Cette commande ne provoquera jamais l'installation de
+       nouveaux paquets ou la suppression de paquets existants. Elle ne
+       déclenchera pas non plus la mise à jour d'un paquet si celle-ci casse
+       le fonctionnement d'un autre paquet. Cette commande peut être utilisé
+       par exemple quotidiennement pour mettre à jour le système de manière
+       relativement sûre. Lorsqu'elle est utilisée, la liste des paquets qui
+       ne peuvent être mis à jour sera affichée. Cela est en général du au
+       fait qu'ils dépendent de nouveaux paquets ou qu'ils entrent en
+       conflit avec d'autres paquets. Le programme <prgn>dselect</prgn> ou
+       la commande <tt>apt-get install</tt> peuvet être utilisés pour forcer
+       l'installation de tels paquets.
+     </p>
+    </item>
+    <tag>
+      install
+    </tag>
+    <item>
+     <p>
+       La commande «&nbsp;install&nbsp;» permet d'installer des paquets par nom. Le
+       paquet à installer est automatiquement récupéré et installé. Cela est
+       utile lorsque le nom du paquet à installer est déjà connu et que l'on
+       ne souhaite pas passer par une interface graphique pour le
+       choisir. Un nombre quelconque de paquets peuvent être demandés à être
+       installés&nbsp;;&nbsp; ils seront alors tous récupérés. La commande «&nbsp;install&nbsp;»
+       résout automatiquement les problèmes de dépendances pour les paquets
+       concernés, puis affiche un résumé avant de demander une confirmation
+       si des actions autres que ce qui est demandé à la ligne de commande
+       sont nécessaires.
+     </p>
+    </item>
+    <tag>
+      dist-upgrade
+    </tag>
+    <item>
+     <p>
+       La commande «&nbsp;dist-upgrade&nbsp;» est une commande de mise à jour complète
+       d'abord destinés à permettre les mises à jour entre deux versions
+       successives de la distribution. Via un algorithme complexe, le
+       meilleur jeu de paquets à installer, mettre à jour ou supprimer est
+       déterminé dans le but d'amener une majorité du système vers la
+       nouvelle version. Dans certains cas, il peut être judicieux
+       d'utiliser «&nbsp;dist-upgrade&nbsp;» plutôt que de chercher à résoudre
+       manuellement les dépendances avec <prgn>dselect</prgn>. Une fois que
+       «&nbsp;dist-upgrade&nbsp;» a été utilisé, <prgn>dselect</prgn> peut servir à
+       installer les paquets qui auraient pu être laissés de côté.
+     </p>
+     <p>
+       Il est important de regarder de près ce que «&nbsp;dist-upgrade&nbsp;» car ses
+       décisions peuvent parfois apparaître surprenantes.
+     </p>
+    </item>
+   </taglist>
+  </p>
+  <p>
+    <prgn>apt-get</prgn> fournit de nombreuses options de ligne de commande
+    qui sont expliquées en détail dans sa page de manuel, <manref
+    section="8" name="apt-get">. Une des plus utiles est l'option
+    <tt>-d</tt> qui récupère sans les installer les fichiers nécessaires. Si
+    le système a besoin de télécharger un grand nombre de paquets, il est
+    par exemple souhaitable de pouvoir simplement les récupérer sans les
+    installer immédiatement, au cas où quelque chose se passe mal. Une fois
+    que <tt>-d</tt> a été utilisé, il est possible d'installer les archives
+    téléchargées en exécutant simplement la commande qui a permis de les
+    récupérer, sans l'option <tt>-d</tt>.
+  </p>
+ </chapt>
+ <chapt>
+  <heading>
+    DSelect
+  </heading>
+  <p>
+    La méthode APT de <prgn>dselect</prgn> permet d'utiliser le système APT
+    dans son ensemble depuis l'interface graphique de gestion des paquets
+    <prgn>dselect</prgn>. L'interface est alors utilisée pour choisir les
+    paquets à installer ou supprimer et c'est APT qui effectue les
+    opérations individuelles d'installation ou suppression.
+  </p>
+  <p>
+    Pour activer la méthode APT, il est nécessaire de choisir [A]ccéder dans
+    <prgn>dselect</prgn> puis utiliser le choix permettant d'activer
+    APT. Des <em>Sources</em> d'installation seront demandées, qui sont les
+    emplacements d'où les paquets seront récupérés. Cela peut être des sites
+    Internet distants, des miroirs locaux ou des CD. Chaque source peut
+    fournir un sous-ensemble de l'archive complète Debian. APT les combinera
+    automatiquement pour créer un jeu complet de paquets. Avec des supports
+    de type CD, il est conseillé de les indiquer en premier puis de les
+    compléter avec un miroir distant qui permettra d'obtenir les versions
+    les plus à jour s'il y en a. APT utilisera alors les paquets disponibles
+    sur les CD avant de les télécharger via l'Internet.
+  </p>
+  <p>
+   <example>
+  Réglage de a liste des emplacements sources de distribution
+	 
+ Veuillez indiquer l'URL de base de la  distribution Debian.
+ Les schémas d'accès connus sont&nbsp;:&nbsp;http file
+	   
+ Exemple:
+      file:/mnt/debian,
+      ftp://ftp.debian.org/debian,
+      http://ftp.de.debian.org/debian,
+      
+      
+ URL [http://llug.sep.bnl.gov/debian]: 
+</example>
+  </p>
+  <p>
+    La configuration des <em>Sources</em> débute par l'indication de la base
+    de l'archive Debian, par défaut un miroir HTTP. Puis la distribution est
+    demandée.
+  </p>
+  <p>
+   <example>
+ Veuillez indiquer le nom de la distribution à utiliser ou
+ le chemin d'accès au fichier des paquets, terminé par un /.
+ Les noms de distribution sont en général de la forme suivante&nbsp;:
+ stable unstable testing non-US
+   
+ Distribution [stable]&nbsp;: 
+</example>
+  </p>
+  <p>
+    La distribution fait référence à la version de Debian dans
+    l'archive. <em>stable</em> est la dernière version publiée et
+    <em>unstable</em> la version en développement. <em>non-US</em> n'est
+    disponible que sur certains miroirs et fait référence à des paquets
+    contenant des technologies de chiffrement et d'autres élements dont
+    l'exportation est interdite depuis les États-Unis d'Amérique. Il est
+    toutefois autorisé de les y importer. [Note du traducteur&nbsp;: à la date de
+    cette traduction, 2010, cette notion est totalement obsolète].
+  </p>
+  <p>
+   <example>
+ Veuillez indiquer les composants à utiliser
+ Les composants sont en général de la forme suivante&nbsp;:
+ main contrib non-free
+  
+ Composants [main contrib non-free]&nbsp;:
+</example>
+  </p>
+  <p>
+    La liste des composants correspond à la liste des sous-ensemble de la
+    distribution que l'on souhaite utiliser. Les distributions sont en
+    général divisées ainsi pour des raisons de licences. La
+    sous-distribution «&nbsp;main&nbsp;» comporte les paquets libre selon les
+    principes du logiciel libre selon Debian (DFSG) alors que contrib et
+    non-free correspondent à des éléments qui comprennent des restrictions
+    de distribution ou d'utilisation.
+  </p>
+  <p>
+    Un nombre quelconque de sources peuvent être ajoutées. Le script de
+    configuration continuera à les demander tant que vous n'indiquerez pas
+    que le processus est terminé.
+  </p>
+  <p>
+    Avant d'utiliser <prgn>dselect</prgn>, il est nécessaire de mettre à
+    jour la liste de ce qui est disponible en choisissant «&nbsp;[M]ise à jour&nbsp;»
+    depuis le menu. Cette action exécutera la commande «&nbsp;apt-get update&nbsp;»,
+    ce qui rendra les informations récupérées disponibles pour
+    <prgn>dselect</prgn>. Elle doit être utilisée même si la commande
+    «&nbsp;apt-get&nbsp;» a déjà été utilisée sur ce système.
+  </p>
+  <p>
+    Une fois cela effectué, vous pouvez poursuivre et utiliser l'option
+    «&nbsp;[S]électionner&nbsp;» pour choisir les paquets à installer puis
+    «&nbsp;[I]nstaller&nbsp;» pour les installer. Lorsque la méthode APT est utilisée,
+    les options «&nbsp;[C]onfigurer&nbsp;» et «&nbsp;[R]etirer&nbsp;» ne sont pas utilisées, car
+    «&nbsp;[I]nstaller&nbsp;» fait l'ensemble des opérations.
+  </p>
+  <p>
+    Par défait, APT supprimera automatiquement les fichiers des paquets
+    (fichiers .deb) une fois qu'ils ont été installés correctement. Pour
+    modifier ce comportement, vous pouvez utiliser <tt>Dselect::clean
+    "prompt";</tt> dans /etc/apt/apt.conf.
+  </p>
+ </chapt>
+ <chapt>
+  <heading>
+    L'interface
+  </heading>
+  <p>
+    La méthode APT de <prgn>dselect</prgn> et le programme
+    <prgn>apt-get</prgn> utilisent la même interface. Elle consiste en un
+    système simple qui indique les opérations qui seront effectuées puis les
+    réalise.<footnote><p>La méthode <prgn>dselect</prgn> consiste en fait en
+    un jeu de scripts qui encapsulent <prgn>apt-get</prgn>. Cela approte des
+    fonctionnalités supplémentaires à celles d'<prgn>apt-get</prgn> utilisé
+    isolément.</p></footnote> Après avoir indiqué un résumé des opérations
+    qui seront effectuées, APT donnera un certain nombre d'informations
+    permettant d'estimer sa progression, tout au long des actions qu'il
+    effectue. 
+  </p>
+  <sect>
+   <heading>
+     Démarrage
+   </heading>
+   <p>
+     Avant toute opération autre qu'une mise à jour, APT effectue un certain
+     nombre d'actions pour préparer ses mécaismes internes de
+     fonctionnement. Il vérifie également l'état du système. Ces opérations
+     peuvent être effectuées isolément avec la commande  <tt>apt-get
+     check</tt>.
+   </p>
+   <p>
+    <example>
+# apt-get check
+Lecture de la liste des paquets... Fait
+Construction de l'arbre des dépendances... Fait
+</example>
+   </p>
+   <p>
+     En premier lieu, la liste des paquets est lue et placée en mémoire. APT
+     utilise un mécanisme de cache et cette opération sera plus rapide si
+     elle est effectuée une deuxième fois.Si certains des fichiers de
+     paquets ne sont pas trouvés, ils seront ignorés et une informatique
+     sera affichée quand apt-get se terminera.
+   </p>
+   <p>
+     Ensuite, une analyse détaillée des dépendances du système est
+     réalisée. Les dépendances de chaque paquet installé ou décompressé sont
+     vérifiées. Si un problème est trouvé, il sera affiché et
+     <prgn>apt-get</prgn> bloquera des opérations ultérieures.
+   </p>
+   <p>
+    <example>
+# apt-get check
+Lecture de la liste des paquets... Fait
+Construction de l'arbre des dépendances.. Fait
+Vous pouvez lancer «&nbsp;apt-get -f install&nbsp;» pour corriger ces problèmes.
+Les paquets suivants contiennent des dépendances non satisfaites&nbsp;:
+  9fonts: Depends: xlib6g mais il n'est pas installé
+  uucp: Depends: mailx mais il n'est pas installé
+  blast: Depends: xlib6g (>= 3.3-5) mais il n'est pas installé
+  adduser: Depends: perl-base mais il n'est pas installé
+  aumix: Depends: libgpmg1 mais il n'est pas installé
+  debiandoc-sgml: Depends: sgml-base mais il n'est pas installé
+  bash-builtins: Depends: bash (>= 2.01) but 2.0-3 is installed
+  cthugha: Depends: svgalibg1 mais il n'est pas installé
+           Depends: xlib6g (>= 3.3-5) mais il n'est pas installé
+  libreadlineg2: Conflicts:libreadline2 (<< 2.1-2.1)
+</example>
+   </p>
+   <p>
+     Dans cet exemple, le système comporte plusieurs problèmes, notamment un
+     problème sérieux avec libreadline2g. Une ligne est affichée pour chaque
+     paquet dont les dépendances ne sont pas satisfaites, indiquant quel est
+     le problème. Une explication simple du problème est donnée.
+   </p>
+   <p>
+     Il existe deux façons pour le système d'aboutir à cet état. Cela peut
+     d'abord être causé par des subtilités de relations entre les paquets
+     que <prgn>dpkg</prgn> aurait manquées lors de mises à
+     jour. <footnote><p>Cependant, APT prend en compte les dépendances
+     connues et s'efforce d'éviter que cette situation ne se
+     produise</p></footnote>. Cela peut également être dû à l'échec
+     antérieur d'une installation de paquet. Dans le cas présent, un paquet
+     a pu être décompressé sans que ses dépendances ne soient satisfaites.
+   </p>
+   <p>
+     La seconde situation est moins grave que la première car APT met
+     certaines contraintes sur l'ordre d'installation des paquets. Dans les
+     deux cas, l'option  <tt>-f</tt> utilisée avec <prgn>apt-get</prgn>
+     conduira APT à rechercher une solution possible puis à continuer. La
+     méthode APT de <prgn>dselect</prgn> utilise toujours cette option
+     <tt>-f</tt> afin de pouvoir poursuivre plus facilement ses opérations
+     si un script de mainteneur échoue de manière inopinée.
+   </p>
+   <p>
+     Cependant, si l'option <tt>-f</tt> est utilisée pour corriger un
+     système fortement corrompu qui est dans le premier cas, il est possible
+     que l'opération échoue immédiatement ou au cours des diverses
+     tentatives de réparation effectuées. Dans tous les cas, il peut être
+     nécessaire de corriger la situation manuellement avec dpkg
+     (éventuellement en utilisant des options pour forcer certains
+     opérations) avant de pouvoir utiliser à nouveau APT.
+   </p>
+  </sect>
+  <sect>
+   <heading>
+     Le rapport d'état
+   </heading>
+   <p>
+     Avant de démarrer ses actions, <prgn>apt-get</prgn> en affiche un
+     résumé. En général, ce rapport dépend du type d'opération qui est
+     entreprise, mais de nombreux éléments sont communs aux différents types
+     de rapports. Ainsi, dans tous les cas, les listes reflètent l'état
+     final du système, en tenant compte de l'option <tt>-f</tt> et des
+     autres opérations découlant du type de commande utilisée.
+   </p>
+   <sect1>
+    <heading>
+      La liste des paquets supplémentaires
+    </heading>
+    <p>
+     <example>
+Les paquets supplémentaires suivants seront installés&nbsp;:
+  libdbd-mysql-perl xlib6 zlib1 xzx libreadline2 libdbd-msql-perl
+  mailpgp xdpkg fileutils pinepgp zlib1g xlib6g perl-base
+  bin86 libgdbm1 libgdbmg1 quake-lib gmp2 bcc xbuffy
+  squake pgp-i python-base debmake ldso perl libreadlineg2
+  ssh
+</example>
+    </p>
+    <p>
+      La liste des paquets supplémentaires montre tous les paquets installés
+      ou mis à jour en plus de ceux indiqués à la ligne de commande. Elle
+      n'apparaît qu'avec la commande <tt>install</tt>. Le plus souvent, les
+      paquets concernés sont le résultat d'une installation automatique.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Les paquets à supprimer
+    </heading>
+    <p>
+     <example>
+Les paquets suivants seront ENLEVÉS&nbsp;:
+  xlib6-dev xpat2 tk40-dev xkeycaps xbattle xonix
+  xdaliclock tk40 tk41 xforms0.86 ghostview xloadimage xcolorsel
+  xadmin xboard perl-debug tkined xtetris libreadline2-dev perl-suid
+  nas xpilot xfig 
+</example>
+    </p>
+    <p>
+      La liste des paquets à enlever montre tous les paquets qui seront
+      supprimés du système. Elle peut apparaître pour tout type
+      d'opération. Il est conseillé de l'inspecter en détail afin de
+      vérifier qu'aucun paquet important ne va être supprimé. L'option
+      <tt>-f</tt> provoque notamment souvent des suppressions de paquets et
+      il est déconseillé d'être particulièrement attentif dans ce genre de
+      cas. La liste peut comporter des paquets qui seront supprimés parce
+      qu'ils sont seulement partiellement installés, par exemple après
+      l'interruption d'une opération d'installation.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      La liste des nouveaux paquets
+    </heading>
+    <p>
+     <example>
+Les NOUVEAUX paquets suivants seront installés&nbsp;:
+  zlib1g xlib6g perl-base libgdbmg1 quake-lib gmp2 pgp-i python-base
+</example>
+    </p>
+    <p>
+      La liste des nouveaux paquets est un simple rappel des opérations qui
+      vont avoir lieu. Les paquets affichés ne sont pas encore présents sur
+      le système mais le seront une fois qu'APT aura terminé.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      La liste des paquets conservés
+    </heading>
+    <p>
+     <example>
+Les paquets suivants ont été conservés&nbsp;:
+  compface man-db tetex-base msql libpaper svgalib1
+  gs snmp arena lynx xpat2 groff xscreensaver
+</example>
+    </p>
+    <p>
+      À chaque fois que le système entier est mis à jour, il est possible
+      que de nouvelles versions de paquets ne puissent pas être installées
+      car elles ont besoins ne nouveaux paquets ou qu'elles entrent en
+      conflit avec des paquets existants. Ces paquets apparaîtront alors
+      dans la liste des paquets conservés. Le meilleure méthode pour
+      effectivement installer ces paquets est souvent de le faire
+      explicitement avec la commande <tt>apt-get install</tt> ou avec
+      <prgn>dselect</prgn>.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      L'avertissement pour paquets retenus
+    </heading>
+    <p>
+     <example>
+Les paquets retenus suivants seront changés&nbsp;:
+  cvs 
+</example>
+    </p>
+    <p>
+      Il peut parfois être utile de demander à APT d'installer un paquet
+      retenu («&nbsp;hold&nbsp;»). Dans ce cas, le programme affichera un
+      avertissement indiquant que le paquet retenu va être modifié. Cela ne
+      se produira que lors de l'utilisation des commandes dist-upgrade ou
+      install.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Résumé final
+    </heading>
+    <p>
+      Enfin, APT affichera un résumé de toutes les opérations qui prendront
+      place.
+    </p>
+    <p>
+     <example>
+206 paquets mis à jour, 8 nouvellement installés, 23 à enlever et 51 non mis à jour.
+12 paquets partiellement installés ou enlevés.
+Il est nécessaire de prendre 65,7Mo/66,7Mo dans les archives. Après cette opération, 26,5Mo d'espace disque supplémentaires seront utilisés. 
+</example>
+    </p>
+    <p>
+      La première ligne de ce résumé est une version simplifiée de
+      l'ensemble des listes et indique le nombre de mises à jour (paquets
+      déjà installés et pour lesquels une nouvelle version est
+      disponible). La deuxième ligne indique le nombre de paquets
+      incorrectement configurés, en raison notamment d'installations
+      interrompues. La dernière ligne indique l'espace disque nécessaire
+      pour effectuer l'installation. Le premier couple de nombre fait
+      référence à la taille des fichiers d'archive. Le premier nombre est le
+      nombre d'octets à récupérer depuis les sites distants et le deuxième
+      la taille totale de tous les fichiers nécessaires. Le nombre suivant
+      représente la différence d'espace occupé entre les paquets installés
+      actuellement et ce qui sera ensuite installé. Il est grossièrement
+      égal à l'espace supplémentaire nécessaire dans /usr après achèvement
+      de toutes les opérations. Si de nombreux paquets sont supprimés, cette
+      valeur peut représenter l'espace qui est alors libéré.
+    </p>
+    <p>
+      D'autres rapports peuvent être créés avec l'option -u qui affiche les
+      paquets à mettre à jour. Il sont analogues aux exemples précédents.
+    </p>
+   </sect1>
+  </sect>
+  <sect>
+   <heading>
+     L'affichage d'état
+   </heading>
+   <p>
+     Pendant le téléchargement des fichiers des paquets, APT affiche un
+     certain nombre de messages d'avancement.
+   </p>
+   <p>
+    <example>
+# apt-get update
+Réception de&nbsp;:1 http://ftp.de.debian.org/debian-non-US/ stable/non-US/ Packages
+Réception de&nbsp;:2 http://llug.sep.bnl.gov/debian/ testing/contrib Packages
+Atteint http://llug.sep.bnl.gov/debian/ testing/main Packages
+Réception de&nbsp;:4 http://ftp.de.debian.org/debian-non-US/ unstable/binary-i386/ Packages
+Réception de&nbsp;:5 http://llug.sep.bnl.gov/debian/ testing/non-free Packages
+11% [5 testing/non-free `Attente du fichier' 0/32.1k 0%] 2203b/s 1m52s
+</example>
+   </p>
+   <p>
+     Les lignes qui débutent par «&nbsp;Réception de&nbsp;» sont affichées quand APT
+     démarre la récupération d'un fichier alors que la dernière ligne
+     indique la progression du téléchargement. La première valeur de
+     pourcentage de la ligne est le pourcentage de téléchargement déjà
+     effectué, pour l'ensemble des fichiers. Il faut noter que, comme la
+     taille des fichiers de paquets n'est pas connue, <tt>apt-get
+     update</tt> estime le pourcentage effectué ce qui peut conduire à des
+     imprécisions.
+   </p>
+   <p>
+     La section suivante de la ligne d'état est répétée pour chaque
+     sous-tâche de téléchargement. Elle indique l'opération effectuée et
+     d'autres informations utiles sur ce qui est en cours. Cette section
+     indiquera parfois <em>Forking</em> ce qui indique que le système charge
+     le module de téléchargement. Le premier mot après le crochet ouvrant
+     ([) est le numéro d'ordre de téléchargement comme indiqué dans les
+     lignes d'historique. Le mot suivant est le nom court de l'objet
+     téléchargé. Pour les archives, il s'agit du nom du paquet en cours de
+     récupération.
+   </p>
+   <p>
+     À l'intérieur des guillemets, on trouve une information sur la
+     progression de la phase de négociation du téléchargement. Usuellement,
+     elle évolue de <em>Connexion</em> à <em>Attente du fichier</em>, puis
+     <em>Téléchargement</em> ou <em>Reprise</em>. La valeur finale est le
+     nombre d'octets téléchargés depuis le site distant. Une fois le
+     téléchargement commencé, cette indication prend la forme
+     <tt>102/10,2ko</tt>, ce qui indique que 102 octets ont été téléchargés
+     et que 10,2 kilo-octets sont attendus. La taille totale est toujours
+     représentées sur 4 digits pour des raisons de place disponible. Après
+     cet affichage de taille, se trouve une barre de progression pour le
+     téléchargement du fichier lui-même. L'élément suivant est la vitesse
+     instantanée de téléchargement. Elle est mise à jour toutes les 5
+     secondes et représente la vitesse de transfert pour cette
+     période. Enfin, est affiché la temps de téléchargement restant
+     estimé. Cette information est mise régulièrement à jour et représete la
+     durée estimée de téléchargement de toute ce qui est nécessaire, à la
+     vitesse affichée.
+   </p>
+   <p>
+     La ligne d'état est mise à jour chaque demi-seconde afin de fournir un
+     retour régulier sur la progression du téléchargement alors que les
+     lignes «&nbsp;Réception de&nbsp;» reculent d'une unité à chaque fois qu'un
+     nouveau fichier est démarré. Comme l'état est mis à jour régulièrement,
+     il ne peut pas servir pour la journalisation dans un fichier. Il est
+     nécessaire d'utiliser l'option <tt>-q</tt> pour supprimer cet
+     affichage.
+   </p>
+  </sect>
+  <sect>
+   <heading>
+     Dpkg
+   </heading>
+   <p>
+     APT utilise <prgn>dpkg</prgn> pour installer les archives et bascule
+     vers l'interface de ce programme une fois le téléchargement
+     terminé. <prgn>dpkg</prgn> peut poser un certain nombre de questions
+     pendant le traitement des paquets, qui peuvent eux-même être amener à
+     poser des questions. Chacune de ces questions comporte un description
+     de ce qui est attendu et elles sont trop variables d'un paquet à
+     l'autre pour qu'une description détaillée soit donnée dans ce document.
+   </p>
+  </sect>
+ </chapt>
+</book>
+</debiandoc>

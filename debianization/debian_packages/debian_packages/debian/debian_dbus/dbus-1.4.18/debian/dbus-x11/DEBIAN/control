@@ -1,0 +1,22 @@
+Package: dbus-x11
+Source: dbus
+Version: 1.4.18-u.1.0.2.1
+Architecture: amd64
+Maintainer: SCEL Developers
+Installed-Size: 133
+Depends: libc6 (>= 2.15), libx11-6, dbus
+Breaks: x11-common (<< 1:7.5+4)
+Section: x11
+Priority: optional
+Multi-Arch: foreign
+Homepage: http://dbus.freedesktop.org/
+Description: simple interprocess messaging system (X11 deps)
+ D-Bus is a message bus, used for sending messages between applications.
+ Conceptually, it fits somewhere in between raw sockets and CORBA in
+ terms of complexity.
+ .
+ This package contains the dbus-launch utility which is necessary for
+ packages using a D-Bus session bus.
+ .
+ See the dbus description for more information about D-Bus in general.
+Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>

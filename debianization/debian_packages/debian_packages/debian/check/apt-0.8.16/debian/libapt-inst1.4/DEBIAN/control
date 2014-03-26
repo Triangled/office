@@ -1,0 +1,16 @@
+Package: libapt-inst1.4
+Source: apt
+Version: 0.8.16~exp12ubuntu10.16
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 822
+Pre-Depends: multiarch-support
+Depends: libapt-pkg4.12 (>= 0.8.16~exp12ubuntu10.16), libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0)
+Section: admin
+Priority: important
+Multi-Arch: same
+Description: deb package format runtime library
+ This library provides methods to query and extract information
+ from deb packages. This includes the control data and the package
+ file content.
+Original-Maintainer: APT Development Team <deity@lists.debian.org>

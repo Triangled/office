@@ -1,0 +1,622 @@
+\section{pkg\-Acquire \-Class \-Reference}
+\label{classpkgAcquire}\index{pkg\-Acquire@{pkg\-Acquire}}
+
+
+\-The core download scheduler. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire.\-h$>$}
+
+
+
+\-Collaboration diagram for pkg\-Acquire\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcquire__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf \-Item}
+\begin{DoxyCompactList}\small\item\em \-Represents the process by which a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object should \{\{\{ retrieve a file or a collection of files. \end{DoxyCompactList}\item 
+struct {\bf \-Item\-Desc}
+\begin{DoxyCompactList}\small\item\em \-Represents a single download source from which an item should be downloaded. \end{DoxyCompactList}\item 
+struct {\bf \-Method\-Config}
+\begin{DoxyCompactList}\small\item\em \-Information about the properties of a single acquire method. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf \-Queue}
+\begin{DoxyCompactList}\small\item\em \-A single download queue in a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf \-Uri\-Iterator}
+\begin{DoxyCompactList}\small\item\em \-Iterates over all the \-U\-R\-Is being fetched by a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf \-Worker}
+\begin{DoxyCompactList}\small\item\em \-A fetch subprocess. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Run\-Result} \{ {\bf \-Continue}, 
+{\bf \-Failed}, 
+{\bf \-Cancelled}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Provides information on how a download terminated. \end{DoxyCompactList}\item 
+typedef std\-::vector$<$ {\bf \-Item} $\ast$ $>$\*
+\-::{\bf iterator} {\bfseries \-Item\-Iterator}\label{classpkgAcquire_ad5c96d11fbbc0a036b3c504b5b6b7568}
+
+\item 
+typedef std\-::vector$<$ {\bf \-Item} $\ast$ $>$\*
+\-::const\-\_\-iterator {\bfseries \-Item\-C\-Iterator}\label{classpkgAcquire_a865ab8f36abc917006d6d1f651c8b132}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Method\-Config} $\ast$ {\bf \-Get\-Config} (std\-::string \-Access)
+\begin{DoxyCompactList}\small\item\em \-Retrieve information about a fetch method by name. \end{DoxyCompactList}\item 
+{\bf \-Run\-Result} {\bf \-Run} (int \-Pulse\-Interval=500000)
+\begin{DoxyCompactList}\small\item\em \-Download all the items that have been \doxyref{\-Add()}{p.}{classpkgAcquire_a81c2ed5c92ad099344f44cfd9ebdb249}ed to this download process. \end{DoxyCompactList}\item 
+void {\bf \-Shutdown} ()\label{classpkgAcquire_ac5f038c2b480cf9ef5e19e3eba8dbaf9}
+
+\begin{DoxyCompactList}\small\item\em \-Remove all items from this download process, terminate all download workers, and empty all queues. \end{DoxyCompactList}\item 
+{\bf \-Worker} $\ast$ {\bf \-Workers\-Begin} ()
+\begin{DoxyCompactList}\small\item\em \-Get the first \#\-Worker object. \end{DoxyCompactList}\item 
+{\bf \-Worker} $\ast$ {\bf \-Worker\-Step} ({\bf \-Worker} $\ast$\-I)
+\begin{DoxyCompactList}\small\item\em \-Advance to the next \#\-Worker object. \end{DoxyCompactList}\item 
+\-Item\-Iterator {\bf \-Items\-Begin} ()\label{classpkgAcquire_af54b860e41ab56ec44a007f3542dbe82}
+
+\begin{DoxyCompactList}\small\item\em \-Get the head of the list of items. \end{DoxyCompactList}\item 
+\-Item\-Iterator {\bf \-Items\-End} ()\label{classpkgAcquire_a06f41681fab7fd54db89fa55c09fac43}
+
+\begin{DoxyCompactList}\small\item\em \-Get the end iterator of the list of items. \end{DoxyCompactList}\item 
+{\bf \-Uri\-Iterator} {\bf \-Uri\-Begin} ()
+\begin{DoxyCompactList}\small\item\em \-Get the head of the list of enqueued item \-U\-R\-Is. \end{DoxyCompactList}\item 
+{\bf \-Uri\-Iterator} {\bf \-Uri\-End} ()\label{classpkgAcquire_a5e782c6e73a812c3650623fe076d4dcc}
+
+\begin{DoxyCompactList}\small\item\em \-Get the end iterator of the list of enqueued item \-U\-R\-Is. \end{DoxyCompactList}\item 
+bool {\bf \-Clean} (std\-::string \-Dir)
+\item 
+unsigned long long {\bf \-Total\-Needed} ()
+\item 
+unsigned long long {\bf \-Fetch\-Needed} ()
+\item 
+unsigned long long {\bf \-Partial\-Present} ()
+\item 
+bool {\bf \-Setup} ({\bf pkg\-Acquire\-Status} $\ast$\-Progress=\-N\-U\-L\-L, std\-::string const \&\-Lock=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em \-Delayed constructor. \end{DoxyCompactList}\item 
+void {\bfseries \-Set\-Log} ({\bf pkg\-Acquire\-Status} $\ast$\-Progress)\label{classpkgAcquire_a9f5d351e5e37ab3241156c4106e7f2a5}
+
+\item 
+{\bf pkg\-Acquire} ({\bf pkg\-Acquire\-Status} $\ast${\bf \-Log}) \-\_\-\-\_\-deprecated\label{classpkgAcquire_a933f8d73c6388b54f107604957879ce5}
+
+\begin{DoxyCompactList}\small\item\em \-Construct a new \doxyref{pkg\-Acquire}{p.}{classpkgAcquire}. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$pkg\-Acquire} ()
+\begin{DoxyCompactList}\small\item\em \-Destroy this \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Queue\-Strategy} \{ {\bf \-Queue\-Host}, 
+{\bf \-Queue\-Access}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Represents the queuing strategy for remote \-U\-R\-Is. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \-Add} ({\bf \-Item} $\ast${\bf \-Item})\label{classpkgAcquire_a81c2ed5c92ad099344f44cfd9ebdb249}
+
+\begin{DoxyCompactList}\small\item\em \-Add the given item to the list of items. \end{DoxyCompactList}\item 
+void {\bf \-Remove} ({\bf \-Item} $\ast${\bf \-Item})\label{classpkgAcquire_ae3e5902c5c7d0b5c6856e6761205a39c}
+
+\begin{DoxyCompactList}\small\item\em \-Remove the given item from the list of items. \end{DoxyCompactList}\item 
+void {\bf \-Add} ({\bf \-Worker} $\ast$\-Work)\label{classpkgAcquire_a4342a42ca975e033e3e859480b0c45ee}
+
+\begin{DoxyCompactList}\small\item\em \-Add the given worker to the list of workers. \end{DoxyCompactList}\item 
+void {\bf \-Remove} ({\bf \-Worker} $\ast$\-Work)\label{classpkgAcquire_a8ec623661f28cc681c1145186227ab60}
+
+\begin{DoxyCompactList}\small\item\em \-Remove the given worker from the list of workers. \end{DoxyCompactList}\item 
+void {\bf \-Enqueue} ({\bf \-Item\-Desc} \&{\bf \-Item})
+\begin{DoxyCompactList}\small\item\em \-Insert the given fetch request into the appropriate queue. \end{DoxyCompactList}\item 
+void {\bf \-Dequeue} ({\bf \-Item} $\ast${\bf \-Item})\label{classpkgAcquire_ad88e269d0297439604f25eb9c1309286}
+
+\begin{DoxyCompactList}\small\item\em \-Remove all fetch requests for this item from all queues. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Queue\-Name} (std\-::string {\bf \-U\-R\-I}, {\bf \-Method\-Config} const $\ast$\&\-Config)
+\begin{DoxyCompactList}\small\item\em \-Determine the fetch method and queue of a \doxyref{\-U\-R\-I}{p.}{classURI}. \end{DoxyCompactList}\item 
+virtual void {\bf \-Set\-Fds} (int \&\-Fd, fd\-\_\-set $\ast$\-R\-Set, fd\-\_\-set $\ast$\-W\-Set)
+\begin{DoxyCompactList}\small\item\em \-Build up the set of file descriptors upon which select() should block. \end{DoxyCompactList}\item 
+virtual void {\bf \-Run\-Fds} (fd\-\_\-set $\ast$\-R\-Set, fd\-\_\-set $\ast$\-W\-Set)
+\item 
+void {\bf \-Bump} ()
+\begin{DoxyCompactList}\small\item\em \-Check for idle queues with ready-\/to-\/fetch items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ {\bf \-Item} $\ast$ $>$ {\bf \-Items}
+\begin{DoxyCompactList}\small\item\em \-A list of items to download. \end{DoxyCompactList}\item 
+{\bf \-Queue} $\ast$ {\bf \-Queues}
+\begin{DoxyCompactList}\small\item\em \-The head of the list of active queues. \end{DoxyCompactList}\item 
+{\bf \-Worker} $\ast$ {\bf \-Workers}
+\begin{DoxyCompactList}\small\item\em \-The head of the list of active workers. \end{DoxyCompactList}\item 
+{\bf \-Method\-Config} $\ast$ {\bf \-Configs}
+\begin{DoxyCompactList}\small\item\em \-The head of the list of acquire method configurations. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-Status} $\ast$ {\bf \-Log}\label{classpkgAcquire_aa7f97da72ceb8761a1cda178c778ca7c}
+
+\begin{DoxyCompactList}\small\item\em \-The progress indicator for this download. \end{DoxyCompactList}\item 
+unsigned long {\bf \-To\-Fetch}\label{classpkgAcquire_abc16dbbd88d0020e00b57ef0dce9471a}
+
+\begin{DoxyCompactList}\small\item\em \-The number of files which are to be fetched. \end{DoxyCompactList}\item 
+enum {\bf pkg\-Acquire\-::\-Queue\-Strategy} {\bfseries \-Queue\-Mode}\label{classpkgAcquire_a83fb07406bfcd989e71f5c6588d0c266}
+
+\item 
+bool const {\bf \-Debug}\label{classpkgAcquire_a25c57bcf8cdbeb6439120a35d90366d8}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, debugging information will be dumped to std\-::clog. \end{DoxyCompactList}\item 
+bool {\bf \-Running}\label{classpkgAcquire_ae2e97f1ebd7c956e2c68d1209eabd4b1}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, a download is currently in progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries \-Item}\label{classpkgAcquire_aad85754f188b769ff61150eaf36106c4}
+
+\item 
+class {\bfseries \-Queue}\label{classpkgAcquire_a47dfc6f2bc0d50a6e7c92eb00d97b064}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The core download scheduler. \{\{\{. 
+
+\-This class represents an ongoing download. \-It manages the lists of active and pending downloads and handles setting up and tearing down download-\/related structures.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why all the protected data items and methods? \end{DoxyRefDesc}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Queue\-Strategy@{\-Queue\-Strategy}}
+\index{\-Queue\-Strategy@{\-Queue\-Strategy}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Queue\-Strategy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Queue\-Strategy}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_aedefc2c8ff9f8aa323d296085f969555}
+
+
+\-Represents the queuing strategy for remote \-U\-R\-Is. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Queue\-Host@{\-Queue\-Host}!pkg\-Acquire@{pkg\-Acquire}}\index{pkg\-Acquire@{pkg\-Acquire}!\-Queue\-Host@{\-Queue\-Host}}\item[{\em 
+\-Queue\-Host\label{classpkgAcquire_aedefc2c8ff9f8aa323d296085f969555ad2a3b31a571e30aeeb9d40666f04b902}
+}]\-Generate one queue for each protocol/host combination; downloads from multiple hosts can proceed in parallel. \index{\-Queue\-Access@{\-Queue\-Access}!pkg\-Acquire@{pkg\-Acquire}}\index{pkg\-Acquire@{pkg\-Acquire}!\-Queue\-Access@{\-Queue\-Access}}\item[{\em 
+\-Queue\-Access\label{classpkgAcquire_aedefc2c8ff9f8aa323d296085f969555adfbf4cb90b4209e5981227965246d8f0}
+}]\-Generate a single queue for each protocol; serialize downloads from multiple hosts. \end{description}
+\end{Desc}
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Run\-Result@{\-Run\-Result}}
+\index{\-Run\-Result@{\-Run\-Result}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Run\-Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Run\-Result}}\label{classpkgAcquire_ad45c2d8ba7020a5b66bb0563cc773820}
+
+
+\-Provides information on how a download terminated. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Continue@{\-Continue}!pkg\-Acquire@{pkg\-Acquire}}\index{pkg\-Acquire@{pkg\-Acquire}!\-Continue@{\-Continue}}\item[{\em 
+\-Continue\label{classpkgAcquire_ad45c2d8ba7020a5b66bb0563cc773820a45a66636ecd16b869e4aadd738813583}
+}]\-All files were fetched successfully. \index{\-Failed@{\-Failed}!pkg\-Acquire@{pkg\-Acquire}}\index{pkg\-Acquire@{pkg\-Acquire}!\-Failed@{\-Failed}}\item[{\em 
+\-Failed\label{classpkgAcquire_ad45c2d8ba7020a5b66bb0563cc773820a1f506c828f4945d6b5a7bf71445f7d54}
+}]\-Some files failed to download. \index{\-Cancelled@{\-Cancelled}!pkg\-Acquire@{pkg\-Acquire}}\index{pkg\-Acquire@{pkg\-Acquire}!\-Cancelled@{\-Cancelled}}\item[{\em 
+\-Cancelled\label{classpkgAcquire_ad45c2d8ba7020a5b66bb0563cc773820ad1e026338c0200900908a176717682b8}
+}]\-The download was cancelled by the user (i.\-e., \doxyref{\-Log}{p.}{classpkgAcquire_aa7f97da72ceb8761a1cda178c778ca7c}'s \doxyref{pkg\-Acquire\-Status\-::\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} method returned {\bfseries false}). \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acquire@{pkg\-Acquire}!$\sim$pkg\-Acquire@{$\sim$pkg\-Acquire}}
+\index{$\sim$pkg\-Acquire@{$\sim$pkg\-Acquire}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{$\sim$pkg\-Acquire}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf pkg\-Acquire} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_a63b3097945b28966895045ffeaeb658c}
+
+
+\-Destroy this \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. 
+
+\-Destroys all queue, method, and item objects associated with this download. 
+
+\-References \-Configs, pkg\-Acquire\-::\-Method\-Config\-::\-Next, and \-Shutdown().
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Bump@{\-Bump}}
+\index{\-Bump@{\-Bump}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Bump}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Bump} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_abf4fe627ab803887ecd2a8af30f17147}
+
+
+\-Check for idle queues with ready-\/to-\/fetch items. 
+
+\-Called by pkg\-Acquire\-::\-Queue\-::\-Done each time an item is dequeued but remains on some queues; i.\-e., another queue should start fetching it. 
+
+\-References \-Queues.
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Clean@{\-Clean}}
+\index{\-Clean@{\-Clean}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Clean}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Clean} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Dir}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_aae5af42b94e25de2d233e1bfa6b0688c}
+\-Deletes each entry in the given directory that is not being downloaded by this object. \-For instance, when downloading new list files, calling \doxyref{\-Clean()}{p.}{classpkgAcquire_aae5af42b94e25de2d233e1bfa6b0688c} will delete the old ones.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Dir} & \-The directory to be cleaned out.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the directory exists and is readable. 
+\end{DoxyReturn}
+
+
+\-References \-Items.
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Enqueue@{\-Enqueue}}
+\index{\-Enqueue@{\-Enqueue}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Enqueue} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Item\-Desc} \&}]{\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_adff4865b0b932d7c8dae0aee44006c13}
+
+
+\-Insert the given fetch request into the appropriate queue. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item}} & \-The \doxyref{\-U\-R\-I}{p.}{classURI} to download and the item to download it for. \-Copied by value into the queue; no reference to \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item} is retained. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Complete, \-Debug, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Queue\-::\-Enqueue(), pkg\-Acquire\-::\-Item\-::\-Local, pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only, pkg\-Acquire\-::\-Queue\-::\-Name, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, \-Queue\-Name(), \-Queues, \-Running, pkg\-Acquire\-::\-Queue\-::\-Startup(), pkg\-Acquire\-::\-Item\-::\-Stat\-Idle, \-To\-Fetch, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Fetch\-Needed@{\-Fetch\-Needed}}
+\index{\-Fetch\-Needed@{\-Fetch\-Needed}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Fetch\-Needed}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf \-Fetch\-Needed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_a9d45ce9ee7bcdc6f18d2f62a64faf75b}
+\begin{DoxyReturn}{\-Returns}
+the size in bytes of all non-\/local items included in this download. 
+\end{DoxyReturn}
+
+
+\-References \-Items\-Begin(), and \-Items\-End().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Get\-Config@{\-Get\-Config}}
+\index{\-Get\-Config@{\-Get\-Config}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Get\-Config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$ {\bf \-Get\-Config} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Access}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_ad698ed345d50318b53f3cc3ae43190db}
+
+
+\-Retrieve information about a fetch method by name. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Access} & \-The name of the method to look up.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the method whose name is \-Access, or {\bfseries \-N\-U\-L\-L} if no such method exists. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Method\-Config\-::\-Access, \-Configs, pkg\-Acquire\-::\-Method\-Config\-::\-Next, pkg\-Acquire\-::\-Method\-Config\-::\-Single\-Instance, and pkg\-Acquire\-::\-Worker\-::\-Start().
+
+
+
+\-Referenced by \-Queue\-Name().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Partial\-Present@{\-Partial\-Present}}
+\index{\-Partial\-Present@{\-Partial\-Present}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Partial\-Present}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf \-Partial\-Present} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_a03569ca7cfb6f2e6015b1af6779d339f}
+\begin{DoxyReturn}{\-Returns}
+the amount of data to be fetched that is already present on the filesystem. 
+\end{DoxyReturn}
+
+
+\-References \-Items\-Begin(), and \-Items\-End().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Queue\-Name@{\-Queue\-Name}}
+\index{\-Queue\-Name@{\-Queue\-Name}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Queue\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Queue\-Name} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-U\-R\-I, }
+\item[{{\bf \-Method\-Config} const $\ast$\&}]{\-Config}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_a67678d9efe826f5824f2e8fc0e812338}
+
+
+\-Determine the fetch method and queue of a \doxyref{\-U\-R\-I}{p.}{classURI}. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em \doxyref{\-U\-R\-I}{p.}{classURI}} & \-The \doxyref{\-U\-R\-I}{p.}{classURI} to fetch.\\
+\hline
+\mbox{\tt out}  & {\em \-Config} & \-A location in which to place the method via which the \doxyref{\-U\-R\-I}{p.}{classURI} is to be fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the string-\/name of the queue in which a fetch request for the given \doxyref{\-U\-R\-I}{p.}{classURI} should be placed. 
+\end{DoxyReturn}
+
+
+\-References \-Get\-Config(), \-Queue\-Access, and pkg\-Acquire\-::\-Method\-Config\-::\-Single\-Instance.
+
+
+
+\-Referenced by \-Enqueue().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Run@{\-Run}}
+\index{\-Run@{\-Run}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Run\-Result} {\bf \-Run} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-Pulse\-Interval = {\ttfamily 500000}}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_af15888f17717fe69c2a9d4a3f511b4a8}
+
+
+\-Download all the items that have been \doxyref{\-Add()}{p.}{classpkgAcquire_a81c2ed5c92ad099344f44cfd9ebdb249}ed to this download process. 
+
+\-This method will block until the download completes, invoking methods on \doxyref{\-Log}{p.}{classpkgAcquire_aa7f97da72ceb8761a1cda178c778ca7c} to report on the progress of the download.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Pulse\-Interval} & \-The method \doxyref{pkg\-Acquire\-Status\-::\-Pulse}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} will be invoked on \doxyref{\-Log}{p.}{classpkgAcquire_aa7f97da72ceb8761a1cda178c778ca7c} at intervals of \-Pulse\-Interval milliseconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the result of the download. 
+\end{DoxyReturn}
+
+
+\-References \-Cancelled, \-Continue, \-Failed, \-Items, \-Log, pkg\-Acquire\-::\-Worker\-::\-Next\-Acquire, pkg\-Acquire\-Status\-::\-Pulse(), \-Queues, \-Run\-Fds(), \-Running, \-Set\-Fds(), pkg\-Acquire\-Status\-::\-Start(), pkg\-Acquire\-Status\-::\-Stop(), \-To\-Fetch, pkg\-Acquire\-Status\-::\-Update, and \-Workers.
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Run\-Fds@{\-Run\-Fds}}
+\index{\-Run\-Fds@{\-Run\-Fds}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Run\-Fds}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Run\-Fds} (
+\begin{DoxyParamCaption}
+\item[{fd\-\_\-set $\ast$}]{\-R\-Set, }
+\item[{fd\-\_\-set $\ast$}]{\-W\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classpkgAcquire_a7da212e2f15e36a5bd3aa889d92f992d}
+\-Handle input from and output to file descriptors which select() has determined are ready. \-The default implementation dispatches to all active downloads.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-R\-Set} & \-The set of file descriptors that are ready for input.\\
+\hline
+{\em \-W\-Set} & \-The set of file descriptors that are ready for output. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Worker\-::\-Next\-Acquire, and \-Workers.
+
+
+
+\-Referenced by \-Run().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Set\-Fds@{\-Set\-Fds}}
+\index{\-Set\-Fds@{\-Set\-Fds}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Set\-Fds}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Set\-Fds} (
+\begin{DoxyParamCaption}
+\item[{int \&}]{\-Fd, }
+\item[{fd\-\_\-set $\ast$}]{\-R\-Set, }
+\item[{fd\-\_\-set $\ast$}]{\-W\-Set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classpkgAcquire_a7d36ab39eb6238a71b574a40730fd469}
+
+
+\-Build up the set of file descriptors upon which select() should block. 
+
+\-The default implementation inserts the file descriptors corresponding to active downloads.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em \-Fd} & \-The largest file descriptor in the generated sets.\\
+\hline
+\mbox{\tt out}  & {\em \-R\-Set} & \-The set of file descriptors that should be watched for input.\\
+\hline
+\mbox{\tt out}  & {\em \-W\-Set} & \-The set of file descriptors that should be watched for output. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Worker\-::\-Next\-Acquire, and \-Workers.
+
+
+
+\-Referenced by \-Run().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Setup@{\-Setup}}
+\index{\-Setup@{\-Setup}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Setup} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire\-Status} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}, }
+\item[{std\-::string const \&}]{\-Lock = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_a663650471291f649083b4f4cf55e1fed}
+
+
+\-Delayed constructor. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Progress} & indicator associated with this download or {\bfseries \-N\-U\-L\-L} for none. \-This object is not owned by the download process and will not be deleted when the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object is destroyed. \-Naturally, it should live for at least as long as the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object does. \\
+\hline
+{\em \-Lock} & defines a lock file that should be acquired to ensure only one \-Acquire class is in action at the time or an empty string if no lock file should be used. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Log.
+
+
+
+\-Referenced by pkg\-Acquire().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Total\-Needed@{\-Total\-Needed}}
+\index{\-Total\-Needed@{\-Total\-Needed}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Total\-Needed}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf \-Total\-Needed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_aec67bf8f156e86661446f7bb8b78ed21}
+\begin{DoxyReturn}{\-Returns}
+the total size in bytes of all the items included in this download. 
+\end{DoxyReturn}
+
+
+\-References \-Items\-Begin(), and \-Items\-End().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Uri\-Begin@{\-Uri\-Begin}}
+\index{\-Uri\-Begin@{\-Uri\-Begin}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Uri\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Uri\-Iterator} {\bf \-Uri\-Begin} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_a03a67f9076e4dd4a46bb429a9b1f5164}
+
+
+\-Get the head of the list of enqueued item \-U\-R\-Is. 
+
+\-This iterator will step over every element of every active queue. 
+
+\-References \-Queues.
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Workers\-Begin@{\-Workers\-Begin}}
+\index{\-Workers\-Begin@{\-Workers\-Begin}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Workers\-Begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Worker}$\ast$ {\bf \-Workers\-Begin} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classpkgAcquire_a1670b365447a9c9262393be646dc0c83}
+
+
+\-Get the first \#\-Worker object. 
+
+\begin{DoxyReturn}{\-Returns}
+the first active worker in this download process. 
+\end{DoxyReturn}
+
+
+\-References \-Workers.
+
+
+
+\-Referenced by pkg\-Acquire\-Status\-::\-Pulse().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Worker\-Step@{\-Worker\-Step}}
+\index{\-Worker\-Step@{\-Worker\-Step}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Worker\-Step}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Worker} $\ast$ {\bf \-Worker\-Step} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Worker} $\ast$}]{\-I}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_a5ec7f5e183213f1db75ebbc9f3dce230}
+
+
+\-Advance to the next \#\-Worker object. 
+
+\begin{DoxyReturn}{\-Returns}
+the worker immediately following \-I, or {\bfseries \-N\-U\-L\-L} if none exists. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Worker\-::\-Next\-Acquire.
+
+
+
+\-Referenced by pkg\-Acquire\-Status\-::\-Pulse().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Configs@{\-Configs}}
+\index{\-Configs@{\-Configs}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Configs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Method\-Config}$\ast$ {\bf \-Configs}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_ab04e9ee398f825f50e4f1ea7eaf37f77}
+
+
+\-The head of the list of acquire method configurations. 
+
+\-Each protocol (http, ftp, gzip, etc) via which files can be fetched can have a representation in this list. \-The configuration data is filled in by parsing the 100 \-Capabilities string output by a method on startup (see pkg\-Acq\-Method\-::pkg\-Acq\-Method and \doxyref{pkg\-Acquire\-::\-Get\-Config}{p.}{classpkgAcquire_ad698ed345d50318b53f3cc3ae43190db}).
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]why a hand-\/managed config dictionary instead of std\-::map? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Get\-Config(), and $\sim$pkg\-Acquire().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Items@{\-Items}}
+\index{\-Items@{\-Items}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Items}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Item} $\ast$$>$ {\bf \-Items}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_a8089d1f0a2e10710afe1d1488a1f1f72}
+
+
+\-A list of items to download. 
+
+\-This is built monotonically as items are created and only emptied when the download shuts down. 
+
+\-Referenced by \-Add(), \-Clean(), pkg\-Acquire\-::\-Queue\-::\-Cycle(), pkg\-Acquire\-::\-Queue\-::\-Dequeue(), pkg\-Acquire\-::\-Queue\-::\-Enqueue(), pkg\-Acquire\-::\-Queue\-::\-Find\-Item(), \-Items\-Begin(), \-Items\-End(), \-Remove(), \-Run(), \-Shutdown(), and pkg\-Acquire\-::\-Queue\-::$\sim$\-Queue().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Queues@{\-Queues}}
+\index{\-Queues@{\-Queues}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Queues}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Queue}$\ast$ {\bf \-Queues}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_a9e42b66f176afafc1c75e78289e80e76}
+
+
+\-The head of the list of active queues. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]why a hand-\/managed list of queues instead of std\-::list or std\-::set? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Bump(), \-Dequeue(), \-Enqueue(), \-Run(), \-Shutdown(), and \-Uri\-Begin().
+
+\index{pkg\-Acquire@{pkg\-Acquire}!\-Workers@{\-Workers}}
+\index{\-Workers@{\-Workers}!pkgAcquire@{pkg\-Acquire}}
+\subsubsection[{\-Workers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Worker}$\ast$ {\bf \-Workers}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_adfb69296d9a50a92927df7c30e56be2e}
+
+
+\-The head of the list of active workers. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]why a hand-\/managed list of workers instead of std\-::list or std\-::set? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Add(), pkg\-Acquire\-::\-Queue\-::\-Cycle(), \-Remove(), \-Run(), \-Run\-Fds(), \-Set\-Fds(), pkg\-Acquire\-::\-Queue\-::\-Shutdown(), pkg\-Acquire\-::\-Queue\-::\-Startup(), and \-Workers\-Begin().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire.\-cc\end{DoxyCompactItemize}

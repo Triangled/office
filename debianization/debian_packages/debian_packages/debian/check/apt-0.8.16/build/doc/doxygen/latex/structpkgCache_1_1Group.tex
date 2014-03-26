@@ -1,0 +1,39 @@
+\section{pkg\-Cache\-:\-:\-Group \-Struct \-Reference}
+\label{structpkgCache_1_1Group}\index{pkg\-Cache\-::\-Group@{pkg\-Cache\-::\-Group}}
+
+
+groups architecture depending packages together  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-Name}\label{structpkgCache_1_1Group_a003b2b80c083e7b91263d147956addcf}
+
+\begin{DoxyCompactList}\small\item\em \-Name of the group. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-First\-Package}\label{structpkgCache_1_1Group_ab336d151b87f74a7b9d1dd4e39c483f6}
+
+\begin{DoxyCompactList}\small\item\em \-Link to the first package which belongs to the group. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Last\-Package}\label{structpkgCache_1_1Group_a9e1b4d2edebcd3a9ef694c192af5f027}
+
+\begin{DoxyCompactList}\small\item\em \-Link to the last package which belongs to the group. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next}\label{structpkgCache_1_1Group_a901af5ffe2dd42b76c4ceee674a085dc}
+
+\begin{DoxyCompactList}\small\item\em \-Link to the next \doxyref{\-Group}{p.}{structpkgCache_1_1Group}. \end{DoxyCompactList}\item 
+unsigned int {\bf \-I\-D}\label{structpkgCache_1_1Group_a0dd14fb57e3d3cc6b6fc5633c6ce65d5}
+
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+groups architecture depending packages together 
+
+\-On or more packages with the same name form a group, so we have a simple way to access a package built for different architectures \doxyref{\-Group}{p.}{structpkgCache_1_1Group} exists in a singly linked list of group records starting at the hash index of the name in the pkg\-Cache\-::\-Header\-::\-Grp\-Hash\-Table 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

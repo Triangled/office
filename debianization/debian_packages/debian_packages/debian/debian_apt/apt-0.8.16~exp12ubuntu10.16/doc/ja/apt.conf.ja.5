@@ -1,0 +1,1109 @@
+'\" t
+.\"     Title: apt.conf
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 16 January 2010
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\&.CONF" "5" "16 January 2010" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt.conf \- APT の設定ファイル
+.SH "説明"
+.PP
+apt\&.conf
+は、APT ツールスイートのメイン設定ファイルですが、間違いなくオプションの変更を指定するだけの場所などではありません。そのため、すべてのツールは設定ファイルを共有し、統一環境を提供するため、共通のコマンドラインパーサも使用します。
+.PP
+APT ツールの起動時に、設定ファイルを以下の順番で読み込みます。
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+\fBAPT_CONFIG\fR
+環境変数で指定したファイル (存在する場合)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+all files in
+Dir::Etc::Parts
+in alphanumeric ascending order which have either no or "conf" as filename extension and which only contain alphanumeric, hyphen (\-), underscore (_) and period (\&.) characters\&. Otherwise APT will print a notice that it has ignored a file if the file doesn\*(Aqt match a pattern in the
+Dir::Ignore\-Files\-Silently
+configuration list \- in this case it will be silently ignored\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+Dir::Etc::Main
+で指定される、メイン設定ファイル
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+コマンドラインオプションにより、設定ディレクティブの上書きや設定ファイルの追加読み込みができます。
+.RE
+.SH "構文"
+.PP
+設定ファイルは、機能グループごとに系統立てられたオプションを木構造で表します。オプションの指定は、2 つのコロンで区切ります。例えば
+APT::Get::Assume\-Yes
+は、APT ツールグループの Get ツール用オプションです。オプションは、親グループから継承しません。
+.PP
+設定言語の構文は、bind や dhcp のような ISC ツールをモデルにしています。//
+で始まる行はコメントとして扱われます (無視)。同様に C/C++ のコメントのような
+/*
+と
+*/
+の間もコメントとして扱います。いずれの行も、
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+APT::Get::Assume\-Yes
+"true";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+のような形式です。行末のセミコロンとクォートは必要です。値は1行でなければならず、文字列結合はありません。値の中にクォートは使えません。値中のバックスラッシュ "\e" とエスケープ文字は、未定義で使用するべきではありません。オプション名は、英数字と "/\-:\&._+" が使用できます。以下のように中カッコを使うと、新しいスコープを開くことができます。
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+   
+APT {
+  Get {
+    Assume\-Yes "true";
+    Fix\-Broken "true";
+  };
+};
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+また適宜改行することで、より読みやすくなります。リストは、開いたスコープ、クォートで囲まれた 1 単語、そしてセミコロンと続けることで作成できます。セミコロンで区切ると、複数のエントリを表せます。
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+   
+DPkg::Pre\-Install\-Pkgs {"/usr/sbin/dpkg\-preconfigure \-\-apt";};
+
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+/usr/share/doc/apt/examples/apt\&.conf
+/usr/share/doc/apt/examples/configure\-index\&.gz
+は一般的な設定ファイルのサンプルです。どのように設定するか参考になるでしょう。
+.PP
+設定項目の名前は、文字の大小を区別しません。そのため、前述の例を
+dpkg::pre\-install\-pkgs
+とできます。
+.PP
+前述した
+DPkg::Pre\-Install\-Pkgs
+の例で見られるように、リストを定義した場合、設定項目名はオプションになります。名前を指定しない場合、新しいエントリは、単純に新しいオプションをリストに追加します。名前を指定すると、あらゆる他の選択肢をオプションに再割り当てし、オプションを上書きできます。
+.PP
+#include
+(これは廃止予定でサポートしない他の実装もあります) と
+#clear
+の 2 つの特別な記法があります。#include
+は指定したファイルを取り込みます。ファイル名がスラッシュで終わった場合には、そのディレクトリをすべて取り込みます。#clear
+は、設定ツリーの一部を削除するにに使用します。指定した要素と、それ以下の要素を削除します (これらの行も、セミコロンで終わる必要があることに注意してください)。
+.PP
+#clear コマンドは、リストや完全なスコープを削除する唯一の方法です。スコープの再オープンや後述する :: スタイルは、それまで書いたエントリを\fI上書きしません\fR。新しい値を与えて上書きするしかありません。リストやスコープは上書きできません。クリアされるだけです。
+.PP
+すべての APT ツールで、コマンドラインで任意の設定ディレクティブを指定できる \-o オプションが使用できます。構文は、完全なオプション名 (例:
+APT::Get::Assume\-Yes)、等号、続いてオプションの新しい値となります。リスト名に続き :: を加えることで、リストを追加できます (疑問に思われたように、スコープ構文はコマンドラインで使用できません)。
+.PP
+1 行で 1 項目の場合にのみ :: は使用でき、スコープ構文と組み合わせるべきではないことに注意してください (スコープ構文には暗黙で :: が挿入されます)。両方の構文を同時に使用すると、「他のオプションと同様に名前と共に動作する、普通ではない名前 "::" のオプションである」といった、(残念なことに) 複数のユーザに渡るバグの引き金になります。問題の中には、リストに追加しようと\fI誤った\fR構文で複数行書くユーザが、このオプション "::" を最後に割り当てようとして、正反対の結果を得るということも含まれます。APT の次期バージョンでは、この誤用を検出すると、動作を停止しエラーを上げるようになります。そのため、APT がこの件で明白にエラーを吐かない限りは、自分でそのような構文を修正してください。
+.SH "APT グループ"
+.PP
+このオプショングループは、ツール全体に影響のある、一般的な APT の振る舞いを制御します。
+.PP
+Architecture
+.RS 4
+システムアーキテクチャ \- ファイルを取得したり、パッケージリストを解析するときに使用するアーキテクチャをセットします。内部でのデフォルトは、apt をコンパイルしたアーキテクチャです。
+.RE
+.PP
+Architectures
+.RS 4
+All Architectures the system supports\&. Processors implementing the
+amd64
+are e\&.g\&. also able to execute binaries compiled for
+i386; This list is use when fetching files and parsing package lists\&. The internal default is always the native architecture (APT::Architecture) and all foreign architectures it can retrieve by calling
+\fBdpkg \-\-print\-foreign\-architectures\fR\&.
+.RE
+.PP
+Default\-Release
+.RS 4
+ひとつ以上のバージョンがある場合に、パッケージをインストールを行うデフォルトリリースです。リリース名や、コード名、リリースバージョンがあります。例えば \*(Aqstable\*(Aq, \*(Aqtesting\*(Aq, \*(Aqunstable\*(Aq, \*(Aqsqueeze\*(Aq, \*(Aqwheezy\*(Aq, \*(Aq4\&.0\*(Aq, \*(Aq5\&.0*\*(Aq となります。\fBapt_preferences\fR(5)
+も参照してください。
+.RE
+.PP
+Ignore\-Hold
+.RS 4
+保留パッケージの無視 \- このグローバルオプションは、問題解決器に保留と指定したパッケージを無視します。
+.RE
+.PP
+Clean\-Installed
+.RS 4
+デフォルトで有効です。autoclean 機能が on の時、ダウンロードできなくなったパッケージをキャッシュから削除します。off の場合、ローカルにインストールされているパッケージは、削除対象から外します。しかし、 APT はキャッシュから削除したパッケージの再インストール方法を、直接提供するわけではないことに注意してください。
+.RE
+.PP
+Immediate\-Configure
+.RS 4
+デフォルトで有効で、インストールやアップグレード処理中に、APT が不可欠パッケージや重要パッケージのインストールを、可能な限り早く行うようになります。\fBdpkg\fR(1)
+の呼び出す際の失敗回数に制限があるため、このようなオプションがあります。このオプションが無効の場合、APT は重要パッケージを、特別パッケージと同様に扱うようになります。重要パッケージ A を展開していて、その設定中に他の展開や設定をたくさん呼び出すと、パッケージ B は A とはなんの関係もないにもかかわらず、dpkg の呼び出しが失敗します (つまり B のメンテナスクリプトがエラーを返します)。この結果、システムの状態として、パッケージ A は展開済みで未設定となります。A に依存するパッケージは、動作の保証がなくなり、A に対する依存関係は、もう満たせなくなります。 即時設定マーカは、たとえば環状の依存関係といった問題が発生しそうな、すべての依存関係に先行依存と同等の即時フラグを適用します。そのため理論上では、APT が即時設定できない、エラーが発生する、このオプションを参照するといった状況になる可能性があるのは、ユーザが即時設定を一時的に無効にして、インストールやアップグレードを行った場合です。「理論上」と言う単語を使ったのは、現在現実世界でこの問題に遭遇したのは、不安定版を使用しており、問題になっていたパッケージの間違った依存関係が原因だったり、システムが既に破損状態であったりした数回だけだからです。前述のシナリオが、即時設定が主に回避する問題のすべてというわけではないため、このオプションを闇雲に無効にするべきではありません。dist\-upgrade
+のような大きな操作を、このオプションを無効にして行う前に、APT がすぐに設定できないパッケージを、明示的に
+install
+してみてください。ですが、アップグレードプロセスの改善のため、バグのリンクにあるディストリビューションと APT チームにも、問題のレポートをおねがいします。
+.RE
+.PP
+Force\-LoopBreak
+.RS 4
+何をしようとしているのか「本当に」判っているのでなければ、絶対にこのオプションを有効にしないでください。不可欠 (essential) パッケージ同士で、競合 (Conflicts) /競合や競合/事前依存 (Pre\-Depend) のループに落ち込んだときに、不可欠パッケージを一時的に削除してループを抜けられるようにします。\fIそんなループはあり得ないはずで、あるとすれば重大なバグです。\fRこのオプションは、tar, gzip, libc, dpkg, bash とそれらが依存しているパッケージ以外の不可欠パッケージで動作します。
+.RE
+.PP
+Cache\-Start, Cache\-Grow and Cache\-Limit
+.RS 4
+APT uses since version 0\&.7\&.26 a resizable memory mapped cache file to store the \*(Aqavailable\*(Aq information\&.
+Cache\-Start
+acts as a hint to which size the Cache will grow and is therefore the amount of memory APT will request at startup\&. The default value is 20971520 bytes (~20 MB)\&. Note that these amount of space need to be available for APT otherwise it will likely fail ungracefully, so for memory restricted devices these value should be lowered while on systems with a lot of configured sources this might be increased\&.
+Cache\-Grow
+defines in byte with the default of 1048576 (~1 MB) how much the Cache size will be increased in the event the space defined by
+Cache\-Start
+is not enough\&. These value will be applied again and again until either the cache is big enough to store all information or the size of the cache reaches the
+Cache\-Limit\&. The default of
+Cache\-Limit
+is 0 which stands for no limit\&. If
+Cache\-Grow
+is set to 0 the automatic grow of the cache is disabled\&.
+.RE
+.PP
+Build\-Essential
+.RS 4
+構築依存関係で不可欠なパッケージを定義します。
+.RE
+.PP
+Get
+.RS 4
+Get サブセクションは
+\fBapt-get\fR(8)
+ツールを制御します。このオプションの詳細は
+\fBapt-get\fR(8)
+の文書を参照してください。
+.RE
+.PP
+Cache
+.RS 4
+Cache サブセクションは
+\fBapt-cache\fR(8)
+ツールを制御します。このオプションの詳細は
+\fBapt-cache\fR(8)
+の文書を参照してください。
+.RE
+.PP
+CDROM
+.RS 4
+CDROM サブセクションは
+\fBapt-cdrom\fR(8)
+ツールを制御します。このオプションの詳細は
+\fBapt-cdrom\fR(8)
+の文書を参照してください。
+.RE
+.SH "ACQUIRE グループ"
+.PP
+オプションの
+Acquire
+グループは、パッケージのダウンロードや URI ハンドラの制御を行います。.PP
+Check\-Valid\-Until
+.RS 4
+Security related option defaulting to true as an expiring validation for a Release file prevents longtime replay attacks and can e\&.g\&. also help users to identify no longer updated mirrors \- but the feature depends on the correctness of the time on the user system\&. Archive maintainers are encouraged to create Release files with the
+Valid\-Until
+header, but if they don\*(Aqt or a stricter value is volitional the following
+Max\-ValidTime
+option can be used\&.
+.RE
+.PP
+Max\-ValidTime
+.RS 4
+Seconds the Release file should be considered valid after it was created (indicated by the
+Date
+header)\&. If the Release file itself includes a
+Valid\-Until
+header the earlier date of the two is used as the expiration date\&. The default value is
+0
+which stands for "for ever"\&. Archive specific settings can be made by appending the label of the archive to the option name\&.
+.RE
+.PP
+Min\-ValidTime
+.RS 4
+Minimum of seconds the Release file should be considered valid after it was created (indicated by the
+Date
+header)\&. Use this if you need to use a seldomly updated (local) mirror of a more regular updated archive with a
+Valid\-Until
+header instead of completely disabling the expiration date checking\&. Archive specific settings can and should be used by appending the label of the archive to the option name\&.
+.RE
+.PP
+PDiffs
+.RS 4
+Packages ファイルや Sources ファイルの全体をダウンロードするのではなく、PDiffs
+と呼ばれる差分をダウンロードしようとします。デフォルトでは True です。
+.sp
+Two sub\-options to limit the use of PDiffs are also available: With
+FileLimit
+can be specified how many PDiff files are downloaded at most to patch a file\&.
+SizeLimit
+on the other hand is the maximum percentage of the size of all patches compared to the size of the targeted file\&. If one of these limits is exceeded the complete file is downloaded instead of the patches\&.
+.RE
+.PP
+Queue\-Mode
+.RS 4
+キューモード \-
+Queue\-Mode
+は、APT がどのように並列接続を行うか、host
+か
+access
+で指定できます。host
+は、ターゲットホストごとに 1 接続を開きます。access
+は、URI タイプごとに 1 接続を開きます。
+.RE
+.PP
+Retries
+.RS 4
+リトライの回数を設定します。0 でない場合、APT は失敗したファイルに対して、与えられた回数だけリトライを行います。
+.RE
+.PP
+Source\-Symlinks
+.RS 4
+ソースアーカイブのシンボリックリンクを使用します。true がセットされているとき、可能ならコピーの代わりにシンボリックリンクを張ります。true がデフォルトです。
+.RE
+.PP
+http
+.RS 4
+HTTP URI \- http::Proxy は、デフォルトで使用する http プロキシです。http://[[user][:pass]@]host[:port]/
+という標準形で表します。ホストごとのプロキシの場合は、http::Proxy::<host>
+という形と、プロキシを使用しないという意味の特殊キーワード
+DIRECT
+を使用して指定することもできます。上記の設定をなにも指定しないと、環境変数
+\fBhttp_proxy\fR
+を使用します。
+.sp
+HTTP/1\&.1 準拠のプロキシキャッシュの制御について 3 種類の設定があります。No\-Cache
+はプロキシに対して、いかなる時もキャッシュを使用しないと伝えます。Max\-Age
+は、インデックスファイル用のときだけ送信し、得られた時間よりも古かった場合に、オブジェクトをリフレッシュするようキャッシュに指示します。デフォルトでは 1 日となっているため、Debian は日毎にそのインデックスファイルを更新します。No\-Store
+は、キャッシュがこのリクエストを格納せず、アーカイブファイルのみ設定するよう指定します。これは、非常に大きな \&.deb ファイルで、プロキシキャッシュが汚れるのを防ぐのに便利かもしれません。注) Squid 2\&.0\&.2 では、これらのオプションをサポートしていません。
+.sp
+timeout
+オプションは、この方法でのタイムアウトまでの時間を設定します。これには、接続のタイムアウトとデータのタイムアウトが含まれています。
+.sp
+リモートサーバが RFC 準拠でなかったり、(Squid 2\&.0\&.2 のように) バグがあったりしたときのために、パイプラインの深さの制御を設定します。Acquire::http::Pipeline\-Depth
+により、APT が送信できるリクエストの回数を 0 から 5 の値で設定できます。リモートサーバが適切でなく、TCP 接続に時間がかかるときは、\fI必ず\fR
+0 の値を設定しなければなりません。そうでなければデータが破損してしまいます。これが必要なホストは RFC 2068 に違反しています。
+.sp
+使用する帯域を制限するには、Acquire::http::Dl\-Limit
+にキロバイトで整数値を与えます。デフォルト値は 0 で、制限を解除し、使用できる帯域をすべて使おうとします (このオプションは暗黙的に、同時に複数のサーバからダウンロードしなくなることに注意してください)。
+.sp
+クライアントが既知の識別子を使用する場合にのみ、プロキシがアクセスを許可する場合、Acquire::http::User\-Agent
+を使用して、http でダウンロードするための、異なる User\-Agent を設定できます。
+.RE
+.PP
+https
+.RS 4
+HTTPS URI \- キャッシュ制御、タイムアウト、AllowRedirect、Dl\-Limit、プロキシオプションは
+http
+メソッドと同様です。また、https 用に明示的に設定されない場合、オプションのデフォルト値は
+http
+メソッドと同じです。Pipeline\-Depth
+オプションはまだサポートしていません。
+.sp
+CaInfo
+サブオプションは、信頼済み証明書情報の保持場所を指定します。<host>::CaInfo
+は、対応するホストごとのオプションです。Verify\-Peer
+真偽値サブオプションは、信頼済み証明書に対してサーバのホスト証明書を、検証するかどうかを決定します。<host>::Verify\-Peer
+は、対応するホストごとのオプションです。Verify\-Host
+真偽値サブオプションは、サーバのホスト名を検証するかどうかを決定します。<host>::Verify\-Host
+は、対応するホストごとのオプションです。SslCert
+は、クライアント認証に使用する証明書を決定します。<host>::SslCert
+は、対応するホストごとのオプションです。SslKey
+は、クライアント認証に使用する秘密鍵を決定します。<host>::SslKey
+は、対応するホストごとのオプションです。SslForceVersion
+は、デフォルトで使用する SSL のバージョンを上書きします。\*(AqTLSv1\*(Aq か \*(AqSSLv3\*(Aq という文字列を指定できます。<host>::SslForceVersion
+は、対応するホストごとのオプションです。
+.RE
+.PP
+ftp
+.RS 4
+FTP URI \- ftp::Proxy は、デフォルトで使用するプロキシサーバです。ftp://[[user][:pass]@]host[:port]/
+という標準形で表します。ホストごとのプロキシの場合は、ftp::Proxy::<host>
+という形と、プロキシを使用しないという意味の特殊キーワード
+DIRECT
+を使用して指定することもできます。上記の設定をなにも指定しないと、環境変数
+\fBftp_proxy\fR
+を使用します。ftp プロキシを使用するには、設定ファイルに
+ftp::ProxyLogin
+スクリプトを設定する必要があります。接続する際にプロキシサーバに送信するコマンドをこのエントリに設定します。どのようにするのかは
+/usr/share/doc/apt/examples/configure\-index\&.gz
+の例を参照してください。その他にも、$(PROXY_USER)
+$(PROXY_PASS)
+$(SITE_USER)
+$(SITE_PASS)
+$(SITE)
+$(SITE_PORT)
+が代わりに利用可能です。いずれも、それぞれ URI を構成するトークンです。
+.sp
+timeout
+オプションは、この方法でのタイムアウトまでの時間を設定します。これには、接続のタイムアウトとデータのタイムアウトが含まれています。
+.sp
+設定のいくつかは、パッシブモードを制御するものです。一般的に、パッシブモードのままにしておく方が安全で、ほぼどんな環境でも動作します。しかしある状況下では、パッシブモードが無効のため、代わりにポートモード ftp を使用する必要があります。この設定は、プロキシを通る接続や特定のホストへの接続全般に有効です (設定例はサンプル設定ファイルを参照してください)。
+.sp
+環境変数
+\fBftp_proxy\fR
+の http url により FTP over HTTP のプロキシが利用可能になります。構文は前述の http についての説明を参照してください。設定ファイルの中でこれをセットすることはできません。また、効率が悪いため FTP over HTTP を使用するのは推奨しません。
+.sp
+ForceExtended
+の設定は RFC2428 の
+EPSV
+コマンドと
+EPRT
+コマンドの使用を制御します。デフォルトでは false で、コントロールコネクションが IPv6 の時にのみ、このコマンドを使用するということです。これを true にセットすると、IPv4 コネクションでも、強制的にこのコマンドを使用します。ほとんどの FTP サーバは RFC2428 をサポートしていないことに注意してください。
+.RE
+.PP
+cdrom
+.RS 4
+CDROM URI \- CDROM URI はマウントポイントの設定のみを行います。/etc/fstab
+で設定されているように、CDROM ドライブのマウントポイントを
+cdrom::Mount
+に設定しなければなりません。(SMB マウントや古い mount パッケージなど) マウントポイントが fstab に記述できない場合、かわりにマウント・アンマウントコマンドも使用できます。構文は、cdrom ブロックを
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+/cdrom/::Mount "foo";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+の形で記述します。スラッシュを後につけるのが重要です。アンマウントコマンドは UMount で指定することができます。
+.RE
+.PP
+gpgv
+.RS 4
+GPGV URI \- GPGV URI 用の唯一のオプションは、gpgv に渡す追加パラメータのオプションです。gpgv::Options
+が gpgv に渡す追加オプションです。
+.RE
+.PP
+CompressionTypes
+.RS 4
+acquire メソッドが理解できる、圧縮法のリストです。Packages
+のようなファイルは、さまざまな圧縮形式が利用できます。デフォルト acquire メソッドごとに、\fBbzip2\fR,
+\fBlzma\fR,
+\fBgzip\fR
+で圧縮されたファイルを伸張できます。この設定では、より多くの形式を、オンザフライで追加したり、使用するメソッドで変更したりできます。構文は以下のようになります。
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::\fIFileExtension\fR "\fIMethodname\fR";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+また、Order
+サブグループを使用して、取得システムが圧縮ファイルのダウンロードを試みる順番を、定義できます。取得システムは先頭のものを試行し、エラーが発生すると次の圧縮タイプのダウンロードを開始します。そのため、どれかを他のものより優先したい場合、単にそのタイプを先頭に追加してください。まだ追加していないデフォルトタイプは、実行時にリストの最後に追加されます。つまり、
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::Order:: "gz";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+とすると、\fBgzip\fR
+で圧縮されたファイルを
+\fBbzip2\fR
+や
+\fBlzma\fR
+よりも優先的に使用します。もし
+\fBlzma\fR
+を
+\fBgzip\fR
+や
+\fBbzip2\fR
+よりも優先するべきなら、設定を以下のようにしてください。
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::Order { "lzma"; "gz"; };
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+bz2
+は自動的に追加されるため、明示する必要はありません。
+.sp
+Note that at run time the
+Dir::Bin::\fIMethodname\fR
+will be checked: If this setting exists the method will only be used if this file exists, e\&.g\&. for the bzip2 method (the inbuilt) setting is:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Dir::Bin::bzip2 "/bin/bzip2";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Note also that list entries specified on the command line will be added at the end of the list specified in the configuration files, but before the default entries\&. To prefer a type in this case over the ones specified in the configuration files you can set the option direct \- not in list style\&. This will not override the defined list, it will only prefix the list with this type\&.
+.sp
+The special type
+uncompressed
+can be used to give uncompressed files a preference, but note that most archives don\*(Aqt provide uncompressed files so this is mostly only useable for local mirrors\&.
+.RE
+.PP
+GzipIndexes
+.RS 4
+When downloading
+gzip
+compressed indexes (Packages, Sources, or Translations), keep them gzip compressed locally instead of unpacking them\&. This saves quite a lot of disk space at the expense of more CPU requirements when building the local package caches\&. False by default\&.
+.RE
+.PP
+Languages
+.RS 4
+The Languages subsection controls which
+Translation
+files are downloaded and in which order APT tries to display the Description\-Translations\&. APT will try to display the first available Description in the Language which is listed at first\&. Languages can be defined with their short or long Languagecodes\&. Note that not all archives provide
+Translation
+files for every Language \- especially the long Languagecodes are rare, so please inform you which ones are available before you set here impossible values\&.
+.sp
+The default list includes "environment" and "en"\&. "environment" has a special meaning here: It will be replaced at runtime with the languagecodes extracted from the
+LC_MESSAGES
+environment variable\&. It will also ensure that these codes are not included twice in the list\&. If
+LC_MESSAGES
+is set to "C" only the
+Translation\-en
+file (if available) will be used\&. To force apt to use no Translation file use the setting
+Acquire::Languages=none\&. "none" is another special meaning code which will stop the search for a fitting
+Translation
+file\&. This can be used by the system administrator to let APT know that it should download also this files without actually use them if the environment doesn\*(Aqt specify this languages\&. So the following example configuration will result in the order "en, de" in an english and in "de, en" in a german localization\&. Note that "fr" is downloaded, but not used if APT is not used in a french localization, in such an environment the order would be "fr, de, en"\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::Languages { "environment"; "de"; "en"; "none"; "fr"; };
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SH "ディレクトリ"
+.PP
+Dir::State
+セクションは、ローカル状態情報に関するディレクトリを保持します。lists
+は、ダウンロードしたパッケージ一覧を格納するディレクトリで、status
+は dpkg の状態ファイルの名前を表します。preferences
+は APT の 設定ファイルの名前です。Dir::State
+には、/
+や
+\&./
+で始まらないサブアイテムすべてに、前に付加するデフォルトディレクトリを含んでいます。
+.PP
+Dir::Cache
+は、ローカルキャッシュ情報に関する場所を格納しています。これは、ダウンロード済アーカイブの場所を示す
+Dir::Cache::archives
+と同様に、srcpkgcache
+と
+pkgcache
+のパッケージキャッシュの場所になります。それぞれを空にセットすることで、キャッシュの生成を無効にできます。これにより起動時に遅くなりますが、ディスク容量を節約できます。おそらく、srcpkgcache よりも pkgcache を無効にすることが多いと思います。Dir::State
+と同様、Dir::Cache
+はデフォルトディレクトリを含んでいます。
+.PP
+Dir::Etc
+は設定ファイルの場所を格納しています。sourcelist
+はソースリストの場所を示し、main
+はデフォルトの設定ファイルです。(\fBAPT_CONFIG\fR
+で設定ファイルを指定された場合のみ、この設定の効果があります)
+.PP
+Dir::Parts
+設定は、指定されたディレクトリから、字句単位の全ての設定断片を読みこみます。これを設定した後に、メイン設定ファイルをロードします。
+.PP
+バイナリプログラムは
+Dir::Bin
+で指定します。Dir::Bin::Methods
+はメソッドハンドラの場所を指定し、gzip,
+bzip2,
+lzma,
+dpkg,
+apt\-get
+dpkg\-source
+dpkg\-buildpackage,
+apt\-cache
+はそれぞれプログラムの場所を指定します。
+.PP
+設定項目
+RootDir
+は特別な意味を持ちます。設定されていると、Dir::
+のすべてのパスは、\fI絶対パスとして指定しても\fRRootDir
+からの相対パスとなります。そのため例えば、RootDir
+が
+/tmp/staging
+にセットされており、Dir::State::status
+が
+/var/lib/dpkg/status
+にセットされている場合、status ファイルを
+/tmp/staging/var/lib/dpkg/status
+から探します。
+.PP
+The
+Ignore\-Files\-Silently
+list can be used to specify which files APT should silently ignore while parsing the files in the fragment directories\&. Per default a file which end with
+\&.disabled,
+~,
+\&.bak
+or
+\&.dpkg\-[a\-z]+
+is silently ignored\&. As seen in the last default value these patterns can use regular expression syntax\&.
+.SH "DSELECT での APT"
+.PP
+
+\fBdselect\fR(1)
+上で APT を使用する際、DSelect
+セクション以下の設定項目で、デフォルトの動作を制御します。
+.PP
+Clean
+.RS 4
+キャッシュクリーンモード \- この値は always, prompt, auto, pre\-auto, never のうちひとつを取ります。always と prompt は更新後、全パッケージをキャッシュから削除します。prompt (デフォルト) では条件付きで削除します。auto はダウンロード不能パッケージ (例えば新バージョンで置き換えられたもの) を削除します。pre\-auto はこの動作を、新パッケージをダウンロードする直前に行います。
+.RE
+.PP
+オプション
+.RS 4
+この変数の内容は、install 時のコマンドラインオプションと同様に
+\fBapt-get\fR(8)
+に渡されます。
+.RE
+.PP
+Updateoptions
+.RS 4
+この変数の内容は、update 時のコマンドラインオプションと同様に
+\fBapt-get\fR(8)
+に渡されます。
+.RE
+.PP
+PromptAfterUpdate
+.RS 4
+true の場合、\fBdselect\fR(1)
+の [U]pdate 実行時に、続行のためのプロンプトを毎回表示します。デフォルトはエラーが発生した場合のみです。
+.RE
+.SH "APT が DPKG を呼ぶ方法"
+.PP
+いくつかの設定項目で APT がどのように
+\fBdpkg\fR(1)
+を呼び出すかを制御できます。DPkg
+セクションにあります。
+.PP
+オプション
+.RS 4
+dpkg に渡すオプションのリストです。オプションは、リスト記法を使用して指定しなければなりません。また、各リストは単一の引数として
+\fBdpkg\fR(1)
+に渡されます。
+.RE
+.PP
+Pre\-Invoke, Post\-Invoke
+.RS 4
+\fBdpkg\fR(1)
+を呼び出す前後で実行するシェルコマンドのリストです。options
+のようにリスト記法で指定しなければなりません。コマンドは
+/bin/sh
+を使用して呼び出され、何か問題があれば APT は異常終了します。
+.RE
+.PP
+Pre\-Install\-Pkgs
+.RS 4
+\fBdpkg\fR(1)
+を呼び出す前に実行するシェルコマンドのリストです。options
+のようにリスト記法で指定しなければなりません。コマンドは
+/bin/sh
+を通して呼び出され、何か問題があれば、APT は異常終了します。APT はインストールしようとする全 \&.deb ファイルのファイル名を、ひとつずつコマンドの標準入力に送ります。
+.sp
+このプロトコルのバージョン 2 では、(プロトコルのバージョンや APT 設定スペース、パッケージを含む) 詳細情報やファイル、変更されているバージョンを出力します。DPkg::Tools::options::cmd::Version
+に 2 を設定すると、バージョン 2 を有効にできます。cmd
+は
+Pre\-Install\-Pkgs
+で与えられるコマンドです。
+.RE
+.PP
+Run\-Directory
+.RS 4
+APT は dpkg を呼び出す前にこのディレクトリに移動します。デフォルトは
+/
+です。
+.RE
+.PP
+Build\-options
+.RS 4
+これらのオプションは、パッケージのコンパイル時に
+\fBdpkg-buildpackage\fR(1)
+に渡されます。デフォルトでは署名を無効にし、全バイナリを生成します。
+.RE
+.SS "dpkg トリガの使い方 (および関連オプション)"
+.PP
+APT can call dpkg in a way so it can make aggressive use of triggers over multiple calls of dpkg\&. Without further options dpkg will use triggers only in between his own run\&. Activating these options can therefore decrease the time needed to perform the install / upgrade\&. Note that it is intended to activate these options per default in the future, but as it changes the way APT calling dpkg drastically it needs a lot more testing\&.
+\fIThese options are therefore currently experimental and should not be used in productive environments\&.\fR
+Also it breaks the progress reporting so all frontends will currently stay around half (or more) of the time in the 100% state while it actually configures all packages\&.
+.PP
+Note that it is not guaranteed that APT will support these options or that these options will not cause (big) trouble in the future\&. If you have understand the current risks and problems with these options, but are brave enough to help testing them create a new configuration file and test a combination of options\&. Please report any bugs, problems and improvements you encounter and make sure to note which options you have used in your reports\&. Asking dpkg for help could also be useful for debugging proposes, see e\&.g\&.
+\fBdpkg \-\-audit\fR\&. A defensive option combination would be
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+DPkg::NoTriggers "true";
+PackageManager::Configure "smart";
+DPkg::ConfigurePending "true";
+DPkg::TriggersPending "true";
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+DPkg::NoTriggers
+.RS 4
+Add the no triggers flag to all dpkg calls (except the ConfigurePending call)\&. See
+\fBdpkg\fR(1)
+if you are interested in what this actually means\&. In short: dpkg will not run the triggers when this flag is present unless it is explicitly called to do so in an extra call\&. Note that this option exists (undocumented) also in older apt versions with a slightly different meaning: Previously these option only append \-\-no\-triggers to the configure calls to dpkg \- now apt will add these flag also to the unpack and remove calls\&.
+.RE
+.PP
+PackageManager::Configure
+.RS 4
+Valid values are "all", "smart" and "no"\&. "all" is the default value and causes APT to configure all packages explicit\&. The "smart" way is it to configure only packages which need to be configured before another package can be unpacked (Pre\-Depends) and let the rest configure by dpkg with a call generated by the next option\&. "no" on the other hand will not configure anything and totally rely on dpkg for configuration (which will at the moment fail if a Pre\-Depends is encountered)\&. Setting this option to another than the all value will implicitly activate also the next option per default as otherwise the system could end in an unconfigured status which could be unbootable!
+.RE
+.PP
+DPkg::ConfigurePending
+.RS 4
+If this option is set apt will call
+\fBdpkg \-\-configure \-\-pending\fR
+to let dpkg handle all required configurations and triggers\&. This option is activated automatic per default if the previous option is not set to
+all, but deactivating could be useful if you want to run APT multiple times in a row \- e\&.g\&. in an installer\&. In these sceneries you could deactivate this option in all but the last run\&.
+.RE
+.PP
+DPkg::TriggersPending
+.RS 4
+Useful for
+smart
+configuration as a package which has pending triggers is not considered as
+installed
+and dpkg treats them as
+unpacked
+currently which is a dealbreaker for Pre\-Dependencies (see debbugs #526774)\&. Note that this will process all triggers, not only the triggers needed to configure this package\&.
+.RE
+.PP
+PackageManager::UnpackAll
+.RS 4
+As the configuration can be deferred to be done at the end by dpkg it can be tried to order the unpack series only by critical needs, e\&.g\&. by Pre\-Depends\&. Default is true and therefore the "old" method of ordering in various steps by everything\&. While both method were present in earlier APT versions the
+OrderCritical
+method was unused, so this method is very experimental and needs further improvements before becoming really useful\&.
+.RE
+.PP
+OrderList::Score::Immediate
+.RS 4
+Essential packages (and there dependencies) should be configured immediately after unpacking\&. It will be a good idea to do this quite early in the upgrade process as these these configure calls require currently also
+DPkg::TriggersPending
+which will run quite a few triggers (which maybe not needed)\&. Essentials get per default a high score but the immediate flag is relatively low (a package which has a Pre\-Depends is higher rated)\&. These option and the others in the same group can be used to change the scoring\&. The following example shows the settings with there default values\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+OrderList::Score {
+	Delete 500;
+	Essential 200;
+	Immediate 10;
+	PreDepends 50;
+};
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.SH "PERIODIC オプションと ARCHIVES オプション"
+.PP
+オプションの
+APT::Periodic
+グループと
+APT::Archives
+グループは、/etc/cron\&.daily/apt
+スクリプトを使用して、apt の定期更新の挙動を設定します。このオプションのドキュメントは、このスクリプトの先頭を参照してください。
+.SH "デバッグオプション"
+.PP
+Enabling options in the
+Debug::
+section will cause debugging information to be sent to the standard error stream of the program utilizing the
+apt
+libraries, or enable special program modes that are primarily useful for debugging the behavior of
+apt\&. Most of these options are not interesting to a normal user, but a few may be:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::pkgProblemResolver
+は、dist\-upgrade, upgrade, install, remove, purge
+で行われた判断についての出力を有効にします。
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::NoLocking
+はファイルロックをすべて無効にします。これは、非 root ユーザとして操作 (例えば
+apt\-get \-s install) を行う場合に使用します。
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::pkgDPkgPM
+は
+apt
+が実際に
+\fBdpkg\fR(1)
+を起動する際の各コマンドラインを表示します。
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+
+Debug::IdentCdrom
+は CDROM ID にある statfs データの方gainを無効にします。
+.RE
+.PP
+以下は apt に対するデバッグオプションのすべてです。
+.PP
+Debug::Acquire::cdrom
+.RS 4
+
+cdrom://
+ソースへのアクセスに関する情報を出力します。
+.RE
+.PP
+Debug::Acquire::ftp
+.RS 4
+FTP を用いたパッケージのダウンロードに関する情報を出力します。
+.RE
+.PP
+Debug::Acquire::http
+.RS 4
+HTTP を用いたパッケージのダウンロードに関する情報を出力します。
+.RE
+.PP
+Debug::Acquire::https
+.RS 4
+HTTPS を用いたパッケージのダウンロードに関する情報を出力します。
+.RE
+.PP
+Debug::Acquire::gpgv
+.RS 4
+
+gpg
+を用いた暗号署名の検証に関する情報を出力します。
+.RE
+.PP
+Debug::aptcdrom
+.RS 4
+CD\-ROM にあるパッケージ集合に対して、アクセスするプロセスについての情報を出力します。
+.RE
+.PP
+Debug::BuildDeps
+.RS 4
+
+\fBapt-get\fR(8)
+での構築依存関係解決のプロセスを説明します。
+.RE
+.PP
+Debug::Hashes
+.RS 4
+
+apt
+ライブラリが生成した、暗号化ハッシュを出力します。
+.RE
+.PP
+Debug::IdentCDROM
+.RS 4
+CD\-ROM の ID を生成する際に
+statfs
+という、CD\-ROM ファイルシステムにある使用済・未使用ブロックの数からの情報を含めないようにします。
+.RE
+.PP
+Debug::NoLocking
+.RS 4
+ファイルのロックをすべて無効にします。例えば、同時にふたつの
+\(lqapt\-get update\(rq
+を実行できるようになります。
+.RE
+.PP
+Debug::pkgAcquire
+.RS 4
+グローバルダウンロードキューに対する項目の追加・削除の際にログを出力します。
+.RE
+.PP
+Debug::pkgAcquire::Auth
+.RS 4
+ダウンロードしたファイルのチェックサムや暗号署名の確認に関する、状態メッセージやエラーを出力します。
+.RE
+.PP
+Debug::pkgAcquire::Diffs
+.RS 4
+パッケージインデックスリスト差分のダウンロード・適用時の、情報やエラーを出力します。
+.RE
+.PP
+Debug::pkgAcquire::RRed
+.RS 4
+インデックス全体ではなくインデックス差分のダウンロードの際に、apt パッケージリストへのパッチ適用に関する情報を出力します。
+.RE
+.PP
+Debug::pkgAcquire::Worker
+.RS 4
+実際のダウンロードを行う際の、サブプロセスとのやりとりをログに出力します。
+.RE
+.PP
+Debug::pkgAutoRemove
+.RS 4
+パッケージの自動インストールや、不要パッケージの削除に関するイベントを、ログに出力します。
+.RE
+.PP
+Debug::pkgDepCache::AutoInstall
+.RS 4
+依存関係解決のために、どのパッケージが自動的にインストールされたかのデバッグメッセージを生成します。これは完全な
+apt
+依存関係解決プログラム (Debug::pkgProblemResolver
+を参照) ではなく、例えば
+apt\-get install
+で実行された、初期の自動インストール経路に対応しています。
+.RE
+.PP
+Debug::pkgDepCache::Marker
+.RS 4
+Generate debug messages describing which package is marked as keep/install/remove while the ProblemResolver does his work\&. Each addition or deletion may trigger additional actions; they are shown indented two additional space under the original entry\&. The format for each line is
+MarkKeep,
+MarkDelete
+or
+MarkInstall
+followed by
+package\-name <a\&.b\&.c \-> d\&.e\&.f | x\&.y\&.z> (section)
+where
+a\&.b\&.c
+is the current version of the package,
+d\&.e\&.f
+is the version considered for installation and
+x\&.y\&.z
+is a newer version, but not considered for installation (because of a low pin score)\&. The later two can be omitted if there is none or if it is the same version as the installed\&.
+section
+is the name of the section the package appears in\&.
+.RE
+.PP
+Debug::pkgInitConfig
+.RS 4
+起動時に、標準エラー出力へデフォルト設定を出力します。
+.RE
+.PP
+Debug::pkgDPkgPM
+.RS 4
+
+\fBdpkg\fR(1)
+起動時に、起動した際の正確なコマンドラインを出力します。引数は空白で区切られます。
+.RE
+.PP
+Debug::pkgDPkgProgressReporting
+.RS 4
+状態ファイルディスクリプタに、\fBdpkg\fR(1)
+から受信したすべてのデータと、そのデータを解析中に発生したエラーを出力します。
+.RE
+.PP
+Debug::pkgOrderList
+.RS 4
+
+apt
+が
+\fBdpkg\fR(1)
+にパッケージを渡す順番を決める、アルゴリズムのトレースを生成します。
+.RE
+.PP
+Debug::pkgPackageManager
+.RS 4
+
+\fBdpkg\fR(1)
+を呼び出す際に、実行手順を追跡した状態メッセージを出力します。
+.RE
+.PP
+Debug::pkgPolicy
+.RS 4
+起動時の各パッケージの優先度を表示します。
+.RE
+.PP
+Debug::pkgProblemResolver
+.RS 4
+依存関係解決システムの実行内容を追跡します (これは複雑な依存関係の問題に遭遇した場合にのみ、適用されます)。
+.RE
+.PP
+Debug::pkgProblemResolver::ShowScores
+.RS 4
+Display a list of all installed packages with their calculated score used by the pkgProblemResolver\&. The description of the package is the same as described in
+Debug::pkgDepCache::Marker
+.RE
+.PP
+Debug::sourceList
+.RS 4
+
+/etc/apt/vendors\&.list
+から読み込んだ、ベンダの情報を出力します。
+.RE
+.SH "サンプル"
+.PP
+/usr/share/doc/apt/examples/configure\-index\&.gz
+に、全利用可能オプションのデフォルト値を参照できる、設定ファイルのサンプルがあります。
+.SH "ファイル"
+.PP
+/etc/apt/apt\&.conf
+.RS 4
+APT 設定ファイル。 設定項目 \-
+Dir::Etc::Main
+.RE
+.PP
+/etc/apt/apt\&.conf\&.d/
+.RS 4
+APT 設定ファイル断片。 設定項目 \-
+Dir::Etc::Parts
+.RE
+.SH "関連項目"
+.PP
+
+\fBapt-cache\fR(8),
+\fBapt-config\fR(8),
+\fBapt_preferences\fR(5)\&.
+.SH "バグ"
+.PP
+\m[blue]\fBAPT バグページ\fR\m[]\&\s-2\u[1]\d\s+2
+をご覧ください。 APT のバグを報告する場合は、
+/usr/share/doc/debian/bug\-reporting\&.txt
+や
+\fBreportbug\fR(1)
+コマンドをご覧ください。
+.SH "翻訳"
+.PP
+倉澤 望
+<nabetaro@debian\&.or\&.jp>
+(2003\-2006,2009\-2010), Debian JP Documentation ML
+<debian\-doc@debian\&.or\&.jp>
+.PP
+この翻訳文書には未訳部分が含まれていることに注意してください。 翻訳がオリジナルに追従できていない場合、 内容を失わないようにこのようにしています。
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBAPT チーム\fR
+.RS 4
+.RE
+.PP
+\fBDaniel Burrows\fR <\&dburrows@debian\&.org\&>
+.RS 4
+Debug::*\&. の最初のドキュメント
+.RE
+.SH "NOTES"
+.IP " 1." 4
+APT バグページ
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

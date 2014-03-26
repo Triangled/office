@@ -1,0 +1,206 @@
+<!-- -*- mode: sgml; mode: fold -*- -->
+
+<!-- Boiler plate docinfo section -->
+<!ENTITY apt-docinfo "
+ <refentryinfo>
+   <address><email>apt@packages.debian.org</email></address>
+   <author>
+     <firstname>Jason</firstname> <surname>Gunthorpe</surname>
+     <contrib></contrib>
+   </author>
+   <copyright><year>1998-2001</year> <holder>Jason Gunthorpe</holder></copyright>
+   <date>28 October 2008</date>
+   <productname>Linux</productname>
+ </refentryinfo>
+">
+
+<!ENTITY apt-author.team "
+   <author>
+    <othername>APT チーム</othername>
+    <contrib></contrib>
+   </author>
+">
+
+<!ENTITY apt-qapage "
+	<para>
+		<ulink url='http://packages.qa.debian.org/a/apt.html'>QA ページ</ulink>
+	</para>
+">
+
+<!-- Boiler plate Bug reporting section -->
+<!ENTITY manbugs "
+ <refsect1><title>バグ</title>
+   <para><ulink url='http://bugs.debian.org/src:apt'>APT バグページ</ulink> をご覧ください。 
+   APT のバグを報告する場合は、
+   <filename>/usr/share/doc/debian/bug-reporting.txt</filename> や
+   &reportbug; コマンドをご覧ください。
+   </para>
+ </refsect1>
+">
+
+<!-- Boiler plate Author section -->
+<!ENTITY manauthor "
+ <refsect1><title>著者</title>
+   <para>APT は APT チーム <email>apt@packages.debian.org</email> によって書かれました。
+   </para>
+ </refsect1>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-commonoptions "
+     <varlistentry><term><option>-h</option></term>
+     <term><option>--help</option></term>
+     <listitem><para>使い方の短い要約を表示します。
+     </para>
+     </listitem>
+     </varlistentry>
+     
+          <varlistentry>
+      <term><option>-v</option></term>
+      <term><option>--version</option></term>
+      <listitem><para>プログラムのバージョンを表示します。
+     </para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry>
+      <term><option>-c</option></term>
+      <term><option>--config-file</option></term>
+     <listitem><para>設定ファイル。 使用する設定ファイルを指定します。
+     このプログラムは、デフォルト設定ファイルを読んでから、この設定ファイルを読みます。
+     この設定をデフォルト設定ファイルよりも前に読む必要がある場合、
+     <envar>APT_CONFIG</envar> 環境変数に指定してください。構文については &apt-conf; をご覧ください。
+     </para>
+     </listitem>
+     </varlistentry>
+     
+          <varlistentry>
+      <term><option>-o</option></term>
+      <term><option>--option</option></term>
+     <listitem><para>設定オプションのセット。任意の設定オプションをセットします。
+     構文 <option>-o Foo::Bar=bar</option> となります。
+     異なるオプションを設定するため、<option>-o</option> と <option>--option</option> は、
+     複数回使用できます。
+     </para>
+     </listitem>
+     </varlistentry>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-cmdblurb "
+   <para>ここで設定オプションとして説明したコマンドラインオプションは、
+   すべて設定ファイルを使用して設定できます。
+   設定ファイルに書いた真偽値をとるオプションは
+   <option>-f-</option>,<option>--no-f</option>, <option>-f=no</option>
+   などのようにして上書きできます。
+   </para>
+">
+
+
+<!ENTITY file-aptconf "
+     <varlistentry><term><filename>/etc/apt/apt.conf</filename></term>
+     <listitem><para>APT 設定ファイル。
+     設定項目 - <literal>Dir::Etc::Main</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/apt.conf.d/</filename></term>
+     <listitem><para>APT 設定ファイル断片。
+     設定項目 - <literal>Dir::Etc::Parts</literal></para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-cachearchives "
+     <varlistentry><term><filename>&cachedir;/archives/</filename></term>
+     <listitem><para>取得済みパッケージファイル格納エリア。
+     設定項目 - <literal>Dir::Cache::Archives</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&cachedir;/archives/partial/</filename></term>
+     <listitem><para>取得中パッケージファイル格納エリア。
+     設定項目 -  <literal>Dir::Cache::Archives</literal> (必然的に不完全)</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-preferences "
+     <varlistentry><term><filename>/etc/apt/preferences</filename></term>
+     <listitem><para>バージョン選択ファイル。
+     ここに &quot;pinning&quot;の設定を行います。
+     つまり、別々の取得元や異なるディストリビューションのバージョンの、
+     どこからパッケージを取得するかを設定します。
+     設定項目 -  <literal>Dir::Etc::Preferences</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/preferences.d/</filename></term>
+     <listitem><para>バージョン選択ファイル断片。
+     設定項目 - <literal>Dir::Etc::PreferencesParts</literal></para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-sourceslist "
+     <varlistentry><term><filename>/etc/apt/sources.list</filename></term>
+     <listitem><para>パッケージ取得元の場所。
+     設定項目 - <literal>Dir::Etc::SourceList</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/sources.list.d/</filename></term>
+     <listitem><para>パッケージ取得元の場所のファイル断片
+     設定項目 - <literal>Dir::Etc::SourceParts</literal></para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-statelists "
+     <varlistentry><term><filename>&statedir;/lists/</filename></term>
+     <listitem><para>&sources-list; に指定した、パッケージリソースごとの状態情報格納エリア。
+     設定項目 - <literal>Dir::State::Lists</literal></para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&statedir;/lists/partial/</filename></term>
+     <listitem><para>取得中状態情報格納エリア。
+     設定項目 - <literal>Dir::State::Lists</literal> (必然的に不完全)</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-trustedgpg "
+     <varlistentry><term><filename>/etc/apt/trusted.gpg</filename></term>
+     <listitem><para>ローカルで信頼済みキーのキーリング、新規キーはここに追加します。
+     設定項目 - <literal>Dir::Etc::Trusted</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/trusted.gpg.d/</filename></term>
+     <listitem><para>信頼済みキーのファイル断片、追加キーリングは (他のパッケージや管理者により) ここに格納します。
+     設定項目 - <literal>Dir::Etc::TrustedParts</literal></para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-extended_states "
+      <varlistentry><term><filename>/var/lib/apt/extended_states</filename></term>
+      <listitem><para>自動インストールされたパッケージの状態一覧です。
+      設定項目 - <literal>Dir::State::extended_states</literal>
+      </para></listitem>
+      </varlistentry>
+">
+
+<!-- TRANSLATOR: This is the section header for the following paragraphs - comparable
+     to the other headers like NAME and DESCRIPTION and should therefore be uppercase. -->
+<!ENTITY translation-title "翻訳">
+
+<!-- TRANSLATOR: This is a placeholder. You should write here who has contributed
+     to the translation in the past, who is responsible now and maybe further information
+     specially related to your translation. -->
+<!ENTITY translation-holder "
+     倉澤 望 <email>nabetaro@debian.or.jp</email> (2003-2006,2009-2010),
+     Debian JP Documentation ML <email>debian-doc@debian.or.jp</email>
+">
+
+<!-- TRANSLATOR: As a translation is allowed to have 20% of untranslated/fuzzy strings
+     in a shipped manpage newer/modified paragraphs will maybe appear in english in
+     the generated manpage. This sentence is therefore here to tell the reader that this
+     is not a mistake by the translator - obviously the target is that at least for stable
+     releases this sentence is not needed. :) -->
+<!ENTITY translation-english "
+     この翻訳文書には未訳部分が含まれていることに注意してください。
+     翻訳がオリジナルに追従できていない場合、
+     内容を失わないようにこのようにしています。
+">

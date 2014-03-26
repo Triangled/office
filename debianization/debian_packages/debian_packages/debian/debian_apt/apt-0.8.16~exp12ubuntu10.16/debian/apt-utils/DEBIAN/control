@@ -1,0 +1,19 @@
+Package: apt-utils
+Source: apt
+Version: 0.8.16~exp12ubuntu10.16-u.1.0.2.1
+Architecture: amd64
+Maintainer: SCEL Developer
+Installed-Size: 555
+Depends: libapt-inst1.4 (>= 0.8.0), libapt-pkg4.12 (>= 0.8.16~exp12ubuntu10.16-u.1.0.2.1), libc6 (>= 2.14), libdb5.1, libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0)
+Section: admin
+Priority: important
+Description: package managment related utility programs
+ This package contains some less used commandline utilities related
+ to package managment with APT.
+ .
+  * apt-extracttemplates is used by debconf to prompt for configuration
+    questions before installation.
+  * apt-ftparchive is used to create Packages and other index files
+    needed to publish an archive of debian packages
+  * apt-sortpkgs is a Packages/Sources file normalizer.
+Original-Maintainer: APT Development Team <deity@lists.debian.org>

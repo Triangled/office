@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>04
+February 2011</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-cache</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-cache</refname>
+    <refpurpose>query the APT cache</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-cache</command> <arg><option>-hvsn</option></arg>
+<arg><option>-o=<replaceable>config string</replaceable></option></arg>
+<arg><option>-c=<replaceable>file</replaceable></option></arg> <group
+choice="req"> <arg>gencaches</arg> <arg>showpkg <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg>showsrc <arg
+choice="plain" rep="repeat"><replaceable>pkg</replaceable></arg></arg>
+<arg>stats</arg> <arg>dump</arg> <arg>dumpavail</arg> <arg>unmet</arg>
+<arg>search <arg choice="plain"><replaceable>regex</replaceable></arg></arg>
+<arg>show <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg>depends <arg
+choice="plain" rep="repeat"><replaceable>pkg</replaceable></arg></arg>
+<arg>rdepends <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg>pkgnames <arg
+choice="plain"><replaceable>prefix</replaceable></arg></arg> <arg>dotty <arg
+choice="plain" rep="repeat"><replaceable>pkg</replaceable></arg></arg>
+<arg>xvcg <arg choice="plain"
+rep="repeat"><replaceable>pkg</replaceable></arg></arg> <arg>policy <arg
+choice="plain" rep="repeat"><replaceable>pkgs</replaceable></arg></arg>
+<arg>madison <arg choice="plain"
+rep="repeat"><replaceable>pkgs</replaceable></arg></arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Opis</title>
+   <para><command>apt-cache</command> wykonuje różnorodne operacje na buforze (cache)
+pakietów programu APT. <command>apt-cache</command> nie zmienia stanu
+systemu, ale dostarcza mechanizmów przeszukiwania metadanych pakietów i
+generowania interesującego wyjścia.</para>
+
+   <para>Jedno z poniższych poleceń musi być użyte, chyba że została podana opcja
+<option>-h</option> albo <option>--help</option>.</para>
+
+   <variablelist>
+     <varlistentry><term>gencaches</term>
+     <listitem><para><literal>gencaches</literal> wykonuje te same operacje, co <command>apt-get
+check</command>. Buduje bufor pakietów oraz źródeł pakietów na podstawie
+źródeł wymienionych w &sources-list; oraz pliku
+<filename>/var/lib/dpkg/status</filename>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>showpkg <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>showpkg</literal> wyświetla informacje na temat pakietów podanych w
+linii poleceń. Pozostałymi argumentami są nazwy pakietów. Wyświetlane są
+dostępne wersje oraz odwrotne zależności każdego z podanych pakietów, jak
+również zwykłe zależności dla każdej z wersji Normalne (zwykłe) zależności
+to są pakiety, od których dany pakiet zależy, odwrotne zależności stanowią
+te pakiety, które zależą od danego pakietu.  Tak więc, pakiet musi spełniać
+normalne zależności, ale odwrotnych zależności - nie musi.  Na przykład,
+<command>apt-cache showpkg libreadline2</command> wypisze wyjście podobne do
+poniższego:</para>
+     
+<informalexample><programlisting>
+Package: libreadline2
+Versions: 2.1-12(/var/state/apt/lists/foo_Packages),
+Reverse Depends: 
+  libreadlineg2,libreadline2
+  libreadline2-altdev,libreadline2
+Dependencies:
+2.1-12 - libc5 (2 5.4.0-0) ncurses3.0 (0 (null))
+Provides:
+2.1-12 - 
+Reverse Provides: 
+</programlisting></informalexample>
+			    
+     <para>Jak widać libreadline2 w wersji 2.1-12 zależy od libc5 i ncurses3.0, które
+muszą być zainstalowane, aby libreadline2 działała.  Z kolei libreadlineg2 i
+libreadline2-altdev zależą od libreadline2. Jeżeli libreadline2 jest
+zainstalowany, to libc5 i ncurses3.0 (i ldso) muszą być także zainstalowane;
+natomiast libreadlineg2 oraz libreadline2-altdev nie muszą być
+zainstalowane. W celu zrozumienia, co oznaczają pozostałe linie, najlepiej
+przejrzeć kod źródłowy programu apt.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>stats</term><listitem><para><literal>stats</literal> wyświetla statystyki dotyczące bufora pakietów.
+Nie wymaga żadnych argumentów. Wypisywane są następujące statystyki:
+     <itemizedlist>
+       <listitem><para><literal>Całkowita liczba nazw pakietów (Total package names)</literal> -
+liczba nazw pakietów znajdujących się w buforze.</para>
+       </listitem>
+       
+       <listitem><para><literal>Zwykłe pakiety (Normal packages)</literal> jest to liczba zwykłych,
+regularnych nazw pakietów; są to pakiety, dla których istnieje relacja
+"jeden do jednego" między ich nazwami a nazwami używanymi przez inne pakiety
+jako zależności.  Większość pakietów należy do tej kategorii.</para>
+       </listitem>
+
+       <listitem><para><literal>Czyste pakiety wirtualne (Pure virtual packages)</literal> określa
+liczbę pakietów, które istnieją tylko jako nazwa pakietu wirtualnego; to
+jest pewne pakiety "dostarczają" tej nazwy wirtualnej, ale żaden pakiet nie
+używa tej nazwy.  Na przykład "mail-transport-agent" w systemie Debian
+GNU/Linux jest czystym pakietem wirtualnym; kilka pakietów dostarcza
+"mail-transport-agenta", ale żaden pakiet nie nazywa się
+"mail-transport-agent".</para>
+       </listitem>
+   
+       <listitem><para><literal>Pojedyncze pakiety wirtualne (Single virtual packages)</literal> -
+liczba pakietów, dla których istnieje tylko jeden pakiet, który dostarcza
+danego pakietu wirtualnego. Na przykład, w systemie Debian GNU/Linux
+"X11-text-viewer" jest pakietem wirtualnym, ale tylko jeden pakiet - xless -
+dostarcza "X11-text-viewer".</para>
+       </listitem>
+
+       <listitem><para><literal>Mieszane pakiety wirtualne (Mixed virtual packages)</literal> -
+liczba pakietów, które albo dostarczają poszczególnych pakietów wirtualnych,
+albo nazywają się tak, jak nazwa pakietu wirtualnego.  Na przykład w
+systemie Debian GNU/Linux "debconf" jest zarówno zwykłym pakietem, jak i
+jest pakietem dostarczanym przez pakiet debconf-tiny.</para>
+       </listitem>
+   
+       <listitem><para><literal>Brakujące (Missing)</literal> jest liczbą nazw pakietów, do których
+odnoszą się jakieś zależności, ale które nie są spełnione przez żaden z
+dostępnych pakietów. Brakujące pakiety mogą być dowodem, że nie ma dostępu
+do całej dystrybucji albo że pakiet (rzeczywisty lub wirtualny)  został
+usunięty z dystrybucji. Zazwyczaj odniesienia takie znajdują się w
+zależnościach typu "Conflicts" lub "Breaks".</para>
+       </listitem>
+
+       <listitem><para><literal>Całkowita liczba różnych wersji (Total distinct versions)</literal>
+jest to liczba wersji pakietów znajdujących się w buforze, tak więc ta
+wartość jest co najmniej równa liczbie wszystkich nazw pakietów. Jeżeli
+pobierane są pakiety z więcej niż jednej dystrybucji (na przykład zarówno
+"stable", jak i "unstable"), wartość ta może być znacznie większa niż liczba
+wszystkich nazw pakietów.</para>
+       </listitem>
+
+       <listitem><para><literal>Całkowite zależności (Total dependencies)</literal> to liczba
+więzów zależności wymaganych przez wszystkie pakiety w buforze.</para>
+       </listitem>
+     </itemizedlist>
+     </para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>showsrc <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>showsrc</literal> wyświetla wszystkie pakiety źródłowe, które
+odpowiadają podanym nazwom pakietów. Wyświetlone zostaną wszystkie wersje
+tych pakietów oraz pakiety binarne, które są z tych pakietów budowane.</para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>dump</term>
+     <listitem><para><literal>dump</literal> pokazuje krótką listę wszystkich pakietów w
+buforze. Jest używany głównie w celu odpluskwiania.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>dumpavail</term>
+     <listitem><para><literal>dumpavail</literal> wypisuje na standardowe wyjście (stdout) listę
+dostępnych pakietów. Jest to polecenie odpowiednie do użycia z programem
+&dpkg;  i jest używane w metodzie &dselect; tego programu.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>unmet</term>
+     <listitem><para><literal>unmet</literal> pokazuje podsumowanie wszystkich niespełnionych
+zależności w buforze pakietów</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>show <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>show</literal>  spełnia funkcje podobne do <command>dpkg
+--print-avail</command>; pokazuje szczegółowe informacje o podanych
+pakietach.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>search <replaceable>wyrażenie regularne [ wyrażenie regularne
+... ]</replaceable></term>
+     <listitem><para><literal>search</literal> wykonuje pełne wyszukiwanie podanego wzorca
+będącego wyrażeniem regularnym POSIX (patrz
+<citerefentry><refentrytitle><command>regex</command></refentrytitle>
+<manvolnum>7</manvolnum></citerefentry>) we wszystkich dostępnych listach
+pakietów. Przeszukuje nazwy pakietów (w tym pakietów wirtualnych) i ich
+szczegółowe (długie) opisy, szukając w nich podanego wyrażenia regularnego i
+wypisuje nazwę pakietu i jego krótki opis. Jeżeli podana jest opcja
+<option>--full</option>, to wtedy dla każdego znalezionego pakietu
+informacje na wyjściu są podobne do tego, co pokazuje akcja
+<literal>show</literal>. Jeżeli podano opcję <option>--names-only</option>,
+to są przeszukiwane tylko nazwy pakietów, bez ich długich opisów.</para>
+     <para>
+     Oddzielne argumenty mogą być używane do podania kilku wzorców, które będą
+traktowane jakby były połączone spójnikiem logicznym "i".</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>depends <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>depends</literal> wyświetla listę wszystkich zależności danego
+pakietu i wszystkie możliwe pakiety, które mogą spełnić te zależności.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>rdepends <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>rdepends</literal> pokazuje listę wszystkich odwrotnych zależności
+danego pakietu.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>pkgnames <replaceable>[ prefiks ]</replaceable></term>
+     <listitem><para>To polecenie wyświetla nazwy wszystkich pakietów znanych systemowi
+APT. Opcjonalnym argumentem jest przedrostek nazwy pakietów. Wynik jest
+odpowiedni do użycia z funkcją powłoki (shella) uzupełniania nazw za pomocą
+klawisza tabulacji i jest wypisywany bardzo szybko. Tego polecenia najlepiej
+używać z opcją <option>--generate</option>.</para>
+     <para>Proszę zauważyć, że to, iż pakiet jest znany systemowi APT, niekoniecznie
+oznacza, że jest dostępny do pobrania i zainstalowania albo
+zainstalowany. Może być np. pakietem wirtualnym, które także są wypisane w
+wygenerowanej liście.
+     </para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>dotty <replaceable>pakiet(y)</replaceable></term>
+     <listitem><para><literal>dotty</literal> bierze jako argument listę pakietów i generuje
+wyjście odpowiednie dla programu dotty z pakietu <ulink
+url="http://www.research.att.com/sw/tools/graphviz/">GraphViz</ulink>.
+Wynikiem będzie zbiór wierzchołków i krawędzi reprezentujących powiązania
+między pakietami. Domyślnie podane pakiety wyśledzą wszystkie pakiety
+zależne.  Może to spowodować wypisanie bardzo dużego grafu. Aby wypisać
+powiązania tylko pomiędzy pakietami podanymi w linii poleceń, należy użyć
+opcji <literal>APT::Cache::GivenOnly</literal>.</para>
+
+     <para>Wynikowe wierzchołki będą miały różnorakie kształty: zwykłe pakiety są
+prostokątami, czyste pakiety wirtualne to trójkąty, mieszane pakiety
+wirtualne są rombami, sześciokąty oznaczają brakujące pakiety . Pomarańczowe
+prostokąty oznaczają koniec rekurencji (liście), niebieskie linie to
+pre-zależności, linie zielone to konflikty.</para>
+
+     <para>Uwaga: dotty nie potrafi narysować większego zbioru pakietów.</para></listitem>
+     </varlistentry>
+     
+     <varlistentry><term>xvcg <replaceable>pakiet(y)</replaceable></term>
+	 <listitem><para>Robi to samo, co <literal>dotty</literal>, tylko dla xvcg z <ulink
+url="http://rw4.cs.uni-sb.de/users/sander/html/gsvcg1.html">narzędzia
+VCG</ulink>.
+	 </para></listitem></varlistentry>
+
+     <varlistentry><term>policy <replaceable>[ pakiet(y) ]</replaceable></term>
+     <listitem><para><literal>policy</literal> jest pomyślane w celu debugowania zagadnień
+związanych z plikiem preferencji. Jeżeli nie podano żadnych opcji, wypisane
+zostaną informacje o priorytecie każdego źródła. W przeciwnym wypadku,
+wypisuje szczegółowe informacje o priorytecie danego pakietu.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term>madison <replaceable>[ pakiet(y) ]</replaceable></term>
+     <listitem><para>polecenie <literal>madison</literal> z <literal>apt-cache</literal> próbuje
+naśladować format wyjścia i część funkcjonalności programu
+<literal>madison</literal> - narzędzia zarządzania archiwum
+Debiana. Wyświetla dostępne wersje pakietów w formacie tabeli. W
+przeciwieństwie do oryginału, może wyświetlić informacje tylko dla tych
+architektur, dla których APT pobrało listy pakietów
+(<literal>APT::Architecture</literal>).</para></listitem>
+     </varlistentry>
+   </variablelist>
+ </refsect1>
+ 
+ <refsect1><title>opcje</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+     <varlistentry><term><option>-p</option></term><term><option>--pkg-cache</option></term>
+     <listitem><para>Podaje nazwę pliku to przechowywania bufora pakietów, który jest podstawowym
+buforem używanym we wszystkich operacjach.  Pozycja w pliku konfiguracyjnym:
+<literal>Dir::Cache::pkgcache</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-s</option></term><term><option>--src-cache</option></term>
+     <listitem><para>Podaje nazwę pliku to przechowywania bufora źródeł. Jest używany tylko przez
+akcję <literal>gencaches</literal> i przechowuje sparsowaną wersję
+informacji o pakietach pobraną ze zdalnych źródeł. Podczas budowania bufora
+pakietów, bufor źródeł jest używany w celu uniknięcia ponownego parsowania
+wszystkich plików pakietów.  Pozycja w pliku konfiguracyjnym:
+<literal>Dir::Cache::srcpkgcache</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-q</option></term><term><option>--quiet</option></term>
+     <listitem><para>Cichy; wypisuje tylko informacje potrzebne do logowania, opuszczając
+wskaźniki postępu. Więcej znaków q spowoduje jeszcze bardziej ciche wyjście,
+maksimum jest 2. Można także ustawić poziom cichości za pomocą
+<option>-q=#</option>,nadpisując tym samym opcję z pliku konfiguracyjnego.
+Pozycja w pliku konfiguracyjnym: <literal>quiet</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-i</option></term><term><option>--important</option></term>
+     <listitem><para>Wyświetla tylko ważne zależności; do używania z akcją unmet. Powoduje
+wypisanie tylko zależności typu Depends i Pre-Depends.  Pozycja w pliku
+konfiguracyjnym: <literal>APT::Cache::Important</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--no-pre-depends</option></term>
+		   <term><option>--no-depends</option></term>
+		   <term><option>--no-recommends</option></term>
+		   <term><option>--no-suggests</option></term>
+		   <term><option>--no-conflicts</option></term>
+		   <term><option>--no-breaks</option></term>
+		   <term><option>--no-replaces</option></term>
+		   <term><option>--no-enhances</option></term>
+		   <listitem><para>Per default the <literal>depends</literal> and <literal>rdepends</literal>
+print all dependencies. This can be tweaked with these flags which will omit
+the specified dependency type.  Configuration Item:
+<literal>APT::Cache::Show<replaceable>DependencyType</replaceable></literal>
+e.g. <literal>APT::Cache::ShowRecommends</literal>.</para></listitem>
+     </varlistentry>
+     <varlistentry><term><option>-f</option></term><term><option>--full</option></term>
+     <listitem><para>Podczas szukania wypisuj pełną informację o pakiecie. Pozycja w pliku
+konfiguracyjnym: <literal>APT::Cache::ShowFull</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-a</option></term><term><option>--all-versions</option></term>
+     <listitem><para>Akcja show wypisuje wszystkie rekordy dla wszystkich dostępnych wersji.
+Jest to opcja domyślna, aby ją wyłączyć, proszę użyć
+<option>--no-all-versions</option>.  Jeżeli podano
+<option>--no-all-versions</option>, to będzie wyświetlana tylko
+wersja-kandydat (czyli ta, która byłaby wybrana do instalacji). Ta opcja ma
+znaczenie tylko dla polecenia <literal>show</literal>.  Pozycja w pliku
+konfiguracyjnym: <literal>APT::Cache::AllVersions</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-g</option></term><term><option>--generate</option></term>
+     <listitem><para>Automatycznie odbudowuje bufor pakietów, zamiast używać istniejącego
+bufora.  Ta opcja jest domyślnie włączona, aby ją wyłączyć, należy użyć
+<option>--no-generate</option>. Pozycja w pliku konfiguracyjnym:
+<literal>APT::Cache::Generate</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--names-only</option></term><term><option>-n</option></term>
+     <listitem><para>Przeszukaj tylko nazwy pakietów, pomijając szczegółowe opisy.  Pozycja w
+pliku konfiguracyjnym: <literal>APT::Cache::NamesOnly</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--all-names</option></term>
+     <listitem><para>Powoduje, że akcja <literal>pkgnames</literal> wypisze nazwy wszystkich
+pakietów, łącznie z pakietami wirtualnymi oraz pakietami mającymi brakujące
+zależności.  Pozycja w pliku konfiguracyjnym:
+<literal>APT::Cache::AllNames</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>--recurse</option></term>
+     <listitem><para>Powoduje, że zależności w poleceniach <literal>depends</literal> i
+<literal>rdepends</literal> będą zależnościami rekurencyjnymi, tak że
+wszystkie wymienione pakiety zostaną wypisane tylko raz. Pozycja w pliku
+konfiguracyjnym: <literal>APT::Cache::RecurseDepends</literal>.</para></listitem>
+     </varlistentry>
+
+      <varlistentry><term><option>--installed</option></term>
+      <listitem><para>
+      Ogranicza wyjście poleceń <literal>depends</literal> i
+<literal>rdepends</literal> tylko do pakietów, które są obecnie
+zainstalowane.  Pozycja w pliku konfiguracyjnym:
+<literal>APT::Cache::Installed</literal>.</para></listitem>
+      </varlistentry>
+
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Pliki</title>
+   <variablelist>
+&file-sourceslist; &file-statelists;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Zobacz także</title>
+   <para>&apt-conf;, &sources-list;, &apt-get;
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnostyka</title>
+   <para><command>apt-cache</command> zwraca zero, gdy zakończyło się pomyślnie, 100
+- w przypadku błędu.
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

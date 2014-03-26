@@ -1,0 +1,1287 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.26.3 (20100126.1600)
+%%Title: G
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 446 586
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 410 550 boxprim clip newpath
+1 1 set_scale 0 rotate 40 41 translate
+% Node1
+gsave
+0 0 0.74902 nodecolor
+newpath .5 260 moveto
+.5 282 lineto
+47.5 282 lineto
+47.5 260 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath .5 260 moveto
+.5 282 lineto
+47.5 282 lineto
+47.5 260 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+8.5 269 moveto 31 (iterator) alignedtext
+grestore
+% Node2
+gsave
+[ /Rect [ 143 519.5 219 542.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classAPT_1_1PackageContainer_1_1const__iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 142.5 520 moveto
+142.5 542 lineto
+219.5 542 lineto
+219.5 520 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 142.5 520 moveto
+142.5 542 lineto
+219.5 542 lineto
+219.5 520 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+150.5 529 moveto 61 (const_iterator) alignedtext
+grestore
+% Node1->Node2
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 26.42 292.21 moveto
+32.88 345.06 52.24 480.54 84 511 curveto
+99.26 525.64 122.25 530.83 142.02 532.27 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 29.89 291.77 moveto
+25.24 282.26 lineto
+22.94 292.6 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 29.89 291.77 moveto
+25.24 282.26 lineto
+22.94 292.6 lineto
+closepath stroke
+grestore
+% Node3
+gsave
+[ /Rect [ 158 479.5 204 502.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classAPT_1_1PackageContainer_1_1iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 157.5 480 moveto
+157.5 502 lineto
+204.5 502 lineto
+204.5 480 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 157.5 480 moveto
+157.5 502 lineto
+204.5 502 lineto
+204.5 480 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+165.5 489 moveto 31 (iterator) alignedtext
+grestore
+% Node1->Node3
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 27.57 292.32 moveto
+35.78 338.71 57.32 446.58 84 471 curveto
+103.78 489.11 135.48 492.58 157.22 492.52 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 30.97 291.44 moveto
+25.82 282.19 lineto
+24.08 292.64 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 30.97 291.44 moveto
+25.82 282.19 lineto
+24.08 292.64 lineto
+closepath stroke
+grestore
+% Node4
+gsave
+[ /Rect [ 143 439.5 219 462.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classAPT_1_1VersionContainer_1_1const__iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 142.5 440 moveto
+142.5 462 lineto
+219.5 462 lineto
+219.5 440 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 142.5 440 moveto
+142.5 462 lineto
+219.5 462 lineto
+219.5 440 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+150.5 449 moveto 61 (const_iterator) alignedtext
+grestore
+% Node1->Node4
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 25.61 292.37 moveto
+29.41 327.01 42.1 395.15 84 431 curveto
+99.94 444.64 122.72 449.82 142.19 451.51 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 29.09 292 moveto
+24.66 282.38 lineto
+22.12 292.67 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 29.09 292 moveto
+24.66 282.38 lineto
+22.12 292.67 lineto
+closepath stroke
+grestore
+% Node5
+gsave
+[ /Rect [ 158 399.5 204 422.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classAPT_1_1VersionContainer_1_1iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 157.5 400 moveto
+157.5 422 lineto
+204.5 422 lineto
+204.5 400 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 157.5 400 moveto
+157.5 422 lineto
+204.5 422 lineto
+204.5 400 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+165.5 409 moveto 31 (iterator) alignedtext
+grestore
+% Node1->Node5
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 28.63 292.44 moveto
+35.69 319.73 51.86 366.3 84 391 curveto
+105.13 407.24 136.23 411.15 157.49 411.7 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 31.95 291.27 moveto
+26.21 282.36 lineto
+25.14 292.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 31.95 291.27 moveto
+26.21 282.36 lineto
+25.14 292.9 lineto
+closepath stroke
+grestore
+% Node6
+gsave
+[ /Rect [ 92 359.5 270 382.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 91.5 360 moveto
+91.5 382 lineto
+270.5 382 lineto
+270.5 360 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 91.5 360 moveto
+91.5 382 lineto
+270.5 382 lineto
+270.5 360 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+99.5 369 moveto 163 (Iterator< Dependency, DepIterator >) alignedtext
+grestore
+% Node1->Node6
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 33.69 291.15 moveto
+43.67 309.68 61.01 336.42 84 351 curveto
+89.66 354.59 95.85 357.55 102.27 359.99 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 36.71 289.37 moveto
+29.03 282.08 lineto
+30.48 292.57 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 36.71 289.37 moveto
+29.03 282.08 lineto
+30.48 292.57 lineto
+closepath stroke
+grestore
+% Node8
+gsave
+[ /Rect [ 90 319.5 272 342.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 89.5 320 moveto
+89.5 342 lineto
+272.5 342 lineto
+272.5 320 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 89.5 320 moveto
+89.5 342 lineto
+272.5 342 lineto
+272.5 320 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+97.5 329 moveto 167 (Iterator< DescFile, DescFileIterator >) alignedtext
+grestore
+% Node1->Node8
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 45.53 288.3 moveto
+56.47 296.31 70.33 305.29 84 311 curveto
+92.57 314.58 101.84 317.54 111.13 319.98 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 47.51 285.42 moveto
+37.43 282.17 lineto
+43.29 291 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 47.51 285.42 moveto
+37.43 282.17 lineto
+43.29 291 lineto
+closepath stroke
+grestore
+% Node10
+gsave
+[ /Rect [ 93 279.5 269 302.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 93 280 moveto
+93 302 lineto
+269 302 lineto
+269 280 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 93 280 moveto
+93 302 lineto
+269 302 lineto
+269 280 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+101 289 moveto 160 (Iterator< Description, DescIterator >) alignedtext
+grestore
+% Node1->Node10
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 57.47 275.26 moveto
+68.49 276.67 81.3 278.3 94.41 279.97 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 57.87 271.79 moveto
+47.5 273.99 lineto
+56.98 278.73 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 57.87 271.79 moveto
+47.5 273.99 lineto
+56.98 278.73 lineto
+closepath stroke
+grestore
+% Node12
+gsave
+[ /Rect [ 108 239.5 254 262.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 108 240 moveto
+108 262 lineto
+254 262 lineto
+254 240 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 108 240 moveto
+108 262 lineto
+254 262 lineto
+254 240 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+116 249 moveto 130 (Iterator< Group, GrpIterator >) alignedtext
+grestore
+% Node1->Node12
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 57.64 266.71 moveto
+72.41 264.83 90.36 262.55 107.95 260.31 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 56.98 263.27 moveto
+47.5 268.01 lineto
+57.87 270.21 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 56.98 263.27 moveto
+47.5 268.01 lineto
+57.87 270.21 lineto
+closepath stroke
+grestore
+% Node14
+gsave
+[ /Rect [ 101 199.5 261 222.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 100.5 200 moveto
+100.5 222 lineto
+261.5 222 lineto
+261.5 200 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 100.5 200 moveto
+100.5 222 lineto
+261.5 222 lineto
+261.5 200 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+108.5 209 moveto 145 (Iterator< Package, PkgIterator >) alignedtext
+grestore
+% Node1->Node14
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 45.53 253.7 moveto
+56.47 245.69 70.33 236.71 84 231 curveto
+92.57 227.42 101.84 224.46 111.13 222.02 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 43.29 251 moveto
+37.43 259.83 lineto
+47.51 256.58 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 43.29 251 moveto
+37.43 259.83 lineto
+47.51 256.58 lineto
+closepath stroke
+grestore
+% Node16
+gsave
+[ /Rect [ 84 159.5 278 182.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 84 160 moveto
+84 182 lineto
+278 182 lineto
+278 160 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 84 160 moveto
+84 182 lineto
+278 182 lineto
+278 160 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+92 169 moveto 178 (Iterator< PackageFile, PkgFileIterator >) alignedtext
+grestore
+% Node1->Node16
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 33.69 250.85 moveto
+43.67 232.32 61.01 205.58 84 191 curveto
+89.66 187.41 95.85 184.45 102.27 182.01 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 30.48 249.43 moveto
+29.03 259.92 lineto
+36.71 252.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 30.48 249.43 moveto
+29.03 259.92 lineto
+36.71 252.63 lineto
+closepath stroke
+grestore
+% Node18
+gsave
+[ /Rect [ 102 119.5 260 142.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 102 120 moveto
+102 142 lineto
+260 142 lineto
+260 120 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 102 120 moveto
+102 142 lineto
+260 142 lineto
+260 120 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+110 129 moveto 142 (Iterator< Provides, PrvIterator >) alignedtext
+grestore
+% Node1->Node18
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 28.63 249.56 moveto
+35.69 222.27 51.86 175.7 84 151 curveto
+89.32 146.91 95.27 143.61 101.53 140.94 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 25.14 249.1 moveto
+26.21 259.64 lineto
+31.95 250.73 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 25.14 249.1 moveto
+26.21 259.64 lineto
+31.95 250.73 lineto
+closepath stroke
+grestore
+% Node20
+gsave
+[ /Rect [ 99 79.5 263 102.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 98.5 80 moveto
+98.5 102 lineto
+263.5 102 lineto
+263.5 80 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 98.5 80 moveto
+98.5 102 lineto
+263.5 102 lineto
+263.5 80 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+106.5 89 moveto 149 (Iterator< VerFile, VerFileIterator >) alignedtext
+grestore
+% Node1->Node20
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 25.61 249.63 moveto
+29.41 214.99 42.1 146.85 84 111 curveto
+88.31 107.31 93.12 104.24 98.24 101.69 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 22.12 249.33 moveto
+24.66 259.62 lineto
+29.09 250 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 22.12 249.33 moveto
+24.66 259.62 lineto
+29.09 250 lineto
+closepath stroke
+grestore
+% Node22
+gsave
+[ /Rect [ 106 39.5 256 62.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 105.5 40 moveto
+105.5 62 lineto
+256.5 62 lineto
+256.5 40 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 105.5 40 moveto
+105.5 62 lineto
+256.5 62 lineto
+256.5 40 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+113.5 49 moveto 135 (Iterator< Version, VerIterator >) alignedtext
+grestore
+% Node1->Node22
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 27.57 249.68 moveto
+35.78 203.29 57.32 95.42 84 71 curveto
+90.21 65.31 97.6 61.07 105.49 57.92 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 24.08 249.36 moveto
+25.82 259.81 lineto
+30.97 250.56 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 24.08 249.36 moveto
+25.82 259.81 lineto
+30.97 250.56 lineto
+closepath stroke
+grestore
+% Node24
+gsave
+[ /Rect [ 85 -.5 277 22.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1Iterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 85 0 moveto
+85 22 lineto
+277 22 lineto
+277 0 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 85 0 moveto
+85 22 lineto
+277 22 lineto
+277 0 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+93 9 moveto 176 (Iterator< std::forward_iterator_tag, Str >) alignedtext
+grestore
+% Node1->Node24
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 26.42 249.79 moveto
+32.88 196.94 52.24 61.46 84 31 curveto
+87.6 27.55 91.63 24.62 95.94 22.15 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 22.94 249.4 moveto
+25.24 259.74 lineto
+29.89 250.23 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 22.94 249.4 moveto
+25.24 259.74 lineto
+29.89 250.23 lineto
+closepath stroke
+grestore
+% Node7
+gsave
+[ /Rect [ 325 359.5 391 382.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1DepIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 325 360 moveto
+325 382 lineto
+391 382 lineto
+391 360 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 325 360 moveto
+325 382 lineto
+391 382 lineto
+391 360 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+333 369 moveto 50 (DepIterator) alignedtext
+grestore
+% Node6->Node7
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 280.96 371 moveto
+296.73 371 312.02 371 324.76 371 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 280.54 367.5 moveto
+270.54 371 lineto
+280.54 374.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 280.54 367.5 moveto
+270.54 371 lineto
+280.54 374.5 lineto
+closepath stroke
+grestore
+% Node9
+gsave
+[ /Rect [ 314 319.5 402 342.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1DescFileIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 314 320 moveto
+314 342 lineto
+402 342 lineto
+402 320 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 314 320 moveto
+314 342 lineto
+402 342 lineto
+402 320 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+322 329 moveto 72 (DescFileIterator) alignedtext
+grestore
+% Node8->Node9
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 282.66 331 moveto
+293.53 331 304.14 331 313.8 331 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 282.61 327.5 moveto
+272.61 331 lineto
+282.61 334.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 282.61 327.5 moveto
+272.61 331 lineto
+282.61 334.5 lineto
+closepath stroke
+grestore
+% Node11
+gsave
+[ /Rect [ 323 279.5 393 302.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1DescIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 322.5 280 moveto
+322.5 302 lineto
+393.5 302 lineto
+393.5 280 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 322.5 280 moveto
+322.5 302 lineto
+393.5 302 lineto
+393.5 280 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+330.5 289 moveto 55 (DescIterator) alignedtext
+grestore
+% Node10->Node11
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 279.4 291 moveto
+294.8 291 309.79 291 322.48 291 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 279.24 287.5 moveto
+269.24 291 lineto
+279.24 294.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 279.24 287.5 moveto
+269.24 291 lineto
+279.24 294.5 lineto
+closepath stroke
+grestore
+% Node13
+gsave
+[ /Rect [ 326 239.5 390 262.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1GrpIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 326 240 moveto
+326 262 lineto
+390 262 lineto
+390 240 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 326 240 moveto
+326 262 lineto
+390 262 lineto
+390 240 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+334 249 moveto 48 (GrpIterator) alignedtext
+grestore
+% Node12->Node13
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 264.03 251 moveto
+285.93 251 308.27 251 325.68 251 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 264.01 247.5 moveto
+254.01 251 lineto
+264.01 254.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 264.01 247.5 moveto
+254.01 251 lineto
+264.01 254.5 lineto
+closepath stroke
+grestore
+% Node15
+gsave
+[ /Rect [ 326 199.5 390 222.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1PkgIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 325.5 200 moveto
+325.5 222 lineto
+390.5 222 lineto
+390.5 200 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 325.5 200 moveto
+325.5 222 lineto
+390.5 222 lineto
+390.5 200 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+333.5 209 moveto 49 (PkgIterator) alignedtext
+grestore
+% Node14->Node15
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 271.74 211 moveto
+290.9 211 309.92 211 325.21 211 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 271.73 207.5 moveto
+261.73 211 lineto
+271.73 214.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 271.73 207.5 moveto
+261.73 211 lineto
+271.73 214.5 lineto
+closepath stroke
+grestore
+% Node17
+gsave
+[ /Rect [ 317 159.5 399 182.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1PkgFileIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 317 160 moveto
+317 182 lineto
+399 182 lineto
+399 160 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 317 160 moveto
+317 182 lineto
+399 182 lineto
+399 160 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+325 169 moveto 66 (PkgFileIterator) alignedtext
+grestore
+% Node16->Node17
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 288.24 171 moveto
+298.34 171 308.1 171 316.96 171 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 288.04 167.5 moveto
+278.04 171 lineto
+288.04 174.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 288.04 167.5 moveto
+278.04 171 lineto
+288.04 174.5 lineto
+closepath stroke
+grestore
+% Node19
+gsave
+[ /Rect [ 327 119.5 389 142.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1PrvIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 327 120 moveto
+327 142 lineto
+389 142 lineto
+389 120 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 327 120 moveto
+327 142 lineto
+389 142 lineto
+389 120 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+335 129 moveto 46 (PrvIterator) alignedtext
+grestore
+% Node18->Node19
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 270.43 131 moveto
+290.69 131 310.88 131 326.76 131 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 270.18 127.5 moveto
+260.18 131 lineto
+270.18 134.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 270.18 127.5 moveto
+260.18 131 lineto
+270.18 134.5 lineto
+closepath stroke
+grestore
+% Node21
+gsave
+[ /Rect [ 319 79.5 397 102.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1VerFileIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 318.5 80 moveto
+318.5 102 lineto
+397.5 102 lineto
+397.5 80 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 318.5 80 moveto
+318.5 102 lineto
+397.5 102 lineto
+397.5 80 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+326.5 89 moveto 63 (VerFileIterator) alignedtext
+grestore
+% Node20->Node21
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 273.86 91 moveto
+289.54 91 305.05 91 318.39 91 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 273.54 87.5 moveto
+263.54 91 lineto
+273.54 94.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 273.54 87.5 moveto
+263.54 91 lineto
+273.54 94.5 lineto
+closepath stroke
+grestore
+% Node23
+gsave
+[ /Rect [ 327 39.5 389 62.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classpkgCache_1_1VerIterator.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 327 40 moveto
+327 62 lineto
+389 62 lineto
+389 40 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 327 40 moveto
+327 62 lineto
+389 62 lineto
+389 40 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /FreeSans set_font
+335 49 moveto 46 (VerIterator) alignedtext
+grestore
+% Node22->Node23
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 266.73 51 moveto
+288.18 51 309.84 51 326.68 51 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 266.58 47.5 moveto
+256.58 51 lineto
+266.58 54.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 266.58 47.5 moveto
+256.58 51 lineto
+266.58 54.5 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 446 586
+end
+restore
+%%EOF

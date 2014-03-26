@@ -1,0 +1,305 @@
+\section{pkg\-Acq\-Archive \-Class \-Reference}
+\label{classpkgAcqArchive}\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}}
+
+
+\-An item that is responsible for fetching a package file. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-Archive\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classpkgAcqArchive__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-Archive\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqArchive__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} (std\-::string \-Message, unsigned long long \-Size, std\-::string \-Hash, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object was fetched successfully. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Desc\-U\-R\-I} ()
+\begin{DoxyCompactList}\small\item\em \-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Short\-Desc} ()
+\begin{DoxyCompactList}\small\item\em \-Short item description. \end{DoxyCompactList}\item 
+virtual void {\bf \-Finished} ()\label{classpkgAcqArchive_a729cc359899015c4d42616a4af1d7944}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked by the worker when the download is completely done. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Hash\-Sum} ()
+\begin{DoxyCompactList}\small\item\em \-Hash\-Sum. \end{DoxyCompactList}\item 
+virtual bool {\bf \-Is\-Trusted} ()
+\item 
+{\bf pkg\-Acq\-Archive} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, {\bf pkg\-Source\-List} $\ast${\bf \-Sources}, {\bf pkg\-Records} $\ast${\bf \-Recs}, {\bf pkg\-Cache\-::\-Ver\-Iterator} const \&{\bf \-Version}, std\-::string \&{\bf \-Store\-Filename})
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{pkg\-Acq\-Archive}{p.}{classpkgAcqArchive}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Queue\-Next} ()\label{classpkgAcqArchive_aa5c5f022102151baa34078b5699aa717}
+
+\begin{DoxyCompactList}\small\item\em \-Queue up the next available file for this version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Cache\-::\-Ver\-Iterator} {\bf \-Version}\label{classpkgAcqArchive_a0975e7488587b7ba9f8a7a92d2c7ef58}
+
+\begin{DoxyCompactList}\small\item\em \-The package version being fetched. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-::\-Item\-Desc} {\bf \-Desc}\label{classpkgAcqArchive_a63a8c90526aa28ea8a9c2458a53846bc}
+
+\begin{DoxyCompactList}\small\item\em \-The fetch command that is currently being processed. \end{DoxyCompactList}\item 
+{\bf pkg\-Source\-List} $\ast$ {\bf \-Sources}\label{classpkgAcqArchive_ae1a860799a1e38f21c90468010b59106}
+
+\begin{DoxyCompactList}\small\item\em \-The list of sources from which to pick archives to download this package from. \end{DoxyCompactList}\item 
+{\bf pkg\-Records} $\ast$ {\bf \-Recs}\label{classpkgAcqArchive_a048ee963fb5e948ec3599f22f6ad53ec}
+
+\begin{DoxyCompactList}\small\item\em \-A package records object, used to look up the file corresponding to each version of the package. \end{DoxyCompactList}\item 
+{\bf \-Hash\-String} {\bf \-Expected\-Hash}\label{classpkgAcqArchive_a30ce4163915317207b0c3ce437725e07}
+
+\begin{DoxyCompactList}\small\item\em \-The hashsum of this package. \end{DoxyCompactList}\item 
+std\-::string \& {\bf \-Store\-Filename}\label{classpkgAcqArchive_a661aca9bffbae2b69b13c0d87e6150bc}
+
+\begin{DoxyCompactList}\small\item\em \-A location in which the actual filename of the package should be stored. \end{DoxyCompactList}\item 
+{\bf pkg\-Cache\-::\-Ver\-File\-Iterator} {\bf \-Vf}\label{classpkgAcqArchive_aea53b53fbf73ac1dc509503defe503df}
+
+\begin{DoxyCompactList}\small\item\em \-The next file for this version to try to download. \end{DoxyCompactList}\item 
+unsigned int {\bf \-Retries}
+\begin{DoxyCompactList}\small\item\em \-How many (more) times to try to find a new source from which to download this package version if it fails. \end{DoxyCompactList}\item 
+bool {\bf \-Trusted}\label{classpkgAcqArchive_a224b67941df4d54b46be8dd05390428f}
+
+\begin{DoxyCompactList}\small\item\em {\bfseries true} if this version file is being downloaded from a trusted source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An item that is responsible for fetching a package file. \{\{\{. 
+
+\-If the package file already exists in the cache, nothing will be done. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!pkg\-Acq\-Archive@{pkg\-Acq\-Archive}}
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{pkg\-Acq\-Archive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acq\-Archive} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner, }
+\item[{{\bf pkg\-Source\-List} $\ast$}]{\-Sources, }
+\item[{{\bf pkg\-Records} $\ast$}]{\-Recs, }
+\item[{{\bf pkg\-Cache\-::\-Ver\-Iterator} const \&}]{\-Version, }
+\item[{std\-::string \&}]{\-Store\-Filename}
+\end{DoxyParamCaption}
+)}\label{classpkgAcqArchive_a97892237c4d4b5f02a96313d30c3c9c1}
+
+
+\-Create a new \doxyref{pkg\-Acq\-Archive}{p.}{classpkgAcqArchive}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner} & \-The \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object with which this item is associated.\\
+\hline
+{\em \-Sources} & \-The sources from which to download version files.\\
+\hline
+{\em \-Recs} & \-A package records object, used to look up the file corresponding to each version of the package.\\
+\hline
+{\em \-Version} & \-The package version to download.\\
+\hline
+{\em \-Store\-Filename} & \-A location in which the actual filename of the package should be stored. \-It will be set to a guessed basename in the constructor, and filled in with a fully qualified filename once the download finishes. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Queue\-Next(), \-Retries, \-Trusted, and \-Vf.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}}
+\index{\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Desc\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Desc\-U\-R\-I} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqArchive_a853c32904fff75b1a5d2c68441f41cad}
+
+
+\-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. 
+
+\begin{DoxyReturn}{\-Returns}
+a \doxyref{\-U\-R\-I}{p.}{classURI} that should be used to describe what is being fetched. 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a33630be55b62e4648f24c83378105c6f}.
+
+
+
+\-References \-Desc, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Done@{\-Done}}
+\index{\-Done@{\-Done}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Hash, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqArchive_a688635545a65b9a4bebed86627574d41}
+
+
+\-Invoked by the acquire worker when the object was fetched successfully. 
+
+\-Note that the object might {\itshape not\/} have been written to \-Dest\-File; check for the presence of an \-Alt-\/\-Filename entry in \-Message to find the file to which it was really written.
+
+\-Done is often used to switch from one stage of the processing to the next (e.\-g. fetching, unpacking, copying). \-It is one branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-Data from the acquire method. \-Use \-Lookup\-Tag() to parse it. \\
+\hline
+{\em \-Size} & \-The size of the object that was fetched. \\
+\hline
+{\em \-Hash} & \-The \-Hash\-Sum of the object that was fetched. \\
+\hline
+{\em \-Cnf} & \-The method via which the object was fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Complete, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Error\-Text, pkg\-Acquire\-::\-Item\-::\-Local, pkg\-Acquire\-::\-Item\-::\-Rename(), pkg\-Acquire\-::\-Item\-::\-Stat\-Error, \-Store\-Filename, and \-Version.
+
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqArchive_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Error\-Text, pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only, \-Queue\-Next(), pkg\-Acquire\-::\-Method\-Config\-::\-Removable, \-Retries, \-Store\-Filename, \-Version, and \-Vf.
+
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Hash\-Sum@{\-Hash\-Sum}}
+\index{\-Hash\-Sum@{\-Hash\-Sum}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Hash\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Hash\-Sum} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqArchive_a3547c3b8f6427183a8720ef931e5510d}
+
+
+\-Hash\-Sum. 
+
+\begin{DoxyReturn}{\-Returns}
+the \-Hash\-Sum of this object, if applicable; otherwise, an empty string. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a3547c3b8f6427183a8720ef931e5510d}.
+
+
+
+\-References \-Expected\-Hash.
+
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Is\-Trusted@{\-Is\-Trusted}}
+\index{\-Is\-Trusted@{\-Is\-Trusted}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Is\-Trusted}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Is\-Trusted} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqArchive_a47df43e8b22e5a598039f068d8f6aff3}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if this object is being fetched from a trusted source. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a2edc43e22068002b21864bad8444d0f7}.
+
+
+
+\-References \-Trusted.
+
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Short\-Desc@{\-Short\-Desc}}
+\index{\-Short\-Desc@{\-Short\-Desc}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Short\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Short\-Desc} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqArchive_a0fc996230e235126c070608a0e170fe5}
+
+
+\-Short item description. 
+
+\begin{DoxyReturn}{\-Returns}
+a brief description of the object being fetched. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a0fc996230e235126c070608a0e170fe5}.
+
+
+
+\-References \-Desc, and pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acq\-Archive@{pkg\-Acq\-Archive}!\-Retries@{\-Retries}}
+\index{\-Retries@{\-Retries}!pkgAcqArchive@{pkg\-Acq\-Archive}}
+\subsubsection[{\-Retries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Retries}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcqArchive_a2cf4b8b42d2691df4d19f456bad87327}
+
+
+\-How many (more) times to try to find a new source from which to download this package version if it fails. 
+
+\-Set from \-Acquire\-::\-Retries. 
+
+\-Referenced by \-Failed(), and pkg\-Acq\-Archive().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

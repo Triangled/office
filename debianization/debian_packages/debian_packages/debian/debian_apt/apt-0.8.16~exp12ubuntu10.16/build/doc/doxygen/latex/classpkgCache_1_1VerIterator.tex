@@ -1,0 +1,128 @@
+\section{pkg\-Cache\-:\-:\-Ver\-Iterator \-Class \-Reference}
+\label{classpkgCache_1_1VerIterator}\index{pkg\-Cache\-::\-Ver\-Iterator@{pkg\-Cache\-::\-Ver\-Iterator}}
+
+
+\-Inheritance diagram for pkg\-Cache\-:\-:\-Ver\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classpkgCache_1_1VerIterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Cache\-:\-:\-Ver\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgCache_1_1VerIterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries operator++} (int)\label{classpkgCache_1_1VerIterator_a2aefc5a84a51687145f8514f4029c26c}
+
+\item 
+void {\bfseries operator++} ()\label{classpkgCache_1_1VerIterator_a00f008b80917746917b874d00abd02a9}
+
+\item 
+int {\bfseries \-Compare\-Ver} (const {\bf \-Ver\-Iterator} \&\-B) const \label{classpkgCache_1_1VerIterator_a91606248ccb2f95a793b7cca67eb836c}
+
+\item 
+bool {\bf \-Similar\-Ver} (const {\bf \-Ver\-Iterator} \&\-B) const 
+\begin{DoxyCompactList}\small\item\em compares two version and returns if they are similar \end{DoxyCompactList}\item 
+const char $\ast$ {\bfseries \-Ver\-Str} () const \label{classpkgCache_1_1VerIterator_add457482fa93fc27eaabb89696b3d793}
+
+\item 
+const char $\ast$ {\bfseries \-Section} () const \label{classpkgCache_1_1VerIterator_a699ec4acd1a98b86dde5a40fe34e3e5f}
+
+\item 
+const char $\ast$ {\bfseries \-Arch} () const \label{classpkgCache_1_1VerIterator_a4e69d1500284f055bd4802e6e309c47d}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Parent\-Pkg} () const \label{classpkgCache_1_1VerIterator_a7ad112c30ff8b8f7916e332c5041f3ec}
+
+\item 
+{\bf \-Desc\-Iterator} {\bfseries \-Description\-List} () const \label{classpkgCache_1_1VerIterator_a49a5da828259e13c3ca901a615b2f99a}
+
+\item 
+{\bf \-Desc\-Iterator} {\bfseries \-Translated\-Description} () const \label{classpkgCache_1_1VerIterator_a68adb012150df3b14a0f1346b9f8ab3a}
+
+\item 
+{\bf \-Dep\-Iterator} {\bfseries \-Depends\-List} () const \label{classpkgCache_1_1VerIterator_a3703cce6ec46f3ed03ef72f6fe09b4f4}
+
+\item 
+{\bf \-Prv\-Iterator} {\bfseries \-Provides\-List} () const \label{classpkgCache_1_1VerIterator_ad301a5410f2dad0518ea8701941b0ef5}
+
+\item 
+{\bf \-Ver\-File\-Iterator} {\bfseries \-File\-List} () const \label{classpkgCache_1_1VerIterator_a4fc71b30ea381dbc363273bded4f5b17}
+
+\item 
+bool {\bfseries \-Downloadable} () const \label{classpkgCache_1_1VerIterator_acd92f0d325cfdafebab777a35b402a5c}
+
+\item 
+const char $\ast$ {\bfseries \-Priority\-Type} () const \label{classpkgCache_1_1VerIterator_ad10551208d36b07d0505c4de2974c4b9}
+
+\item 
+std\-::string {\bfseries \-Rel\-Str} () const \label{classpkgCache_1_1VerIterator_a4c4d44880cc17b047e7069e11b811d0f}
+
+\item 
+bool {\bfseries \-Automatic} () const \label{classpkgCache_1_1VerIterator_a6fd094d3dd6c923b8ab875d3b463999e}
+
+\item 
+{\bf \-Ver\-File\-Iterator} {\bfseries \-Newest\-File} () const \label{classpkgCache_1_1VerIterator_aab50f3986d7be06e92486705536835e3}
+
+\item 
+{\bfseries \-Ver\-Iterator} ({\bf pkg\-Cache} \&\-Owner, {\bf \-Version} $\ast$\-Trg=0)\label{classpkgCache_1_1VerIterator_a7ce3dc5f1408df4633be018ff8aca2b1}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Version} $\ast$ {\bf \-Owner\-Pointer} () const 
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Cache\-::\-Ver\-Iterator@{pkg\-Cache\-::\-Ver\-Iterator}!\-Owner\-Pointer@{\-Owner\-Pointer}}
+\index{\-Owner\-Pointer@{\-Owner\-Pointer}!pkgCache::VerIterator@{pkg\-Cache\-::\-Ver\-Iterator}}
+\subsubsection[{\-Owner\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Version}$\ast$ {\bf \-Owner\-Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classpkgCache_1_1VerIterator_a6b354a7d168889fafd04a8e6b69efbfa}
+
+
+\-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to the first structure of this type 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Cache\-::\-Iterator$<$ Version, Ver\-Iterator $>$} \doxyref{}{p.}{classpkgCache_1_1Iterator_ac5f859168a3ef5a04d97c141fdb6d80d}.
+
+\index{pkg\-Cache\-::\-Ver\-Iterator@{pkg\-Cache\-::\-Ver\-Iterator}!\-Similar\-Ver@{\-Similar\-Ver}}
+\index{\-Similar\-Ver@{\-Similar\-Ver}!pkgCache::VerIterator@{pkg\-Cache\-::\-Ver\-Iterator}}
+\subsubsection[{\-Similar\-Ver}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Similar\-Ver} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Ver\-Iterator} \&}]{\-B}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classpkgCache_1_1VerIterator_a89a7f2dec86e520aa1b15dcf52e6ab23}
+
+
+compares two version and returns if they are similar 
+
+\-This method should be used to identify if two pseudo versions are refering to the same \char`\"{}real\char`\"{} version 
+
+\-References pkg\-Cache\-::\-Version\-::\-Hash.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheiterators.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-cc\end{DoxyCompactItemize}

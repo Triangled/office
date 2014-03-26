@@ -1,0 +1,78 @@
+\section{\-Acquire system \{\{\{}
+\label{group__acquire}\index{\-Acquire system					\{\{\{@{\-Acquire system					\{\{\{}}
+
+
+\-The \-Acquire system is responsible for retrieving files from local or remote \-U\-R\-Is and postprocessing them (for instance, verifying their authenticity). \-The core class in this system is \doxyref{pkg\-Acquire}{p.}{classpkgAcquire}, which is responsible for managing the download queues during the download. \-There is at least one download queue for each supported protocol; protocols such as http may provide one queue per host.  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf pkg\-Acquire\-::\-Item}
+\begin{DoxyCompactList}\small\item\em \-Represents the process by which a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object should \{\{\{ retrieve a file or a collection of files. \end{DoxyCompactList}\item 
+struct {\bf \-Diff\-Info}
+\begin{DoxyCompactList}\small\item\em \-Information about an index patch (aka diff). \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Sub\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching a \-Sub\-Index \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Diff\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching an index file of \{\{\{ package list diffs and starting the package list's download. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index\-Diffs}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching all the patches \{\{\{ that need to be applied to a given package index file. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that is responsible for fetching an index \{\{\{ file (e.\-g., \-Packages or \-Sources). \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index\-Trans}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that is responsible for fetching a \{\{\{ translated index file. \end{DoxyCompactList}\item 
+class {\bf \-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an index file. \end{DoxyCompactList}\item 
+class {\bf \-Optional\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an optional index file. \end{DoxyCompactList}\item 
+class {\bf \-Sub\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an subindex index file. \end{DoxyCompactList}\item 
+class {\bf \-Optional\-Sub\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an subindex index file. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Sig}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that downloads the detached signature \{\{\{ of a meta-\/index (\-Release) file, then queues up the release file itself. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for downloading the meta-\/index \{\{\{ file (i.\-e., \-Release) itself and verifying its signature. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Clear\-Sig}
+\begin{DoxyCompactList}\small\item\em \-An item repsonsible for downloading clearsigned metaindexes \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Archive}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching a package file. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-File}
+\begin{DoxyCompactList}\small\item\em \-Retrieve an arbitrary file to the current directory. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Method}
+\item 
+class {\bf pkg\-Acquire\-::\-Worker}
+\begin{DoxyCompactList}\small\item\em \-A fetch subprocess. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acquire}
+\begin{DoxyCompactList}\small\item\em \-The core download scheduler. \{\{\{. \end{DoxyCompactList}\item 
+struct {\bf pkg\-Acquire\-::\-Item\-Desc}
+\begin{DoxyCompactList}\small\item\em \-Represents a single download source from which an item should be downloaded. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acquire\-::\-Queue}
+\begin{DoxyCompactList}\small\item\em \-A single download queue in a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acquire\-::\-Uri\-Iterator}
+\begin{DoxyCompactList}\small\item\em \-Iterates over all the \-U\-R\-Is being fetched by a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{. \end{DoxyCompactList}\item 
+struct {\bf pkg\-Acquire\-::\-Method\-Config}
+\begin{DoxyCompactList}\small\item\em \-Information about the properties of a single acquire method. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acquire\-Status}
+\begin{DoxyCompactList}\small\item\em \-A monitor object for downloads controlled by the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} class. \{\{\{. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Files}
+\begin{DoxyCompactItemize}
+\item 
+file {\bf acquire-\/item.\-h}
+\item 
+file {\bf acquire-\/method.\-h}
+\item 
+file {\bf acquire-\/worker.\-h}
+\item 
+file {\bf acquire.\-h}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \-Acquire system is responsible for retrieving files from local or remote \-U\-R\-Is and postprocessing them (for instance, verifying their authenticity). \-The core class in this system is \doxyref{pkg\-Acquire}{p.}{classpkgAcquire}, which is responsible for managing the download queues during the download. \-There is at least one download queue for each supported protocol; protocols such as http may provide one queue per host. \-Each file to download is represented by a subclass of \doxyref{pkg\-Acquire\-::\-Item}{p.}{classpkgAcquire_1_1Item}. \-The files add themselves to the download queue(s) by providing their \doxyref{\-U\-R\-I}{p.}{classURI} information to \doxyref{pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I}{p.}{classpkgAcquire_1_1Item_ab455ec87a776308e2892d3a383b1c2d2}, which calls \doxyref{pkg\-Acquire\-::\-Enqueue}{p.}{classpkgAcquire_adff4865b0b932d7c8dae0aee44006c13}.
+
+\-Once the system is set up, the \-Run method will spawn subprocesses to handle the enqueued \-U\-R\-Is; the scheduler will then take items from the queues and feed them into the handlers until the queues are empty.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Acquire supports inserting an object into several queues at once, but it is not clear what its behavior in this case is, and no subclass of \doxyref{pkg\-Acquire\-::\-Item}{p.}{classpkgAcquire_1_1Item} seems to actually use this capability. \end{DoxyRefDesc}

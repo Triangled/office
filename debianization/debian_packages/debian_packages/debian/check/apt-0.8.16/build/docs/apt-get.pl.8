@@ -1,0 +1,646 @@
+'\" t
+.\"     Title: apt-get
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 8 listopada 2008
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-GET" "8" "8 listopada 2008" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-get \- Narzędzie zarządzania pakietami APT \-\- interfejs linii poleceń
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-get\fR\ 'u
+\fBapt\-get\fR [\fB\-sqdyfmubV\fR] [\fB\-o=\ \fR\fB\fIconfig_string\fR\fR\fB\ \fR] [\fB\-c=\ \fR\fB\fIconfig_file\fR\fR\fB\ \fR] [\fB\-t=\fR\ \fItarget_release\fR] [\fB\-a=\fR\ \fIdefault_architecture\fR] {update | upgrade | dselect\-upgrade | dist\-upgrade | install\ \fIpkg\fR\ [\ {\ =\fIpkg_version_number\fR\ |\ /\fItarget_release\fR\ }\ ]\ ...  | remove\ \fIpkg\fR...  | purge\ \fIpkg\fR...  | source\ \fIpkg\fR\ [\ {\ =\fIpkg_version_number\fR\ |\ /\fItarget_release\fR\ }\ ]\ ...  | build\-dep\ \fIpkg\fR...  | check | clean | autoclean | autoremove | {\-v\ |\ \-\-version} | {\-h\ |\ \-\-help}}
+.SH "OPIS"
+.PP
+\fBapt\-get\fR
+is the command\-line tool for handling packages, and may be considered the user\*(Aqs "back\-end" to other tools using the APT library\&. Several "front\-end" interfaces exist, such as
+\fBdselect\fR(1),
+\fBaptitude\fR(8),
+\fBsynaptic\fR(8)
+and
+\fBwajig\fR(1)\&.
+.PP
+Jedno z poniższych poleceń musi być użyte, chyba że została podana opcja
+\fB\-h\fR
+albo
+\fB\-\-help\fR\&.
+.PP
+update
+.RS 4
+update
+jest używane do zsynchronizowania zawartości plików indeksu pakietów z ich źródłami\&. Lista dostępnych pakietów jest pobierana z lokalizacji określonych w pliku
+/etc/apt/sources\&.list\&. Na przykład, gdy używane jest archiwum Debiana, to polecenie pobiera i przegląda pliki
+Packages\&.gz, tak żeby udostępnić informacje o nowych i uaktualnionych pakietach\&. Polecenie
+update
+powinno być użyte zawsze przed
+upgrade
+lub
+dist\-upgrade\&. Należy zauważyć, że licznik całkowitego postępu operacji jest błędny, ponieważ rozmiar plików
+Packages\&.gz
+nie jest wcześniej znany\&.
+.RE
+.PP
+upgrade
+.RS 4
+upgrade
+instaluje najnowsze wersje wszystkich pakietów, obecnie zainstalowanych w systemie, na podstawie źródeł wymienionych w pliku
+/etc/apt/sources\&.list\&. Zainstalowane pakiety, których nowsza wersja jest dostępna, są ściągane i uaktualniane; w żadnym wypadku podanie tej opcji nie spowoduje usunięcia zainstalowanego pakietu czy zainstalowania nowego pakietu, wcześniej nie zainstalowanego\&. Pakiety, których nowa wersja wymaga zmiany statusu (np\&. zainstalowania bądź usunięcia) innego pakietu, będą pozostawione bez zmian\&. Aby
+\fBapt\-get\fR
+wiedział, że są dostępne nowe wersje pakietów, należy wcześniej wykonać
+update\&.
+.RE
+.PP
+dselect\-upgrade
+.RS 4
+dselect\-upgrade
+jest używane w połączeniu z programem
+\fBdselect\fR(1), tradycyjnym narzędziem do zarządzania pakietami w systemie Debian\&.
+dselect\-upgrade
+uwzględnia zmiany zrobione programem
+\fBdselect\fR(1)
+w polu
+Status
+pliku zawierającego informacje o dostępnych pakietach i wykonuje akcje potrzebne do zrealizowania tych zmian (na przykład: usunięcie starych pakietów i dodanie nowych)\&.
+.RE
+.PP
+dist\-upgrade
+.RS 4
+dist\-upgrade
+wykonuje to samo, co
+upgrade, jednakże w inteligentny sposób wykrywa zmiany zależności w nowych wersjach pakietów\&.
+\fBapt\-get\fR
+ma wbudowany "sprytny" system rozwiązywania konfliktów i jeśli będzie to potrzebne, podejmie próbę zaktualizowania najważniejszych pakietów, kosztem tych mniej ważnych\&. Tak więc
+dist\-upgrade
+może usunąć niektóre pakiety\&.Plik
+/etc/apt/sources\&.list
+zawiera listę adresów, z których będą pobierane żądane pakiety\&. Zobacz również do
+\fBapt_preferences\fR(5)
+\- znajduje się tam opis mechanizmu nadpisywania globalnych ustawień dla poszczególnych pakietów\&.
+.RE
+.PP
+install
+.RS 4
+Po
+install
+musi występować nazwa jednego lub więcej pakietów przeznaczonych do zainstalowania\&. Każdy argument jest nazwą pakietu, a nie pełną nazwą pliku, w którym się znajduje (na przykład w systemie Debian GNU/Linux, tym argumentem byłoby libc6, a nie
+libc6_1\&.9\&.6\-2\&.deb)\&. Wszystkie pakiety, które są potrzebne do zainstalowania żądanego(\-ych) pakietu(\-ów), będą także ściągnięte i zainstalowane\&. Plik
+/etc/apt/sources\&.list
+zawiera listę adresów, z których będą pobierane żądane pakiety\&. Jeżeli po nazwie pakietu pojawi się minus (bez spacji pomiędzy minusem a nazwą pakietu), to ten pakiet zostanie usunięty, o ile oczywiście jest zainstalowany\&. Podobnie znak plusa może być użyty w celu zainstalowania pakietu\&. Ta ostatnia właściwość może być użyta do nadpisania decyzji podjętych przez system rozwiązywania konfliktów programu apt\-get\&.
+.sp
+Konkretna wersja pakietu może być wybrana do zainstalowania przez umieszczenie po nazwie pakietu znaku równości, a za nim wybranej wersji pakietu\&. Podana wersja zostanie wyszukana i wybrana do zainstalowania\&. Również konkretna dystrybucja może być wybrana przez umieszczenie po nazwie pakietu znaku ukośnika, po którym następuje wersja dystrybucji bądź nazwa archiwum (stable, testing, unstable)\&.
+.sp
+Oba mechanizmy wyboru pakietów mogą zainstalować wcześniejsze wersje pakietów niż są już zainstalowane w systemie, dlatego muszą być używane ostrożnie\&.
+.sp
+Jest to także akcja, której należy użyć, aby zaktualizować jeden lub więcej spośród pakietów już zainstalowanych, bez aktualizowania wszystkich pozostałych pakietów\&. W przeciwieństwie do polecenia "upgrade", które instaluje najnowsze wersje wszystkich obecnie zainstalowanych pakietów, "install" zainstaluje najnowsze wersje pakietu (pakietów) podanego (podanych) w linii poleceń\&. Wystarczy podać nazwę pakietu (pakietów) do zaktualizowania i jeśli nowsze wersje są dostępna, to zostaną pobrane i zainstalowane (łączne z zależnościami, tak jak to opisano powyżej)\&.
+.sp
+W końcu, mechanizm
+\fBapt_preferences\fR(5)
+pozwala określić alternatywny sposób instalacji poszczególnych pakietów\&.
+.sp
+Jeżeli żaden pakiet nie pasuje do podanego wyrażenia, a to wyrażenie zawiera jeden z następujących znaków: "\&.", "?" albo "*", to zakłada się, że jest to wyrażenie regularne zgodne z POSIX\-em i jest ono stosowane do wszystkich nazw pakietów w bazie\&. Pakiety, których nazwy pasują do tego wyrażenia regularnego, są instalowane (bądź usuwane)\&. Należy zwrócić uwagę na to, że dopasowywany jest podciąg, tak więc "lo*" pasuje zarówno do "how\-lo", jak i do "lowest"\&. Jeśli jest to niepożądane, można określić początek lub koniec dopasowania wyrażenia regularnego, używając znaków "^| lub "$", można też stworzyć bardziej specyficzne wyrażenie regularne\&.
+.RE
+.PP
+remove
+.RS 4
+remove
+odpowiada poleceniu
+install
+z tą różnicą, że pakiety są usuwane, a nie instalowane\&. Jeżeli nazwa pakietu zostanie poprzedzona znakiem plusa (bez rozdzielającej spacji), wskazany pakiet zostanie zainstalowany zamiast zostać usunięty\&.
+.RE
+.PP
+purge
+.RS 4
+purge
+działa tak, jak
+remove, z tą różnicą, że pakiety są po usunięciu czyszczone (czyli usuwane są również wszystkie pliki konfiguracyjne)\&.
+.RE
+.PP
+source
+.RS 4
+source
+powoduje, że
+\fBapt\-get\fR
+ściąga pakiety ze źródłami\&. APT na podstawie listy dostępnych pakietów decyduje, który pakiet źródłowy ściągnąć\&. Następnie szuka najnowszej dostępnej wersji pakietu źródłowego i pobiera ją do bieżącego katalogu\&. Jeśli jest to możliwe, to APT bierze pod uwagę domyślne wydanie, ustawione w
+APT::Default\-Release
+w pliku konfiguracyjnym albo określone w opcji
+\fB\-t\fR, albo podane przy użyciu składni
+pakiet/wydanie\&.
+.sp
+Pakiety źródłowe są znajdowane inaczej niż pakiety binarne: przez linie z identyfikatorem
+deb\-src
+w pliku
+\fBsources.list\fR(5)\&. Oznacza to, że w pliku tym należy umieścić taką linię dla każdego repozytorium, z którego będą pobierane źródła\&. W przeciwnym wypadku może zostać pobrany pakiet źródłowy w innej wersji (nowszej, starszej albo żadnej) niż ta, który jest zainstalowana lub możliwa do zainstalowania\&.
+.sp
+If the
+\fB\-\-compile\fR
+option is specified then the package will be compiled to a binary \&.deb using
+\fBdpkg\-buildpackage\fR
+for the architecture as defined by the
+\fB\-\-host\-architecture\fR
+option\&. If
+\fB\-\-download\-only\fR
+is specified then the source package will not be unpacked\&.
+.sp
+Konkretną wersję pakietu źródłowego można ściągnąć, umieszczając po nazwie pakietu źródłowego znak równości, a za nim numer wersji do ściągnięcia\&. Działa tu taki sam mechanizm jak w przypadku pakietów binarnych\&. Włączone zostaje dokładne dopasowywanie nazw i wersji pakietów źródłowych i pośrednio włączona zostaje opcja
+APT::Get::Only\-Source
+.sp
+Uwaga\&. Pakiety źródłowe nie są traktowane tak samo, jak pakiety binarne \- są przechowywane tylko w bieżącym katalogu, mniej więcej tak, jakby zostały ściągnięte oryginalne źródła programu ze strony jego autorów\&.
+.RE
+.PP
+build\-dep
+.RS 4
+build\-dep
+causes apt\-get to install/remove packages in an attempt to satisfy the build dependencies for a source package\&. By default the dependencies are satisfied to build the package natively\&. If desired a host\-architecture can be specified with the
+\fB\-\-host\-architecture\fR
+option instead\&.
+.RE
+.PP
+check
+.RS 4
+check
+jest poleceniem diagnostycznym, które odświeża bufor (cache) pakietów i szuka zepsutych pakietów\&.
+.RE
+.PP
+download
+.RS 4
+download
+will download the given binary package into the current directory\&.
+.RE
+.PP
+clean
+.RS 4
+clean
+czyści lokalne repozytorium ściągniętych plików z pakietami\&. Usuwa wszystko z wyjątkiem pliku blokady
+/var/cache/apt/archives/
+oraz katalogu
+/var/cache/apt/archives/partial/\&. Gdy APT jest używane jako metoda programu
+\fBdselect\fR(1),
+clean
+jest uruchamiane automatycznie\&. Osoby nie używające dselect, powinny od czasu do czasu uruchamiać
+apt\-get clean, aby zwolnić trochę miejsca na dysku\&.
+.RE
+.PP
+autoclean
+.RS 4
+Podobnie jak
+clean,
+autoclean
+czyści lokalne repozytorium pobranych plików z pakietami\&. Różnica jest taka, że
+autoclean
+usuwa tylko te pliki pakietów, które już nie mogą być ściągnięte i w większości są bezużyteczne\&. Pozwala to na utrzymywanie bufora (cache\*(Aqa) przed długi czas i na uniknięcie niekontrolowanego jego wzrostu\&. Wyłączenie opcji konfiguracyjnej
+APT::Clean\-Installed
+zapobiegnie usuwaniu plików zawierających zainstalowane pakiety\&.
+.RE
+.PP
+autoremove
+.RS 4
+autoremove
+is used to remove packages that were automatically installed to satisfy dependencies for other packages and are now no longer needed\&.
+.RE
+.PP
+changelog
+.RS 4
+changelog
+downloads a package changelog and displays it through
+\fBsensible\-pager\fR\&. The server name and base directory is defined in the
+APT::Changelogs::Server
+variable (e\&. g\&.
+\m[blue]\fBhttp://packages\&.debian\&.org/changelogs\fR\m[]
+for Debian or
+\m[blue]\fBhttp://changelogs\&.ubuntu\&.com/changelogs\fR\m[]
+for Ubuntu)\&. By default it displays the changelog for the version that is installed\&. However, you can specify the same options as for the
+\fBinstall\fR
+command\&.
+.RE
+.SH "OPCJE"
+.PP
+Wszystkie opcje linii poleceń mogą być ustawione w pliku konfiguracyjnym\&. Poniższe opisy wskazują, którą opcję w pliku konfiguracyjnym należy ustawić\&. W przypadku opcji logicznych, można unieważnić ustawienia pliku konfiguracyjnego, używając
+\fB\-f\-\fR,
+\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+albo czegoś podobnego\&.
+.PP
+\fB\-\-no\-install\-recommends\fR
+.RS 4
+Nie rozpatruje rekomendowanych pakietów jako zależności do instalacji\&. Pozycja w pliku konfiguracyjnym:
+APT::Install\-Recommends\&.
+.RE
+.PP
+\fB\-\-install\-suggests\fR
+.RS 4
+Consider suggested packages as a dependency for installing\&. Configuration Item:
+APT::Install\-Suggests\&.
+.RE
+.PP
+\fB\-d\fR, \fB\-\-download\-only\fR
+.RS 4
+Tylko pobieranie; pliki z pakietami są tylko ściągane, ale nie rozpakowywane czy instalowane\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Download\-Only\&.
+.RE
+.PP
+\fB\-f\fR, \fB\-\-fix\-broken\fR
+.RS 4
+Popraw; podejmuje próbę poprawienia zepsutych zależności\&. Używanie tej opcji z install/remove może spowodować pominięcie któregokolwiek z pakietów podanych w linii poleceń, co pozwoli programowi APT znaleźć właściwe rozwiązanie problemu\&. Ta opcja jest czasami potrzebna przy pierwszym uruchomieniu APT, który nie pozwala, aby w systemie istniały zepsute zależności\&. Jest również prawdopodobne, że systemowa struktura zależności może być tak zepsuta, że będzie wymagała ręcznej naprawy (co zazwyczaj oznacza użycie
+\fBdselect\fR(1)
+lub
+\fBdpkg \-\-remove\fRw celu usunięcia niektórych naruszonych pakietów)\&. W pewnych sytuacjach użycie tej opcji łącznie z
+\fB\-m\fR
+może spowodować błąd\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Fix\-Broken\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-\-ignore\-missing\fR, \fB\-\-fix\-missing\fR
+.RS 4
+Ignoruj brakujące pakiety\&. Pakiety, które nie mogą być pobrane lub nie powiedzie się test spójności pakietu po jego pobraniu (plik z pakietem jest uszkodzony), zostają wstrzymane\&. W pewnych sytuacjach użycie tej opcji łącznie z
+\fB\-f\fR
+może spowodować błąd\&. Pakiet, który jest wybrany do instalacji (w szczególności jest on wymieniony w linii poleceń), ale nie może zostać pobrany, zostanie pominięty\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Fix\-Missing\&.
+.RE
+.PP
+\fB\-\-no\-download\fR
+.RS 4
+Wyłącza pobierania pakietów\&. Najlepiej stosować z
+\fB\-\-ignore\-missing\fR, aby wymusić na APT używanie tylko tych plików \&.deb, które zostały wcześniej ściągnięte\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Download\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Cichy; wypisuje tylko informacje potrzebne do logowania, opuszczając wskaźniki postępu\&. Więcej znaków q spowoduje jeszcze bardziej ciche wyjście, maksimum jest 2\&. Można także ustawić poziom cichości za pomocą
+\fB\-q=#\fR, nadpisując tym samym opcję z pliku konfiguracyjnego\&. Należy zauważyć, że poziom cichości równy 2 implikuje
+\fB\-y\fR, dlatego \-qq nigdy nie powinno być używane bez opcji typu \-d, \-\-print\-uris lub \-s, gdyż APT może zadecydować o zrobieniu czegoś, czego użytkownik się nie spodziewa\&. Pozycja w pliku konfiguracyjnym:
+quiet\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-simulate\fR, \fB\-\-just\-print\fR, \fB\-\-dry\-run\fR, \fB\-\-recon\fR, \fB\-\-no\-act\fR
+.RS 4
+Brak akcji; wykonuje symulację zdarzeń, które mogłyby się przytrafić, ale nic nie zmienia w systemie\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Simulate\&.
+.sp
+Symulacja uruchomiona przez zwykłego użytkownika automatycznie wyłączy blokady (Debug::NoLocking) \&. Jeżeli jest ustawiona opcja
+APT::Get::Show\-User\-Simulation\-Note
+(a domyślnie jest ona ustawiona), to zostanie wyświetlona informacja o tym, że to jest tylko symulacja\&. W przypadku uruchomienia przez administratora systemu, blokada nie zostanie wyłączona, ani informacja nie będzie pokazana (użytkownik root powinien wiedzieć, co robi,bez dodatkowych ostrzeżeń ze strony
+apt\-get)\&.
+.sp
+Symulacja powoduje wypisanie serii linii, z których każda reprezentuje operację programu dpkg: konfigurowanie (Conf), usunięcie (Remv), rozpakowanie (Inst)\&. Nawiasy kwadratowe oznaczają zepsute pakiety, przy czym puste nawiasy kwadratowe oznaczają, że przyczyna zepsucia pakietu nie jest znana (rzadkość)\&.
+.RE
+.PP
+\fB\-y\fR, \fB\-\-yes\fR, \fB\-\-assume\-yes\fR
+.RS 4
+Automatycznie odpowiada "tak" na pytania\&. Zakładając odpowiedź "tak" na wszelkie pytania, uruchamia się w trybie nieinteraktywnym\&. Jeśli wystąpi jakaś niepożądana sytuacja, na przykład zmiana wstrzymanego pakietu lub usunięcie pakietu mającego status Essential,
+apt\-get
+przerwie działanie\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Assume\-Yes\&.
+.RE
+.PP
+\fB\-\-assume\-no\fR
+.RS 4
+Automatic "no" to all prompts\&. Configuration Item:
+APT::Get::Assume\-No\&.
+.RE
+.PP
+\fB\-u\fR, \fB\-\-show\-upgraded\fR
+.RS 4
+Pokazuje uaktualnione pakiety\&. Wypisuje listę wszystkich pakietów, które będą uaktualnione\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Show\-Upgraded\&.
+.RE
+.PP
+\fB\-V\fR, \fB\-\-verbose\-versions\fR
+.RS 4
+Wyświetla pełne wersje aktualizowanych pakietów Pozycja w pliku konfiguracyjnym:
+APT::Get::Show\-Versions\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-host\-architecture\fR
+.RS 4
+This option controls the architecture packages are built for by
+\fBapt\-get source \-\-compile\fR
+and how cross\-builddependencies are satisfied\&. By default is it not set which means that the host architecture is the same as the build architecture (which is defined by
+APT::Architecture)\&. Configuration Item:
+APT::Get::Host\-Architecture
+.RE
+.PP
+\fB\-b\fR, \fB\-\-compile\fR, \fB\-\-build\fR
+.RS 4
+Skompiluj pakiety źródłowe po ich ściągnięciu\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Compile\&.
+.RE
+.PP
+\fB\-\-ignore\-hold\fR
+.RS 4
+Ignoruje status hold (wstrzymany) pakietów\&. Ta opcja powoduje, że
+\fBapt\-get\fR
+zignoruje status hold pakietów\&. Może to być użyteczne w połączeniu z
+dist\-upgrade
+do unieważnienia dużej liczby niepożądanych wstrzymań\&. Pozycja w pliku konfiguracyjnym:
+APT::Ignore\-Hold\&.
+.RE
+.PP
+\fB\-\-no\-upgrade\fR
+.RS 4
+Nie aktualizuje pakietów\&. Użyte w połączeniu z
+install,
+no\-upgrade
+spowoduje, że pakiety, które są już zainstalowane, nie zostaną zaktualizowane\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Upgrade\&.
+.RE
+.PP
+\fB\-\-only\-upgrade\fR
+.RS 4
+Do not install new packages; When used in conjunction with
+install,
+only\-upgrade
+will prevent packages on the command line from being upgraded if they are not already installed\&. Configuration Item:
+APT::Get::Only\-Upgrade\&.
+.RE
+.PP
+\fB\-\-force\-yes\fR
+.RS 4
+Wymuszenie\&. Jest to niebezpieczna opcja, która powoduje, że apt\-get kontynuuje swoje działanie bez żadnej interakcji z użytkownikiem, nawet jeśli robi coś, co może być szkodliwe\&. Nie powinna być używana, z wyjątkiem bardzo szczególnych sytuacji\&. Używanie
+force\-yes
+może zniszczyć Twój system! Pozycja w pliku konfiguracyjnym:
+APT::Get::force\-yes\&.
+.RE
+.PP
+\fB\-\-print\-uris\fR
+.RS 4
+Nie ściąga pakietów do zainstalowania, tylko wypisuje ich URI\&. Każdy URI składa się z lokalizacji, nazwy pliku przeznaczenia, rozmiaru oraz oczekiwanej sumy kontrolnej md5\&. Należy zauważyć, że nazwa pliku przeznaczenia nie musi być taka sama jak nazwa zdalnego pliku! Działa to także z poleceniami
+source
+i
+update\&. Używane z poleceniem
+update, nie wypisuje sum MD5 i rozmiaru, a także w gestii użytkownika leży wtedy rozpakowywanie spakowanych plików\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Print\-URIs\&.
+.RE
+.PP
+\fB\-\-purge\fR
+.RS 4
+Używa polecenia purge (wyczyść), zamiast remove (usuń) dla wszystkiego, co miałoby zostać usunięte\&. Obok pakietów, które są przeznaczone do wyczyszczenia, wyświetlana jest gwiazdka ("*")\&.
+\fBremove \-\-purge\fR
+jest odpowiednikiem polecenia
+\fBpurge\fR\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Purge\&.
+.RE
+.PP
+\fB\-\-reinstall\fR
+.RS 4
+Ponownie instaluje pakiety, których najnowsza wersja już jest zainstalowana Pozycja w pliku konfiguracyjnym:
+APT::Get::ReInstall\&.
+.RE
+.PP
+\fB\-\-list\-cleanup\fR
+.RS 4
+Ta opcja jest domyślnie włączona, można ją wyłączyć używając
+\-\-no\-list\-cleanup\&. Jeżeli jest włączona,
+\fBapt\-get\fR
+będzie automatycznie zarządzał zawartością
+/var/lib/apt/lists,tak aby przestarzałe pliki były usuwane\&. Jedynym powodem dla jej wyłączenia mogłyby być częste zmiany w sources\&.list\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::List\-Cleanup\&.
+.RE
+.PP
+\fB\-t\fR, \fB\-\-target\-release\fR, \fB\-\-default\-release\fR
+.RS 4
+Ta opcja tworzy domyślny pin o priorytecie 990, używając podanego łańcucha znaków oznaczającego wersję dystrybucji\&. Nadpisuje to ogólne ustawienia z pliku
+/etc/apt/preferences\&. Opcja nie zmienia pinu pakietów, które mają własne (szczegółowe) ustawienia w powyższym pliku preferencji\&. W skrócie \- ta opcja pozwala pozwala na prostą kontrolę, z których dystrybucji będą pobierane pakiety\&. Przykłady:
+\fB\-t \*(Aq2\&.1*\*(Aq\fR,
+\fB\-t unstable\fR
+lub
+\fB\-t sid\fR
+Pozycja w pliku konfiguracyjnym:
+APT::Default\-Release; zobacz także stronę podręcznika
+\fBapt_preferences\fR(5)\&.
+.RE
+.PP
+\fB\-\-trivial\-only\fR
+.RS 4
+Wykonuje tylko "banalne" (ang\&. "trivial") operacje\&. Tę opcję można porównać z
+\fB\-\-assume\-yes\fR, ale tam gdzie
+\fB\-\-assume\-yes\fR
+odpowiedziałoby "tak" na pytanie,
+\fB\-\-trivial\-only\fR
+odpowie "nie"\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Trivial\-Only\&.
+.RE
+.PP
+\fB\-\-no\-remove\fR
+.RS 4
+Jeżeli jakikolwiek pakiet miałby zostać usunięty, apt\-get natychmiast kończy działanie\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Remove\&.
+.RE
+.PP
+\fB\-\-auto\-remove\fR
+.RS 4
+Jeżeli polecenie to albo
+install, albo
+remove, to ta opcja działa tak, jak uruchomienie polecenia
+autoremove
+i usuwa pakiety mające nieużywane już zależności\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::AutomaticRemove\&.
+.RE
+.PP
+\fB\-\-only\-source\fR
+.RS 4
+Ma znaczenie tylko dla poleceń
+source
+i
+build\-dep\&. Wskazuje na to, że podane nazwy pakietów źródłowych nie powinny być mapowane w tabeli pakietów binarnych\&. Oznacza to, że gdy podano tę opcję, to powyższe polecenia zaakceptują tylko nazwy pakietów źródłowych\&.Nie będą akceptować nazw pakietów binarnych ani wyszukiwać odpowiadających im pakietów źródłowych\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Only\-Source\&.
+.RE
+.PP
+\fB\-\-diff\-only\fR, \fB\-\-dsc\-only\fR, \fB\-\-tar\-only\fR
+.RS 4
+Ściągnij tylko plik diff, dsc albo tar pakietu źródłowego\&. Pozycje w pliku konfiguracyjnym:
+APT::Get::Diff\-Only,
+APT::Get::Dsc\-Only
+oraz
+APT::Get::Tar\-Only\&.
+.RE
+.PP
+\fB\-\-arch\-only\fR
+.RS 4
+Przetwarza tylko te pakiety z zależnościami wymaganymi do zbudowania pakietu ze źródeł (build\-dependencies), które są zależnie od architektury komputera\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::Arch\-Only\&.
+.RE
+.PP
+\fB\-\-allow\-unauthenticated\fR
+.RS 4
+Ignorowanie sytuacji, w których nie powiedzie się autentykacja pakietów i nieostrzeganie o tym\&. Jest to użyteczne dla programów typu pbuilder\&. Pozycja w pliku konfiguracyjnym:
+APT::Get::AllowUnauthenticated\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Wyświetla krótkie informacje o użyciu\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Wyświetla wersję programu\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Configuration File; Specify a configuration file to use\&. The program will read the default configuration file and then this configuration file\&. If configuration settings need to be set before the default configuration files are parsed specify a file with the
+\fBAPT_CONFIG\fR
+environment variable\&. See
+\fBapt.conf\fR(5)
+for syntax information\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Ustawia opcję konfiguracji\&. Pozwala ustawić dowolną opcję konfiguracji\&. Składnia jest następująca:
+\fB\-o Foo::Bar=bar\fR\&.
+\fB\-o\fR
+i
+\fB\-\-option\fR
+można podać wielokrotnie \- do ustawiania różnych opcji\&.
+.RE
+.SH "PLIKI"
+.PP
+/etc/apt/sources\&.list
+.RS 4
+Lokalizacje, z których będą ściągane pakiety\&. Pozycja w pliku konfiguracyjnym:
+Dir::Etc::SourceList\&.
+.RE
+.PP
+/etc/apt/sources\&.list\&.d/
+.RS 4
+Części pliku zawierającego lokalizacje, z której są pobierane pakiety\&. Pozycja w pliku konfiguracyjnym:
+Dir::Etc::SourceParts\&.
+.RE
+.PP
+/etc/apt/apt\&.conf
+.RS 4
+Plik konfiguracyjny APT\&. Pozycja w pliku konfiguracyjnym:
+Dir::Etc::Main\&.
+.RE
+.PP
+/etc/apt/apt\&.conf\&.d/
+.RS 4
+Części pliku konfiguracyjnego\&. Pozycja w pliku konfiguracyjnym:
+Dir::Etc::Parts\&.
+.RE
+.PP
+/etc/apt/preferences
+.RS 4
+Plik zawierający preferencje wyboru wersji\&. Jest to miejsce, w którym określa się tzw\&. "pinning", tj\&. preferencje, skąd brać pewne pakiety \- z innego źródła, z innej dystrybucji lub o innej wersji\&. Pozycja w pliku konfiguracyjnym:Dir::Etc::Preferences\&.
+.RE
+.PP
+/etc/apt/preferences\&.d/
+.RS 4
+Części pliku preferencji wyboru wersji\&. Pozycja w pliku konfiguracyjnym:
+Dir::Etc::PreferencesParts\&.
+.RE
+.PP
+/var/cache/apt/archives/
+.RS 4
+Składnica pobranych plików pakietów\&. Pozycja w pliku konfiguracyjnym:
+Dir::Cache::Archives\&.
+.RE
+.PP
+/var/cache/apt/archives/partial/
+.RS 4
+Składnica obecnie pobieranych plików pakietów\&. Pozycja w pliki konfiguracyjnym:
+Dir::Cache::Archives
+(implikuje partial)\&.
+.RE
+.PP
+/var/lib/apt/lists/
+.RS 4
+Składnica zawierająca informacje o każdym zasobie pakietów podanym w
+\fBsources.list\fR(5)
+Pozycja w pliku konfiguracyjnym:
+Dir::State::Lists\&.
+.RE
+.PP
+/var/lib/apt/lists/partial/
+.RS 4
+Składnica obecnie pobieranych informacji o stanie pakietów\&. Pozycja w pliku konfiguracyjnym:
+Dir::State::Lists
+(implikuje partial)\&.
+.RE
+.SH "ZOBACZ TAKżE"
+.PP
+\fBapt-cache\fR(8),
+\fBapt-cdrom\fR(8),
+\fBdpkg\fR(1),
+\fBdselect\fR(1),
+\fBsources.list\fR(5),
+\fBapt.conf\fR(5),
+\fBapt-config\fR(8),
+\fBapt-secure\fR(8), Przewodnik APT dla użytkowników w /usr/share/doc/apt\-doc/,
+\fBapt_preferences\fR(5), APT Howto\&.
+.SH "DIAGNOSTYKA"
+.PP
+\fBapt\-get\fR
+zwraca zero, gdy zakończyło się pomyślnie, 100 \- w przypadku błędu\&.
+.SH "AUTORZY ORYGINAŁU"
+.PP
+
+Jason Gunthorpe
+.SH "OBECNI AUTORZY"
+.PP
+
+zespół APT
+.PP
+
+\m[blue]\fBStrona QA\fR\m[]\&\s-2\u[3]\d\s+2
+.SH "BUGS"
+.PP
+\m[blue]\fBStrona błędów APT\fR\m[]\&\s-2\u[4]\d\s+2\&. Aby zgłosić błąd w APT, proszę przeczytać
+/usr/share/doc/debian/bug\-reporting\&.txt
+lub opis polecenia
+\fBreportbug\fR(1)\&.
+.SH "TŁUMACZENIE"
+.PP
+Tłumaczenie stron podręcznika: Robert Luberda
+<robert@debian\&.org>, 2000\-2010\&. Tłumaczenie przewodnika offline: Krzysztof Fiertek
+<akfedux@megapolis\&.pl>, 2004
+.PP
+Proszę zauważyć, że przetłumaczony dokument może zawierać fragmenty nieprzetłumaczone\&. Ma to na celu uniknięcie utracenia istotnych informacji, w przypadkach gdy oryginał zostanie zaktualizowany, a tłumaczenie \- nie\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBzespół APT\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+http://packages.debian.org/changelogs
+.IP " 2." 4
+http://changelogs.ubuntu.com/changelogs
+.IP " 3." 4
+Strona QA
+.RS 4
+\%http://packages.qa.debian.org/a/apt.html
+.RE
+.IP " 4." 4
+Strona błędów APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

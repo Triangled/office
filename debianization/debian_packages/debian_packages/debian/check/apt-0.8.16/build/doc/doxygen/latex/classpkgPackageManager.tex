@@ -1,0 +1,157 @@
+\section{pkg\-Package\-Manager \-Class \-Reference}
+\label{classpkgPackageManager}\index{pkg\-Package\-Manager@{pkg\-Package\-Manager}}
+
+
+\-Inheritance diagram for pkg\-Package\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classpkgPackageManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Package\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgPackageManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Order\-Result} \{ {\bfseries \-Completed}, 
+{\bfseries \-Failed}, 
+{\bfseries \-Incomplete}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Get\-Archives} ({\bf pkg\-Acquire} $\ast$\-Owner, {\bf pkg\-Source\-List} $\ast$\-Sources, {\bf pkg\-Records} $\ast$\-Recs)\label{classpkgPackageManager_a2b59729e04855d013d966da40288d8c3}
+
+\item 
+\-Order\-Result {\bfseries \-Do\-Install} (int status\-Fd=-\/1)\label{classpkgPackageManager_a3f3e27cbb687107fbabe1929daf20e30}
+
+\item 
+\-Order\-Result {\bfseries \-Do\-Install\-Pre\-Fork} ()\label{classpkgPackageManager_ae371ab538d1f0b80412354c17a70cab2}
+
+\item 
+\-Order\-Result {\bfseries \-Do\-Install\-Post\-Fork} (int status\-Fd=-\/1)\label{classpkgPackageManager_a407dc479963d03d44bb89350a4cfa57b}
+
+\item 
+bool {\bfseries \-Fix\-Missing} ()\label{classpkgPackageManager_adddf5a984cb06e95a60139afe6339985}
+
+\item 
+std\-::set$<$ std\-::string $>$ {\bf \-Get\-Disappeared\-Packages} ()\label{classpkgPackageManager_ad212b9767d4f6a8cdaae07c6fcd14cc2}
+
+\begin{DoxyCompactList}\small\item\em returns all packages dpkg let disappear \end{DoxyCompactList}\item 
+{\bfseries pkg\-Package\-Manager} ({\bf pkg\-Dep\-Cache} $\ast$\-Cache)\label{classpkgPackageManager_a03a6dd5992c02b21b7cdb22295135b27}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries \-Sig\-I\-N\-T\-Stop} = false\label{classpkgPackageManager_a9dd946780196f19cbda95b17140fda1c}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries \-Immediate\-Add} ({\bf \-Pkg\-Iterator} \-P, bool \-Use\-Install\-Ver, unsigned const int \&\-Depth=0)\label{classpkgPackageManager_a6c72ba522f3591ab6af328821800dab3}
+
+\item 
+virtual \-Order\-Result {\bfseries \-Order\-Install} ()\label{classpkgPackageManager_aac426546448bf095379bca9cac358841}
+
+\item 
+bool {\bfseries \-Check\-R\-Conflicts} ({\bf \-Pkg\-Iterator} \-Pkg, {\bf \-Dep\-Iterator} {\bf \-Dep}, const char $\ast$\-Ver)\label{classpkgPackageManager_a6f764edee5890dc9815fd5db4313eab9}
+
+\item 
+bool {\bfseries \-Create\-Order\-List} ()\label{classpkgPackageManager_a9bfaa5b98474bdc8f84e82ce512696c4}
+
+\item 
+bool {\bfseries \-Dep\-Always\-True} ({\bf \-Dep\-Iterator} \-D)\label{classpkgPackageManager_a3c22baf91a10ce9c56d322bbb93968c8}
+
+\item 
+bool {\bfseries \-Configure\-All} ()\label{classpkgPackageManager_ae135d22856534a0d55a4c92c618ff826}
+
+\item 
+bool {\bfseries \-Smart\-Configure} ({\bf \-Pkg\-Iterator} \-Pkg, int const \-Depth)\label{classpkgPackageManager_afed4808cf41ee3c64ff995fa1e54416c}
+
+\item 
+bool {\bfseries \-Smart\-Un\-Pack} ({\bf \-Pkg\-Iterator} \-Pkg)\label{classpkgPackageManager_ac170a3f5cf962669edc3a1b06172c730}
+
+\item 
+bool {\bfseries \-Smart\-Un\-Pack} ({\bf \-Pkg\-Iterator} \-Pkg, bool const \-Immediate, int const \-Depth)\label{classpkgPackageManager_a5979b746aa36d812138bbe92a12810e8}
+
+\item 
+bool {\bfseries \-Smart\-Remove} ({\bf \-Pkg\-Iterator} \-Pkg)\label{classpkgPackageManager_a331749d6ceb06d7ddb46b7892487d40f}
+
+\item 
+bool {\bfseries \-Early\-Remove} ({\bf \-Pkg\-Iterator} \-Pkg)\label{classpkgPackageManager_ae16d6bbf149b846806bd80f85b8cb253}
+
+\item 
+virtual bool {\bfseries \-Install} ({\bf \-Pkg\-Iterator}, std\-::string)\label{classpkgPackageManager_a7b9735503373c5fd53e64cec815d1e2a}
+
+\item 
+virtual bool {\bfseries \-Configure} ({\bf \-Pkg\-Iterator})\label{classpkgPackageManager_a5bbe81ac5e83c9907ff4f3aa0ed0bef5}
+
+\item 
+virtual bool {\bfseries \-Remove} ({\bf \-Pkg\-Iterator}, bool=false)\label{classpkgPackageManager_a69ec94244f0f5815b7382528df9e2068}
+
+\item 
+virtual bool {\bfseries \-Go} (int status\-Fd=-\/1)\label{classpkgPackageManager_a6d85af18780f3a758d2d3a795a7df1c5}
+
+\item 
+virtual void {\bfseries \-Reset} ()\label{classpkgPackageManager_a4c4ba0ffe635d14b93794268bd8e5995}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string $\ast$ {\bfseries \-File\-Names}\label{classpkgPackageManager_a2e3b76ddbb27ab16121bb4259f4916af}
+
+\item 
+{\bf pkg\-Dep\-Cache} \& {\bfseries \-Cache}\label{classpkgPackageManager_a55d171db69665a0bfc7ae2c2c5eef967}
+
+\item 
+{\bf pkg\-Order\-List} $\ast$ {\bfseries \-List}\label{classpkgPackageManager_aa655c64fdc23f90fafb59121d662ea88}
+
+\item 
+bool {\bfseries \-Debug}\label{classpkgPackageManager_acdf3472c9b75f32dae88032d42d1cb6c}
+
+\item 
+bool {\bfseries \-No\-Imm\-Configure}\label{classpkgPackageManager_ad05503babf375999f515474c3e6d9365}
+
+\item 
+bool {\bfseries \-Imm\-Configure\-All}\label{classpkgPackageManager_a40cf75f502ac28c21b8ca3b08ee85c2f}
+
+\item 
+std\-::set$<$ std\-::string $>$ {\bf disappeared\-Pkgs}
+\begin{DoxyCompactList}\small\item\em saves packages dpkg let disappear \end{DoxyCompactList}\item 
+\-Order\-Result {\bfseries \-Res}\label{classpkgPackageManager_a642c883d64a4ba0b1bd41c57f83327d6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Package\-Manager@{pkg\-Package\-Manager}!disappeared\-Pkgs@{disappeared\-Pkgs}}
+\index{disappeared\-Pkgs@{disappeared\-Pkgs}!pkgPackageManager@{pkg\-Package\-Manager}}
+\subsubsection[{disappeared\-Pkgs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$std\-::string$>$ {\bf disappeared\-Pkgs}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgPackageManager_a10c389774ccbe4ea62ec25fa13b4cf80}
+
+
+saves packages dpkg let disappear 
+
+\-This way \-A\-P\-T can retreat from trying to configure these packages later on and a frontend can choose to display a notice to inform the user about these disappears. 
+
+\-Referenced by \-Get\-Disappeared\-Packages().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/packagemanager.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/packagemanager.\-cc\end{DoxyCompactItemize}

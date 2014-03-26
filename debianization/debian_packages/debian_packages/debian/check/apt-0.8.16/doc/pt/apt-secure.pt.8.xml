@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+ &apt-docinfo;
+ 
+ <refmeta>
+   <refentrytitle>apt-secure</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+
+
+ 
+
+ 
+ 
+ <!-- NOTE: This manpage has been written based on the
+     Securing Debian Manual ("Debian Security
+     Infrastructure" chapter) and on documentation
+     available at the following sites:
+     http://wiki.debian.net/?apt06
+     http://www.syntaxpolice.org/apt-secure/
+     http://www.enyo.de/fw/software/apt-secure/
+-->
+<!-- TODO: write a more verbose example of how it works with 
+     a sample similar to 
+     http://www.debian-administration.org/articles/174
+     ?
+-->
+<!-- Man page title -->
+<refnamediv>
+    <refname>apt-secure</refname>
+    <refpurpose>Suporte de autenticação de arquivos para o APT</refpurpose>
+ </refnamediv>
+
+ <refsect1><title>Descrição</title>
+   <para>
+   A partir da versão 0.6, o <command>apt</command> contém código que faz
+verificação de assinaturas do ficheiro Release para todos os arquivos. Isto
+assegura que os pacotes no arquivo não podem ser modificados por pessoas que
+não têm acesso à chave de assinatura do ficheiro Release.
+   </para>
+
+   <para>
+   Se um pacote vem dum arquivo sem assinatura ou com uma assinatura para a
+qual o apt não tem a chave, esse pacote é considerado 'não sendo de
+confiança' e instalá-lo irá resultar num grande aviso. Actualmente o
+<command>apt-get</command> irá avisar apenas de arquivos não assinados,
+lançamentos futuros poderão vir a forçar que todas as fontes sejam
+verificadas antes de descarregar pacotes delas.
+   </para>
+
+   <para>
+   Os frontends de pacotes &apt-get;, &aptitude; e &synaptic; suportam esta
+nova funcionalidade de autenticação.
+   </para>
+</refsect1>
+
+ <refsect1><title>Arquivos de confiança</title> 
+
+   <para> 
+   A corrente de confiança desde um arquivo apt até ao utilizador final é feita
+em diferentes passos. O <command>apt-secure</command> é o último passo nesta
+corrente, confiar num arquivo não quer dizer que os pacotes em que confia
+não possam conter código malicioso, mas que dizer que você confia no
+responsável do arquivo. É da responsabilidade do responsável do arquivo
+assegurar que a integridade do arquivo está correcta.
+   </para>
+
+   <para>O apt-secure não revê  as assinaturas ao nível do pacote. Se você necessita
+de ferramentas que o façam deve procurar pelo
+<command>debsig-verify</command> e <command>debsign</command>
+(disponibilizados nos pacotes debsig-verify e devscripts respectivamente).</para>
+
+   <para>
+   A corrente de confiança em Debian começa quando o responsável faz o upload
+de um novo pacote ou de uma nova versão de um pacote para o arquivo
+Debian. De modo a se tornar efectivo, este upload precisa de ser assinado
+por uma chave de um responsável dentro do chaveiro de responsáveis da Debian
+(disponível no pacote debian-keyring). As chaves dos responsáveis são
+assinadas por outros responsáveis seguindo procedimentos pré-estabelecidos
+para assegurar a identidade do dono da chave.
+   </para>
+
+   <para>
+   Após o upload, o pacote é verificado e incluído no arquivo, a assinatura do
+responsável é despojada, é computado um sumário MD5 do pacote e colocado no
+ficheiro Packages. Os sumários MD5 de todos os ficheiros pacotes são então
+computados e colocados no ficheiro Release. O ficheiro Release é então
+assinado pela chave de arquivo (a qual é criada uma vez por ano) e
+distribuído através do servidor FTP. Esta chave está também no chaveiro
+Debian.
+   </para>
+
+   <para>
+   Qualquer utilizador final pode verificar a assinatura do ficheiro Release,
+extrair o sumário MD5 de um pacote a partir dele, e compará-lo com o sumário
+MD5 do pacote que descarregou. Antes da versão 0.6 apenas o sumário MD5 do
+pacote Debian descarregado era verificado. Agora são verificados ambos: o
+sumário MD5 e a assinatura do ficheiro Release.
+   </para>
+
+   <para>Note que isto é diferente de verificar assinaturas por cada pacote. É
+desenhado para prevenir dois ataques possíveis:
+   </para>
+
+    <itemizedlist>
+       <listitem><para><literal>Ataques de rede "man in the middle"</literal>. Sem verificação de
+assinatura, um agente malicioso pode introduzir-se ele próprio no processo
+de descarga de pacotes e disponibilizar software malicioso seja ao controlar
+um elemento de rede (router, switch, etc.) ou ao redireccionar tráfego para
+um servidor impostor (através de ataques de fraude de arp ou DNS).</para></listitem>
+ 
+       <listitem><para><literal>Mirror network compromise</literal>. Sem verificação de assinatura,
+um agente malicioso pode comprometer uma máquina mirror e modificar os
+ficheiros dele para propagar software malicioso a todos os utilizadores que
+descarregam pacotes a partir dessa máquina.</para></listitem>
+    </itemizedlist>
+
+   <para>No entanto, isto não defende contra um compromisso do próprio servidor
+mestre da Debian (o qual assina os pacotes) ou contra um compromisso da
+chave usada para assinar os ficheiros Release. Em qualquer caso, este
+mecanismo pode complementar uma assinatura por-pacote.</para>
+</refsect1>
+
+ <refsect1><title>Configuração do utilizador</title>
+   <para>
+   <command>apt-key</command> é o programa que gere a lista de chaves usada
+pelo apt. Pode ser usado para adicionar ou remover chaves apesar de uma
+instalação deste lançamento ir automaticamente disponibilizar as chaves de
+assinaturas predefinidas de arquivo Debian usadas nos repositórios de
+pacotes Debian.
+   </para>
+   <para>
+   In order to add a new key you need to first download it (you should make
+sure you are using a trusted communication channel when retrieving it), add
+it with <command>apt-key</command> and then run <command>apt-get
+update</command> so that apt can download and verify the
+<filename>InRelease</filename> or <filename>Release.gpg</filename> files
+from the archives you have configured.
+   </para>
+</refsect1>
+
+<refsect1><title>Configuração de arquivos</title>
+   <para>
+   Se você deseja fornecer assinaturas de arquivo a um arquivo sob sua
+manutenção, você tem que:
+   </para>
+
+     <itemizedlist>
+       <listitem><para><emphasis>Criar um ficheiro Release de nível de topo</emphasis>, se este já
+não existir. Você pode fazer isto ao correr <command>apt-ftparchive
+release</command> (disponibilizado no apt-utils).</para></listitem>
+   
+      <listitem><para><emphasis>Sign it</emphasis>. You can do this by running <command>gpg
+--clearsign -o InRelease Release</command> and <command>gpg -abs -o
+Release.gpg Release</command>.</para></listitem>
+
+      <listitem><para><emphasis>Publicar a impressão digital da chave</emphasis>, deste modo os
+seus utilizadores irão saber que chave precisam de importar de modo a
+autenticar os ficheiros no arquivo.</para></listitem>
+
+    </itemizedlist>
+
+    <para>Sempre que o conteúdo do arquivo mude (são adicionados novos pacotes ou
+removidos), o responsável do arquivo tem que seguir os primeiros dois passos
+previamente delineados.</para>
+
+</refsect1>
+
+<refsect1><title>Veja também</title> 
+<para> 
+&apt-conf;, &apt-get;, &sources-list;, &apt-key;, &apt-ftparchive;,
+&debsign; &debsig-verify;, &gpg;
+</para>
+
+<para>Para mais informação de fundo você deve querer reler a <ulink
+url="http://www.debian.org/doc/manuals/securing-debian-howto/ch7.en.html">Infraestrutura
+de Segurança da Debian</ulink> no capítulo do Manual Debian de Segurança
+(disponível também no pacote harden-doc) e o <ulink
+url="http://www.cryptnet.net/fdp/crypto/strong_distro.html" >Strong
+Distribution HOWTO</ulink> de V. Alex Brennen.  </para>
+
+</refsect1>
+
+ &manbugs;
+ &manauthor;
+
+<refsect1><title>Autores do manual</title> 
+
+<para>Este manual é baseado no trabalho de Javier Fernández-Sanguino Peña, Isaac
+Jones, Colin Walters, Florian Weimer e Michael Vogt.
+</para>
+
+</refsect1>
+ 
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

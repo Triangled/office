@@ -1,0 +1,555 @@
+\section{pkg\-Acquire\-:\-:\-Worker \-Class \-Reference}
+\label{classpkgAcquire_1_1Worker}\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}}
+
+
+\-A fetch subprocess.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/worker.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acquire\-:\-:\-Worker\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classpkgAcquire_1_1Worker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acquire\-:\-:\-Worker\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcquire_1_1Worker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Queue\-Item} ({\bf pkg\-Acquire\-::\-Queue\-::\-Q\-Item} $\ast${\bf \-Item})
+\begin{DoxyCompactList}\small\item\em \-Tell the subprocess to download the given item. \end{DoxyCompactList}\item 
+bool {\bf \-Start} ()
+\begin{DoxyCompactList}\small\item\em \-Start up the worker and fill in \doxyref{\-Config}{p.}{classpkgAcquire_1_1Worker_a33b828cdf6b336e68c51bb8e068e1297}. \end{DoxyCompactList}\item 
+void {\bf \-Pulse} ()\label{classpkgAcquire_1_1Worker_ae7e67c4b41efe972e0bd8ccaeacce912}
+
+\begin{DoxyCompactList}\small\item\em \-Update the worker statistics (\-Current\-Size, \-Total\-Size, etc). \end{DoxyCompactList}\item 
+const {\bf \-Method\-Config} $\ast$ {\bf \-Get\-Conf} () const 
+\item 
+{\bf \-Worker} ({\bf \-Queue} $\ast${\bf \-Owner\-Q}, {\bf \-Method\-Config} $\ast${\bf \-Config}, {\bf pkg\-Acquire\-Status} $\ast${\bf \-Log})
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{\-Worker}{p.}{classpkgAcquire_1_1Worker} to download files. \end{DoxyCompactList}\item 
+{\bf \-Worker} ({\bf \-Method\-Config} $\ast${\bf \-Config})
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{\-Worker}{p.}{classpkgAcquire_1_1Worker} that should just retrieve information about the fetch method. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Worker} ()
+\begin{DoxyCompactList}\small\item\em \-Clean up this worker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Acquire\-::\-Queue\-::\-Q\-Item} $\ast$ {\bf \-Current\-Item}\label{classpkgAcquire_1_1Worker_adbe3d9577156a7736f774428835b31e9}
+
+\begin{DoxyCompactList}\small\item\em \-The queue entry that is currently being downloaded. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Status}\label{classpkgAcquire_1_1Worker_ae08432c27cb86081cae64bb384b3ac4b}
+
+\begin{DoxyCompactList}\small\item\em \-The most recent status string received from the subprocess. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Current\-Size}\label{classpkgAcquire_1_1Worker_af6da844ee8d9f7ae8f59e1821edc7948}
+
+\begin{DoxyCompactList}\small\item\em \-How many bytes of the file have been downloaded. \-Zero if the current progress of the file cannot be determined. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Total\-Size}\label{classpkgAcquire_1_1Worker_ace18d22dfea021e7f9ae876b1974ccbe}
+
+\begin{DoxyCompactList}\small\item\em \-The total number of bytes to be downloaded. \-Zero if the total size of the final is unknown. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Resume\-Point}\label{classpkgAcquire_1_1Worker_abd497ee7ec5dec08e88b4658730ecf63}
+
+\begin{DoxyCompactList}\small\item\em \-How much of the file was already downloaded prior to starting this worker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \-Construct} ()
+\begin{DoxyCompactList}\small\item\em \-Common code for the constructor. \end{DoxyCompactList}\item 
+bool {\bf \-Read\-Messages} ()
+\begin{DoxyCompactList}\small\item\em \-Retrieve any available messages from the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-Run\-Messages} ()
+\begin{DoxyCompactList}\small\item\em \-Parse and dispatch pending messages. \end{DoxyCompactList}\item 
+bool {\bf \-In\-Fd\-Ready} ()
+\begin{DoxyCompactList}\small\item\em \-Read and dispatch any pending messages from the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-Out\-Fd\-Ready} ()
+\begin{DoxyCompactList}\small\item\em \-Send any pending commands to the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-Capabilities} (std\-::string \-Message)
+\begin{DoxyCompactList}\small\item\em \-Handle a 100 \-Capabilities response from the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-Send\-Configuration} ()
+\begin{DoxyCompactList}\small\item\em \-Send a 601 \doxyref{\-Configuration}{p.}{classConfiguration} message (containing the \-A\-P\-T configuration) to the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-Media\-Change} (std\-::string \-Message)
+\begin{DoxyCompactList}\small\item\em \-Handle a 403 \-Media \-Change message. \end{DoxyCompactList}\item 
+bool {\bf \-Method\-Failure} ()
+\begin{DoxyCompactList}\small\item\em \-Invoked when the worked process dies unexpectedly. \end{DoxyCompactList}\item 
+void {\bf \-Item\-Done} ()
+\begin{DoxyCompactList}\small\item\em \-Invoked when a fetch job is completed, either successfully or unsuccessfully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Worker} $\ast$ {\bf \-Next\-Queue}
+\begin{DoxyCompactList}\small\item\em \-The next link on the \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue} list. \end{DoxyCompactList}\item 
+{\bf \-Worker} $\ast$ {\bf \-Next\-Acquire}\label{classpkgAcquire_1_1Worker_a3faf9ec3dc6548bd0ec0f656a91d9b8f}
+
+\begin{DoxyCompactList}\small\item\em \-The next link on the \-Acquire list. \end{DoxyCompactList}\item 
+{\bf \-Queue} $\ast$ {\bf \-Owner\-Q}\label{classpkgAcquire_1_1Worker_a99d906c6fe7507d8452fa4566377d2eb}
+
+\begin{DoxyCompactList}\small\item\em \-The \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue} with which this worker is associated. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-Status} $\ast$ {\bf \-Log}\label{classpkgAcquire_1_1Worker_aa7f97da72ceb8761a1cda178c778ca7c}
+
+\begin{DoxyCompactList}\small\item\em \-The download progress indicator to which progress messages should be sent. \end{DoxyCompactList}\item 
+{\bf \-Method\-Config} $\ast$ {\bf \-Config}\label{classpkgAcquire_1_1Worker_a33b828cdf6b336e68c51bb8e068e1297}
+
+\begin{DoxyCompactList}\small\item\em \-The configuration of this method. \-On startup, the target of this pointer is filled in with basic data about the method, as reported by the worker. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Access}
+\begin{DoxyCompactList}\small\item\em \-The access method to be used by this worker. \end{DoxyCompactList}\item 
+pid\-\_\-t {\bf \-Process}\label{classpkgAcquire_1_1Worker_a593a34f5ed2b53f33f69c4f17aa836eb}
+
+\begin{DoxyCompactList}\small\item\em \-The \-P\-I\-D of the subprocess. \end{DoxyCompactList}\item 
+int {\bf \-In\-Fd}
+\begin{DoxyCompactList}\small\item\em \-A file descriptor connected to the standard output of the subprocess. \end{DoxyCompactList}\item 
+int {\bf \-Out\-Fd}
+\begin{DoxyCompactList}\small\item\em \-A file descriptor connected to the standard input of the subprocess. \end{DoxyCompactList}\item 
+bool {\bf \-In\-Ready}
+\begin{DoxyCompactList}\small\item\em \-Set to {\bfseries true} if the worker is in a state in which it might generate data or command responses. \end{DoxyCompactList}\item 
+bool {\bf \-Out\-Ready}
+\begin{DoxyCompactList}\small\item\em \-Set to {\bfseries true} if the worker is in a state in which it is legal to send commands to it. \end{DoxyCompactList}\item 
+bool {\bf \-Debug}
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf \-Message\-Queue}\label{classpkgAcquire_1_1Worker_ad4a47a4aae6979a5a870f4fd7953a8d6}
+
+\begin{DoxyCompactList}\small\item\em \-The raw text values of messages received from the worker, in sequence. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Out\-Queue}
+\begin{DoxyCompactList}\small\item\em \-Buffers pending writes to the subprocess. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries pkg\-Acquire}\label{classpkgAcquire_1_1Worker_ae9e04de9ce779a3c0ad0b7142f7332d7}
+
+\item 
+class {\bfseries \-Queue}\label{classpkgAcquire_1_1Worker_a47dfc6f2bc0d50a6e7c92eb00d97b064}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A fetch subprocess. 
+
+\-A worker process is responsible for one stage of the fetch. \-This class encapsulates the communications protocol between the master process and the worker, from the master end.
+
+\-Each worker is intrinsically placed on two linked lists. \-The \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue} list (maintained in the \doxyref{\-Next\-Queue}{p.}{classpkgAcquire_1_1Worker_a70b012fdfb38bfe94b52924d45c5462d} variable) is maintained by the \doxyref{pkg\-Acquire\-::\-Queue}{p.}{classpkgAcquire_1_1Queue} class; it represents the set of workers assigned to a particular queue. \-The \-Acquire list (maintained in the \doxyref{\-Next\-Acquire}{p.}{classpkgAcquire_1_1Worker_a3faf9ec3dc6548bd0ec0f656a91d9b8f} variable) is maintained by the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} class; it represents the set of active workers for a particular \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Like everything else in the \-Acquire system, this has way too many protected items.\end{DoxyRefDesc}
+
+
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod}, \doxyref{pkg\-Acquire\-::\-Item}{p.}{classpkgAcquire_1_1Item}, \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Worker@{\-Worker}}
+\index{\-Worker@{\-Worker}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Worker} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Queue} $\ast$}]{\-Owner\-Q, }
+\item[{{\bf \-Method\-Config} $\ast$}]{\-Config, }
+\item[{{\bf pkg\-Acquire\-Status} $\ast$}]{\-Log}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Worker_ac0cf8a483d82d1372c6f7d499937860c}
+
+
+\-Create a new \doxyref{\-Worker}{p.}{classpkgAcquire_1_1Worker} to download files. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner\-Q} & \-The queue into which this worker should be placed.\\
+\hline
+{\em \-Config} & \-A location in which to store information about the fetch method.\\
+\hline
+{\em \-Log} & \-The download progress indicator that should be used to report the progress of this worker. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Access, pkg\-Acquire\-::\-Method\-Config\-::\-Access, \-Config, \-Construct(), \-Current\-Item, \-Current\-Size, \-Owner\-Q, and \-Total\-Size.
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Worker@{\-Worker}}
+\index{\-Worker@{\-Worker}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Worker} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Method\-Config} $\ast$}]{\-Config}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Worker_ae2af0336261da4341b48814adf215290}
+
+
+\-Create a new \doxyref{\-Worker}{p.}{classpkgAcquire_1_1Worker} that should just retrieve information about the fetch method. 
+
+\-Nothing in particular forces you to refrain from actually downloading stuff, but the various status callbacks won't be invoked.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Config} & \-A location in which to store information about the fetch method. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Method\-Config\-::\-Access.
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!$\sim$\-Worker@{$\sim$\-Worker}}
+\index{$\sim$\-Worker@{$\sim$\-Worker}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{$\sim$\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf \-Worker} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_1_1Worker_a6c90b9d499e906079194f681b6cb90ca}
+
+
+\-Clean up this worker. 
+
+\-Closes the file descriptors; if \doxyref{\-Method\-Config\-::\-Needs\-Cleanup}{p.}{structpkgAcquire_1_1MethodConfig_a18ab15b6a105e10118c35973765cce34} is {\bfseries false}, also rudely interrupts the worker with a \-S\-I\-G\-I\-N\-T. 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Capabilities@{\-Capabilities}}
+\index{\-Capabilities@{\-Capabilities}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Capabilities}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Capabilities} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_aa3de23b9c5a564121a667dd9b392e158}
+
+
+\-Handle a 100 \-Capabilities response from the subprocess. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & the raw text of the message from the subprocess.\\
+\hline
+\end{DoxyParams}
+\-The message will be parsed and its contents used to fill \doxyref{\-Config}{p.}{classpkgAcquire_1_1Worker_a33b828cdf6b336e68c51bb8e068e1297}. \-If \doxyref{\-Config}{p.}{classpkgAcquire_1_1Worker_a33b828cdf6b336e68c51bb8e068e1297} is \-N\-U\-L\-L, this routine is a \-N\-O\-P.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true}. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Debug.
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Construct@{\-Construct}}
+\index{\-Construct@{\-Construct}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Construct}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Construct} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a9af72b216eb95e320f0f261d9497c5c1}
+
+
+\-Common code for the constructor. 
+
+\-Initializes \-Next\-Queue and \-Next\-Acquire to \-N\-U\-L\-L; \-Process, \-In\-Fd, and \-Out\-Fd to -\/1, \-Out\-Ready and \-In\-Ready to {\bfseries false}, and \-Debug from \-\_\-config. 
+
+\-References pkg\-Acquire\-::\-Debug.
+
+
+
+\-Referenced by \-Worker().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Get\-Conf@{\-Get\-Conf}}
+\index{\-Get\-Conf@{\-Get\-Conf}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Get\-Conf}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Method\-Config}$\ast$ {\bf \-Get\-Conf} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classpkgAcquire_1_1Worker_af6ace6a8dd9e4dd8d12815078706b00c}
+\begin{DoxyReturn}{\-Returns}
+\-The fetch method configuration. 
+\end{DoxyReturn}
+
+
+\-References \-Config.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Shutdown().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-In\-Fd\-Ready@{\-In\-Fd\-Ready}}
+\index{\-In\-Fd\-Ready@{\-In\-Fd\-Ready}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-In\-Fd\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-In\-Fd\-Ready} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a5a3e1a57c0fe730162df8a50677ae513}
+
+
+\-Read and dispatch any pending messages from the subprocess. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} if the subprocess died unexpectedly while a message was being transmitted. 
+\end{DoxyReturn}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Item\-Done@{\-Item\-Done}}
+\index{\-Item\-Done@{\-Item\-Done}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Item\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Item\-Done} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a6a6deb8c5e68383147e31b24690ea0fd}
+
+
+\-Invoked when a fetch job is completed, either successfully or unsuccessfully. 
+
+\-Resets the status information for the worker process. \index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Media\-Change@{\-Media\-Change}}
+\index{\-Media\-Change@{\-Media\-Change}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Media\-Change}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Media\-Change} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a5fa3dc5431fbfcd2b5ceed5f97f1eb84}
+
+
+\-Handle a 403 \-Media \-Change message. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & the raw text of the message; the \-Media field indicates what type of media should be changed, and the \-Drive field indicates where the media is located.\\
+\hline
+\end{DoxyParams}
+\-Invokes pkg\-Acquire\-Status\-::\-Media\-Change(\-Media, Drive) to ask the user to swap disks; informs the subprocess of the result (via 603 \-Media \-Changed, with the \-Failed field set to {\bfseries true} if the user cancelled the media change). 
+
+\-References pkg\-Acquire\-::\-Debug, pkg\-Acquire\-::\-Log, and pkg\-Acquire\-Status\-::\-Media\-Change().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Method\-Failure@{\-Method\-Failure}}
+\index{\-Method\-Failure@{\-Method\-Failure}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Method\-Failure}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Method\-Failure} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a94fe52037e4594131495b1791d6654ea}
+
+
+\-Invoked when the worked process dies unexpectedly. 
+
+\-Waits for the subprocess to terminate and generates an error if it terminated abnormally, then closes and blanks out all file descriptors. \-Discards all pending messages from the subprocess.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false}. 
+\end{DoxyReturn}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Out\-Fd\-Ready@{\-Out\-Fd\-Ready}}
+\index{\-Out\-Fd\-Ready@{\-Out\-Fd\-Ready}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Out\-Fd\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Out\-Fd\-Ready} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a2bd3e6488eaf8af11cedae06f7de9e2c}
+
+
+\-Send any pending commands to the subprocess. 
+
+\-This method will fail if there is no pending output.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if all commands were succeeded, {\bfseries false} if an error occurred (in which case \doxyref{\-Method\-Failure()}{p.}{classpkgAcquire_1_1Worker_a94fe52037e4594131495b1791d6654ea} will be invoked). 
+\end{DoxyReturn}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Queue\-Item@{\-Queue\-Item}}
+\index{\-Queue\-Item@{\-Queue\-Item}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Queue\-Item}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Queue\-Item} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire\-::\-Queue\-::\-Q\-Item} $\ast$}]{\-Item}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Worker_a37fbf2dea83d49ebf053ecc76c5b39b3}
+
+
+\-Tell the subprocess to download the given item. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item}} & the item to queue up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the item was successfully enqueued.
+\end{DoxyReturn}
+\-Queues up a 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message for the given item to be sent at the next possible moment. \-Does {\itshape not\/} flush the output queue. 
+
+\-References pkg\-Acquire\-::\-Item\-::\-Custom600\-Headers(), pkg\-Acquire\-::\-Debug, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Cycle().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Read\-Messages@{\-Read\-Messages}}
+\index{\-Read\-Messages@{\-Read\-Messages}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Read\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Read\-Messages} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a1f374a34dcd1bd9881717b345118fd49}
+
+
+\-Retrieve any available messages from the subprocess. 
+
+\-The messages are retrieved as in \-::\-Read\-Messages(), and \-Message\-Failure() is invoked if an error occurs; in particular, if the pipe to the subprocess dies unexpectedly while a message is being read.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the messages were successfully read, {\bfseries false} otherwise. 
+\end{DoxyReturn}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Run\-Messages@{\-Run\-Messages}}
+\index{\-Run\-Messages@{\-Run\-Messages}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Run\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Run\-Messages} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a26a68d57a249a042c1e32186ce2fce8b}
+
+
+\-Parse and dispatch pending messages. 
+
+\-This dispatches the message in a manner appropriate for its type.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Several message types lack separate handlers.\end{DoxyRefDesc}
+
+
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{\-Capabilities()}{p.}{classpkgAcquire_1_1Worker_aa3de23b9c5a564121a667dd9b392e158}, \doxyref{\-Send\-Configuration()}{p.}{classpkgAcquire_1_1Worker_af79a315ab449f2046389c91e3f114326}, \doxyref{\-Media\-Change()}{p.}{classpkgAcquire_1_1Worker_a5fa3dc5431fbfcd2b5ceed5f97f1eb84} 
+\end{DoxySeeAlso}
+
+
+\-References pkg\-Acquire\-::\-Debug, pkg\-Acquire\-::\-Item\-Desc\-::\-Description, pkg\-Acquire\-::\-Item\-::\-Desc\-U\-R\-I(), pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Done(), pkg\-Acquire\-Status\-::\-Done(), pkg\-Acquire\-Status\-::\-Fail(), pkg\-Acquire\-::\-Item\-::\-Failed(), pkg\-Acquire\-Status\-::\-Fetch(), pkg\-Acquire\-::\-Item\-::\-Get\-Owner(), pkg\-Acquire\-::\-Item\-::\-Hash\-Sum(), pkg\-Acquire\-Status\-::\-I\-M\-S\-Hit(), pkg\-Acquire\-::\-Log, pkg\-Acquire\-Status\-::\-More\-Pulses, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-Status\-::\-Pulse(), pkg\-Acquire\-::\-Item\-::\-Start(), pkg\-Acquire\-::\-Item\-::\-Stat\-Transient\-Network\-Error, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Send\-Configuration@{\-Send\-Configuration}}
+\index{\-Send\-Configuration@{\-Send\-Configuration}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Send\-Configuration}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Send\-Configuration} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_af79a315ab449f2046389c91e3f114326}
+
+
+\-Send a 601 \doxyref{\-Configuration}{p.}{classConfiguration} message (containing the \-A\-P\-T configuration) to the subprocess. 
+
+\-The \-A\-P\-T configuration will be send to the subprocess in a message of the following form\-:
+
+
+\begin{DoxyPre}
+  601 \doxyref{Configuration}{p.}{classConfiguration}
+  Config-Item: Fully-Qualified-Item=Val
+  Config-Item: Fully-Qualified-Item=Val
+  ...
+  \end{DoxyPre}
+
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the command was successfully sent, {\bfseries false} otherwise. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Debug.
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Start@{\-Start}}
+\index{\-Start@{\-Start}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Start} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Worker_aa70efaa4751ac6d5d54dce88fe725e0a}
+
+
+\-Start up the worker and fill in \doxyref{\-Config}{p.}{classpkgAcquire_1_1Worker_a33b828cdf6b336e68c51bb8e068e1297}. 
+
+\-Reads the first message from the worker, which is assumed to be a 100 \-Capabilities message.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if all operations completed successfully. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Debug.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Get\-Config(), and pkg\-Acquire\-::\-Queue\-::\-Startup().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Access@{\-Access}}
+\index{\-Access@{\-Access}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Access}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Access}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a006a979c4801f6b6ceb33cb3acd6dc89}
+
+
+\-The access method to be used by this worker. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Doesn't this duplicate \-Config-\/$>$\-Access? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Worker().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Debug@{\-Debug}}
+\index{\-Debug@{\-Debug}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Debug}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_acdf3472c9b75f32dae88032d42d1cb6c}
+\-If {\bfseries true}, debugging output will be sent to std\-::clog. \index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-In\-Fd@{\-In\-Fd}}
+\index{\-In\-Fd@{\-In\-Fd}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-In\-Fd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-In\-Fd}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a2eb3145b965a64b578db347d1bae648b}
+
+
+\-A file descriptor connected to the standard output of the subprocess. 
+
+\-Used to read messages and data from the subprocess. \index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-In\-Ready@{\-In\-Ready}}
+\index{\-In\-Ready@{\-In\-Ready}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-In\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-In\-Ready}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a849bc65c54e1bcbe8a7f053ce2cec672}
+
+
+\-Set to {\bfseries true} if the worker is in a state in which it might generate data or command responses. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Is this right? \-It's a guess. \end{DoxyRefDesc}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Next\-Queue@{\-Next\-Queue}}
+\index{\-Next\-Queue@{\-Next\-Queue}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Next\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Worker}$\ast$ {\bf \-Next\-Queue}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a70b012fdfb38bfe94b52924d45c5462d}
+
+
+\-The next link on the \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue} list. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-This is always \-N\-U\-L\-L; is it just for future use? \end{DoxyRefDesc}
+
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Shutdown().
+
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Out\-Fd@{\-Out\-Fd}}
+\index{\-Out\-Fd@{\-Out\-Fd}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Out\-Fd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Out\-Fd}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_af2679e54f43d436f88045350be6fb2ab}
+
+
+\-A file descriptor connected to the standard input of the subprocess. 
+
+\-Used to send commands and configuration data to the subprocess. \index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Out\-Queue@{\-Out\-Queue}}
+\index{\-Out\-Queue@{\-Out\-Queue}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Out\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Out\-Queue}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a27ee7762ef1caaf3ec8c3598c15e7886}
+
+
+\-Buffers pending writes to the subprocess. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Wouldn't a std\-::dequeue be more appropriate? \end{DoxyRefDesc}
+\index{pkg\-Acquire\-::\-Worker@{pkg\-Acquire\-::\-Worker}!\-Out\-Ready@{\-Out\-Ready}}
+\index{\-Out\-Ready@{\-Out\-Ready}!pkgAcquire::Worker@{pkg\-Acquire\-::\-Worker}}
+\subsubsection[{\-Out\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Out\-Ready}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Worker_a0b8717fb6d062212c251900cee4e6004}
+
+
+\-Set to {\bfseries true} if the worker is in a state in which it is legal to send commands to it. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Is this right? \end{DoxyRefDesc}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/worker.\-h}\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/worker.\-cc\end{DoxyCompactItemize}

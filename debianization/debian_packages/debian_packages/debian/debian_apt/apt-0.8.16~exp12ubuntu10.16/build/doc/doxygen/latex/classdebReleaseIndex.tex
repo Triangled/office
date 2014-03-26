@@ -1,0 +1,101 @@
+\section{deb\-Release\-Index \-Class \-Reference}
+\label{classdebReleaseIndex}\index{deb\-Release\-Index@{deb\-Release\-Index}}
+
+
+\-Inheritance diagram for deb\-Release\-Index\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classdebReleaseIndex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for deb\-Release\-Index\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classdebReleaseIndex__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf deb\-Section\-Entry}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries deb\-Release\-Index} (std\-::string const \&{\bf \-U\-R\-I}, std\-::string const \&\-Dist)\label{classdebReleaseIndex_a67350e4cca1b16179a98cd779591afcb}
+
+\item 
+{\bfseries deb\-Release\-Index} (std\-::string const \&{\bf \-U\-R\-I}, std\-::string const \&\-Dist, bool const \-Trusted)\label{classdebReleaseIndex_a2198b0f7316ea0ddbbb86e7914e89b69}
+
+\item 
+virtual std\-::string {\bfseries \-Archive\-U\-R\-I} (std\-::string const \&\-File) const \label{classdebReleaseIndex_a1368125277a43a3b8adb16305a8c9aed}
+
+\item 
+virtual bool {\bfseries \-Get\-Indexes} ({\bf pkg\-Acquire} $\ast$\-Owner, bool const \&\-Get\-All=false) const \label{classdebReleaseIndex_ab569cf37699d948c0802549b83628d5e}
+
+\item 
+std\-::vector$<$ struct \*
+{\bf \-Index\-Target} $\ast$ $>$ $\ast$ {\bfseries \-Compute\-Index\-Targets} () const \label{classdebReleaseIndex_add4eb2ba608261803c00706f3259ef51}
+
+\item 
+std\-::string {\bfseries \-Info} (const char $\ast$\-Type, std\-::string const \&\-Section, std\-::string const \&\-Arch=\char`\"{}\char`\"{}) const \label{classdebReleaseIndex_aa80f4ef14c77282024088274defa5c84}
+
+\item 
+std\-::string {\bfseries \-Meta\-Index\-Info} (const char $\ast$\-Type) const \label{classdebReleaseIndex_a14e49955d787ee3f90c450ac58a6645f}
+
+\item 
+std\-::string {\bfseries \-Meta\-Index\-File} (const char $\ast$\-Types) const \label{classdebReleaseIndex_ade3aa0391ff471bd0523a86cc88887a1}
+
+\item 
+std\-::string {\bfseries \-Meta\-Index\-U\-R\-I} (const char $\ast$\-Type) const \label{classdebReleaseIndex_a3a6159ad6e600ef42a08a63692ad078c}
+
+\item 
+std\-::string {\bfseries \-Index\-U\-R\-I} (const char $\ast$\-Type, std\-::string const \&\-Section, std\-::string const \&\-Arch=\char`\"{}native\char`\"{}) const \label{classdebReleaseIndex_a36b933ad804c5f1129f21a2f56fdca03}
+
+\item 
+std\-::string {\bfseries \-Index\-U\-R\-I\-Suffix} (const char $\ast$\-Type, std\-::string const \&\-Section, std\-::string const \&\-Arch=\char`\"{}native\char`\"{}) const \label{classdebReleaseIndex_a0463956f69d82140cfe10981df68b738}
+
+\item 
+std\-::string {\bfseries \-Source\-Index\-U\-R\-I} (const char $\ast$\-Type, const std\-::string \&\-Section) const \label{classdebReleaseIndex_a5e9492021b0662702e0a3f7dd9250a5d}
+
+\item 
+std\-::string {\bfseries \-Source\-Index\-U\-R\-I\-Suffix} (const char $\ast$\-Type, const std\-::string \&\-Section) const \label{classdebReleaseIndex_a0f11fb8020f74382a3591260195aabbb}
+
+\item 
+std\-::string {\bfseries \-Translation\-Index\-U\-R\-I} (const char $\ast$\-Type, const std\-::string \&\-Section) const \label{classdebReleaseIndex_a83a5439eb4c4d7bbfd9101e9bb140055}
+
+\item 
+std\-::string {\bfseries \-Translation\-Index\-U\-R\-I\-Suffix} (const char $\ast$\-Type, const std\-::string \&\-Section) const \label{classdebReleaseIndex_aaab31ba3e74ad9b24b5db72e734b9021}
+
+\item 
+virtual std\-::vector\*
+$<$ {\bf pkg\-Index\-File} $\ast$ $>$ $\ast$ {\bfseries \-Get\-Index\-Files} ()\label{classdebReleaseIndex_a5655f69c85faa05d81bda49ca055f7c6}
+
+\item 
+void {\bfseries \-Set\-Trusted} (bool const \-Trusted)\label{classdebReleaseIndex_a7b5b3855e80aa0b93b6b962681c77463}
+
+\item 
+virtual bool {\bfseries \-Is\-Trusted} () const \label{classdebReleaseIndex_aff34485f3c8499f45169fc6ab7e39409}
+
+\item 
+void {\bfseries \-Push\-Section\-Entry} (std\-::vector$<$ std\-::string $>$ const \&\-Archs, const {\bf deb\-Section\-Entry} $\ast$\-Entry)\label{classdebReleaseIndex_ad162d892b5252f61a1a0ba8b5b0211da}
+
+\item 
+void {\bfseries \-Push\-Section\-Entry} (std\-::string const \&\-Arch, const {\bf deb\-Section\-Entry} $\ast$\-Entry)\label{classdebReleaseIndex_a6b640517ef1bff279c879e0fa1fe8377}
+
+\item 
+void {\bfseries \-Push\-Section\-Entry} (const {\bf deb\-Section\-Entry} $\ast$\-Entry)\label{classdebReleaseIndex_a39f40f8e063d5b18d28a9772fc762ef6}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/debmetaindex.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/debmetaindex.\-cc\end{DoxyCompactItemize}

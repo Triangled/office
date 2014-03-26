@@ -1,0 +1,57 @@
+\section{/home/rpmuser/debian/check/apt-\/0.8.16$\sim$exp12ubuntu10.16/apt-\/pkg/acquire-\/item.h \-File \-Reference}
+\label{acquire-item_8h}\index{/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-h@{/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-h}}
+{\ttfamily \#include $<$apt-\/pkg/acquire.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/hashes.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/weakptr.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/pkgcache.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/indexfile.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/vendor.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/sourcelist.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/pkgrecords.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/indexrecords.\-h$>$}\*
+\-Include dependency graph for acquire-\/item.h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{acquire-item_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf pkg\-Acquire\-::\-Item}
+\begin{DoxyCompactList}\small\item\em \-Represents the process by which a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object should \{\{\{ retrieve a file or a collection of files. \end{DoxyCompactList}\item 
+struct {\bf \-Diff\-Info}
+\begin{DoxyCompactList}\small\item\em \-Information about an index patch (aka diff). \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Sub\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching a \-Sub\-Index \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Diff\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching an index file of \{\{\{ package list diffs and starting the package list's download. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index\-Diffs}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching all the patches \{\{\{ that need to be applied to a given package index file. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that is responsible for fetching an index \{\{\{ file (e.\-g., \-Packages or \-Sources). \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Index\-Trans}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that is responsible for fetching a \{\{\{ translated index file. \end{DoxyCompactList}\item 
+class {\bf \-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an index file. \end{DoxyCompactList}\item 
+class {\bf \-Optional\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an optional index file. \end{DoxyCompactList}\item 
+class {\bf \-Sub\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an subindex index file. \end{DoxyCompactList}\item 
+class {\bf \-Optional\-Sub\-Index\-Target}
+\begin{DoxyCompactList}\small\item\em \-Information about an subindex index file. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Sig}
+\begin{DoxyCompactList}\small\item\em \-An acquire item that downloads the detached signature \{\{\{ of a meta-\/index (\-Release) file, then queues up the release file itself. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Index}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for downloading the meta-\/index \{\{\{ file (i.\-e., \-Release) itself and verifying its signature. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Meta\-Clear\-Sig}
+\begin{DoxyCompactList}\small\item\em \-An item repsonsible for downloading clearsigned metaindexes \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-Archive}
+\begin{DoxyCompactList}\small\item\em \-An item that is responsible for fetching a package file. \{\{\{. \end{DoxyCompactList}\item 
+class {\bf pkg\-Acq\-File}
+\begin{DoxyCompactList}\small\item\em \-Retrieve an arbitrary file to the current directory. \{\{\{. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}

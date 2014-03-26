@@ -1,0 +1,866 @@
+'\" t
+.\"     Title: apt_preferences
+.\"    Author: APT team
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 16 Fevereiro 2010
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT_PREFERENCES" "5" "16 Fevereiro 2010" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt_preferences \- Ficheiro de controle de preferências para o APT
+.SH "DESCRIçãO"
+.PP
+O ficheiro de preferências do APT
+/etc/apt/preferences
+e os ficheiros fragmentados no directório
+/etc/apt/preferences\&.d/
+podem ser usados para controlar quais as versões de pacotes irão ser seleccionadas para instalação\&.
+.PP
+Várias versões de um pacote podem estar disponíveis para instalação quando o ficheiro
+\fBsources.list\fR(5)
+contém referências a mais do que uma distribuição (por exemplo,
+stable
+e
+testing)\&. O APT atribui uma prioridade a cada versão que está disponível\&. Sujeito a constrangimentos de dependências, o
+\fBapt\-get\fR
+selecciona a versão com a prioridade mais alta para instalação\&. O ficheiro de preferências do APT sobrepõe as prioridades que o APT atribui às versões de pacotes por predefinição, assim dando controle ao utilizador sobre qual é seleccionado para instalação\&.
+.PP
+Podem estar disponíveis várias instâncias da mesma versão de um pacote quando o ficheiro
+\fBsources.list\fR(5)
+contém referências a mais do que uma fonte\&. Neste caso o
+\fBapt\-get\fR
+descarrega a instância listada mais cedo no ficheiro
+\fBsources.list\fR(5)\&. O ficheiro de preferências do APT não afecta a escolha da instância, apenas a escolha da versão\&.
+.PP
+As preferências são um poder forte nas mãos de um administrador de sistemas mas também se podem tornar no seu maior pesadelo se forem usadas sem cuidado! O APT não irá questionar as preferências, portanto as definições erradas irão acabar em pacotes não instaláveis ou decisões erradas ao actualizar pacotes\&. Irão surgir ainda mais problemas se forem misturadas múltiplas distribuições sem o perfeito entendimento dos parágrafos seguintes\&. Os pacotes incluídos num lançamento específico não são testados e por isso nem sempre funcionam como esperado nos lançamentos mais antigos ou recentes ou em conjunto com outros pacotes de lançamentos diferentes\&. Você foi avisado\&.
+.PP
+Note that the files in the
+/etc/apt/preferences\&.d
+directory are parsed in alphanumeric ascending order and need to obey the following naming convention: The files have either no or "pref" as filename extension and only contain alphanumeric, hyphen (\-), underscore (_) and period (\&.) characters\&. Otherwise APT will print a notice that it has ignored a file if the file doesn\*(Aqt match a pattern in the
+Dir::Ignore\-Files\-Silently
+configuration list \- in this case it will be silently ignored\&.
+.SS "Atribuições de Prioridade Predefinidas do APT"
+.PP
+Senão existir um ficheiro de preferências ou se não existe uma entrada no ficheiro que se aplique a uma versão particular então a prioridade atribuída a essa versão é a prioridade da distribuição à qual essa versão pertence\&. É possível definir uma distribuição singular, "o lançamento de destino", a qual recebe uma prioridade mais alta que as outras distribuições por predefinição\&. O lançamento de destino pode ser definido na linha de comandos do
+\fBapt\-get\fR
+ou no ficheiro de configuração do APT
+/etc/apt/apt\&.conf\&. Note que isto tem precedências sobre qualquer prioridade geral que possa definir no ficheiro
+/etc/apt/preferences
+descrito mais tarde, mas não sobre pacotes especificamente imobilizados\&. Por exemplo,
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+\fBapt\-get install \-t testing \fR\fB\fIalgum\-pacote\fR\fR
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+APT::Default\-Release "stable";
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Se o lançamento destinado foi especificado, então o APT usa o seguinte algoritmo para definir as prioridades das versões de um pacote\&. Atribuir:
+.PP
+priority 1
+.RS 4
+to the versions coming from archives which in their
+Release
+files are marked as "NotAutomatic: yes" but
+\fInot\fR
+as "ButAutomaticUpgrades: yes" like the debian
+experimental
+archive\&.
+.RE
+.PP
+priority 100
+.RS 4
+to the version that is already installed (if any) and to the versions coming from archives which in their
+Release
+files are marked as "NotAutomatic: yes" and "ButAutomaticUpgrades: yes" like the debian backports archive since
+squeeze\-backports\&.
+.RE
+.PP
+priority 500
+.RS 4
+para as versões que não estão instaladas e não pertencem ao lançamento destinado\&.
+.RE
+.PP
+priority 990
+.RS 4
+para as versões que não estão instaladas e pertencem ao lançamento destinado\&.
+.RE
+.PP
+If the target release has not been specified then APT simply assigns priority 100 to all installed package versions and priority 500 to all uninstalled package versions, except versions coming from archives which in their
+Release
+files are marked as "NotAutomatic: yes" \- these versions get the priority 1 or priority 100 if it is additionally marked as "ButAutomaticUpgrades: yes"\&.
+.PP
+O APT então aplica as seguintes regras, listadas em ordem de precedência, para determinar qual versão de um pacote deve instalar\&.
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Nunca faz downgrade a menos que uma versão disponível exceda 1000\&. ("Downgrading" é instalar uma versão menos recente de um pacote no lugar de uma versão mais recente\&. Note que nenhuma das prioridades predefinidas do APT excede 1000; tais altas prioridades só podem ser definidas no ficheiro de preferências\&. Note também que fazer o downgrade a um pacote pode ser arriscado\&.)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Instala a versão de prioridade mais alta\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Se duas ou mais versões tiverem a mesma prioridade, instala a mais recente (isto é, aquela com o número de versão mais alto)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Se duas ou mais versões têm a mesma prioridade e o mesmo número de versão mas ou os pacotes diferem em alguns dos seus metadados ou a opção
+\-\-reinstall
+é fornecida, instala a que foi desinstalada\&.
+.RE
+.PP
+Numa situação típica, a versão instalada de um pacote (prioridade 100) não é tão recente como uma das versões disponíveis nas fontes listadas no ficheiro
+\fBsources.list\fR(5)
+(prioridade 500 ou 990)\&. Então o pacote será actualizado quando for executado
+\fBapt\-get install \fR\fB\fIalgum\-pacote\fR\fR
+ou
+\fBapt\-get upgrade\fR\&.
+.PP
+Mais raramente, a versão instalada de um pacote é
+\fImais\fR
+recente que qualquer das outras versões disponíveis\&. O pacote não será regredido para uma versão inferior quando for executado
+\fBapt\-get install \fR\fB\fIalgum\-pacote\fR\fR
+ou
+\fBapt\-get upgrade\fR\&.
+.PP
+Por vezes a versão instalada de um pacote é mais recente que a versão pertencente ao lançamento de destino, mas não tão recente que uma versão pertencente a alguma outra distribuição\&. Tal pacote será de facto actualizado quando for executado
+\fBapt\-get install \fR\fB\fIalgum\-pacote\fR\fR
+ou
+\fBapt\-get upgrade\fR, porque pelo menos
+\fIuma\fR
+das versões disponíveis tem uma prioridade mais alta que a versão instalada\&.
+.SS "O Efeito das Preferências do APT"
+.PP
+O ficheiro de preferências do APT permite ao administrador do sistema controlar a atribuição de prioridades\&. O ficheiro consiste em um ou mais registos de multi\-linhas separados por linhas vazias\&. Os registos podem ter um ou dois formatos, um formato específico e um formato geral\&.
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+O formato específico atribui um prioridade (um "Pin\-Priority") a um ou mais pacotes específicos e versão específica ou série de versões\&. Por exemplo, o seguinte registo atribui uma alta prioridade a todas as versões do pacote
+perl
+cujo número de versão começa com "5\&.8"\&. Múltiplos pacotes podem ser separados por espaços\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: perl
+Pin: version 5\&.8*
+Pin\-Priority: 1001
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+O formato geral atribui uma prioridade a todas as versões de pacotes numa dada distribuição (isto é, a todas as versões de pacotes que estão listados num certo ficheiro
+Release) ou a todas as versões de pacotes vindos de um site de Internet particular, como identificado pelo nome de domínio totalmente qualificado do site\&.
+.sp
+Esta entrada general\-form no ficheiro de preferências do APT aplica\-se apenas a grupos de pacotes\&. Por exemplo, o seguinte registo atribui uma alta prioridade a todas as versões de pacotes disponíveis a partir de um site local\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: origin ""
+Pin\-Priority: 999
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Uma nota de atenção: a palavra chave usada aqui é "origin" que pode ser usada para corresponder a um nome de máquina\&. O seguinte registo irá atribuir uma alta prioridade a todas as versões disponíveis do servidor identificadas pelo nome de máquina "ftp\&.de\&.debian\&.org"
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: origin "ftp\&.de\&.debian\&.org"
+Pin\-Priority: 999
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Isto
+\fInão\fR
+deve ser confundido com a Origem de uma distribuição como especificada num ficheiro
+Release\&. O que representa a etiqueta "Origin:" num ficheiro
+Release
+não é um endereço de Internet mas um nome de autor ou marca, tal como "Debian" ou "Ximian"\&.
+.sp
+O seguinte registo atribui uma baixa prioridade a todas as versões de pacotes pertencentes a qualquer distribuição cujo nome de Arquivo é "unstable"\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: release a=unstable
+Pin\-Priority: 50
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+O seguinte registo atribui uma alta prioridade a todas as versões de pacotes pertencentes a qualquer distribuição cujo nome de código é "wheezy"\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: release n=wheezy
+Pin\-Priority: 900
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+O seguinte registo atribui alta prioridade a todas as versões de pacotes pertencentes a qualquer lançamento cujo nome de Arquivo é "stable" e cujo número de Versão de lançamento é "3\&.0"\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: release a=stable, v=3\&.0
+Pin\-Priority: 500
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.sp
+.SS "Regular expressions and glob() syntax"
+.PP
+APT also supports pinning by glob() expressions and regular expressions surrounded by /\&. For example, the following example assigns the priority 500 to all packages from experimental where the name starts with gnome (as a glob()\-like expression) or contains the word kde (as a POSIX extended regular expression surrounded by slashes)\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: gnome* /kde/
+Pin: release n=experimental
+Pin\-Priority: 500
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+The rule for those expressions is that they can occur anywhere where a string can occur\&. Thus, the following pin assigns the priority 990 to all packages from a release starting with karmic\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: release n=karmic*
+Pin\-Priority: 990
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+
+If a regular expression occurs in a Package field,
+the behavior is the same as if this regular expression were replaced
+with a list of all package names it matches\&. It is undecided whether
+this will change in the future, thus you should always list wild\-card
+pins first, so later specific pins override it\&.
+
+The pattern "*" in a Package field is not considered
+a glob() expression in itself\&.
+.SS "Como o APT Interpreta as Prioridades"
+.PP
+As prioridades (P) atribuídas no ficheiro de preferências do APT têm de ser inteiros positivos ou negativos\&. Elas são interpretadas como o seguinte (falando grosso):
+.PP
+P > 1000
+.RS 4
+provoca que uma versão seja instalada mesmo que isso constitua uma redução na versão do pacote (downgrade)
+.RE
+.PP
+990 < P <=1000
+.RS 4
+provoca que uma versão seja instalada mesmo que não venha do lançamento de destino, a menos que a versão instalada seja mais recente
+.RE
+.PP
+500 < P <=990
+.RS 4
+provoca que uma versão seja instalada a menos que exista uma versão disponível pertencente ao lançamento de destino ou se a versão instalada é mais recente
+.RE
+.PP
+100 < P <=500
+.RS 4
+provoca que uma versão seja instalada a menos que exista uma versão disponível pertencente a outra distribuição ou se a versão instalada é mais recente
+.RE
+.PP
+0 < P <=100
+.RS 4
+provoca que uma versão seja instalada apenas se não existir nenhuma versão instalada do pacote
+.RE
+.PP
+P < 0
+.RS 4
+previne a instalação da versão
+.RE
+.PP
+Se quaisquer registos de formato específico corresponder a uma versão de pacote disponível então o primeiro tal registo determina a prioridade da versão do pacote\&. Falhando isso, se quaisquer registos em formato geral corresponder a uma versão de pacote disponível então o primeiro tal registo determina a prioridade da versão de pacote\&.
+.PP
+Por exemplo, suponha que o ficheiro de preferências do APT contém os três registos apresentados atrás:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: perl
+Pin: version 5\&.8*
+Pin\-Priority: 1001
+
+Package: *
+Pin: origin ""
+Pin\-Priority: 999
+
+Package: *
+Pin: release unstable
+Pin\-Priority: 50
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Então:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Será instalada a versão mais recente disponível do pacote
+perl, desde que o número da versão comece com "5\&.8"\&. Se
+\fIqualquer\fR
+versão 5\&.8* do
+perl
+estiver disponível e a versão instalada for 5\&.9*, então será feito um downgrade ao
+perl\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Uma versão de qualquer pacote que não seja o
+perl
+e que esteja disponível a partir do sistema local tem prioridade sobre outras versões, mesmo versões que pertencem ao lançamento de destino\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Uma versão de um pacote cuja origem não é o sistema local mas qualquer outro site listado em
+\fBsources.list\fR(5)
+e o qual pertence a uma distribuição
+unstable
+apenas é instalado se for seleccionado para instalação e se nenhuma versão do pacote já estiver instalada\&.
+.RE
+.sp
+.SS "Determinação da Versão do Pacote e Propriedades da Distribuição"
+.PP
+As localizações listadas no ficheiro
+\fBsources.list\fR(5)
+devem fornecer os ficheiros
+Packages
+e
+Release
+para descrever os pacotes disponíveis nessa localização\&.
+.PP
+O ficheiro
+Packages
+é normalmente encontrado no directório
+\&.\&.\&./dists/\fInome\-da\-distribuição\fR/\fIcomponente\fR/\fIarquitectura\fR: por exemplo,
+\&.\&.\&./dists/stable/main/binary\-i386/Packages\&. Consiste numa série de registos de várias linhas, um para cada pacote disponível nesse directório\&. Apenas duas linhas em cada registo são relevantes para definir prioridades do APT:
+.PP
+a linha Package:
+.RS 4
+fornece o nome do pacote
+.RE
+.PP
+a linha Version:
+.RS 4
+fornece o número de versão do pacote nomeado
+.RE
+.PP
+O ficheiro
+Release
+fica normalmente no directório
+\&.\&.\&./dists/\fInome da distribuição\fR: por exemplo,
+\&.\&.\&./dists/stable/Release, ou
+\&.\&.\&./dists/squeeze/Release\&. Consiste num único registo de várias linhas que se aplica a
+\fItodos\fR
+os pacotes na árvore de directórios sob o seu pai\&. Ao contrário do ficheiro
+Packages, quase todas as linhas num ficheiro
+Release
+são relevantes para definir as prioridades do APT:
+.PP
+a linha Archive: ou Suite:
+.RS 4
+nomeia o arquivo ao qual pertencem todos os pacotes na árvore de directórios\&. Por exemplo, a linha "Archive: stable" ou "Suite: stable" especifica que todos os pacotes na árvore de directórios abaixo do pai do ficheiro
+Release
+estão num arquivo
+stable\&. Especificar este valor no ficheiro de preferências do APT irá requerer a linha:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release a=stable
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+a linha Codename:
+.RS 4
+nomeia o nome de código a qual todos os pacotes na árvore de directórios pertencem\&. Por exemplo, a linha "Codename: wheezy" especifica que todos os pacotes na árvore de directórios abaixo do pai do ficheiro
+Release
+pertencem a uma versão chamada
+wheezy\&. Especificar este valor no ficheiro de preferências do APT requer a linha:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release n=wheezy
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+a linha Version:
+.RS 4
+nomeia a versão de lançamento\&. Por exemplo, os pacotes na árvore podem pertencer ao lançamento de Debian GNU/Linux versão 3\&.0\&. Note que não há normalmente um número de versão para as distribuições
+testing
+e
+unstable\&. porque ainda não foram lançadas\&. Especificar isto no ficheiro de preferências do APT irá requerer uma das seguintes linhas:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release v=3\&.0
+Pin: release a=stable, v=3\&.0
+Pin: release 3\&.0
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+a linha Component:
+.RS 4
+nomeia o componente de licenciamento associado com os pacotes na árvore de directórios do ficheiro
+Release\&. Por exemplo, a linha "Component: main" especifica que todos os pacotes na árvore de directórios são do componente
+main, o que implica que estão licenciados sob os termos listados em Debian Free Software Guidelines\&. Especificar este componente no ficheiro de preferências do APT irá requerer a linha:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release c=main
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+a linha Origin:
+.RS 4
+nomeia a originador dos pacotes na árvore de directórios do ficheiro
+Release\&. Geralmente, isto é
+Debian\&. Especificar esta etiqueta no ficheiro de preferências do APT irá requerer a linha:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release o=Debian
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+a linha Label:
+.RS 4
+nomeia a etiqueta dos pacotes na árvore de directórios do ficheiro
+Release\&. Geralmente, isto é
+Debian\&. Especificar esta etiqueta no ficheiro de preferências do APT irá requerer a linha:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Pin: release l=Debian
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+Todos os ficheiros
+Packages
+e
+Release
+obtidos das localizações listadas no ficheiro
+\fBsources.list\fR(5)
+são armazenados no directório
+/var/lib/apt/lists, ou no ficheiro nomeado pela variável
+Dir::State::Lists
+no ficheiro
+apt\&.conf\&. Por exemplo, o ficheiro
+debian\&.lcs\&.mit\&.edu_debian_dists_unstable_contrib_binary\-i386_Release
+contém o ficheiro
+Release
+obtido do site
+debian\&.lcs\&.mit\&.edu
+para ficheiros da arquitectura
+binary\-i386
+do componente
+contrib
+da distribuição
+unstable\&.
+.SS "Linhas Opcionais num Registo de Preferências do APT"
+.PP
+Cada registo no ficheiro de preferências do APT por começar opcionalmente com uma ou mais linhas começadas com a palavra
+Explanation:\&. Isto disponibiliza um espaço para comentários\&.
+.SH "EXAMPLES"
+.SS "Acompanhando Stable"
+.PP
+O seguinte ficheiro de preferências do APT irá fazer com que o APT atribua uma prioridade mais alta que o predefinido (500) a todos as versões de pacotes que pertencem a uma distribuição
+stable
+e uma prioridade proibitivamente baixa a versões de pacotes pertencentes a outras distribuições
+Debian\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Explicação: Desinstala ou não instala quaisquer versões de pacotes originais
+Explicação: Debian para além daquelas da distribuição stable
+Package: *
+Pin: release a=stable
+Pin\-Priority: 900
+
+Package: *
+Pin: release o=Debian
+Pin\-Priority: \-10
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Com um ficheiro
+\fBsources.list\fR(5)
+apropriado e o ficheiro de preferências acima, qualquer dos seguintes comandos irá fazer com que o APT actualize para as versões
+stable
+mais recentes\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fInome\-do\-pacote\fR
+apt\-get upgrade
+apt\-get dist\-upgrade
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+O seguinte comandos irá fazer com que o APT actualize o pacote especificado para a versão mais recente da distribuição
+testing; o pacote não será actualizado de novo a menos que seja executado este comando outra vez\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fIpacote\fR/testing
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.SS "Acompanhando Testing ou Unstable"
+.PP
+O seguinte ficheiro de preferências do APT irá fazer com que o APT atribua uma prioridade alta a versões de pacotes da distribuição
+testing, uma prioridade mais baixa a versões de pacotes da distribuição
+unstable, e uma prioridade proibitivamente baixa a versões de pacotes de outras distribuições
+Debian\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Package: *
+Pin: release a=testing
+Pin\-Priority: 900
+
+Package: *
+Pin: release a=unstable
+Pin\-Priority: 800
+
+Package: *
+Pin: release o=Debian
+Pin\-Priority: \-10
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Com um ficheiro
+\fBsources.list\fR(5)
+apropriado e o ficheiro de preferências acima, qualquer dos seguintes comandos irá fazer com que o APT actualize para as versões
+testing
+mais recentes\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fInome\-do\-pacote\fR
+apt\-get upgrade
+apt\-get dist\-upgrade
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+O comando seguinte irá fazer com que o APT actualize o pacote especificado para a versão mais recente da distribuição
+unstable\&. Posteriormente, o
+\fBapt\-get upgrade\fR
+irá actualizar o pacote para a versão
+testing
+mais recente se essa for mais recente que a versão instalada, caso contrário, para a versão
+unstable
+mais recente se essa for mais recente que a versão instalada\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fIpacote\fR/unstable
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.SS "Acompanhando a evolução de um nome de código de lançamento"
+.PP
+O seguinte ficheiro de preferências do APT irá fazer com que o APT atribua uma prioridade mais alta que a predefinida (500) a todas as versões de pacotes pertencentes a um nome de código especificado de uma distribuição com uma prioridade proibitivamente baixa a versões de pacotes pertencentes a outras distribuições, nomes de código ou arquivos
+Debian\&. Note que com estas preferências o APT irá seguir a migração de um lançamento a partir do arquivo
+testing
+para
+stable
+e mais tarde
+oldstable\&. Se você que seguir por exemplo o progresso em
+testing
+não obstante as alterações do nome de código, você deve usar as configurações exemplo acima\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Explicação: Desinstala ou não instala nenhumas versões de pacotes originais Debian
+Explicação: para além daquelas da distribuição com nome de código wheezy ou sid
+Package: *
+Pin: release n=wheezy
+Pin\-Priority: 900
+
+Explicação: Debian unstable tem sempre o nome de código sid
+Package: *
+Pin: release a=sid
+Pin\-Priority: 800
+
+Package: *
+Pin: release o=Debian
+Pin\-Priority: \-10
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Com um ficheiro
+\fBsources.list\fR(5)
+apropriado e o ficheiro de preferências acima, qualquer dos seguintes comandos fará com que o APT actualize para a versão mais recente no lançamento com nome de código
+wheezy\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fInome\-do\-pacote\fR
+apt\-get upgrade
+apt\-get dist\-upgrade
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+O seguinte comando irá fazer com que o APT actualize o pacote especificado para a versão mais recente da distribuição
+sid\&. Posteriormente,
+\fBapt\-get upgrade\fR
+irá actualizar o pacote para a versão
+wheezy
+mais recente se essa for mais recente que a versão instalada, caso contrário, para a versão
+sid
+mais recente se essa for mais recente que a versão instalada\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+apt\-get install \fIpacote\fR/sid
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.SH "FICHEIROS"
+.PP
+/etc/apt/preferences
+.RS 4
+Ficheiro de preferências de versão\&. Isto é onde você deve especificar "pinning", isto é, uma preferência para obter certos pacotes A partir de uma fonte separada ou a partir duma versão diferente de uma distribuição\&. Item de Configuração:
+Dir::Etc::Preferences\&.
+.RE
+.PP
+/etc/apt/preferences\&.d/
+.RS 4
+Ficheiros fragmentados para as preferências de versão\&. Item de Configuração:
+Dir::Etc::PreferencesParts\&.
+.RE
+.SH "VEJA TAMBéM"
+.PP
+\fBapt-get\fR(8)
+\fBapt-cache\fR(8)
+\fBapt.conf\fR(5)
+\fBsources.list\fR(5)
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHOR"
+.PP
+\fBAPT team\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

@@ -1,0 +1,1 @@
+../build/po/libapt-inst1.4.pot : ../build/po/domains/libapt-inst1.4/libapt-inst.so.1.4.0.srclist ../apt-inst/contrib/extracttar.cc ../apt-inst/contrib/arfile.cc ../apt-inst/filelist.cc ../apt-inst/database.cc ../apt-inst/dirstream.cc ../apt-inst/extract.cc ../apt-inst/deb/dpkgdb.cc ../apt-inst/deb/debfile.cc

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>dpkg technical manual</title>
+
+<link href="index.html" rel="start">
+<link href="ch3.html" rel="prev">
+<link href="ch1.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Quick summary of dpkg's external interface">
+<link href="ch2.html" rel="chapter" title="2 dpkg-deb and .deb file internals">
+<link href="ch3.html" rel="chapter" title="3 dpkg internals">
+<link href="ch1.html#s-control" rel="section" title="1.1 Control files">
+<link href="ch1.html#s1.2" rel="section" title="1.2 The dpkg status area">
+<link href="ch1.html#s1.3" rel="section" title="1.3 The dpkg library files">
+<link href="ch1.html#s1.4" rel="section" title="1.4 The &quot;dpkg&quot; command-line utility">
+<link href="ch2.html#s2.1" rel="section" title="2.1 The .deb archive format">
+<link href="ch2.html#s2.2" rel="section" title="2.2 The dpkg-deb command-line">
+<link href="ch3.html#s-updates" rel="section" title="3.1 Updates">
+<link href="ch3.html#s3.2" rel="section" title="3.2 What happens when dpkg reads the database">
+<link href="ch3.html#s3.3" rel="section" title="3.3 How dpkg compares version numbers">
+<link href="ch1.html#s1.4.1" rel="subsection" title="1.4.1 &quot;Documented&quot; command-line interfaces">
+<link href="ch1.html#s1.4.2" rel="subsection" title="1.4.2 Environment variables which dpkg responds to">
+<link href="ch1.html#s1.4.3" rel="subsection" title="1.4.3 Assertions">
+<link href="ch1.html#s1.4.4" rel="subsection" title="1.4.4 --predep-package">
+<link href="ch2.html#s2.2.1" rel="subsection" title="2.2.1 Internal checks used by dpkg-deb when building packages">
+
+</head>
+
+<body>
+
+<p><a name="index"></a></p>
+<hr>
+
+<p>
+[ <a href="ch3.html">previous</a> ]
+[ <a href="#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch1.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+dpkg technical manual
+<br></h1>
+
+<hr>
+
+<h2><a name="abstract"></a>Abstract</h2>
+
+<p>
+This document describes the minimum necessary workings for the APT dselect
+replacement.  It gives an overall specification of what its external interface
+must look like for compatibility, and also gives details of some internal
+quirks.
+</p>
+
+<hr>
+
+<h2><a name="copyright"></a>Copyright Notice</h2>
+
+<p>
+Copyright &copy; Tom Lees, 1997.
+</p>
+
+<p>
+APT and this document are free software; you can redistribute them and/or
+modify them under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+</p>
+
+<p>
+For more details, on Debian GNU/Linux systems, see the file
+/usr/share/common-licenses/GPL for the full license.
+</p>
+
+<hr>
+
+<h2><a name="contents"></a>Contents</h2>
+
+<ul>
+<li><a href="ch1.html">1 Quick summary of dpkg's external interface</a>
+  <ul>
+  <li><a href="ch1.html#s-control">1.1 Control files</a></li>
+  <li><a href="ch1.html#s1.2">1.2 The dpkg status area</a></li>
+  <li><a href="ch1.html#s1.3">1.3 The dpkg library files</a></li>
+  <li><a href="ch1.html#s1.4">1.4 The &quot;dpkg&quot; command-line utility</a>
+  </ul></li>
+<li><a href="ch2.html">2 dpkg-deb and .deb file internals</a>
+  <ul>
+  <li><a href="ch2.html#s2.1">2.1 The .deb archive format</a></li>
+  <li><a href="ch2.html#s2.2">2.2 The dpkg-deb command-line</a>
+  </ul></li>
+<li><a href="ch3.html">3 dpkg internals</a>
+  <ul>
+  <li><a href="ch3.html#s-updates">3.1 Updates</a></li>
+  <li><a href="ch3.html#s3.2">3.2 What happens when dpkg reads the database</a></li>
+  <li><a href="ch3.html#s3.3">3.3 How dpkg compares version numbers</a></li>
+  </ul></li>
+</ul>
+
+<hr>
+
+<p>
+[ <a href="ch3.html">previous</a> ]
+[ <a href="#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch1.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+dpkg technical manual
+</p>
+
+<address>
+$Id: dpkg-tech.sgml,v 1.3 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Tom Lees <code><a href="mailto:tom@lpsg.demon.co.uk">tom@lpsg.demon.co.uk</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

@@ -1,0 +1,182 @@
+\section{\-Configuration \-Class \-Reference}
+\label{classAPT_1_1Configuration}\index{\-Configuration@{\-Configuration}}
+
+
+\-Provide access methods to various configuration settings.  
+
+
+
+
+{\ttfamily \#include $<$aptconfiguration.\-h$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Compressor}
+\begin{DoxyCompactList}\small\item\em \-Representation of supported compressors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::vector\*
+$<$ std\-::string $>$ const {\bf get\-Compression\-Types} (bool const \&\-Cached=true)
+\begin{DoxyCompactList}\small\item\em \-Returns a vector of usable \-Compression \-Types. \end{DoxyCompactList}\item 
+static std\-::vector\*
+$<$ std\-::string $>$ const {\bf get\-Languages} (bool const \&\-All=false, bool const \&\-Cached=true, char const $\ast$$\ast$const \-Locale=0)
+\begin{DoxyCompactList}\small\item\em \-Returns a vector of \-Language \-Codes. \end{DoxyCompactList}\item 
+static std\-::vector\*
+$<$ std\-::string $>$ const {\bf get\-Architectures} (bool const \&\-Cached=true)
+\begin{DoxyCompactList}\small\item\em \-Returns a vector of \-Architectures we support. \end{DoxyCompactList}\item 
+static bool const {\bf check\-Architecture} (std\-::string const \&\-Arch)
+\begin{DoxyCompactList}\small\item\em \-Are we interested in the given \-Architecture? \end{DoxyCompactList}\item 
+static std\-::vector$<$ {\bf \-Compressor} $>$\*
+ const {\bf get\-Compressors} (bool const \-Cached=true)
+\begin{DoxyCompactList}\small\item\em \-Return a vector of \-Compressors supported for data.\-tar's. \end{DoxyCompactList}\item 
+static std\-::vector\*
+$<$ std\-::string $>$ const {\bf get\-Compressor\-Extensions} ()\label{classAPT_1_1Configuration_a337c44f02d8216458b78645ca0a9103f}
+
+\begin{DoxyCompactList}\small\item\em \-Return a vector of extensions supported for data.\-tar's. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Provide access methods to various configuration settings. 
+
+\-This class and their methods providing a layer around the usual access methods with \-\_\-config to ensure that settings are correct and to be able to set defaults without the need to recheck it in every method again. 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-A\-P\-T\-::\-Configuration@{\-A\-P\-T\-::\-Configuration}!check\-Architecture@{check\-Architecture}}
+\index{check\-Architecture@{check\-Architecture}!APT::Configuration@{\-A\-P\-T\-::\-Configuration}}
+\subsubsection[{check\-Architecture}]{\setlength{\rightskip}{0pt plus 5cm}bool const {\bf check\-Architecture} (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{\-Arch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classAPT_1_1Configuration_a231ed294d54863b040bbf3d7b53283d4}
+
+
+\-Are we interested in the given \-Architecture? 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Arch} & we want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if we are interested, false otherwise 
+\end{DoxyReturn}
+
+
+\-References \-Configuration\-::get\-Architectures().
+
+\index{\-A\-P\-T\-::\-Configuration@{\-A\-P\-T\-::\-Configuration}!get\-Architectures@{get\-Architectures}}
+\index{get\-Architectures@{get\-Architectures}!APT::Configuration@{\-A\-P\-T\-::\-Configuration}}
+\subsubsection[{get\-Architectures}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ const {\bf get\-Architectures} (
+\begin{DoxyParamCaption}
+\item[{bool const \&}]{\-Cached = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classAPT_1_1Configuration_a21db1e0ec61c9efdb73722de53bfb522}
+
+
+\-Returns a vector of \-Architectures we support. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cached} & saves the result so we need to calculated it only once this parameter should ony be used for testing purposes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a vector of \-Architectures in prefered order 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Configuration\-::check\-Architecture(), and pkg\-Cache\-::\-Grp\-Iterator\-::\-Find\-Preferred\-Pkg().
+
+\index{\-A\-P\-T\-::\-Configuration@{\-A\-P\-T\-::\-Configuration}!get\-Compression\-Types@{get\-Compression\-Types}}
+\index{get\-Compression\-Types@{get\-Compression\-Types}!APT::Configuration@{\-A\-P\-T\-::\-Configuration}}
+\subsubsection[{get\-Compression\-Types}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ const {\bf get\-Compression\-Types} (
+\begin{DoxyParamCaption}
+\item[{bool const \&}]{\-Cached = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classAPT_1_1Configuration_ac7fa3aafc2583adf52f72f0ae17889db}
+
+
+\-Returns a vector of usable \-Compression \-Types. 
+
+\-Files can be compressed in various ways to decrease the size of the download. \-Therefore the \-Acquiremethods support a few compression types and some archives provide also a few different types. \-This option group exists to give the user the choice to prefer one type over the other (some compression types are very resource intensive -\/ great if you have a limited download, bad if you have a really lowpowered hardware.)
+
+\-This method ensures that the defaults are set and checks at runtime if the type can be used. \-E.\-g. the current default is to prefer bzip2 over lzma and gz -\/ if the bzip2 binary is not available it has not much sense in downloading the bz2 file, therefore we will not return bz2 as a usable compression type. \-The availability is checked with the settings in the \-Dir\-::\-Bin group.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cached} & saves the result so we need to calculated it only once this parameter should ony be used for testing purposes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a vector of the compression types in the prefered usage order 
+\end{DoxyReturn}
+
+
+\-Referenced by pkg\-Acq\-Index\-::pkg\-Acq\-Index().
+
+\index{\-A\-P\-T\-::\-Configuration@{\-A\-P\-T\-::\-Configuration}!get\-Compressors@{get\-Compressors}}
+\index{get\-Compressors@{get\-Compressors}!APT::Configuration@{\-A\-P\-T\-::\-Configuration}}
+\subsubsection[{get\-Compressors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf \-A\-P\-T\-::\-Configuration\-::\-Compressor} $>$ const {\bf get\-Compressors} (
+\begin{DoxyParamCaption}
+\item[{bool const}]{\-Cached = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classAPT_1_1Configuration_a31677eaae0e2b91beb0ac16cfb5ae197}
+
+
+\-Return a vector of \-Compressors supported for data.\-tar's. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cached} & saves the result so we need to calculated it only once this parameter should ony be used for testing purposes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a vector of \-Compressors 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Configuration\-::get\-Compressor\-Extensions().
+
+\index{\-A\-P\-T\-::\-Configuration@{\-A\-P\-T\-::\-Configuration}!get\-Languages@{get\-Languages}}
+\index{get\-Languages@{get\-Languages}!APT::Configuration@{\-A\-P\-T\-::\-Configuration}}
+\subsubsection[{get\-Languages}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::string $>$ const {\bf get\-Languages} (
+\begin{DoxyParamCaption}
+\item[{bool const \&}]{\-All = {\ttfamily false}, }
+\item[{bool const \&}]{\-Cached = {\ttfamily true}, }
+\item[{char const $\ast$$\ast$const}]{\-Locale = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classAPT_1_1Configuration_acc33f2047d937d29e30aab9d5996dbae}
+
+
+\-Returns a vector of \-Language \-Codes. 
+
+\-Languages can be defined with their two or five chars long code. \-This methods handles the various ways to set the prefered codes, honors the environment and ensures that the codes are not listed twice.
+
+\-The special word \char`\"{}environment\char`\"{} will be replaced with the long and the short code of the local settings and it will be insured that this will not add duplicates. \-So in an german local the setting \char`\"{}environment, de\-\_\-\-D\-E, en, de\char`\"{} will result in \char`\"{}de\-\_\-\-D\-E, de, en\char`\"{}.
+
+\-Another special word is \char`\"{}none\char`\"{} which separates the prefered from all codes in this setting. \-So setting and method can be used to get codes the user want to see or to get all language codes \-A\-P\-T (should) have \-Translations available.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-All} & return all codes or only codes for languages we want to use \\
+\hline
+{\em \-Cached} & saves the result so we need to calculated it only once this parameter should ony be used for testing purposes. \\
+\hline
+{\em \-Locale} & don't get the locale from the system but use this one instead this parameter should ony be used for testing purposes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a vector of (all) \-Language \-Codes in the prefered usage order 
+\end{DoxyReturn}
+
+
+\-Referenced by pkg\-Acq\-Sub\-Index\-::\-Failed().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/aptconfiguration.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/aptconfiguration.\-cc\end{DoxyCompactItemize}

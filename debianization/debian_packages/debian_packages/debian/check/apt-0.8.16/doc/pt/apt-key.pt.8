@@ -1,0 +1,181 @@
+'\" t
+.\"     Title: apt-key
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 28 Outubro 2008
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-KEY" "8" "28 Outubro 2008" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-key \- Utilitário de gestão de chaves do APT
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-key\fR\ 'u
+\fBapt\-key\fR [\fB\-\-keyring\ \fR\fB\fInome\ de\ ficheiro\fR\fR] [\fIcomando\fR] [\fB\fIargumentos\fR\fR...]
+.SH "DESCRIçãO"
+.PP
+
+\fBapt\-key\fR
+é usado para gerir uma lista de chaves usadas pelo apt para autenticar pacotes\&. Os pacotes que foram autenticados com estas chaves serão considerados de confiança\&.
+.SH "COMANDOS"
+.PP
+add \fInome\-de\-ficheiro\fR
+.RS 4
+Adiciona uma chave nova à lista de chaves de confiança\&. A chave é lida de
+\fInome de ficheiro\fR, ou entrada standard se
+\fInome de ficheiro\fR
+for
+\-\&.
+.RE
+.PP
+del \fIid de chave\fR
+.RS 4
+Remove uma chave da lista de chaves de confiança\&.
+.RE
+.PP
+export \fIid de chave\fR
+.RS 4
+Escreve o
+\fIid de chave\fR
+da chave na saída standard\&.
+.RE
+.PP
+exportall
+.RS 4
+Escreve todas as chaves de confiança na saída standard\&.
+.RE
+.PP
+list
+.RS 4
+Lista as chaves de confiança\&.
+.RE
+.PP
+finger
+.RS 4
+Lista as fingerprints das chaves de confiança\&.
+.RE
+.PP
+adv
+.RS 4
+Passa opções avançadas ao gpg\&. Com adv \-\-recv\-key você pode descarregar a chave pública\&.
+.RE
+.PP
+update
+.RS 4
+Update the local keyring with the archive keyring and remove from the local keyring the archive keys which are no longer valid\&. The archive keyring is shipped in the
+archive\-keyring
+package of your distribution, e\&.g\&. the
+ubuntu\-archive\-keyring
+package in Ubuntu\&.
+.RE
+.PP
+net\-update
+.RS 4
+Work similar to the
+\fBupdate\fR
+command above, but get the archive keyring from an URI instead and validate it against a master key\&. This requires an installed
+\fBwget\fR(1)
+and an APT build configured to have a server to fetch from and a master keyring to validate\&. APT in Debian does not support this command and relies on
+\fBupdate\fR
+instead, but Ubuntu\*(Aqs APT does\&.
+.RE
+.SH "OPçõES"
+.PP
+Note que as opções precisam ser definidas antes dos comandos descritos na secção prévia\&.
+.PP
+\-\-keyring \fInome\-de\-ficheiro\fR
+.RS 4
+With this option it is possible to specify a specific keyring file the command should operate on\&. The default is that a command is executed on the
+trusted\&.gpg
+file as well as on all parts in the
+trusted\&.gpg\&.d
+directory, though
+trusted\&.gpg
+is the primary keyring which means that e\&.g\&. new keys are added to this one\&.
+.RE
+.SH "FICHEIROS"
+.PP
+/etc/apt/trusted\&.gpg
+.RS 4
+Chaveiro de chaves de confiança locais, as novas chaves serão adicionadas aqui\&. Item de Configuração:
+Dir::Etc::Trusted\&.
+.RE
+.PP
+/etc/apt/trusted\&.gpg\&.d/
+.RS 4
+Fragmentos de ficheiro para as chaves de confiança, chaveiros adicionais podem ser armazenados aqui (por outros pacotes ou pelo administrador)\&. Item de Configuração
+Dir::Etc::TrustedParts\&.
+.RE
+.PP
+/etc/apt/trustdb\&.gpg
+.RS 4
+Base de dados local de confiança de chaves de arquivos\&.
+.RE
+.PP
+/usr/share/keyrings/ubuntu\-archive\-keyring\&.gpg
+.RS 4
+Keyring of Ubuntu archive trusted keys\&.
+.RE
+.PP
+/usr/share/keyrings/ubuntu\-archive\-removed\-keys\&.gpg
+.RS 4
+Keyring of Ubuntu archive removed trusted keys\&.
+.RE
+.SH "VEJA TAMBéM"
+.PP
+
+\fBapt-get\fR(8),
+\fBapt-secure\fR(8)
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "AUTOR"
+.PP
+APT foi escrito pela equipa do APT
+<apt@packages\&.debian\&.org>\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHOR"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 1998-2001 Jason Gunthorpe
+.br
+.SH "NOTES"
+.IP " 1." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

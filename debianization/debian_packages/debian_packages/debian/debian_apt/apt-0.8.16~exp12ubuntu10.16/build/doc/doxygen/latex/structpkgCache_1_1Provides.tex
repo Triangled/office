@@ -1,0 +1,48 @@
+\section{pkg\-Cache\-:\-:\-Provides \-Struct \-Reference}
+\label{structpkgCache_1_1Provides}\index{pkg\-Cache\-::\-Provides@{pkg\-Cache\-::\-Provides}}
+
+
+handles virtual packages  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-Parent\-Pkg}\label{structpkgCache_1_1Provides_a8b21c48cbc2c531761a089792265a43c}
+
+\begin{DoxyCompactList}\small\item\em index of the package providing this \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Version}\label{structpkgCache_1_1Provides_a97bd57cd8f5c8df5fd909f8b59f0b71c}
+
+\begin{DoxyCompactList}\small\item\em index of the version this provide line applies to \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Provide\-Version}
+\begin{DoxyCompactList}\small\item\em version in the provides line (if any) \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Provides}\label{structpkgCache_1_1Provides_a27f51ac6417a16977e3b0839f5997ef7}
+
+\begin{DoxyCompactList}\small\item\em next provides (based of package) \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Pkg\-Prov}\label{structpkgCache_1_1Provides_aa976e01a9218e6cc3c0119469ebf553a}
+
+\begin{DoxyCompactList}\small\item\em next provides (based of version) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+handles virtual packages 
+
+\-When a \doxyref{\-Provides}{p.}{structpkgCache_1_1Provides}\-: line is encountered a new provides record is added associating the package with a virtual package name. \-The provides structures are linked off the package structures. \-This simplifies the analysis of dependencies and other aspects \-A provides refers to a specific version of a specific package, not all versions need to provide that provides. 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Provides@{pkg\-Cache\-::\-Provides}!\-Provide\-Version@{\-Provide\-Version}}
+\index{\-Provide\-Version@{\-Provide\-Version}!pkgCache::Provides@{pkg\-Cache\-::\-Provides}}
+\subsubsection[{\-Provide\-Version}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Provide\-Version}}\label{structpkgCache_1_1Provides_a32c06e1fb98eeaa5229f84cfb70d4fb6}
+
+
+version in the provides line (if any) 
+
+\-This version allows dependencies to depend on specific versions of a \doxyref{\-Provides}{p.}{structpkgCache_1_1Provides}, as well as allowing \doxyref{\-Provides}{p.}{structpkgCache_1_1Provides} to override existing packages. \-This is experimental. \-Note that \-Debian doesn't allow versioned provides 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

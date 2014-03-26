@@ -1,0 +1,217 @@
+<!-- -*- mode: sgml; mode: fold -*- -->
+
+<!-- Boiler plate docinfo section -->
+<!ENTITY apt-docinfo "
+ <refentryinfo>
+   <address><email>apt@packages.debian.org</email></address>
+   <author>
+     <firstname>Jason</firstname> <surname>Gunthorpe</surname>
+     <contrib></contrib>
+   </author>
+   <copyright><year>1998-2001</year> <holder>Jason Gunthorpe</holder></copyright>
+   <date>28 de Octubre de 2008</date>
+   <productname>Linux</productname>
+ </refentryinfo>
+">
+
+<!ENTITY apt-author.team "
+   <author>
+    <othername>Equipo de APT</othername>
+    <contrib></contrib>
+   </author>
+">
+
+<!ENTITY apt-qapage "
+	<para>
+		<ulink url='http://packages.qa.debian.org/a/apt.html'>Página de QA</ulink>
+	</para>
+">
+
+<!-- Boiler plate Bug reporting section -->
+<!ENTITY manbugs "
+ <refsect1><title>Bugs</title>
+   <para><ulink url='http://bugs.debian.org/src:apt'>Página de errores de APT</ulink>. 
+   Si quiere informar de un error en APT, consulte
+   <filename>/usr/share/doc/debian/bug-reporting.txt</filename> o use la orden
+   &reportbug;.
+   </para>
+ </refsect1>
+">
+
+<!-- Boiler plate Author section -->
+<!ENTITY manauthor "
+ <refsect1><title>Autor</title>
+   <para>El equipo APT <email>apt@packages.debian.org</email> escribió apt.
+   </para>
+ </refsect1>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-commonoptions "
+     <varlistentry><term><option>-h</option></term>
+     <term><option>--help</option></term>
+     <listitem><para>Muestra un mensaje corto sobre el uso.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry>
+      <term><option>-v</option></term>
+      <term><option>--version</option></term>
+      <listitem><para>Muestra la versión del programa.
+     </para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry>
+      <term><option>-c</option></term>
+      <term><option>--config-file</option></term>
+     <listitem><para>Fichero de configuración: Especifica el fichero de 
+     configuración a usar. 
+     El programa leerá el fichero de configuración predeterminado y, 
+     después, este fichero de configuración. Si necesita que ciertas 
+     opciones de configuración se definan antes que el análisis de los 
+     de los ficheros de configuración predeterminados, defina un fichero 
+     con la variable de entorno <envar>APT_CONFIG</envar>. 
+     Consulte &apt-conf; para información sobre la sintaxis.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry>
+      <term><option>-o</option></term>
+      <term><option>--option</option></term>
+     <listitem><para>Define una opción de configuración: Esto definirá una opción
+      arbitraria de configuración. La sintaxis es <option>-o Algo::Cosa=cosa</option>.
+      <option>-o</option> y <option>--option</option> se pueden usar varias
+      veces para definir diferentes opciones.
+     </para>
+     </listitem>
+     </varlistentry>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-cmdblurb "
+   <para>Todas las opciones de la línea de órdenes se pueden definir
+   mediante el fichero de configuración, las descripciones indican la
+   opción de la configuración a definir. Para opciones de tipo «boolean»
+   puede invalidar el fichero de configuración utilizando algo como
+   <option>-f-</option>,<option>--no-f</option>, <option>-f=no</option>
+   u otras muchas variaciones.
+   </para>
+">
+
+<!ENTITY file-aptconf "
+     <varlistentry><term><filename>/etc/apt/apt.conf</filename></term>
+     <listitem><para>Fichero de configuración de APT.
+     Opción de configuración: <literal>Dir::Etc::Main</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/apt.conf.d/</filename></term>
+     <listitem><para>Fragmentos del fichero de configuración de APT.
+     Opción de configuración: <literal>Dir::Etc::Parts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-cachearchives "
+     <varlistentry><term><filename>&cachedir;/archives/</filename></term>
+     <listitem><para>Área de almacenamiento para los ficheros de paquetes descargados.
+     Opción de configuración: <literal>Dir::Cache::Archives</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&cachedir;/archives/partial/</filename></term>
+     <listitem><para>Área de almacenamiento para los ficheros de paquete en tránsito.
+     Opción de configuración: <literal>Dir::Cache::Archives</literal> (parcialmente implícito). </para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-preferences "
+     <varlistentry><term><filename>/etc/apt/preferences</filename></term>
+     <listitem><para>Ficheros de preferencias de versión.
+     Aquí puede especificar el anclaje (&quot;pinning&quot;),
+     una preferencia para conseguir ciertos paquetes a partir de
+     una fuente diferente o de una versión diferente de una distribución.
+     Opción de configuración: <literal>Dir::Etc::Preferences</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/preferences.d/</filename></term>
+     <listitem><para>Fragmentos de fichero para las preferencias de la versión.
+     Opción de configuración: <literal>Dir::Etc::PreferencesParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-sourceslist "
+     <varlistentry><term><filename>/etc/apt/sources.list</filename></term>
+     <listitem><para>Ubicaciones de dónde conseguir los paquetes.
+     Opción de configuración: <literal>Dir::Etc::SourceList</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/sources.list.d/</filename></term>
+     <listitem><para>Fragmentos de fichero para las ubicaciones de dónde descargar los paquetes.
+     Opción de configuración: <literal>Dir::Etc::SourceParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-statelists "
+     <varlistentry><term><filename>&statedir;/lists/</filename></term>
+     <listitem><para>Área de almacenamiento para la información del estado
+     de cada fuente de paquetes especificado en &sources-list;
+     Opción de configuración: <literal>Dir::State::Lists</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&statedir;/lists/partial/</filename></term>
+     <listitem><para>Área de almacenamiento para la información del estado en tránsito.
+     Opción de configuración: <literal>Dir::State::Lists</literal> (parcialmente implícito).</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-trustedgpg "
+     <varlistentry><term><filename>/etc/apt/trusted.gpg</filename></term>
+     <listitem><para>Registro de claves de las claves locales de confianza,
+     las claves nuevas se añadirán aquí.
+     Elemento de configuración: <literal>Dir::Etc::Trusted</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/trusted.gpg.d/</filename></term>
+     <listitem><para>Fragmentos de fichero de claves de confianza, se pueden
+     añadir en este directorio registros de claves adicionales (por otros
+     paquetes o el administrador.
+     Elemento de configuración: <literal>Dir::Etc::TrustedParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-extended_states "
+      <varlistentry><term><filename>/var/lib/apt/extended_states</filename></term>
+      <listitem><para>Lista de estado de paquetes automáticamente instalados.
+      Elemento de configuración: <literal>Dir::State::extended_states</literal>.
+      </para></listitem>
+      </varlistentry>
+">
+
+<!-- TRANSLATOR: This is the section header for the following paragraphs - comparable
+     to the other headers like NAME and DESCRIPTION and should therefore be uppercase. -->
+<!ENTITY translation-title "TRADUCCIÓN">
+
+<!-- TRANSLATOR: This is a placeholder. You should write here who has contributed
+     to the translation in the past, who is responsible now and maybe further information
+     specially related to your translation. -->
+<!ENTITY translation-holder "
+     La traducción al español la realizaron Ismael Fanlo, Carlos Mestre,
+     Rudy Godoy, Gustavo Saldumbide, Javier Fernández-Sanguino y Rubén
+     Porras Campo entre los años 2003 y 2004. La traducción fue actualizada
+     por Francisco Javier Cuadrado y Omar Campagne Polaino entre los años
+     2009 y 2010.
+">
+
+<!-- TRANSLATOR: As a translation is allowed to have 20% of untranslated/fuzzy strings
+     in a shipped manpage newer/modified paragraphs will maybe appear in english in
+     the generated manpage. This sentence is therefore here to tell the reader that this
+     is not a mistake by the translator - obviously the target is that at least for stable
+     releases this sentence is not needed. :) -->
+<!ENTITY translation-english "
+     Tenga en cuenta que este documento puede contener secciones sin
+     traducir. Esto es intencionado para evitar perder contenido cuando
+     la traducción no está actualizada con respecto al documento original.
+">

@@ -1,0 +1,211 @@
+'\" t
+.\"     Title: apt-secure
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 28 Outubro 2008
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-SECURE" "8" "28 Outubro 2008" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-secure \- Suporte de autenticação de arquivos para o APT
+.SH "DESCRIçãO"
+.PP
+A partir da versão 0\&.6, o
+\fBapt\fR
+contém código que faz verificação de assinaturas do ficheiro Release para todos os arquivos\&. Isto assegura que os pacotes no arquivo não podem ser modificados por pessoas que não têm acesso à chave de assinatura do ficheiro Release\&.
+.PP
+Se um pacote vem dum arquivo sem assinatura ou com uma assinatura para a qual o apt não tem a chave, esse pacote é considerado \*(Aqnão sendo de confiança\*(Aq e instalá\-lo irá resultar num grande aviso\&. Actualmente o
+\fBapt\-get\fR
+irá avisar apenas de arquivos não assinados, lançamentos futuros poderão vir a forçar que todas as fontes sejam verificadas antes de descarregar pacotes delas\&.
+.PP
+Os frontends de pacotes
+\fBapt-get\fR(8),
+\fBaptitude\fR(8)
+e
+\fBsynaptic\fR(8)
+suportam esta nova funcionalidade de autenticação\&.
+.SH "ARQUIVOS DE CONFIANçA"
+.PP
+A corrente de confiança desde um arquivo apt até ao utilizador final é feita em diferentes passos\&. O
+\fBapt\-secure\fR
+é o último passo nesta corrente, confiar num arquivo não quer dizer que os pacotes em que confia não possam conter código malicioso, mas que dizer que você confia no responsável do arquivo\&. É da responsabilidade do responsável do arquivo assegurar que a integridade do arquivo está correcta\&.
+.PP
+O apt\-secure não revê as assinaturas ao nível do pacote\&. Se você necessita de ferramentas que o façam deve procurar pelo
+\fBdebsig\-verify\fR
+e
+\fBdebsign\fR
+(disponibilizados nos pacotes debsig\-verify e devscripts respectivamente)\&.
+.PP
+A corrente de confiança em Debian começa quando o responsável faz o upload de um novo pacote ou de uma nova versão de um pacote para o arquivo Debian\&. De modo a se tornar efectivo, este upload precisa de ser assinado por uma chave de um responsável dentro do chaveiro de responsáveis da Debian (disponível no pacote debian\-keyring)\&. As chaves dos responsáveis são assinadas por outros responsáveis seguindo procedimentos pré\-estabelecidos para assegurar a identidade do dono da chave\&.
+.PP
+Após o upload, o pacote é verificado e incluído no arquivo, a assinatura do responsável é despojada, é computado um sumário MD5 do pacote e colocado no ficheiro Packages\&. Os sumários MD5 de todos os ficheiros pacotes são então computados e colocados no ficheiro Release\&. O ficheiro Release é então assinado pela chave de arquivo (a qual é criada uma vez por ano) e distribuído através do servidor FTP\&. Esta chave está também no chaveiro Debian\&.
+.PP
+Qualquer utilizador final pode verificar a assinatura do ficheiro Release, extrair o sumário MD5 de um pacote a partir dele, e compará\-lo com o sumário MD5 do pacote que descarregou\&. Antes da versão 0\&.6 apenas o sumário MD5 do pacote Debian descarregado era verificado\&. Agora são verificados ambos: o sumário MD5 e a assinatura do ficheiro Release\&.
+.PP
+Note que isto é diferente de verificar assinaturas por cada pacote\&. É desenhado para prevenir dois ataques possíveis:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Ataques de rede "man in the middle"\&. Sem verificação de assinatura, um agente malicioso pode introduzir\-se ele próprio no processo de descarga de pacotes e disponibilizar software malicioso seja ao controlar um elemento de rede (router, switch, etc\&.) ou ao redireccionar tráfego para um servidor impostor (através de ataques de fraude de arp ou DNS)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Mirror network compromise\&. Sem verificação de assinatura, um agente malicioso pode comprometer uma máquina mirror e modificar os ficheiros dele para propagar software malicioso a todos os utilizadores que descarregam pacotes a partir dessa máquina\&.
+.RE
+.PP
+No entanto, isto não defende contra um compromisso do próprio servidor mestre da Debian (o qual assina os pacotes) ou contra um compromisso da chave usada para assinar os ficheiros Release\&. Em qualquer caso, este mecanismo pode complementar uma assinatura por\-pacote\&.
+.SH "CONFIGURAçãO DO UTILIZADOR"
+.PP
+
+\fBapt\-key\fR
+é o programa que gere a lista de chaves usada pelo apt\&. Pode ser usado para adicionar ou remover chaves apesar de uma instalação deste lançamento ir automaticamente disponibilizar as chaves de assinaturas predefinidas de arquivo Debian usadas nos repositórios de pacotes Debian\&.
+.PP
+In order to add a new key you need to first download it (you should make sure you are using a trusted communication channel when retrieving it), add it with
+\fBapt\-key\fR
+and then run
+\fBapt\-get update\fR
+so that apt can download and verify the
+InRelease
+or
+Release\&.gpg
+files from the archives you have configured\&.
+.SH "CONFIGURAçãO DE ARQUIVOS"
+.PP
+Se você deseja fornecer assinaturas de arquivo a um arquivo sob sua manutenção, você tem que:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fICriar um ficheiro Release de nível de topo\fR, se este já não existir\&. Você pode fazer isto ao correr
+\fBapt\-ftparchive release\fR
+(disponibilizado no apt\-utils)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fISign it\fR\&. You can do this by running
+\fBgpg \-\-clearsign \-o InRelease Release\fR
+and
+\fBgpg \-abs \-o Release\&.gpg Release\fR\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fIPublicar a impressão digital da chave\fR, deste modo os seus utilizadores irão saber que chave precisam de importar de modo a autenticar os ficheiros no arquivo\&.
+.RE
+.PP
+Sempre que o conteúdo do arquivo mude (são adicionados novos pacotes ou removidos), o responsável do arquivo tem que seguir os primeiros dois passos previamente delineados\&.
+.SH "VEJA TAMBéM"
+.PP
+
+\fBapt.conf\fR(5),
+\fBapt-get\fR(8),
+\fBsources.list\fR(5),
+\fBapt-key\fR(8),
+\fBapt-ftparchive\fR(1),
+\fBdebsign\fR(1)
+\fBdebsig-verify\fR(1),
+\fBgpg\fR(1)
+.PP
+Para mais informação de fundo você deve querer reler a
+\m[blue]\fBInfraestrutura de Segurança da Debian\fR\m[]\&\s-2\u[1]\d\s+2
+no capítulo do Manual Debian de Segurança (disponível também no pacote harden\-doc) e o
+\m[blue]\fBStrong Distribution HOWTO\fR\m[]\&\s-2\u[2]\d\s+2
+de V\&. Alex Brennen\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[3]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "AUTOR"
+.PP
+APT foi escrito pela equipa do APT
+<apt@packages\&.debian\&.org>\&.
+.SH "AUTORES DO MANUAL"
+.PP
+Este manual é baseado no trabalho de Javier Fernández\-Sanguino Peña, Isaac Jones, Colin Walters, Florian Weimer e Michael Vogt\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHOR"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 1998-2001 Jason Gunthorpe
+.br
+.SH "NOTES"
+.IP " 1." 4
+Infraestrutura de Segurança da Debian
+.RS 4
+\%http://www.debian.org/doc/manuals/securing-debian-howto/ch7.en.html
+.RE
+.IP " 2." 4
+Strong Distribution HOWTO
+.RS 4
+\%http://www.cryptnet.net/fdp/crypto/strong_distro.html
+.RE
+.IP " 3." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

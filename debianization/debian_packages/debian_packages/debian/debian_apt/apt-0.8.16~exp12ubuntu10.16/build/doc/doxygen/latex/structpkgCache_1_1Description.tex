@@ -1,0 +1,55 @@
+\section{pkg\-Cache\-:\-:\-Description \-Struct \-Reference}
+\label{structpkgCache_1_1Description}\index{pkg\-Cache\-::\-Description@{pkg\-Cache\-::\-Description}}
+
+
+datamember of a linked list of available description for a version  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf language\-\_\-code}
+\begin{DoxyCompactList}\small\item\em \-Language code of this description (translation) \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf md5sum}
+\begin{DoxyCompactList}\small\item\em \-M\-D5sum of the original description. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bfseries \-File\-List}\label{structpkgCache_1_1Description_a4b6b2b9ea64d554abffb8e2897932892}
+
+\item 
+map\-\_\-ptrloc {\bf \-Next\-Desc}\label{structpkgCache_1_1Description_ab6e4d8a0606196a6c3aa3f9c3f53ceff}
+
+\begin{DoxyCompactList}\small\item\em next translation for this description \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Parent\-Pkg}\label{structpkgCache_1_1Description_a8b21c48cbc2c531761a089792265a43c}
+
+\begin{DoxyCompactList}\small\item\em the text is a description of this package \end{DoxyCompactList}\item 
+unsigned int {\bf \-I\-D}\label{structpkgCache_1_1Description_a0dd14fb57e3d3cc6b6fc5633c6ce65d5}
+
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+datamember of a linked list of available description for a version 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Description@{pkg\-Cache\-::\-Description}!language\-\_\-code@{language\-\_\-code}}
+\index{language\-\_\-code@{language\-\_\-code}!pkgCache::Description@{pkg\-Cache\-::\-Description}}
+\subsubsection[{language\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf language\-\_\-code}}\label{structpkgCache_1_1Description_aa5570571c6d782791774e7864a752875}
+
+
+\-Language code of this description (translation) 
+
+\-If the value has a 0 length then this is read using the \doxyref{\-Package}{p.}{structpkgCache_1_1Package} file else the \-Translation-\/\-C\-O\-D\-E file is used. \index{pkg\-Cache\-::\-Description@{pkg\-Cache\-::\-Description}!md5sum@{md5sum}}
+\index{md5sum@{md5sum}!pkgCache::Description@{pkg\-Cache\-::\-Description}}
+\subsubsection[{md5sum}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf md5sum}}\label{structpkgCache_1_1Description_a7959dbeebed3d0b4cc50c363908c58f0}
+
+
+\-M\-D5sum of the original description. 
+
+\-Used to map \-Translations of a description to a version and to check that the \-Translation is up-\/to-\/date. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

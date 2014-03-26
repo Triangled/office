@@ -1,0 +1,2040 @@
+# translation of apt_po.po to Arabic
+# This file is put in the public domain.
+#
+# Ossama M. Khayat <okhayat@yahoo.com>, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: apt_po\n"
+"Report-Msgid-Bugs-To: deity@lists.debian.org\n"
+"POT-Creation-Date: 2012-12-12 08:05-0500\n"
+"PO-Revision-Date: 2006-10-20 21:28+0300\n"
+"Last-Translator: Ossama M. Khayat <okhayat@yahoo.com>\n"
+"Language-Team: Arabic <support@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: Lebanon\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: cmdline/apt-cache.cc:158
+#, c-format
+msgid "Package %s version %s has an unmet dep:\n"
+msgstr "الحزمة %s النسخة %s لها معتمد غير مستوفى:\n"
+
+#: cmdline/apt-cache.cc:286
+msgid "Total package names: "
+msgstr "أسماء الحزم الكلية :"
+
+#: cmdline/apt-cache.cc:288
+#, fuzzy
+msgid "Total package structures: "
+msgstr "أسماء الحزم الكلية :"
+
+#: cmdline/apt-cache.cc:328
+msgid "  Normal packages: "
+msgstr " الحزم العادية:"
+
+#: cmdline/apt-cache.cc:329
+msgid "  Pure virtual packages: "
+msgstr "الحزمة الوهمية تماماً:"
+
+#: cmdline/apt-cache.cc:330
+msgid "  Single virtual packages: "
+msgstr " الحزمة الوهمية المفردة:"
+
+#: cmdline/apt-cache.cc:331
+msgid "  Mixed virtual packages: "
+msgstr " الحزم الوهمية المختلطة:"
+
+#: cmdline/apt-cache.cc:332
+msgid "  Missing: "
+msgstr " مفقودة:"
+
+#: cmdline/apt-cache.cc:334
+msgid "Total distinct versions: "
+msgstr "مجموع النسخ الفريدة:"
+
+#: cmdline/apt-cache.cc:336
+#, fuzzy
+msgid "Total distinct descriptions: "
+msgstr "مجموع النسخ الفريدة:"
+
+#: cmdline/apt-cache.cc:338
+msgid "Total dependencies: "
+msgstr "مجموع المعتمدات:"
+
+#: cmdline/apt-cache.cc:341
+msgid "Total ver/file relations: "
+msgstr "مجموع علاقات النسخ/الملفات:"
+
+#: cmdline/apt-cache.cc:343
+#, fuzzy
+msgid "Total Desc/File relations: "
+msgstr "مجموع علاقات النسخ/الملفات:"
+
+#: cmdline/apt-cache.cc:345
+msgid "Total Provides mappings: "
+msgstr "مجموع علاقات النسخ/الملفات:"
+
+#: cmdline/apt-cache.cc:357
+msgid "Total globbed strings: "
+msgstr ""
+
+#: cmdline/apt-cache.cc:371
+msgid "Total dependency version space: "
+msgstr ""
+
+#: cmdline/apt-cache.cc:376
+msgid "Total slack space: "
+msgstr ""
+
+#: cmdline/apt-cache.cc:384
+msgid "Total space accounted for: "
+msgstr "مجموع المساحة المحسوب حسابها:"
+
+#: cmdline/apt-cache.cc:515 cmdline/apt-cache.cc:1143
+#, c-format
+msgid "Package file %s is out of sync."
+msgstr ""
+
+#: cmdline/apt-cache.cc:593 cmdline/apt-cache.cc:1378
+#: cmdline/apt-cache.cc:1380 cmdline/apt-cache.cc:1457 cmdline/apt-mark.cc:40
+#: cmdline/apt-mark.cc:87 cmdline/apt-mark.cc:163
+msgid "No packages found"
+msgstr "لم يُعثر على أية حزم"
+
+#: cmdline/apt-cache.cc:1222
+#, fuzzy
+msgid "You must give at least one search pattern"
+msgstr "يجب أن تعطي صيغة واحدة بالضبط"
+
+#: cmdline/apt-cache.cc:1357
+msgid "This command is deprecated. Please use 'apt-mark showauto' instead."
+msgstr ""
+
+#: cmdline/apt-cache.cc:1452
+#, c-format
+msgid "Unable to locate package %s"
+msgstr "تعذر العثور على الحزمة %s"
+
+#: cmdline/apt-cache.cc:1482
+msgid "Package files:"
+msgstr "ملفات الحزم:"
+
+#: cmdline/apt-cache.cc:1489 cmdline/apt-cache.cc:1580
+msgid "Cache is out of sync, can't x-ref a package file"
+msgstr ""
+
+#. Show any packages have explicit pins
+#: cmdline/apt-cache.cc:1503
+msgid "Pinned packages:"
+msgstr "الحزم المُدبّسة:"
+
+#: cmdline/apt-cache.cc:1515 cmdline/apt-cache.cc:1560
+msgid "(not found)"
+msgstr "(غير موجود)"
+
+#: cmdline/apt-cache.cc:1523
+msgid "  Installed: "
+msgstr " مُثبّت:"
+
+#: cmdline/apt-cache.cc:1524
+msgid "  Candidate: "
+msgstr "  مرشّح: "
+
+#: cmdline/apt-cache.cc:1542 cmdline/apt-cache.cc:1550
+msgid "(none)"
+msgstr "(لاشيء)"
+
+#: cmdline/apt-cache.cc:1557
+msgid "  Package pin: "
+msgstr ""
+
+#. Show the priority tables
+#: cmdline/apt-cache.cc:1566
+msgid "  Version table:"
+msgstr " جدول النسخ:"
+
+#: cmdline/apt-cache.cc:1679 cmdline/apt-cdrom.cc:199 cmdline/apt-config.cc:75
+#: cmdline/apt-extracttemplates.cc:227 ftparchive/apt-ftparchive.cc:591
+#: cmdline/apt-get.cc:3264 cmdline/apt-internal-solver.cc:32
+#: cmdline/apt-mark.cc:267 cmdline/apt-sortpkgs.cc:147
+#, fuzzy, c-format
+msgid "%s %s for %s compiled on %s %s\n"
+msgstr "%s %s لـ%s %s مُجمّع على %s %s\n"
+
+#: cmdline/apt-cache.cc:1686
+msgid ""
+"Usage: apt-cache [options] command\n"
+"       apt-cache [options] showpkg pkg1 [pkg2 ...]\n"
+"       apt-cache [options] showsrc pkg1 [pkg2 ...]\n"
+"\n"
+"apt-cache is a low-level tool used to query information\n"
+"from APT's binary cache files\n"
+"\n"
+"Commands:\n"
+"   gencaches - Build both the package and source cache\n"
+"   showpkg - Show some general information for a single package\n"
+"   showsrc - Show source records\n"
+"   stats - Show some basic statistics\n"
+"   dump - Show the entire file in a terse form\n"
+"   dumpavail - Print an available file to stdout\n"
+"   unmet - Show unmet dependencies\n"
+"   search - Search the package list for a regex pattern\n"
+"   show - Show a readable record for the package\n"
+"   depends - Show raw dependency information for a package\n"
+"   rdepends - Show reverse dependency information for a package\n"
+"   pkgnames - List the names of all packages in the system\n"
+"   dotty - Generate package graphs for GraphViz\n"
+"   xvcg - Generate package graphs for xvcg\n"
+"   policy - Show policy settings\n"
+"\n"
+"Options:\n"
+"  -h   This help text.\n"
+"  -p=? The package cache.\n"
+"  -s=? The source cache.\n"
+"  -q   Disable progress indicator.\n"
+"  -i   Show only important deps for the unmet command.\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+"See the apt-cache(8) and apt.conf(5) manual pages for more information.\n"
+msgstr ""
+
+#: cmdline/apt-cdrom.cc:79
+#, fuzzy
+msgid "Please provide a name for this Disc, such as 'Debian 5.0.3 Disk 1'"
+msgstr "الرجاء كتابة اسم لهذا القرص، مثال 'Debian 2.1r1 Disk 1'"
+
+#: cmdline/apt-cdrom.cc:94
+msgid "Please insert a Disc in the drive and press enter"
+msgstr "الرجاء إدخال قرص في السواقة وضغط الزر enter"
+
+#: cmdline/apt-cdrom.cc:129
+#, fuzzy, c-format
+msgid "Failed to mount '%s' to '%s'"
+msgstr "فشل تغيير اسم %s إلى %s"
+
+#: cmdline/apt-cdrom.cc:164
+msgid "Repeat this process for the rest of the CDs in your set."
+msgstr "كرر هذه العملية لباقي الأقراص المدمجة في المجموعة."
+
+#: cmdline/apt-config.cc:46
+msgid "Arguments not in pairs"
+msgstr ""
+
+#: cmdline/apt-config.cc:81
+msgid ""
+"Usage: apt-config [options] command\n"
+"\n"
+"apt-config is a simple tool to read the APT config file\n"
+"\n"
+"Commands:\n"
+"   shell - Shell mode\n"
+"   dump - Show the configuration\n"
+"\n"
+"Options:\n"
+"  -h   This help text.\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+msgstr ""
+
+#: cmdline/apt-extracttemplates.cc:100
+#, c-format
+msgid "%s not a valid DEB package."
+msgstr "%s ليس حزمة DEB صالحة."
+
+#: cmdline/apt-extracttemplates.cc:234
+msgid ""
+"Usage: apt-extracttemplates file1 [file2 ...]\n"
+"\n"
+"apt-extracttemplates is a tool to extract config and template info\n"
+"from debian packages\n"
+"\n"
+"Options:\n"
+"  -h   This help text\n"
+"  -t   Set the temp dir\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+msgstr ""
+
+#: cmdline/apt-extracttemplates.cc:269
+#, c-format
+msgid "Unable to write to %s"
+msgstr "تعذرت الكتابة إلى %s"
+
+#: cmdline/apt-extracttemplates.cc:311
+msgid "Cannot get debconf version. Is debconf installed?"
+msgstr "تعذر الحصول على نسخة debconf. هل هي مثبتة؟"
+
+#: ftparchive/apt-ftparchive.cc:171 ftparchive/apt-ftparchive.cc:349
+msgid "Package extension list is too long"
+msgstr "قائمة توسيعات الحزمة طويلة جداً"
+
+#: ftparchive/apt-ftparchive.cc:173 ftparchive/apt-ftparchive.cc:190
+#: ftparchive/apt-ftparchive.cc:213 ftparchive/apt-ftparchive.cc:264
+#: ftparchive/apt-ftparchive.cc:278 ftparchive/apt-ftparchive.cc:300
+#, c-format
+msgid "Error processing directory %s"
+msgstr "خطأ في معالجة الدليل %s"
+
+#: ftparchive/apt-ftparchive.cc:262
+msgid "Source extension list is too long"
+msgstr "قائمة توسيعات المصدر طويلة جداً"
+
+#: ftparchive/apt-ftparchive.cc:379
+msgid "Error writing header to contents file"
+msgstr "خطأ في كتابة الترويسة إلى ملف المحتويات"
+
+#: ftparchive/apt-ftparchive.cc:409
+#, c-format
+msgid "Error processing contents %s"
+msgstr "خطأ في معالجة المحتويات %s"
+
+#: ftparchive/apt-ftparchive.cc:597
+msgid ""
+"Usage: apt-ftparchive [options] command\n"
+"Commands: packages binarypath [overridefile [pathprefix]]\n"
+"          sources srcpath [overridefile [pathprefix]]\n"
+"          contents path\n"
+"          release path\n"
+"          generate config [groups]\n"
+"          clean config\n"
+"\n"
+"apt-ftparchive generates index files for Debian archives. It supports\n"
+"many styles of generation from fully automated to functional replacements\n"
+"for dpkg-scanpackages and dpkg-scansources\n"
+"\n"
+"apt-ftparchive generates Package files from a tree of .debs. The\n"
+"Package file contains the contents of all the control fields from\n"
+"each package as well as the MD5 hash and filesize. An override file\n"
+"is supported to force the value of Priority and Section.\n"
+"\n"
+"Similarly apt-ftparchive generates Sources files from a tree of .dscs.\n"
+"The --source-override option can be used to specify a src override file\n"
+"\n"
+"The 'packages' and 'sources' command should be run in the root of the\n"
+"tree. BinaryPath should point to the base of the recursive search and \n"
+"override file should contain the override flags. Pathprefix is\n"
+"appended to the filename fields if present. Example usage from the \n"
+"Debian archive:\n"
+"   apt-ftparchive packages dists/potato/main/binary-i386/ > \\\n"
+"               dists/potato/main/binary-i386/Packages\n"
+"\n"
+"Options:\n"
+"  -h    This help text\n"
+"  --md5 Control MD5 generation\n"
+"  -s=?  Source override file\n"
+"  -q    Quiet\n"
+"  -d=?  Select the optional caching database\n"
+"  --no-delink Enable delinking debug mode\n"
+"  --contents  Control contents file generation\n"
+"  -c=?  Read this configuration file\n"
+"  -o=?  Set an arbitrary configuration option"
+msgstr ""
+
+#: ftparchive/apt-ftparchive.cc:803
+msgid "No selections matched"
+msgstr "لم تُطابق أية تحديدات"
+
+#: ftparchive/apt-ftparchive.cc:881
+#, c-format
+msgid "Some files are missing in the package file group `%s'"
+msgstr "بعض الملفات مفقودة في مجموعة ملف الحزمة `%s'"
+
+#: ftparchive/cachedb.cc:46
+#, c-format
+msgid "DB was corrupted, file renamed to %s.old"
+msgstr "قاعدة البيانات كانت فاسدة، فتم تغيير اسمها إلى %s.old"
+
+#: ftparchive/cachedb.cc:64
+#, c-format
+msgid "DB is old, attempting to upgrade %s"
+msgstr "قاعدة البيانات قديمة، محاولة ترقية %s"
+
+#: ftparchive/cachedb.cc:75
+msgid ""
+"DB format is invalid. If you upgraded from an older version of apt, please "
+"remove and re-create the database."
+msgstr ""
+
+#: ftparchive/cachedb.cc:80
+#, c-format
+msgid "Unable to open DB file %s: %s"
+msgstr "تعذر فتح ملف قاعدة البيانات %s: %s"
+
+#: ftparchive/cachedb.cc:126
+#, c-format
+msgid "Failed to stat %s"
+msgstr ""
+
+#: ftparchive/cachedb.cc:248
+msgid "Archive has no control record"
+msgstr ""
+
+#: ftparchive/cachedb.cc:489
+msgid "Unable to get a cursor"
+msgstr ""
+
+#: ftparchive/writer.cc:80
+#, c-format
+msgid "W: Unable to read directory %s\n"
+msgstr "W: تعذرت قراءة الدليل %s\n"
+
+#: ftparchive/writer.cc:85
+#, c-format
+msgid "W: Unable to stat %s\n"
+msgstr ""
+
+#: ftparchive/writer.cc:141
+msgid "E: "
+msgstr "E: "
+
+#: ftparchive/writer.cc:143
+msgid "W: "
+msgstr "W: "
+
+#: ftparchive/writer.cc:150
+msgid "E: Errors apply to file "
+msgstr ""
+
+#: ftparchive/writer.cc:168 ftparchive/writer.cc:200
+#, c-format
+msgid "Failed to resolve %s"
+msgstr ""
+
+#: ftparchive/writer.cc:181
+msgid "Tree walking failed"
+msgstr ""
+
+#: ftparchive/writer.cc:208
+#, c-format
+msgid "Failed to open %s"
+msgstr "فشل فتح %s"
+
+#: ftparchive/writer.cc:267
+#, c-format
+msgid " DeLink %s [%s]\n"
+msgstr " DeLink %s [%s]\n"
+
+#: ftparchive/writer.cc:275
+#, c-format
+msgid "Failed to readlink %s"
+msgstr ""
+
+#: ftparchive/writer.cc:279
+#, c-format
+msgid "Failed to unlink %s"
+msgstr ""
+
+#: ftparchive/writer.cc:286
+#, c-format
+msgid "*** Failed to link %s to %s"
+msgstr "*** فشل ربط %s بـ%s"
+
+#: ftparchive/writer.cc:296
+#, c-format
+msgid " DeLink limit of %sB hit.\n"
+msgstr ""
+
+#: ftparchive/writer.cc:401
+msgid "Archive had no package field"
+msgstr ""
+
+#: ftparchive/writer.cc:409 ftparchive/writer.cc:714
+#, c-format
+msgid "  %s has no override entry\n"
+msgstr ""
+
+#: ftparchive/writer.cc:477 ftparchive/writer.cc:858
+#, c-format
+msgid "  %s maintainer is %s not %s\n"
+msgstr ""
+
+#: ftparchive/writer.cc:724
+#, c-format
+msgid "  %s has no source override entry\n"
+msgstr ""
+
+#: ftparchive/writer.cc:728
+#, c-format
+msgid "  %s has no binary override entry either\n"
+msgstr ""
+
+#: ftparchive/contents.cc:339 ftparchive/contents.cc:370
+msgid "realloc - Failed to allocate memory"
+msgstr "realloc - فشل تعيين الذاكرة"
+
+#: ftparchive/override.cc:34 ftparchive/override.cc:142
+#, c-format
+msgid "Unable to open %s"
+msgstr "تعذر فتح %s"
+
+#: ftparchive/override.cc:60 ftparchive/override.cc:166
+#, c-format
+msgid "Malformed override %s line %llu #1"
+msgstr ""
+
+#: ftparchive/override.cc:74 ftparchive/override.cc:178
+#, c-format
+msgid "Malformed override %s line %llu #2"
+msgstr ""
+
+#: ftparchive/override.cc:88 ftparchive/override.cc:191
+#, c-format
+msgid "Malformed override %s line %llu #3"
+msgstr ""
+
+#: ftparchive/override.cc:127 ftparchive/override.cc:201
+#, c-format
+msgid "Failed to read the override file %s"
+msgstr ""
+
+#: ftparchive/multicompress.cc:70
+#, c-format
+msgid "Unknown compression algorithm '%s'"
+msgstr ""
+
+#: ftparchive/multicompress.cc:100
+#, c-format
+msgid "Compressed output %s needs a compression set"
+msgstr ""
+
+#: ftparchive/multicompress.cc:168
+msgid "Failed to create IPC pipe to subprocess"
+msgstr ""
+
+#: ftparchive/multicompress.cc:189
+msgid "Failed to create FILE*"
+msgstr ""
+
+#: ftparchive/multicompress.cc:192
+msgid "Failed to fork"
+msgstr ""
+
+#: ftparchive/multicompress.cc:206
+msgid "Compress child"
+msgstr ""
+
+#: ftparchive/multicompress.cc:229
+#, c-format
+msgid "Internal error, failed to create %s"
+msgstr "خطأ داخلي، تعذر إنشاء %s"
+
+#: ftparchive/multicompress.cc:304
+msgid "IO to subprocess/file failed"
+msgstr ""
+
+#: ftparchive/multicompress.cc:342
+msgid "Failed to read while computing MD5"
+msgstr ""
+
+#: ftparchive/multicompress.cc:358
+#, c-format
+msgid "Problem unlinking %s"
+msgstr ""
+
+#: ftparchive/multicompress.cc:373
+#, c-format
+msgid "Failed to rename %s to %s"
+msgstr "فشل تغيير اسم %s إلى %s"
+
+#: cmdline/apt-get.cc:135
+msgid "Y"
+msgstr "Y"
+
+#: cmdline/apt-get.cc:140
+msgid "N"
+msgstr ""
+
+#: cmdline/apt-get.cc:162
+#, c-format
+msgid "Regex compilation error - %s"
+msgstr ""
+
+#: cmdline/apt-get.cc:257
+msgid "The following packages have unmet dependencies:"
+msgstr ""
+
+#: cmdline/apt-get.cc:347
+#, c-format
+msgid "but %s is installed"
+msgstr "إلا أن %s مثبت"
+
+#: cmdline/apt-get.cc:349
+#, c-format
+msgid "but %s is to be installed"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-get.cc:356
+msgid "but it is not installable"
+msgstr "إلا أنه غير قابل للتثبيت"
+
+#: cmdline/apt-get.cc:358
+msgid "but it is a virtual package"
+msgstr "إلا أنها حزمة وهمية"
+
+#: cmdline/apt-get.cc:361
+msgid "but it is not installed"
+msgstr "إلا أنها غير مثبتة"
+
+#: cmdline/apt-get.cc:361
+msgid "but it is not going to be installed"
+msgstr "إلا أنه لن يتم تثبيتها"
+
+#: cmdline/apt-get.cc:366
+msgid " or"
+msgstr " أو"
+
+#: cmdline/apt-get.cc:395
+msgid "The following NEW packages will be installed:"
+msgstr "سيتم تثبيت الحزم الجديدة التالية:"
+
+#: cmdline/apt-get.cc:421
+msgid "The following packages will be REMOVED:"
+msgstr "سيتم إزالة الحزم التالية:"
+
+#: cmdline/apt-get.cc:443
+msgid "The following packages have been kept back:"
+msgstr "سيتم الإبقاء على الحزم التالية:"
+
+#: cmdline/apt-get.cc:464
+msgid "The following packages will be upgraded:"
+msgstr "ستتم ترقية الحزم التالية:"
+
+#: cmdline/apt-get.cc:485
+msgid "The following packages will be DOWNGRADED:"
+msgstr "سيتم تثبيط الحزم التالية:"
+
+#: cmdline/apt-get.cc:505
+msgid "The following held packages will be changed:"
+msgstr "سيتم تغيير الحزم المبقاة التالية:"
+
+#: cmdline/apt-get.cc:560
+#, c-format
+msgid "%s (due to %s) "
+msgstr "%s (بسبب %s) "
+
+#: cmdline/apt-get.cc:568
+msgid ""
+"WARNING: The following essential packages will be removed.\n"
+"This should NOT be done unless you know exactly what you are doing!"
+msgstr ""
+"تحذير: ستتم إزالة الحزم الأساسية التالية.\n"
+"لا يجب أن تقوم بهذا إلى إن كنت تعرف تماماً ما تقوم به!"
+
+#: cmdline/apt-get.cc:599
+#, c-format
+msgid "%lu upgraded, %lu newly installed, "
+msgstr "%lu سيتم ترقيتها، %lu مثبتة حديثاً،  "
+
+#: cmdline/apt-get.cc:603
+#, c-format
+msgid "%lu reinstalled, "
+msgstr "%lu أعيد تثبيتها، "
+
+#: cmdline/apt-get.cc:605
+#, c-format
+msgid "%lu downgraded, "
+msgstr "%lu مثبطة، "
+
+#: cmdline/apt-get.cc:607
+#, c-format
+msgid "%lu to remove and %lu not upgraded.\n"
+msgstr "%lu لإزالتها و %lu لم يتم ترقيتها.\n"
+
+#: cmdline/apt-get.cc:611
+#, c-format
+msgid "%lu not fully installed or removed.\n"
+msgstr "%lu غير مثبتة بالكامل أو مزالة.\n"
+
+#: cmdline/apt-get.cc:632
+#, fuzzy, c-format
+msgid "Note, selecting '%s' for task '%s'\n"
+msgstr "لاحظ، تحديد %s بسبب صيغة regex '%s'\n"
+
+#: cmdline/apt-get.cc:637
+#, fuzzy, c-format
+msgid "Note, selecting '%s' for regex '%s'\n"
+msgstr "لاحظ، تحديد %s بسبب صيغة regex '%s'\n"
+
+#: cmdline/apt-get.cc:654
+#, c-format
+msgid "Package %s is a virtual package provided by:\n"
+msgstr "الحزمة %s وهميّة وتوفّرها:\n"
+
+#: cmdline/apt-get.cc:665
+msgid " [Installed]"
+msgstr " [مُثبّتة]"
+
+#: cmdline/apt-get.cc:674
+msgid " [Not candidate version]"
+msgstr ""
+
+#: cmdline/apt-get.cc:676
+msgid "You should explicitly select one to install."
+msgstr "يجب اختيار واحدة بالتحديد لتثبيتها."
+
+#: cmdline/apt-get.cc:679
+#, c-format
+msgid ""
+"Package %s is not available, but is referred to by another package.\n"
+"This may mean that the package is missing, has been obsoleted, or\n"
+"is only available from another source\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:697
+msgid "However the following packages replace it:"
+msgstr "على أيّ فإن الحزم التالية تحلّ مكانها:"
+
+#: cmdline/apt-get.cc:709
+#, fuzzy, c-format
+msgid "Package '%s' has no installation candidate"
+msgstr "الحزمة %s ليس لها مرشح تثبيت"
+
+#: cmdline/apt-get.cc:720
+#, c-format
+msgid "Virtual packages like '%s' can't be removed\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:764
+#, fuzzy, c-format
+msgid "Note, selecting '%s' instead of '%s'\n"
+msgstr "لاحظ، تحديد %s بدلاً من %s\n"
+
+#: cmdline/apt-get.cc:794
+#, c-format
+msgid "Skipping %s, it is already installed and upgrade is not set.\n"
+msgstr "تخطّي %s، حيث أنها مثبتة ولم يتمّ تعيين الترقية.\n"
+
+#: cmdline/apt-get.cc:798
+#, fuzzy, c-format
+msgid "Skipping %s, it is not installed and only upgrades are requested.\n"
+msgstr "تخطّي %s، حيث أنها مثبتة ولم يتمّ تعيين الترقية.\n"
+
+#: cmdline/apt-get.cc:810
+#, c-format
+msgid "Reinstallation of %s is not possible, it cannot be downloaded.\n"
+msgstr "إعادة تثبيت  %s غير ممكنة، حيث أنّه لا يمكن تنزيلها.\n"
+
+#: cmdline/apt-get.cc:815
+#, c-format
+msgid "%s is already the newest version.\n"
+msgstr "%s هي النسخة الأحدث.\n"
+
+#: cmdline/apt-get.cc:834 cmdline/apt-get.cc:2114 cmdline/apt-mark.cc:62
+#, fuzzy, c-format
+msgid "%s set to manually installed.\n"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-get.cc:860
+#, fuzzy, c-format
+msgid "Selected version '%s' (%s) for '%s'\n"
+msgstr "النسخة المحددة %s (%s) للإصدارة %s\n"
+
+#: cmdline/apt-get.cc:865
+#, fuzzy, c-format
+msgid "Selected version '%s' (%s) for '%s' because of '%s'\n"
+msgstr "النسخة المحددة %s (%s) للإصدارة %s\n"
+
+#: cmdline/apt-get.cc:907
+#, c-format
+msgid "Package %s is not installed, so not removed\n"
+msgstr "الحزمة %s غير مُثبّتة، لذلك لن تُزال\n"
+
+#: cmdline/apt-get.cc:985
+msgid "Correcting dependencies..."
+msgstr "تصحيح المعتمدات..."
+
+#: cmdline/apt-get.cc:988
+msgid " failed."
+msgstr " فشل."
+
+#: cmdline/apt-get.cc:991
+msgid "Unable to correct dependencies"
+msgstr "لم يمكن تصحيح المعتمدات"
+
+#: cmdline/apt-get.cc:994
+msgid "Unable to minimize the upgrade set"
+msgstr "لم يمكن تقليص مجموعة الترقية"
+
+#: cmdline/apt-get.cc:996
+msgid " Done"
+msgstr " تم"
+
+#: cmdline/apt-get.cc:1000
+msgid "You might want to run 'apt-get -f install' to correct these."
+msgstr "قد ترغب بتنفيذ الأمر 'apt-get -f install' لتصحيح هذه."
+
+#: cmdline/apt-get.cc:1003
+msgid "Unmet dependencies. Try using -f."
+msgstr "مُعتمدات غير مستوفاة. حاول استخدام -f."
+
+#: cmdline/apt-get.cc:1028
+msgid "WARNING: The following packages cannot be authenticated!"
+msgstr "تحذير: تعذرت المصادقة على الحزم التالية!"
+
+#: cmdline/apt-get.cc:1032
+msgid "Authentication warning overridden.\n"
+msgstr "تم غض النظر عن تحذير المصادقة.\n"
+
+#: cmdline/apt-get.cc:1039
+msgid "Install these packages without verification [y/N]? "
+msgstr "تثبيت هذه الحزم دون التحقق منها [y/N]؟ "
+
+#: cmdline/apt-get.cc:1041
+msgid "Some packages could not be authenticated"
+msgstr "تعذرت المصادقة على بعض الحزم"
+
+#: cmdline/apt-get.cc:1050 cmdline/apt-get.cc:1211
+msgid "There are problems and -y was used without --force-yes"
+msgstr "هناك مشاكل وتم استخدام -y دون --force-yes"
+
+#: cmdline/apt-get.cc:1091
+msgid "Internal error, InstallPackages was called with broken packages!"
+msgstr "خطأ داخلي، تم طلب InstallPackages مع وجود حزم معطوبة!"
+
+#: cmdline/apt-get.cc:1100
+msgid "Packages need to be removed but remove is disabled."
+msgstr "حزم بحاجة للإزالة لكن الإزالة مُعطّلة."
+
+#: cmdline/apt-get.cc:1111
+msgid "Internal error, Ordering didn't finish"
+msgstr "خطأ داخلي، لم تنته عملية الترتيب"
+
+#: cmdline/apt-get.cc:1149
+msgid "How odd.. The sizes didn't match, email apt@packages.debian.org"
+msgstr "يا للغرابة.. لم تتطابق الأحجام، الرجاء مراسلة apt@packages.debian.org"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement strings, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:1156
+#, c-format
+msgid "Need to get %sB/%sB of archives.\n"
+msgstr "بحاجة إلى جلب %sب/%sب من الأرشيف.\n"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement string, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:1161
+#, c-format
+msgid "Need to get %sB of archives.\n"
+msgstr "بحاجة إلى جلب %sب من الأرشيف.\n"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement string, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:1168
+#, fuzzy, c-format
+msgid "After this operation, %sB of additional disk space will be used.\n"
+msgstr "بعد الاستخراج %sب من المساحة الإضافيّة سيتمّ استخدامها.\n"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement string, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:1173
+#, fuzzy, c-format
+msgid "After this operation, %sB disk space will be freed.\n"
+msgstr "بعد الاستخراج %sب من المساحة ستفرّغ.\n"
+
+#: cmdline/apt-get.cc:1188 cmdline/apt-get.cc:1191 cmdline/apt-get.cc:2534
+#: cmdline/apt-get.cc:2537
+#, c-format
+msgid "Couldn't determine free space in %s"
+msgstr "تعذر حساب المساحة الحرة في %s"
+
+#: cmdline/apt-get.cc:1201
+#, c-format
+msgid "You don't have enough free space in %s."
+msgstr "ليس هناك مساحة كافية في %s."
+
+#: cmdline/apt-get.cc:1217 cmdline/apt-get.cc:1237
+msgid "Trivial Only specified but this is not a trivial operation."
+msgstr ""
+
+#: cmdline/apt-get.cc:1219
+msgid "Yes, do as I say!"
+msgstr "نعم، افعل ما أقوله!"
+
+#: cmdline/apt-get.cc:1221
+#, c-format
+msgid ""
+"You are about to do something potentially harmful.\n"
+"To continue type in the phrase '%s'\n"
+" ?] "
+msgstr ""
+"أنت على وشك أن تقوم بشيء ضارّ جداً\n"
+"كي تستمر اكتب العبارة '%s'\n"
+" ؟] "
+
+#: cmdline/apt-get.cc:1227 cmdline/apt-get.cc:1246
+msgid "Abort."
+msgstr "إجهاض."
+
+#: cmdline/apt-get.cc:1242
+msgid "Do you want to continue [Y/n]? "
+msgstr "هل تريد الاستمرار [Y/n]؟"
+
+#: cmdline/apt-get.cc:1314 cmdline/apt-get.cc:2599
+#, c-format
+msgid "Failed to fetch %s  %s\n"
+msgstr "فشل إحضار %s  %s\n"
+
+#: cmdline/apt-get.cc:1332
+msgid "Some files failed to download"
+msgstr "فشل تنزيل بعض الملفات"
+
+#: cmdline/apt-get.cc:1333 cmdline/apt-get.cc:2611
+msgid "Download complete and in download only mode"
+msgstr "اكتمل التنزيل وفي وضع التنزيل فقط"
+
+#: cmdline/apt-get.cc:1339
+msgid ""
+"Unable to fetch some archives, maybe run apt-get update or try with --fix-"
+"missing?"
+msgstr ""
+"تعذر إحضار بعض الأرشيف، ربما يمكنك محاولة تنفيذ apt-get update أو إضافة --"
+"fix-missing؟"
+
+#: cmdline/apt-get.cc:1343
+msgid "--fix-missing and media swapping is not currently supported"
+msgstr "--fix-missing وتبديل الأوساط غير مدعومة حالياً"
+
+#: cmdline/apt-get.cc:1348
+msgid "Unable to correct missing packages."
+msgstr "تعذر تصحيح الحزم المفقودة."
+
+#: cmdline/apt-get.cc:1349
+msgid "Aborting install."
+msgstr "إجهاض التثبيت."
+
+#: cmdline/apt-get.cc:1377
+msgid ""
+"The following package disappeared from your system as\n"
+"all files have been overwritten by other packages:"
+msgid_plural ""
+"The following packages disappeared from your system as\n"
+"all files have been overwritten by other packages:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: cmdline/apt-get.cc:1381
+msgid "Note: This is done automatic and on purpose by dpkg."
+msgstr ""
+
+#: cmdline/apt-get.cc:1519
+#, c-format
+msgid "Ignore unavailable target release '%s' of package '%s'"
+msgstr ""
+
+#: cmdline/apt-get.cc:1551
+#, c-format
+msgid "Picking '%s' as source package instead of '%s'\n"
+msgstr ""
+
+#. if (VerTag.empty() == false && Last == 0)
+#: cmdline/apt-get.cc:1589
+#, c-format
+msgid "Ignore unavailable version '%s' of package '%s'"
+msgstr ""
+
+#: cmdline/apt-get.cc:1605
+msgid "The update command takes no arguments"
+msgstr "لا يقبل الأمر update أية مُعطيات"
+
+#: cmdline/apt-get.cc:1668
+msgid "We are not supposed to delete stuff, can't start AutoRemover"
+msgstr ""
+
+#: cmdline/apt-get.cc:1772
+msgid ""
+"Hmm, seems like the AutoRemover destroyed something which really\n"
+"shouldn't happen. Please file a bug report against apt."
+msgstr ""
+
+#.
+#. if (Packages == 1)
+#. {
+#. c1out << endl;
+#. c1out <<
+#. _("Since you only requested a single operation it is extremely likely that\n"
+#. "the package is simply not installable and a bug report against\n"
+#. "that package should be filed.") << endl;
+#. }
+#.
+#: cmdline/apt-get.cc:1775 cmdline/apt-get.cc:1944
+msgid "The following information may help to resolve the situation:"
+msgstr "قد تساعد المعلومات التالية في حل المشكلة:"
+
+#: cmdline/apt-get.cc:1779
+#, fuzzy
+msgid "Internal Error, AutoRemover broke stuff"
+msgstr "خطأ داخلي، عطب AllUpgrade بعض الأشياء"
+
+#: cmdline/apt-get.cc:1786
+#, fuzzy
+msgid ""
+"The following package was automatically installed and is no longer required:"
+msgid_plural ""
+"The following packages were automatically installed and are no longer "
+"required:"
+msgstr[0] "سيتم تثبيت الحزم الجديدة التالية:"
+msgstr[1] "سيتم تثبيت الحزم الجديدة التالية:"
+
+#: cmdline/apt-get.cc:1790
+#, fuzzy, c-format
+msgid "%lu package was automatically installed and is no longer required.\n"
+msgid_plural ""
+"%lu packages were automatically installed and are no longer required.\n"
+msgstr[0] "سيتم تثبيت الحزم الجديدة التالية:"
+msgstr[1] "سيتم تثبيت الحزم الجديدة التالية:"
+
+#: cmdline/apt-get.cc:1792
+msgid "Use 'apt-get autoremove' to remove them."
+msgstr ""
+
+#: cmdline/apt-get.cc:1811
+msgid "Internal error, AllUpgrade broke stuff"
+msgstr "خطأ داخلي، عطب AllUpgrade بعض الأشياء"
+
+#: cmdline/apt-get.cc:1910
+msgid "You might want to run 'apt-get -f install' to correct these:"
+msgstr "قد ترغب بتشغيل 'apt-get -f install' لتصحيح هذه:"
+
+#: cmdline/apt-get.cc:1914
+msgid ""
+"Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a "
+"solution)."
+msgstr ""
+"مُعتمدات غير مستوفاة. جرب 'apt-get -f install' بدون أسماء حزم (أو حدّد حلاً)."
+
+#: cmdline/apt-get.cc:1929
+msgid ""
+"Some packages could not be installed. This may mean that you have\n"
+"requested an impossible situation or if you are using the unstable\n"
+"distribution that some required packages have not yet been created\n"
+"or been moved out of Incoming."
+msgstr ""
+
+#: cmdline/apt-get.cc:1950
+msgid "Broken packages"
+msgstr "حزم معطوبة"
+
+#: cmdline/apt-get.cc:1976
+msgid "The following extra packages will be installed:"
+msgstr "سيتم تثبيت الحزم الإضافيّة التالية:"
+
+#: cmdline/apt-get.cc:2066
+msgid "Suggested packages:"
+msgstr "الحزم المقترحة:"
+
+#: cmdline/apt-get.cc:2067
+msgid "Recommended packages:"
+msgstr "الحزم المستحسنة:"
+
+#: cmdline/apt-get.cc:2109
+#, c-format
+msgid "Couldn't find package %s"
+msgstr "تعذر العثور على الحزمة %s"
+
+#: cmdline/apt-get.cc:2116 cmdline/apt-mark.cc:64
+#, fuzzy, c-format
+msgid "%s set to automatically installed.\n"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-get.cc:2124 cmdline/apt-mark.cc:108
+msgid ""
+"This command is deprecated. Please use 'apt-mark auto' and 'apt-mark manual' "
+"instead."
+msgstr ""
+
+#: cmdline/apt-get.cc:2140
+msgid "Calculating upgrade... "
+msgstr "حساب الترقية..."
+
+#: cmdline/apt-get.cc:2143
+msgid "Failed"
+msgstr "فشل"
+
+#: cmdline/apt-get.cc:2148
+msgid "Done"
+msgstr "تمّ"
+
+#: cmdline/apt-get.cc:2215 cmdline/apt-get.cc:2223
+msgid "Internal error, problem resolver broke stuff"
+msgstr ""
+
+#: cmdline/apt-get.cc:2251 cmdline/apt-get.cc:2287
+msgid "Unable to lock the download directory"
+msgstr "تعذر قَفْل دليل التنزيل"
+
+#: cmdline/apt-get.cc:2338
+#, c-format
+msgid "Downloading %s %s"
+msgstr ""
+
+#: cmdline/apt-get.cc:2396
+msgid "Must specify at least one package to fetch source for"
+msgstr "يجب تحديد حزمة واحدة على الأقل لجلب مصدرها"
+
+#: cmdline/apt-get.cc:2436 cmdline/apt-get.cc:2748
+#, c-format
+msgid "Unable to find a source package for %s"
+msgstr "تعذر العثور على مصدر الحزمة %s"
+
+#: cmdline/apt-get.cc:2453
+#, c-format
+msgid ""
+"NOTICE: '%s' packaging is maintained in the '%s' version control system at:\n"
+"%s\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:2458
+#, c-format
+msgid ""
+"Please use:\n"
+"bzr branch %s\n"
+"to retrieve the latest (possibly unreleased) updates to the package.\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:2511
+#, c-format
+msgid "Skipping already downloaded file '%s'\n"
+msgstr "تخطي الملف '%s' المنزل مسبقاً\n"
+
+#: cmdline/apt-get.cc:2548
+#, c-format
+msgid "You don't have enough free space in %s"
+msgstr "ليس هناك مساحة كافية في %s"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement strings, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:2557
+#, c-format
+msgid "Need to get %sB/%sB of source archives.\n"
+msgstr "يجب جلب %sب/%sب من الأرشيفات المصدرية.\n"
+
+#. TRANSLATOR: The required space between number and unit is already included
+#. in the replacement string, so %sB will be correctly translate in e.g. 1,5 MB
+#: cmdline/apt-get.cc:2562
+#, c-format
+msgid "Need to get %sB of source archives.\n"
+msgstr "يجب جلب %sب من الأرشيفات المصدريّة.\n"
+
+#: cmdline/apt-get.cc:2568
+#, c-format
+msgid "Fetch source %s\n"
+msgstr "إحضار المصدر %s\n"
+
+#: cmdline/apt-get.cc:2606
+msgid "Failed to fetch some archives."
+msgstr "فشل إحضار بعض الأرشيفات."
+
+#: cmdline/apt-get.cc:2637
+#, c-format
+msgid "Skipping unpack of already unpacked source in %s\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:2649
+#, c-format
+msgid "Unpack command '%s' failed.\n"
+msgstr "أمر فك الحزمة '%s' فشل.\n"
+
+#: cmdline/apt-get.cc:2650
+#, c-format
+msgid "Check if the 'dpkg-dev' package is installed.\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:2672
+#, c-format
+msgid "Build command '%s' failed.\n"
+msgstr "أمر البناء '%s' فشل.\n"
+
+#: cmdline/apt-get.cc:2692
+msgid "Child process failed"
+msgstr ""
+
+#: cmdline/apt-get.cc:2711
+msgid "Must specify at least one package to check builddeps for"
+msgstr ""
+
+#: cmdline/apt-get.cc:2736
+#, c-format
+msgid ""
+"No architecture information available for %s. See apt.conf(5) APT::"
+"Architectures for setup"
+msgstr ""
+
+#: cmdline/apt-get.cc:2753
+#, c-format
+msgid "Unable to get build-dependency information for %s"
+msgstr ""
+
+#: cmdline/apt-get.cc:2773
+#, c-format
+msgid "%s has no build depends.\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:2909
+#, c-format
+msgid ""
+"%s dependency for %s can't be satisfied because %s is not allowed on '%s' "
+"packages"
+msgstr ""
+
+#: cmdline/apt-get.cc:2930
+#, c-format
+msgid ""
+"%s dependency for %s cannot be satisfied because the package %s cannot be "
+"found"
+msgstr ""
+
+#: cmdline/apt-get.cc:2953
+#, c-format
+msgid "Failed to satisfy %s dependency for %s: Installed package %s is too new"
+msgstr ""
+
+#: cmdline/apt-get.cc:2992
+#, c-format
+msgid ""
+"%s dependency for %s cannot be satisfied because candidate version of "
+"package %s can't satisfy version requirements"
+msgstr ""
+
+#: cmdline/apt-get.cc:2998
+#, c-format
+msgid ""
+"%s dependency for %s cannot be satisfied because package %s has no candidate "
+"version"
+msgstr ""
+
+#: cmdline/apt-get.cc:3021
+#, c-format
+msgid "Failed to satisfy %s dependency for %s: %s"
+msgstr ""
+
+#: cmdline/apt-get.cc:3037
+#, c-format
+msgid "Build-dependencies for %s could not be satisfied."
+msgstr ""
+
+#: cmdline/apt-get.cc:3042
+msgid "Failed to process build dependencies"
+msgstr ""
+
+#: cmdline/apt-get.cc:3135 cmdline/apt-get.cc:3147
+#, fuzzy, c-format
+msgid "Changelog for %s (%s)"
+msgstr "الاتصال بـ%s (%s)"
+
+#: cmdline/apt-get.cc:3269
+msgid "Supported modules:"
+msgstr "الوحدات المدعومة:"
+
+#: cmdline/apt-get.cc:3310
+msgid ""
+"Usage: apt-get [options] command\n"
+"       apt-get [options] install|remove pkg1 [pkg2 ...]\n"
+"       apt-get [options] source pkg1 [pkg2 ...]\n"
+"\n"
+"apt-get is a simple command line interface for downloading and\n"
+"installing packages. The most frequently used commands are update\n"
+"and install.\n"
+"\n"
+"Commands:\n"
+"   update - Retrieve new lists of packages\n"
+"   upgrade - Perform an upgrade\n"
+"   install - Install new packages (pkg is libc6 not libc6.deb)\n"
+"   remove - Remove packages\n"
+"   autoremove - Remove automatically all unused packages\n"
+"   purge - Remove packages and config files\n"
+"   source - Download source archives\n"
+"   build-dep - Configure build-dependencies for source packages\n"
+"   dist-upgrade - Distribution upgrade, see apt-get(8)\n"
+"   dselect-upgrade - Follow dselect selections\n"
+"   clean - Erase downloaded archive files\n"
+"   autoclean - Erase old downloaded archive files\n"
+"   check - Verify that there are no broken dependencies\n"
+"   changelog - Download and display the changelog for the given package\n"
+"   download - Download the binary package into the current directory\n"
+"\n"
+"Options:\n"
+"  -h  This help text.\n"
+"  -q  Loggable output - no progress indicator\n"
+"  -qq No output except for errors\n"
+"  -d  Download only - do NOT install or unpack archives\n"
+"  -s  No-act. Perform ordering simulation\n"
+"  -y  Assume Yes to all queries and do not prompt\n"
+"  -f  Attempt to correct a system with broken dependencies in place\n"
+"  -m  Attempt to continue if archives are unlocatable\n"
+"  -u  Show a list of upgraded packages as well\n"
+"  -b  Build the source package after fetching it\n"
+"  -V  Show verbose version numbers\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+"See the apt-get(8), sources.list(5) and apt.conf(5) manual\n"
+"pages for more information and options.\n"
+"                       This APT has Super Cow Powers.\n"
+msgstr ""
+
+#: cmdline/apt-get.cc:3475
+msgid ""
+"NOTE: This is only a simulation!\n"
+"      apt-get needs root privileges for real execution.\n"
+"      Keep also in mind that locking is deactivated,\n"
+"      so don't depend on the relevance to the real current situation!"
+msgstr ""
+
+#: cmdline/acqprogress.cc:60
+msgid "Hit "
+msgstr ""
+
+#: cmdline/acqprogress.cc:84
+msgid "Get:"
+msgstr "جلب:"
+
+#: cmdline/acqprogress.cc:115
+msgid "Ign "
+msgstr "تجاهل"
+
+#: cmdline/acqprogress.cc:119
+msgid "Err "
+msgstr "خطأ"
+
+#: cmdline/acqprogress.cc:140
+#, c-format
+msgid "Fetched %sB in %s (%sB/s)\n"
+msgstr "جلب %sب في %s (%sب/ث)\n"
+
+#: cmdline/acqprogress.cc:230
+#, c-format
+msgid " [Working]"
+msgstr " [يعمل]"
+
+#: cmdline/acqprogress.cc:286
+#, c-format
+msgid ""
+"Media change: please insert the disc labeled\n"
+" '%s'\n"
+"in the drive '%s' and press enter\n"
+msgstr ""
+"تغيير الوسط: الرجاء إدخال القرص المُسمّى\n"
+" '%s'\n"
+"في السوّاقة '%s' وضغط مفتاح الإدخال\n"
+
+#: cmdline/apt-internal-solver.cc:36
+msgid ""
+"Usage: apt-internal-resolver\n"
+"\n"
+"apt-internal-resolver is an interface to use the current internal\n"
+"like an external resolver for the APT family for debugging or alike\n"
+"\n"
+"Options:\n"
+"  -h  This help text.\n"
+"  -q  Loggable output - no progress indicator\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+"apt.conf(5) manual pages for more information and options.\n"
+"                       This APT has Super Cow Powers.\n"
+msgstr ""
+
+#: cmdline/apt-mark.cc:49
+#, fuzzy, c-format
+msgid "%s can not be marked as it is not installed.\n"
+msgstr "إلا أنها غير مثبتة"
+
+#: cmdline/apt-mark.cc:55
+#, fuzzy, c-format
+msgid "%s was already set to manually installed.\n"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-mark.cc:57
+#, fuzzy, c-format
+msgid "%s was already set to automatically installed.\n"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-mark.cc:172
+#, fuzzy, c-format
+msgid "%s was already set on hold.\n"
+msgstr "%s هي النسخة الأحدث.\n"
+
+#: cmdline/apt-mark.cc:174
+#, fuzzy, c-format
+msgid "%s was already not hold.\n"
+msgstr "%s هي النسخة الأحدث.\n"
+
+#: cmdline/apt-mark.cc:188 cmdline/apt-mark.cc:210
+#, fuzzy, c-format
+msgid "%s set on hold.\n"
+msgstr "إلا أنه سيتم تثبيت %s"
+
+#: cmdline/apt-mark.cc:190 cmdline/apt-mark.cc:215
+#, fuzzy, c-format
+msgid "Canceled hold on %s.\n"
+msgstr "فشل فتح %s"
+
+#: cmdline/apt-mark.cc:223
+msgid "Executing dpkg failed. Are you root?"
+msgstr ""
+
+#: cmdline/apt-mark.cc:271
+msgid ""
+"Usage: apt-mark [options] {auto|manual} pkg1 [pkg2 ...]\n"
+"\n"
+"apt-mark is a simple command line interface for marking packages\n"
+"as manual or automatical installed. It can also list marks.\n"
+"\n"
+"Commands:\n"
+"   auto - Mark the given packages as automatically installed\n"
+"   manual - Mark the given packages as manually installed\n"
+"\n"
+"Options:\n"
+"  -h  This help text.\n"
+"  -q  Loggable output - no progress indicator\n"
+"  -qq No output except for errors\n"
+"  -s  No-act. Just prints what would be done.\n"
+"  -f  read/write auto/manual marking in the given file\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+"See the apt-mark(8) and apt.conf(5) manual pages for more information."
+msgstr ""
+
+#: cmdline/apt-sortpkgs.cc:89
+msgid "Unknown package record!"
+msgstr "سجل حزمة مجهول!"
+
+#: cmdline/apt-sortpkgs.cc:153
+msgid ""
+"Usage: apt-sortpkgs [options] file1 [file2 ...]\n"
+"\n"
+"apt-sortpkgs is a simple tool to sort package files. The -s option is used\n"
+"to indicate what kind of file it is.\n"
+"\n"
+"Options:\n"
+"  -h   This help text\n"
+"  -s   Use source file sorting\n"
+"  -c=? Read this configuration file\n"
+"  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+msgstr ""
+
+#: dselect/install:32
+msgid "Bad default setting!"
+msgstr "إعداد افتراضيّ سيّء!"
+
+#: dselect/install:51 dselect/install:83 dselect/install:87 dselect/install:94
+#: dselect/install:105 dselect/update:45
+msgid "Press enter to continue."
+msgstr "اضغط مفتاح الإدخال للاستمرار."
+
+#: dselect/install:91
+msgid "Do you want to erase any previously downloaded .deb files?"
+msgstr ""
+
+#: dselect/install:101
+#, fuzzy
+msgid "Some errors occurred while unpacking. Packages that were installed"
+msgstr "حدثت بعض الأخطاء أثناء فك الحزمة. سأقوم بتهيئة "
+
+#: dselect/install:102
+#, fuzzy
+msgid "will be configured. This may result in duplicate errors"
+msgstr "الحزم التي تم تثبيتها. قد يتسبب هذا بظهر أخطاء متكررة"
+
+#: dselect/install:103
+msgid "or errors caused by missing dependencies. This is OK, only the errors"
+msgstr "أو أخطاء سبّبتها المُعتمدات المفقودة. لا بأس بهذا، فقط الأخطاء"
+
+#: dselect/install:104
+msgid ""
+"above this message are important. Please fix them and run [I]nstall again"
+msgstr "أعلى هذه الرسالة مهمّة. الرجاء تصحيحها وتشغيل التثبيت مجدداً"
+
+#: dselect/update:30
+msgid "Merging available information"
+msgstr "دمج المعلومات المتوفرة"
+
+#~ msgid "Failed to exec gzip "
+#~ msgstr "فشل تنفيذ gzip"
+
+#~ msgid "Corrupted archive"
+#~ msgstr "أرشيف فاسد"
+
+#~ msgid "Tar checksum failed, archive corrupted"
+#~ msgstr "فشل تحقّق Checksum لملف Tar، الأرشيف فاسد"
+
+#~ msgid "Invalid archive signature"
+#~ msgstr "توقيع الأرشيف غير صالح"
+
+#, fuzzy
+#~ msgid "Invalid archive member header %s"
+#~ msgstr "توقيع الأرشيف غير صالح"
+
+#~ msgid "Archive is too short"
+#~ msgstr "الأرشيف قصير جداً"
+
+#~ msgid "Failed to read the archive headers"
+#~ msgstr "فشلت قراءة ترويسات الأرشيف"
+
+#~ msgid "Internal error in AddDiversion"
+#~ msgstr "خطأ داخلي في AddDiversion"
+
+#~ msgid "Duplicate conf file %s/%s"
+#~ msgstr "ملف تهيئة مُزدوج %s/%s"
+
+#~ msgid "Failed to write file %s"
+#~ msgstr "فشلت كتابة الملف %s"
+
+#~ msgid "Failed to close file %s"
+#~ msgstr "فشل إغلاق الملف %s"
+
+#~ msgid "The path %s is too long"
+#~ msgstr "المسار %s طويل جداً"
+
+#~ msgid "Unpacking %s more than once"
+#~ msgstr "فكّ تحزيم %s أكثر من مرّة"
+
+#~ msgid "The path is too long"
+#~ msgstr "المسار طويل جداً"
+
+#~ msgid "Unable to read %s"
+#~ msgstr "تعذرت قراءة %s"
+
+#~ msgid "Failed to remove %s"
+#~ msgstr "تعذرت إزالة %s"
+
+#~ msgid "Unable to create %s"
+#~ msgstr "تعذر إنشاء %s"
+
+#~ msgid "Reading package lists"
+#~ msgstr "قراءة قوائم الحزم"
+
+#~ msgid "Failed to change to the admin dir %sinfo"
+#~ msgstr "فشل تغيير دليل الإدارة إلى %sinfo"
+
+#~ msgid "Internal error getting a package name"
+#~ msgstr "خطأ داخلي أثناء الحصول على اسم الحزمة"
+
+#~ msgid "Reading file listing"
+#~ msgstr "قراءة سرد الملفات"
+
+#~ msgid "Failed reading the list file %sinfo/%s"
+#~ msgstr "فشلت قراءة ملف القائمة %sinfo/%s"
+
+#~ msgid "Internal error getting a node"
+#~ msgstr "خطأ داخلي أثناء الحصول على node"
+
+#~ msgid "Couldn't change to %s"
+#~ msgstr "تعذر التغيير إلى %s"
+
+#~ msgid "Internal error, could not locate member %s"
+#~ msgstr "خطأ داخلي، تعذر العثور على العضو %s"
+
+#~ msgid "Failed to locate a valid control file"
+#~ msgstr "فشل العثور على ملف تحكّم صالح"
+
+#, fuzzy
+#~ msgid "Couldn't open pipe for %s"
+#~ msgstr "فشل إغلاق الملف %s"
+
+#~ msgid "Failed to stat"
+#~ msgstr "فشيل تنفيذ stat"
+
+#~ msgid "Failed to set modification time"
+#~ msgstr "فشل تعيين وقت التعديل"
+
+#~ msgid "Unable to read the cdrom database %s"
+#~ msgstr "تعذرت قراءة قاعدة بيانات القرص المدمج %s"
+
+#~ msgid ""
+#~ "Please use apt-cdrom to make this CD-ROM recognized by APT. apt-get "
+#~ "update cannot be used to add new CD-ROMs"
+#~ msgstr ""
+#~ "الرجاء استخدام apt-cdrom لتعريف APT بهذا القرص المدمج. لا يمكن استخدام "
+#~ "apt-get update لإضافة أقراص مدمجة جديدة."
+
+#~ msgid "Wrong CD-ROM"
+#~ msgstr "القرص المدمج الخطأ"
+
+#~ msgid "Unable to unmount the CD-ROM in %s, it may still be in use."
+#~ msgstr "تعذر فكّ القرص المدمج من %s، إذ قد يكون لا يزال قيد الاستخدام."
+
+#~ msgid "Disk not found."
+#~ msgstr "لم يُعثر على القرص."
+
+#~ msgid "File not found"
+#~ msgstr "لم يُعثر على الملف"
+
+#~ msgid "Logging in"
+#~ msgstr "تسجيل الدخول"
+
+#~ msgid "The server refused the connection and said: %s"
+#~ msgstr "رفض الخادم اتصالنا بالرد: %s"
+
+#~ msgid "USER failed, server said: %s"
+#~ msgstr "فشل USER، ردّ الخادم: %s"
+
+#~ msgid "PASS failed, server said: %s"
+#~ msgstr "فشل PASS، ردّ الخادم: %s"
+
+#~ msgid ""
+#~ "A proxy server was specified but no login script, Acquire::ftp::"
+#~ "ProxyLogin is empty."
+#~ msgstr ""
+#~ "تم تحديد خادم بروكسي ولكن دون نص تسجيل دخول برمجي،  Acquire::ftp::"
+#~ "ProxyLogin فارغ."
+
+#~ msgid "Login script command '%s' failed, server said: %s"
+#~ msgstr "فشل أمر نص تسجيل الدخول البرمجي '%s'، ردّ الخادم: %s"
+
+#~ msgid "TYPE failed, server said: %s"
+#~ msgstr "فشل TYPE، ردّ الخادم: %s"
+
+#~ msgid "Connection timeout"
+#~ msgstr "انتهى وقت الاتصال"
+
+#~ msgid "Server closed the connection"
+#~ msgstr "أغلق الخادم الاتصال"
+
+#~ msgid "Read error"
+#~ msgstr "خطأ في القراءة"
+
+#~ msgid "Write error"
+#~ msgstr "خطأ في الكتابة"
+
+#~ msgid "Unable to send PORT command"
+#~ msgstr "تعذر إرسال الأمر PORT"
+
+#~ msgid "EPRT failed, server said: %s"
+#~ msgstr "فشل EPRT، ردّ الخادم: %s"
+
+#~ msgid "Unable to accept connection"
+#~ msgstr "تعذر قبول الاتصال"
+
+#~ msgid "Unable to fetch file, server said '%s'"
+#~ msgstr "تعذر إحضار الملف، ردّ الخادم '%s'"
+
+#~ msgid "Data transfer failed, server said '%s'"
+#~ msgstr "فشل نقل البيانات، ردّ الخادم '%s'"
+
+#~ msgid "Query"
+#~ msgstr "استعلام"
+
+#~ msgid "Connecting to %s (%s)"
+#~ msgstr "الاتصال بـ%s (%s)"
+
+#~ msgid "[IP: %s %s]"
+#~ msgstr "[IP: %s %s]"
+
+#~ msgid "Cannot initiate the connection to %s:%s (%s)."
+#~ msgstr "تعذر تمهيد الاتصال بـ%s:%s (%s)."
+
+#~ msgid "Could not connect to %s:%s (%s), connection timed out"
+#~ msgstr "تعذر الاتصال بـ%s:%s (%s)، انتهى وقت الاتصال"
+
+#~ msgid "Could not connect to %s:%s (%s)."
+#~ msgstr "تعذر الاتصال بـ%s:%s (%s)."
+
+#~ msgid "Connecting to %s"
+#~ msgstr "الاتصال بـ%s"
+
+#, fuzzy
+#~ msgid "Unable to connect to %s:%s:"
+#~ msgstr "تعذر الاتصال بـ%s %s:"
+
+#~ msgid "Waiting for headers"
+#~ msgstr "بانتظار الترويسات"
+
+#~ msgid "Bad header line"
+#~ msgstr "سطر ترويسة سيء"
+
+#~ msgid "The HTTP server sent an invalid reply header"
+#~ msgstr "أرسل خادم http ترويسة ردّ غير صالحة"
+
+#~ msgid "The HTTP server sent an invalid Content-Length header"
+#~ msgstr "أرسل خادم http ترويسة طول محتويات (ِContent-Length) غير صالحة"
+
+#~ msgid "The HTTP server sent an invalid Content-Range header"
+#~ msgstr "أرسل خادم http ترويسة مدى محتويات (ِContent-Range) غير صالحة"
+
+#~ msgid "This HTTP server has broken range support"
+#~ msgstr "خادم http له دعم مدى معطوب"
+
+#~ msgid "Unknown date format"
+#~ msgstr "نسق تاريخ مجهول"
+
+#~ msgid "Select failed"
+#~ msgstr "فشل التحديد"
+
+#~ msgid "Connection timed out"
+#~ msgstr "انتهى وقت الاتصال"
+
+#~ msgid "Error writing to output file"
+#~ msgstr "خطأ في الكتابة إلى ملف المُخرجات"
+
+#~ msgid "Error writing to file"
+#~ msgstr "خطأ في الكتابة إلى الملف"
+
+#~ msgid "Error writing to the file"
+#~ msgstr "خطأ في الكتابة إلى الملف"
+
+#~ msgid "Error reading from server. Remote end closed connection"
+#~ msgstr "خطأ في القراءة من الخادم. أقفل الطرف الآخر الاتصال"
+
+#~ msgid "Error reading from server"
+#~ msgstr "خطأ في القراءة من الخادم"
+
+#~ msgid "Bad header data"
+#~ msgstr "بيانات ترويسة سيئة"
+
+#~ msgid "Connection failed"
+#~ msgstr "فشل الاتصال"
+
+#~ msgid "Internal error"
+#~ msgstr "خطأ داخلي"
+
+#, fuzzy
+#~ msgid "Couldn't make mmap of %llu bytes"
+#~ msgstr "تعذر التغيير إلى %s"
+
+#, fuzzy
+#~ msgid "Unable to close mmap"
+#~ msgstr "تعذر فتح %s"
+
+#, fuzzy
+#~ msgid "Unable to synchronize mmap"
+#~ msgstr "تعذر إرسال الأمر PORT"
+
+#, fuzzy
+#~ msgid "Failed to truncate file"
+#~ msgstr "فشلت كتابة الملف %s"
+
+#~ msgid "Selection %s not found"
+#~ msgstr "تعذر العثور على التحديد %s"
+
+#~ msgid "Unrecognized type abbreviation: '%c'"
+#~ msgstr "اختصار نوع مجهول: '%c'"
+
+#~ msgid "Opening configuration file %s"
+#~ msgstr "فتح ملف التهيئة %s"
+
+#~ msgid "%c%s... Error!"
+#~ msgstr "%c%s... خطأ!"
+
+#~ msgid "%c%s... Done"
+#~ msgstr "%c%s... تمّ"
+
+#~ msgid "Command line option '%c' [from %s] is not known."
+#~ msgstr "خيار سطر الأمر '%c' [من %s] مجهول."
+
+#~ msgid "Command line option %s is not understood"
+#~ msgstr "خيار سطر الأمر %s غير مفهوم"
+
+#~ msgid "Option %s requires an argument."
+#~ msgstr "الخيار %s يتطلّب مُعطى."
+
+#~ msgid "Option '%s' is too long"
+#~ msgstr "الخيار '%s' طويل جداً"
+
+#~ msgid "Invalid operation %s"
+#~ msgstr "عمليّة غير صالحة %s"
+
+#, fuzzy
+#~ msgid "Could not open file descriptor %d"
+#~ msgstr "فشل إغلاق الملف %s"
+
+#, fuzzy
+#~ msgid "Problem closing the gzip file %s"
+#~ msgstr "مشكلة في إغلاق الملف"
+
+#, fuzzy
+#~ msgid "Problem closing the file %s"
+#~ msgstr "مشكلة في إغلاق الملف"
+
+#, fuzzy
+#~ msgid "Problem renaming the file %s to %s"
+#~ msgstr "مشكلة في مزامنة الملف"
+
+#, fuzzy
+#~ msgid "Problem unlinking the file %s"
+#~ msgstr "مشكلة في إغلاق الملف"
+
+#~ msgid "Problem syncing the file"
+#~ msgstr "مشكلة في مزامنة الملف"
+
+#~ msgid "Depends"
+#~ msgstr "يعتمد"
+
+#~ msgid "PreDepends"
+#~ msgstr "يعتمد مسبقاً"
+
+#~ msgid "Suggests"
+#~ msgstr "يستحسن"
+
+#~ msgid "Recommends"
+#~ msgstr "يقترح"
+
+#~ msgid "Conflicts"
+#~ msgstr "يعارض"
+
+#~ msgid "Replaces"
+#~ msgstr "يستبدل"
+
+#~ msgid "Obsoletes"
+#~ msgstr "يُلغي"
+
+#~ msgid "important"
+#~ msgstr "مهم"
+
+#~ msgid "required"
+#~ msgstr "مطلوب"
+
+#~ msgid "standard"
+#~ msgstr "قياسي"
+
+#~ msgid "optional"
+#~ msgstr "اختياري"
+
+#~ msgid "extra"
+#~ msgstr "إضافي"
+
+#, fuzzy
+#~ msgid "Reading state information"
+#~ msgstr "دمج المعلومات المتوفرة"
+
+#, fuzzy
+#~ msgid "Failed to open StateFile %s"
+#~ msgstr "فشل فتح %s"
+
+#, fuzzy
+#~ msgid "Failed to write temporary StateFile %s"
+#~ msgstr "فشلت كتابة الملف %s"
+
+#~ msgid "Opening %s"
+#~ msgstr "فتح %s"
+
+#, fuzzy
+#~ msgid "Could not configure '%s'. "
+#~ msgstr "فشل إغلاق الملف %s"
+
+#, fuzzy
+#~ msgid "Unable to lock directory %s"
+#~ msgstr "تعذر قفل دليل القائمة"
+
+#~ msgid ""
+#~ "Please insert the disc labeled: '%s' in the drive '%s' and press enter."
+#~ msgstr "الرجاء إدخال القرص المُسمّى  '%s' في السوّاقة '%s' وضغط مفتاح الإدخال."
+
+#~ msgid "Packaging system '%s' is not supported"
+#~ msgstr "نظام الحزم '%s' غير مدعوم"
+
+#~ msgid "You may want to run apt-get update to correct these problems"
+#~ msgstr "قد يساعدك تنفيذ الأمر apt-get update في تصحيح هذه المشاكل"
+
+#~ msgid "The list of sources could not be read."
+#~ msgstr "تعذرت قراءة قائمة المصادر."
+
+#, fuzzy
+#~ msgid "Error occurred while processing %s (%s%d)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewVersion1)"
+
+#~ msgid "rename failed, %s (%s -> %s)."
+#~ msgstr "فشل إعادة التسمية ، %s (%s -> %s)."
+
+#~ msgid "MD5Sum mismatch"
+#~ msgstr "MD5Sum غير متطابقة"
+
+#, fuzzy
+#~ msgid "Hash Sum mismatch"
+#~ msgstr "MD5Sum غير متطابقة"
+
+#, fuzzy
+#~ msgid "Unable to find hash sum for '%s' in Release file"
+#~ msgstr "تعذر فتح ملف قاعدة البيانات %s: %s"
+
+#~ msgid "Size mismatch"
+#~ msgstr "الحجم غير متطابق"
+
+#, fuzzy
+#~ msgid "Unable to parse Release file %s"
+#~ msgstr "تعذر فتح ملف قاعدة البيانات %s: %s"
+
+#, fuzzy
+#~ msgid "No sections in Release file %s"
+#~ msgstr "لاحظ، تحديد %s بدلاً من %s\n"
+
+#, fuzzy
+#~ msgid "Invalid 'Valid-Until' entry in Release file %s"
+#~ msgstr "لاحظ، تحديد %s بدلاً من %s\n"
+
+#, fuzzy
+#~ msgid "Invalid 'Date' entry in Release file %s"
+#~ msgstr "تعذر فتح ملف قاعدة البيانات %s: %s"
+
+#~ msgid "Identifying.. "
+#~ msgstr "جاري التعرف..."
+
+#, fuzzy
+#~ msgid "Unmounting CD-ROM...\n"
+#~ msgstr "فك تركيب القرص المدمج..."
+
+#~ msgid "Unmounting CD-ROM\n"
+#~ msgstr "فك تركيب القرص المدمج\n"
+
+#~ msgid "Waiting for disc...\n"
+#~ msgstr "بانتظار القرص...\n"
+
+#~ msgid "Mounting CD-ROM...\n"
+#~ msgstr "تركيب القرص...\n"
+
+#~ msgid "That is not a valid name, try again.\n"
+#~ msgstr "هذا الاسم غير صالح، حاول مجدداً.\n"
+
+#~ msgid ""
+#~ "This disc is called: \n"
+#~ "'%s'\n"
+#~ msgstr ""
+#~ "هذا القرص مسمى: \n"
+#~ "'%s'\n"
+
+#~ msgid "Copying package lists..."
+#~ msgstr "نسخ قوائم الحزم..."
+
+#~ msgid "Writing new source list\n"
+#~ msgstr "كتابة لائحة المصادر الجديدة\n"
+
+#, fuzzy
+#~ msgid "Skipping nonexistent file %s"
+#~ msgstr "فتح ملف التهيئة %s"
+
+#, fuzzy
+#~ msgid "Hash mismatch for: %s"
+#~ msgstr "MD5Sum غير متطابقة"
+
+#, fuzzy
+#~ msgid "No keyring installed in %s."
+#~ msgstr "إجهاض التثبيت."
+
+#~ msgid "Release '%s' for '%s' was not found"
+#~ msgstr "تعذر العثور على الإصدارة '%s' للحزمة '%s'"
+
+#~ msgid "Version '%s' for '%s' was not found"
+#~ msgstr "تعذر العثور على النسخة '%s' للحزمة '%s'"
+
+#, fuzzy
+#~ msgid "Couldn't find task '%s'"
+#~ msgstr "تعذر العثور على الحزمة %s"
+
+#, fuzzy
+#~ msgid "Couldn't find any package by regex '%s'"
+#~ msgstr "تعذر العثور على الحزمة %s"
+
+#, fuzzy
+#~ msgid "Installing %s"
+#~ msgstr "تم تثبيت %s"
+
+#~ msgid "Configuring %s"
+#~ msgstr "تهيئة %s"
+
+#~ msgid "Removing %s"
+#~ msgstr "إزالة %s"
+
+#, fuzzy
+#~ msgid "Completely removing %s"
+#~ msgstr "تمت إزالة %s بالكامل"
+
+#, fuzzy
+#~ msgid "Could not open file '%s'"
+#~ msgstr "فشل إغلاق الملف %s"
+
+#~ msgid "Preparing %s"
+#~ msgstr "تحضير %s"
+
+#~ msgid "Unpacking %s"
+#~ msgstr "فتح %s"
+
+#~ msgid "Preparing to configure %s"
+#~ msgstr "التحضير لتهيئة %s"
+
+#~ msgid "Installed %s"
+#~ msgstr "تم تثبيت %s"
+
+#~ msgid "Preparing for removal of %s"
+#~ msgstr "التحضير لإزالة %s"
+
+#~ msgid "Removed %s"
+#~ msgstr "تم إزالة %s"
+
+#~ msgid "Preparing to completely remove %s"
+#~ msgstr "التحضير لإزالة %s بالكامل"
+
+#~ msgid "Completely removed %s"
+#~ msgstr "تمت إزالة %s بالكامل"
+
+#, fuzzy
+#~ msgid "Unable to lock the administration directory (%s), are you root?"
+#~ msgstr "تعذر قفل دليل القائمة"
+
+#, fuzzy
+#~ msgid "Can not read mirror file '%s'"
+#~ msgstr "فشل إغلاق الملف %s"
+
+#~ msgid "Error occurred while processing %s (NewPackage)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewPackage)"
+
+#~ msgid "Error occurred while processing %s (UsePackage1)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (UserPackage1)"
+
+#, fuzzy
+#~ msgid "Error occurred while processing %s (NewFileDesc1)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewFileVer1)"
+
+#~ msgid "Error occurred while processing %s (UsePackage2)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (UserPackage2)"
+
+#~ msgid "Error occurred while processing %s (NewFileVer1)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewFileVer1)"
+
+#~ msgid "Error occurred while processing %s (UsePackage3)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (UsePackage3)"
+
+#, fuzzy
+#~ msgid "Error occurred while processing %s (NewFileDesc2)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewFileVer1)"
+
+#~ msgid "Internal error, could not locate member"
+#~ msgstr "خطأ داخلي، تعذر العثور على العضو"
+
+#~ msgid "Error occurred while processing %s (NewVersion2)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewVersion2)"
+
+#~ msgid "       %4i %s\n"
+#~ msgstr "       %4i %s\n"
+
+#~ msgid "%4i %s\n"
+#~ msgstr "%4i %s\n"
+
+#, fuzzy
+#~ msgid "Processing triggers for %s"
+#~ msgstr "خطأ في معالجة الدليل %s"
+
+#, fuzzy
+#~ msgid "Line %d too long (max %lu)"
+#~ msgstr "السطر %d طويل جداً (أقصاه %d)"
+
+#, fuzzy
+#~ msgid "Line %d too long (max %d)"
+#~ msgstr "السطر %d طويل جداً (أقصاه %d)"
+
+#, fuzzy
+#~ msgid "Error occured while processing %s (NewFileDesc1)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewFileVer1)"
+
+#, fuzzy
+#~ msgid "Error occured while processing %s (NewFileDesc2)"
+#~ msgstr "حدث خطأ أثناء معالجة %s (NewFileVer1)"
+
+#, fuzzy
+#~ msgid "openpty failed\n"
+#~ msgstr "فشل التحديد"
+
+#~ msgid "File date has changed %s"
+#~ msgstr "تغير تاريخ الملف %s"

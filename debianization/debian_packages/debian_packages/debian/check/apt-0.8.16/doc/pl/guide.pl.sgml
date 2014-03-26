@@ -1,0 +1,644 @@
+<!-- -*- mode: sgml; mode: fold -*- -->
+<!doctype debiandoc  PUBLIC  "-//DebianDoc//DTD DebianDoc//EN"><debiandoc>
+ <book>
+  <titlepag>
+   <title>
+     Podręcznik użytkownika APT
+   </title>
+   <author>
+     <name>Jason Gunthorpe </name><email>jgg@debian.org</email>
+   </author>
+   <version>
+     $Id: guide.sgml,v 1.7 2003/04/26 23:26:13 doogie Exp $
+   </version>
+   <abstract>
+     Dokument zawiera opis używania menadżera pakietów APT.
+   </abstract>
+   <copyright>
+    <copyrightsummary>
+      Copyright &copy; Jason Gunthorpe, 1998.
+    </copyrightsummary>
+    <p>
+      "APT" i ten dokument są oprogramowaniem wolnodostępnym, które można
+      rozpowszechniać oraz zmieniać zgodnie z postanowieniami drugiej albo
+      (wedle uznania) dowolnej późniejszej wersji "Ogólnej Licencji
+      Publicznej GNU" (GNU General Public License) publikowanej przez
+      "Fundację Wolnego Oprogramowania (Free Software Foundation).
+    </p>
+    <p>
+      Więcej szczegółów można uzyskać, przeglądając plik zawierający pełen
+      tekst licencji (w systemach Debian jest to plik
+      /usr/share/common-licenses/GPL).
+    </p>
+   </copyright>
+  </titlepag>
+  <toc detail="sect">
+ 
+ <chapt>
+  <heading>
+    Ogólne
+  </heading>
+  <p>
+    Pakiet APT składa się z dwóch części: z metody APT programu
+    <prgn>dselect</prgn> oraz z programu <prgn>apt-get</prgn> będącego
+    interfejsem linii poleceń. Obie części pozwalają na instalowanie i
+    usuwanie pakietów oraz na pobieranie nowych pakietów z Internetu.
+  </p>
+  <sect>
+   <heading>
+     Budowa systemu pakietów
+   </heading>
+   <p>
+     System pakietów Debiana zawiera sporą ilość informacji skojarzonych z
+     każdym pakietem, zapewniających integralność pakietów w
+     systemie. Najbardziej widoczną cechą systemu pakietów jest system
+     zależności.
+   </p>
+   <p>
+     System zależności pozwala poszczególnym programom używać wspólnych
+     elementów systemu, takich jak biblioteki. Upraszcza także umieszczanie
+     rzadko używanych części programów w oddzielnych pakietach, tak aby
+     zmniejszyć liczbę pakietów instalowanych przez przeciętnego
+     użytkownika. Pozwala także wybierać programy odpowiedzialne za
+     dostarczanie poczty, serwery X-ów itp.
+   </p>
+   <p>
+     Pierwszym krokiem potrzebnym do zrozumienia systemu zależności jest
+     zrozumienie koncepcji prostej zależności. Prosta zależność oznacza, że
+     dany pakiet do poprawnego działania wymaga zainstalowania innego
+     pakietu.
+   </p>
+   <p>
+     Na przykład mailcrypt jest rozszerzeniem edytora emacs, umożliwiającym
+     szyfrowanie e-maili za pomocą programu GPG. Bez zainstalowanego pakietu
+     GPG, mailcrypt jest bezużyteczny, dlatego mailcrypt zawiera prostą
+     zależność od GPG. Ma także prostą zależność od pakietu emacs, ponieważ
+     jest rozszerzeniem emacsa, więc i bez emacsa jest równie bezużyteczny.
+   </p>
+   <p>
+     Inną ważną zależnością, którą należy zrozumieć, jest konflikt. Oznacza
+     to, że dany pakiet może nie działać albo może być szkodliwy dla
+     systemu, jeżeli razem z nim jest zainstalowany inny pakiet. Jako
+     przykład rozważmy program odpowiedzialny za dostarczanie poczty
+     (ang. "mail transport agent") taki jak sendmail, exim lub qmail. Nie
+     jest możliwe jednoczesne zainstalowanie dwóch takich programów,
+     ponieważ oba musiałyby nasłuchiwać na tym samym porcie sieciowym, żeby
+     odebrać e-maile. Próba zainstalowanie obu poważnie uszkodzi
+     system. Dlatego też wszystkie programy obsługi dostarczania poczty są w
+     konflikcie ze wszystkimi innymi programami obsługującymi dostarczanie
+     poczty.
+   </p>
+   <p>
+     Dodatkową komplikacją jest możliwość, że dany pakiet może udawać inny
+     pakiet. Proszę rozważyć jako przykład, że  exim i sendmail praktycznie
+     rzecz biorąc są identyczne - oba dostarczają pocztę, oba mają wspólny
+     interfejs. Dlatego też system pakietów daje im możliwość
+     zadeklarowania, że oba są programami obsługującymi dostarczanie
+     poczty.Tak więc zarówno exim, jak i sendmail deklarują, że dostarczają
+     pakiet o nazwie mail-transport-agent, od którego mogą zależeć pakiety,
+     wymagające do swojego działania programu obsługi poczty. Może to być
+     bardzo mylące podczas próby ręcznego naprawiania zależności pakietów.
+   </p>
+   <p>
+     W dowolnym czasie pojedyncza zależność może być lub nie być spełniona
+     przez obecnie zainstalowane pakiety. ATP próbuje rozwiązać zależności
+     używając pewnej liczby algorytmów pomagających w wyborze pakietów do
+     zainstalowania.
+   </p>
+  </sect>
+ </chapt>
+ <chapt>
+  <heading>
+    apt-get
+  </heading>
+  <p>
+    <prgn>apt-get</prgn> dostarcza prostego sposobu na zainstalowanie
+    pakietów z linii poleceń. W przeciwieństwie do <prgn>dpkg</prgn>,
+    <prgn>apt-get</prgn> nie posługuje się nazwami plików ".deb", lecz używa
+    nazw pakietów i może zainstalować tylko archiwa ".deb" ze
+    skonfigurowanych <em>źródeł</em>.
+  </p>
+  <p>
+    Pierwszą rzeczą <footnote><p> Aby używać serwera proxy, należy najpierw
+    ustawić zmienną środowiskową http_proxy, proszę przeczytać
+    sources.list(5)</p></footnote>, którą należy zrobić przed użyciem
+    <prgn>apt-get</prgn> jest pobranie listy pakietów (ze <em>źródeł</em>
+    wymienionych w pliku sources.list(5)), tak żeby APT wiedział, jakie
+    pakiety są dostępne. Robi się to za pomocą polecenia <tt>apt-get
+    update</tt>. Na przykład:
+  </p>
+  <p>
+   <example>
+# apt-get update
+Pob: http://ftp.de.debian.org/debian-non-US/ stable/binary-i386/ Packages
+Pob: http://llug.sep.bnl.gov/debian/ testing/contrib Packages
+Czytanie list pakietów... Gotowe
+Budowanie drzewa zależności.. Gotowe
+</example>
+  </p>
+  <p>
+    Po zaktualizowaniu można użyć następnych poleceń:
+   <taglist>
+    <tag>
+      upgrade
+    </tag>
+    <item>
+     <p>
+       Upgrade spróbuje delikatnie zaktualizować cały system. Upgrade nigdy
+       nie zainstaluje nowego pakietu ani nie usunie istniejącego pakiety,
+       ani też nie zaktualizuje pakietu do wersji powodującej, że inny
+       pakiet przestanie działać. Można używać tego polecenia codziennie do
+       w miarę bezpiecznych aktualizacji systemu. Upgrade wypisze listę
+       pakietów, których nie potrafił zaktualizować, co zazwyczaj oznacza,
+       że zależą one od nowych pakietów lub są w konflikcie z innymi
+       pakietami. Można wymusić instalację takich pakietów, używając do tego
+       <prgn>dselect</prgn> lub <tt>apt-get install</tt>.
+     </p>
+    </item>
+    <tag>
+      install
+    </tag>
+    <item>
+     <p>
+       Install jest używane do instalowania pakietów przez podanie ich
+       nazwy. Pakiet jest automatycznie pobierany i instalowany. Może być to
+       użyteczne, gdy już zna się nazwę pakietu do zainstalowania i nie chce
+       się uruchamiać graficznego interfejsu wyboru pakietów. Można podać
+       dowolną liczbę nazw pakietów do zainstalowania - wszystkie będą
+       pobrane. Install próbuje automatycznie rozwiązać problemy z
+       zależnościami w podanych pakietach, wypisze podsumowanie i poprosi o
+       potwierdzenie, jeśli zamierza zmienić cokolwiek innego niż pakiety
+       podane jako jego argumenty.
+     </p>
+    </item>
+    <tag>
+      dist-upgrade
+    </tag>
+    <item>
+     <p>
+       Dist-upgrade powoduje całkowitą aktualizację systemu i jest
+       zaprojektowany do uproszczenia aktualizacji z jednego wydania Debiana
+       do kolejnego. Używa wyrafinowanych algorytmów do określenia
+       najlepszego zbioru pakietów do zainstalowania, aktualizacji lub
+       usunięcia, tak aby zaktualizować jak najwięcej pakietów w systemie do
+       nowszego wydania. W niektórych sytuacjach, może być prościej użyć
+       dist-upgrade niż ręcznie rozwiązywać zależności w programie
+       <prgn>dselect</prgn>. Kiedy dist-upgrade zakończy działanie, można
+       użyć programu <prgn>dselect</prgn> do zainstalowania pominiętych
+       pakietów.
+     </p>
+     <p>
+       Jest ważne, aby dokładnie przyjrzeć się temu, co dist-upgrade
+       zamierza zrobić, gdyż jego decyzje mogą czasami zdumiewać.
+     </p>
+    </item>
+   </taglist>
+  </p>
+  <p>
+    Zachowanie programu <prgn>apt-get</prgn> można kontrolować za pomocą
+    opcji linii poleceń szczegółowo opisanych w stronie podręcznika
+    ekranowego <manref section="8" name="apt-get">. Najbardziej użyteczną z
+    nich jest <tt>-d</tt>, która nie instaluje pobranych plików. Jeśli
+    system musi pobrać dużą liczbę pakietów, instalowanie ich może być
+    niepożądane, jeśli coś pójdzie nie tak. Jeśli użyto <tt>-d</tt>, to
+    pobrane archiwa można zainstalować, ponownie uruchamiając polecenie,
+    które spowodowało ich pobranie, tym razem bez opcji <tt>-d</tt>.
+  </p>
+ </chapt>
+ <chapt>
+  <heading>
+    DSelect
+  </heading>
+  <p>
+    Metoda APT <prgn>dselect</prgn> dostarcza kompletnego systemu APT w
+    interfejsie użytkownika programu wyboru pakietów
+    <prgn>dselect</prgn>. <prgn>dselect</prgn> może być użyty do wybrania
+    pakietów przeznaczonych do zainstalowania lub usunięcia, a APT
+    zainstaluje lub usunie te pakiety.
+  </p>
+  <p>
+    Aby włączyć metodę APT należy wybrać opcję "[A] Dostęp" w programie
+    <prgn>dselect</prgn> , a następnie wybrać metodę APT. Użytkownik
+    zostanie poproszony o skonfigurowanie listy <em>źródeł</em>, będących
+    lokalizacjami, z których będą pobierane pakiety. Mogą być to strony
+    internetowe, lokalne serwery lustrzane Debiana lub CDROM-y. Każde źródło
+    może dostarczać tylko fragmentu pełnego archiwum Debiana, a APT
+    automatycznie połączy je w kompletny zbiór pakietów. Jeśli używany jest
+    CDROM, to dobrym pomysłem jest podanie najpierw jego, a potem podanie
+    mirrorów umożliwiających dostęp do najnowszych wersji pakietów
+    zawierających poprawki błędów. APT automatycznie użyje pakietów z
+    CDROM-u zanim zacznie pobierać pakiety z Internetu.
+  </p>
+  <p>
+   <example>
+  Ustawianie listy źródłowych lokalizacji dystrybucji
+	 
+ Proszę podać bazowy URL dystrybucji Debiana.
+ Obsługiwane schematy połączeń to: http ftp file
+	   
+ Przykłady:
+      file:/mnt/debian,
+      ftp://ftp.debian.org/debian,
+      http://ftp.pl.debian.org/debian,
+      
+      
+ URL [http://llug.sep.bnl.gov/debian]: 
+</example>
+  </p>
+  <p>
+    Ustawianie źródeł zaczyna się od pytania o bazową lokalizację
+    Debiana. Domyślną wartością jest mirror HTTP. Następnie użytkownik jest
+    pytany o dystrybucję do pobrania.
+  </p>
+  <p>
+   <example>
+ Proszę podać znacznik dystrybucji do pobrania lub ścieżkę do pliku
+ pakietów kończącą się znakiem "/". Zazwyczaj znacznikiem dystrybucji
+ jest coś w rodzaju: stable unstable testing non-US
+   
+ Dystrybucja [stable]: 
+</example>
+  </p>
+  <p>
+    Dystrybucja odnosi się do wersji Debiana: <em>stable</em>(stabilna) to
+    najnowsza wydana wersja, a <em>unstable</em> (niestabilna) to wersja
+    rozwojowa. <em>non-US</em> jest dostępna tylko na wybranych serwerach
+    lustrzanych i zawiera pakiety, które wykorzystują technologie
+    szyfrowania danych lub inne rzeczy, które nie mogą być eksportowane z
+    serwerów umieszczonych w Stanach Zjednoczonych. Importowanie tych
+    pakietów do Stanów Zjednoczonych jest jednakże legalne.
+  </p>
+  <p>
+   <example>
+ Proszę podać komponenty do pobrania
+ Zazwyczaj komponentem jest coś w rodzaju: main contrib non-free
+  
+ Komponenty [main contrib non-free]:
+</example>
+  </p>
+  <p>
+    Lista komponentów jest listą pod-dystrybucji do pobrania. Dystrybucja
+    jest podzielona ze względu na licencje oprogramowania: main (główna)
+    zawiera pakiety zgodne z DFSG ("Wytycznymi Debiana w sprawie Wolnego
+    Oprogramowania"),contrib i non-free zawierają pakiety, które zawierają
+    restrykcje związane z ich używaniem lub rozpowszechnianiem.
+  </p>
+  <p>
+    Można dodać dowolną liczbę źródeł. Skrypt konfigurujący będzie
+    kontynuował odpytywanie użytkownika dopóty, dopóki nie poda wszystkich
+    źródeł, które chciał skonfigurować.
+  </p>
+  <p>
+    Przed rozpoczęciem używania programu <prgn>dselect</prgn> należy w menu
+    tego programu wybrać "[U] Aktualizacja", abyzaktualizować listę
+    dostępnych pakietów. To polecenie jest nadzbiorem polecenia <tt>apt-get
+    update</tt>, zapewniającym programowi <prgn>dselect</prgn> dostęp do
+    pobranych informacji o pakietach. "[U] Aktualizacja" musi być wykonana,
+    nawet jeśli wcześniej uruchomiono <tt>apt-get update</tt>.
+  </p>
+  <p>
+    Następnie można wybrać pakiety do zainstalowania, używając opcji "[S]
+    Wybór", a potem zainstalować te pakiety opcją "[I] Instalacja". Używanie
+    metody APT czyni opcje "[C] Konfiguracja" i "[R] Usuwanie"
+    bezużytecznymi, gdyż "[I] Instalacja" przeprowadza również te dwie
+    operacje.
+  </p>
+  <p>
+    Domyślnie APT automatycznie usunie pliki pakietów (.deb), gdy tylko
+    zostaną zainstalowane. Aby zmienić to zachowanie, proszę umieścić
+    <tt>Dselect::clean "prompt";</tt> w /etc/apt/apt.conf.
+  </p>
+ </chapt>
+ <chapt>
+  <heading>
+    Interfejs
+  </heading>
+  <p>
+    Metoda APT programu <prgn>dselect</prgn> i program <prgn>apt-get</prgn>
+    dzielą wspólny interfejs. Jest to prosty system, który najpierw
+    informuje użytkownika, co będzie zrobione, a następnie to
+    robi<footnote><p>Metoda programu <prgn>dselect</prgn> jest tak naprawdę
+    zbiorem skryptów wywołujących <prgn>apt-get</prgn>. Metoda ta ma
+    jednakże większą funkcjonalność niż sam program
+    <prgn>apt-get</prgn>.</p></footnote>. Po wyświetleniu podsumowania
+    informującego o tym, co będzie zrobione, APT wyświetla komunikaty
+    dotyczące postępu przeprowadzanych operacji, tak żeby można było
+    oszacować czas pozostały do ich zakończenia.
+  </p>
+  <sect>
+   <heading>
+     Uruchamianie
+   </heading>
+   <p>
+     Przed każdą operacją, z wyjątkiem update, APT przeprowadza pewne akcje
+     przygotowujące wewnętrzny stan. Sprawdza również stan systemu. Te same
+     operacje można przeprowadzić w dowolnej chwili, uruchamiając
+     <tt>apt-get check</tt>.
+   </p>
+   <p>
+    <example>
+# apt-get check
+Czytanie list pakietów... Gotowe
+Budowanie drzewa zależności... Gotowe
+</example>
+   </p>
+   <p>
+     Pierwszą rzeczą, którą robi, jest wczytanie wszystkich plików pakietów
+     do pamięci. APT używa  buforowania, tak żeby przyspieszyć tę operację
+     przy następnym uruchomieniu. Jeśli nie znajdzie niektórych plików
+     pakietów, to wypisze ostrzeżenie, a te pakiety zignoruje.
+   </p>
+   <p>
+     Końcową operacją jest szczegółowa analiza zależności w
+     systemie. Sprawdzana jest każda zależność każdego pakietu
+     zainstalowanego lub rozpakowanego. W razie wykrycia problemów z
+     zależnościami <prgn>apt-get</prgn> wypisze odpowiedni komunikat i
+     odmówi dalszego działania.
+   </p>
+   <p>
+    <example>
+# apt-get check
+Czytanie list pakietów... Gotowe
+Budowanie drzewa zależności... Gotowe
+Należy uruchomić "apt-get -f install", aby je naprawić.
+Następujące pakiety mają niespełnione zależności:
+  9fonts: Wymaga: xlib6g ale nie jest zainstalowany
+  uucp: Wymaga: mailx ale nie jest zainstalowany
+  blast: Wymaga: xlib6g (>= 3.3-5) ale nie jest zainstalowany
+  adduser: Wymaga: perl-base ale nie jest zainstalowany
+  aumix: Wymaga: libgpmg1 but ale nie jest zainstalowany
+  debiandoc-sgml: Wymaga: sgml-base ale nie jest zainstalowany
+  bash-builtins: Wymaga: bash (>= 2.01) but 2.0-3 is installed
+  cthugha: Wymaga: svgalibg1 but it is not installed
+           Wymaga: xlib6g (>= 3.3-5) ale nie jest zainstalowany
+  libreadlineg2: Jest w konflikcie z: libreadline2 (<< 2.1-2.1)
+</example>
+   </p>
+   <p>
+     Powyższy przykład przedstawia system mający wiele problemów, włączając
+     to poważny problem z libreadlineg2. Każdy pakiet mający niespełnione
+     zależności jest wypisywany w osobnej linii razem z niespełnionymi
+     zależnościami. Podane jest również krótkie wyjaśnienie dotyczące
+     przyczyny problemu.
+   </p>
+   <p>
+     Są dwie przyczyny, z których powodu system może być zepsuty w powyższy
+     sposób. Pierwszą jest to, że <prgn>dpkg</prgn> podczas aktualizacji
+     systemu nie zauważył jakiejś subtelnej relacji między
+     pakietami<footnote><p>APT rozważa wszystkie znane zależności i próbuje
+     nie dopuścić do zepsucia pakietów.</p></footnote>. Drugą przyczyną jest
+     wystąpienie błędu w czasie instalowania pakietu. W takim przypadku
+     pakiet może być rozpakowany, mimo że pakiety od niego zależące nie są
+     zainstalowane.
+   </p>
+   <p>
+     Druga przyczyna jest o wiele mniej poważna niż pierwsza, ponieważ APT
+     wymusza pewne więzy integralności dotyczące kolejności instalowania
+     pakietów. W obu przypadkach przekazanie programowi <prgn>apt-get</prgn>
+     opcji <tt>-f</tt> wymusi na APT znalezienie rozwiązania umożliwiającego
+     mu kontynuowanie działania. Metoda APT programu <prgn>dselect</prgn>
+     zawsze przekazuje opcję <tt>-f</tt>, aby móc kontynuować po wystąpieniu
+     błędu w skryptach opiekunów pakietów.
+   </p>
+   <p>
+     Jednak gdy opcja <tt>-f</tt> jest używana do poprawienia zależności w
+     poważnie uszkodzonym systemie (pierwsza z opisanych wyżej przyczyn),
+     możliwe jest że albo od razu zwróci błąd, albo nie powiedzie się
+     sekwencja instalowania pakietów. W obu przypadkach należy poprawić
+     zależności ręcznie, używając do tego dpkg (być może przekazując mu
+     opcje wymuszające "--force-..."), w takim stopniu, aby umożliwić
+     działanie systemowi APT.
+   </p>
+  </sect>
+  <sect>
+   <heading>
+     Raport stanu
+   </heading>
+   <p>
+     Przed rozpoczęciem przetwarzania <prgn>apt-get</prgn> wyświetli raport
+     zawierający informacje o tym, co będzie zrobione. W ogólności raport
+     ten zależy od typu wykonywanej operacji, jednakże występuje w nim kilka
+     elementów wspólnych dla wszystkich typów. We wszystkich wypadkach
+     wyświetlane są informacje o końcowym stanie, brana jest pod uwagę opcja
+     <tt>-f</tt>, a także wszystkie istotne działania wykonywanego
+     polecenia.
+   </p>
+   <sect1>
+    <heading>
+      Lista dodatkowych pakietów
+    </heading>
+    <p>
+     <example>
+Zostaną zainstalowane następujące dodatkowe pakiety:
+  libdbd-mysql-perl xlib6 zlib1 xzx libreadline2 libdbd-msql-perl
+  mailpgp xdpkg fileutils pinepgp zlib1g xlib6g perl-base
+  bin86 libgdbm1 libgdbmg1 quake-lib gmp2 bcc xbuffy
+  squake pgp-i python-base debmake ldso perl libreadlineg2
+  ssh
+</example>
+    </p>
+    <p>
+      Lista dodatkowych pakietów wyświetla wszystkie pakiety, które będą
+      zainstalowane lub zaktualizowane oprócz tych wymienionych w linii
+      poleceń. Jest generowana tylko dla polecenia
+      <tt>install</tt>. Wymienione pakiety są najczęściej wynikiem
+      automatycznej instalacji.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Pakiety przeznaczone do usunięcia
+    </heading>
+    <p>
+     <example>
+Następujące pakiety zostaną USUNIĘTE:
+  xlib6-dev xpat2 tk40-dev xkeycaps xbattle xonix
+  xdaliclock tk40 tk41 xforms0.86 ghostview xloadimage xcolorsel
+  xadmin xboard perl-debug tkined xtetris libreadline2-dev perl-suid
+  nas xpilot xfig 
+</example>
+    </p>
+    <p>
+      Lista pakietów przeznaczonych do usunięcia wyświetla wszystkie
+      pakiety, które zostaną usunięte z systemu. Może być pokazana dla
+      każdej operacji i powinna być szczegółowo przeanalizowana, aby
+      zapewnić, że żaden istotny pakiet nie będzie usunięty. W szczególności
+      opcja <tt>-f</tt> może wygenerować sporo pakietów do usunięcia, także
+      w przypadku jej użycia należy szczególnie dokładnie przeanalizować
+      wyświetlany raport. Lista może zawierać pakiety usuwane z powodu ich
+      tylko częściowego zainstalowania, wynikającego być może z przerwania
+      wcześniejszej instalacji.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Lista nowych pakietów
+    </heading>
+    <p>
+     <example>
+Zostaną zainstalowane następujące NOWE pakiety:
+  zlib1g xlib6g perl-base libgdbmg1 quake-lib gmp2 pgp-i python-base
+</example>
+    </p>
+    <p>
+      Lista nowych pakietów to proste przypomnienie o tym, co się
+      stanie. Wypisane pakiety nie są obecnie zainstalowane w systemie, ale
+      będą, kiedy APT skończy działanie.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Lista zatrzymanych pakietów
+    </heading>
+    <p>
+     <example>
+Następujące pakiety zostały zatrzymane:
+  compface man-db tetex-base msql libpaper svgalib1
+  gs snmp arena lynx xpat2 groff xscreensaver
+</example>
+    </p>
+    <p>
+      Jeśli aktualizowany jest cały system, to jest możliwe, że nowe wersje
+      pakietów nie będą mogły być zainstalowane, ponieważ wymagają nowych
+      pakietów lub są w konflikcie z już zainstalowanymi pakietami. W takim
+      wypadku pakiet pojawi się na liście pakietów zatrzymanych. Najlepszym
+      sposobem na zainstalowanie takich pakietów jest użycie <tt>apt-get
+      install</tt> lub rozwiązanie problemów z zależnościami za pomocą
+      programu <prgn>dselect</prgn>.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Ostrzeżenie o zmianie zatrzymanych pakietów
+    </heading>
+    <p>
+     <example>
+Zostaną zmienione następujące zatrzymane pakiety:
+  cvs 
+</example>
+    </p>
+    <p>
+      Czasami można poprosić APT o zainstalowanie pakietu, który jest
+      zatrzymany. W takim przypadku wypisywane jest ostrzeżenie o zmianie
+      zatrzymanego pakietu. Może się to zdarzyć tylko podczas dist-upgrade
+      lub install.
+    </p>
+   </sect1>
+   <sect1>
+    <heading>
+      Podsumowanie
+    </heading>
+    <p>
+      APT zakończy raport podsumowaniem wszystkich zmian, które
+      przeprowadzi.
+    </p>
+    <p>
+     <example>
+206 aktualizowanych, 8 nowo instalowanych, 25 usuwanych i 51 nieaktualizowanych.
+12 nie w pełni zainstalowanych lub usuniętych.
+Konieczne pobranie 65.7M/66.7M archiwów. Po rozpakowaniu zostanie użyte 26.5M. 
+</example>
+    </p>
+    <p>
+      Pierwsza linia podsumowania jest uproszczoną wersją powyższych list i
+      zawiera liczbę aktualizacji  - to jest pakietów już zainstalowanych,
+      których nowsze wersje są dostępne. W drugiej linii wyświetlono liczbę
+      nie do końca skonfigurowanych pakietów, prawdopodobnie w wyniku
+      przerwania poprzedniej instalacji. Ostatnia linia zawiera dane
+      dotyczące miejsca na dysku. Pierwsza para liczb odnosi się do rozmiaru
+      plików archiwum: pierwsza liczba oznacza liczbę bajtów, które muszą
+      zostać pobrane ze zdalnych serwerów, a druga - całkowity rozmiar
+      wszystkich żądanych archiwów. Kolejna liczba oznacza różnicę rozmiarów
+      pomiędzy obecnie zainstalowanymi pakietami, a nowo instalowanymi
+      pakietami. W przybliżeniu odpowiada przestrzeni dysku, która będzie
+      zajęta w /usr po zakończeniu instalacji. Wartość ta może wskazywać na
+      zwolnienie miejsca na dysku, jeśli usuwana jest duża liczba pakietów.
+    </p>
+    <p>
+      Używając opcji -u, można wygenerować raport pokazujący pakiety
+      przeznaczone do aktualizacji, podobny do tego pokazanego w poprzednim
+      przykładzie.
+    </p>
+   </sect1>
+  </sect>
+  <sect>
+   <heading>
+     Wyświetlanie stanu przetwarzania
+   </heading>
+   <p>
+     Podczas pobierania archiwów i plików pakietów APT wyświetla serię
+     komunikatów o stanie.
+   </p>
+   <p>
+    <example>
+# apt-get update
+Pob:1 http://ftp.de.debian.org/debian-non-US/ stable/non-US/ Packages
+Pob:2 http://llug.sep.bnl.gov/debian/ testing/contrib Packages
+Traf http://llug.sep.bnl.gov/debian/ testing/main Packages
+Pob:4 http://ftp.de.debian.org/debian-non-US/ unstable/binary-i386/ Packages
+Pob:5 http://llug.sep.bnl.gov/debian/ testing/non-free Packages
+11% [5 testing/non-free `Oczekiwane na nagłówki' 0/32.1k 0%] 2203b/s 1m52s
+</example>
+   </p>
+   <p>
+     Linie zaczynające się od <em>Pob:</em> są wypisywane, kiedy APT zaczyna
+     pobierać plik, a ostatnia linia oznacza postęp pobierania. Pierwsza
+     wartość podana w procentach określa całkowity procent pobierania
+     wszystkich plików. Niestety rozmiar plików Package nie jest znany, tak
+     więc <tt>apt-get update</tt> estymuje procent wykonanego pobierania, co
+     powoduje pewne nieścisłości.
+   </p>
+   <p>
+     Następna sekcja linii statusu powtarza się dla każdego wątku
+     pobierania, oznacza przeprowadzanie operacji i podaje kilka użytecznych
+     informacji na temat tego, co się dzieje. Czasem sekcja ta zawiera
+     komunikat <em>Tworzenie procesu potomnego</em>, co oznacza, że system
+     operacyjny ładuje moduł pobierania. Pierwszym słowem po znaku "[" jest
+     liczba pobrań, dokładnie taka jaka jest pokazana liczba linii historii
+     pobrań. Następnie w skróconej formie wyświetlana jest nazwa pobieranego
+     obiektu. W przypadku archiwów nazwa ta będzie zawierać nazwę
+     pobieranego pakietu.
+   </p>
+   <p>
+     W pojedynczych cudzysłowach podawany jest komunikat wskazujący na
+     postęp tworzenia połączenia pobierania danych. Zazwyczaj postęp ten
+     jest sekwencją zdarzeń od <em>Podłączanie</em> przez <em>Oczekiwanie na
+     nagłówki</em> do <em>Pobieranie</em> lub <em>Wznawianie</em>. Końcową
+     wartością jest liczba bajtów pobranych ze zdalnego serwera. Kiedy tylko
+     pobieranie się rozpocznie, wartość ta jest wyświetlana jw formacie typu
+     <tt>102/10.2k</tt>, co oznacza, że pobrano 102 bajty, a oczekuje się
+     jeszcze pobrania 10.2 kilobajtów. Aby zaoszczędzić miejsce, całkowity
+     rozmiar jest zawsze wyświetlany jako w postaci 4-znakowej. Po rozmiarze
+     następuje procentowy wskaźnik postępu pobierania danego
+     pliku. Przedostatnim elementem jest bieżąca średnia prędkość
+     pobierania, która jest aktualizowane co każde 5 sekund i odzwierciedla
+     tempo pobierania w tym okresie. W końcu wyświetlany jest estymowany
+     czas pobierania, regularnie aktualizowany i odzwierciedlający czas
+     pozostały do zakończenia pobierania przy założeniu utrzymania się
+     pokazanego tempa pobierania.
+   </p>
+   <p>
+     Linia stanu jest aktualizowana co każde pół sekundy, aby na bieżąco
+     informować użytkownika o postępie pobierania, podczas gdy linie "Pob:"
+     są przesuwane w dół, gdy tylko zacznie się pobieranie nowego
+     pliku. Ponieważ linia stanu jest ciągle zmieniana, wyjście programu nie
+     jest odpowiednie do przekierowania do pliku. Aby usunąć linie stanu,
+     należy użyć opcji <tt>-q</tt>.
+   </p>
+  </sect>
+  <sect>
+   <heading>
+     Dpkg
+   </heading>
+   <p>
+     APT używa programu <prgn>dpkg</prgn> do instalowania archiwów i
+     przełączy się do interfejsu <prgn>dpkg</prgn>, gdy tylko zakończy
+     pobieranie plików. <prgn>dpkg</prgn> może również zadawać pytania
+     podczas przetwarzania pakietów, a same pakiety także mogą zadawać
+     pytania. Każde pytanie zazwyczaj jest poprzedzone opisem, a same
+     pytania są zbyt zróżnicowane, by je tutaj opisać.
+   </p>
+  </sect>
+ </chapt>
+</book>
+</debiandoc>

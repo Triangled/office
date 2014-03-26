@@ -1,0 +1,376 @@
+\section{\-E\-D\-S\-P \-Class \-Reference}
+\label{classEDSP}\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf \-Write\-Request} ({\bf pkg\-Dep\-Cache} \&\-Cache, \-F\-I\-L\-E $\ast$output, bool const upgrade=false, bool const dist\-Upgrade=false, bool const auto\-Remove=false, {\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em creates the \doxyref{\-E\-D\-S\-P}{p.}{classEDSP} request stanza \end{DoxyCompactList}\item 
+static bool {\bf \-Write\-Scenario} ({\bf pkg\-Dep\-Cache} \&\-Cache, \-F\-I\-L\-E $\ast$output, {\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em creates the scenario representing the package universe \end{DoxyCompactList}\item 
+static bool {\bf \-Write\-Limited\-Scenario} ({\bf pkg\-Dep\-Cache} \&\-Cache, \-F\-I\-L\-E $\ast$output, {\bf \-A\-P\-T\-::\-Package\-Set} const \&pkgset, {\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em creates a limited scenario representing the package universe \end{DoxyCompactList}\item 
+static bool {\bf \-Read\-Response} (int const input, {\bf pkg\-Dep\-Cache} \&\-Cache, {\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em waits and acts on the information returned from the solver \end{DoxyCompactList}\item 
+static bool {\bf \-Read\-Request} (int const input, std\-::list$<$ std\-::string $>$ \&install, std\-::list$<$ std\-::string $>$ \&remove, bool \&upgrade, bool \&dist\-Upgrade, bool \&auto\-Remove)
+\begin{DoxyCompactList}\small\item\em search and read the request stanza for action later \end{DoxyCompactList}\item 
+static bool {\bf \-Apply\-Request} (std\-::list$<$ std\-::string $>$ const \&install, std\-::list$<$ std\-::string $>$ const \&remove, {\bf pkg\-Dep\-Cache} \&\-Cache)
+\begin{DoxyCompactList}\small\item\em takes the request lists and applies it on the cache \end{DoxyCompactList}\item 
+static bool {\bf \-Write\-Solution} ({\bf pkg\-Dep\-Cache} \&\-Cache, \-F\-I\-L\-E $\ast$output)
+\begin{DoxyCompactList}\small\item\em encodes the changes in the \-Cache as a \doxyref{\-E\-D\-S\-P}{p.}{classEDSP} solution \end{DoxyCompactList}\item 
+static bool {\bf \-Write\-Progress} (unsigned short const percent, const char $\ast$const message, \-F\-I\-L\-E $\ast$output)
+\begin{DoxyCompactList}\small\item\em sends a progress report \end{DoxyCompactList}\item 
+static bool {\bf \-Write\-Error} (char const $\ast$const uuid, std\-::string const \&message, \-F\-I\-L\-E $\ast$output)
+\begin{DoxyCompactList}\small\item\em sends an error report \end{DoxyCompactList}\item 
+static bool {\bf \-Execute\-Solver} (const char $\ast$const solver, int $\ast$solver\-\_\-in, int $\ast$solver\-\_\-out)
+\begin{DoxyCompactList}\small\item\em executes the given solver and returns the pipe ends \end{DoxyCompactList}\item 
+static bool {\bf \-Resolve\-External} (const char $\ast$const solver, {\bf pkg\-Dep\-Cache} \&\-Cache, bool const upgrade, bool const dist\-Upgrade, bool const auto\-Remove, {\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em call an external resolver to handle the request \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Apply\-Request@{\-Apply\-Request}}
+\index{\-Apply\-Request@{\-Apply\-Request}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Apply\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Apply\-Request} (
+\begin{DoxyParamCaption}
+\item[{std\-::list$<$ std\-::string $>$ const \&}]{install, }
+\item[{std\-::list$<$ std\-::string $>$ const \&}]{remove, }
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a1eb0e2b98edb642d411ab78b75522671}
+
+
+takes the request lists and applies it on the cache 
+
+\-The lists as created by \doxyref{\-Read\-Request}{p.}{classEDSP_a6ff6a4cf2a5518fe3c1997d0ce64b3f0} will be used to find the packages in question and mark them for install/remove. \-No solving is done and no auto-\/install/-\/remove.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em install} & is a list of packages to mark for installation \\
+\hline
+{\em remove} & is a list of packages to mark for removal \\
+\hline
+{\em \-Cache} & is there the markers should be set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+false if the request couldn't be applied, true otherwise 
+\end{DoxyReturn}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Execute\-Solver@{\-Execute\-Solver}}
+\index{\-Execute\-Solver@{\-Execute\-Solver}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Execute\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Execute\-Solver} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$const}]{solver, }
+\item[{int $\ast$}]{solver\-\_\-in, }
+\item[{int $\ast$}]{solver\-\_\-out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_ae9a8bdd3509103173327b02f3360ffa3}
+
+
+executes the given solver and returns the pipe ends 
+
+\-The given solver is executed if it can be found in one of the configured directories and setup for it is performed.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em solver} & to execute \\
+\hline
+\mbox{\tt out}  & {\em solver\-\_\-in} & will be the stdin of the solver \\
+\hline
+\mbox{\tt out}  & {\em solver\-\_\-out} & will be the stdout of the solver\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if the solver could be started and the pipes are set up correctly, otherwise false and the pipes are invalid 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Resolve\-External().
+
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Read\-Request@{\-Read\-Request}}
+\index{\-Read\-Request@{\-Read\-Request}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Read\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Read\-Request} (
+\begin{DoxyParamCaption}
+\item[{int const}]{input, }
+\item[{std\-::list$<$ std\-::string $>$ \&}]{install, }
+\item[{std\-::list$<$ std\-::string $>$ \&}]{remove, }
+\item[{bool \&}]{upgrade, }
+\item[{bool \&}]{dist\-Upgrade, }
+\item[{bool \&}]{auto\-Remove}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a6ff6a4cf2a5518fe3c1997d0ce64b3f0}
+
+
+search and read the request stanza for action later 
+
+\-This method while ignore the input up to the point it finds the \-Request\-: line as an indicator for the \-Request stanza. \-The request is stored in the parameters install and remove then, as the cache isn't build yet as the scenario follows the request.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em input} & file descriptor with the edsp input for the solver \\
+\hline
+\mbox{\tt out}  & {\em install} & is a list which gets populated with requested installs \\
+\hline
+\mbox{\tt out}  & {\em remove} & is a list which gets populated with requested removals \\
+\hline
+\mbox{\tt out}  & {\em upgrade} & is true if it is a request like apt-\/get upgrade \\
+\hline
+\mbox{\tt out}  & {\em dist\-Upgrade} & is true if it is a request like apt-\/get dist-\/upgrade \\
+\hline
+\mbox{\tt out}  & {\em auto\-Remove} & is true if removal of uneeded packages should be performed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if the request could be found and worked on, otherwise false 
+\end{DoxyReturn}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Read\-Response@{\-Read\-Response}}
+\index{\-Read\-Response@{\-Read\-Response}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Read\-Response}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Read\-Response} (
+\begin{DoxyParamCaption}
+\item[{int const}]{input, }
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{{\bf \-Op\-Progress} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a09e6a4e219c1ae943e206589a7b73184}
+
+
+waits and acts on the information returned from the solver 
+
+\-This method takes care of interpreting whatever the solver sends through the standard output like a solution, progress or an error. \-The main thread should handle his control over to this method to wait for the solver to finish the given task
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em input} & file descriptor with the response from the solver \\
+\hline
+{\em \-Cache} & the solution should be applied on if any \\
+\hline
+{\em \-Progress} & is an instance to report progress to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if a solution is found and applied correctly, otherwise false 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Resolve\-External().
+
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Resolve\-External@{\-Resolve\-External}}
+\index{\-Resolve\-External@{\-Resolve\-External}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Resolve\-External}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Resolve\-External} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$const}]{solver, }
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{bool const}]{upgrade, }
+\item[{bool const}]{dist\-Upgrade, }
+\item[{bool const}]{auto\-Remove, }
+\item[{{\bf \-Op\-Progress} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a765574bc994f3d2175bbebdea1b85842}
+
+
+call an external resolver to handle the request 
+
+\-This method wraps all the methods above to call an external solver
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em solver} & to execute \\
+\hline
+{\em \-Cache} & with the problem and as universe to work in \\
+\hline
+{\em upgrade} & is true if it is a request like apt-\/get upgrade \\
+\hline
+{\em dist\-Upgrade} & is true if it is a request like apt-\/get dist-\/upgrade \\
+\hline
+{\em auto\-Remove} & is true if unneeded packages should be removed \\
+\hline
+{\em \-Progress} & is an instance to report progress to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if the solver has successfully solved the problem, otherwise false 
+\end{DoxyReturn}
+
+
+\-References \-Execute\-Solver(), \-Read\-Response(), \-Write\-Request(), and \-Write\-Scenario().
+
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Error@{\-Write\-Error}}
+\index{\-Write\-Error@{\-Write\-Error}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Error} (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$const}]{uuid, }
+\item[{std\-::string const \&}]{message, }
+\item[{\-F\-I\-L\-E $\ast$}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a1da459470c7b76ddfd3f09edceeecc55}
+
+
+sends an error report 
+
+\-Solvers are expected to execute successfully even if they were unable to calculate a solution for a given task. \-Obviously they can't send a solution through, so this methods deals with formatting an error message correctly so that the front-\/ends can recieve and display it.
+
+\-The first line of the message should be a short description of the error so it can be used for dialog titles or alike
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em uuid} & of this error message \\
+\hline
+{\em message} & is free form text to discribe the error \\
+\hline
+{\em output} & the front-\/end listens for error messages \\
+\hline
+\end{DoxyParams}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Limited\-Scenario@{\-Write\-Limited\-Scenario}}
+\index{\-Write\-Limited\-Scenario@{\-Write\-Limited\-Scenario}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Limited\-Scenario}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Limited\-Scenario} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{\-F\-I\-L\-E $\ast$}]{output, }
+\item[{{\bf \-A\-P\-T\-::\-Package\-Set} const \&}]{pkgset, }
+\item[{{\bf \-Op\-Progress} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a24c166448b3f5609833e119c6d959db0}
+
+
+creates a limited scenario representing the package universe 
+
+\-This method works similar to \doxyref{\-Write\-Scenario}{p.}{classEDSP_ad58f6220271e16fb3ba6b5f72b3867a0} as it works in the same way but doesn't send the complete universe to the solver but only packages included in the pkgset which will have only dependencies on packages which are in the given set. \-All other dependencies will be removed, so that this method can be used to create testcases
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & is the known package universe \\
+\hline
+{\em output} & is written to this \char`\"{}file\char`\"{} \\
+\hline
+{\em pkgset} & is a set of packages the universe should be limited to \\
+\hline
+{\em \-Progress} & is an instance to report progress to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if universe was composed successfully, otherwise false 
+\end{DoxyReturn}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Progress@{\-Write\-Progress}}
+\index{\-Write\-Progress@{\-Write\-Progress}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Progress} (
+\begin{DoxyParamCaption}
+\item[{unsigned short const}]{percent, }
+\item[{const char $\ast$const}]{message, }
+\item[{\-F\-I\-L\-E $\ast$}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a55e69a064b2cde3e615a283a22ccec4c}
+
+
+sends a progress report 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em percent} & of the solving completed \\
+\hline
+{\em message} & the solver wants the user to see \\
+\hline
+{\em output} & the front-\/end listens for progress report \\
+\hline
+\end{DoxyParams}
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Request@{\-Write\-Request}}
+\index{\-Write\-Request@{\-Write\-Request}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Request}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Request} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{\-F\-I\-L\-E $\ast$}]{output, }
+\item[{bool const}]{upgrade = {\ttfamily false}, }
+\item[{bool const}]{dist\-Upgrade = {\ttfamily false}, }
+\item[{bool const}]{auto\-Remove = {\ttfamily false}, }
+\item[{{\bf \-Op\-Progress} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_a9b51518ce0d064a65b6dfe92c8bb3452}
+
+
+creates the \doxyref{\-E\-D\-S\-P}{p.}{classEDSP} request stanza 
+
+\-In the \doxyref{\-E\-D\-S\-P}{p.}{classEDSP} protocol the first thing send to the resolver is a stanza encoding the request. \-This method will write this stanza by looking at the given \-Cache and requests the installation of all packages which were marked for installation in it (equally for remove).
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & in which the request is encoded \\
+\hline
+{\em output} & is written to this \char`\"{}file\char`\"{} \\
+\hline
+{\em upgrade} & is true if it is an request like apt-\/get upgrade \\
+\hline
+{\em dist\-Upgrade} & is true if it is a request like apt-\/get dist-\/upgrade \\
+\hline
+{\em auto\-Remove} & is true if removal of unneeded packages should be performed \\
+\hline
+{\em \-Progress} & is an instance to report progress to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if request was composed successfully, otherwise false 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Resolve\-External().
+
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Scenario@{\-Write\-Scenario}}
+\index{\-Write\-Scenario@{\-Write\-Scenario}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Scenario}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Scenario} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{\-F\-I\-L\-E $\ast$}]{output, }
+\item[{{\bf \-Op\-Progress} $\ast$}]{\-Progress = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_ad58f6220271e16fb3ba6b5f72b3867a0}
+
+
+creates the scenario representing the package universe 
+
+\-After the request all known information about a package are send to the solver. \-The output looks similar to a \-Packages or status file
+
+\-All packages and version included in this \-Cache are send, even if it doesn't make sense from an \-A\-P\-T resolver point of view like versions with a negative pin to enable the solver to propose even that as a solution or at least to be able to give a hint what can be done to statisfy a request.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & is the known package universe \\
+\hline
+{\em output} & is written to this \char`\"{}file\char`\"{} \\
+\hline
+{\em \-Progress} & is an instance to report progress to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if universe was composed successfully, otherwise false 
+\end{DoxyReturn}
+
+
+\-Referenced by \-Resolve\-External().
+
+\index{\-E\-D\-S\-P@{\-E\-D\-S\-P}!\-Write\-Solution@{\-Write\-Solution}}
+\index{\-Write\-Solution@{\-Write\-Solution}!EDSP@{\-E\-D\-S\-P}}
+\subsubsection[{\-Write\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Write\-Solution} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Dep\-Cache} \&}]{\-Cache, }
+\item[{\-F\-I\-L\-E $\ast$}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static]}}\label{classEDSP_ab1b2ab693f351d54087828e9bff6895e}
+
+
+encodes the changes in the \-Cache as a \doxyref{\-E\-D\-S\-P}{p.}{classEDSP} solution 
+
+\-The markers in the \-Cache are observed and send to given file. \-The solution isn't checked for consistency or alike, so even broken solutions can be written successfully, but the front-\/end revicing it will properly fail then.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & which represents the solution \\
+\hline
+{\em output} & to write the stanzas forming the solution to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if solution could be written, otherwise false 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf edsp.\-h}\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/edsp.\-cc\end{DoxyCompactItemize}

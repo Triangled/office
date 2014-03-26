@@ -1,0 +1,201 @@
+<!-- -*- mode: sgml; mode: fold -*- -->
+
+<!-- Boiler plate docinfo section -->
+<!ENTITY apt-docinfo "
+ <refentryinfo>
+   <address><email>apt@packages.debian.org</email></address>
+   <author>
+     <firstname>Jason</firstname> <surname>Gunthorpe</surname>
+     <contrib></contrib>
+   </author>
+   <copyright><year>1998-2001</year> <holder>Jason Gunthorpe</holder></copyright>
+   <date>28 Outubro 2008</date>
+   <productname>Linux</productname>
+ </refentryinfo>
+">
+
+<!ENTITY apt-author.team "
+   <author>
+    <othername>APT team</othername>
+    <contrib></contrib>
+   </author>
+">
+
+<!ENTITY apt-qapage "
+	<para>
+		<ulink url='http://packages.qa.debian.org/a/apt.html'>QA Page</ulink>
+	</para>
+">
+
+<!-- Boiler plate Bug reporting section -->
+<!ENTITY manbugs "
+ <refsect1><title>Bugs</title>
+   <para><ulink url='http://bugs.debian.org/src:apt'>página de bugs do APT</ulink>. 
+   Se deseja reportar um bug no APT, por favor veja
+   <filename>/usr/share/doc/debian/bug-reporting.txt</filename> ou o
+   comando &reportbug;.
+   </para>
+ </refsect1>
+">
+
+<!-- Boiler plate Author section -->
+<!ENTITY manauthor "
+ <refsect1><title>Autor</title>
+   <para>APT foi escrito pela equipa do APT <email>apt@packages.debian.org</email>.
+   </para>
+ </refsect1>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-commonoptions "
+     <varlistentry><term><option>-h</option></term>
+     <term><option>--help</option></term>
+     <listitem><para>Mostra um sumário curto da utilização.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry>
+      <term><option>-v</option></term>
+      <term><option>--version</option></term>
+      <listitem><para>Mostra a versão do programa.
+     </para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry>
+      <term><option>-c</option></term>
+      <term><option>--config-file</option></term>
+     <listitem><para>Ficheiro de Configuração; Especifica o ficheiro de 
+     configuração a usar. 
+     O programa irá ler o ficheiro de configuração predefinido e depois este 
+     ficheiro de configuração. Se as definições de configuração precisarem de 
+     ser definidas antes, os ficheiros de configuração predefinidos são 
+     analisados especificando um ficheiro com a variável de ambiente 
+     <envar>APT_CONFIG</envar>. Veja &apt-conf; para informação de sintaxe.
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry>
+      <term><option>-o</option></term>
+      <term><option>--option</option></term>
+     <listitem><para>Define uma Opção de Configuração; Isto irá definir uma opção
+      de configuração arbitrária. A sintaxe é <option>-o Foo::Bar=bar</option>.
+      <option>-o</option> e <option>--option</option> podem ser usadas várias
+      vezes para definir opções diferentes.
+     </para>
+     </listitem>
+     </varlistentry>
+">
+
+<!-- Should be used within the option section of the text to
+     put in the blurb about -h, -v, -c and -o -->
+<!ENTITY apt-cmdblurb "
+   <para>Todas as opções de linha de comandos podem ser definidas usando o ficheiro de configuração, as
+   descrições indicam a opção de configuração a definir. Para opções
+   booleanas você pode sobre por o ficheiro de configuração usando algo como 
+   <option>-f-</option>,<option>--no-f</option>, <option>-f=no</option>
+   ou várias outras variantes.
+   </para>
+">
+
+<!ENTITY file-aptconf "
+     <varlistentry><term><filename>/etc/apt/apt.conf</filename></term>
+     <listitem><para>Ficheiro de configuração do APT.
+     Item de Configuração: <literal>Dir::Etc::Main</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/apt.conf.d/</filename></term>
+     <listitem><para>Ficheiros de configuração fragmentados do APT.
+     Item de Configuração: <literal>Dir::Etc::Parts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-cachearchives "
+     <varlistentry><term><filename>&cachedir;/archives/</filename></term>
+     <listitem><para>Área de armazenamento para ficheiros de pacotes obtidos.
+     Item de Configuração: <literal>Dir::Cache::Archives</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&cachedir;/archives/partial/</filename></term>
+     <listitem><para>Área de armazenamento para ficheiros de pacotes em curso.
+     Item de Configuração: <literal>Dir::Cache::Archives</literal> (implicit partial). </para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-preferences "
+     <varlistentry><term><filename>/etc/apt/preferences</filename></term>
+     <listitem><para>Ficheiro de preferências de versão.
+     Isto é onde você deve especificar &quot;pinning&quot;,
+     isto é, uma preferência para obter certos pacotes
+     A partir de uma fonte separada
+     ou a partir duma versão diferente de uma distribuição.
+     Item de Configuração: <literal>Dir::Etc::Preferences</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/preferences.d/</filename></term>
+     <listitem><para>Ficheiros fragmentados para as preferências de versão.
+     Item de Configuração: <literal>Dir::Etc::PreferencesParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-sourceslist "
+     <varlistentry><term><filename>/etc/apt/sources.list</filename></term>
+     <listitem><para>Localizações de onde obter pacotes.
+     Item de Configuração: <literal>Dir::Etc::SourceList</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/sources.list.d/</filename></term>
+     <listitem><para>Ficheiros fragmentados para localizações de onde obter pacotes.
+     Item de Configuração: <literal>Dir::Etc::SourceParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-statelists "
+     <varlistentry><term><filename>&statedir;/lists/</filename></term>
+     <listitem><para>Área de armazenamento para informação de estado para cada recurso de pacote especificado em
+     &sources-list;
+     Tem de Configuração: <literal>Dir::State::Lists</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>&statedir;/lists/partial/</filename></term>
+     <listitem><para>Área de armazenamento para informação de estado em trânsito.
+     Item de Configuração: <literal>Dir::State::Lists</literal> (parcial implícito).</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-trustedgpg "
+     <varlistentry><term><filename>/etc/apt/trusted.gpg</filename></term>
+     <listitem><para>Chaveiro de chaves de confiança locais, as novas chaves serão adicionadas aqui.
+     Item de Configuração: <literal>Dir::Etc::Trusted</literal>.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/etc/apt/trusted.gpg.d/</filename></term>
+     <listitem><para>Fragmentos de ficheiro para as chaves de confiança, chaveiros adicionais podem
+     ser armazenados aqui (por outros pacotes ou pelo administrador).
+     Item de Configuração <literal>Dir::Etc::TrustedParts</literal>.</para></listitem>
+     </varlistentry>
+">
+
+<!ENTITY file-extended_states "
+      <varlistentry><term><filename>/var/lib/apt/extended_states</filename></term>
+      <listitem><para>Lista de estado de pacotes auto-instalados.
+      Item de Configuração: <literal>Dir::State::extended_states</literal>.
+      </para></listitem>
+      </varlistentry>
+">
+
+<!ENTITY translation-title "TRADUÇÃO">
+
+<!ENTITY translation-holder "
+     A tradução Portuguesa foi feita por Américo Monteiro <email>a_monteiro@netcabo.pt</email> em 2009, 2010.
+     A tradução foi revista pela equipa de traduções portuguesas da Debian <email>traduz@debianpt.org</email>.
+">
+
+<!ENTITY translation-english "
+     Note que este documento traduzido pode conter partes não traduzidas.
+     Isto é feito propositadamente, para evitar perdas de conteúdo quando a
+     tradução está atrasada relativamente ao conteúdo original.
+">

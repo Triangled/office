@@ -1,0 +1,2821 @@
+# translation of apt.po to Slovenian
+# Matjaz Horvat <matjaz@owca.info>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: apt 0.5.5\n"
+"Report-Msgid-Bugs-To: deity@lists.debian.org\n"
+"POT-Creation-Date: 2012-12-12 08:05-0500\n"
+"PO-Revision-Date: 2011-03-06 15:47+0000\n"
+"Last-Translator: Andrej Znidarsic <andrej.znidarsic@gmail.com>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Launchpad-Export-Date: 2011-03-07 13:08+0000\n"
+"X-Generator: Launchpad (build 12515)\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: apt-inst/contrib/extracttar.cc:117
+msgid "Failed to create pipes"
+msgstr "Ni mogoče ustvariti pip"
+
+#: apt-inst/contrib/extracttar.cc:144
+msgid "Failed to exec gzip "
+msgstr "Ni mogoče izvesti gzip "
+
+#: apt-inst/contrib/extracttar.cc:181 apt-inst/contrib/extracttar.cc:211
+msgid "Corrupted archive"
+msgstr "Pokvarjen arhiv"
+
+#: apt-inst/contrib/extracttar.cc:196
+msgid "Tar checksum failed, archive corrupted"
+msgstr "Nadzorna vsota tar ni uspela, arhiv je pokvarjen"
+
+#: apt-inst/contrib/extracttar.cc:303
+#, c-format
+msgid "Unknown TAR header type %u, member %s"
+msgstr "Neznana vrsta glave TAR %u, član %s"
+
+#: apt-inst/contrib/arfile.cc:74
+msgid "Invalid archive signature"
+msgstr "Neveljaven podpis arhiva"
+
+#: apt-inst/contrib/arfile.cc:82
+msgid "Error reading archive member header"
+msgstr "Napaka med branjem glave člana arhiva"
+
+#: apt-inst/contrib/arfile.cc:94
+#, c-format
+msgid "Invalid archive member header %s"
+msgstr "Neveljavna glava arhiva člana %s"
+
+#: apt-inst/contrib/arfile.cc:106
+msgid "Invalid archive member header"
+msgstr "Neveljavna glava člana arhiva"
+
+#: apt-inst/contrib/arfile.cc:132
+msgid "Archive is too short"
+msgstr "Arhiv je prekratek"
+
+#: apt-inst/contrib/arfile.cc:136
+msgid "Failed to read the archive headers"
+msgstr "Glav arhiva ni mogoče brati"
+
+#: apt-inst/filelist.cc:382
+msgid "DropNode called on still linked node"
+msgstr "DropNode je poklical stabilno povezano vozlišče"
+
+#: apt-inst/filelist.cc:414
+msgid "Failed to locate the hash element!"
+msgstr "Ni mogoče najti razpršenega elementa!"
+
+#: apt-inst/filelist.cc:461
+msgid "Failed to allocate diversion"
+msgstr "Ni mogoče dodeliti odklona"
+
+#: apt-inst/filelist.cc:466
+msgid "Internal error in AddDiversion"
+msgstr "Notranja napaka v AddDiversion"
+
+#: apt-inst/filelist.cc:479
+#, c-format
+msgid "Trying to overwrite a diversion, %s -> %s and %s/%s"
+msgstr "Poskus prepisovanja odklona, %s -> %s in %s/%s"
+
+#: apt-inst/filelist.cc:508
+#, c-format
+msgid "Double add of diversion %s -> %s"
+msgstr "Dvojni seštevek odklona %s -> %s"
+
+#: apt-inst/filelist.cc:551
+#, c-format
+msgid "Duplicate conf file %s/%s"
+msgstr "Dvojnik datoteke z nastavitvami %s/%s"
+
+#: apt-inst/dirstream.cc:43 apt-inst/dirstream.cc:49 apt-inst/dirstream.cc:55
+#, c-format
+msgid "Failed to write file %s"
+msgstr "Zapisovanje datoteke %s je spodletelo"
+
+#: apt-inst/dirstream.cc:100 apt-inst/dirstream.cc:108
+#, c-format
+msgid "Failed to close file %s"
+msgstr "Napaka med zapiranjem datoteke %s"
+
+#: apt-inst/extract.cc:96 apt-inst/extract.cc:167
+#, c-format
+msgid "The path %s is too long"
+msgstr "Pot %s je predolga"
+
+#: apt-inst/extract.cc:127
+#, c-format
+msgid "Unpacking %s more than once"
+msgstr "Odpakiranje %s več kot enkrat"
+
+#: apt-inst/extract.cc:137
+#, c-format
+msgid "The directory %s is diverted"
+msgstr "Mapa %s je odklonjena"
+
+#: apt-inst/extract.cc:147
+#, c-format
+msgid "The package is trying to write to the diversion target %s/%s"
+msgstr "Paket poskuša pisati v tarčo odklona %s/%s"
+
+#: apt-inst/extract.cc:157 apt-inst/extract.cc:300
+msgid "The diversion path is too long"
+msgstr "Pot odklona je predloga"
+
+#: apt-inst/extract.cc:181 apt-inst/extract.cc:193 apt-inst/extract.cc:210
+#: apt-inst/deb/dpkgdb.cc:121
+#, c-format
+msgid "Failed to stat %s"
+msgstr "Napaka med določitvijo %s"
+
+#: apt-inst/extract.cc:188
+#, c-format
+msgid "Failed to rename %s to %s"
+msgstr "Ni mogoče preimenovati %s v %s"
+
+#: apt-inst/extract.cc:243
+#, c-format
+msgid "The directory %s is being replaced by a non-directory"
+msgstr "Mapa %s je bil zamenjana z ne-mapo"
+
+#: apt-inst/extract.cc:283
+msgid "Failed to locate node in its hash bucket"
+msgstr "Iskanje vozlišča v njegovem razpršenem vedru ni uspelo"
+
+#: apt-inst/extract.cc:287
+msgid "The path is too long"
+msgstr "Pot je predolga"
+
+#: apt-inst/extract.cc:415
+#, c-format
+msgid "Overwrite package match with no version for %s"
+msgstr "Prepiši zadetek paketa brez vnosa različice za %s"
+
+#: apt-inst/extract.cc:432
+#, c-format
+msgid "File %s/%s overwrites the one in the package %s"
+msgstr "Datoteka %s/%s prepisuje datoteko v paketu %s"
+
+#: apt-inst/extract.cc:465
+#, c-format
+msgid "Unable to read %s"
+msgstr "Ni mogoče brati %s"
+
+#: apt-inst/extract.cc:492
+#, c-format
+msgid "Unable to stat %s"
+msgstr "Ni mogoče določiti %s"
+
+#: apt-inst/deb/dpkgdb.cc:55 apt-inst/deb/dpkgdb.cc:61
+#, c-format
+msgid "Failed to remove %s"
+msgstr "Odstranitev %s ni uspela"
+
+#: apt-inst/deb/dpkgdb.cc:110 apt-inst/deb/dpkgdb.cc:112
+#, c-format
+msgid "Unable to create %s"
+msgstr "Ni mogoče ustvariti %s"
+
+#: apt-inst/deb/dpkgdb.cc:118
+#, c-format
+msgid "Failed to stat %sinfo"
+msgstr "Določitev %sinfo ni uspela"
+
+#: apt-inst/deb/dpkgdb.cc:123
+msgid "The info and temp directories need to be on the same filesystem"
+msgstr "Podatki in začasne mape morajo biti na istem datotečnem sistemu"
+
+#: apt-inst/deb/dpkgdb.cc:139
+msgid "Reading package lists"
+msgstr "Branje seznama paketov"
+
+#: apt-inst/deb/dpkgdb.cc:180
+#, c-format
+msgid "Failed to change to the admin dir %sinfo"
+msgstr "Sprememba v skrbnikovo mapo %sinfo ni uspela"
+
+#: apt-inst/deb/dpkgdb.cc:201 apt-inst/deb/dpkgdb.cc:355
+#: apt-inst/deb/dpkgdb.cc:448
+msgid "Internal error getting a package name"
+msgstr "Notranja napaka med dobivanjem imena paketa"
+
+#: apt-inst/deb/dpkgdb.cc:205 apt-inst/deb/dpkgdb.cc:386
+msgid "Reading file listing"
+msgstr "Branje seznama datotek"
+
+#: apt-inst/deb/dpkgdb.cc:216
+#, c-format
+msgid ""
+"Failed to open the list file '%sinfo/%s'. If you cannot restore this file "
+"then make it empty and immediately re-install the same version of the "
+"package!"
+msgstr ""
+"Odpiranje datoteke s seznamom '%sinfo/%s' ni uspelo. Če ne morete obnoviti "
+"datoteke, jo izpraznite in takoj znova namestite enako različico paketa!"
+
+#: apt-inst/deb/dpkgdb.cc:229 apt-inst/deb/dpkgdb.cc:242
+#, c-format
+msgid "Failed reading the list file %sinfo/%s"
+msgstr "Branje datoteke s seznamom %sinfo/%s ni uspelo"
+
+#: apt-inst/deb/dpkgdb.cc:266
+msgid "Internal error getting a node"
+msgstr "Notranja napaka med dobivanjem vozlišča"
+
+#: apt-inst/deb/dpkgdb.cc:309
+#, c-format
+msgid "Failed to open the diversions file %sdiversions"
+msgstr "Odpiranje datoteke z odklonom %sdiversions ni uspelo"
+
+#: apt-inst/deb/dpkgdb.cc:324
+msgid "The diversion file is corrupted"
+msgstr "Datoteka z odklonom je pokvarjena"
+
+#: apt-inst/deb/dpkgdb.cc:331 apt-inst/deb/dpkgdb.cc:336
+#: apt-inst/deb/dpkgdb.cc:341
+#, c-format
+msgid "Invalid line in the diversion file: %s"
+msgstr "Neveljavna vrstica v datoteki z odklonom: %s"
+
+#: apt-inst/deb/dpkgdb.cc:362
+msgid "Internal error adding a diversion"
+msgstr "Notranja napaka med dodajanjem odklona"
+
+#: apt-inst/deb/dpkgdb.cc:383
+msgid "The pkg cache must be initialized first"
+msgstr "Najprej se mora začeti predpomnilnik paketov"
+
+#: apt-inst/deb/dpkgdb.cc:443
+#, c-format
+msgid "Failed to find a Package: header, offset %lu"
+msgstr "Napaka med iskanjem paketa: glava, odmik %lu"
+
+#: apt-inst/deb/dpkgdb.cc:465
+#, c-format
+msgid "Bad ConfFile section in the status file. Offset %lu"
+msgstr "Napačna izbira ConfFile v datoteki stanja. Odmik %lu"
+
+#: apt-inst/deb/dpkgdb.cc:470
+#, c-format
+msgid "Error parsing MD5. Offset %lu"
+msgstr "Napaka med razčlenjevanjem MD5. Odmik %lu"
+
+#: apt-inst/deb/debfile.cc:42 apt-inst/deb/debfile.cc:47
+#, c-format
+msgid "This is not a valid DEB archive, missing '%s' member"
+msgstr "To ni veljaven arhiv DEB. Manjka član '%s'."
+
+#. FIXME: add data.tar.xz here - adding it now would require a Translation round for a very small gain
+#: apt-inst/deb/debfile.cc:56
+#, c-format
+msgid "This is not a valid DEB archive, it has no '%s', '%s' or '%s' member"
+msgstr "To ni veljaven arhiv DEB, nima člana '%s', '%s' ali '%s'"
+
+#: apt-inst/deb/debfile.cc:116
+#, c-format
+msgid "Couldn't change to %s"
+msgstr "Ni mogoče spremeniti v %s"
+
+#: apt-inst/deb/debfile.cc:157
+#, c-format
+msgid "Internal error, could not locate member %s"
+msgstr "Notranja napaka. Ni mogoče najti člana %s."
+
+#: apt-inst/deb/debfile.cc:192
+msgid "Failed to locate a valid control file"
+msgstr "Ni mogoče najti veljavne nadzorne datoteke"
+
+#: apt-inst/deb/debfile.cc:277
+msgid "Unparsable control file"
+msgstr "Nadzorne datoteke ni mogoče razčleniti"
+
+#~ msgid "Package %s version %s has an unmet dep:\n"
+#~ msgstr "Paket %s različica %s ima nerešene odvisnosti:\n"
+
+#~ msgid "Total package names: "
+#~ msgstr "Vseh imen paketov: "
+
+#~ msgid "Total package structures: "
+#~ msgstr "Skupno struktur paketov : "
+
+#~ msgid "  Normal packages: "
+#~ msgstr "  Običajni paketi: "
+
+#~ msgid "  Pure virtual packages: "
+#~ msgstr "  Čisti navidezni paketi: "
+
+#~ msgid "  Single virtual packages: "
+#~ msgstr "  Posamezni navidezni paketi: "
+
+#~ msgid "  Mixed virtual packages: "
+#~ msgstr "  Mešani navidezni paketi: "
+
+#~ msgid "  Missing: "
+#~ msgstr "  Manjka: "
+
+#~ msgid "Total distinct versions: "
+#~ msgstr "Vseh različic: "
+
+#~ msgid "Total distinct descriptions: "
+#~ msgstr "Skupno različnih opisov: "
+
+#~ msgid "Total dependencies: "
+#~ msgstr "Vseh odvisnosti: "
+
+#~ msgid "Total ver/file relations: "
+#~ msgstr "Vseh povezav Raz/Dat: "
+
+#~ msgid "Total Desc/File relations: "
+#~ msgstr "Skupno razmerij opisov/datotek: "
+
+#~ msgid "Total Provides mappings: "
+#~ msgstr "Vseh dobljenih preslikav: "
+
+#~ msgid "Total globbed strings: "
+#~ msgstr "Vseh razširjenih nizov: "
+
+#~ msgid "Total dependency version space: "
+#~ msgstr "Celotna velikost z odvisnostmi različice: "
+
+#~ msgid "Total slack space: "
+#~ msgstr "Celotna ohlapna velikost: "
+
+#~ msgid "Total space accounted for: "
+#~ msgstr "Celotna velikost, izračunana za: "
+
+#~ msgid "Package file %s is out of sync."
+#~ msgstr "Datoteka paketa %s ni usklajena."
+
+#~ msgid "No packages found"
+#~ msgstr "Noben paket ni bil najden"
+
+#~ msgid "You must give at least one search pattern"
+#~ msgstr "Podati morate vsaj en iskalni vzorec"
+
+#~ msgid "Unable to locate package %s"
+#~ msgstr "Ni mogoče najti paketa %s"
+
+#~ msgid "Package files:"
+#~ msgstr "Datoteke paketa:"
+
+#~ msgid "Cache is out of sync, can't x-ref a package file"
+#~ msgstr "Predpomnilnik ni usklajen, x-ref datoteke paketa ni mogoč"
+
+#~ msgid "Pinned packages:"
+#~ msgstr "Pripeti paketi:"
+
+#~ msgid "(not found)"
+#~ msgstr "(ni najdeno)"
+
+#~ msgid "  Installed: "
+#~ msgstr "  Nameščen: "
+
+#~ msgid "  Candidate: "
+#~ msgstr "  Kandidat: "
+
+#~ msgid "(none)"
+#~ msgstr "(brez)"
+
+#~ msgid "  Package pin: "
+#~ msgstr "  Bucika paketa: "
+
+#~ msgid "  Version table:"
+#~ msgstr "  Preglednica različic:"
+
+#~ msgid "%s %s for %s compiled on %s %s\n"
+#~ msgstr "%s %s za %s kodno preveden na %s %s\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: apt-cache [options] command\n"
+#~ "       apt-cache [options] showpkg pkg1 [pkg2 ...]\n"
+#~ "       apt-cache [options] showsrc pkg1 [pkg2 ...]\n"
+#~ "\n"
+#~ "apt-cache is a low-level tool used to query information\n"
+#~ "from APT's binary cache files\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   gencaches - Build both the package and source cache\n"
+#~ "   showpkg - Show some general information for a single package\n"
+#~ "   showsrc - Show source records\n"
+#~ "   stats - Show some basic statistics\n"
+#~ "   dump - Show the entire file in a terse form\n"
+#~ "   dumpavail - Print an available file to stdout\n"
+#~ "   unmet - Show unmet dependencies\n"
+#~ "   search - Search the package list for a regex pattern\n"
+#~ "   show - Show a readable record for the package\n"
+#~ "   depends - Show raw dependency information for a package\n"
+#~ "   rdepends - Show reverse dependency information for a package\n"
+#~ "   pkgnames - List the names of all packages in the system\n"
+#~ "   dotty - Generate package graphs for GraphViz\n"
+#~ "   xvcg - Generate package graphs for xvcg\n"
+#~ "   policy - Show policy settings\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text.\n"
+#~ "  -p=? The package cache.\n"
+#~ "  -s=? The source cache.\n"
+#~ "  -q   Disable progress indicator.\n"
+#~ "  -i   Show only important deps for the unmet command.\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ "See the apt-cache(8) and apt.conf(5) manual pages for more information.\n"
+#~ msgstr ""
+#~ "Uporaba: apt-cache [možnosti] ukaz\n"
+#~ "       apt-cache [options] showpkg pak1 [pak2 ...]\n"
+#~ "       apt-cache [options] showsrc pak1 [pak2 ...]\n"
+#~ "\n"
+#~ "apt-cache je orodje nizke ravni za poizvedbo podatkov\n"
+#~ "iz APT-ovih binarnih datotek predpomnilnika\n"
+#~ "\n"
+#~ "Ukazi:\n"
+#~ "   gencaches - izgradi tako predpomnilnik paketa kot izvorne kode\n"
+#~ "   showpkg - pokaže nekaj podrobnosti za posamezen paket\n"
+#~ "   showsrc - pokaže zapise izvorne kode\n"
+#~ "   stats - pokaže nekaj osnovne statistike\n"
+#~ "   dump - pokaže celotno datoteko v obliki terse\n"
+#~ "   dumpavail - izpiše razpoložljivo datoteko na stdout\n"
+#~ "   unmet - pokaže nezadoščene odvisnosti\n"
+#~ "   search - išče po seznamu paketov za vzorec logičnega izraza\n"
+#~ "   show - pokaže berljiv zapis za paket\n"
+#~ "   showauto - pokaže seznam samodejno nameščenih pakrov\n"
+#~ "   depends - pokaže surove podrobnosti odvisnosti za paket\n"
+#~ "   rdepends - pokaže obratne podrobnosti odvisnosti za paket\n"
+#~ "   pkgnames - izpiše imena vseh paketov na sistemu\n"
+#~ "   dotty - ustvari grafe paketov za GraphViz\n"
+#~ "   xvcg - ustvari grafe paketov za xvcg\n"
+#~ "   policy - pokaži nastavitve pravil\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h to besedilo pomoči.\n"
+#~ "  -p=? predpomnilnik paketa.\n"
+#~ "  -s=? predpomnilnik izvorne kode.\n"
+#~ "  -q onemogoči kazalnik napredka.\n"
+#~ "  -i pokaže le pomembne odvisnosti za nezadoščen ukaz.\n"
+#~ "  -c=? prebere to nastavitveno datoteko\n"
+#~ "  -o=? nastavi poljubno nastavitveno možnost, npr -o dir::cahce=/tmp\n"
+#~ "Oglejte si strani priročnika apt-cache(8) in apt.conf(5) za več "
+#~ "podrobnosti.\n"
+
+#~ msgid "Please provide a name for this Disc, such as 'Debian 5.0.3 Disk 1'"
+#~ msgstr "Navedite ime tega diska, kot je naprimer 'Debian 5.0.3 disk 1'"
+
+#~ msgid "Please insert a Disc in the drive and press enter"
+#~ msgstr "Vstavite disk v pogon in pritisnite vnosno tipko"
+
+#~ msgid "Failed to mount '%s' to '%s'"
+#~ msgstr "Priklapljanje '%s' na '%s' je spodletelo"
+
+#~ msgid "Repeat this process for the rest of the CDs in your set."
+#~ msgstr "Ponovi to opravilo za preostanek CD-jev v vaši zbirki."
+
+#~ msgid "Arguments not in pairs"
+#~ msgstr "Argumenti niso v parih"
+
+#~ msgid ""
+#~ "Usage: apt-config [options] command\n"
+#~ "\n"
+#~ "apt-config is a simple tool to read the APT config file\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   shell - Shell mode\n"
+#~ "   dump - Show the configuration\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text.\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ msgstr ""
+#~ "Uporaba: apt-config [možnosti] ukaz\n"
+#~ "\n"
+#~ "apt-config je preprosto orodje za branje nastavitvene datoteke APT\n"
+#~ "\n"
+#~ "Ukazi:\n"
+#~ "   shell - Lupinski način\n"
+#~ "   dump - Prikaže nastavitve\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h   To besedilo pomoči.\n"
+#~ "  -c=? Prebere podano datoteko z nastavitvami\n"
+#~ "  -o=? Nastavi poljubno nastavitveno možnost, na primer. -o dir::cache=/"
+#~ "tmp\n"
+
+#~ msgid "%s not a valid DEB package."
+#~ msgstr "%s ni veljaven paket DEB."
+
+#~ msgid ""
+#~ "Usage: apt-extracttemplates file1 [file2 ...]\n"
+#~ "\n"
+#~ "apt-extracttemplates is a tool to extract config and template info\n"
+#~ "from debian packages\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text\n"
+#~ "  -t   Set the temp dir\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ msgstr ""
+#~ "Uporaba: apt-extracttemplates dat1 [dat2 ...]\n"
+#~ "\n"
+#~ "apt-extracttemplates je orodje za pridobivanje podatkov o\n"
+#~ "nastavitvah in predlogah debianovih paketov\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h  To besedilo pomoči\n"
+#~ "  -t   Nastavi začasno mapo\n"
+#~ "  -c=? Prebere podano datoteko z nastavitvami\n"
+#~ "  -o=? Nastavi poljubno nastavitveno možnost, na primer. -o dir::cache=/"
+#~ "tmp\n"
+
+#~ msgid "Unable to write to %s"
+#~ msgstr "Ni mogoče pisati na %s"
+
+#~ msgid "Cannot get debconf version. Is debconf installed?"
+#~ msgstr "Ni mogoče ugotoviti različice debconfa. Je sploh nameščen?"
+
+#~ msgid "Package extension list is too long"
+#~ msgstr "Seznam razširitev paketov je predolg"
+
+#~ msgid "Error processing directory %s"
+#~ msgstr "Napaka med obdelavo mape %s"
+
+#~ msgid "Source extension list is too long"
+#~ msgstr "Seznam razširitev virov je predolg"
+
+#~ msgid "Error writing header to contents file"
+#~ msgstr "Napaka med pisanjem glave v datoteko vsebine"
+
+#~ msgid "Error processing contents %s"
+#~ msgstr "Napaka med obdelavo vsebine %s"
+
+#~ msgid ""
+#~ "Usage: apt-ftparchive [options] command\n"
+#~ "Commands: packages binarypath [overridefile [pathprefix]]\n"
+#~ "          sources srcpath [overridefile [pathprefix]]\n"
+#~ "          contents path\n"
+#~ "          release path\n"
+#~ "          generate config [groups]\n"
+#~ "          clean config\n"
+#~ "\n"
+#~ "apt-ftparchive generates index files for Debian archives. It supports\n"
+#~ "many styles of generation from fully automated to functional "
+#~ "replacements\n"
+#~ "for dpkg-scanpackages and dpkg-scansources\n"
+#~ "\n"
+#~ "apt-ftparchive generates Package files from a tree of .debs. The\n"
+#~ "Package file contains the contents of all the control fields from\n"
+#~ "each package as well as the MD5 hash and filesize. An override file\n"
+#~ "is supported to force the value of Priority and Section.\n"
+#~ "\n"
+#~ "Similarly apt-ftparchive generates Sources files from a tree of .dscs.\n"
+#~ "The --source-override option can be used to specify a src override file\n"
+#~ "\n"
+#~ "The 'packages' and 'sources' command should be run in the root of the\n"
+#~ "tree. BinaryPath should point to the base of the recursive search and \n"
+#~ "override file should contain the override flags. Pathprefix is\n"
+#~ "appended to the filename fields if present. Example usage from the \n"
+#~ "Debian archive:\n"
+#~ "   apt-ftparchive packages dists/potato/main/binary-i386/ > \\\n"
+#~ "               dists/potato/main/binary-i386/Packages\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h    This help text\n"
+#~ "  --md5 Control MD5 generation\n"
+#~ "  -s=?  Source override file\n"
+#~ "  -q    Quiet\n"
+#~ "  -d=?  Select the optional caching database\n"
+#~ "  --no-delink Enable delinking debug mode\n"
+#~ "  --contents  Control contents file generation\n"
+#~ "  -c=?  Read this configuration file\n"
+#~ "  -o=?  Set an arbitrary configuration option"
+#~ msgstr ""
+#~ "Uporaba: apt-ftparchive [možnosti] ukaz\n"
+#~ "Ukazi: packages, binarypath [datoteka prepisa [predpona poti]]\n"
+#~ "          sources srcpath [datoteka prepisa [predpona poti]]\n"
+#~ "          contents path\n"
+#~ "          release path\n"
+#~ "          generate config [skupine]\n"
+#~ "          clean config\n"
+#~ "\n"
+#~ "apt-ftparchive ustvari datoteke kazala za arhive Debian. Podpira\n"
+#~ "več slogov ustvarjanja od popolnoma samodejnih do funkcionalnih zamenjav\n"
+#~ "za dpkg-scanpackages in dpkg-scansources\n"
+#~ "\n"
+#~ "apt-ftparchive ustvari datoteke paketov iz drevesa .debs. Datoteka\n"
+#~ "paketa vsebuje vsebino vseh nadzornih polj iz vsakega paketa kot tudi\n"
+#~ "razpršilo MD5 in velikost datoteke. Datoteka prepisa podpira vsiljenje\n"
+#~ "vrednosti Prednosti in Odseka.\n"
+#~ "\n"
+#~ "Podobno apt-ftparchive ustvari datoteke paketov iz drevesa .dscs.\n"
+#~ "Možnost --source-override je mogoče uporabiti za navedbo datoteke prepisa "
+#~ "src\n"
+#~ "\n"
+#~ "Ukaza 'packages' in 'sources' je treba zagnati v korenu drevesa.\n"
+#~ "BinaryPath bi morala kazati na osnovno mapo rekurzivnega iskanja in\n"
+#~ "datoteka prepisa bi morala vsebovati zastavice prepisa Predpona je "
+#~ "pripeta\n"
+#~ "v polja imena datoteke, če je prisotna. Primer uporabe iz arhiva Debian:\n"
+#~ "    apt-ftparchive packages dists/potato/main/binary-i386/ > \\\n"
+#~ "                 dists/potato/main/binary-i386/Packages\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h    To besedilo pomoči\n"
+#~ "  --md5 ustvarjanje nadzorne vsote MD5\n"
+#~ "  -s=? datoteka prepisa vira\n"
+#~ "  -q     tiho\n"
+#~ "  -d=?  izbere izbirno podatkovno zbirko pomnilnika\n"
+#~ "  --no-delink omogoči način razhroščevanja razvezovanja\n"
+#~ "  --contents nadzira ustvarjanje datoteke vsebine\n"
+#~ "  -c=? prebere to nastavitveno datoteko\n"
+#~ "  -o=? nastavi poljubno možnost nastavitve"
+
+#~ msgid "No selections matched"
+#~ msgstr "Nobena izbira se ne ujema"
+
+#~ msgid "Some files are missing in the package file group `%s'"
+#~ msgstr "Nekatere datoteke manjkajo v skupini datotek paketov `%s'"
+
+#~ msgid "DB was corrupted, file renamed to %s.old"
+#~ msgstr "Podatkovna zbirka je pokvarjena, datoteka je preimenovana v %s.old"
+
+#~ msgid "DB is old, attempting to upgrade %s"
+#~ msgstr "PZ je star, poskušanje nadgradnje %s"
+
+#~ msgid ""
+#~ "DB format is invalid. If you upgraded from an older version of apt, "
+#~ "please remove and re-create the database."
+#~ msgstr ""
+#~ "Oblika podatkovne zbirke je neveljavna. V kolikor ste nadgradili s "
+#~ "starejše različice apt, podatkovno zbirko odstranite in jo znova "
+#~ "ustvarite."
+
+#~ msgid "Unable to open DB file %s: %s"
+#~ msgstr "Ni mogoče odprti datoteke PZ %s: %s"
+
+#~ msgid "Archive has no control record"
+#~ msgstr "Arhiv nima nadzornega zapisa"
+
+#~ msgid "Unable to get a cursor"
+#~ msgstr "Ni mogoče najti kazalke"
+
+#~ msgid "W: Unable to read directory %s\n"
+#~ msgstr "O: ni mogoče brati mape %s\n"
+
+#~ msgid "W: Unable to stat %s\n"
+#~ msgstr "O: Ni mogoče določiti %s\n"
+
+#~ msgid "E: "
+#~ msgstr "E: "
+
+#~ msgid "W: "
+#~ msgstr "O: "
+
+#~ msgid "E: Errors apply to file "
+#~ msgstr "N: Napake se sklicujejo na datoteko "
+
+#~ msgid "Failed to resolve %s"
+#~ msgstr "Ni mogoče razrešiti %s"
+
+#~ msgid "Tree walking failed"
+#~ msgstr "Hoja drevesa je spodletela"
+
+#~ msgid "Failed to open %s"
+#~ msgstr "Ni mogoče odprti %s"
+
+#~ msgid " DeLink %s [%s]\n"
+#~ msgstr " RazVeži %s [%s]\n"
+
+#~ msgid "Failed to readlink %s"
+#~ msgstr "Napaka med branjem povezave %s"
+
+#~ msgid "Failed to unlink %s"
+#~ msgstr "Napaka med odvezovanjem %s"
+
+#~ msgid "*** Failed to link %s to %s"
+#~ msgstr "*** Napaka med povezovanjem %s in %s"
+
+#~ msgid " DeLink limit of %sB hit.\n"
+#~ msgstr " Dosežena meja RazVezovanja %sB.\n"
+
+#~ msgid "Archive had no package field"
+#~ msgstr "Arhiv ni imel polja s paketom"
+
+#~ msgid "  %s has no override entry\n"
+#~ msgstr "  %s nima prepisanega vnosa\n"
+
+#~ msgid "  %s maintainer is %s not %s\n"
+#~ msgstr "  Vzdrževalec %s je %s in ne %s\n"
+
+#~ msgid "  %s has no source override entry\n"
+#~ msgstr "  %s nima izvornega vnosa prepisa\n"
+
+#~ msgid "  %s has no binary override entry either\n"
+#~ msgstr "  %s nima tudi binarnega vnosa prepisa\n"
+
+#~ msgid "realloc - Failed to allocate memory"
+#~ msgstr "realloc - Napaka med dodeljevanjem pomnilnika"
+
+#~ msgid "Unable to open %s"
+#~ msgstr "Ni mogoče odpreti %s"
+
+#, fuzzy
+#~ msgid "Malformed override %s line %llu #1"
+#~ msgstr "Napačno oblikovana prepisana vrstica %s %lu #1"
+
+#, fuzzy
+#~ msgid "Malformed override %s line %llu #2"
+#~ msgstr "Napačno oblikovana prepisana vrstica %s %lu #2"
+
+#, fuzzy
+#~ msgid "Malformed override %s line %llu #3"
+#~ msgstr "Napačno oblikovanje prepisane vrstice %s %lu #3"
+
+#~ msgid "Failed to read the override file %s"
+#~ msgstr "Napaka med branjem prepisane datoteke %s"
+
+#~ msgid "Unknown compression algorithm '%s'"
+#~ msgstr "Neznan algoritem stiskanja '%s'"
+
+#~ msgid "Compressed output %s needs a compression set"
+#~ msgstr "Stisnjen izhod %s potrebuje niz stiskanja"
+
+#~ msgid "Failed to create IPC pipe to subprocess"
+#~ msgstr "Ustvarjanje cevi IPC do podopravila je spodletelo"
+
+#~ msgid "Failed to create FILE*"
+#~ msgstr "Ustvarjanje DATOTEKE* ni uspelo"
+
+#~ msgid "Failed to fork"
+#~ msgstr "Vejitev ni uspela"
+
+#~ msgid "Compress child"
+#~ msgstr "Podrejeni predmet stiskanja"
+
+#~ msgid "Internal error, failed to create %s"
+#~ msgstr "Notranja napaka. Ni mogoče ustvariti %s"
+
+#~ msgid "IO to subprocess/file failed"
+#~ msgstr "VI podopravila/datoteke je spodletel"
+
+#~ msgid "Failed to read while computing MD5"
+#~ msgstr "Med računanjem MD5 ni mogoče brati"
+
+#~ msgid "Problem unlinking %s"
+#~ msgstr "Napaka med odvezovanjem %s"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "Regex compilation error - %s"
+#~ msgstr "Napaka med prevajanjem logičnega izraza - %s"
+
+#~ msgid "The following packages have unmet dependencies:"
+#~ msgstr "Naslednji paketi imajo nerešene odvisnosti:"
+
+#~ msgid "but %s is installed"
+#~ msgstr "vendar je paket %s nameščen"
+
+#~ msgid "but %s is to be installed"
+#~ msgstr "vendar bo paket %s nameščen"
+
+#~ msgid "but it is not installable"
+#~ msgstr "vendar se ga ne da namestiti"
+
+#~ msgid "but it is a virtual package"
+#~ msgstr "vendar je navidezen paket"
+
+#~ msgid "but it is not installed"
+#~ msgstr "vendar ni nameščen"
+
+#~ msgid "but it is not going to be installed"
+#~ msgstr "vendar ne bo nameščen"
+
+#~ msgid " or"
+#~ msgstr " ali"
+
+#~ msgid "The following NEW packages will be installed:"
+#~ msgstr "Naslednji NOVI paketi bodo nameščeni:"
+
+#~ msgid "The following packages will be REMOVED:"
+#~ msgstr "Naslednji novi paketi bodo ODSTRANJENI:"
+
+#~ msgid "The following packages have been kept back:"
+#~ msgstr "Naslednji paketi so bili zadržani:"
+
+#~ msgid "The following packages will be upgraded:"
+#~ msgstr "Naslednji paketi bodo nadgrajeni:"
+
+#~ msgid "The following packages will be DOWNGRADED:"
+#~ msgstr "Naslednji paketi bodo POSTARANI:"
+
+#~ msgid "The following held packages will be changed:"
+#~ msgstr "Naslednji zadržani paketi bodo spremenjeni:"
+
+#~ msgid "%s (due to %s) "
+#~ msgstr "%s (zaradi %s) "
+
+#~ msgid ""
+#~ "WARNING: The following essential packages will be removed.\n"
+#~ "This should NOT be done unless you know exactly what you are doing!"
+#~ msgstr ""
+#~ "OPOZORILO: Naslednji nujni paketi bodo odstranjeni.\n"
+#~ "Tega NE storite, razen če ne veste natanko kaj počenjate!"
+
+#~ msgid "%lu upgraded, %lu newly installed, "
+#~ msgstr "%lu nadgrajenih, %lu na novo nameščenih, "
+
+#~ msgid "%lu reinstalled, "
+#~ msgstr "%lu posodobljenih, "
+
+#~ msgid "%lu downgraded, "
+#~ msgstr "%lu postaranih, "
+
+#~ msgid "%lu to remove and %lu not upgraded.\n"
+#~ msgstr "%lu bo odstranjenih in %lu ne nadgrajenih.\n"
+
+#~ msgid "%lu not fully installed or removed.\n"
+#~ msgstr "%lu ne popolnoma nameščenih ali odstranjenih.\n"
+
+#~ msgid "Note, selecting '%s' for task '%s'\n"
+#~ msgstr "Izbiranje '%s' za nalogo '%s'\n"
+
+#~ msgid "Note, selecting '%s' for regex '%s'\n"
+#~ msgstr "Izbiranje '%s' za logični izraz '%s'\n"
+
+#~ msgid "Package %s is a virtual package provided by:\n"
+#~ msgstr "Paket %s je navidezen in ga je priskrbel:\n"
+
+#~ msgid " [Installed]"
+#~ msgstr " [Nameščeno]"
+
+#~ msgid " [Not candidate version]"
+#~ msgstr " [Ni različica kandidata]"
+
+#~ msgid "You should explicitly select one to install."
+#~ msgstr "Sami izberite paket, ki ga želite namestiti."
+
+#~ msgid ""
+#~ "Package %s is not available, but is referred to by another package.\n"
+#~ "This may mean that the package is missing, has been obsoleted, or\n"
+#~ "is only available from another source\n"
+#~ msgstr ""
+#~ "Paket %s nima navedene različice, vendar se nanj nanaša nek drug paket.\n"
+#~ "To ponavadi pomeni, da paket manjka, je zastaran ali\n"
+#~ "pa je na voljo samo iz drugega vira.\n"
+
+#~ msgid "However the following packages replace it:"
+#~ msgstr "Kakorkoli, naslednji paketi ga nadomestijo:"
+
+#~ msgid "Package '%s' has no installation candidate"
+#~ msgstr "Paket '%s' nima namestitvenega kandidata"
+
+#~ msgid "Virtual packages like '%s' can't be removed\n"
+#~ msgstr "Navideznih paketov kot je '%s' ni mogoče odstraniti\n"
+
+#~ msgid "Note, selecting '%s' instead of '%s'\n"
+#~ msgstr "Izbiranje '%s' namesto '%s'\n"
+
+#~ msgid "Skipping %s, it is already installed and upgrade is not set.\n"
+#~ msgstr "%s je preskočen, ker je že nameščen in ne potrebuje nadgradnje.\n"
+
+#~ msgid "Skipping %s, it is not installed and only upgrades are requested.\n"
+#~ msgstr "Preskok %s, ni nameščen in zahtevane so le nadgradnje\n"
+
+#~ msgid "Reinstallation of %s is not possible, it cannot be downloaded.\n"
+#~ msgstr "Ponovna namestitev %s ni možna, ker prejem ni možen.\n"
+
+#~ msgid "%s is already the newest version.\n"
+#~ msgstr "Najnovejša različica %s je že nameščena.\n"
+
+#~ msgid "%s set to manually installed.\n"
+#~ msgstr "%s je bil nastavljen na ročno nameščen.\n"
+
+#~ msgid "Selected version '%s' (%s) for '%s'\n"
+#~ msgstr "Izbrana različica '%s' (%s) za '%s'\n"
+
+#~ msgid "Selected version '%s' (%s) for '%s' because of '%s'\n"
+#~ msgstr "Izbrana različica '%s' (%s) za '%s' namesto '%s'\n"
+
+#~ msgid "Package %s is not installed, so not removed\n"
+#~ msgstr "Paket %s ni nameščen, zato ni odstranjen\n"
+
+#~ msgid "Correcting dependencies..."
+#~ msgstr "Popravljanje odvisnosti ..."
+
+#~ msgid " failed."
+#~ msgstr " spodletelo."
+
+#~ msgid "Unable to correct dependencies"
+#~ msgstr "Ni mogoče popraviti odvisnosti"
+
+#~ msgid "Unable to minimize the upgrade set"
+#~ msgstr "Ni mogoče pomanjšati zbirke za nadgradnjo"
+
+#~ msgid " Done"
+#~ msgstr " Opravljeno"
+
+#~ msgid "You might want to run 'apt-get -f install' to correct these."
+#~ msgstr "Če želite popraviti napake, poskusite pognati 'apt-get -f install'."
+
+#~ msgid "Unmet dependencies. Try using -f."
+#~ msgstr "Nerešene odvisnosti. Poskusite uporabiti -f."
+
+#~ msgid "WARNING: The following packages cannot be authenticated!"
+#~ msgstr "POZOR: Naslednjih paketov ni bilo mogoče overiti!"
+
+#~ msgid "Authentication warning overridden.\n"
+#~ msgstr "Opozorilo overitve je bilo prepisano.\n"
+
+#~ msgid "Install these packages without verification [y/N]? "
+#~ msgstr "Ali želite te pakete namestiti brez preverjanja [y/N]? "
+
+#~ msgid "Some packages could not be authenticated"
+#~ msgstr "Nekaterih paketkov bi bilo mogoče overiti"
+
+#~ msgid "There are problems and -y was used without --force-yes"
+#~ msgstr "Prišlo je do težav in -y je bil uporabljen brez --force-yes"
+
+#~ msgid "Internal error, InstallPackages was called with broken packages!"
+#~ msgstr "Notranja napaka, NamestiPakete je bil klican z pokvarjenimi paketi!"
+
+#~ msgid "Packages need to be removed but remove is disabled."
+#~ msgstr "Odstraniti je treba pakete, a je odstranjevanje onemogočeno."
+
+#~ msgid "Internal error, Ordering didn't finish"
+#~ msgstr "Notranja napaka, Urejanje se ni končalo"
+
+#~ msgid "How odd.. The sizes didn't match, email apt@packages.debian.org"
+#~ msgstr ""
+#~ "Kako čudno .. Velikosti se ne ujemata, pošljite sporočilo na apt@packages."
+#~ "debian.org"
+
+#~ msgid "Need to get %sB/%sB of archives.\n"
+#~ msgstr "Potrebno je dobiti %sB/%sB arhivov.\n"
+
+#~ msgid "Need to get %sB of archives.\n"
+#~ msgstr "Potrebno je dobiti %sB arhivov.\n"
+
+#~ msgid "After this operation, %sB of additional disk space will be used.\n"
+#~ msgstr "Po tem opravilu bo porabljenega %sB dodatnega prostora.\n"
+
+#~ msgid "After this operation, %sB disk space will be freed.\n"
+#~ msgstr "Po tem opravilu bo sproščenega %sB prostora na disku.\n"
+
+#~ msgid "Couldn't determine free space in %s"
+#~ msgstr "Ni mogoče določiti prostega prostora v %s"
+
+#~ msgid "You don't have enough free space in %s."
+#~ msgstr "Na %s je premalo prostora."
+
+#~ msgid "Trivial Only specified but this is not a trivial operation."
+#~ msgstr "Navedena je možnost Samo preprosto, a to opravilo ni preprosto."
+
+#~ msgid "Yes, do as I say!"
+#~ msgstr "Da, naredi tako kot pravim!"
+
+#~ msgid ""
+#~ "You are about to do something potentially harmful.\n"
+#~ "To continue type in the phrase '%s'\n"
+#~ " ?] "
+#~ msgstr ""
+#~ "Naredili boste nekaj, kar je morda lahko škodljivo.\n"
+#~ "Za nadaljevanje vtipkajte frazo '%s'\n"
+#~ " ?] "
+
+#~ msgid "Abort."
+#~ msgstr "Prekini."
+
+#~ msgid "Do you want to continue [Y/n]? "
+#~ msgstr "Ali želite nadaljevati [Y/n]? "
+
+#~ msgid "Failed to fetch %s  %s\n"
+#~ msgstr "Ni mogoče dobiti %s  %s\n"
+
+#~ msgid "Some files failed to download"
+#~ msgstr "Prejem nekaterih datotek ni uspel"
+
+#~ msgid "Download complete and in download only mode"
+#~ msgstr "Prejem je dokončan in uporabljen je način samo prejema"
+
+#~ msgid ""
+#~ "Unable to fetch some archives, maybe run apt-get update or try with --fix-"
+#~ "missing?"
+#~ msgstr ""
+#~ "Nekaterih arhivov ni mogoče dobiti. Poskusite uporabiti apt-get update "
+#~ "ali --fix-missing."
+
+#~ msgid "--fix-missing and media swapping is not currently supported"
+#~ msgstr "--fix-missing in izmenjava medija trenutno nista podprta"
+
+#~ msgid "Unable to correct missing packages."
+#~ msgstr "Ni mogoče popraviti manjkajočih paketov."
+
+#~ msgid "Aborting install."
+#~ msgstr "Prekinjanje namestitve."
+
+#~ msgid ""
+#~ "The following package disappeared from your system as\n"
+#~ "all files have been overwritten by other packages:"
+#~ msgid_plural ""
+#~ "The following packages disappeared from your system as\n"
+#~ "all files have been overwritten by other packages:"
+#~ msgstr[0] ""
+#~ "Naslednji paketi so izginili z vašega sistema, ker so vse\n"
+#~ "datoteke prepisali drugi paketi:"
+#~ msgstr[1] ""
+#~ "Naslednji paketi je izginil z vašega sistema, ker so vse\n"
+#~ "datoteke prepisali drugi paketi:"
+#~ msgstr[2] ""
+#~ "Naslednja paketa sta izginila z vašega sistema, ker so vse\n"
+#~ "datoteke prepisali drugi paketi:"
+#~ msgstr[3] ""
+#~ "Naslednji paketi so izginili z vašega sistema, ker so vse\n"
+#~ "datoteke prepisali drugi paketi:"
+
+#~ msgid "Note: This is done automatic and on purpose by dpkg."
+#~ msgstr "Opomba: To je dpkg storil samodejno in namenoma."
+
+#~ msgid "Ignore unavailable target release '%s' of package '%s'"
+#~ msgstr "Prezri nerazpoložljiv cilj izdaje '%s' paketa '%s'"
+
+#~ msgid "Picking '%s' as source package instead of '%s'\n"
+#~ msgstr "Izbiranje '%s' kot vir paketa namesto '%s'\n"
+
+#~ msgid "Ignore unavailable version '%s' of package '%s'"
+#~ msgstr "Prezri nerazpoložljivo različico '%s' paketa '%s'"
+
+#~ msgid "The update command takes no arguments"
+#~ msgstr "Ukaz update ne sprejema argumentov"
+
+#~ msgid "We are not supposed to delete stuff, can't start AutoRemover"
+#~ msgstr ""
+#~ "Program ne bi smel brisati stvari, ni mogoče zagnati "
+#~ "SamodejnegaOdstranjevalnika"
+
+#~ msgid ""
+#~ "Hmm, seems like the AutoRemover destroyed something which really\n"
+#~ "shouldn't happen. Please file a bug report against apt."
+#~ msgstr ""
+#~ "Videti je, da je SamodejniOdstranjevalnik nekaj uničil, kar se ne bi "
+#~ "smelo zgoditi\n"
+#~ "Pošljite poročilo o hrošču v apt."
+
+#~ msgid "The following information may help to resolve the situation:"
+#~ msgstr "Naslednji podatki vam bodo morda pomagali rešiti težavo:"
+
+#~ msgid "Internal Error, AutoRemover broke stuff"
+#~ msgstr "Notranja napaka, SamodejniOdstranjevalnik je pokvaril stvari"
+
+#~ msgid ""
+#~ "The following package was automatically installed and is no longer "
+#~ "required:"
+#~ msgid_plural ""
+#~ "The following packages were automatically installed and are no longer "
+#~ "required:"
+#~ msgstr[0] ""
+#~ "Naslednji paketi so bili samodejno nameščeni in niso več zahtevani:"
+#~ msgstr[1] "Naslednji paket je bil samodejno nameščen in ni več zahtevan:"
+#~ msgstr[2] ""
+#~ "Naslednja paketa sta bila samodejno nameščena in nista več zahtevana:"
+#~ msgstr[3] ""
+#~ "Naslednji paketi so bili samodejno nameščeni in niso več zahtevani:"
+
+#~ msgid "%lu package was automatically installed and is no longer required.\n"
+#~ msgid_plural ""
+#~ "%lu packages were automatically installed and are no longer required.\n"
+#~ msgstr[0] ""
+#~ "%lu paketov je bilo samodejno nameščenih in niso več zahtevani.\n"
+#~ msgstr[1] "%lu paket je bil samodejno nameščen in ni bil več zahtevan.\n"
+#~ msgstr[2] ""
+#~ "%lu paketa sta bila samodejno nameščena in nista več zahtevana.\n"
+#~ msgstr[3] "%lu paketi so bili samodejno nameščeni in niso več zahtevani.\n"
+
+#~ msgid "Use 'apt-get autoremove' to remove them."
+#~ msgstr "Uporabite 'apt-get autoremove' za njihovo odstranitev."
+
+#~ msgid "Internal error, AllUpgrade broke stuff"
+#~ msgstr "Notranja napaka zaradi AllUpgrade."
+
+#~ msgid "You might want to run 'apt-get -f install' to correct these:"
+#~ msgstr ""
+#~ "Poskusite zagnati 'apt-get -f install', če želite popraviti naslednje:"
+
+#~ msgid ""
+#~ "Unmet dependencies. Try 'apt-get -f install' with no packages (or specify "
+#~ "a solution)."
+#~ msgstr ""
+#~ "Nerešene odvisnosti. Poskusite 'apt-get -f install' brez paketov (ali "
+#~ "navedite rešitev)."
+
+#~ msgid ""
+#~ "Some packages could not be installed. This may mean that you have\n"
+#~ "requested an impossible situation or if you are using the unstable\n"
+#~ "distribution that some required packages have not yet been created\n"
+#~ "or been moved out of Incoming."
+#~ msgstr ""
+#~ "Nekaterih paketov ni mogoče namestiti. To lahko pomeni, da ste zahtevali\n"
+#~ "nemogoč položaj, če uporabljate nestabilno izdajo pa\n"
+#~ ", da nekateri zahtevani paketi še niso ustvarjeni ali premaknjeni\n"
+#~ " iz Prihajajočega."
+
+#~ msgid "Broken packages"
+#~ msgstr "Pokvarjeni paketi"
+
+#~ msgid "The following extra packages will be installed:"
+#~ msgstr "Naslednji dodatni paketi bodo nameščeni:"
+
+#~ msgid "Suggested packages:"
+#~ msgstr "Predlagani paketi:"
+
+#~ msgid "Recommended packages:"
+#~ msgstr "Priporočeni paketi:"
+
+#~ msgid "Couldn't find package %s"
+#~ msgstr "Ni mogoče najti paketa %s"
+
+#~ msgid "%s set to automatically installed.\n"
+#~ msgstr "%s je nastavljen na samodejno nameščen.\n"
+
+#~ msgid "Calculating upgrade... "
+#~ msgstr "Preračunavanje nadgradnje ... "
+
+#~ msgid "Failed"
+#~ msgstr "Spodletelo"
+
+#~ msgid "Done"
+#~ msgstr "Opravljeno"
+
+#~ msgid "Internal error, problem resolver broke stuff"
+#~ msgstr "Notranja napaka, reševalnik težav je pokvaril stvari"
+
+#~ msgid "Unable to lock the download directory"
+#~ msgstr "Ni mogoče zakleniti mape prejemov"
+
+#~ msgid "Downloading %s %s"
+#~ msgstr "Prejemanje %s %s"
+
+#~ msgid "Must specify at least one package to fetch source for"
+#~ msgstr ""
+#~ "Potrebno je navesti vsaj en paket, za katerega želite dobiti izvorno kodo"
+
+#~ msgid "Unable to find a source package for %s"
+#~ msgstr "Izvornega paketa za %s ni mogoče najti"
+
+#~ msgid ""
+#~ "NOTICE: '%s' packaging is maintained in the '%s' version control system "
+#~ "at:\n"
+#~ "%s\n"
+#~ msgstr ""
+#~ "OPOMBA: pakiranje '%s' vzdrževano v sistemu nadzora različice '%s' na:\n"
+#~ "%s\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please use:\n"
+#~ "bzr branch %s\n"
+#~ "to retrieve the latest (possibly unreleased) updates to the package.\n"
+#~ msgstr ""
+#~ "Uporabite:\n"
+#~ "bzr get %s\n"
+#~ "za pridobivanje zadnjih (morda neizdanih) posodobitev paketa.\n"
+
+#~ msgid "Skipping already downloaded file '%s'\n"
+#~ msgstr "Preskok že prejete datoteke '%s'\n"
+
+#~ msgid "You don't have enough free space in %s"
+#~ msgstr "Nimate dovolj prostora na %s"
+
+#~ msgid "Need to get %sB/%sB of source archives.\n"
+#~ msgstr "Potrebno je dobiti %sB/%sB izvornih arhivov.\n"
+
+#~ msgid "Need to get %sB of source archives.\n"
+#~ msgstr "Potrebno je dobiti %sB izvornih arhivov.\n"
+
+#~ msgid "Fetch source %s\n"
+#~ msgstr "Dobi vir %s\n"
+
+#~ msgid "Failed to fetch some archives."
+#~ msgstr "Nekaterih arhivov ni mogoče pridobiti."
+
+#~ msgid "Skipping unpack of already unpacked source in %s\n"
+#~ msgstr ""
+#~ "Odpakiranje že odpakiranih izvornih paketov v %s je bilo preskočeno\n"
+
+#~ msgid "Unpack command '%s' failed.\n"
+#~ msgstr "Ukaz odpakiranja '%s' ni uspel.\n"
+
+#~ msgid "Check if the 'dpkg-dev' package is installed.\n"
+#~ msgstr "Izberite, če je paket 'dpkg-dev' nameščen.\n"
+
+#~ msgid "Build command '%s' failed.\n"
+#~ msgstr "Ukaz gradnje '%s' ni uspel.\n"
+
+#~ msgid "Child process failed"
+#~ msgstr "Podrejeno opravilo ni uspelo"
+
+#~ msgid "Must specify at least one package to check builddeps for"
+#~ msgstr ""
+#~ "Potrebno je navesti vsaj en paket, za katerega želite preveriti "
+#~ "odvisnosti za gradnjo"
+
+#~ msgid "Unable to get build-dependency information for %s"
+#~ msgstr "Ni mogoče dobiti podrobnosti o odvisnostih za gradnjo za %s"
+
+#~ msgid "%s has no build depends.\n"
+#~ msgstr "%s nima odvisnosti za gradnjo.\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "%s dependency for %s can't be satisfied because %s is not allowed on '%s' "
+#~ "packages"
+#~ msgstr ""
+#~ "%s odvisnosti za %s ni mogoče zadostiti, ker ni mogoče najti paketa %s"
+
+#~ msgid ""
+#~ "%s dependency for %s cannot be satisfied because the package %s cannot be "
+#~ "found"
+#~ msgstr ""
+#~ "%s odvisnosti za %s ni mogoče zadostiti, ker ni mogoče najti paketa %s"
+
+#~ msgid ""
+#~ "Failed to satisfy %s dependency for %s: Installed package %s is too new"
+#~ msgstr ""
+#~ "Ni mogoče zadostiti %s odvisnosti za %s. Nameščen paket %s je preveč nov"
+
+#, fuzzy
+#~ msgid ""
+#~ "%s dependency for %s cannot be satisfied because candidate version of "
+#~ "package %s can't satisfy version requirements"
+#~ msgstr ""
+#~ "%s odvisnosti za %s ni mogoče zadostiti, ker nobena različica paketa %s "
+#~ "ne more zadostiti zahtevi po različici"
+
+#, fuzzy
+#~ msgid ""
+#~ "%s dependency for %s cannot be satisfied because package %s has no "
+#~ "candidate version"
+#~ msgstr ""
+#~ "%s odvisnosti za %s ni mogoče zadostiti, ker ni mogoče najti paketa %s"
+
+#~ msgid "Failed to satisfy %s dependency for %s: %s"
+#~ msgstr "Ni mogoče zadostiti %s odvisnosti za %s: %s"
+
+#~ msgid "Build-dependencies for %s could not be satisfied."
+#~ msgstr "Odvisnosti za gradnjo %s ni bilo mogoče zadostiti."
+
+#~ msgid "Failed to process build dependencies"
+#~ msgstr "Obdelava odvisnosti za gradnjo je spodletela"
+
+#~ msgid "Changelog for %s (%s)"
+#~ msgstr "Dnevnik sprememb za %s (%s)"
+
+#~ msgid "Supported modules:"
+#~ msgstr "Podprti moduli:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: apt-get [options] command\n"
+#~ "       apt-get [options] install|remove pkg1 [pkg2 ...]\n"
+#~ "       apt-get [options] source pkg1 [pkg2 ...]\n"
+#~ "\n"
+#~ "apt-get is a simple command line interface for downloading and\n"
+#~ "installing packages. The most frequently used commands are update\n"
+#~ "and install.\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   update - Retrieve new lists of packages\n"
+#~ "   upgrade - Perform an upgrade\n"
+#~ "   install - Install new packages (pkg is libc6 not libc6.deb)\n"
+#~ "   remove - Remove packages\n"
+#~ "   autoremove - Remove automatically all unused packages\n"
+#~ "   purge - Remove packages and config files\n"
+#~ "   source - Download source archives\n"
+#~ "   build-dep - Configure build-dependencies for source packages\n"
+#~ "   dist-upgrade - Distribution upgrade, see apt-get(8)\n"
+#~ "   dselect-upgrade - Follow dselect selections\n"
+#~ "   clean - Erase downloaded archive files\n"
+#~ "   autoclean - Erase old downloaded archive files\n"
+#~ "   check - Verify that there are no broken dependencies\n"
+#~ "   changelog - Download and display the changelog for the given package\n"
+#~ "   download - Download the binary package into the current directory\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h  This help text.\n"
+#~ "  -q  Loggable output - no progress indicator\n"
+#~ "  -qq No output except for errors\n"
+#~ "  -d  Download only - do NOT install or unpack archives\n"
+#~ "  -s  No-act. Perform ordering simulation\n"
+#~ "  -y  Assume Yes to all queries and do not prompt\n"
+#~ "  -f  Attempt to correct a system with broken dependencies in place\n"
+#~ "  -m  Attempt to continue if archives are unlocatable\n"
+#~ "  -u  Show a list of upgraded packages as well\n"
+#~ "  -b  Build the source package after fetching it\n"
+#~ "  -V  Show verbose version numbers\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ "See the apt-get(8), sources.list(5) and apt.conf(5) manual\n"
+#~ "pages for more information and options.\n"
+#~ "                       This APT has Super Cow Powers.\n"
+#~ msgstr ""
+#~ "Uporaba: apt-get [možnosti] ukaz\n"
+#~ "       apt-get [možnosti] install|remove pak1 [pak2 ...]\n"
+#~ "       apt-get [možnosti] source pak1 [pak2 ...]\n"
+#~ "\n"
+#~ "apt-get je enostaven vmesnik ukazne vrstice za prejemanje\n"
+#~ "in nameščanje paketov. Najpogosteje uporabljena ukaza\n"
+#~ "sta update in install.\n"
+#~ "\n"
+#~ "Ukazi:\n"
+#~ "   update - pridobi sezname novih paketov\n"
+#~ "   upgrade - izvede nadgradnjo\n"
+#~ "   install - namesti nove pakete (paket je libc6, ne libc6.deb)\n"
+#~ "   remove - odstrani pakete\n"
+#~ "   autoremove - samodejno odstrani vse neuporabljene pakete\n"
+#~ "   purge - odstrani pakete in nastavitvene datoteke\n"
+#~ "   source - prejme arhive izvorne kode\n"
+#~ "   dist-upgrade - nadgradnja distrbucije, oglejte si apt-get(8)\n"
+#~ "   dselect-upgrade - sledi izbiram dselect\n"
+#~ "   clean - izbriši prejete datoteke arhiva\n"
+#~ "   autoclean - izbriše stare prejete datoteke arhiva\n"
+#~ "   check - preveri, da ni zlomljenih odvisnosti\n"
+#~ "   markauto - označi dane pakete kot samodejno nameščene\n"
+#~ "   unmarkauto - označi dane pakete kot ročno nameščene\n"
+#~ "   changelog - prejme in prikaže dnevnik sprememb za dani paket\n"
+#~ "   download - prejme binarni paket v trenutno mapo\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h to besedilo pomoči.\n"
+#~ "  -q beležljiv izhod - brez indikatorja napredka\n"
+#~ "  -qq ni izhoda razen napak\n"
+#~ "  -d le prejmi - NE namesti ali odpakiraj arhivov\n"
+#~ "  -s izvedi simulacijo ukaza\n"
+#~ "  -y predpostavi Yes za vsa vprašanja in ne postavljaj vprašanj\n"
+#~ "  -f poskusi popraviti sistem z zlomljenimi odvisnostmi\n"
+#~ "  -m poskusi nadaljevati, če arhivov ni mogoče najti\n"
+#~ "  -u pokaži tudi seznam nadgrajenih paketov\n"
+#~ "  -b izgradi izvorni paket po njegovem pridobivanju\n"
+#~ "  -V pokaže podrobno izpisane številke različic\n"
+#~ "  -c=? prebere to nastavitveno datoteko\n"
+#~ "  -o=? nastavi poljubno nastavitveno možnost, na primer dir::cache=/temo\n"
+#~ "Za več podrobnosti in možnosti si oglejte priročnike apt-get(8),\n"
+#~ "sources.list(5) in apt.conf(5).\n"
+#~ "                       Ta APT ima zmožnosti Super krave.\n"
+
+#~ msgid ""
+#~ "NOTE: This is only a simulation!\n"
+#~ "      apt-get needs root privileges for real execution.\n"
+#~ "      Keep also in mind that locking is deactivated,\n"
+#~ "      so don't depend on the relevance to the real current situation!"
+#~ msgstr ""
+#~ "OPOMBA: To je samo simulacija!\n"
+#~ "     apt-get za pravo izvajanje potrebuje privilegije skrbnika.\n"
+#~ "     Zaklepanje je onemogočeno, zato se ne zanašajte\n"
+#~ "     na pomembnost trenutnega pravega stanja!"
+
+#~ msgid "Hit "
+#~ msgstr "Zadetek "
+
+#~ msgid "Get:"
+#~ msgstr "Dobi:"
+
+#~ msgid "Ign "
+#~ msgstr "Prezr "
+
+#~ msgid "Err "
+#~ msgstr "Nap "
+
+#~ msgid "Fetched %sB in %s (%sB/s)\n"
+#~ msgstr "Pridobljenih %sB v %s (%sB/s)\n"
+
+#~ msgid " [Working]"
+#~ msgstr " [Delo]"
+
+#~ msgid ""
+#~ "Media change: please insert the disc labeled\n"
+#~ " '%s'\n"
+#~ "in the drive '%s' and press enter\n"
+#~ msgstr ""
+#~ "Sprememba medija: vstavite disk z oznako\n"
+#~ " '%s'\n"
+#~ "v enoto '%s' in pritisnite vnosno tipko\n"
+
+#, fuzzy
+#~ msgid "%s can not be marked as it is not installed.\n"
+#~ msgstr "vendar ni nameščen"
+
+#, fuzzy
+#~ msgid "%s was already set to manually installed.\n"
+#~ msgstr "%s je bil nastavljen na ročno nameščen.\n"
+
+#, fuzzy
+#~ msgid "%s was already set to automatically installed.\n"
+#~ msgstr "%s je nastavljen na samodejno nameščen.\n"
+
+#, fuzzy
+#~ msgid "%s was already set on hold.\n"
+#~ msgstr "Najnovejša različica %s je že nameščena.\n"
+
+#, fuzzy
+#~ msgid "%s was already not hold.\n"
+#~ msgstr "Najnovejša različica %s je že nameščena.\n"
+
+#, fuzzy
+#~ msgid "%s set on hold.\n"
+#~ msgstr "%s je bil nastavljen na ročno nameščen.\n"
+
+#, fuzzy
+#~ msgid "Canceled hold on %s.\n"
+#~ msgstr "Ni mogoče odprti %s"
+
+#~ msgid "Unknown package record!"
+#~ msgstr "Neznan zapis paketa!"
+
+#~ msgid ""
+#~ "Usage: apt-sortpkgs [options] file1 [file2 ...]\n"
+#~ "\n"
+#~ "apt-sortpkgs is a simple tool to sort package files. The -s option is "
+#~ "used\n"
+#~ "to indicate what kind of file it is.\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text\n"
+#~ "  -s   Use source file sorting\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ msgstr ""
+#~ "Uporaba: apt-sortpkgs [možnosti] dat1 [dat2 ...]\n"
+#~ "\n"
+#~ "apt-sortpkgs je preprosto orodje za razvrščanje paketnih datotek. Možnost "
+#~ "-s\n"
+#~ "določa vrsto datoteke.\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h   to besedilo pomoči\n"
+#~ "  -s   uporabi razvrščanje izvornih datotek\n"
+#~ "  -c=? Prebere podano datoteko z nastavitvami\n"
+#~ "  -o=? Nastavi poljubno nastavitveno možnost, npr. -o dir::cache=/tmp\n"
+
+#~ msgid "Bad default setting!"
+#~ msgstr "Napačna privzeta nastavitev!"
+
+#~ msgid "Press enter to continue."
+#~ msgstr "Za nadaljevanje pritisnite vnosno tipko."
+
+#~ msgid "Do you want to erase any previously downloaded .deb files?"
+#~ msgstr "Ali želite izbrisati vse predhodno prejete datoteke .deb?"
+
+#~ msgid "Some errors occurred while unpacking. Packages that were installed"
+#~ msgstr ""
+#~ "Med razširajanjem je prišlo do nekaterih napak. Paketi, ki so bili "
+#~ "nameščeni"
+
+#~ msgid "will be configured. This may result in duplicate errors"
+#~ msgstr "bodo bili nastavljeni. To lahko povzroči podvojene napake"
+
+#~ msgid ""
+#~ "or errors caused by missing dependencies. This is OK, only the errors"
+#~ msgstr ""
+#~ "ali do napak zaradi manjkajočih odvisnosti. To je v redu, pomembne so "
+#~ "samo napake"
+
+#~ msgid ""
+#~ "above this message are important. Please fix them and run [I]nstall again"
+#~ msgstr ""
+#~ "nad tem sporočilom. Popravite jih in poženite Namest[I]tev še enkrat"
+
+#~ msgid "Merging available information"
+#~ msgstr "Združevanje razpoložljivih podaktov"
+
+#~ msgid "Empty files can't be valid archives"
+#~ msgstr "Prazne datoteke ne morejo biti veljavni arhivi"
+
+#~ msgid "Couldn't open pipe for %s"
+#~ msgstr "Ni mogoče odprti cevi za %s"
+
+#~ msgid "Read error from %s process"
+#~ msgstr "Napaka med branjem iz opravila %s"
+
+#~ msgid "Failed to stat"
+#~ msgstr "Določitev ni uspela"
+
+#~ msgid "Failed to set modification time"
+#~ msgstr "Nastavitev časa spremembe je spodletela"
+
+#~ msgid "Unable to read the cdrom database %s"
+#~ msgstr "Ni mogoče brati podatkovne zbirke %s na CD-ROM-u"
+
+#~ msgid ""
+#~ "Please use apt-cdrom to make this CD-ROM recognized by APT. apt-get "
+#~ "update cannot be used to add new CD-ROMs"
+#~ msgstr ""
+#~ "Uporabite apt-cdrom, če želite, da APT prepozna CD. apt-get update ne "
+#~ "more sam dodati novih CD-ROM-ov"
+
+#~ msgid "Wrong CD-ROM"
+#~ msgstr "Napačen CD-ROM"
+
+#~ msgid "Unable to unmount the CD-ROM in %s, it may still be in use."
+#~ msgstr "Ni mogoče odklopiti CD-ROM-a v %s, ker je morda še v uporabi."
+
+#~ msgid "Disk not found."
+#~ msgstr "Diska ni mogoče najti."
+
+#~ msgid "File not found"
+#~ msgstr "Datoteke ni mogoče najti"
+
+#~ msgid "Invalid URI, local URIS must not start with //"
+#~ msgstr "Neveljaven URI. Krajevni URI-ji se morajo začeti z //"
+
+#~ msgid "Logging in"
+#~ msgstr "Prijavljanje"
+
+#~ msgid "Unable to determine the peer name"
+#~ msgstr "Ni mogoče ugotoviti imena gostitelja"
+
+#~ msgid "Unable to determine the local name"
+#~ msgstr "Ni mogoče določiti krajevnega imena"
+
+#~ msgid "The server refused the connection and said: %s"
+#~ msgstr "Strežnik je zavrnil povezavo in sporočil: %s"
+
+#~ msgid "USER failed, server said: %s"
+#~ msgstr "USER je spodletel, strežnik je odgovoril: %s"
+
+#~ msgid "PASS failed, server said: %s"
+#~ msgstr "PASS je spodletel, strežnik je odgovoril: %s"
+
+#~ msgid ""
+#~ "A proxy server was specified but no login script, Acquire::ftp::"
+#~ "ProxyLogin is empty."
+#~ msgstr ""
+#~ "Naveden je bil posredniški strežnik, ne pa tudi prijavni skript. Acquire::"
+#~ "ftp::ProxyLogin je prazen."
+
+#~ msgid "Login script command '%s' failed, server said: %s"
+#~ msgstr "Ukaz prijavne skripte '%s' ni uspel, strežnik je odgovoril: %s"
+
+#~ msgid "TYPE failed, server said: %s"
+#~ msgstr "TYPE je spodletel, strežnik je odgovoril: %s"
+
+#~ msgid "Connection timeout"
+#~ msgstr "Povezava je zakasnela"
+
+#~ msgid "Server closed the connection"
+#~ msgstr "Strežnik je zaprl povezavo"
+
+#~ msgid "Read error"
+#~ msgstr "Napaka branja"
+
+#~ msgid "A response overflowed the buffer."
+#~ msgstr "Odgovor je prekoračil predpomnilnik."
+
+#~ msgid "Protocol corruption"
+#~ msgstr "Okvara protokola"
+
+#~ msgid "Write error"
+#~ msgstr "Napaka pisanja"
+
+#~ msgid "Could not create a socket"
+#~ msgstr "Ni mogoče ustvariti vtiča"
+
+#~ msgid "Could not connect data socket, connection timed out"
+#~ msgstr "Ni mogoče povezati podatkovnega vtiča. Povezava je zakasnela."
+
+#~ msgid "Could not connect passive socket."
+#~ msgstr "Ni mogoče povezat pasivnega vtiča."
+
+#~ msgid "getaddrinfo was unable to get a listening socket"
+#~ msgstr "getaddrinfo ni mogel dobiti poslušajočega vtiča"
+
+#~ msgid "Could not bind a socket"
+#~ msgstr "Ni mogoče povezati vtiča"
+
+#~ msgid "Could not listen on the socket"
+#~ msgstr "Ni mogoče poslušati na vtiču"
+
+#~ msgid "Could not determine the socket's name"
+#~ msgstr "Ni mogoče določiti imena vtiča"
+
+#~ msgid "Unable to send PORT command"
+#~ msgstr "Ni mogoče poslati ukaza PORT"
+
+#~ msgid "Unknown address family %u (AF_*)"
+#~ msgstr "Neznan naslov družine %u (AF_*)"
+
+#~ msgid "EPRT failed, server said: %s"
+#~ msgstr "EPRT ni uspel, strežnik je odgovoril: %s"
+
+#~ msgid "Data socket connect timed out"
+#~ msgstr "Povezava podatkovne vtičnice je zakasnela"
+
+#~ msgid "Unable to accept connection"
+#~ msgstr "Ni mogoče sprejeti povezave"
+
+#~ msgid "Problem hashing file"
+#~ msgstr "Težava med razprševanjem datoteke"
+
+#~ msgid "Unable to fetch file, server said '%s'"
+#~ msgstr "Ni mogoče pridobiti datoteke, strežnik je odgovoril '%s'"
+
+#~ msgid "Data socket timed out"
+#~ msgstr "Podatkovna vtič je potekel"
+
+#~ msgid "Data transfer failed, server said '%s'"
+#~ msgstr "Prenos podatkov ni uspel, strežnik je odgovoril '%s'"
+
+#~ msgid "Query"
+#~ msgstr "Poizvedba"
+
+#~ msgid "Unable to invoke "
+#~ msgstr "Ni mogoče klicati "
+
+#~ msgid "Connecting to %s (%s)"
+#~ msgstr "Povezovanje z %s (%s)"
+
+#~ msgid "[IP: %s %s]"
+#~ msgstr "[IP: %s %s]"
+
+#~ msgid "Could not create a socket for %s (f=%u t=%u p=%u)"
+#~ msgstr "Ni mogoče ustvariti vtiča za %s (f=%u t=%u p=%u)"
+
+#~ msgid "Cannot initiate the connection to %s:%s (%s)."
+#~ msgstr "Ni mogoče začeti povezave z %s:%s (%s)."
+
+#~ msgid "Could not connect to %s:%s (%s), connection timed out"
+#~ msgstr "Ni se mogoče povezati z %s:%s (%s). Povezava je zakasnela."
+
+#~ msgid "Could not connect to %s:%s (%s)."
+#~ msgstr "Ni se mogoče povezati z %s:%s (%s)."
+
+#~ msgid "Connecting to %s"
+#~ msgstr "Povezovanje z %s"
+
+#~ msgid "Could not resolve '%s'"
+#~ msgstr "Ni mogoče razrešiti '%s'"
+
+#~ msgid "Temporary failure resolving '%s'"
+#~ msgstr "Začasna napaka med razreševanjem '%s'"
+
+#~ msgid "Something wicked happened resolving '%s:%s' (%i - %s)"
+#~ msgstr "Nekaj čudnega se je zgodilo med razreševanjem '%s:%s' (%i - %s)"
+
+#~ msgid "Unable to connect to %s:%s:"
+#~ msgstr "Ni se mogoče povezati z %s:%s:"
+
+#~ msgid ""
+#~ "Internal error: Good signature, but could not determine key fingerprint?!"
+#~ msgstr ""
+#~ "Notranja napaka: Dober podpis, toda ni mogoče določiti podpisa ključa?!"
+
+#~ msgid "At least one invalid signature was encountered."
+#~ msgstr "Najden je bil vsaj en neveljaven podpis."
+
+#~ msgid "Could not execute 'gpgv' to verify signature (is gpgv installed?)"
+#~ msgstr "Ni mogoče izvesti 'gpgv' za preverjanje podpisa (je gpgv nameščen?)"
+
+#~ msgid "Unknown error executing gpgv"
+#~ msgstr "Neznana napaka med izvajanjem gpgv"
+
+#~ msgid "The following signatures were invalid:\n"
+#~ msgstr "Naslednji podpisi so bili neveljavni:\n"
+
+#~ msgid ""
+#~ "The following signatures couldn't be verified because the public key is "
+#~ "not available:\n"
+#~ msgstr ""
+#~ "Naslednjih podpisov ni mogoče preveriti, ker javni ključ ni na voljo:\n"
+
+#~ msgid "Waiting for headers"
+#~ msgstr "Čakanje na glave"
+
+#~ msgid "Got a single header line over %u chars"
+#~ msgstr "Dobljena je ena vrstica glave preko %u znakov"
+
+#~ msgid "Bad header line"
+#~ msgstr "Neveljavna vrstica glave"
+
+#~ msgid "The HTTP server sent an invalid reply header"
+#~ msgstr "Strežnik HTTP je poslal neveljavno glavo odgovora"
+
+#~ msgid "The HTTP server sent an invalid Content-Length header"
+#~ msgstr "Strežnik HTTP je poslal glavo z neveljavno dolžino vsebine"
+
+#~ msgid "The HTTP server sent an invalid Content-Range header"
+#~ msgstr "Strežnik HTTP je poslal glavo z neveljavnim obsegom vsebine"
+
+#~ msgid "This HTTP server has broken range support"
+#~ msgstr "Ta strežnik HTTP ima pokvarjen obseg podpore"
+
+#~ msgid "Unknown date format"
+#~ msgstr "Neznana oblika datuma"
+
+#~ msgid "Select failed"
+#~ msgstr "Izbira ni uspela"
+
+#~ msgid "Connection timed out"
+#~ msgstr "Povezava je zakasnela"
+
+#~ msgid "Error writing to output file"
+#~ msgstr "Napaka med pisanjem v izhodno datoteko"
+
+#~ msgid "Error writing to file"
+#~ msgstr "Napaka med pisanjem v datoteko"
+
+#~ msgid "Error writing to the file"
+#~ msgstr "Napaka med pisanjem v datoteko"
+
+#~ msgid "Error reading from server. Remote end closed connection"
+#~ msgstr "Napaka med branjem s strežnika. Oddaljeni del je zaprl povezavo"
+
+#~ msgid "Error reading from server"
+#~ msgstr "Napaka med branjem s strežnika"
+
+#~ msgid "Bad header data"
+#~ msgstr "Napačni podatki glave"
+
+#~ msgid "Connection failed"
+#~ msgstr "Povezava ni uspela"
+
+#~ msgid "Internal error"
+#~ msgstr "Notranja napaka"
+
+#~ msgid "Can't mmap an empty file"
+#~ msgstr "mmap prazne datoteke ni mogoč"
+
+#~ msgid "Couldn't duplicate file descriptor %i"
+#~ msgstr "Ni mogoče podvojiti opisnika datotek %i"
+
+#, fuzzy
+#~ msgid "Couldn't make mmap of %llu bytes"
+#~ msgstr "Ni mogoče narediti mmap %lu bajtov"
+
+#~ msgid "Unable to close mmap"
+#~ msgstr "Ni mogoče zapreti mmap"
+
+#~ msgid "Unable to synchronize mmap"
+#~ msgstr "Ni mogoče uskladiti mmap"
+
+#~ msgid "Couldn't make mmap of %lu bytes"
+#~ msgstr "Ni mogoče narediti mmap %lu bajtov"
+
+#~ msgid "Failed to truncate file"
+#~ msgstr "Ni mogoče obrezati datoteke"
+
+#~ msgid ""
+#~ "Dynamic MMap ran out of room. Please increase the size of APT::Cache-"
+#~ "Limit. Current value: %lu. (man 5 apt.conf)"
+#~ msgstr ""
+#~ "Dinamičnemu MMap je zmanjkalo prostora. Povečajte velikost APT::Omejitev-"
+#~ "Predpomnilnika. Trenutna vrednost: %lu. (man 5 apt.conf)"
+
+#~ msgid ""
+#~ "Unable to increase the size of the MMap as the limit of %lu bytes is "
+#~ "already reached."
+#~ msgstr ""
+#~ "Ni mogoče povečati velikosti MMap, ker je omejitev %lu bajtov že dosežena."
+
+#~ msgid ""
+#~ "Unable to increase size of the MMap as automatic growing is disabled by "
+#~ "user."
+#~ msgstr ""
+#~ "Ni mogoče povečati velikosti MMap, ker je samodejno povečevanje "
+#~ "onemogočeno."
+
+#~ msgid "%lid %lih %limin %lis"
+#~ msgstr "%lid %lih %limin %lis"
+
+#~ msgid "%lih %limin %lis"
+#~ msgstr "%lih %limin %lis"
+
+#~ msgid "%limin %lis"
+#~ msgstr "%limin %lis"
+
+#~ msgid "%lis"
+#~ msgstr "%lis"
+
+#~ msgid "Selection %s not found"
+#~ msgstr "Izbire %s ni mogoče najti"
+
+#~ msgid "Unrecognized type abbreviation: '%c'"
+#~ msgstr "Neprepoznana vrsta okrajšave: '%c'"
+
+#~ msgid "Opening configuration file %s"
+#~ msgstr "Odpiranje nastavitvene datoteke %s"
+
+#~ msgid "Syntax error %s:%u: Block starts with no name."
+#~ msgstr "Skladenjska napaka %s:%u: Blok se začne brez imena."
+
+#~ msgid "Syntax error %s:%u: Malformed tag"
+#~ msgstr "Skladenjska napaka %s:%u: Slabo oblikovana oznaka."
+
+#~ msgid "Syntax error %s:%u: Extra junk after value"
+#~ msgstr "Skladenjska napaka %s:%u: Dodatna krama za vrednostjo."
+
+#~ msgid "Syntax error %s:%u: Directives can only be done at the top level"
+#~ msgstr ""
+#~ "Skladenjska napaka %s:%u: Napotki se lahko izvedejo le na vrhnji ravni."
+
+#~ msgid "Syntax error %s:%u: Too many nested includes"
+#~ msgstr "Skladenjska napaka %s:%u: Preveč vgnezdenih vključitev"
+
+#~ msgid "Syntax error %s:%u: Included from here"
+#~ msgstr "Skladenjska napaka %s:%u: Vključeno od tu"
+
+#~ msgid "Syntax error %s:%u: Unsupported directive '%s'"
+#~ msgstr "Skladenjska napaka %s:%u: Nepodprt napotek '%s'"
+
+#~ msgid ""
+#~ "Syntax error %s:%u: clear directive requires an option tree as argument"
+#~ msgstr ""
+#~ "Skladenjska napaka %s:%u: počisti ukaz zahteva drevo možnosti kot argument"
+
+#~ msgid "Syntax error %s:%u: Extra junk at end of file"
+#~ msgstr "Skladenjska napaka %s:%u: Dodatna krama na koncu datoteke"
+
+#~ msgid "%c%s... Error!"
+#~ msgstr "%c%s ... Napaka!"
+
+#~ msgid "%c%s... Done"
+#~ msgstr "%c%s ... Narejeno"
+
+#~ msgid "Command line option '%c' [from %s] is not known."
+#~ msgstr "Možnost ukazne vrstice '%c' [iz %s] ni poznana."
+
+#~ msgid "Command line option %s is not understood"
+#~ msgstr "Možnosti ukazne vrstice %s ni mogoče razumeti"
+
+#~ msgid "Command line option %s is not boolean"
+#~ msgstr "Možnost ukazne vrstice %s ni boolova vrednost"
+
+#~ msgid "Option %s requires an argument."
+#~ msgstr "Možnost %s zahteva argument."
+
+#~ msgid "Option %s: Configuration item specification must have an =<val>."
+#~ msgstr "Možnost %s: Določilo predmeta nastavitve zahtevajo =<val>."
+
+#~ msgid "Option %s requires an integer argument, not '%s'"
+#~ msgstr "Možnost %s zahteva celoštevilski argument, ne '%s'"
+
+#~ msgid "Option '%s' is too long"
+#~ msgstr "Možnost '%s' je predolga"
+
+#~ msgid "Sense %s is not understood, try true or false."
+#~ msgstr "Pomena %s ni mogoče razumeti, poskusite pravilno ali napačno."
+
+#~ msgid "Invalid operation %s"
+#~ msgstr "Neveljavno opravilo %s"
+
+#~ msgid "Unable to stat the mount point %s"
+#~ msgstr "Ni mogoče določiti priklopne točke %s"
+
+#~ msgid "Unable to change to %s"
+#~ msgstr "Ni mogoče spremeniti v %s"
+
+#~ msgid "Failed to stat the cdrom"
+#~ msgstr "Ni mogoče določiti CD-ROM-a"
+
+#~ msgid "Not using locking for read only lock file %s"
+#~ msgstr "Brez uporabe zaklepanja za zaklenjeno datoteko le za branje %s"
+
+#~ msgid "Could not open lock file %s"
+#~ msgstr "Ni mogoče odprti zaklenjene datoteke %s"
+
+#~ msgid "Not using locking for nfs mounted lock file %s"
+#~ msgstr "Brez uporabe zaklepanja za datoteko %s, priklopljeno z NTFS"
+
+#~ msgid "Could not get lock %s"
+#~ msgstr "Ni mogoče zakleniti datoteke %s"
+
+#~ msgid "List of files can't be created as '%s' is not a directory"
+#~ msgstr "Seznama datotek ni mogoče ustvariti, ker '%s' ni mapa"
+
+#~ msgid "Ignoring '%s' in directory '%s' as it is not a regular file"
+#~ msgstr "Preziranje '%s' v mapi '%s', ker ni običajna datoteka"
+
+#~ msgid "Ignoring file '%s' in directory '%s' as it has no filename extension"
+#~ msgstr ""
+#~ "Preziranje datoteke '%s' v mapi '%s', ker nima pripone imena datotek"
+
+#~ msgid ""
+#~ "Ignoring file '%s' in directory '%s' as it has an invalid filename "
+#~ "extension"
+#~ msgstr ""
+#~ "Preziranje datoteke '%s' v mapi '%s', ker nima veljavne pripone imena "
+#~ "datotek"
+
+#~ msgid "Waited for %s but it wasn't there"
+#~ msgstr "Program je čakal na %s a ga ni bilo tam"
+
+#~ msgid "Sub-process %s received a segmentation fault."
+#~ msgstr "Pod-opravilo %s je prejelo segmentacijsko napako."
+
+#~ msgid "Sub-process %s received signal %u."
+#~ msgstr "Pod-opravilo %s je prejelo signal %u."
+
+#~ msgid "Sub-process %s returned an error code (%u)"
+#~ msgstr "Pod-opravilo %s je vrnilo kodo napake (%u)"
+
+#~ msgid "Sub-process %s exited unexpectedly"
+#~ msgstr "Pod-opravilo %s se je nepričakovano zaključilo"
+
+#~ msgid "Could not open file %s"
+#~ msgstr "Ni mogoče odpreti datoteke %s"
+
+#~ msgid "Could not open file descriptor %d"
+#~ msgstr "Ni mogoče odpreti opisnika datotek %d"
+
+#~ msgid "Failed to create subprocess IPC"
+#~ msgstr "Ni mogoče ustvariti podopravila IPD"
+
+#~ msgid "Failed to exec compressor "
+#~ msgstr "Ni mogoče izvesti stiskanja "
+
+#, fuzzy
+#~ msgid "read, still have %llu to read but none left"
+#~ msgstr "branje, še vedno %lu za branje, a nobeden ni ostal"
+
+#, fuzzy
+#~ msgid "write, still have %llu to write but couldn't"
+#~ msgstr "pisanje, še vedno %lu za pisanje, a ni mogoče"
+
+#~ msgid "Problem closing the gzip file %s"
+#~ msgstr "Težava med zapiranjem gzip datoteke %s"
+
+#~ msgid "Problem closing the file %s"
+#~ msgstr "Težava med zapiranjem datoteke %s"
+
+#~ msgid "Problem renaming the file %s to %s"
+#~ msgstr "Težava med preimenovanje datoteke %s v %s"
+
+#~ msgid "Problem unlinking the file %s"
+#~ msgstr "Težava med razvezovanjem datoteke %s"
+
+#~ msgid "Problem syncing the file"
+#~ msgstr "Težava med usklajevanjem datoteke"
+
+#~ msgid "Empty package cache"
+#~ msgstr "Prazen predpomnilnik paketov"
+
+#~ msgid "The package cache file is corrupted"
+#~ msgstr "Datoteka s predpomnilnikom paketov je pokvarjena"
+
+#~ msgid "The package cache file is an incompatible version"
+#~ msgstr "Različica datoteke s predpomnilnikom paketov ni združljiva"
+
+#, fuzzy
+#~ msgid "The package cache file is corrupted, it is too small"
+#~ msgstr "Datoteka s predpomnilnikom paketov je pokvarjena"
+
+#~ msgid "This APT does not support the versioning system '%s'"
+#~ msgstr "Ta APT ne podpira sistema različic '%s'"
+
+#~ msgid "The package cache was built for a different architecture"
+#~ msgstr "Predpomnilnik paketov je bil izgrajen za drugačno arhitekturo"
+
+#~ msgid "Depends"
+#~ msgstr "Odvisen od"
+
+#~ msgid "PreDepends"
+#~ msgstr "Predodvisen od"
+
+#~ msgid "Suggests"
+#~ msgstr "Priporoča"
+
+#~ msgid "Recommends"
+#~ msgstr "Priporoča"
+
+#~ msgid "Conflicts"
+#~ msgstr "V sporu z"
+
+#~ msgid "Replaces"
+#~ msgstr "Zamenja"
+
+#~ msgid "Obsoletes"
+#~ msgstr "Zastara"
+
+#~ msgid "Breaks"
+#~ msgstr "Pokvari"
+
+#~ msgid "Enhances"
+#~ msgstr "Izboljša"
+
+#~ msgid "important"
+#~ msgstr "pomembno"
+
+#~ msgid "required"
+#~ msgstr "obvezno"
+
+#~ msgid "standard"
+#~ msgstr "običajni"
+
+#~ msgid "optional"
+#~ msgstr "izbirno"
+
+#~ msgid "extra"
+#~ msgstr "dodatno"
+
+#~ msgid "Building dependency tree"
+#~ msgstr "Gradnja drevesa odvisnosti"
+
+#~ msgid "Candidate versions"
+#~ msgstr "Različice kandidatov"
+
+#~ msgid "Dependency generation"
+#~ msgstr "Ustvarjanje odvisnosti"
+
+#~ msgid "Reading state information"
+#~ msgstr "Branje podatkov o stanju"
+
+#~ msgid "Failed to open StateFile %s"
+#~ msgstr "Odpiranje DatotekeStanja %s je spodletelo"
+
+#~ msgid "Failed to write temporary StateFile %s"
+#~ msgstr "Pisanje začasne DatotekeStanja %s je spodletelo"
+
+#~ msgid "Unable to parse package file %s (1)"
+#~ msgstr "Ni mogoče razčleniti datoteke paketa %s (1)"
+
+#~ msgid "Unable to parse package file %s (2)"
+#~ msgstr "Ni mogoče razčleniti datoteke paketa %s (2)"
+
+#~ msgid "Malformed line %lu in source list %s ([option] unparseable)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu na seznamu virov %s ([možnosti] ni mogoče "
+#~ "razčleniti)"
+
+#~ msgid "Malformed line %lu in source list %s ([option] too short)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu na seznamu virov %s ([možnost] prekratka)"
+
+#~ msgid "Malformed line %lu in source list %s ([%s] is not an assignment)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu na seznamu vrstic %s ([%s] ni dodelitev)"
+
+#~ msgid "Malformed line %lu in source list %s ([%s] has no key)"
+#~ msgstr "Slabo oblikovana vrstica %lu na seznamu virov %s ([%s] nima ključa)"
+
+#~ msgid "Malformed line %lu in source list %s ([%s] key %s has no value)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu na seznamu virov %s ([%s] ključ %s nima "
+#~ "vrednosti)"
+
+#~ msgid "Malformed line %lu in source list %s (URI)"
+#~ msgstr "Slabo oblikovana vrstica %lu v seznamu virov %s (URI)"
+
+#~ msgid "Malformed line %lu in source list %s (dist)"
+#~ msgstr "Slabo oblikovana vrstica %lu v seznamu virov %s (distribucija)"
+
+#~ msgid "Malformed line %lu in source list %s (URI parse)"
+#~ msgstr "Slabo oblikovana vrstica %lu v seznamu virov %s (razčlenitev URI)"
+
+#~ msgid "Malformed line %lu in source list %s (absolute dist)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu v seznamu virov %s (absolutna distribucija)"
+
+#~ msgid "Malformed line %lu in source list %s (dist parse)"
+#~ msgstr ""
+#~ "Slabo oblikovana vrstica %lu v seznamu virov %s (razčlenitev distribucije)"
+
+#~ msgid "Opening %s"
+#~ msgstr "Odpiranje %s"
+
+#~ msgid "Line %u too long in source list %s."
+#~ msgstr "Vrstica %u v seznamu virov %s je predolga."
+
+#~ msgid "Malformed line %u in source list %s (type)"
+#~ msgstr "Slabo oblikovana vrstica %u v seznamu virov %s (vrsta)"
+
+#~ msgid "Type '%s' is not known on line %u in source list %s"
+#~ msgstr "Vrsta '%s' v vrstici %u na seznamu virov %s ni znana"
+
+#~ msgid ""
+#~ "Could not perform immediate configuration on '%s'. Please see man 5 apt."
+#~ "conf under APT::Immediate-Configure for details. (%d)"
+#~ msgstr ""
+#~ "Ni mogoče izvesti takojąnje nastavitve na '%s'. Oglejte si man5 apt.conf "
+#~ "pod APT::Takojąnja-nastavitev za podrobnosti. (%d)"
+
+#, fuzzy
+#~ msgid "Could not configure '%s'. "
+#~ msgstr "Ni mogoče odpreti datoteke '%s'"
+
+#~ msgid ""
+#~ "This installation run will require temporarily removing the essential "
+#~ "package %s due to a Conflicts/Pre-Depends loop. This is often bad, but if "
+#~ "you really want to do it, activate the APT::Force-LoopBreak option."
+#~ msgstr ""
+#~ "Ta krog namestitve zahteva začasno odstranitev ključnega paketa %s zaradi "
+#~ "zanke spora/predodvisnosti. To je ponavadi slabo, toda če zares želite "
+#~ "nadaljevati, vključite možnost APT::Force-LoopBreak."
+
+#~ msgid "Index file type '%s' is not supported"
+#~ msgstr "Vrsta datoteke s kazalom '%s' ni podprta"
+
+#~ msgid ""
+#~ "The package %s needs to be reinstalled, but I can't find an archive for "
+#~ "it."
+#~ msgstr ""
+#~ "Paket %s mora biti znova nameščen, vendar ni mogoče najti arhiva zanj."
+
+#~ msgid ""
+#~ "Error, pkgProblemResolver::Resolve generated breaks, this may be caused "
+#~ "by held packages."
+#~ msgstr ""
+#~ "Napaka. pkgProblemResolver::Napake pri razrešitvi, ki so jih morda "
+#~ "povzročili zadržani paketi."
+
+#~ msgid "Unable to correct problems, you have held broken packages."
+#~ msgstr "Ni mogoče popraviti težav. Imate pokvarjene pakete."
+
+#~ msgid ""
+#~ "Some index files failed to download. They have been ignored, or old ones "
+#~ "used instead."
+#~ msgstr ""
+#~ "Prejem nekaterih datotek kazala je spodletel. Bile so prezrte ali pa so "
+#~ "bile namesto njih uporabljene stare."
+
+#~ msgid "List directory %spartial is missing."
+#~ msgstr "Mapa seznama %spartial manjka."
+
+#~ msgid "Archives directory %spartial is missing."
+#~ msgstr "Mapa arhivov %spartial manjka."
+
+#~ msgid "Unable to lock directory %s"
+#~ msgstr "Mape %s ni mogoče zakleniti"
+
+#~ msgid "Retrieving file %li of %li (%s remaining)"
+#~ msgstr "Pridobivanje datoteke %li od %li (%s preostalo)"
+
+#~ msgid "Retrieving file %li of %li"
+#~ msgstr "Pridobivanje datoteke %li od %li"
+
+#~ msgid "The method driver %s could not be found."
+#~ msgstr "Gonilnika načinov %s ni mogoče najti."
+
+#~ msgid "Method %s did not start correctly"
+#~ msgstr "Način %s se ni začel pravilno"
+
+#~ msgid ""
+#~ "Please insert the disc labeled: '%s' in the drive '%s' and press enter."
+#~ msgstr ""
+#~ "Vstavite disk z oznako '%s' v pogon '%s' in pritisnite vnosno tipko."
+
+#~ msgid "Packaging system '%s' is not supported"
+#~ msgstr "Paketni sistem '%s' ni podprt"
+
+#~ msgid "Unable to determine a suitable packaging system type"
+#~ msgstr "Ni mogoče določiti ustrezne vrste paketnega sistema"
+
+#~ msgid "Unable to stat %s."
+#~ msgstr "Ni mogoče določiti %s."
+
+#~ msgid "You must put some 'source' URIs in your sources.list"
+#~ msgstr "V sources.list morate vstaviti URI-je z viri"
+
+#~ msgid "The package lists or status file could not be parsed or opened."
+#~ msgstr ""
+#~ "Ni mogoče odprti ali razčleniti seznama paketov ali datoteke stanja."
+
+#~ msgid "You may want to run apt-get update to correct these problems"
+#~ msgstr "Za odpravljanje težav poskusite zagnati apt-get update."
+
+#~ msgid "The list of sources could not be read."
+#~ msgstr "Seznama virov ni mogoče brati."
+
+#~ msgid "Invalid record in the preferences file %s, no Package header"
+#~ msgstr "Neveljaven zapis v datoteki možnosti %s, ni glave paketa"
+
+#~ msgid "Did not understand pin type %s"
+#~ msgstr "Ni mogoče razumeti vrste bucike %s"
+
+#~ msgid "No priority (or zero) specified for pin"
+#~ msgstr "Prednost bucike ni navedena ali pa je nič."
+
+#~ msgid "Cache has an incompatible versioning system"
+#~ msgstr "Predpomnilnik ima neustrezen sistem različic"
+
+#, fuzzy
+#~ msgid "Error occurred while processing %s (%s%d)"
+#~ msgstr "Prišlo je do napake med obdelavo %s  (Najdi paket)"
+
+#~ msgid ""
+#~ "Wow, you exceeded the number of package names this APT is capable of."
+#~ msgstr "Čestitamo, presegli ste število imen paketov, ki jih zmore APT."
+
+#~ msgid "Wow, you exceeded the number of versions this APT is capable of."
+#~ msgstr "Čestitamo, presegli ste število različic, ki jih zmore APT."
+
+#~ msgid "Wow, you exceeded the number of descriptions this APT is capable of."
+#~ msgstr "Čestitamo, presegli ste število opisov, ki jih je zmožen APT."
+
+#~ msgid "Wow, you exceeded the number of dependencies this APT is capable of."
+#~ msgstr "Čestitamo, presegli ste število odvisnosti, ki jih zmore APT."
+
+#~ msgid "Package %s %s was not found while processing file dependencies"
+#~ msgstr "Paketa %s %s ni bilo mogoče najti med obdelavo odvisnosti datotek"
+
+#~ msgid "Couldn't stat source package list %s"
+#~ msgstr "Ni mogoče določiti seznama izvornih paketov %s"
+
+#~ msgid "Collecting File Provides"
+#~ msgstr "Zbiranje dobaviteljev datotek"
+
+#~ msgid "IO Error saving source cache"
+#~ msgstr "Napaka VI med shranjevanjem predpomnilnika virov"
+
+#~ msgid "rename failed, %s (%s -> %s)."
+#~ msgstr "preimenovanje je spodletelo, %s (%s -> %s)."
+
+#~ msgid "MD5Sum mismatch"
+#~ msgstr "Neujemanje vsote MD5"
+
+#~ msgid "Hash Sum mismatch"
+#~ msgstr "Neujemanje vsote razpršil"
+
+#~ msgid ""
+#~ "Unable to find expected entry '%s' in Release file (Wrong sources.list "
+#~ "entry or malformed file)"
+#~ msgstr ""
+#~ "Ni mogoče najti pričakovanega vnosa '%s' v datoteki Release (napačen vnos "
+#~ "sources.list ali slabo oblikovana datoteka)"
+
+#~ msgid "Unable to find hash sum for '%s' in Release file"
+#~ msgstr "Ni mogoče najti vsote razprševanja za '%s' v datoteki Release"
+
+#~ msgid "There is no public key available for the following key IDs:\n"
+#~ msgstr "Za naslednje ID-je ključa ni na voljo javnih ključev:\n"
+
+#~ msgid "Conflicting distribution: %s (expected %s but got %s)"
+#~ msgstr "Distribucija v sporu: %s (pričakovana %s, toda dobljena %s)"
+
+#~ msgid ""
+#~ "A error occurred during the signature verification. The repository is not "
+#~ "updated and the previous index files will be used. GPG error: %s: %s\n"
+#~ msgstr ""
+#~ "Med preverjanjem podpisa je prišlo do napake. Skladišče ni bilo "
+#~ "posodobljeno zato bodo uporabljene predhodne datoteke kazal. Napaka GPG: "
+#~ "%s: %s\n"
+
+#~ msgid "GPG error: %s: %s"
+#~ msgstr "Napaka GPG: %s: %s"
+
+#~ msgid ""
+#~ "I wasn't able to locate a file for the %s package. This might mean you "
+#~ "need to manually fix this package. (due to missing arch)"
+#~ msgstr ""
+#~ "Ni bilo mogoče najti datoteke za paket %s. Morda boste morali ročno "
+#~ "popraviti ta paket (zaradi manjkajočega arhiva)."
+
+#~ msgid ""
+#~ "I wasn't able to locate a file for the %s package. This might mean you "
+#~ "need to manually fix this package."
+#~ msgstr ""
+#~ "Ni bilo mogoče najti datoteke za paket %s. Morda boste morali ročno "
+#~ "popraviti ta paket."
+
+#~ msgid ""
+#~ "The package index files are corrupted. No Filename: field for package %s."
+#~ msgstr ""
+#~ "Datoteke s kazali paketov so pokvarjene. Brez imena datotek: polje za "
+#~ "paket %s."
+
+#~ msgid "Size mismatch"
+#~ msgstr "Neujemanje velikosti"
+
+#~ msgid "Unable to parse Release file %s"
+#~ msgstr "Ni mogoče razčleniti Release datoteke %s"
+
+#~ msgid "No sections in Release file %s"
+#~ msgstr "Ni izbir v Release datoteki %s"
+
+#~ msgid "No Hash entry in Release file %s"
+#~ msgstr "Ni vnosa razpršila v Release datoteki %s"
+
+#~ msgid "Invalid 'Valid-Until' entry in Release file %s"
+#~ msgstr "Neveljaven vnos 'Veljavno-do' v Release datoteki %s"
+
+#~ msgid "Invalid 'Date' entry in Release file %s"
+#~ msgstr "Neveljavne vnos 'Datum' v Release datoteki %s"
+
+#~ msgid "Vendor block %s contains no fingerprint"
+#~ msgstr "Ponudnikov blok %s ne vsebuje prstnega podpisa"
+
+#~ msgid ""
+#~ "Using CD-ROM mount point %s\n"
+#~ "Mounting CD-ROM\n"
+#~ msgstr ""
+#~ "Uporabljanje CD-ROM-ove priklopne točke %s\n"
+#~ "Priklapljanje CD-ROM-a\n"
+
+#~ msgid "Identifying.. "
+#~ msgstr "Identificiranje ... "
+
+#~ msgid "Stored label: %s\n"
+#~ msgstr "Shranjena oznaka: %s\n"
+
+#~ msgid "Unmounting CD-ROM...\n"
+#~ msgstr "Odklapljanje CD-ROM-a ...\n"
+
+#~ msgid "Using CD-ROM mount point %s\n"
+#~ msgstr "Uporabljanje CD-ROM-ove priklopne točke %s\n"
+
+#~ msgid "Unmounting CD-ROM\n"
+#~ msgstr "Odklapljanje CD-ROM-a\n"
+
+#~ msgid "Waiting for disc...\n"
+#~ msgstr "Čakanje na disk ...\n"
+
+#~ msgid "Mounting CD-ROM...\n"
+#~ msgstr "Priklapljanje CD-ROM-a ...\n"
+
+#~ msgid "Scanning disc for index files..\n"
+#~ msgstr "Preiskovanje diska za datoteke kazala ..\n"
+
+#~ msgid ""
+#~ "Found %zu package indexes, %zu source indexes, %zu translation indexes "
+#~ "and %zu signatures\n"
+#~ msgstr ""
+#~ "Najdenih je bilo %zu kazal paketov, %zu kazal virov, %zu kazalov prevodov "
+#~ "in %zu podpisov\n"
+
+#~ msgid ""
+#~ "Unable to locate any package files, perhaps this is not a Debian Disc or "
+#~ "the wrong architecture?"
+#~ msgstr ""
+#~ "Nobenih datotek paketov ni mogoče najti, morda to ni disk Debian ali pa "
+#~ "je arhitektura napačna?"
+
+#~ msgid "Found label '%s'\n"
+#~ msgstr "Najdena je bila oznaka '%s'\n"
+
+#~ msgid "That is not a valid name, try again.\n"
+#~ msgstr "To ni veljavno ime, poskusite znova.\n"
+
+#~ msgid ""
+#~ "This disc is called: \n"
+#~ "'%s'\n"
+#~ msgstr ""
+#~ "Ta disk se imenuje: \n"
+#~ "'%s'\n"
+
+#~ msgid "Copying package lists..."
+#~ msgstr "Kopiranje seznama paketov ..."
+
+#~ msgid "Writing new source list\n"
+#~ msgstr "Pisanje novega seznama virov\n"
+
+#~ msgid "Source list entries for this disc are:\n"
+#~ msgstr "Izvorni vnosi za ta disk so:\n"
+
+#~ msgid "Wrote %i records.\n"
+#~ msgstr "Zapisanih je bilo %i zapisov.\n"
+
+#~ msgid "Wrote %i records with %i missing files.\n"
+#~ msgstr "Zapisanih je bilo %i zapisov z %i manjkajočimi datotekami.\n"
+
+#~ msgid "Wrote %i records with %i mismatched files\n"
+#~ msgstr "Zapisanih je bilo %i zapisov z %i neujemajočimi datotekami.\n"
+
+#~ msgid "Wrote %i records with %i missing files and %i mismatched files\n"
+#~ msgstr ""
+#~ "Zapisanih je bilo %i zapisov z %i manjkajočimi datotekami in %i "
+#~ "neujemajočimi datotekami.\n"
+
+#~ msgid "Skipping nonexistent file %s"
+#~ msgstr "Preskok neobstoječe datoteke %s"
+
+#~ msgid "Can't find authentication record for: %s"
+#~ msgstr "Ni mogoče najti zapisa overitve za: %s"
+
+#~ msgid "Hash mismatch for: %s"
+#~ msgstr "Neujemanje razpršila za: %s"
+
+#~ msgid "No keyring installed in %s."
+#~ msgstr "V %s ni nameščenih zbirk ključev."
+
+#~ msgid "Release '%s' for '%s' was not found"
+#~ msgstr "Izdaje '%s' za '%s' ni mogoče najti"
+
+#~ msgid "Version '%s' for '%s' was not found"
+#~ msgstr "Različice '%s' za '%s' ni mogoče najti"
+
+#~ msgid "Couldn't find task '%s'"
+#~ msgstr "Ni mogoče najti naloge '%s'"
+
+#~ msgid "Couldn't find any package by regex '%s'"
+#~ msgstr "Z logičnim izrazom '%s' ni mogoče najti nobenega paketa"
+
+#~ msgid "Can't select versions from package '%s' as it is purely virtual"
+#~ msgstr ""
+#~ "Ni mogoče izbrati različic in paketa '%s', saj je popolnoma navidezen"
+
+#~ msgid ""
+#~ "Can't select installed nor candidate version from package '%s' as it has "
+#~ "neither of them"
+#~ msgstr ""
+#~ "Ni mogoče izbrati nameščene različice ali različice kandidata iz paketa "
+#~ "'%s', saj nima nobenega od njiju"
+
+#~ msgid ""
+#~ "Can't select newest version from package '%s' as it is purely virtual"
+#~ msgstr ""
+#~ "Ni mogoče izbrati najnovejše različice iz paketa '%s', saj je popolnoma "
+#~ "navidezen"
+
+#~ msgid ""
+#~ "Can't select candidate version from package %s as it has no candidate"
+#~ msgstr ""
+#~ "Ni mogoče izbrati različice kandidata iz paketa %s, ker nima kandidata"
+
+#~ msgid ""
+#~ "Can't select installed version from package %s as it is not installed"
+#~ msgstr "Ni mogoče izbrati nameščene različice iz paketa %s, saj ni nameščen"
+
+#~ msgid "Installing %s"
+#~ msgstr "Nameščanje %s"
+
+#~ msgid "Configuring %s"
+#~ msgstr "Nastavljanje %s"
+
+#~ msgid "Removing %s"
+#~ msgstr "Odstranjevanje %s"
+
+#~ msgid "Completely removing %s"
+#~ msgstr "%s je bil popolnoma odstranjen"
+
+#~ msgid "Noting disappearance of %s"
+#~ msgstr "%s je izginil"
+
+#~ msgid "Running post-installation trigger %s"
+#~ msgstr "Poganjanje sprožilca po namestitvi %s"
+
+#~ msgid "Directory '%s' missing"
+#~ msgstr "Mapa '%s' manjka"
+
+#~ msgid "Could not open file '%s'"
+#~ msgstr "Ni mogoče odpreti datoteke '%s'"
+
+#~ msgid "Preparing %s"
+#~ msgstr "Pripravljanje %s"
+
+#~ msgid "Unpacking %s"
+#~ msgstr "Razširjanje %s"
+
+#~ msgid "Preparing to configure %s"
+#~ msgstr "Pripravljanje na nastavljanje %s"
+
+#~ msgid "Installed %s"
+#~ msgstr "%s je bil nameščen"
+
+#~ msgid "Preparing for removal of %s"
+#~ msgstr "Pripravljanje na odstranitev %s"
+
+#~ msgid "Removed %s"
+#~ msgstr "%s je bil odstranjen"
+
+#~ msgid "Preparing to completely remove %s"
+#~ msgstr "Pripravljanje na popolno odstranitev %s"
+
+#~ msgid "Completely removed %s"
+#~ msgstr "%s je bil popolnoma odstranjen"
+
+#~ msgid "Can not write log, openpty() failed (/dev/pts not mounted?)\n"
+#~ msgstr ""
+#~ "Ni mogoče pisati dnevnika, openpty() je spodletelo (/dev/pts ni "
+#~ "prklopljen?)\n"
+
+#~ msgid "Running dpkg"
+#~ msgstr "Poganjanje dpkg"
+
+#~ msgid "No apport report written because MaxReports is reached already"
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker je bilo število MaxReports že "
+#~ "doseženo"
+
+#~ msgid "dependency problems - leaving unconfigured"
+#~ msgstr "težave odvisnosti - puščanje nenastavljenega"
+
+#~ msgid ""
+#~ "No apport report written because the error message indicates its a "
+#~ "followup error from a previous failure."
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker sporočilo o napaki nakazuje na "
+#~ "navezujočo napako iz predhodne napake."
+
+#~ msgid ""
+#~ "No apport report written because the error message indicates a disk full "
+#~ "error"
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker sporočilo o napaki nakazuje na "
+#~ "napako polnega diska"
+
+#~ msgid ""
+#~ "No apport report written because the error message indicates a out of "
+#~ "memory error"
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker sporočilo o napaki nakazuje na "
+#~ "napako zaradi pomanjkanja pomnilnika"
+
+#, fuzzy
+#~ msgid ""
+#~ "No apport report written because the error message indicates an issue on "
+#~ "the local system"
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker sporočilo o napaki nakazuje na "
+#~ "napako polnega diska"
+
+#~ msgid ""
+#~ "No apport report written because the error message indicates a dpkg I/O "
+#~ "error"
+#~ msgstr ""
+#~ "Poročilo apport ni bilo napisano, ker sporočilo o napaki nakazuje na "
+#~ "napako dpkg V/I"
+
+#~ msgid ""
+#~ "Unable to lock the administration directory (%s), is another process "
+#~ "using it?"
+#~ msgstr ""
+#~ "Skrbniške mape (%s) ni mogoče zakleniti. Jo morda uporablja drugo "
+#~ "opravilo?"
+
+#~ msgid "Unable to lock the administration directory (%s), are you root?"
+#~ msgstr "Skrbniške mape (%s) ni mogoče zakleniti. Ali ste skrbnik?"
+
+#~ msgid ""
+#~ "dpkg was interrupted, you must manually run '%s' to correct the problem. "
+#~ msgstr ""
+#~ "dpkg je bil prekinjen. Za popravilo napake morate ročno pognati '%s'. "
+
+#~ msgid "Not locked"
+#~ msgstr "Ni zaklenjeno"
+
+#~ msgid "No mirror file '%s' found "
+#~ msgstr "Datoteke zrcalnih strežnikov '%s' ni mogoče najti "
+
+#, fuzzy
+#~ msgid "Can not read mirror file '%s'"
+#~ msgstr "Datoteke zrcalnih strežnikov '%s' ni mogoče najti "
+
+#~ msgid "[Mirror: %s]"
+#~ msgstr "[Zrcalni strežnik: %s]"
+
+#~ msgid ""
+#~ "Could not patch %s with mmap and with file operation usage - the patch "
+#~ "seems to be corrupt."
+#~ msgstr ""
+#~ "%s ni mogoče zakrpati z mmap in z uporabo opravila datotek - popravek je "
+#~ "videti pokvarjen"
+
+#~ msgid ""
+#~ "Could not patch %s with mmap (but no mmap specific fail) - the patch "
+#~ "seems to be corrupt."
+#~ msgstr ""
+#~ "%s ni mogoče zakrpati z mmap (toda napaka ni specifična za mmap) - "
+#~ "popravek je videti pokvarjen."
+
+#~ msgid "Connection closed prematurely"
+#~ msgstr "Povezava se je prezgodaj zaprla"
+
+#~ msgid "decompressor"
+#~ msgstr "program za razširjanje"
+
+#~ msgid ""
+#~ "Could not perform immediate configuration on already unpacked '%s'. "
+#~ "Please see man 5 apt.conf under APT::Immediate-Configure for details."
+#~ msgstr ""
+#~ "Ni mogoče izvesti takojąnje nastavitve že razpakiranega '%s'. Oglejte si "
+#~ "man 5 apt.conf pod APT::Takojšnja-Nastavitev za podrobnosti"
+
+#~ msgid "Error occurred while processing %s (NewPackage)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Nov paket)"
+
+#~ msgid "Error occurred while processing %s (UsePackage1)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Uporabi paket 1)"
+
+#~ msgid "Error occurred while processing %s (NewFileDesc1)"
+#~ msgstr "Med obdelovanjem %s je prišlo do napake (NovOpisDatoteke1)"
+
+#~ msgid "Error occurred while processing %s (UsePackage2)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Uporabi paket 2)"
+
+#~ msgid "Error occurred while processing %s (NewFileVer1)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Nova različica datoteke 1)"
+
+#~ msgid "Error occurred while processing %s (NewVersion%d)"
+#~ msgstr "Med obdelovanjem %s je prišlo do napake (NovaRazličica%d)"
+
+#~ msgid "Error occurred while processing %s (UsePackage3)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Uporabi paket 3)"
+
+#~ msgid "Error occurred while processing %s (NewFileDesc2)"
+#~ msgstr "Med obdelovanjem %s je prišlo do napake (NovOpisDatoteke2)"
+
+#~ msgid "Error occurred while processing %s (CollectFileProvides)"
+#~ msgstr "Prišlo je do napake med obdelavo %s (Zberi dobavitelje datotek)"
+
+#~ msgid "Internal error, could not locate member"
+#~ msgstr "Notranja napaka. Ni mogoče najti člana."
+
+#~ msgid "Internal error, group '%s' has no installable pseudo package"
+#~ msgstr "Notranja napaka, skupina '%s' nima namestljivega psevdo paketa"
+
+#~ msgid "Release file expired, ignoring %s (invalid since %s)"
+#~ msgstr "Datoteka Release je potekla, prezrtje %s (neveljavno od %s)"
+
+#~ msgid "short read in buffer_copy %s"
+#~ msgstr "kratko branje v kopiji_medpomnilnika %s"
+
+#~ msgid ""
+#~ "Usage: apt-cache [options] command\n"
+#~ "       apt-cache [options] add file1 [file2 ...]\n"
+#~ "       apt-cache [options] showpkg pkg1 [pkg2 ...]\n"
+#~ "       apt-cache [options] showsrc pkg1 [pkg2 ...]\n"
+#~ "\n"
+#~ "apt-cache is a low-level tool used to manipulate APT's binary\n"
+#~ "cache files, and query information from them\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   add - Add a package file to the source cache\n"
+#~ "   gencaches - Build both the package and source cache\n"
+#~ "   showpkg - Show some general information for a single package\n"
+#~ "   showsrc - Show source records\n"
+#~ "   stats - Show some basic statistics\n"
+#~ "   dump - Show the entire file in a terse form\n"
+#~ "   dumpavail - Print an available file to stdout\n"
+#~ "   unmet - Show unmet dependencies\n"
+#~ "   search - Search the package list for a regex pattern\n"
+#~ "   show - Show a readable record for the package\n"
+#~ "   showauto - Display a list of automatically installed packages\n"
+#~ "   depends - Show raw dependency information for a package\n"
+#~ "   rdepends - Show reverse dependency information for a package\n"
+#~ "   pkgnames - List the names of all packages in the system\n"
+#~ "   dotty - Generate package graphs for GraphViz\n"
+#~ "   xvcg - Generate package graphs for xvcg\n"
+#~ "   policy - Show policy settings\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h   This help text.\n"
+#~ "  -p=? The package cache.\n"
+#~ "  -s=? The source cache.\n"
+#~ "  -q   Disable progress indicator.\n"
+#~ "  -i   Show only important deps for the unmet command.\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ "See the apt-cache(8) and apt.conf(5) manual pages for more information.\n"
+#~ msgstr ""
+#~ "Uporaba: apt-cache [možnosti] ukaz\n"
+#~ "       apt-cache [možnosti] add datoteka1 [datoteka2 ...]\n"
+#~ "       apt-cache [možnosti] showpkg paket1 [paket2 ...]\n"
+#~ "       apt-cache [možnosti] showsrc paket 1 [paket2 ...]\n"
+#~ "\n"
+#~ "apt-cache je orodje nizke ravni, ki se uporablja za upravljanje APT-ovih\n"
+#~ "binarnih datotek predpomnilnika in za poizvedbo podatkov iz njih\n"
+#~ "\n"
+#~ "Ukazi:   add - dodat datoteko paketa v predpomnilnik vira\n"
+#~ "   gencaches - izgradi tako paket kot izvorni predpomnilnik\n"
+#~ "   showpkg - pokaže nekaj splošnih podatkov za posamezen paket\n"
+#~ "   showsrc - pokaže zapise vira\n"
+#~ "   stats - pokaže nekaj osnovne statistike\n"
+#~ "   dump - pokaže celotno datoteko v obliki terse\n"
+#~ "   dumpavail - izpiše razpoložljivo datoteko na standardni izhod\n"
+#~ "   unmet - pokaže nerazrešene odvisnosti\n"
+#~ "   search - išče seznam paketov za vzorec logičnega izraza\n"
+#~ "   show - išče berljiv zapis paketa\n"
+#~ "   showauto - pokaže seznam samodejno nameščenih paketov\n"
+#~ "   depends - pokaže surove podatke odvisnosti za paket\n"
+#~ "   rdepends - pokaže obratne podatke odvisnosti za paket\n"
+#~ "   pkgnames - našteje imena vseh paketov na sistemu\n"
+#~ "   dotty - ustvari grafe paketov za GraphViz\n"
+#~ "   xvcg - ustvari grafe paketov za xvcg\n"
+#~ "   policy - pokaže nastavitve pravil\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ "  -h to besedilo pomoči\n"
+#~ "  -p=? predpomnilnik paketa\n"
+#~ "  -s=? predpomnilnik vira\n"
+#~ "  -q onemogoči pokazatelj napredka\n"
+#~ "  -i pokaže le pomembne odvisnosti za ukaz unmet.\n"
+#~ "  -c=? prebere podano datoteko nastavitev\n"
+#~ "  -o=? nastavi poljubno možnost nastavitev, na primer -o dir::cache=/tmp\n"
+#~ "Za več podrobnosti si oglejte strani priročnikov apt-cache(8) in apt-conf"
+#~ "(5).\n"
+
+#~ msgid ""
+#~ "Usage: apt-get [options] command\n"
+#~ "       apt-get [options] install|remove pkg1 [pkg2 ...]\n"
+#~ "       apt-get [options] source pkg1 [pkg2 ...]\n"
+#~ "\n"
+#~ "apt-get is a simple command line interface for downloading and\n"
+#~ "installing packages. The most frequently used commands are update\n"
+#~ "and install.\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "   update - Retrieve new lists of packages\n"
+#~ "   upgrade - Perform an upgrade\n"
+#~ "   install - Install new packages (pkg is libc6 not libc6.deb)\n"
+#~ "   remove - Remove packages\n"
+#~ "   autoremove - Remove automatically all unused packages\n"
+#~ "   purge - Remove packages and config files\n"
+#~ "   source - Download source archives\n"
+#~ "   build-dep - Configure build-dependencies for source packages\n"
+#~ "   dist-upgrade - Distribution upgrade, see apt-get(8)\n"
+#~ "   dselect-upgrade - Follow dselect selections\n"
+#~ "   clean - Erase downloaded archive files\n"
+#~ "   autoclean - Erase old downloaded archive files\n"
+#~ "   check - Verify that there are no broken dependencies\n"
+#~ "   markauto - Mark the given packages as automatically installed\n"
+#~ "   unmarkauto - Mark the given packages as manually installed\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h  This help text.\n"
+#~ "  -q  Loggable output - no progress indicator\n"
+#~ "  -qq No output except for errors\n"
+#~ "  -d  Download only - do NOT install or unpack archives\n"
+#~ "  -s  No-act. Perform ordering simulation\n"
+#~ "  -y  Assume Yes to all queries and do not prompt\n"
+#~ "  -f  Attempt to correct a system with broken dependencies in place\n"
+#~ "  -m  Attempt to continue if archives are unlocatable\n"
+#~ "  -u  Show a list of upgraded packages as well\n"
+#~ "  -b  Build the source package after fetching it\n"
+#~ "  -V  Show verbose version numbers\n"
+#~ "  -c=? Read this configuration file\n"
+#~ "  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp\n"
+#~ "See the apt-get(8), sources.list(5) and apt.conf(5) manual\n"
+#~ "pages for more information and options.\n"
+#~ "                       This APT has Super Cow Powers.\n"
+#~ msgstr ""
+#~ "Uporaba: apt-get [možnosti] ukaz\n"
+#~ "     apt-get [možnosti] install|remove paket1 [paket2 ...]\n"
+#~ "     apt-get [možnosti] source paket1 [paket2 ...]\n"
+#~ "\n"
+#~ "apt-get je enostaven vmesnik ukazne vrstice za prejemanje in\n"
+#~ "nameščanje paketov. Najpogosteje uporabljana ukaza sta update\n"
+#~ "in install.\n"
+#~ "\n"
+#~ "Ukazi:\n"
+#~ "  update - pridobi nov seznam paketov\n"
+#~ "  upgrade - izvede nadgradnjo  install - namesti nove pakete (paket je "
+#~ "libc6 ne libc6.deb)\n"
+#~ "  remove - odstrani pakete\n"
+#~ "  autoremove - samodejno odstrani vse neuporabljene pakete\n"
+#~ "  purge - odstrani pakete in nastavitvene datoteke\n"
+#~ "  source - prejme izvorne arhive\n"
+#~ "  build-deb - nastavi odvisnosti gradnje za izvorne pakete\n"
+#~ "  dist-upgrade - nadgradi distribucijo, oglejte si apt-get(8)\n"
+#~ "  dselect-upgrade - sledi naslednjim izbiram\n"
+#~ "  clean - izbriše prejete datoteke arhivov\n"
+#~ "  markauto - označi dane pakete kot samodejno nameščene\n"
+#~ "  unmarkauto - odstrani dane pakete kot ročno nameščene\n"
+#~ "\n"
+#~ "Možnosti:\n"
+#~ " -h to besedilo pomoči\n"
+#~ " -q beležljiv izhod - brez pokazatelja napredka\n"
+#~ " -qq brez izhoda razen za napake\n"
+#~ " -d le prejme - NE namesti ali razpakira arhivov\n"
+#~ " -s izvede simulacijo ukaza.\n"
+#~ " -y predpostavi y za vsa vprašanja in ne sprašuje\n"
+#~ " -f poskuša popraviti sistem s pokvarjenimi odvisnostmi\n"
+#~ " -m poskuša nadaljevati, če arhivov ni mogoče najti\n"
+#~ " -u pokaže tudi seznam nadgrajenih paketov\n"
+#~ " -b izgradi izvorni paket po njegovem pridobivanju\n"
+#~ " -V pokaže podroben izpis števila različice\n"
+#~ " -c=? prebere to nastavitveno datoteko\n"
+#~ " -o=? nastavi poljubno nastavitveno možnost, na primer -0 dir::cache=/"
+#~ "tmp\n"
+#~ "Oglejte si strani apt-get(8), sources.list(5) in priročnik apt.conf(5)\n"
+#~ "  za več podrobnosti in možnosti.\n"
+#~ "                      Ta APT ima moči Super Krav.\n"
+
+#~ msgid ""
+#~ "Could not perform immediate configuration on '%s'.Please see man 5 apt."
+#~ "conf under APT::Immediate-Configure for details. (%d)"
+#~ msgstr ""
+#~ "Ni mogoče izvesti takojšnje nastavitve na '%s'. Oglejte si man5 apt.conf "
+#~ "pod APT::Takojšnja-nastavitev za podrobnosti. (%d)"
+
+#~ msgid ""
+#~ "Could not perform immediate configuration on already unpacked '%s'.Please "
+#~ "see man 5 apt.conf under APT::Immediate-Configure for details."
+#~ msgstr ""
+#~ "Ni mogoče izvesti takojšnje nastavitve že razpakiranega '%s'. Oglejte si "
+#~ "man 5 apt.conf pod APT::Takojšnja-Nastavitev za podrobnosti"
+
+#~ msgid ""
+#~ "Some index files failed to download, they have been ignored, or old ones "
+#~ "used instead."
+#~ msgstr ""
+#~ "Nekaterih kazal ni mogoče prejeti, zato so prezrta, ali pa so uporabljena "
+#~ "starejša."
+
+#~ msgid "Can't select versions from package '%s' as it purely virtual"
+#~ msgstr ""
+#~ "Ni mogoče izbrati različic in paketa '%s', saj je popolnoma navidezen"

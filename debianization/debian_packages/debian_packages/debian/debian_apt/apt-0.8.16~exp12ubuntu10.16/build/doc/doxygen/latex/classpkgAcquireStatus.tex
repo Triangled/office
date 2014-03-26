@@ -1,0 +1,232 @@
+\section{pkg\-Acquire\-Status \-Class \-Reference}
+\label{classpkgAcquireStatus}\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}}
+
+
+\-A monitor object for downloads controlled by the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} class. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Fetched} (unsigned long long \-Size, unsigned long long \-Resume\-Point)
+\begin{DoxyCompactList}\small\item\em \-Invoked when a local or remote file has been completely fetched. \end{DoxyCompactList}\item 
+virtual bool {\bf \-Media\-Change} (std\-::string \-Media, std\-::string \-Drive)=0
+\begin{DoxyCompactList}\small\item\em \-Invoked when the user should be prompted to change the inserted removable media. \end{DoxyCompactList}\item 
+virtual void {\bf \-I\-M\-S\-Hit} ({\bf pkg\-Acquire\-::\-Item\-Desc} \&)
+\begin{DoxyCompactList}\small\item\em \-Invoked when an item is confirmed to be up-\/to-\/date. \end{DoxyCompactList}\item 
+virtual void {\bf \-Fetch} ({\bf pkg\-Acquire\-::\-Item\-Desc} \&)\label{classpkgAcquireStatus_a6f115e9a73caa8e6a665228d46625c16}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked when some of an item's data is fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} ({\bf pkg\-Acquire\-::\-Item\-Desc} \&)\label{classpkgAcquireStatus_a6043ea862253ac53dd4c6487c242971e}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked when an item is successfully and completely fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Fail} ({\bf pkg\-Acquire\-::\-Item\-Desc} \&)\label{classpkgAcquireStatus_a5c697905fd152636d1970bbfe7783684}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked when the process of fetching an item encounters a fatal error. \end{DoxyCompactList}\item 
+virtual bool {\bf \-Pulse} ({\bf pkg\-Acquire} $\ast$\-Owner)
+\begin{DoxyCompactList}\small\item\em \-Periodically invoked while the \-Acquire process is underway. \end{DoxyCompactList}\item 
+virtual void {\bf \-Start} ()\label{classpkgAcquireStatus_a07aaf1227e4d645f15e0a964f54ef291}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked when the \-Acquire process starts running. \end{DoxyCompactList}\item 
+virtual void {\bf \-Stop} ()\label{classpkgAcquireStatus_a17a237457e57625296e6b24feb19c60a}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked when the \-Acquire process stops running. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-Status} ()\label{classpkgAcquireStatus_a65aadfe2ebefc7ef551dd996063b2bba}
+
+\begin{DoxyCompactList}\small\item\em \-Initialize all counters to 0 and the time to the current time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Update}\label{classpkgAcquireStatus_a75386dbaef64dae27df6f182185de329}
+
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the download scheduler should call \doxyref{\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} at the next available opportunity. \end{DoxyCompactList}\item 
+bool {\bf \-More\-Pulses}
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, extra \doxyref{\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} invocations will be performed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct timeval {\bf \-Time}\label{classpkgAcquireStatus_a7f0b9956570bf544551d6288519d501c}
+
+\begin{DoxyCompactList}\small\item\em \-The last time at which this monitor object was updated. \end{DoxyCompactList}\item 
+struct timeval {\bf \-Start\-Time}\label{classpkgAcquireStatus_a5317f41dbf24dd14106c90ad772ee08e}
+
+\begin{DoxyCompactList}\small\item\em \-The time at which the download started. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Last\-Bytes}\label{classpkgAcquireStatus_adad74148bc0a0f410de29f3f7863f013}
+
+\begin{DoxyCompactList}\small\item\em \-The number of bytes fetched as of the previous call to \doxyref{pkg\-Acquire\-Status\-::\-Pulse}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f}, including local items. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Current\-C\-P\-S}\label{classpkgAcquireStatus_ab935757c5f7498bd38f5ac2f53859098}
+
+\begin{DoxyCompactList}\small\item\em \-The current rate of download as of the most recent call to \doxyref{pkg\-Acquire\-Status\-::\-Pulse}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f}, in bytes per second. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Current\-Bytes}\label{classpkgAcquireStatus_a839c10cdfc05e059bd3ec88965db5585}
+
+\begin{DoxyCompactList}\small\item\em \-The number of bytes fetched as of the most recent call to \doxyref{pkg\-Acquire\-Status\-::\-Pulse}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f}, including local items. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Total\-Bytes}
+\begin{DoxyCompactList}\small\item\em \-The total number of bytes that need to be fetched. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Fetched\-Bytes}\label{classpkgAcquireStatus_a70569692426d234ad8d8b820c86a3309}
+
+\begin{DoxyCompactList}\small\item\em \-The total number of bytes accounted for by items that were successfully fetched. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Elapsed\-Time}\label{classpkgAcquireStatus_a3150f73ac776293da38e85adad70a242}
+
+\begin{DoxyCompactList}\small\item\em \-The amount of time that has elapsed since the download started. \end{DoxyCompactList}\item 
+unsigned long {\bf \-Total\-Items}
+\begin{DoxyCompactList}\small\item\em \-The total number of items that need to be fetched. \end{DoxyCompactList}\item 
+unsigned long {\bf \-Current\-Items}\label{classpkgAcquireStatus_a9fde14d094769c8f2bb3cb65f040a6fd}
+
+\begin{DoxyCompactList}\small\item\em \-The number of items that have been successfully downloaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A monitor object for downloads controlled by the \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} class. \{\{\{. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why protected members? \end{DoxyRefDesc}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-Fetched@{\-Fetched}}
+\index{\-Fetched@{\-Fetched}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-Fetched}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Fetched} (
+\begin{DoxyParamCaption}
+\item[{unsigned long long}]{\-Size, }
+\item[{unsigned long long}]{\-Resume\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquireStatus_ae1ac138afa29527542590c89dcc065a9}
+
+
+\-Invoked when a local or remote file has been completely fetched. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Size} & \-The size of the file fetched.\\
+\hline
+{\em \-Resume\-Point} & \-How much of the file was already fetched. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Fetched\-Bytes.
+
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-I\-M\-S\-Hit@{\-I\-M\-S\-Hit}}
+\index{\-I\-M\-S\-Hit@{\-I\-M\-S\-Hit}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-I\-M\-S\-Hit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-I\-M\-S\-Hit} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire\-::\-Item\-Desc} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcquireStatus_a31421608993b5036d3d5aa465a4b7a83}
+
+
+\-Invoked when an item is confirmed to be up-\/to-\/date. 
+
+\-For instance, when an \-H\-T\-T\-P download is informed that the file on the server was not modified. 
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-Media\-Change@{\-Media\-Change}}
+\index{\-Media\-Change@{\-Media\-Change}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-Media\-Change}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-Media\-Change} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Media, }
+\item[{std\-::string}]{\-Drive}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classpkgAcquireStatus_a61c6f568f6582836223430d117a62e69}
+
+
+\-Invoked when the user should be prompted to change the inserted removable media. 
+
+\-This method should not return until the user has confirmed to the user interface that the media change is complete.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Media} & \-The name of the media type that should be changed.\\
+\hline
+{\em \-Drive} & \-The identifying name of the drive whose media should be changed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the user confirms the media change, {\bfseries false} if it is cancelled.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-This is a horrible blocking monster; it should be \-C\-P\-Sed with prejudice. \end{DoxyRefDesc}
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Media\-Change().
+
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-Pulse@{\-Pulse}}
+\index{\-Pulse@{\-Pulse}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-Pulse}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Pulse} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f}
+
+
+\-Periodically invoked while the \-Acquire process is underway. 
+
+\-Subclasses should first call \doxyref{pkg\-Acquire\-Status\-::\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f}, then update their status output. \-The download process is blocked while \doxyref{\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} is being called.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries false} if the user asked to cancel the whole \-Acquire process.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acquire\-::\-Run}{p.}{classpkgAcquire_af15888f17717fe69c2a9d4a3f511b4a8} 
+\end{DoxySeeAlso}
+
+
+\-References \-Current\-Bytes, \-Current\-C\-P\-S, \-Current\-Items, \-Elapsed\-Time, pkg\-Acquire\-::\-Items\-Begin(), pkg\-Acquire\-::\-Items\-End(), \-Last\-Bytes, pkg\-Acquire\-::\-Item\-::\-Stat\-Done, \-Time, \-Total\-Bytes, \-Total\-Items, pkg\-Acquire\-::\-Workers\-Begin(), and pkg\-Acquire\-::\-Worker\-Step().
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Run(), and pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-More\-Pulses@{\-More\-Pulses}}
+\index{\-More\-Pulses@{\-More\-Pulses}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-More\-Pulses}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-More\-Pulses}}\label{classpkgAcquireStatus_a8888d6bbff950b1d8a84124a41bcea77}
+
+
+\-If {\bfseries true}, extra \doxyref{\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} invocations will be performed. 
+
+\-With this option set, \doxyref{\-Pulse()}{p.}{classpkgAcquireStatus_a3b094d1d0cbeadde35a2f09d6e60bf3f} will be called every time that a download item starts downloading, finishes downloading, or terminates with an error. 
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-Total\-Bytes@{\-Total\-Bytes}}
+\index{\-Total\-Bytes@{\-Total\-Bytes}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-Total\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf \-Total\-Bytes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquireStatus_aa1ad65db4dde0b9750bde5349e8a78d5}
+
+
+\-The total number of bytes that need to be fetched. 
+
+\begin{DoxyWarning}{\-Warning}
+\-This member is inaccurate, as new items might be enqueued while the download is in progress! 
+\end{DoxyWarning}
+
+
+\-Referenced by \-Pulse(), and \-Start().
+
+\index{pkg\-Acquire\-Status@{pkg\-Acquire\-Status}!\-Total\-Items@{\-Total\-Items}}
+\index{\-Total\-Items@{\-Total\-Items}!pkgAcquireStatus@{pkg\-Acquire\-Status}}
+\subsubsection[{\-Total\-Items}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf \-Total\-Items}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquireStatus_ae422deccb4fc1ae710c07b5120c68321}
+
+
+\-The total number of items that need to be fetched. 
+
+\begin{DoxyWarning}{\-Warning}
+\-This member is inaccurate, as new items might be enqueued while the download is in progress! 
+\end{DoxyWarning}
+
+
+\-Referenced by \-Pulse(), and \-Start().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire.\-cc\end{DoxyCompactItemize}

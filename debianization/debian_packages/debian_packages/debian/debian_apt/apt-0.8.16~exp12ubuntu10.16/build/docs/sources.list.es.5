@@ -1,0 +1,363 @@
+'\" t
+.\"     Title: sources.list
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 29
+de Febrero de 2004
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "SOURCES\&.LIST" "5" "29 de Febrero de 2004" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+sources.list \- Lista de los repositorios de paquetes para APT
+.SH "DESCRIPCIóN"
+.PP
+La lista de los repositorios de paquetes se usa para ubicar los archivos de Debian del sistema de distribución de paquetes en uso en el sistema\&. A día de hoy, esta página del manual documenta sólo el sistema de paquetes que usa Debian GNU/Linux\&. Este fichero de control está ubicado en
+/etc/apt/sources\&.list
+.PP
+La lista de los repositorios está diseñada para gestionar cualquier número de fuentes y distintos tipos de procedencias\&. El fichero lista una fuente por línea, con la fuente de mayor prioridad en la primera línea\&. El formato de cada línea es:
+tipo uri argumentos\&. El primer elemento,
+tipo, determina el formato de
+argumentos\&.
+uri
+es \(FoUniversal Resource Identifier\(Fc (Identificador Universal de Recursos), un superconjunto de la más específica y bien conocida \(FoUniversal Resource Locator\(Fc (URL)\&. Se puede marcar el resto de la línea como comentario usando #\&.
+.SH "SOURCES.LIST.D"
+.PP
+The
+/etc/apt/sources\&.list\&.d
+directory provides a way to add sources\&.list entries in separate files\&. The format is the same as for the regular
+sources\&.list
+file\&. File names need to end with
+\&.list
+and may only contain letters (a\-z and A\-Z), digits (0\-9), underscore (_), hyphen (\-) and period (\&.) characters\&. Otherwise APT will print a notice that it has ignored a file if the file doesn\*(Aqt match a pattern in the
+Dir::Ignore\-Files\-Silently
+configuration list \- in this case it will be silently ignored\&.
+.SH "LOS TIPOS \(FoDEB\(Fc Y \(FoDEB-SRC\(Fc"
+.PP
+The
+deb
+type describes a typical two\-level Debian archive,
+distribution/component\&. Typically,
+distribution
+is generally an archivename like
+stable
+or
+testing
+or a codename like
+squeeze
+or
+wheezy
+while component is one of
+main
+contrib
+or
+non\-free\&. The
+deb\-src
+type describes a debian distribution\*(Aqs source code in the same form as the
+deb
+type\&. A
+deb\-src
+line is required to fetch source indexes\&.
+.PP
+El formato para una entrada en el fichero
+sources\&.list
+usando los tipos
+deb
+y
+deb\-src
+es:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb [ options ] uri distribution [component1] [component2] [\&.\&.\&.]
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+La URI para el tipo
+deb
+debe especificar la base de la distribución de Debian desde la que APT encontrará la información que necesita\&.
+distribución
+puede definir una ruta exacta, en cuyo caso debe omitir los componentes y
+distribución
+debe finalizar con una barra (/)\&. Esto es útil cuando sólo se quiere una sub\-sección del archivo señalado por la URI\&. Al menos uno de los
+componentes
+debe estar presente si
+distribución
+no define una ruta exacta\&.
+.PP
+distribución
+puede contener una variable,
+$(ARCH), que se expandirá a la arquitectura de Debian usada en el sistema (i386, m68k, powerpc, \&.\&.\&.)\&. Esto permite que los ficheros
+sources\&.list
+sean independientes de la arquitectura\&. En general, esta característica sólo es de interés si se especifica una ruta completa, de lo contrario
+APT
+generará automáticamente la URI con la arquitectura actual del sistema\&.
+.PP
+Debido a que sólo se puede especificar una distribución por línea, es posible que se precisen varias líneas para la misma URI si desea tener acceso a más de una distribución o componente de esa ubicación\&. APT ordenará internamente la lista de direcciones URI después de generar una copia interna, y unirá varias referencias al mismo servidor de Internet en una sola conexión, para así no establecer una conexión FTP de forma ineficiente, cerrarla, hacer otra cosa, y entonces restablecer la conexión con el mismo servidor\&. Esta característica es útil para acceder a sitios FPT muy visitados que limitan el número de accesos simultáneos a usuarios anónimos\&. APT también realizará conexiones paralelas a diferentes servidores para aprovechar mejor el ancho de banda\&.
+.PP
+options
+is always optional and needs to be surounded by square brackets\&. It can consist of multiple settings in the form
+\fIsetting\fR=\fIvalue\fR\&. Multiple settings are separated by spaces\&. The following settings are supported by APT, note though that unsupported settings will be ignored silently:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+arch=\fIarch1\fR,\fIarch2\fR,\&...
+can be used to specify for which architectures packages information should be downloaded\&. If this option is not set all architectures defined by the
+APT::Architectures
+option will be downloaded\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+trusted=yes
+can be set to indicate that packages from this source are always authenificated even if the
+Release
+file is not signed or the signature can\*(Aqt be checked\&. This disables parts of
+\fBapt-secure\fR(8)
+and should therefore only be used in a local and trusted context\&.
+trusted=no
+is the opposite which handles even correctly authenificated sources as not authenificated\&.
+.RE
+.PP
+Es importante listar las fuentes por orden de preferencia, con la fuente preferente al inicio\&. Lo normal es ordenar las fuentes por velocidad, de la más rápida a la más lenta (CD\-ROM seguido de servidores en la red local, seguidos por servidores de Internet distantes, por ejemplo)\&.
+.PP
+Algunos ejemplos:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb http://ftp\&.debian\&.org/debian squeeze main contrib non\-free
+deb http://security\&.debian\&.org/ squeeze/updates main contrib non\-free
+   
+.fi
+.if n \{\
+.RE
+.\}
+.SH "ESPECIFICACIóN DE LA URI"
+.PP
+Los tipos de URI reconocidos son cdrom, file, http, ftp, copy, ssh y rsh\&.
+.PP
+file
+.RS 4
+El esquema \(Fofile\(Fc permite considerar cualquier directorio en el sistema de ficheros como un archivo de paquetes adicional\&. Esto es útil para particiones montadas mediante NFS y réplicas o archivos de paquetes locales\&.
+.RE
+.PP
+cdrom
+.RS 4
+El esquema \(Focdrom\(Fc permite a APT usar la unidad de CDROM local\&. Use el programa
+\fBapt-cdrom\fR(8)
+para añadir entradas de un disco óptico a \(Fosources\&.list\(Fc\&.
+.RE
+.PP
+http
+.RS 4
+El esquema \(Fohttp\(Fc especifica un servidor HTTP como archivo\&. Si la variable de entorno
+\fBhttp_proxy\fR
+está definida con formato \(Fohttp://servidor:puerto/\(Fc, se usará el servidor proxy definido en
+\fBhttp_proxy\fR\&. Los usuarios de servidores proxy con autenticación HTTP/1\&.1 deberán usar la cadena de caracteres \(Fohttp://usuario:contraseña@servidor:puerto/\(Fc\&. Tenga en cuenta que este método de autenticación no es seguro\&.
+.RE
+.PP
+ftp
+.RS 4
+El esquema \(Foftp\(Fc especifica un servidor FTP como archivo\&. El comportamiento de APT con FTP es altamente configurable, para más información consulte la página de manual de
+\fBapt.conf\fR(5)\&. Tenga en cuenta que puede especificar un proxy ftp usando la variable de entorno
+\fBftp_proxy\fR\&. Es posible especificar un servidor proxy http (los servidores proxy http normalmente comprenden las url de tipo ftp) usando este método y SÓLO este método\&. Se ignorarán proxies ftp definidos en el fichero de configuración que usen http\&.
+.RE
+.PP
+copy
+.RS 4
+El esquema \(Focopy\(Fc es idéntico a \(Fofile\(Fc, pero los paquetes se copian al directorio almacén en vez de usarlos directamente en su ubicación original\&. Esto es útil para gente que use discos zip con APT\&.
+.RE
+.PP
+rsh, ssh
+.RS 4
+El método \(Forsh/ssh\(Fc invoca \(Forsh/ssh\(Fc para establecer conexiones con los servidores remotos como un usuario dado, y acceder a los ficheros\&. Es aconsejable realizar previamente una configuración de claves RSA o rhosts\&. El acceso a los ficheros remotos usa las órdenes estándar
+\fBfind\fR
+y
+\fBdd\fR
+para realizar la transferencia de ficheros\&.
+.RE
+.PP
+Otros tipos de URI reconocidos\&.
+.RS 4
+Puede extender APT con más métodos, proporcionados en otros paquetes opcionales que siguen el esquema de nombre
+apt\-transport\-\fImétodo\fR\&. El equipo de APT, por ejemplo, es responsable del paquete
+apt\-transport\-https, que ofrece métodos de acceso para URI https con características similares al método \(Fohttp\(Fc\&. Existen otros métodos disponibles, por ejemplo \(Fodebtorrent\(Fc, consulte
+\fBapt-transport-debtorrent\fR(1)\&.
+.RE
+.SH "EJEMPLOS"
+.PP
+Usa el archivo local (o montado mediante NFS) en \(Fo/home/jason/debian\(Fc para \(Fostable/main\(Fc, \(Fostable/contrib\(Fc, y \(Fostable/non\-free\(Fc\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb file:/home/jason/debian stable main contrib non\-free
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Como arriba, excepto que usa la distribución \(Founstable\(Fc (en desarrollo)\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb file:/home/jason/debian unstable main contrib non\-free
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Línea para obtener el código fuente desde la ubicación anterior\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb\-src file:/home/jason/debian unstable main contrib non\-free
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+The first line gets package information for the architectures in
+APT::Architectures
+while the second always retrieves
+amd64
+and
+armel\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb http://ftp\&.debian\&.org/debian squeeze main
+deb [ arch=amd64,armel ] http://ftp\&.debian\&.org/debian squeeze main
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Usa HTTP para acceder al archivo de Debian en \(Foarchive\&.debian\&.org\(Fc, y usa sólo la sección \(Fohamm/main\(Fc\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb http://archive\&.debian\&.org/debian\-archive hamm main
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Usa FTP para acceder al archivo de Debian en \(Foftp\&.debian\&.org\(Fc, debajo del directorio \(Fodebian\(Fc, y usa sólo la sección \(Fosqueeze/contrib\(Fc\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb ftp://ftp\&.debian\&.org/debian squeeze contrib
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Usa FTP para acceder al archivo de Debian en \(Foftp\&.debian\&.org\(Fc, debajo del directorio \(Fodebian\(Fc, y usa sólo la sección unstable/contrib\&. Si tanto esta línea como la del ejemplo anterior aparecen en
+sources\&.list, se usará sólo una sesión FTP para ambas\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb ftp://ftp\&.debian\&.org/debian unstable contrib
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Uses HTTP to access the archive at ftp\&.tlh\&.debian\&.org, under the universe directory, and uses only files found under
+unstable/binary\-i386
+on i386 machines,
+unstable/binary\-amd64
+on amd64, and so forth for other supported architectures\&. [Note this example only illustrates how to use the substitution variable; official debian archives are not structured like this]
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+deb http://ftp\&.tlh\&.debian\&.org/universe unstable/binary\-$(ARCH)/
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.SH "VéASE TAMBIéN"
+.PP
+\fBapt-cache\fR(8)
+\fBapt.conf\fR(5)
+.SH "BUGS"
+.PP
+\m[blue]\fBPágina de errores de APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Si quiere informar de un error en APT, consulte
+/usr/share/doc/debian/bug\-reporting\&.txt
+o use la orden
+\fBreportbug\fR(1)\&.
+.SH "TRADUCCIÓN"
+.PP
+La traducción al español la realizaron Ismael Fanlo, Carlos Mestre, Rudy Godoy, Gustavo Saldumbide, Javier Fernández\-Sanguino y Rubén Porras Campo entre los años 2003 y 2004\&. La traducción fue actualizada por Francisco Javier Cuadrado y Omar Campagne Polaino entre los años 2009 y 2010\&.
+.PP
+Tenga en cuenta que este documento puede contener secciones sin traducir\&. Esto es intencionado para evitar perder contenido cuando la traducción no está actualizada con respecto al documento original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBEquipo de APT\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+Página de errores de APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

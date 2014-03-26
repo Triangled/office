@@ -1,0 +1,1709 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="dbus-errors_8h" kind="file">
+    <compoundname>dbus-errors.h</compoundname>
+    <includes refid="dbus-macros_8h" local="no">dbus/dbus-macros.h</includes>
+    <includes refid="dbus-types_8h" local="no">dbus/dbus-types.h</includes>
+    <includes refid="dbus-protocol_8h" local="no">dbus/dbus-protocol.h</includes>
+    <includedby refid="dbus-address_8h" local="no">dbus-address.h</includedby>
+    <includedby refid="dbus-internals_8h" local="no">dbus-internals.h</includedby>
+    <includedby refid="dbus-auth_8h" local="no">dbus-auth.h</includedby>
+    <includedby refid="dbus-keyring_8h" local="no">dbus-keyring.h</includedby>
+    <includedby refid="dbus-sha_8h" local="no">dbus-sha.h</includedby>
+    <includedby refid="dbus-credentials_8h" local="no">dbus-credentials.h</includedby>
+    <includedby refid="dbus-message_8h" local="no">dbus-message.h</includedby>
+    <includedby refid="dbus-connection_8h" local="no">dbus-connection.h</includedby>
+    <includedby refid="dbus-errors_8c" local="yes">dbus-errors.c</includedby>
+    <includedby refid="dbus-file-unix_8c" local="yes">dbus-file-unix.c</includedby>
+    <includedby refid="dbus-file_8h" local="no">dbus-file.h</includedby>
+    <includedby refid="dbus-sysdeps_8h" local="no">dbus-sysdeps.h</includedby>
+    <includedby refid="dbus-pipe_8h" local="no">dbus-pipe.h</includedby>
+    <includedby refid="dbus-signature_8h" local="no">dbus-signature.h</includedby>
+    <includedby refid="dbus-misc_8h" local="no">dbus-misc.h</includedby>
+    <includedby refid="dbus-nonce_8h" local="no">dbus-nonce.h</includedby>
+    <includedby refid="dbus-resources_8h" local="no">dbus-resources.h</includedby>
+    <includedby refid="dbus-server_8h" local="no">dbus-server.h</includedby>
+    <includedby refid="dbus-spawn_8h" local="no">dbus-spawn.h</includedby>
+    <includedby refid="dbus-transport-protected_8h" local="no">dbus-transport-protected.h</includedby>
+    <includedby refid="dbus-uuidgen_8h" local="no">dbus-uuidgen.h</includedby>
+    <includedby refid="dbus_8h" local="no">dbus.h</includedby>
+    <incdepgraph>
+      <node id="466">
+        <label>dbus-errors.h</label>
+        <link refid="dbus-errors.h"/>
+        <childnode refid="467" relation="include">
+        </childnode>
+        <childnode refid="468" relation="include">
+        </childnode>
+        <childnode refid="471" relation="include">
+        </childnode>
+      </node>
+      <node id="469">
+        <label>stddef.h</label>
+      </node>
+      <node id="470">
+        <label>dbus/dbus-arch-deps.h</label>
+      </node>
+      <node id="467">
+        <label>dbus/dbus-macros.h</label>
+        <link refid="dbus-macros_8h_source"/>
+      </node>
+      <node id="468">
+        <label>dbus/dbus-types.h</label>
+        <link refid="dbus-types_8h_source"/>
+        <childnode refid="469" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+      </node>
+      <node id="471">
+        <label>dbus/dbus-protocol.h</label>
+        <link refid="dbus-protocol_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="533">
+        <label>dbus-spawn.c</label>
+        <link refid="dbus-spawn_8c_source"/>
+      </node>
+      <node id="578">
+        <label>dbus-sysdeps-win.h</label>
+        <link refid="dbus-sysdeps-win_8h_source"/>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+      </node>
+      <node id="531">
+        <label>dbus-spawn.h</label>
+        <link refid="dbus-spawn_8h_source"/>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>dbus-sysdeps-pthread.c</label>
+        <link refid="dbus-sysdeps-pthread_8c_source"/>
+      </node>
+      <node id="543">
+        <label>dbus-mempool.c</label>
+        <link refid="dbus-mempool_8c_source"/>
+      </node>
+      <node id="542">
+        <label>dbus-mempool.h</label>
+        <link refid="dbus-mempool_8h_source"/>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+      </node>
+      <node id="539">
+        <label>dbus-file-unix.c</label>
+        <link refid="dbus-file-unix_8c_source"/>
+      </node>
+      <node id="552">
+        <label>dbus-string-private.h</label>
+        <link refid="dbus-string-private_8h_source"/>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+      </node>
+      <node id="494">
+        <label>dbus-server-protected.h</label>
+        <link refid="dbus-server-protected_8h_source"/>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+        <childnode refid="501" relation="include">
+        </childnode>
+      </node>
+      <node id="483">
+        <label>dbus-server-unix.c</label>
+        <link refid="dbus-server-unix_8c_source"/>
+      </node>
+      <node id="559">
+        <label>dbus-sysdeps-wince-glue.c</label>
+        <link refid="dbus-sysdeps-wince-glue_8c_source"/>
+      </node>
+      <node id="500">
+        <label>dbus-server-unix.h</label>
+        <link refid="dbus-server-unix_8h_source"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+      </node>
+      <node id="561">
+        <label>dbus-userdb-util.c</label>
+        <link refid="dbus-userdb-util_8c_source"/>
+      </node>
+      <node id="518">
+        <label>dbus-marshal-validate.c</label>
+        <link refid="dbus-marshal-validate_8c_source"/>
+      </node>
+      <node id="525">
+        <label>dbus-threads.c</label>
+        <link refid="dbus-threads_8c_source"/>
+      </node>
+      <node id="481">
+        <label>dbus-server-debug-pipe.c</label>
+        <link refid="dbus-server-debug-pipe_8c_source"/>
+      </node>
+      <node id="538">
+        <label>dbus-errors.c</label>
+        <link refid="dbus-errors_8c_source"/>
+      </node>
+      <node id="560">
+        <label>dbus-test.c</label>
+        <link refid="dbus-test_8c_source"/>
+      </node>
+      <node id="491">
+        <label>dbus-server-debug-pipe.h</label>
+        <link refid="dbus-server-debug-pipe_8h_source"/>
+        <childnode refid="481" relation="include">
+        </childnode>
+      </node>
+      <node id="472">
+        <label>dbus-errors.h</label>
+        <link refid="dbus-errors.h"/>
+        <childnode refid="473" relation="include">
+        </childnode>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="564" relation="include">
+        </childnode>
+        <childnode refid="565" relation="include">
+        </childnode>
+        <childnode refid="566" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="568" relation="include">
+        </childnode>
+        <childnode refid="569" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="573" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="549">
+        <label>dbus-pipe-win.c</label>
+        <link refid="dbus-pipe-win_8c_source"/>
+      </node>
+      <node id="544">
+        <label>dbus-internals.c</label>
+        <link refid="dbus-internals_8c_source"/>
+      </node>
+      <node id="482">
+        <label>dbus-server-socket.c</label>
+        <link refid="dbus-server-socket_8c_source"/>
+      </node>
+      <node id="503">
+        <label>dbus-internals.h</label>
+        <link refid="dbus-internals_8h_source"/>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+        <childnode refid="501" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+      </node>
+      <node id="497">
+        <label>dbus-server-socket.h</label>
+        <link refid="dbus-server-socket_8h_source"/>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+      </node>
+      <node id="582">
+        <label>dbus-pipe.c</label>
+        <link refid="dbus-pipe_8c_source"/>
+      </node>
+      <node id="581">
+        <label>dbus-pipe.h</label>
+        <link refid="dbus-pipe_8h_source"/>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+      </node>
+      <node id="515">
+        <label>dbus-marshal-byteswap.c</label>
+        <link refid="dbus-marshal-byteswap_8c_source"/>
+      </node>
+      <node id="528">
+        <label>dbus-auth-util.c</label>
+        <link refid="dbus-auth-util_8c_source"/>
+      </node>
+      <node id="514">
+        <label>dbus-marshal-byteswap.h</label>
+        <link refid="dbus-marshal-byteswap_8h_source"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+      </node>
+      <node id="558">
+        <label>dbus-sysdeps-util.c</label>
+        <link refid="dbus-sysdeps-util_8c_source"/>
+      </node>
+      <node id="547">
+        <label>dbus-nonce.c</label>
+        <link refid="dbus-nonce_8c_source"/>
+      </node>
+      <node id="586">
+        <label>dbus-nonce.h</label>
+        <link refid="dbus-nonce_8h_source"/>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+      </node>
+      <node id="487">
+        <label>dbus-transport.c</label>
+        <link refid="dbus-transport_8c_source"/>
+      </node>
+      <node id="550">
+        <label>dbus-resources.c</label>
+        <link refid="dbus-resources_8c_source"/>
+      </node>
+      <node id="509">
+        <label>dbus-message-util.c</label>
+        <link refid="dbus-message-util_8c_source"/>
+      </node>
+      <node id="475">
+        <label>dbus-transport.h</label>
+        <link refid="dbus-transport_8h_source"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="493" relation="include">
+        </childnode>
+      </node>
+      <node id="573">
+        <label>dbus-resources.h</label>
+        <link refid="dbus-resources_8h_source"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+      <node id="516">
+        <label>dbus-marshal-header.c</label>
+        <link refid="dbus-marshal-header_8c_source"/>
+      </node>
+      <node id="537">
+        <label>dbus-credentials.c</label>
+        <link refid="dbus-credentials_8c_source"/>
+      </node>
+      <node id="498">
+        <label>dbus-server-win.c</label>
+        <link refid="dbus-server-win_8c_source"/>
+      </node>
+      <node id="567">
+        <label>dbus-credentials.h</label>
+        <link refid="dbus-credentials_8h_source"/>
+        <childnode refid="565" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+      </node>
+      <node id="501">
+        <label>dbus-server-win.h</label>
+        <link refid="dbus-server-win_8h_source"/>
+        <childnode refid="498" relation="include">
+        </childnode>
+      </node>
+      <node id="505">
+        <label>dbus-auth.c</label>
+        <link refid="dbus-auth_8c_source"/>
+      </node>
+      <node id="564">
+        <label>dbus-auth.h</label>
+        <link refid="dbus-auth_8h_source"/>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="557">
+        <label>dbus-sysdeps-util-win.c</label>
+        <link refid="dbus-sysdeps-util-win_8c_source"/>
+      </node>
+      <node id="556">
+        <label>dbus-sysdeps-util-unix.c</label>
+        <link refid="dbus-sysdeps-util-unix_8c_source"/>
+      </node>
+      <node id="583">
+        <label>dbus-file.c</label>
+        <link refid="dbus-file_8c_source"/>
+      </node>
+      <node id="575">
+        <label>dbus-file.h</label>
+        <link refid="dbus-file_8h_source"/>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+      </node>
+      <node id="548">
+        <label>dbus-pipe-unix.c</label>
+        <link refid="dbus-pipe-unix_8c_source"/>
+      </node>
+      <node id="532">
+        <label>dbus-spawn-win.c</label>
+        <link refid="dbus-spawn-win_8c_source"/>
+      </node>
+      <node id="519">
+        <label>dbus-signature.c</label>
+        <link refid="dbus-signature_8c_source"/>
+      </node>
+      <node id="584">
+        <label>dbus-signature.h</label>
+        <link refid="dbus-signature_8h_source"/>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="499">
+        <label>dbus-server.c</label>
+        <link refid="dbus-server_8c_source"/>
+      </node>
+      <node id="574">
+        <label>dbus-server.h</label>
+        <link refid="dbus-server_8h_source"/>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="476">
+        <label>dbus-connection-internal.h</label>
+        <link refid="dbus-connection-internal_8h_source"/>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>dbus-misc.c</label>
+        <link refid="dbus-misc_8c_source"/>
+      </node>
+      <node id="585">
+        <label>dbus-misc.h</label>
+        <link refid="dbus-misc_8h_source"/>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="541">
+        <label>dbus-hash.c</label>
+        <link refid="dbus-hash_8c_source"/>
+      </node>
+      <node id="577">
+        <label>dbus-hash.h</label>
+        <link refid="dbus-hash_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+      </node>
+      <node id="502">
+        <label>dbus.h</label>
+        <link refid="dbus_8h_source"/>
+      </node>
+      <node id="524">
+        <label>dbus-sysdeps.c</label>
+        <link refid="dbus-sysdeps_8c_source"/>
+      </node>
+      <node id="576">
+        <label>dbus-sysdeps.h</label>
+        <link refid="dbus-sysdeps_8h_source"/>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="504" relation="include">
+        </childnode>
+        <childnode refid="564" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+      </node>
+      <node id="545">
+        <label>dbus-marshal-basic.c</label>
+        <link refid="dbus-marshal-basic_8c_source"/>
+      </node>
+      <node id="496">
+        <label>dbus-server-launchd.c</label>
+        <link refid="dbus-server-launchd_8c_source"/>
+      </node>
+      <node id="495">
+        <label>dbus-server-launchd.h</label>
+        <link refid="dbus-server-launchd_8h_source"/>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="562">
+        <label>dbus-userdb.c</label>
+        <link refid="dbus-userdb_8c_source"/>
+      </node>
+      <node id="477">
+        <label>dbus-bus.c</label>
+        <link refid="dbus-bus_8c_source"/>
+      </node>
+      <node id="580">
+        <label>dbus-userdb.h</label>
+        <link refid="dbus-userdb_8h_source"/>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+      </node>
+      <node id="490">
+        <label>dbus-transport-protected.h</label>
+        <link refid="dbus-transport-protected_8h_source"/>
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="570">
+        <label>dbus-bus.h</label>
+        <link refid="dbus-bus_8h_source"/>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="480">
+        <label>dbus-pending-call.c</label>
+        <link refid="dbus-pending-call_8c_source"/>
+      </node>
+      <node id="571">
+        <label>dbus-pending-call.h</label>
+        <link refid="dbus-pending-call_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="508">
+        <label>dbus-message-private.h</label>
+        <link refid="dbus-message-private_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>dbus-shell.c</label>
+        <link refid="dbus-shell_8c_source"/>
+      </node>
+      <node id="554">
+        <label>dbus-string.c</label>
+        <link refid="dbus-string_8c_source"/>
+      </node>
+      <node id="563">
+        <label>dbus-uuidgen.c</label>
+        <link refid="dbus-uuidgen_8c_source"/>
+      </node>
+      <node id="517">
+        <label>dbus-marshal-recursive.c</label>
+        <link refid="dbus-marshal-recursive_8c_source"/>
+      </node>
+      <node id="489">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+      <node id="587">
+        <label>dbus-uuidgen.h</label>
+        <link refid="dbus-uuidgen_8h_source"/>
+        <childnode refid="563" relation="include">
+        </childnode>
+      </node>
+      <node id="579">
+        <label>dbus-sysdeps-unix.h</label>
+        <link refid="dbus-sysdeps-unix_8h_source"/>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="513">
+        <label>dbus-marshal-recursive.h</label>
+        <link refid="dbus-marshal-recursive_8h_source"/>
+        <childnode refid="514" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+      </node>
+      <node id="474">
+        <label>dbus-address.c</label>
+        <link refid="dbus-address_8c_source"/>
+      </node>
+      <node id="473">
+        <label>dbus-address.h</label>
+        <link refid="dbus-address_8h_source"/>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="520">
+        <label>dbus-memory.c</label>
+        <link refid="dbus-memory_8c_source"/>
+      </node>
+      <node id="479">
+        <label>dbus-object-tree.c</label>
+        <link refid="dbus-object-tree_8c_source"/>
+      </node>
+      <node id="527">
+        <label>dbus-watch.c</label>
+        <link refid="dbus-watch_8c_source"/>
+      </node>
+      <node id="572">
+        <label>dbus-object-tree.h</label>
+        <link refid="dbus-object-tree_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="540">
+        <label>dbus-file-win.c</label>
+        <link refid="dbus-file-win_8c_source"/>
+      </node>
+      <node id="530">
+        <label>dbus-watch.h</label>
+        <link refid="dbus-watch_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+      </node>
+      <node id="526">
+        <label>dbus-timeout.c</label>
+        <link refid="dbus-timeout_8c_source"/>
+      </node>
+      <node id="529">
+        <label>dbus-timeout.h</label>
+        <link refid="dbus-timeout_8h_source"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+      </node>
+      <node id="511">
+        <label>dbus-keyring.c</label>
+        <link refid="dbus-keyring_8c_source"/>
+      </node>
+      <node id="565">
+        <label>dbus-keyring.h</label>
+        <link refid="dbus-keyring_8h_source"/>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+      <node id="510">
+        <label>dbus-message.c</label>
+        <link refid="dbus-message_8c_source"/>
+      </node>
+      <node id="568">
+        <label>dbus-message.h</label>
+        <link refid="dbus-message_8h_source"/>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="569" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="478">
+        <label>dbus-connection.c</label>
+        <link refid="dbus-connection_8c_source"/>
+      </node>
+      <node id="569">
+        <label>dbus-connection.h</label>
+        <link refid="dbus-connection_8h_source"/>
+        <childnode refid="570" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="571" relation="include">
+        </childnode>
+        <childnode refid="572" relation="include">
+        </childnode>
+        <childnode refid="573" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="502" relation="include">
+        </childnode>
+      </node>
+      <node id="553">
+        <label>dbus-string-util.c</label>
+        <link refid="dbus-string-util_8c_source"/>
+      </node>
+      <node id="506">
+        <label>dbus-pending-call-internal.h</label>
+        <link refid="dbus-pending-call-internal_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>dbus-transport-win.c</label>
+        <link refid="dbus-transport-win_8c_source"/>
+      </node>
+      <node id="536">
+        <label>dbus-credentials-util.c</label>
+        <link refid="dbus-credentials-util_8c_source"/>
+      </node>
+      <node id="493">
+        <label>dbus-transport-win.h</label>
+        <link refid="dbus-transport-win_8h_source"/>
+      </node>
+      <node id="535">
+        <label>dbus-dataslot.c</label>
+        <link refid="dbus-dataslot_8c_source"/>
+      </node>
+      <node id="485">
+        <label>dbus-transport-unix.c</label>
+        <link refid="dbus-transport-unix_8c_source"/>
+      </node>
+      <node id="534">
+        <label>dbus-dataslot.h</label>
+        <link refid="dbus-dataslot_8h_source"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+      </node>
+      <node id="488">
+        <label>dbus-transport-unix.h</label>
+        <link refid="dbus-transport-unix_8h_source"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="484">
+        <label>dbus-transport-socket.c</label>
+        <link refid="dbus-transport-socket_8c_source"/>
+      </node>
+      <node id="492">
+        <label>dbus-transport-socket.h</label>
+        <link refid="dbus-transport-socket_8h_source"/>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+      </node>
+      <node id="507">
+        <label>dbus-message-internal.h</label>
+        <link refid="dbus-message-internal_8h_source"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+      <node id="512">
+        <label>dbus-list.c</label>
+        <link refid="dbus-list_8c_source"/>
+      </node>
+      <node id="504">
+        <label>dbus-list.h</label>
+        <link refid="dbus-list_8h_source"/>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+      </node>
+      <node id="522">
+        <label>dbus-sysdeps-thread-win.c</label>
+        <link refid="dbus-sysdeps-thread-win_8c_source"/>
+      </node>
+      <node id="551">
+        <label>dbus-sha.c</label>
+        <link refid="dbus-sha_8c_source"/>
+      </node>
+      <node id="566">
+        <label>dbus-sha.h</label>
+        <link refid="dbus-sha_8h_source"/>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>dbus-sysdeps-win.c</label>
+        <link refid="dbus-sysdeps-win_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDBusError" prot="public">DBusError</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" prot="public" static="no">
+        <name>DBUS_ERROR_INIT</name>
+        <initializer>{ <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, <ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>, 0, 0, 0, 0, <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> }</initializer>
+        <briefdescription>
+<para>Expands to a suitable initializer for a <ref refid="structDBusError" kindref="compound">DBusError</ref> on the stack. </para>        </briefdescription>
+        <detaileddescription>
+<para>Declaring a <ref refid="structDBusError" kindref="compound">DBusError</ref> with:</para><para><programlisting><codeline><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/>error<sp/>=<sp/><ref refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" kindref="member" tooltip="Expands to a suitable initializer for a DBusError on the stack.">DBUS_ERROR_INIT</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>do_things_with<sp/>(&amp;error);</highlight></codeline>
+</programlisting></para><para>is a more concise form of:</para><para><programlisting><codeline><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/>error;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member" tooltip="Initializes a DBusError structure.">dbus_error_init</ref><sp/>(&amp;error);</highlight></codeline>
+<codeline><highlight class="normal"><sp/>do_things_with<sp/>(&amp;error);</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.h" line="62" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="797" endline="830">_dbus_get_local_machine_uuid_encoded</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="750" endline="780">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="363" endline="447">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="119" endline="231">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5673" endline="5709">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5571" endline="5607">dbus_connection_register_object_path</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="544" endline="673">dbus_server_listen</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__DBusErrors_1ga568b785040bdbff30312e71811907f4b" prot="public" static="no">
+        <type>struct <ref refid="structDBusError" kindref="compound">DBusError</ref></type>
+        <definition>typedef struct DBusError DBusError</definition>
+        <argsstring></argsstring>
+        <name>DBusError</name>
+        <briefdescription>
+<para>Mostly-opaque type representing an error that occurred. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.h" line="43" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_error_init</definition>
+        <argsstring>(DBusError *error)</argsstring>
+        <name>dbus_error_init</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="structDBusError" kindref="compound">DBusError</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does not allocate any memory; the error only needs to be freed if it is set at some point.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="189" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="188" bodyend="202"/>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</referencedby>
+        <referencedby refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_error_free</definition>
+        <argsstring>(DBusError *error)</argsstring>
+        <name>dbus_error_free</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Frees an error that&apos;s been set (or just initialized), then reinitializes the error as in <ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member">dbus_error_init()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>memory where the error is stored. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="212" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="211" bodyend="226"/>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="629" endline="668">dbus_free</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga49ba67405d677af6cde9329ed87ea91f" compoundref="dbus-internals_8c" startline="797" endline="830">_dbus_get_local_machine_uuid_encoded</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-unix_8c" startline="3453" endline="3471">_dbus_read_local_machine_uuid</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="750" endline="780">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="119" endline="231">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5673" endline="5709">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5571" endline="5607">dbus_connection_register_object_path</referencedby>
+        <referencedby refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" compoundref="dbus-errors_8c" startline="279" endline="292">dbus_move_error</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="544" endline="673">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_set_error</definition>
+        <argsstring>(DBusError *error, const char *name, const char *format,...)</argsstring>
+        <name>dbus_set_error</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Assigns an error name and message to a <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if error is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>.</para><para>The format may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, which means a (pretty much useless) default message will be deduced from the name. This is not a good idea, just go ahead and provide a useful error message. It won&apos;t hurt you.</para><para>If no memory can be allocated for the error message, an out-of-memory error message will be set instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error.or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printf-style format string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="358" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="354" bodyend="420"/>
+        <references refid="group__DBusInternalsUtils_1ga9d00d77f6595b9d7ac1baf59d44bf58c" compoundref="dbus-internals_8c" startline="480" endline="497">_dbus_strdup</references>
+        <references refid="group__DBusString_1ga100c5ce0696822c5a4cfbdfaba674d96" compoundref="dbus-string_8c" startline="1039" endline="1052">_dbus_string_append</references>
+        <references refid="group__DBusString_1ga8d794f292831d1a7edeb971b13a2c641" compoundref="dbus-string_8c" startline="1244" endline="1274">_dbus_string_append_printf_valist</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="263" endline="273">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="176" endline="179">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="640" endline="666">_dbus_string_steal_data</references>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" compoundref="dbus-memory_8c" startline="629" endline="668">dbus_free</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga9c6f92a67e41f08d8eb254e294fd0378" compoundref="dbus-spawn-win_8c" startline="307" endline="338">_dbus_babysitter_set_child_exit_error</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaca61af8681a48862835ea8cfd263f5ab" compoundref="dbus-sysdeps-util-unix_8c" startline="78" endline="157">_dbus_become_daemon</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga82c920a8c3b5958ba1ecf8e5f5d6373b" compoundref="dbus-sysdeps-util-unix_8c" startline="324" endline="372">_dbus_change_to_daemon_user</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga8e16f75e361d9fed43223f69baf0e2a5" compoundref="dbus-sysdeps-unix_8c" startline="1891" endline="1917">_dbus_check_dir_is_private_to_user</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gac448479a1674e3b86cee9a4bdc7eba03" compoundref="dbus-sysdeps-unix_8c" startline="2798" endline="2815">_dbus_close</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga701f9b3087c196404f66ff95b4ace0b8" compoundref="dbus-sysdeps-win_8c" startline="299" endline="320">_dbus_close_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3551d425aba3d92e652b8809fdfe9339" compoundref="dbus-sysdeps-util-unix_8c" startline="1102" endline="1166">_dbus_command_for_pid</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga0228009923a105d50a0849b24acbc31e" compoundref="dbus-sysdeps-unix_8c" startline="792" endline="873">_dbus_connect_unix_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaa47156dedbe573ee9b213d1fd3f7bb79" compoundref="dbus-sysdeps-unix_8c" startline="2564" endline="2585">_dbus_create_directory</referencedby>
+        <referencedby refid="group__DBusFile_1ga22665c6d5899c913e03930f90d144f46" compoundref="dbus-file-unix_8c" startline="353" endline="388">_dbus_create_file_exclusively</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3bc1512aef42cea17a2aaacc7d8e7211" compoundref="dbus-sysdeps-unix_8c" startline="3942" endline="3960">_dbus_delete_directory</referencedby>
+        <referencedby refid="group__DBusFile_1ga4d4936493cddac47b6e7e4ab3f390627" compoundref="dbus-file-unix_8c" startline="399" endline="417">_dbus_delete_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gab9a2ddb130da035d6186f2d96bf37cb4" compoundref="dbus-sysdeps-util-unix_8c" startline="696" endline="738">_dbus_directory_get_next_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gaaf6eb8179fb6ea2175ed9742a0c8be68" compoundref="dbus-sysdeps-util-unix_8c" startline="648" endline="680">_dbus_directory_open</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1gad79d20e59fb519233004208988851cf1" compoundref="dbus-sysdeps-unix_8c" startline="2825" endline="2857">_dbus_dup</referencedby>
+        <referencedby refid="group__DBusFile_1gad22d468e789139c87f7f4bb97cadf448" compoundref="dbus-file-unix_8c" startline="55" endline="151">_dbus_file_get_contents</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gae96a3f400324b065f78a865a86454d09" compoundref="dbus-sysdeps-unix_8c" startline="2952" endline="3016">_dbus_full_duplex_pipe</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaa504db352a939909051a494d06c5b607" compoundref="dbus-userdb-util_8c" startline="44" endline="105">_dbus_is_console_user</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga71aa508a7790c6d1c9c0159defcdd4a6" compoundref="dbus-sysdeps-unix_8c" startline="1070" endline="1156">_dbus_listen_systemd_sockets</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gafdae31b3b61299dbaaccfcb1205a6f30" compoundref="dbus-sysdeps-unix_8c" startline="1296" endline="1483">_dbus_listen_tcp_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga2cd48fe3d7aa14d0d3c7813cdddb3f74" compoundref="dbus-sysdeps-unix_8c" startline="926" endline="1057">_dbus_listen_unix_socket</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3483" endline="3531">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusFile_1ga7c83e2e20811330d1d1b2f6249dbe66c" compoundref="dbus-file-unix_8c" startline="326" endline="344">_dbus_make_file_world_readable</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="722" endline="928">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab3da15ee1a73d3b26008d1bce20a78a0" compoundref="dbus-object-tree_8c" startline="391" endline="434">_dbus_object_tree_register</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga9906c86bebb51358f0d8df6a42af30f6" compoundref="dbus-sysdeps-unix_8c" startline="1577" endline="1799">_dbus_read_credentials_socket</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga3f073afc8ef8397471531baf513e1bb5" compoundref="dbus-sysdeps-win_8c" startline="2433" endline="2502">_dbus_read_local_machine_uuid</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga6cc9916aa1dde4d44072ee85b5691b5b" compoundref="dbus-sysdeps-win_8c" startline="1618" endline="1674">_dbus_send_credentials_socket</referencedby>
+        <referencedby refid="group__DBusServerUnix_1gaec00cdf4977b9bd33621df684406a779" compoundref="dbus-server-unix_8c" startline="54" endline="214">_dbus_server_listen_platform_specific</referencedby>
+        <referencedby refid="group__DBusServerUnix_1ga21ce093bda6ce6c7f94d1d894b6b4358" compoundref="dbus-server-unix_8c" startline="225" endline="298">_dbus_server_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusServerLaunchd_1ga5d09a40275e9a28d35ef3474875487a2" compoundref="dbus-server-launchd_8c" startline="64" endline="207">_dbus_server_new_for_launchd</referencedby>
+        <referencedby refid="group__DBusServerSocket_1ga047d05c427e9a1fc5823fdfdcec5c5f6" compoundref="dbus-server-socket_8c" startline="388" endline="508">_dbus_server_new_for_tcp_socket</referencedby>
+        <referencedby refid="group__DBusAddressInternals_1ga5b6409826263c7d62570c56889f7ddb2" compoundref="dbus-address_8c" startline="65" endline="78">_dbus_set_bad_address</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga84c21bbcb2a673244f36616c5e053277" compoundref="dbus-spawn_8c" startline="1137" endline="1299">_dbus_spawn_async_with_babysitter</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga04e98ad0e3a181f0a5921a4cbc49cf08" compoundref="dbus-sysdeps-util-unix_8c" startline="600" endline="628">_dbus_stat</referencedby>
+        <referencedby refid="group__DBusFile_1ga2adba123fde18c9d1d9eaf1347980d57" compoundref="dbus-file-unix_8c" startline="164" endline="317">_dbus_string_save_to_file</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gada3df30a229b4d29ccf30af83bd88fcc" compoundref="dbus-transport-unix_8c" startline="54" endline="108">_dbus_transport_new_for_domain_socket</referencedby>
+        <referencedby refid="group__DBusTransportSocket_1ga166dbf1d38f06321025408167d214860" compoundref="dbus-transport-socket_8c" startline="1305" endline="1373">_dbus_transport_new_for_tcp_socket</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="119" endline="231">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusString_1gaed2e025454364fbe31cd9b6538c9a936" compoundref="dbus-sysdeps-util-win_8c" startline="791" endline="797">_dbus_unix_user_is_at_console</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga959372f7d7cdea35ffbac3b78e29a1b0" compoundref="dbus-userdb_8c" startline="128" endline="220">_dbus_user_database_lookup</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1gaf6b7452691c0c7d11fec4b9214137052" compoundref="dbus-userdb-util_8c" startline="209" endline="300">_dbus_user_database_lookup_group</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga123620ec5ce2b881786588121d6a03fd" compoundref="dbus-sysdeps-util-unix_8c" startline="230" endline="295">_dbus_write_pid_to_file_and_pipe</referencedby>
+        <referencedby refid="group__DBusConnection_1ga8d6431f17a9e53c9446d87c2ba8409f0" compoundref="dbus-connection_8c" startline="3475" endline="3532">dbus_connection_send_with_reply_and_block</referencedby>
+        <referencedby refid="group__DBusMessage_1ga54242692a860bc712bda120ccee3535f" compoundref="dbus-message_8c" startline="4604" endline="4647">dbus_message_demarshal</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="544" endline="673">dbus_server_listen</referencedby>
+        <referencedby refid="group__DBusMessage_1gaba5e49e956e6bbd1f857ffd21c289276" compoundref="dbus-message_8c" startline="3652" endline="3672">dbus_set_error_from_message</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0f4b81be4f6193c7d8da0ee214772e02" compoundref="dbus-signature_8c" startline="233" endline="250">dbus_signature_validate</referencedby>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_set_error_const</definition>
+        <argsstring>(DBusError *error, const char *name, const char *message)</argsstring>
+        <name>dbus_set_error_const</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Assigns an error name and message to a <ref refid="structDBusError" kindref="compound">DBusError</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if error is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>. The message may be <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, which means a default message will be deduced from the name. The default message will be totally useless, though, so using a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> message is not recommended.</para><para>Because this function does not copy the error name or message, you must ensure the name and message are global data that won&apos;t be freed. You probably want <ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member">dbus_set_error()</ref> instead, in most cases.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error.or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error name (not copied!!!) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error message (not copied!!!) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="246" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="243" bodyend="266"/>
+        <references refid="structDBusRealError_1a3e95ec02e0320fe0bfccf24fb4b8db8a" compoundref="dbus-errors_8c" startline="70">DBusRealError::const_message</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusRealError_1afd09fc7ff565b5f3b410ee1ce985172b" compoundref="dbus-errors_8c" startline="68">DBusRealError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="structDBusRealError_1a269069d5d2fc0f33deced317cb435de9" compoundref="dbus-errors_8c" startline="67">DBusRealError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSysdeps_1gabc4712c0db91f11854cdd933027355af" compoundref="dbus-sysdeps-unix_8c" startline="3355" endline="3432">_dbus_get_autolaunch_address</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga0daf16cfb75ab28d67d5dfa881f457a6" compoundref="dbus-keyring_8c" startline="949" endline="977">_dbus_keyring_get_best_key</referencedby>
+        <referencedby refid="group__DBusKeyring_1ga6dad1720cf97ca6017c39330bec8d09f" compoundref="dbus-keyring_8c" startline="709" endline="838">_dbus_keyring_new_for_credentials</referencedby>
+        <referencedby refid="group__DBusSysdepsUnix_1ga6425e8cf4a38c71a48309b436322d4db" compoundref="dbus-sysdeps-unix_8c" startline="3483" endline="3531">_dbus_lookup_launchd_socket</referencedby>
+        <referencedby refid="group__DBusInternalsUtils_1ga84c21bbcb2a673244f36616c5e053277" compoundref="dbus-spawn-win_8c" startline="619" endline="714">_dbus_spawn_async_with_babysitter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_move_error</definition>
+        <argsstring>(DBusError *src, DBusError *dest)</argsstring>
+        <name>dbus_move_error</name>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Moves an error src into dest, freeing src and overwriting dest. </para>        </briefdescription>
+        <detaileddescription>
+<para>Both src and dest must be initialized. src is reinitialized to an empty error. dest may not contain an existing error. If the destination is <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref>, just frees and reinits the source error.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source error </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination error or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="281" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="279" bodyend="292"/>
+        <references refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" compoundref="dbus-errors_8c" startline="211" endline="226">dbus_error_free</references>
+        <references refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" compoundref="dbus-errors_8c" startline="188" endline="202">dbus_error_init</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="750" endline="780">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="363" endline="447">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="119" endline="231">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="544" endline="673">dbus_server_listen</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1ga48515c580199514026542fe053ef1887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_error_has_name</definition>
+        <argsstring>(const DBusError *error, const char *name)</argsstring>
+        <name>dbus_error_has_name</name>
+        <param>
+          <type>const <ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the error is set and has the given name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if the given named error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="304" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="302" bodyend="320"/>
+        <references refid="group__DBusString_1gad79c34af55b58f0e8b81ecf11b8694bb" compoundref="dbus-string_8c" startline="2300" endline="2327">_dbus_string_equal</references>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="210" endline="217">_dbus_string_init_const</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusInternalsUtils_1ga709fd30e6b940a5952af38efaf24ad51" compoundref="dbus-internals_8c" startline="750" endline="780">_dbus_read_uuid_file</referencedby>
+        <referencedby refid="group__DBusConnection_1gac4473b37bfa74ccf7459959d27e7bc59" compoundref="dbus-connection_8c" startline="5673" endline="5709">dbus_connection_register_fallback</referencedby>
+        <referencedby refid="group__DBusConnection_1ga24730ca6fd2e9132873962a32df7628c" compoundref="dbus-connection_8c" startline="5571" endline="5607">dbus_connection_register_object_path</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_error_is_set</definition>
+        <argsstring>(const DBusError *error)</argsstring>
+        <name>dbus_error_is_set</name>
+        <param>
+          <type>const <ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether an error occurred (the error is set). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the error object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" line="330" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.c" bodystart="329" bodyend="335"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusError_1afb559175326de5b6b340e26204e92d72" compoundref="dbus-errors_8h" startline="51">DBusError::message</references>
+        <references refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" compoundref="dbus-errors_8h" startline="50">DBusError::name</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <referencedby refid="group__DBusTransport_1ga0893897223056c89f33b2641a7b21cf8" compoundref="dbus-transport_8c" startline="363" endline="447">_dbus_transport_open</referencedby>
+        <referencedby refid="group__DBusTransportUnix_1gafd694944860033155276df9162bdf72e" compoundref="dbus-transport-unix_8c" startline="119" endline="231">_dbus_transport_open_platform_specific</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga123620ec5ce2b881786588121d6a03fd" compoundref="dbus-sysdeps-util-unix_8c" startline="230" endline="295">_dbus_write_pid_to_file_and_pipe</referencedby>
+        <referencedby refid="group__DBusAddress_1ga80d4e20206f8f1e9bbd2607e9f4bbb44" compoundref="dbus-address_8c" startline="617" endline="647">dbus_address_unescape_value</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+        <referencedby refid="group__DBusServer_1ga4c83cf9f2c186afa97decdc25ac163d8" compoundref="dbus-server_8c" startline="544" endline="673">dbus_server_listen</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>C;<sp/>c-file-style:<sp/>&quot;gnu&quot;;<sp/>indent-tabs-mode:<sp/>nil;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dbus-errors.h<sp/>Error<sp/>reporting</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2002<sp/><sp/>Red<sp/>Hat<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>CodeFactory<sp/>AB</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Academic<sp/>Free<sp/>License<sp/>version<sp/>2.1</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined<sp/>(DBUS_INSIDE_DBUS_H)<sp/>&amp;&amp;<sp/>!defined<sp/>(DBUS_COMPILATION)</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#error<sp/>&quot;Only<sp/>&lt;dbus/dbus.h&gt;<sp/>can<sp/>be<sp/>included<sp/>directly,<sp/>this<sp/>file<sp/>may<sp/>disappear<sp/>or<sp/>change<sp/>contents.&quot;</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DBUS_ERROR_H</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DBUS_ERROR_H</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-macros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dbus/dbus-protocol.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="group__DBusMacros_1ga875146b01015e9ced22b25d76d549ab2" kindref="member" tooltip="Macro used prior to declaring functions in the D-Bus header files.">DBUS_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="group__DBusErrors_1ga568b785040bdbff30312e71811907f4b" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structDBusError" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50" refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structDBusError_1a09a9614ff07fdf3ef163b232ff934581" kindref="member" tooltip="public error name field">name</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="structDBusError_1afb559175326de5b6b340e26204e92d72" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structDBusError_1afb559175326de5b6b340e26204e92d72" kindref="member" tooltip="public error message field">message</ref>;<sp/></highlight></codeline>
+<codeline lineno="53" refid="structDBusError_1ac4f05617ba5dc961b77f2e28cca4479a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusError_1ac4f05617ba5dc961b77f2e28cca4479a" kindref="member" tooltip="placeholder">dummy1</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="54" refid="structDBusError_1a6048668f01f290ff3da8c78335766124" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusError_1a6048668f01f290ff3da8c78335766124" kindref="member" tooltip="placeholder">dummy2</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="55" refid="structDBusError_1a9b94a86f9cf52673d035143750e57730" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusError_1a9b94a86f9cf52673d035143750e57730" kindref="member" tooltip="placeholder">dummy3</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="56" refid="structDBusError_1a7350e44450620916084d72426ce02f4c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusError_1a7350e44450620916084d72426ce02f4c" kindref="member" tooltip="placeholder">dummy4</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="57" refid="structDBusError_1aacb4935a2287d44f4b6443020f1c19e5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDBusError_1aacb4935a2287d44f4b6443020f1c19e5" kindref="member" tooltip="placeholder">dummy5</ref><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="59" refid="structDBusError_1acbbfd6edbd4503230b8c7f77aaf56e2e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structDBusError_1acbbfd6edbd4503230b8c7f77aaf56e2e" kindref="member" tooltip="placeholder">padding1</ref>;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="group__DBusErrorInternals_1ga961cc70e3891282a65205c4c8418d88e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBUS_ERROR_INIT<sp/>{<sp/>NULL,<sp/>NULL,<sp/>TRUE,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>NULL<sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga8937f0b7cdf8554fa6305158ce453fbe" kindref="member" tooltip="Initializes a DBusError structure.">dbus_error_init</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1gaac6c14ead14829ee4e090f39de6a7568" kindref="member" tooltip="Frees an error that&amp;#39;s been set (or just initialized), then reinitializes the error as in dbus_error_i...">dbus_error_free</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" kindref="member" tooltip="Assigns an error name and message to a DBusError.">dbus_set_error</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*message,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga3cc15cc37bcd3aaca87aa4d791c124f5" kindref="member" tooltip="Assigns an error name and message to a DBusError.">dbus_set_error_const</ref><sp/>(<ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*error,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*name,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*message);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__DBusErrors_1ga0a27fb9f1af0c2bfd105d7e8622b93f4" kindref="member" tooltip="Moves an error src into dest, freeing src and overwriting dest.">dbus_move_error</ref><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*src,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*dest);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member" tooltip="A boolean, valid values are TRUE and FALSE.">dbus_bool_t</ref><sp/><ref refid="group__DBusErrors_1ga48515c580199514026542fe053ef1887" kindref="member" tooltip="Checks whether the error is set and has the given name.">dbus_error_has_name</ref><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/>*error,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*name);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">DBUS_EXPORT</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member" tooltip="A boolean, valid values are TRUE and FALSE.">dbus_bool_t</ref><sp/><ref refid="group__DBusErrors_1gab0ed62e9fc2685897eb2d41467c89405" kindref="member" tooltip="Checks whether an error occurred (the error is set).">dbus_error_is_set</ref><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDBusError" kindref="compound" tooltip="Object representing an exception.">DBusError</ref><sp/>*error);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="group__DBusMacros_1gae4a9263a43f8220f6e1c0fd07cf6e59a" kindref="member" tooltip="Macro used after declaring functions in the D-Bus header files.">DBUS_END_DECLS</ref></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DBUS_ERROR_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-errors.h"/>
+  </compounddef>
+</doxygen>

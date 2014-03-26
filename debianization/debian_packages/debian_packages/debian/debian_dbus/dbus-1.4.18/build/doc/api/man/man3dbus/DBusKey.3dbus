@@ -1,0 +1,43 @@
+.TH "DBusKey" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusKey \- 
+.PP
+A single key from the cookie file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "dbus_int32_t \fBid\fP"
+.br
+.RI "\fIidentifier used to refer to the key \fP"
+.ti -1c
+.RI "long \fBcreation_time\fP"
+.br
+.RI "\fIwhen the key was generated, as unix timestamp\&. \fP"
+.ti -1c
+.RI "\fBDBusString\fP \fBsecret\fP"
+.br
+.RI "\fIthe actual key \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A single key from the cookie file\&. 
+.PP
+Definition at line 92 of file dbus-keyring\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "long \fBDBusKey::creation_time\fP"
+.PP
+when the key was generated, as unix timestamp\&. signed long matches struct timeval\&. 
+.PP
+Definition at line 96 of file dbus-keyring\&.c\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

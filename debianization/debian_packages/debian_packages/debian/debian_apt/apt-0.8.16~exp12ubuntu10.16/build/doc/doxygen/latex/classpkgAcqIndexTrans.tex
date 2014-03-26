@@ -1,0 +1,139 @@
+\section{pkg\-Acq\-Index\-Trans \-Class \-Reference}
+\label{classpkgAcqIndexTrans}\index{pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}}
+
+
+\-An acquire item that is responsible for fetching a \{\{\{ translated index file.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-Index\-Trans\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classpkgAcqIndexTrans__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-Index\-Trans\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqIndexTrans__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Custom600\-Headers} ()
+\begin{DoxyCompactList}\small\item\em \-Custom headers to be sent to the fetch process. \end{DoxyCompactList}\item 
+{\bf pkg\-Acq\-Index\-Trans} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, std\-::string {\bf \-U\-R\-I}, std\-::string \-U\-R\-I\-Desc, std\-::string {\bf \-Short\-Desc})
+\begin{DoxyCompactList}\small\item\em \-Create a \doxyref{pkg\-Acq\-Index\-Trans}{p.}{classpkgAcqIndexTrans}. \end{DoxyCompactList}\item 
+{\bfseries pkg\-Acq\-Index\-Trans} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, struct {\bf \-Index\-Target} const $\ast$const \-Target, {\bf \-Hash\-String} const \&{\bf \-Expected\-Hash}, {\bf index\-Records} const $\ast$\-Meta\-Index\-Parser)\label{classpkgAcqIndexTrans_aafb7976e4bfdc9666b0edc1237f3aff0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An acquire item that is responsible for fetching a \{\{\{ translated index file. 
+
+\-The only difference from \doxyref{pkg\-Acq\-Index}{p.}{classpkgAcqIndex} is that transient failures are suppressed\-: no error occurs if the translated index file is missing. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}!pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}}
+\index{pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}!pkgAcqIndexTrans@{pkg\-Acq\-Index\-Trans}}
+\subsubsection[{pkg\-Acq\-Index\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acq\-Index\-Trans} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner, }
+\item[{std\-::string}]{\-U\-R\-I, }
+\item[{std\-::string}]{\-U\-R\-I\-Desc, }
+\item[{std\-::string}]{\-Short\-Desc}
+\end{DoxyParamCaption}
+)}\label{classpkgAcqIndexTrans_a09c9092ba33c90c9e34f94907237b866}
+
+
+\-Create a \doxyref{pkg\-Acq\-Index\-Trans}{p.}{classpkgAcqIndexTrans}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner} & \-The \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object with which this item is associated.\\
+\hline
+{\em \doxyref{\-U\-R\-I}{p.}{classURI}} & \-The \doxyref{\-U\-R\-I}{p.}{classURI} of the index file that is to be downloaded.\\
+\hline
+{\em \-U\-R\-I\-Desc} & \-A \char`\"{}\-U\-R\-I-\/style\char`\"{} description of this index file.\\
+\hline
+{\em \-Short\-Desc} & \-A brief description of this index file. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}!\-Custom600\-Headers@{\-Custom600\-Headers}}
+\index{\-Custom600\-Headers@{\-Custom600\-Headers}!pkgAcqIndexTrans@{pkg\-Acq\-Index\-Trans}}
+\subsubsection[{\-Custom600\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Custom600\-Headers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqIndexTrans_a00fc58f7709000dd60501e4d9034b7b0}
+
+
+\-Custom headers to be sent to the fetch process. 
+
+\begin{DoxyReturn}{\-Returns}
+a string containing \-R\-F\-C822-\/style headers that are to be inserted into the 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message sent to the fetch subprocess. \-The headers are inserted after a newline-\/less line, so they should (if nonempty) have a leading newline and no trailing newline. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_a00fc58f7709000dd60501e4d9034b7b0}.
+
+
+
+\-References pkg\-Acq\-Index\-::\-Real\-U\-R\-I.
+
+\index{pkg\-Acq\-Index\-Trans@{pkg\-Acq\-Index\-Trans}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqIndexTrans@{pkg\-Acq\-Index\-Trans}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqIndexTrans_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Complete, pkg\-Acq\-Index\-::\-Compression\-Extension, pkg\-Acquire\-::\-Item\-::\-Dequeue(), pkg\-Acq\-Index\-::\-Desc, pkg\-Acquire\-::\-Item\-Desc\-::\-Description, pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only, pkg\-Acq\-Index\-::\-Real\-U\-R\-I, pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc, pkg\-Acquire\-::\-Item\-::\-Stat\-Done, and pkg\-Acquire\-::\-Item\-::\-Stat\-Idle.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

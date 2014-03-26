@@ -1,0 +1,92 @@
+\section{pkg\-Index\-File \-Class \-Reference}
+\label{classpkgIndexFile}\index{pkg\-Index\-File@{pkg\-Index\-File}}
+
+
+\-Inheritance diagram for pkg\-Index\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgIndexFile__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf \-Type}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const {\bf \-Type} $\ast$ {\bfseries \-Get\-Type} () const =0\label{classpkgIndexFile_a4350ea0816ec979d2c52ae2a5a61b7ef}
+
+\item 
+virtual std\-::string {\bfseries \-Archive\-Info} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \-Ver) const \label{classpkgIndexFile_a684f0beec496bd2bba61e888649f19b7}
+
+\item 
+virtual std\-::string {\bfseries \-Source\-Info} ({\bf pkg\-Src\-Records\-::\-Parser} const \&\-Record, {\bf pkg\-Src\-Records\-::\-File} const \&\-File) const \label{classpkgIndexFile_af9f4753934d686d8274e0accc62d3980}
+
+\item 
+virtual std\-::string {\bfseries \-Describe} (bool \-Short=false) const =0\label{classpkgIndexFile_a066d0a80c4bd32c4b83733b77d47066d}
+
+\item 
+virtual std\-::string {\bfseries \-Archive\-U\-R\-I} (std\-::string) const \label{classpkgIndexFile_ae0236222a74120957d71373c1c608b9f}
+
+\item 
+virtual {\bf pkg\-Src\-Records\-::\-Parser} $\ast$ {\bfseries \-Create\-Src\-Parser} () const \label{classpkgIndexFile_a21278b4344aeae000b59cf94e947cefe}
+
+\item 
+virtual bool {\bfseries \-Exists} () const =0\label{classpkgIndexFile_af3f7120f52e0c840477b2bda2d197161}
+
+\item 
+virtual bool {\bfseries \-Has\-Packages} () const =0\label{classpkgIndexFile_ae5837812509522e5879e7f3dfc2e64e6}
+
+\item 
+virtual unsigned long {\bfseries \-Size} () const =0\label{classpkgIndexFile_a70f4905136e34176d235b915b6d15fea}
+
+\item 
+virtual bool {\bfseries \-Merge} ({\bf pkg\-Cache\-Generator} \&, {\bf \-Op\-Progress} $\ast$) const \label{classpkgIndexFile_a867edad21a3726540c02a389aa10da41}
+
+\item 
+virtual \-\_\-\-\_\-deprecated bool {\bfseries \-Merge} ({\bf pkg\-Cache\-Generator} \&\-Gen, {\bf \-Op\-Progress} \&\-Prog) const \label{classpkgIndexFile_a5c262d637b30c5415c67d145586be638}
+
+\item 
+virtual bool {\bfseries \-Merge\-File\-Provides} ({\bf pkg\-Cache\-Generator} \&, {\bf \-Op\-Progress} $\ast$) const \label{classpkgIndexFile_aec43459b9d8e480b4cb3629e807c265f}
+
+\item 
+virtual \-\_\-\-\_\-deprecated bool {\bfseries \-Merge\-File\-Provides} ({\bf pkg\-Cache\-Generator} \&\-Gen, {\bf \-Op\-Progress} \&\-Prog) const \label{classpkgIndexFile_a081a7bb202d88763196f3b7757bdf322}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Pkg\-File\-Iterator} {\bfseries \-Find\-In\-Cache} ({\bf pkg\-Cache} \&\-Cache) const \label{classpkgIndexFile_afa0e20f879d9090dac2a7a4830bc7015}
+
+\item 
+bool {\bfseries \-Is\-Trusted} () const \label{classpkgIndexFile_aff34485f3c8499f45169fc6ab7e39409}
+
+\item 
+{\bfseries pkg\-Index\-File} (bool \-Trusted)\label{classpkgIndexFile_a79738449550662cc0521dc9961a0ae83}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries \-Translations\-Available} ()\label{classpkgIndexFile_ac6d61f91a133ebc6ab5a5d6fc56a0629}
+
+\item 
+static bool {\bfseries \-Check\-Language\-Code} (const char $\ast$\-Lang)\label{classpkgIndexFile_aeed442847df5cbe81c98e44a57146bfe}
+
+\item 
+static std\-::string {\bfseries \-Language\-Code} ()\label{classpkgIndexFile_acfe90c5fa9863991c73bc6a6820cf5de}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Trusted}\label{classpkgIndexFile_a224b67941df4d54b46be8dd05390428f}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/indexfile.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/indexfile.\-cc\end{DoxyCompactItemize}

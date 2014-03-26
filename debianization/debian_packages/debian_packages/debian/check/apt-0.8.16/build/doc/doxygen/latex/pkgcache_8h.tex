@@ -1,0 +1,86 @@
+\section{/home/rpmuser/debian/check/apt-\/0.8.16$\sim$exp12ubuntu10.16/apt-\/pkg/pkgcache.h \-File \-Reference}
+\label{pkgcache_8h}\index{/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-h@{/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-h}}
+
+
+\doxyref{pkg\-Cache}{p.}{classpkgCache} -\/ \-Structure definitions for the cache file  
+
+
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/mmap.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/cacheiterators.\-h$>$}\*
+\-Include dependency graph for pkgcache.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pkgcache_8h__incl}
+\end{center}
+\end{figure}
+\-This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pkgcache_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf pkg\-Cache}
+\item 
+struct {\bf pkg\-Cache\-::\-Dep}
+\item 
+struct {\bf pkg\-Cache\-::\-State}
+\item 
+struct {\bf pkg\-Cache\-::\-Flag}
+\item 
+struct {\bf pkg\-Cache\-::\-Header}
+\item 
+struct {\bf pkg\-Cache\-::\-Group}
+\begin{DoxyCompactList}\small\item\em groups architecture depending packages together \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Package}
+\begin{DoxyCompactList}\small\item\em contains information for a single unique package \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Package\-File}
+\begin{DoxyCompactList}\small\item\em stores information about the files used to generate the cache \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Ver\-File}
+\begin{DoxyCompactList}\small\item\em associates a version with a \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Desc\-File}
+\begin{DoxyCompactList}\small\item\em associates a description with a \-Translation file \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Version}
+\begin{DoxyCompactList}\small\item\em information for a single version of a package \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Description}
+\begin{DoxyCompactList}\small\item\em datamember of a linked list of available description for a version \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Dependency}
+\begin{DoxyCompactList}\small\item\em information for a single dependency record \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-Provides}
+\begin{DoxyCompactList}\small\item\em handles virtual packages \end{DoxyCompactList}\item 
+struct {\bf pkg\-Cache\-::\-String\-Item}
+\begin{DoxyCompactList}\small\item\em used for generating single instances of strings \end{DoxyCompactList}\item 
+class {\bf pkg\-Cache\-::\-Namespace}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\doxyref{pkg\-Cache}{p.}{classpkgCache} -\/ \-Structure definitions for the cache file \-The goal of the cache file is two fold\-: \-Firstly to speed loading and processing of the package file array and secondly to reduce memory consumption of the package file array.
+
+\-The implementation is aimed at an environment with many primary package files, for instance someone that has a \-Package file for their \-C\-D-\/\-R\-O\-M, a \-Package file for the latest version of the distribution on the \-C\-D-\/\-R\-O\-M and a package file for the development version. \-Always present is the information contained in the status file which might be considered a separate package file.
+
+\-Please understand, this is designed as a {\bfseries \-Cache file} it is not meant to be used on any system other than the one it was created for. \-It is not meant to be authoritative either, i.\-e. if a system crash or software failure occurs it must be perfectly acceptable for the cache file to be in an inconsistent state. \-Furthermore at any time the cache file may be erased without losing any information.
+
+\-Also the structures and storage layout is optimized for use by the \-A\-P\-T and may not be suitable for all purposes. \-However it should be possible to extend it with associate cache files that contain other information.
+
+\-To keep memory use down the cache file only contains often used fields and fields that are inexpensive to store, the \-Package file has a full list of fields. \-Also the client may assume that all items are perfectly valid and need not perform checks against their correctness. \-Removal of information from the cache is possible, but blanks will be left in the file, and unused strings will also be present. \-The recommended implementation is to simply rebuild the cache each time any of the data files change. \-It is possible to add a new package file to the cache without any negative side effects.
+
+{\bfseries \-Note on \-Pointer access} \-Clients should always use the \-Cache\-Iterators classes for access to the cache and the data in it. \-They also provide a simple \-S\-T\-L-\/like method for traversing the links of the datastructure.
+
+\-Every item in every structure is stored as the index to that structure. \-What this means is that once the files is mmaped every data access has to go through a fix up stage to get a real memory pointer. \-This is done by taking the index, multiplying it by the type size and then adding it to the start address of the memory block. \-This sounds complex, but in \-C it is a single array dereference. \-Because all items are aligned to their size and indexes are stored as multiples of the size of the structure the format is immediately portable to all possible architectures -\/ \-B\-U\-T the generated files are -\/\-N\-O\-T-\/.
+
+\-This scheme allows code like this to be written\-:  void $\ast$\-Map = mmap(...); \-Package $\ast$\-Pkg\-List = (\-Package $\ast$)\-Map; \-Header $\ast$\-Head = (\-Header $\ast$)\-Map; char $\ast$\-Strings = (char $\ast$)\-Map; cout $<$$<$ (\-Strings + \-Pkg\-List[\-Head-\/$>$\-Hash\-Table[0]]-\/$>$\-Name) $<$$<$ endl; 
+
+\-Notice the lack of casting or multiplication. \-The net result is to return the name of the first package in the first hash bucket, without error checks.
+
+\-The generator uses allocation pools to group similarly sized structures in large blocks to eliminate any alignment overhead. \-The generator also assures that no structures overlap and all indexes are unique. \-Although at first glance it may seem like there is the potential for two structures to exist at the same point the generator never allows this to happen. (\-See the discussion of free space pools)
+
+\-See \doxyref{pkgcachegen.\-h}{p.}{pkgcachegen_8h_source} for more information about generating cache structures. 

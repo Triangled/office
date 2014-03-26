@@ -1,0 +1,642 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="sd-daemon_8h" kind="file">
+    <compoundname>sd-daemon.h</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">inttypes.h</includes>
+    <includedby refid="dbus-sysdeps-unix_8c" local="yes">dbus-sysdeps-unix.c</includedby>
+    <includedby refid="sd-daemon_8c" local="yes">sd-daemon.c</includedby>
+    <incdepgraph>
+      <node id="4516">
+        <label>sd-daemon.h</label>
+        <link refid="sd-daemon.h"/>
+        <childnode refid="4517" relation="include">
+        </childnode>
+        <childnode refid="4518" relation="include">
+        </childnode>
+      </node>
+      <node id="4517">
+        <label>sys/types.h</label>
+      </node>
+      <node id="4518">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4521">
+        <label>sd-daemon.c</label>
+        <link refid="sd-daemon_8c_source"/>
+      </node>
+      <node id="4519">
+        <label>sd-daemon.h</label>
+        <link refid="sd-daemon.h"/>
+        <childnode refid="4520" relation="include">
+        </childnode>
+        <childnode refid="4521" relation="include">
+        </childnode>
+      </node>
+      <node id="4520">
+        <label>dbus-sysdeps-unix.c</label>
+        <link refid="dbus-sysdeps-unix_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sd-daemon_8h_1adda9a55305f986f47aa562fdbb3424a0" prot="public" static="no">
+        <name>_sd_printf_attr_</name>
+        <param><defname>a</defname></param>
+        <param><defname>b</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="74" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1af1aabee167626214c94ecb2dde868c20" prot="public" static="no">
+        <name>_sd_hidden_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="75" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a6fdb1bbdf5f13035e439b096691534f2" prot="public" static="no">
+        <name>SD_EMERG</name>
+        <initializer>&quot;&lt;0&gt;&quot;  /* system is unusable */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="85" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a8f9edb92c7079b660c69ddc58c0865ba" prot="public" static="no">
+        <name>SD_ALERT</name>
+        <initializer>&quot;&lt;1&gt;&quot;  /* action must be taken immediately */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="86" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a103002cca9f5756796bc1ae773e790fb" prot="public" static="no">
+        <name>SD_CRIT</name>
+        <initializer>&quot;&lt;2&gt;&quot;  /* critical conditions */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="87" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a29cd8395c2db41768436986ab7a666b3" prot="public" static="no">
+        <name>SD_ERR</name>
+        <initializer>&quot;&lt;3&gt;&quot;  /* error conditions */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="88" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a1b84e50e89a48558f56175017017c375" prot="public" static="no">
+        <name>SD_WARNING</name>
+        <initializer>&quot;&lt;4&gt;&quot;  /* warning conditions */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="89" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a4e0c16529642a911483bd7eaabefca4c" prot="public" static="no">
+        <name>SD_NOTICE</name>
+        <initializer>&quot;&lt;5&gt;&quot;  /* normal but significant condition */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="90" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a1bcf100bcdd91eacaf0b05d83c88aedf" prot="public" static="no">
+        <name>SD_INFO</name>
+        <initializer>&quot;&lt;6&gt;&quot;  /* informational */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="91" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1a3ace3381f5b69f4a46fc35b70844a5dc" prot="public" static="no">
+        <name>SD_DEBUG</name>
+        <initializer>&quot;&lt;7&gt;&quot;  /* debug-level messages */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="92" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="sd-daemon_8h_1ad91f989c8a2fc570846bb7b131ec3230" prot="public" static="no">
+        <name>SD_LISTEN_FDS_START</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="95" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sd-daemon_8h_1aeb496d9d94fb33ddec73ad136ac0eab4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int _sd_hidden_</definition>
+        <argsstring></argsstring>
+        <name>_sd_hidden_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="238" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="sd-daemon_8h_1a77a6f62388567f225093dbac40062369" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_listen_fds</definition>
+        <argsstring>(int unset_environment) _sd_hidden_</argsstring>
+        <name>sd_listen_fds</name>
+        <param>
+          <type>int</type>
+          <declname>unset_environment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="112" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="46" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1aa8ffc444cd5d0872a6f7c4f7b7939c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_is_fifo</definition>
+        <argsstring>(int fd, const char *path) _sd_hidden_</argsstring>
+        <name>sd_is_fifo</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="124" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="127" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1aeacd66d14c12953eb50ddb7a0b1dad96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_is_socket</definition>
+        <argsstring>(int fd, int family, int type, int listening) _sd_hidden_</argsstring>
+        <name>sd_is_socket</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>listening</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="140" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="211" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1a665bcd700a42d2f1e8e688db23d9bf8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_is_socket_inet</definition>
+        <argsstring>(int fd, int family, int type, int listening, uint16_t port) _sd_hidden_</argsstring>
+        <name>sd_is_socket_inet</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>family</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>listening</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="154" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="239" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1a4aeaea00866ddcf6c2ae904b81773e25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_is_socket_unix</definition>
+        <argsstring>(int fd, int type, int listening, const char *path, size_t length) _sd_hidden_</argsstring>
+        <name>sd_is_socket_unix</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>listening</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="170" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="284" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1a7b213fa205168efededc7facac3fc2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_notify</definition>
+        <argsstring>(int unset_environment, const char *state) _sd_hidden_</argsstring>
+        <name>sd_notify</name>
+        <param>
+          <type>int</type>
+          <declname>unset_environment</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="216" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="327" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1a4cd1c2059a8af7b95d036370aeb3d531" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_notifyf</definition>
+        <argsstring>(int unset_environment, const char *format,...) _sd_printf_attr_(2</argsstring>
+        <name>sd_notifyf</name>
+        <param>
+          <type>int</type>
+          <declname>unset_environment</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="238"/>
+      </memberdef>
+      <memberdef kind="function" id="sd-daemon_8h_1a3473b554f7c39b01b3cd8b80604c3d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sd_booted</definition>
+        <argsstring>(void) _sd_hidden_</argsstring>
+        <name>sd_booted</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h" line="251" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.c" bodystart="417" bodyend="435"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*-*-<sp/>Mode:<sp/>C;<sp/>c-basic-offset:<sp/>8;<sp/>indent-tabs-mode:<sp/>nil<sp/>-*-*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>foosddaemonhfoo</highlight></codeline>
+<codeline lineno="4"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>foosddaemonhfoo</highlight></codeline>
+<codeline lineno="5"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Copyright<sp/>2010<sp/>Lennart<sp/>Poettering</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>obtaining<sp/>a<sp/>copy<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to<sp/>do<sp/>so,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/>included<sp/>in<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>EXPRESS<sp/>OR<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>MERCHANTABILITY,<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/>Reference<sp/>implementation<sp/>of<sp/>a<sp/>few<sp/>systemd<sp/>related<sp/>interfaces<sp/>for</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>writing<sp/>daemons.<sp/>These<sp/>interfaces<sp/>are<sp/>trivial<sp/>to<sp/>implement.<sp/>To</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>simplify<sp/>porting<sp/>we<sp/>provide<sp/>this<sp/>reference<sp/>implementation.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>Applications<sp/>are<sp/>welcome<sp/>to<sp/>reimplement<sp/>the<sp/>algorithms<sp/>described</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>here<sp/>if<sp/>they<sp/>do<sp/>not<sp/>want<sp/>to<sp/>include<sp/>these<sp/>two<sp/>source<sp/>files.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>The<sp/>following<sp/>functionality<sp/>is<sp/>provided:</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"></highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/>-<sp/>Support<sp/>for<sp/>logging<sp/>with<sp/>log<sp/>levels<sp/>on<sp/>stderr</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>-<sp/>File<sp/>descriptor<sp/>passing<sp/>for<sp/>socket-based<sp/>activation</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>-<sp/>Daemon<sp/>startup<sp/>and<sp/>status<sp/>notification</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/>-<sp/>Detection<sp/>of<sp/>systemd<sp/>boots</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/>You<sp/>may<sp/>compile<sp/>this<sp/>with<sp/>-DDISABLE_SYSTEMD<sp/>to<sp/>disable<sp/>systemd</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/>support.<sp/>This<sp/>makes<sp/>all<sp/>those<sp/>calls<sp/>NOPs<sp/>that<sp/>are<sp/>directly<sp/>related<sp/>to</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/>systemd<sp/>(i.e.<sp/>only<sp/>sd_is_xxx()<sp/>will<sp/>stay<sp/>useful).</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"></highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/>Since<sp/>this<sp/>is<sp/>drop-in<sp/>code<sp/>we<sp/>don&apos;t<sp/>want<sp/>any<sp/>of<sp/>our<sp/>symbols<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/>exported<sp/>in<sp/>any<sp/>case.<sp/>Hence<sp/>we<sp/>declare<sp/>hidden<sp/>visibility<sp/>for<sp/>all<sp/>of</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/>them.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/>You<sp/>may<sp/>find<sp/>an<sp/>up-to-date<sp/>version<sp/>of<sp/>these<sp/>source<sp/>files<sp/>online:</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>http://cgit.freedesktop.org/systemd/plain/src/sd-daemon.h</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/>http://cgit.freedesktop.org/systemd/plain/src/sd-daemon.c</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"></highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/>This<sp/>should<sp/>compile<sp/>on<sp/>non-Linux<sp/>systems,<sp/>too,<sp/>but<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/>exception<sp/>of<sp/>the<sp/>sd_is_xxx()<sp/>calls<sp/>all<sp/>functions<sp/>will<sp/>become<sp/>NOPs.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/>See<sp/>sd-daemon(7)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__GNUC__<sp/>&gt;=<sp/>4</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_sd_printf_attr_(a,b)<sp/>__attribute__<sp/>((format<sp/>(printf,<sp/>a,<sp/>b)))</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_sd_hidden_<sp/>__attribute__<sp/>((visibility(&quot;hidden&quot;)))</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_sd_printf_attr_(a,b)</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_sd_hidden_</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/>Log<sp/>levels<sp/>for<sp/>usage<sp/>on<sp/>stderr:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/>SD_NOTICE<sp/>&quot;Hello<sp/>World!\n&quot;);</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"></highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/>This<sp/>is<sp/>similar<sp/>to<sp/>printk()<sp/>usage<sp/>in<sp/>the<sp/>kernel.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_EMERG<sp/><sp/><sp/>&quot;&lt;0&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>system<sp/>is<sp/>unusable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_ALERT<sp/><sp/><sp/>&quot;&lt;1&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>action<sp/>must<sp/>be<sp/>taken<sp/>immediately<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_CRIT<sp/><sp/><sp/><sp/>&quot;&lt;2&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>critical<sp/>conditions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_ERR<sp/><sp/><sp/><sp/><sp/>&quot;&lt;3&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>error<sp/>conditions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_WARNING<sp/>&quot;&lt;4&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>warning<sp/>conditions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_NOTICE<sp/><sp/>&quot;&lt;5&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>normal<sp/>but<sp/>significant<sp/>condition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_INFO<sp/><sp/><sp/><sp/>&quot;&lt;6&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>informational<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_DEBUG<sp/><sp/><sp/>&quot;&lt;7&gt;&quot;<sp/><sp/></highlight><highlight class="comment">/*<sp/>debug-level<sp/>messages<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>first<sp/>passed<sp/>file<sp/>descriptor<sp/>is<sp/>fd<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SD_LISTEN_FDS_START<sp/>3</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/>Returns<sp/>how<sp/>many<sp/>file<sp/>descriptors<sp/>have<sp/>been<sp/>passed,<sp/>or<sp/>a<sp/>negative</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/>errno<sp/>code<sp/>on<sp/>failure.<sp/>Optionally,<sp/>removes<sp/>the<sp/>$LISTEN_FDS<sp/>and</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/>$LISTEN_PID<sp/>file<sp/>descriptors<sp/>from<sp/>the<sp/>environment<sp/>(recommended,<sp/>but</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/>problematic<sp/>in<sp/>threaded<sp/>environments).<sp/>If<sp/>r<sp/>is<sp/>the<sp/>return<sp/>value<sp/>of</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/>this<sp/>function<sp/>you&apos;ll<sp/>find<sp/>the<sp/>file<sp/>descriptors<sp/>passed<sp/>as<sp/>fds</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/>SD_LISTEN_FDS_START<sp/>to<sp/>SD_LISTEN_FDS_START+r-1.<sp/>Returns<sp/>a<sp/>negative</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>errno<sp/>style<sp/>error<sp/>code<sp/>on<sp/>failure.<sp/>This<sp/>function<sp/>call<sp/>ensures<sp/>that</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/>the<sp/>FD_CLOEXEC<sp/>flag<sp/>is<sp/>set<sp/>for<sp/>the<sp/>passed<sp/>file<sp/>descriptors,<sp/>to<sp/>make</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>sure<sp/>they<sp/>are<sp/>not<sp/>passed<sp/>on<sp/>to<sp/>child<sp/>processes.<sp/>If<sp/>FD_CLOEXEC<sp/>shall</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/>not<sp/>be<sp/>set,<sp/>the<sp/>caller<sp/>needs<sp/>to<sp/>unset<sp/>it<sp/>after<sp/>this<sp/>call<sp/>for<sp/>all<sp/>file</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/>descriptors<sp/>that<sp/>are<sp/>used.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"></highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/>See<sp/>sd_listen_fds(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_listen_fds(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unset_environment)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/>Helper<sp/>call<sp/>for<sp/>identifying<sp/>a<sp/>passed<sp/>file<sp/>descriptor.<sp/>Returns<sp/>1<sp/>if</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/>the<sp/>file<sp/>descriptor<sp/>is<sp/>a<sp/>FIFO<sp/>in<sp/>the<sp/>file<sp/>system<sp/>stored<sp/>under<sp/>the</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/>specified<sp/>path,<sp/>0<sp/>otherwise.<sp/>If<sp/>path<sp/>is<sp/>NULL<sp/>a<sp/>path<sp/>name<sp/>check<sp/>will</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/>not<sp/>be<sp/>done<sp/>and<sp/>the<sp/>call<sp/>only<sp/>verifies<sp/>if<sp/>the<sp/>file<sp/>descriptor</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/>refers<sp/>to<sp/>a<sp/>FIFO.<sp/>Returns<sp/>a<sp/>negative<sp/>errno<sp/>style<sp/>error<sp/>code<sp/>on</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/>failure.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"></highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/>See<sp/>sd_is_fifo(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_is_fifo(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/>Helper<sp/>call<sp/>for<sp/>identifying<sp/>a<sp/>passed<sp/>file<sp/>descriptor.<sp/>Returns<sp/>1<sp/>if</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/>the<sp/>file<sp/>descriptor<sp/>is<sp/>a<sp/>socket<sp/>of<sp/>the<sp/>specified<sp/>family<sp/>(AF_INET,</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/>...)<sp/>and<sp/>type<sp/>(SOCK_DGRAM,<sp/>SOCK_STREAM,<sp/>...),<sp/>0<sp/>otherwise.<sp/>If</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/>family<sp/>is<sp/>0<sp/>a<sp/>socket<sp/>family<sp/>check<sp/>will<sp/>not<sp/>be<sp/>done.<sp/>If<sp/>type<sp/>is<sp/>0<sp/>a</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/>socket<sp/>type<sp/>check<sp/>will<sp/>not<sp/>be<sp/>done<sp/>and<sp/>the<sp/>call<sp/>only<sp/>verifies<sp/>if</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/>the<sp/>file<sp/>descriptor<sp/>refers<sp/>to<sp/>a<sp/>socket.<sp/>If<sp/>listening<sp/>is<sp/>&gt;<sp/>0<sp/>it<sp/>is</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/>verified<sp/>that<sp/>the<sp/>socket<sp/>is<sp/>in<sp/>listening<sp/>mode.<sp/>(i.e.<sp/>listen()<sp/>has</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/>been<sp/>called)<sp/>If<sp/>listening<sp/>is<sp/>==<sp/>0<sp/>it<sp/>is<sp/>verified<sp/>that<sp/>the<sp/>socket<sp/>is</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/>not<sp/>in<sp/>listening<sp/>mode.<sp/>If<sp/>listening<sp/>is<sp/>&lt;<sp/>0<sp/>no<sp/>listening<sp/>mode<sp/>check</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/>is<sp/>done.<sp/>Returns<sp/>a<sp/>negative<sp/>errno<sp/>style<sp/>error<sp/>code<sp/>on<sp/>failure.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/>See<sp/>sd_is_socket(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="139"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_is_socket(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>family,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>listening)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/>Helper<sp/>call<sp/>for<sp/>identifying<sp/>a<sp/>passed<sp/>file<sp/>descriptor.<sp/>Returns<sp/>1<sp/>if</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/>the<sp/>file<sp/>descriptor<sp/>is<sp/>an<sp/>Internet<sp/>socket,<sp/>of<sp/>the<sp/>specified<sp/>family</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/>(either<sp/>AF_INET<sp/>or<sp/>AF_INET6)<sp/>and<sp/>the<sp/>specified<sp/>type<sp/>(SOCK_DGRAM,</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/>SOCK_STREAM,<sp/>...),<sp/>0<sp/>otherwise.<sp/>If<sp/>version<sp/>is<sp/>0<sp/>a<sp/>protocol<sp/>version</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/>check<sp/>is<sp/>not<sp/>done.<sp/>If<sp/>type<sp/>is<sp/>0<sp/>a<sp/>socket<sp/>type<sp/>check<sp/>will<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/>done.<sp/>If<sp/>port<sp/>is<sp/>0<sp/>a<sp/>socket<sp/>port<sp/>check<sp/>will<sp/>not<sp/>be<sp/>done.<sp/>The</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/>listening<sp/>flag<sp/>is<sp/>used<sp/>the<sp/>same<sp/>way<sp/>as<sp/>in<sp/>sd_is_socket().<sp/>Returns<sp/>a</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/>negative<sp/>errno<sp/>style<sp/>error<sp/>code<sp/>on<sp/>failure.</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/>See<sp/>sd_is_socket_inet(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="153"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_is_socket_inet(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>family,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>listening,<sp/>uint16_t<sp/>port)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/>Helper<sp/>call<sp/>for<sp/>identifying<sp/>a<sp/>passed<sp/>file<sp/>descriptor.<sp/>Returns<sp/>1<sp/>if</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/>the<sp/>file<sp/>descriptor<sp/>is<sp/>an<sp/>AF_UNIX<sp/>socket<sp/>of<sp/>the<sp/>specified<sp/>type</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/>(SOCK_DGRAM,<sp/>SOCK_STREAM,<sp/>...)<sp/>and<sp/>path,<sp/>0<sp/>otherwise.<sp/>If<sp/>type<sp/>is<sp/>0</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/>a<sp/>socket<sp/>type<sp/>check<sp/>will<sp/>not<sp/>be<sp/>done.<sp/>If<sp/>path<sp/>is<sp/>NULL<sp/>a<sp/>socket<sp/>path</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/>check<sp/>will<sp/>not<sp/>be<sp/>done.<sp/>For<sp/>normal<sp/>AF_UNIX<sp/>sockets<sp/>set<sp/>length<sp/>to</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/>0.<sp/>For<sp/>abstract<sp/>namespace<sp/>sockets<sp/>set<sp/>length<sp/>to<sp/>the<sp/>length<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/><sp/>socket<sp/>name<sp/>(including<sp/>the<sp/>initial<sp/>0<sp/>byte),<sp/>and<sp/>pass<sp/>the<sp/>full</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/>socket<sp/>path<sp/>in<sp/>path<sp/>(including<sp/>the<sp/>initial<sp/>0<sp/>byte).<sp/>The<sp/>listening</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/>flag<sp/>is<sp/>used<sp/>the<sp/>same<sp/>way<sp/>as<sp/>in<sp/>sd_is_socket().<sp/>Returns<sp/>a<sp/>negative</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/>errno<sp/>style<sp/>error<sp/>code<sp/>on<sp/>failure.</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"></highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/>See<sp/>sd_is_socket_unix(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="169"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_is_socket_unix(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>listening,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/><sp/>Informs<sp/>systemd<sp/>about<sp/>changed<sp/>daemon<sp/>state.<sp/>This<sp/>takes<sp/>a<sp/>number<sp/>of</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/><sp/>newline<sp/>seperated<sp/>environment-style<sp/>variable<sp/>assignments<sp/>in<sp/>a</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/>string.<sp/>The<sp/>following<sp/>variables<sp/>are<sp/>known:</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>READY=1<sp/><sp/><sp/><sp/><sp/><sp/>Tells<sp/>systemd<sp/>that<sp/>daemon<sp/>startup<sp/>is<sp/>finished<sp/>(only</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>relevant<sp/>for<sp/>services<sp/>of<sp/>Type=notify).<sp/>The<sp/>passed</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>argument<sp/>is<sp/>a<sp/>boolean<sp/>&quot;1&quot;<sp/>or<sp/>&quot;0&quot;.<sp/>Since<sp/>there<sp/>is</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>little<sp/>value<sp/>in<sp/>signalling<sp/>non-readiness<sp/>the<sp/>only</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>daemons<sp/>should<sp/>send<sp/>is<sp/>&quot;READY=1&quot;.</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"></highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>STATUS=...<sp/><sp/><sp/>Passes<sp/>a<sp/>single-line<sp/>status<sp/>string<sp/>back<sp/>to<sp/>systemd</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>that<sp/>describes<sp/>the<sp/>daemon<sp/>state.<sp/>This<sp/>is<sp/>free-from</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>can<sp/>be<sp/>used<sp/>for<sp/>various<sp/>purposes:<sp/>general<sp/>state</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>feedback,<sp/>fsck-like<sp/>programs<sp/>could<sp/>pass<sp/>completion</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>percentages<sp/>and<sp/>failing<sp/>programs<sp/>could<sp/>pass<sp/>a<sp/>human</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>readable<sp/>error<sp/>message.<sp/>Example:<sp/>&quot;STATUS=Completed</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>66%<sp/>of<sp/>file<sp/>system<sp/>check...&quot;</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"></highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>ERRNO=...<sp/><sp/><sp/><sp/>If<sp/>a<sp/>daemon<sp/>fails,<sp/>the<sp/>errno-style<sp/>error<sp/>code,</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>formatted<sp/>as<sp/>string.<sp/>Example:<sp/>&quot;ERRNO=2&quot;<sp/>for<sp/>ENOENT.</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"></highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>BUSERROR=...<sp/>If<sp/>a<sp/>daemon<sp/>fails,<sp/>the<sp/>D-Bus<sp/>error-style<sp/>error</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>code.<sp/>Example:<sp/>&quot;BUSERROR=org.freedesktop.DBus.Error.TimedOut&quot;</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"></highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>MAINPID=...<sp/><sp/>The<sp/>main<sp/>pid<sp/>of<sp/>a<sp/>daemon,<sp/>in<sp/>case<sp/>systemd<sp/>did<sp/>not</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fork<sp/>off<sp/>the<sp/>process<sp/>itself.<sp/>Example:<sp/>&quot;MAINPID=4711&quot;</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"></highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/>Daemons<sp/>can<sp/>choose<sp/>to<sp/>send<sp/>additional<sp/>variables.<sp/>However,<sp/>it<sp/>is</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/><sp/>recommened<sp/>to<sp/>prefix<sp/>variable<sp/>names<sp/>not<sp/>listed<sp/>above<sp/>with<sp/>X_.</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"></highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/>Returns<sp/>a<sp/>negative<sp/>errno-style<sp/>error<sp/>code<sp/>on<sp/>failure.<sp/>Returns<sp/>&gt;<sp/>0</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/><sp/>if<sp/>systemd<sp/>could<sp/>be<sp/>notified,<sp/>0<sp/>if<sp/>it<sp/>couldn&apos;t<sp/>possibly<sp/>because</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/><sp/>systemd<sp/>is<sp/>not<sp/>running.</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"></highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/>Example:<sp/>When<sp/>a<sp/>daemon<sp/>finished<sp/>starting<sp/>up,<sp/>it<sp/>could<sp/>issue<sp/>this</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/>call<sp/>to<sp/>notify<sp/>systemd<sp/>about<sp/>it:</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"></highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>sd_notify(0,<sp/>&quot;READY=1&quot;);</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"></highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/><sp/>See<sp/>sd_notifyf()<sp/>for<sp/>more<sp/>complete<sp/>examples.</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"></highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/>See<sp/>sd_notify(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="215"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_notify(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unset_environment,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*state)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/>Similar<sp/>to<sp/>sd_notify()<sp/>but<sp/>takes<sp/>a<sp/>format<sp/>string.</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"></highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/><sp/>Example<sp/>1:<sp/>A<sp/>daemon<sp/>could<sp/>send<sp/>the<sp/>following<sp/>after<sp/>initialization:</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"></highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>sd_notifyf(0,<sp/>&quot;READY=1\n&quot;</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;STATUS=Processing<sp/>requests...\n&quot;</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;MAINPID=%lu&quot;,</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(unsigned<sp/>long)<sp/>getpid());</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"></highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/>Example<sp/>2:<sp/>A<sp/>daemon<sp/>could<sp/>send<sp/>the<sp/>following<sp/>shortly<sp/>before</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/>exiting,<sp/>on<sp/>failure:</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"></highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>sd_notifyf(0,<sp/>&quot;STATUS=Failed<sp/>to<sp/>start<sp/>up:<sp/>%s\n&quot;</highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ERRNO=%i&quot;,</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror(errno),</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errno);</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"></highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/><sp/>See<sp/>sd_notifyf(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="237"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_notifyf(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>unset_environment,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...)<sp/>_sd_printf_attr_(2,3)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/>Returns<sp/>&gt;<sp/>0<sp/>if<sp/>the<sp/>system<sp/>was<sp/>booted<sp/>with<sp/>systemd.<sp/>Returns<sp/>&lt;<sp/>0<sp/>on</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/>error.<sp/>Returns<sp/>0<sp/>if<sp/>the<sp/>system<sp/>was<sp/>not<sp/>booted<sp/>with<sp/>systemd.<sp/>Note</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/><sp/>that<sp/>all<sp/>of<sp/>the<sp/>functions<sp/>above<sp/>handle<sp/>non-systemd<sp/>boots<sp/>just</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/>fine.<sp/>You<sp/>should<sp/>NOT<sp/>protect<sp/>them<sp/>with<sp/>a<sp/>call<sp/>to<sp/>this<sp/>function.<sp/>Also</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/>note<sp/>that<sp/>this<sp/>function<sp/>checks<sp/>whether<sp/>the<sp/>system,<sp/>not<sp/>the<sp/>user</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/><sp/>session<sp/>is<sp/>controlled<sp/>by<sp/>systemd.<sp/>However<sp/>the<sp/>functions<sp/>above<sp/>work</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/><sp/>for<sp/>both<sp/>session<sp/>and<sp/>system<sp/>services.</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"></highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/>See<sp/>sd_booted(3)<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd_booted(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>_sd_hidden_;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="254"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="256"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/sd-daemon.h"/>
+  </compounddef>
+</doxygen>

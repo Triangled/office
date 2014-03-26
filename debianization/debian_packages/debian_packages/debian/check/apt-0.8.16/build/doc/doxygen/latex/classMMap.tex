@@ -1,0 +1,95 @@
+\section{\-M\-Map \-Class \-Reference}
+\label{classMMap}\index{\-M\-Map@{\-M\-Map}}
+
+
+\-Inheritance diagram for \-M\-Map\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{classMMap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for \-M\-Map\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classMMap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Open\-Flags} \{ \*
+{\bfseries \-No\-Imm\-Map} =  (1$<$$<$0), 
+{\bfseries \-Public} =  (1$<$$<$1), 
+{\bfseries \-Read\-Only} =  (1$<$$<$2), 
+{\bfseries \-Un\-Mapped} =  (1$<$$<$3), 
+\*
+{\bfseries \-Moveable} =  (1$<$$<$4), 
+{\bfseries \-Fallback} =  (1 $<$$<$ 5)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries operator void $\ast$} ()\label{classMMap_a0b32021b12206ef34495c688760c44bf}
+
+\item 
+void $\ast$ {\bfseries \-Data} ()\label{classMMap_ab53592c09a03bd22f28279f270a035ee}
+
+\item 
+unsigned long long {\bfseries \-Size} ()\label{classMMap_aed932b1aeb338009c8390f5322ac228a}
+
+\item 
+void {\bfseries \-Add\-Size} (unsigned long long const size)\label{classMMap_a07375fc384c32d1c5bc19ba031fb4395}
+
+\item 
+bool {\bfseries valid\-Data} () const \label{classMMap_a762d156a1c7b8db2bd734155730ddbbc}
+
+\item 
+bool {\bfseries \-Sync} ()\label{classMMap_a071d010e76ac762ffab420fcf90656a4}
+
+\item 
+bool {\bfseries \-Sync} (unsigned long \-Start, unsigned long \-Stop)\label{classMMap_a7104a90fd798326a13f268a806a3e198}
+
+\item 
+{\bfseries \-M\-Map} ({\bf \-File\-Fd} \&\-F, unsigned long \-Flags)\label{classMMap_ada3c6c0c38c283795f1666925047e63f}
+
+\item 
+{\bfseries \-M\-Map} (unsigned long \-Flags)\label{classMMap_a8d12a114ce9e6312211aaed8fd905f57}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Map} ({\bf \-File\-Fd} \&\-Fd)\label{classMMap_abf6208ba8fc33da8217ee57b919c1892}
+
+\item 
+bool {\bfseries \-Close} (bool \-Do\-Sync=true)\label{classMMap_a3339fc07ccce858f61987c5940057ac2}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bfseries \-Flags}\label{classMMap_a15eb852dd5568416ca012c6dcbff021b}
+
+\item 
+unsigned long long {\bfseries i\-Size}\label{classMMap_a7c1c34236f840245f42babe60ec41bb8}
+
+\item 
+void $\ast$ {\bfseries \-Base}\label{classMMap_accdd444e1dcba9a8ab17b65d51f12771}
+
+\item 
+{\bf \-File\-Fd} $\ast$ {\bfseries \-Sync\-To\-Fd}\label{classMMap_a6de0b37236933b43702cb3a24d0748c6}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/mmap.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/mmap.\-cc\end{DoxyCompactItemize}

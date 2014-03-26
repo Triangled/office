@@ -1,0 +1,118 @@
+.TH "DBusWatch" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusWatch \- 
+.PP
+Implementation of \fBDBusWatch\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.RI "\fIReference count\&. \fP"
+.ti -1c
+.RI "int \fBfd\fP"
+.br
+.RI "\fIFile descriptor\&. \fP"
+.ti -1c
+.RI "unsigned int \fBflags\fP"
+.br
+.RI "\fIConditions to watch\&. \fP"
+.ti -1c
+.RI "\fBDBusWatchHandler\fP \fBhandler\fP"
+.br
+.RI "\fIWatch handler\&. \fP"
+.ti -1c
+.RI "void * \fBhandler_data\fP"
+.br
+.RI "\fIWatch handler data\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_handler_data_function\fP"
+.br
+.RI "\fIFree the watch handler data\&. \fP"
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.RI "\fIApplication data\&. \fP"
+.ti -1c
+.RI "\fBDBusFreeFunction\fP \fBfree_data_function\fP"
+.br
+.RI "\fIFree the application data\&. \fP"
+.ti -1c
+.RI "unsigned int \fBenabled\fP: 1"
+.br
+.RI "\fIWhether it's enabled\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation of \fBDBusWatch\fP\&. 
+.PP
+Definition at line 40 of file dbus-watch\&.c\&.
+.SH "Field Documentation"
+.PP 
+.SS "void* \fBDBusWatch::data\fP"
+.PP
+Application data\&. 
+.PP
+Definition at line 50 of file dbus-watch\&.c\&.
+.PP
+Referenced by dbus_watch_get_data(), and dbus_watch_set_data()\&.
+.SS "unsigned int \fBDBusWatch::enabled\fP"
+.PP
+Whether it's enabled\&. 
+.PP
+Definition at line 52 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_list_toggle_watch(), _dbus_watch_new(), and dbus_watch_get_enabled()\&.
+.SS "int \fBDBusWatch::fd\fP"
+.PP
+File descriptor\&. 
+.PP
+Definition at line 43 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_invalidate(), _dbus_watch_new(), dbus_watch_get_socket(), dbus_watch_get_unix_fd(), and dbus_watch_handle()\&.
+.SS "unsigned int \fBDBusWatch::flags\fP"
+.PP
+Conditions to watch\&. 
+.PP
+Definition at line 44 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_invalidate(), _dbus_watch_new(), _dbus_watch_sanitize_condition(), dbus_watch_get_flags(), and dbus_watch_handle()\&.
+.SS "\fBDBusFreeFunction\fP \fBDBusWatch::free_data_function\fP"
+.PP
+Free the application data\&. 
+.PP
+Definition at line 51 of file dbus-watch\&.c\&.
+.PP
+Referenced by dbus_watch_set_data()\&.
+.SS "\fBDBusFreeFunction\fP \fBDBusWatch::free_handler_data_function\fP"
+.PP
+Free the watch handler data\&. 
+.PP
+Definition at line 48 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_new(), _dbus_watch_set_handler(), and _dbus_watch_unref()\&.
+.SS "\fBDBusWatchHandler\fP \fBDBusWatch::handler\fP"
+.PP
+Watch handler\&. 
+.PP
+Definition at line 46 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_new(), _dbus_watch_set_handler(), and dbus_watch_handle()\&.
+.SS "void* \fBDBusWatch::handler_data\fP"
+.PP
+Watch handler data\&. 
+.PP
+Definition at line 47 of file dbus-watch\&.c\&.
+.PP
+Referenced by _dbus_watch_new(), _dbus_watch_set_handler(), _dbus_watch_unref(), and dbus_watch_handle()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

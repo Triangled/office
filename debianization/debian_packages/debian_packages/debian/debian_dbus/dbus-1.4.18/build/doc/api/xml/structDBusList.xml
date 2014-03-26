@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structDBusList" kind="struct" prot="public">
+    <compoundname>DBusList</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusList::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <briefdescription>
+<para>Previous list node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" line="36" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" compoundref="dbus-list_8c" startline="507" endline="526">_dbus_list_unlink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusList_1a83180142180c856b2a02778e155cb044" prot="public" static="no" mutable="no">
+        <type><ref refid="structDBusList" kindref="compound">DBusList</ref> *</type>
+        <definition>DBusList* DBusList::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+<para>Next list node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" line="37" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="group__DBusList_1gad99045e79db46159babe69718f343053" compoundref="dbus-list_8c" startline="247" endline="257">_dbus_list_append</referencedby>
+        <referencedby refid="group__DBusList_1ga20e549175e2b8f450f907592dc39d953" compoundref="dbus-list_8c" startline="292" endline="299">_dbus_list_append_link</referencedby>
+        <referencedby refid="group__DBusList_1ga57f1fc73dc1a4f8a7bf9860e000b1703" compoundref="dbus-list_8c" startline="507" endline="526">_dbus_list_unlink</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusList_1a29ab457bcf9092252bb0c4282c727055" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DBusList::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Data stored at this element. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" line="38" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="group__DBusConnectionInternals_1ga2d04df24d0f54a4e2dcfbede4ef50f09" compoundref="dbus-connection_8c" startline="611" endline="655">_dbus_connection_message_sent</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gac1b92eba0aeee294dc28fcc260c9b749" compoundref="dbus-connection_8c" startline="473" endline="523">_dbus_connection_queue_received_message_link</referencedby>
+        <referencedby refid="group__DBusConnectionInternals_1gadb7a525dc6b566b575ee4f9b20028b04" compoundref="dbus-connection_8c" startline="534" endline="547">_dbus_connection_queue_synthesized_message_link</referencedby>
+        <referencedby refid="group__DBusList_1ga1a85785891866750c9438bc10ad0350a" compoundref="dbus-list_8c" startline="728" endline="751">_dbus_list_copy</referencedby>
+        <referencedby refid="group__DBusList_1ga5929ad5253d2f538158e513e9df3002b" compoundref="dbus-list_8c" startline="480" endline="496">_dbus_list_find_last</referencedby>
+        <referencedby refid="group__DBusList_1ga8dd69084b53361803a765e6d53d5b9d1" compoundref="dbus-list_8c" startline="790" endline="805">_dbus_list_foreach</referencedby>
+        <referencedby refid="group__DBusList_1gacb96c9d3e9a869e63b8db4f8913a5a60" compoundref="dbus-list_8c" startline="657" endline="670">_dbus_list_pop_first</referencedby>
+        <referencedby refid="group__DBusList_1gaad2ba56c77f2bba8e1e8dcb4b24542a6" compoundref="dbus-list_8c" startline="680" endline="693">_dbus_list_pop_last</referencedby>
+        <referencedby refid="group__DBusList_1ga202e6ac8ad3e4a9d4413e0248ffcf3e3" compoundref="dbus-list_8c" startline="423" endline="441">_dbus_list_remove</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1gafaed2adc00b2ec54b2827ecb778bbe7e" compoundref="dbus-message_8c" startline="224" endline="256">_dbus_message_add_counter_link</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga66674354acdd09ca6e11d600b34bdd5f" compoundref="dbus-message_8c" startline="4219" endline="4225">_dbus_message_loader_peek_message</referencedby>
+        <referencedby refid="group__DBusObjectTree_1gab64dcc8febde768db3404cd93b333e1e" compoundref="dbus-object-tree_8c" startline="747" endline="904">_dbus_object_tree_dispatch_and_unlock</referencedby>
+        <referencedby refid="group__DBusPendingCallInternals_1ga4b8cc560549160aecd924037a872009d" compoundref="dbus-pending-call_8c" startline="155" endline="177">_dbus_pending_call_set_reply_unlocked</referencedby>
+        <referencedby refid="group__DBusTimeoutInternals_1ga6760d1963b870b45f855501e38b49fd9" compoundref="dbus-timeout_8c" startline="239" endline="299">_dbus_timeout_list_set_functions</referencedby>
+        <referencedby refid="group__DBusTransport_1ga4046f36ecbdb75219f2b667f92e75a2b" compoundref="dbus-transport_8c" startline="1117" endline="1160">_dbus_transport_queue_messages</referencedby>
+        <referencedby refid="group__DBusWatchInternals_1gae9ab8cf14f4191191e94183be9a031d9" compoundref="dbus-watch_8c" startline="260" endline="347">_dbus_watch_list_set_functions</referencedby>
+        <referencedby refid="group__DBusAddress_1gae6f014689b49099e835b1f97d032034e" compoundref="dbus-address_8c" startline="244" endline="264">dbus_address_entry_get_value</referencedby>
+        <referencedby refid="group__DBusConnection_1ga66ba7df50d75f4bda6b6e942430b81c7" compoundref="dbus-connection_8c" startline="4476" endline="4758">dbus_connection_dispatch</referencedby>
+        <referencedby refid="group__DBusConnection_1gad0ea06307b418616711131ea7bdae8ac" compoundref="dbus-connection_8c" startline="3133" endline="3144">dbus_connection_free_preallocated_send</referencedby>
+        <referencedby refid="group__DBusConnection_1ga5e7f1dad410506a8a6f5182c55e7c4fe" compoundref="dbus-connection_8c" startline="5458" endline="5509">dbus_connection_remove_filter</referencedby>
+        <referencedby refid="group__DBusAddress_1ga3cbf5947262b79601598276c720e2098" compoundref="dbus-address_8c" startline="363" endline="573">dbus_parse_address</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A node in a linked list. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="structDBusList" kindref="compound">DBusList</ref> is a circular list; that is, the tail of the list points back to the head of the list. The empty list is represented by a <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> pointer. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="182">
+        <label>DBusList</label>
+        <link refid="structDBusList"/>
+        <childnode refid="182" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" line="35" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-list.h" bodystart="34" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structDBusList_1a29ab457bcf9092252bb0c4282c727055" prot="public" virt="non-virtual"><scope>DBusList</scope><name>data</name></member>
+      <member refid="structDBusList_1a83180142180c856b2a02778e155cb044" prot="public" virt="non-virtual"><scope>DBusList</scope><name>next</name></member>
+      <member refid="structDBusList_1aaeb8ce69b141da1f04621ae81eed3388" prot="public" virt="non-virtual"><scope>DBusList</scope><name>prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

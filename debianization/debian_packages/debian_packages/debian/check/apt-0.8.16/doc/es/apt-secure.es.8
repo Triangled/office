@@ -1,0 +1,209 @@
+'\" t
+.\"     Title: apt-secure
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 28 de Octubre de 2008
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-SECURE" "8" "28 de Octubre de 2008" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-secure \- Compatibilidad con la autenticación en el archivo para APT
+.SH "DESCRIPCIóN"
+.PP
+Desde la versión 0\&.6,
+\fBapt\fR
+contiene el código que realiza la comprobación de la firma del fichero \(FoRelease\(Fc para todos los archivos\&. Esto asegura que los paquetes del archivo no se han modificado por alguien sin acceso a la clave con la que se firmó el fichero \(FoRelease\(Fc\&.
+.PP
+Si el paquete viene de un archivo sin una firma o con una firma de la que apt no tiene su clave, el paquete se considerará no fiable y su instalación provocará un gran aviso\&.
+\fBapt\-get\fR
+actualmente sólo avisa de los archivos sin firmar, las próximas versiones puede que fuercen a verificar todas las fuentes antes de descargar paquetes desde ellas\&.
+.PP
+Las interfaces de gestión de paquetes
+\fBapt-get\fR(8),
+\fBaptitude\fR(8)
+y
+\fBsynaptic\fR(8)
+pueden usar esta nueva funcionalidad de autenticación\&.
+.SH "ARCHIVOS DE CONFIANZA"
+.PP
+La cadena de confianza desde un archivo apt a un usuario final se realiza en diferentes pasos\&.
+\fBapt\-secure\fR
+es el último paso en esta cadena, confiar en un archivo no significa que los paquetes en los que se confía no haya código malicioso, pero significa que se confía en el mantenedor del archivo\&. El mantenedor del archivo es el responsable de asegurar que la integridad del archivo es correcta\&.
+.PP
+apt\-secure no revisa las firmas a nivel de paquete\&. Si necesita herramientas para realizar esto, debería ver
+\fBdebsig\-verify\fR
+y
+\fBdebsign\fR
+(proporcionados en los paquetes debsig\-verify y devscripts respectivamente)\&.
+.PP
+La cadena de confianza de Debian comienza cuando un mantenedor sube un nuevo paquete o una nueva versión de un paquete al archivo de Debian\&. Para que la subida sea efectiva, se debe firmar con una clave de un mantenedor del registro de claves de los mantenedores de Debian (disponible en el paquete debian\-keyring)\&. Las claves del mantenedor se firman por otros mantenedores siguiendo unos procedimientos pre\-establecidos para asegurar la identidad del propietario de la clave\&.
+.PP
+Una vez subido el paquete se comprueba y se incluye en el archivo, se elimina la firma del mantenedor, se genera un resumen MD5 del paquete y se coloca en el fichero \(FoPackages\(Fc\&. Se genera el resumen MD5 de todos los ficheros de paquetes y se coloca en el fichero \(FoRelease\(Fc\&. Entonces se firma el fichero \(FoRelease\(Fc con la clave del archivo (que se crea una vez al año) y se distribuye mediante un servidor FTP\&. Esta clave también está en el registro de claves de Debian\&.
+.PP
+Cualquier usuario final puede comprobar la firma del fichero \(FoRelease\(Fc, extraer el resumen MD5 de un paquete y compararlo con el resumen MD5 del paquete que haya descargado\&. Antes de la versión 0\&.6, sólo se comprobaba el resumen MD5 del paquete de Debian descargado\&. Ahora se comprueban el resumen MD5 y la firma del fichero \(FoRelease\(Fc\&.
+.PP
+Tenga en cuenta que esto es distinto a comprobar las firmas de cada paquete individualmente\&. Se diseñó para prevenir dos posible ataques:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Ataques de red \(Foman in the middle\(Fc (persona entre medias)\&. Sin la comprobación de las firmas, una persona malvada puede introducirse en el proceso de descarga del paquete y proporcionar programas con contenido malicioso para controlar un elemento de la red (enrutador, switch, etc) o para redirigir el tráfico a un servidor ficticio (mediante ataques de envenenamiento de arp o de DNS)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Réplica de la red comprometida\&. Sin la comprobación de la firma, una persona malvada puede comprometer una réplica y modificar los ficheros de ésta para propagar programas con contenido malicioso a todos los usuarios que descarguen paquetes de dicha réplica\&.
+.RE
+.PP
+Sin embargo, esto no protege de un servidor maestro de Debian (que firma los paquetes) comprometido o contra una clave usada para firmar los ficheros \(FoRelease\(Fc comprometida\&. En cualquier caso, este mecanismo puede complementar una firma por paquete\&.
+.SH "CONFIGURACIóN DE USUARIO"
+.PP
+
+\fBapt\-key\fR
+es el programa que gestiona la lista de claves usadas por apt\&. Se puede usar para añadir o eliminar claves, aunque la instalación de esta versión proporciona automáticamente las claves predeterminadas del archivo de Debian que se usan en los repositorios de paquetes de Debian\&.
+.PP
+In order to add a new key you need to first download it (you should make sure you are using a trusted communication channel when retrieving it), add it with
+\fBapt\-key\fR
+and then run
+\fBapt\-get update\fR
+so that apt can download and verify the
+InRelease
+or
+Release\&.gpg
+files from the archives you have configured\&.
+.SH "CONFIGURACIóN DEL ARCHIVO"
+.PP
+Si quiere proporcionar firmas de archivo en un archivo bajo su control tiene que:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fICrear un fichero \(FoRelease\(Fc\fR, si no existe\&. Para ello se ejecuta
+\fBapt\-ftparchive release\fR
+(proporcionado en apt\-utils)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fISign it\fR\&. You can do this by running
+\fBgpg \-\-clearsign \-o InRelease Release\fR
+and
+\fBgpg \-abs \-o Release\&.gpg Release\fR\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fIPublicar la huella digital de la clave\fR, de modo que los usuarios conozcan qué clave necesitan importar para autenticar los ficheros del archivo\&.
+.RE
+.PP
+Cuando los contenidos del archivo cambien (se añadan paquetes nuevos o se eliminen) el mantenedor del archivo tiene que seguir los dos primeros pasos explicados anteriormente\&.
+.SH "VéASE TAMBIéN"
+.PP
+
+\fBapt.conf\fR(5),
+\fBapt-get\fR(8),
+\fBsources.list\fR(5),
+\fBapt-key\fR(8),
+\fBapt-ftparchive\fR(1),
+\fBdebsign\fR(1)
+\fBdebsig-verify\fR(1),
+\fBgpg\fR(1)
+.PP
+Para más información puede que quiera revisar el capítulo de la
+\m[blue]\fBInfraestructura de Seguridad de Debian\fR\m[]\&\s-2\u[1]\d\s+2
+del Manual de Seguridad de Debian (también disponible en el paquete harden\-doc) y el
+\m[blue]\fBCOMO Fortificar una Distribución\fR\m[]\&\s-2\u[2]\d\s+2
+de V\&. Alex Brennen\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBPágina de errores de APT\fR\m[]\&\s-2\u[3]\d\s+2\&. Si quiere informar de un error en APT, consulte
+/usr/share/doc/debian/bug\-reporting\&.txt
+o use la orden
+\fBreportbug\fR(1)\&.
+.SH "AUTOR"
+.PP
+El equipo APT
+<apt@packages\&.debian\&.org>
+escribió apt\&.
+.SH "AUTORES DE LA PáGINA DEL MANUAL"
+.PP
+Esta página del manual se basa en el trabajo de Javier Fernández\-Sanguino Peña, Isaac Jones, Colin Walters, Florian Weimer y Michael Vogt\&.
+.SH "TRADUCCIÓN"
+.PP
+La traducción al español la realizaron Ismael Fanlo, Carlos Mestre, Rudy Godoy, Gustavo Saldumbide, Javier Fernández\-Sanguino y Rubén Porras Campo entre los años 2003 y 2004\&. La traducción fue actualizada por Francisco Javier Cuadrado y Omar Campagne Polaino entre los años 2009 y 2010\&.
+.PP
+Tenga en cuenta que este documento puede contener secciones sin traducir\&. Esto es intencionado para evitar perder contenido cuando la traducción no está actualizada con respecto al documento original\&.
+.SH "AUTHOR"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 1998-2001 Jason Gunthorpe
+.br
+.SH "NOTES"
+.IP " 1." 4
+Infraestructura de Seguridad de Debian
+.RS 4
+\%http://www.debian.org/doc/manuals/securing-debian-howto/ch7.en.html
+.RE
+.IP " 2." 4
+COMO Fortificar una Distribución
+.RS 4
+\%http://www.cryptnet.net/fdp/crypto/strong_distro.html
+.RE
+.IP " 3." 4
+Página de errores de APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

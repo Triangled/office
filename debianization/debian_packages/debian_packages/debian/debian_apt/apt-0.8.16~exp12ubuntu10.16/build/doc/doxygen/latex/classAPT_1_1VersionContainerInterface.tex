@@ -1,0 +1,152 @@
+\section{\-Version\-Container\-Interface \-Class \-Reference}
+\label{classAPT_1_1VersionContainerInterface}\index{\-Version\-Container\-Interface@{\-Version\-Container\-Interface}}
+
+
+\-Inheritance diagram for \-Version\-Container\-Interface\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classAPT_1_1VersionContainerInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em smell like a \doxyref{pkg\-Cache\-::\-Ver\-Iterator}{p.}{classpkgCache_1_1VerIterator} \end{DoxyCompactList}\item 
+struct {\bf \-Modifier}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Version} \{ \*
+{\bf \-A\-L\-L}, 
+{\bf \-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T}, 
+{\bf \-C\-A\-N\-D\-I\-D\-A\-T\-E}, 
+{\bf \-I\-N\-S\-T\-A\-L\-L\-E\-D}, 
+\*
+{\bf \-C\-A\-N\-D\-I\-N\-S\-T}, 
+{\bf \-I\-N\-S\-T\-C\-A\-N\-D}, 
+{\bf \-N\-E\-W\-E\-S\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em specifies which version(s) will be returned if non is given \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries insert} ({\bf pkg\-Cache\-::\-Ver\-Iterator} const \&\-V)=0\label{classAPT_1_1VersionContainerInterface_abdc4fdc06fb356c1c1ee841b4f3fda85}
+
+\item 
+virtual bool {\bfseries empty} () const =0\label{classAPT_1_1VersionContainerInterface_ae22f66718bb2160cb671c4355ceeb1a2}
+
+\item 
+virtual void {\bfseries clear} ()=0\label{classAPT_1_1VersionContainerInterface_a5eeb94d22b8366d1b68d0614384802fe}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries \-From\-Command\-Line} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline, {\bf \-Version} const \&fallback, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1VersionContainerInterface_a73186299c2672d4e0212f47ff72a44a4}
+
+\item 
+static bool {\bfseries \-From\-String} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string pkg, {\bf \-Version} const \&fallback, {\bf \-Cache\-Set\-Helper} \&helper, bool const only\-From\-Name=false)\label{classAPT_1_1VersionContainerInterface_ac49150f378fdeae70f5236f623cdcbe1}
+
+\item 
+static bool {\bfseries \-From\-Package} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-P, {\bf \-Version} const \&fallback, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1VersionContainerInterface_ab333ed68c3c3823cb01edd427179d4b0}
+
+\item 
+static bool {\bfseries \-From\-Modifier\-Command\-Line} (unsigned short \&mod\-I\-D, {\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$cmdline, std\-::list$<$ {\bf \-Modifier} $>$ const \&mods, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1VersionContainerInterface_ae1d39c663ee995d25d8819607ac5300e}
+
+\item 
+static bool {\bfseries \-From\-Dependency} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Dep\-Iterator} const \&\-D, {\bf \-Version} const \&selector, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1VersionContainerInterface_aeddebd0acd477da0373abb93d6d2800e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bf get\-Candidate\-Ver} ({\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns the candidate version of the package \end{DoxyCompactList}\item 
+static {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bf get\-Installed\-Ver} ({\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns the installed version of the package \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Same as \doxyref{\-A\-P\-T\-::\-Package\-Container\-Interface}{p.}{classAPT_1_1PackageContainerInterface}, just for \-Versions 
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-Version@{\-Version}}
+\index{\-Version@{\-Version}!APT::VersionContainerInterface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}
+\subsubsection[{\-Version}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Version}}\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470}
+
+
+specifies which version(s) will be returned if non is given 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-A\-L\-L@{\-A\-L\-L}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-A\-L\-L@{\-A\-L\-L}}\item[{\em 
+\-A\-L\-L\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470ab1d5eac4b1dca480c8056eaea7663b7a}
+}]\-All versions \index{\-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T@{\-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T@{\-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T}}\item[{\em 
+\-C\-A\-N\-D\-A\-N\-D\-I\-N\-S\-T\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a5062f9d9cefccebc807615b5fa145fc9}
+}]\-Candidate and installed version \index{\-C\-A\-N\-D\-I\-D\-A\-T\-E@{\-C\-A\-N\-D\-I\-D\-A\-T\-E}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-C\-A\-N\-D\-I\-D\-A\-T\-E@{\-C\-A\-N\-D\-I\-D\-A\-T\-E}}\item[{\em 
+\-C\-A\-N\-D\-I\-D\-A\-T\-E\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a1b65362fc036345be26c100f9bd9df8b}
+}]\-Candidate version \index{\-I\-N\-S\-T\-A\-L\-L\-E\-D@{\-I\-N\-S\-T\-A\-L\-L\-E\-D}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-I\-N\-S\-T\-A\-L\-L\-E\-D@{\-I\-N\-S\-T\-A\-L\-L\-E\-D}}\item[{\em 
+\-I\-N\-S\-T\-A\-L\-L\-E\-D\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a442e336d5937ad700c5c1a4a6a8cf029}
+}]\-Installed version \index{\-C\-A\-N\-D\-I\-N\-S\-T@{\-C\-A\-N\-D\-I\-N\-S\-T}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-C\-A\-N\-D\-I\-N\-S\-T@{\-C\-A\-N\-D\-I\-N\-S\-T}}\item[{\em 
+\-C\-A\-N\-D\-I\-N\-S\-T\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a9b0870dab23bdff672ce55f1d7ccf778}
+}]\-Candidate or if non installed version \index{\-I\-N\-S\-T\-C\-A\-N\-D@{\-I\-N\-S\-T\-C\-A\-N\-D}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-I\-N\-S\-T\-C\-A\-N\-D@{\-I\-N\-S\-T\-C\-A\-N\-D}}\item[{\em 
+\-I\-N\-S\-T\-C\-A\-N\-D\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a60089db1e8010825fcd06b90ba5bc7f9}
+}]\-Installed or if non candidate version \index{\-N\-E\-W\-E\-S\-T@{\-N\-E\-W\-E\-S\-T}!\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!\-N\-E\-W\-E\-S\-T@{\-N\-E\-W\-E\-S\-T}}\item[{\em 
+\-N\-E\-W\-E\-S\-T\label{classAPT_1_1VersionContainerInterface_a2256f5bba1c1c69a92b933aa501df470a43bb0dff1d82e4df8f0b8378c58f7ad8}
+}]\-Newest version \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!get\-Candidate\-Ver@{get\-Candidate\-Ver}}
+\index{get\-Candidate\-Ver@{get\-Candidate\-Ver}!APT::VersionContainerInterface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}
+\subsubsection[{get\-Candidate\-Ver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Cache\-::\-Ver\-Iterator} {\bf get\-Candidate\-Ver} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{{\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&}]{\-Pkg, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classAPT_1_1VersionContainerInterface_ad72b2ad28b64331bc20ffba661055b74}
+
+
+returns the candidate version of the package 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & to be used to query for information \\
+\hline
+{\em \-Pkg} & we want the candidate version from this package \\
+\hline
+\end{DoxyParams}
+\index{\-A\-P\-T\-::\-Version\-Container\-Interface@{\-A\-P\-T\-::\-Version\-Container\-Interface}!get\-Installed\-Ver@{get\-Installed\-Ver}}
+\index{get\-Installed\-Ver@{get\-Installed\-Ver}!APT::VersionContainerInterface@{\-A\-P\-T\-::\-Version\-Container\-Interface}}
+\subsubsection[{get\-Installed\-Ver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Cache\-::\-Ver\-Iterator} {\bf get\-Installed\-Ver} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{{\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&}]{\-Pkg, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classAPT_1_1VersionContainerInterface_abe59577170692445fe117d9994cda13e}
+
+
+returns the installed version of the package 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & to be used to query for information \\
+\hline
+{\em \-Pkg} & we want the installed version from this package \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf cacheset.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheset.\-cc\end{DoxyCompactItemize}

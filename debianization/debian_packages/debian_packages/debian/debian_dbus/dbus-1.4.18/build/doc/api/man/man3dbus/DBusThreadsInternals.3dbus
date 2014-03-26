@@ -1,0 +1,211 @@
+.TH "Thread functions" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Thread functions \- 
+.PP
+\fB_dbus_mutex_lock()\fP, etc\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDBusMutex\fP * \fB_dbus_mutex_new\fP (void)"
+.br
+.RI "\fICreates a new mutex using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op mutex if threads are not initialized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_mutex_new_at_location\fP (\fBDBusMutex\fP **location_p)"
+.br
+.RI "\fIThis does the same thing as _dbus_mutex_new\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_mutex_free\fP (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIFrees a mutex created with dbus_mutex_new(); does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_mutex_free_at_location\fP (\fBDBusMutex\fP **location_p)"
+.br
+.RI "\fIFrees a mutex and removes it from the uninitialized_mutex_list; does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_mutex_lock\fP (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fILocks a mutex\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_mutex_unlock\fP (\fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIUnlocks a mutex\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVar\fP * \fB_dbus_condvar_new\fP (void)"
+.br
+.RI "\fICreates a new condition variable using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op condition variable if threads are not initialized\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_new_at_location\fP (\fBDBusCondVar\fP **location_p)"
+.br
+.RI "\fIThis does the same thing as _dbus_condvar_new\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_free\fP (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIFrees a conditional variable created with dbus_condvar_new(); does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_free_at_location\fP (\fBDBusCondVar\fP **location_p)"
+.br
+.RI "\fIFrees a conditional variable and removes it from the uninitialized_condvar_list; does nothing if passed a \fBNULL\fP pointer\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_wait\fP (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex)"
+.br
+.RI "\fIAtomically unlocks the mutex and waits for the conditions variable to be signalled\&. \fP"
+.ti -1c
+.RI "\fBdbus_bool_t\fP \fB_dbus_condvar_wait_timeout\fP (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex, int timeout_milliseconds)"
+.br
+.RI "\fIAtomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_wake_one\fP (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIIf there are threads waiting on the condition variable, wake up exactly one\&. \fP"
+.ti -1c
+.RI "void \fB_dbus_condvar_wake_all\fP (\fBDBusCondVar\fP *cond)"
+.br
+.RI "\fIIf there are threads waiting on the condition variable, wake up all of them\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fB_dbus_mutex_lock()\fP, etc\&. 
+
+Functions and macros related to threads and thread locks\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDBusCondVar\fP* \fB_dbus_condvar_new\fP (void)"
+.PP
+Creates a new condition variable using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op condition variable if threads are not initialized\&. May return \fBNULL\fP even if threads are initialized, indicating out-of-memory\&.
+.PP
+\fBReturns:\fP
+.RS 4
+new mutex or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::condvar_new\&.
+.PP
+Referenced by _dbus_condvar_new_at_location()\&.
+.SS "void \fB_dbus_condvar_new_at_location\fP (\fBDBusCondVar\fP **location_p)"
+.PP
+This does the same thing as _dbus_condvar_new\&. It however gives another level of indirection by allocating a pointer to point to the condvar location\&. This allows the threading module to swap out dummy condvars for real a real condvar so libraries can initialize threads even after the D-Bus API has been used\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the location of a new condvar or \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file dbus-threads\&.c\&.
+.PP
+References _dbus_condvar_free(), _dbus_condvar_new(), _dbus_current_generation, _dbus_list_append(), and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport()\&.
+.SS "void \fB_dbus_condvar_wait\fP (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex)"
+.PP
+Atomically unlocks the mutex and waits for the conditions variable to be signalled\&. Locks the mutex again before returning\&. Does nothing if passed a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 251 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::condvar_wait\&.
+.SS "\fBdbus_bool_t\fP \fB_dbus_condvar_wait_timeout\fP (\fBDBusCondVar\fP *cond, \fBDBusMutex\fP *mutex, inttimeout_milliseconds)"
+.PP
+Atomically unlocks the mutex and waits for the conditions variable to be signalled, or for a timeout\&. Locks the mutex again before returning\&. Does nothing if passed a \fBNULL\fP pointer\&. Return value is \fBFALSE\fP if we timed out, \fBTRUE\fP otherwise\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP the condition variable 
+.br
+\fImutex\fP the mutex 
+.br
+\fItimeout_milliseconds\fP the maximum time to wait 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBFALSE\fP if the timeout occurred, \fBTRUE\fP if not 
+.RE
+.PP
+
+.PP
+Definition at line 270 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::condvar_wait, DBusThreadFunctions::condvar_wait_timeout, and TRUE\&.
+.SS "void \fB_dbus_condvar_wake_all\fP (\fBDBusCondVar\fP *cond)"
+.PP
+If there are threads waiting on the condition variable, wake up all of them\&. Does nothing if passed a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 298 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::condvar_wake_all\&.
+.SS "void \fB_dbus_condvar_wake_one\fP (\fBDBusCondVar\fP *cond)"
+.PP
+If there are threads waiting on the condition variable, wake up exactly one\&. Does nothing if passed a \fBNULL\fP pointer\&. 
+.PP
+Definition at line 286 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::condvar_wake_one\&.
+.SS "void \fB_dbus_mutex_lock\fP (\fBDBusMutex\fP *mutex)"
+.PP
+Locks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&. Locks may be recursive if threading implementation initialized recursive locks\&. 
+.PP
+Definition at line 144 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::mutex_lock, and DBusThreadFunctions::recursive_mutex_lock\&.
+.PP
+Referenced by _dbus_data_slot_allocator_alloc(), _dbus_data_slot_allocator_free(), _dbus_data_slot_list_get(), and _dbus_data_slot_list_set()\&.
+.SS "\fBDBusMutex\fP* \fB_dbus_mutex_new\fP (void)"
+.PP
+Creates a new mutex using the function supplied to \fBdbus_threads_init()\fP, or creates a no-op mutex if threads are not initialized\&. May return \fBNULL\fP even if threads are initialized, indicating out-of-memory\&.
+.PP
+\fBReturns:\fP
+.RS 4
+new mutex or \fBNULL\fP 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::mutex_new, and DBusThreadFunctions::recursive_mutex_new\&.
+.PP
+Referenced by _dbus_mutex_new_at_location()\&.
+.SS "void \fB_dbus_mutex_new_at_location\fP (\fBDBusMutex\fP **location_p)"
+.PP
+This does the same thing as _dbus_mutex_new\&. It however gives another level of indirection by allocating a pointer to point to the mutex location\&. This allows the threading module to swap out dummy mutexes for real a real mutex so libraries can initialize threads even after the D-Bus API has been used\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocation_p\fP the location of the new mutex, can return \fBNULL\fP on OOM 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file dbus-threads\&.c\&.
+.PP
+References _dbus_current_generation, _dbus_list_append(), _dbus_mutex_free(), _dbus_mutex_new(), and NULL\&.
+.PP
+Referenced by _dbus_connection_new_for_transport(), and _dbus_server_init_base()\&.
+.SS "void \fB_dbus_mutex_unlock\fP (\fBDBusMutex\fP *mutex)"
+.PP
+Unlocks a mutex\&. Does nothing if passed a \fBNULL\fP pointer\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTRUE\fP on success 
+.RE
+.PP
+
+.PP
+Definition at line 161 of file dbus-threads\&.c\&.
+.PP
+References DBusThreadFunctions::mutex_unlock, and DBusThreadFunctions::recursive_mutex_unlock\&.
+.PP
+Referenced by _dbus_data_slot_allocator_alloc(), _dbus_data_slot_allocator_free(), _dbus_data_slot_list_get(), and _dbus_data_slot_list_set()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

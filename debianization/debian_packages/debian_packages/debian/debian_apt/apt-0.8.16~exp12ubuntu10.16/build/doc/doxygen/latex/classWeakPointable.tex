@@ -1,0 +1,62 @@
+\section{\-Weak\-Pointable \-Class \-Reference}
+\label{classWeakPointable}\index{\-Weak\-Pointable@{\-Weak\-Pointable}}
+
+
+{\ttfamily \#include $<$weakptr.\-h$>$}
+
+
+
+\-Inheritance diagram for \-Weak\-Pointable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWeakPointable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \-Add\-Weak\-Pointer} ({\bf \-Weak\-Pointable} $\ast$$\ast$weakptr)
+\item 
+void {\bf \-Remove\-Weak\-Pointer} ({\bf \-Weak\-Pointable} $\ast$$\ast$weakptr)
+\item 
+{\bf $\sim$\-Weak\-Pointable} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class for objects providing support for weak pointers.
+
+\-This class allows for the registration of certain pointers as weak, which will cause them to be set to \-N\-U\-L\-L when the destructor of the object is called. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{\-Weak\-Pointable@{\-Weak\-Pointable}!$\sim$\-Weak\-Pointable@{$\sim$\-Weak\-Pointable}}
+\index{$\sim$\-Weak\-Pointable@{$\sim$\-Weak\-Pointable}!WeakPointable@{\-Weak\-Pointable}}
+\subsubsection[{$\sim$\-Weak\-Pointable}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf \-Weak\-Pointable} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classWeakPointable_afec646ba51ad955392a42a9312061b56}
+\-Deconstruct the object, set all weak pointers to \-N\-U\-L\-L. 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-Weak\-Pointable@{\-Weak\-Pointable}!\-Add\-Weak\-Pointer@{\-Add\-Weak\-Pointer}}
+\index{\-Add\-Weak\-Pointer@{\-Add\-Weak\-Pointer}!WeakPointable@{\-Weak\-Pointable}}
+\subsubsection[{\-Add\-Weak\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Add\-Weak\-Pointer} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Weak\-Pointable} $\ast$$\ast$}]{weakptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classWeakPointable_ac9855cc66cd0e4d7425f4a6bbcfb5e80}
+\-Add a new weak pointer. \index{\-Weak\-Pointable@{\-Weak\-Pointable}!\-Remove\-Weak\-Pointer@{\-Remove\-Weak\-Pointer}}
+\index{\-Remove\-Weak\-Pointer@{\-Remove\-Weak\-Pointer}!WeakPointable@{\-Weak\-Pointable}}
+\subsubsection[{\-Remove\-Weak\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Remove\-Weak\-Pointer} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Weak\-Pointable} $\ast$$\ast$}]{weakptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classWeakPointable_ad2d7f814fc839c7ebdf677fb6f87ff5e}
+\-Remove the weak pointer from the list of weak pointers. 
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/weakptr.\-h\end{DoxyCompactItemize}

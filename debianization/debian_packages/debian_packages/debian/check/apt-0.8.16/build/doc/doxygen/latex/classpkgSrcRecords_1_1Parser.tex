@@ -1,0 +1,99 @@
+\section{pkg\-Src\-Records\-:\-:\-Parser \-Class \-Reference}
+\label{classpkgSrcRecords_1_1Parser}\index{pkg\-Src\-Records\-::\-Parser@{pkg\-Src\-Records\-::\-Parser}}
+
+
+\-Inheritance diagram for pkg\-Src\-Records\-:\-:\-Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classpkgSrcRecords_1_1Parser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Src\-Records\-:\-:\-Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classpkgSrcRecords_1_1Parser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Build\-Dep\-Rec}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Build\-Dep} \{ {\bfseries \-Build\-Depend} = 0x0, 
+{\bfseries \-Build\-Depend\-Indep} = 0x1, 
+{\bfseries \-Build\-Conflict} = 0x2, 
+{\bfseries \-Build\-Conflict\-Indep} = 0x3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf pkg\-Index\-File} \& {\bfseries \-Index} () const \label{classpkgSrcRecords_1_1Parser_a54fb1d303b296020e8430b42368827fb}
+
+\item 
+virtual bool {\bfseries \-Restart} ()=0\label{classpkgSrcRecords_1_1Parser_a6719aadfe7d44f4d884bb25718eb12f3}
+
+\item 
+virtual bool {\bfseries \-Step} ()=0\label{classpkgSrcRecords_1_1Parser_a8924e033a9be582dfccaf68f84812f03}
+
+\item 
+virtual bool {\bfseries \-Jump} (unsigned long const \&\-Off)=0\label{classpkgSrcRecords_1_1Parser_abebb5b12c2408570ad7fc24b9270647e}
+
+\item 
+virtual unsigned long {\bfseries \-Offset} ()=0\label{classpkgSrcRecords_1_1Parser_afbff141d2144e3af657c2d86eff2574e}
+
+\item 
+virtual std\-::string {\bfseries \-As\-Str} ()=0\label{classpkgSrcRecords_1_1Parser_a885a78e90a77affc84ea81abe8e33e35}
+
+\item 
+virtual std\-::string {\bfseries \-Package} () const =0\label{classpkgSrcRecords_1_1Parser_ae76931826b3fef33990ac679f0898e16}
+
+\item 
+virtual std\-::string {\bfseries \-Version} () const =0\label{classpkgSrcRecords_1_1Parser_a33187e42cd3c7812d4c2c1983b26fb1d}
+
+\item 
+virtual std\-::string {\bfseries \-Maintainer} () const =0\label{classpkgSrcRecords_1_1Parser_a5865412e1d261fe82f9e60aa833592f2}
+
+\item 
+virtual std\-::string {\bfseries \-Section} () const =0\label{classpkgSrcRecords_1_1Parser_a8883f758628e817fc5d077ff85975856}
+
+\item 
+virtual const char $\ast$$\ast$ {\bfseries \-Binaries} ()=0\label{classpkgSrcRecords_1_1Parser_a9ef4052601029c57cab947a94bb796d5}
+
+\item 
+virtual bool {\bfseries \-Build\-Depends} (std\-::vector$<$ {\bf \-Build\-Dep\-Rec} $>$ \&\-Build\-Deps, bool const \&\-Arch\-Only, bool const \&\-Strip\-Multi\-Arch=true)=0\label{classpkgSrcRecords_1_1Parser_a3197f435b17e87aaab7fe2e798444c03}
+
+\item 
+virtual bool {\bfseries \-Files} (std\-::vector$<$ {\bf pkg\-Src\-Records\-::\-File} $>$ \&\-F)=0\label{classpkgSrcRecords_1_1Parser_a23ef9319da9fe64e010cc1cb3cb65642}
+
+\item 
+{\bfseries \-Parser} (const {\bf pkg\-Index\-File} $\ast$\-Index)\label{classpkgSrcRecords_1_1Parser_ad58d802b9e8baa3424c8a2851b886ba3}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \-Build\-Dep\-Type} (unsigned char const \&\-Type)\label{classpkgSrcRecords_1_1Parser_a986a7256fa5cd957a409bbf613cf49a7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf pkg\-Index\-File} $\ast$ {\bfseries i\-Index}\label{classpkgSrcRecords_1_1Parser_a4c8afaaf06415c382bc5f8db74644f6d}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/srcrecords.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/srcrecords.\-cc\end{DoxyCompactItemize}

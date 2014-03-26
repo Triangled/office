@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+ &apt-docinfo;
+ 
+ <refmeta>
+   <refentrytitle>apt-secure</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+
+
+ 
+
+ 
+ 
+ <!-- NOTE: This manpage has been written based on the
+     Securing Debian Manual ("Debian Security
+     Infrastructure" chapter) and on documentation
+     available at the following sites:
+     http://wiki.debian.net/?apt06
+     http://www.syntaxpolice.org/apt-secure/
+     http://www.enyo.de/fw/software/apt-secure/
+-->
+<!-- TODO: write a more verbose example of how it works with 
+     a sample similar to 
+     http://www.debian-administration.org/articles/174
+     ?
+-->
+<!-- Man page title -->
+<refnamediv>
+    <refname>apt-secure</refname>
+    <refpurpose>Archivauthentifizierungsunterstützung für APT</refpurpose>
+ </refnamediv>
+
+ <refsect1><title>Beschreibung</title>
+   <para>
+   Beginnend mit Version 0.6 enthält <command>apt</command> Code, der die
+Signatur der Release-Datei für alle Archive prüft. Dies stellt sicher, dass
+Pakete im Archiv nicht von Leuten geändert werden können, die keinen Zugriff
+auf den Signierschlüssel der Release-Datei haben.
+   </para>
+
+   <para>
+   Wenn ein Paket aus einem Archiv ohne Signatur stammt oder einem mit
+Signatur, für das APT keinen Schlüssel hat, wird dieses Paket als nicht
+vertrauenswürdig angesehen und es zu installieren, führt zu einer großen
+Warnung. <command>apt-get</command> wird aktuell nur bei nicht signierten
+Archiven warnen, zukünftige Releases könnten die Prüfung aller Quellen vor
+dem Herunterladen von Paketen von dort erzwingen.
+   </para>
+
+   <para>
+   Die Paketoberflächen &apt-get;, &aptitude; und &synaptic; unterstützen diese
+neue Authentifizierungsfunktion.
+   </para>
+</refsect1>
+
+ <refsect1><title>Vertrauenswürdige Archive</title> 
+
+   <para> 
+   Eine Kette des Vertrauens von einem APT-Archiv zum Endanwender wird durch
+verschiedene Schritte erreicht. <command>apt-secure</command> ist der letzte
+Schritt in dieser Kette. Einem Archiv zu vertrauen bedeutet nicht, dass das
+Paket, dem Sie vertrauen, keinen schadhaften Code enthält, aber es bedeutet,
+dass Sie dem Archivbetreuer vertrauen. Der Archivbetreuer ist dafür
+verantwortlich, dass er die Korrektheit der Integrität des Archivs
+sicherstellt.
+   </para>
+
+   <para>apt-secure überprüft keine Signaturen auf einer Ebene des Pakets. Falls Sie
+ein Werkzeug benötigen, das dies tut, sollten Sie einen Blick auf
+<command>debsig-verify</command> und <command>debsign</command> werfen
+(bereitgestellt von den Paketen debsig-verify beziehungsweise devscripts).</para>
+
+   <para>
+   Die Kette des Vertrauens in Debian beginnt, wenn eine Betreuer ein neues
+Paket oder eine neue Version eines Pakets in das Debian-Archiv
+hochlädt. Dieser Upload muss mit einem Schlüssel des Betreuers, der sich im
+Schlüsselbund der Debian-Betreuer befindet (verfügbar im Paket
+debian-keyring) signiert werden. Betreuerschlüssel werden von anderen
+Betreuern gemäß vorbestimmter Regeln signiert, um die Identität des
+Schlüsselinhabers sicherzustellen.
+   </para>
+
+   <para>
+   Sobald das hochgeladenen Paket überprüft und in das Archiv hinzugefügt
+wurde, wird die Betreuersignatur entfernt, eine MD5-Summe des Pakets
+berechnet und in die Paketdatei getan. Dann werden die MD5-Summen aller
+Paketdateien berechnet und in die Release-Datei getan. Dann wird die
+Release-Datei durch den Archivschlüssel signiert (der einmal jährlich
+erzeugt und per FTP-Server verteilt wird). Dieser Schlüssel ist außerdem der
+Debian-Schlüsselbund.
+   </para>
+
+   <para>
+   Jeder Endanwender kann die Signatur der Release-Datei prüfen, die MD5-Summe
+eines Paketes daraus entpacken und mit der MD5-Summe des Pakets vergleichen,
+das er heruntergeladen hat. Vor Version 0.6 wurde nur die MD5-Summe des
+heruntergeladenen Debian-Pakets geprüft. Nun werden sowohl die MD5-Summe als
+auch die Signatur der Release-Datei geprüft.
+   </para>
+
+   <para>Beachten Sie, dass dies verschieden von geprüften Signaturen auf Paketbasis
+ist. Es wurde entworfen, um zwei mögliche Angriffe zu verhindern:
+   </para>
+
+    <itemizedlist>
+       <listitem><para><literal>Network "man in the middle" attacks</literal>. Ohne Signaturprüfung
+kann ein schädlicher Mittelsmann sich selbst in das Herunterladen von
+Paketen einbringen und Schadsoftware bereitstellen. Dies kann entweder durch
+Kontrolle eines Netzwerkelements (Router, Switch, etc.) oder durch Umleiten
+des Netzverkehrs zu einem bösartigen Server (durch ARP- oder
+DNS-Manipulationsangriffe) erfolgen.</para></listitem>
+ 
+       <listitem><para><literal>Mirror network compromise</literal>.  Ohne Signaturprüfung kann ein
+schädlicher Mittelsmann einen Spiegelserver kompromittieren und die Dateien
+darauf verändern, um schädliche Software an alle Anwender zu verbreiten, die
+Pakete von diesem Rechner herunterladen.</para></listitem>
+    </itemizedlist>
+
+   <para>Es schützt jedoch nicht gegen eine Kompromittierung des Haupt-Debian-Servers
+selbst (der die Pakete signiert) oder gegen eine Kompromittierung des
+Schlüssels, der zum Signieren der Release-Dateien benutzt wird. In jedem
+Fall kann dieser Mechanismus eine Signatur pro Paket ergänzen.</para>
+</refsect1>
+
+ <refsect1><title>Benutzerkonfiguration</title>
+   <para>
+   <command>apt-key</command> ist das Programm, das die Liste der von APT
+verwendeten Schlüssel verwaltet. Es kann benutzt werden, um Schlüssel
+hinzuzufügen oder zu entfernen, obwohl eine Installation dieses Releases
+automatisch die Standard-Debian-Archivsignierschlüssel bereitstellt, die in
+den Debian-Paketdepots benutzt werden.
+   </para>
+   <para>
+   Um einen neuen Schlüssel hinzuzufügen, müssen Sie ihn zuerst herunterladen
+(Sie sollten sicherstellen, dass Sie einen vertrauenswürdigen
+Kommunikationskanal benutzen, wenn Sie ihn herunterladen), ihn mit
+<command>apt-key</command> hinzufügen und dann <command>apt-get
+update</command> ausführen, so dass APT die Dateien
+<filename>InRelease</filename> oder <filename>Release.gpg</filename> der von
+Ihnen konfigurierten Archive herunterladen und prüfen kann.
+   </para>
+</refsect1>
+
+<refsect1><title>Archivkonfiguration</title>
+   <para>
+   Wenn Sie Archivsignaturen in einem von Ihnen betreuten Archiv zur Verfügung
+stellen möchten, müssen Sie:
+   </para>
+
+     <itemizedlist>
+       <listitem><para><emphasis>Erzeugen einer Release-Datei der obersten Stufe</emphasis>, wenn
+sie nicht bereits existiert. Sie können dies erledigen, indem Sie
+<command>apt-ftparchive release</command> (aus apt-utils) ausführen.</para></listitem>
+   
+      <listitem><para><emphasis>Es signieren</emphasis>. Sie können dies tun, indem Sie
+<command>gpg --clearsign -o InRelease Release</command> und <command>gpg
+-abs -o Release.gpg Release</command> ausführen.</para></listitem>
+
+      <listitem><para><emphasis>Veröffentlichen Sie den Schlüsselfingerabdruck</emphasis>, damit
+Ihre Anwender wissen, welchen Schlüssel sie importieren müssen, um die
+Dateien im Archiv zu authentifizieren.</para></listitem>
+
+    </itemizedlist>
+
+    <para>Immer wenn sich die Inhalte des Archivs ändern (neue Pakete hinzugefügt oder
+entfernt werden), muss der Archivbetreuer den beiden zuerst skizzierten
+Schritten folgen.</para>
+
+</refsect1>
+
+<refsect1><title>Siehe auch</title> 
+<para> 
+&apt-conf;, &apt-get;, &sources-list;, &apt-key;, &apt-ftparchive;,
+&debsign; &debsig-verify;, &gpg;
+</para>
+
+<para>Um weitere Hintergrundinformationen zu erhalten, können Sie die  <ulink
+url="http://www.debian.org/doc/manuals/securing-debian-howto/ch7.de.html">Die
+Infrastruktur für Sicherheit in Debian</ulink>-Kapitel des Handbuchs
+»Anleitung zum Absichern von Debian« (auch verfügbar im Paket harden-doc)
+und dem <ulink url="http://www.cryptnet.net/fdp/crypto/strong_distro.html"
+>Strong Distribution HOWTO</ulink> von V. Alex Brennen lesen.  </para>
+
+</refsect1>
+
+ &manbugs;
+ &manauthor;
+
+<refsect1><title>Autoren der Handbuchseite</title> 
+
+<para>Diese Handbuchseite basiert auf der Arbeit von Javier Fernández-Sanguino
+Peña, Isaac Jones, Colin Walters, Florian Weimer und Michael Vogt.
+</para>
+
+</refsect1>
+ 
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

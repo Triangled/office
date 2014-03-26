@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>29
+Fevereiro 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-config</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-config</refname>
+    <refpurpose>Programa de Consulta de Configuração do APT</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-config</command> <arg><option>-hv</option></arg>
+<arg><option>-o=<replaceable>string de
+configuração</replaceable></option></arg>
+<arg><option>-c=<replaceable>ficheiro</replaceable></option></arg> <group
+choice="req"> <arg>shell</arg> <arg>dump</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Descrição</title>
+   <para><command>apt-config</command> é um programa interno usado por várias partes
+da suite APT para fornecer uma configurabilidade consistente. Acede ao
+ficheiro de configuração principal <filename>/etc/apt/apt.conf</filename> de
+um modo que é fácil de usar para aplicações em script.</para>
+
+   <para>A menos que a opção <option>-h</option>, ou <option>--help</option> seja
+fornecida, um dos comandos abaixo têm que estar presentes.
+   </para>
+   
+   <variablelist>
+     <varlistentry><term>shell</term>
+     <listitem><para>
+     shell é usado para aceder à informação de configuração a partir de um script
+shell. É fornecido pares de argumentos, sendo o primeiro uma variável de
+shell e o segundo o valor de configuração a consultar. Como resultado cria
+uma lista de comandos de atribuições de shell para cada valor presente. Num
+script shell deverá ser usado como:
+     </para>
+     
+<informalexample><programlisting>
+OPTS="-f"
+RES=`apt-config shell OPTS MyApp::options`
+eval $RES
+</programlisting></informalexample>
+
+     <para>Isto irá definir a variável de ambiente shell $OPTS ao valor de
+MyApp::options com uma predefinição de <option>-f</option>.</para>
+
+     
+     <para>O item de configuração pode ser pós-fixado com um /[fdbi]. f devolve nomes
+de ficheiros, d devolve directórios, b devolve verdadeiro ou falso e i
+devolve um número inteiro. Cada um dos valores devolvidos é normalizado e
+verificado internamente.</para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>dump</term>
+     <listitem><para>
+     Apenas mostra o conteúdo do espaço de configuração.</para>
+     </listitem>
+     </varlistentry>
+
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>opções</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+   
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Veja também</title>
+   <para>&apt-conf;
+   </para>
+ </refsect1>
+
+ <refsect1><title>Diagnóstico</title>
+   <para><command>apt-config</command> devolve zero em operação normal, 100 decimal
+em erro.
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

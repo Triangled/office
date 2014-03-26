@@ -1,0 +1,116 @@
+\section{pkg\-Acq\-Method \-Class \-Reference}
+\label{classpkgAcqMethod}\index{pkg\-Acq\-Method@{pkg\-Acq\-Method}}
+
+
+\-Collaboration diagram for pkg\-Acq\-Method\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classpkgAcqMethod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Fetch\-Item}
+\item 
+struct {\bf \-Fetch\-Result}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Cnf\-Flags} \{ \*
+{\bfseries \-Single\-Instance} =  (1$<$$<$0), 
+{\bfseries \-Pipeline} =  (1$<$$<$1), 
+{\bfseries \-Send\-Config} =  (1$<$$<$2), 
+{\bfseries \-Local\-Only} =  (1$<$$<$3), 
+\*
+{\bfseries \-Needs\-Cleanup} =  (1$<$$<$4), 
+{\bfseries \-Removable} =  (1$<$$<$5)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries \-Log} (const char $\ast$\-Format,...)\label{classpkgAcqMethod_a2d2945c5952955d702f894ff0e4fc618}
+
+\item 
+void {\bfseries \-Status} (const char $\ast$\-Format,...)\label{classpkgAcqMethod_a3a53850c6b48deb4bd6243b0095d7521}
+
+\item 
+void {\bfseries \-Redirect} (const std\-::string \&\-New\-U\-R\-I)\label{classpkgAcqMethod_a9f72145ae2ea3bfb9e7fa0cef7becee9}
+
+\item 
+int {\bfseries \-Run} (bool \-Single=false)\label{classpkgAcqMethod_ae2188bbaec10e68b1232221544b6bfdb}
+
+\item 
+void {\bfseries \-Set\-Fail\-Reason} (std\-::string \-Msg)\label{classpkgAcqMethod_a3f48a633c4713eab7cd6c3fa35df54cf}
+
+\item 
+void {\bfseries \-Set\-I\-P} (std\-::string a\-I\-P)\label{classpkgAcqMethod_a2734b9c8daa6d17a8663b84c43f7bf24}
+
+\item 
+{\bfseries pkg\-Acq\-Method} (const char $\ast$\-Ver, unsigned long \-Flags=0)\label{classpkgAcqMethod_ad18deec626531407f841fcaf401ec631}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries \-Configuration} (std\-::string \-Message)\label{classpkgAcqMethod_a1350c1dbcd8ed165524e939b89b7ef13}
+
+\item 
+virtual bool {\bfseries \-Fetch} ({\bf \-Fetch\-Item} $\ast$)\label{classpkgAcqMethod_a34ca11f06af17cf5be9bbfec7b7f6fa4}
+
+\item 
+void {\bfseries \-Fail} (bool \-Transient=false)\label{classpkgAcqMethod_af3d113761395655d4a02778467a7b8bf}
+
+\item 
+void {\bfseries \-Fail} (const char $\ast$\-Why, bool \-Transient=false)\label{classpkgAcqMethod_a136331fb821e85ee40546a055c702632}
+
+\item 
+virtual void {\bfseries \-Fail} (std\-::string \-Why, bool \-Transient=false)\label{classpkgAcqMethod_a8ecaba4ad5e14aea51345cce43d971b2}
+
+\item 
+virtual void {\bfseries \-U\-R\-I\-Start} ({\bf \-Fetch\-Result} \&\-Res)\label{classpkgAcqMethod_a4985704ac80f24d42829166167f5d6ce}
+
+\item 
+virtual void {\bfseries \-U\-R\-I\-Done} ({\bf \-Fetch\-Result} \&\-Res, {\bf \-Fetch\-Result} $\ast$\-Alt=0)\label{classpkgAcqMethod_af4339b65bb7503be6a7da6659ce60de2}
+
+\item 
+bool {\bfseries \-Media\-Fail} (std\-::string \-Required, std\-::string \-Drive)\label{classpkgAcqMethod_aa21e332c8a680e471a4d65139b2daf3c}
+
+\item 
+virtual void {\bfseries \-Exit} ()\label{classpkgAcqMethod_a322d6a60f62afd58f32e4ffd7b40e6c6}
+
+\item 
+void {\bfseries \-Print\-Status} (char const $\ast$const header, const char $\ast$\-Format, va\-\_\-list \&args) const \label{classpkgAcqMethod_ab5553f75512040bb27b0df42eaf01d5e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries \-Messages}\label{classpkgAcqMethod_a43a2b67cf6f78f2d5f0c0f3bb6edb0b1}
+
+\item 
+{\bf \-Fetch\-Item} $\ast$ {\bfseries \-Queue}\label{classpkgAcqMethod_aa467b639088af80da587d95ef79e5558}
+
+\item 
+{\bf \-Fetch\-Item} $\ast$ {\bfseries \-Queue\-Back}\label{classpkgAcqMethod_a31e05fdc9cbcbe7f4b16067036ecad9a}
+
+\item 
+std\-::string {\bfseries \-Fail\-Reason}\label{classpkgAcqMethod_a7aeb9fc72e53c123e9f36d4d6058bec8}
+
+\item 
+std\-::string {\bfseries \-Used\-Mirror}\label{classpkgAcqMethod_a0fc192c0b613d93b4ed6ddf53d2b011d}
+
+\item 
+std\-::string {\bfseries \-I\-P}\label{classpkgAcqMethod_a57430442c3d9a40c976af8e13ab34029}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/method.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/method.\-cc\end{DoxyCompactItemize}

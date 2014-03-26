@@ -1,0 +1,143 @@
+\section{pkg\-Cache\-:\-:\-Version \-Struct \-Reference}
+\label{structpkgCache_1_1Version}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}
+
+
+information for a single version of a package  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Ver\-Multi\-Arch} \{ \*
+{\bf \-None} =  0, 
+{\bf \-All} =  (1$<$$<$0), 
+{\bf \-Foreign} =  (1$<$$<$1), 
+{\bf \-Same} =  (1$<$$<$2), 
+\*
+{\bf \-Allowed} =  (1$<$$<$3), 
+{\bfseries \-All\-Foreign} =  \-All $|$ \-Foreign, 
+{\bfseries \-All\-Allowed} =  \-All $|$ \-Allowed
+ \}
+\begin{DoxyCompactList}\small\item\em \-Multi-\/\-Arch capabilities of a package version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-Ver\-Str}\label{structpkgCache_1_1Version_ade3263d852bd30195ec60324aea7f9d9}
+
+\begin{DoxyCompactList}\small\item\em complete version string \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Section}\label{structpkgCache_1_1Version_a4bb6ae3e0b912e661c9589ec803b67c3}
+
+\begin{DoxyCompactList}\small\item\em section this version is filled in \end{DoxyCompactList}\item 
+unsigned char {\bf \-Multi\-Arch}
+\begin{DoxyCompactList}\small\item\em stores the \-Multi\-Arch capabilities of this version \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-File\-List}
+\begin{DoxyCompactList}\small\item\em references all the \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile}'s that this version came from \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Ver}\label{structpkgCache_1_1Version_a03383f42381ce6ad45332685ed49ff14}
+
+\begin{DoxyCompactList}\small\item\em next (lower or equal) version in the linked list \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Description\-List}\label{structpkgCache_1_1Version_af27a3668d5b22ee5c351da355cc16df4}
+
+\begin{DoxyCompactList}\small\item\em next description in the linked list \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Depends\-List}\label{structpkgCache_1_1Version_a604d41df003f11e2242e61913e154059}
+
+\begin{DoxyCompactList}\small\item\em base of the dependency list \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Parent\-Pkg}
+\begin{DoxyCompactList}\small\item\em links to the owning package \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Provides\-List}\label{structpkgCache_1_1Version_a7791e7b34c83057cd1ff0eaae4623581}
+
+\begin{DoxyCompactList}\small\item\em list of \doxyref{pkg\-Cache\-::\-Provides}{p.}{structpkgCache_1_1Provides} \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Size}
+\begin{DoxyCompactList}\small\item\em archive size for this version \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Installed\-Size}\label{structpkgCache_1_1Version_aea0f8b4ff23016c9aa22526bb3cbc9b1}
+
+\begin{DoxyCompactList}\small\item\em uncompressed size for this version \end{DoxyCompactList}\item 
+unsigned short {\bf \-Hash}
+\begin{DoxyCompactList}\small\item\em characteristic value representing this version \end{DoxyCompactList}\item 
+unsigned int {\bf \-I\-D}\label{structpkgCache_1_1Version_a0dd14fb57e3d3cc6b6fc5633c6ce65d5}
+
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\item 
+unsigned char {\bf \-Priority}\label{structpkgCache_1_1Version_a7a5a6ba669ced07014f8651ce95b4590}
+
+\begin{DoxyCompactList}\small\item\em parsed priority value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+information for a single version of a package 
+
+\-The version list is always sorted from highest version to lowest version by the generator. \-Equal version numbers are either merged or handled as separate versions based on the \-Hash value. 
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Ver\-Multi\-Arch@{\-Ver\-Multi\-Arch}}
+\index{\-Ver\-Multi\-Arch@{\-Ver\-Multi\-Arch}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-Ver\-Multi\-Arch}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Ver\-Multi\-Arch}}\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025f}
+
+
+\-Multi-\/\-Arch capabilities of a package version. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-None@{\-None}!pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-None@{\-None}}\item[{\em 
+\-None\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025fac9d3e887722f2bc482bcca9d41c512af}
+}]is the default and doesn't trigger special behaviour \index{\-All@{\-All}!pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-All@{\-All}}\item[{\em 
+\-All\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025fa54991d225c58ce0af43461d4e9a82312}
+}]will cause that \-Ver.\-Arch() will report \char`\"{}all\char`\"{} \index{\-Foreign@{\-Foreign}!pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Foreign@{\-Foreign}}\item[{\em 
+\-Foreign\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025fa36ecf2e1dcb8aaa07c5e74862a9fbed1}
+}]can satisfy dependencies in another architecture \index{\-Same@{\-Same}!pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Same@{\-Same}}\item[{\em 
+\-Same\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025fa0e0d4848f799861d016ae63c8fdc41e3}
+}]can be co-\/installed with itself from other architectures \index{\-Allowed@{\-Allowed}!pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}}\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Allowed@{\-Allowed}}\item[{\em 
+\-Allowed\label{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025fa4520b0236b62bed6c4529ec77b8e2543}
+}]other packages are allowed to depend on thispkg\-:any \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-File\-List@{\-File\-List}}
+\index{\-File\-List@{\-File\-List}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-File\-List}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-File\-List}}\label{structpkgCache_1_1Version_a4b6b2b9ea64d554abffb8e2897932892}
+
+
+references all the \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile}'s that this version came from 
+
+\-File\-List can be used to determine what distribution(s) the \doxyref{\-Version}{p.}{structpkgCache_1_1Version} applies to. \-If \-File\-List is 0 then this is a blank version. \-The structure should also have a 0 in all other fields excluding \doxyref{pkg\-Cache\-::\-Version\-::\-Ver\-Str}{p.}{structpkgCache_1_1Version_ade3263d852bd30195ec60324aea7f9d9} and \-Possibly \doxyref{pkg\-Cache\-::\-Version\-::\-Next\-Ver}{p.}{structpkgCache_1_1Version_a03383f42381ce6ad45332685ed49ff14}. \index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Hash@{\-Hash}}
+\index{\-Hash@{\-Hash}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short {\bf \-Hash}}\label{structpkgCache_1_1Version_a2018824a2cde40fcad75f5066bb5708b}
+
+
+characteristic value representing this version 
+
+\-No two packages in existence should have the same \-Ver\-Str and \-Hash with different contents. 
+
+\-Referenced by pkg\-Cache\-::\-Ver\-Iterator\-::\-Similar\-Ver().
+
+\index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Multi\-Arch@{\-Multi\-Arch}}
+\index{\-Multi\-Arch@{\-Multi\-Arch}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-Multi\-Arch}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf \-Multi\-Arch}}\label{structpkgCache_1_1Version_aa135f00c62252418b2ed5c85f7643851}
+
+
+stores the \-Multi\-Arch capabilities of this version 
+
+\-Flags used are defined in \doxyref{pkg\-Cache\-::\-Version\-::\-Ver\-Multi\-Arch}{p.}{structpkgCache_1_1Version_a8324be5b5e844cc9e33d3924da11025f} \index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Parent\-Pkg@{\-Parent\-Pkg}}
+\index{\-Parent\-Pkg@{\-Parent\-Pkg}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-Parent\-Pkg}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Parent\-Pkg}}\label{structpkgCache_1_1Version_a8b21c48cbc2c531761a089792265a43c}
+
+
+links to the owning package 
+
+\-This allows reverse dependencies to determine the package \index{pkg\-Cache\-::\-Version@{pkg\-Cache\-::\-Version}!\-Size@{\-Size}}
+\index{\-Size@{\-Size}!pkgCache::Version@{pkg\-Cache\-::\-Version}}
+\subsubsection[{\-Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf \-Size}}\label{structpkgCache_1_1Version_a254f9ca5c1e1232788dedebd142044aa}
+
+
+archive size for this version 
+
+\-For \-Debian this is the size of the .deb file. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

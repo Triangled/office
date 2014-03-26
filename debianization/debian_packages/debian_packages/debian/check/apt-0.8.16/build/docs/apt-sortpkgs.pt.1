@@ -1,0 +1,117 @@
+'\" t
+.\"     Title: apt-sortpkgs
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 29
+Fevereiro 2004
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-SORTPKGS" "1" "29 Fevereiro 2004" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-sortpkgs \- Utilitário para organizar ficheiros índice de pacotes
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-sortpkgs\fR\ 'u
+\fBapt\-sortpkgs\fR [\fB\-hvs\fR] [\fB\-o=\fR\fB\fIstring\ de\ configuração\fR\fR] [\fB\-c=\fR\fB\fIficheiro\fR\fR] \fIficheiro\fR...
+.SH "DESCRIçãO"
+.PP
+\fBapt\-sortpkgs\fR
+irá pegar num ficheiro índice (índice de fontes ou índice de pacotes) e organizar os registos para que fiquem ordenados pelo nome do pacote\&. Também organiza os campos internos de cada registo de acordo com as regras de organização internas\&.
+.PP
+Todas as saídas são enviadas para o stdout, a entrada tem de ser um ficheiro pesquisável\&.
+.SH "OPçõES"
+.PP
+Todas as opções de linha de comandos podem ser definidas usando o ficheiro de configuração, as descrições indicam a opção de configuração a definir\&. Para opções booleanas você pode sobre por o ficheiro de configuração usando algo como
+\fB\-f\-\fR,\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+ou várias outras variantes\&.
+.PP
+\fB\-s\fR, \fB\-\-source\fR
+.RS 4
+Usa ordenação de campo de índice Source\&. Item de Configuração:
+APT::SortPkgs::Source\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Mostra um sumário curto da utilização\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Mostra a versão do programa\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Ficheiro de Configuração; Especifica o ficheiro de configuração a usar\&. O programa irá ler o ficheiro de configuração predefinido e depois este ficheiro de configuração\&. Se as definições de configuração precisarem de ser definidas antes, os ficheiros de configuração predefinidos são analisados especificando um ficheiro com a variável de ambiente
+\fBAPT_CONFIG\fR\&. Veja
+\fBapt.conf\fR(5)
+para informação de sintaxe\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Define uma Opção de Configuração; Isto irá definir uma opção de configuração arbitrária\&. A sintaxe é
+\fB\-o Foo::Bar=bar\fR\&.
+\fB\-o\fR
+e
+\fB\-\-option\fR
+podem ser usadas várias vezes para definir opções diferentes\&.
+.RE
+.SH "VEJA TAMBéM"
+.PP
+\fBapt.conf\fR(5)
+.SH "DIAGNóSTICO"
+.PP
+\fBapt\-sortpkgs\fR
+devolve zero na operação normal, 100 decimal em erro\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBAPT team\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

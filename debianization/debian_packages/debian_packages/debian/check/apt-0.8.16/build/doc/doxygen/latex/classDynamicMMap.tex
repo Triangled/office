@@ -1,0 +1,84 @@
+\section{\-Dynamic\-M\-Map \-Class \-Reference}
+\label{classDynamicMMap}\index{\-Dynamic\-M\-Map@{\-Dynamic\-M\-Map}}
+
+
+\-Inheritance diagram for \-Dynamic\-M\-Map\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{classDynamicMMap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for \-Dynamic\-M\-Map\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classDynamicMMap__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Pool}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bfseries \-Raw\-Allocate} (unsigned long long \-Size, unsigned long \-Aln=0)\label{classDynamicMMap_a46428e7409f37c5f5d3de41a053e7b5b}
+
+\item 
+unsigned long {\bfseries \-Allocate} (unsigned long \-Item\-Size)\label{classDynamicMMap_ac874549adae7f0c906ce314aa3023fea}
+
+\item 
+unsigned long {\bfseries \-Write\-String} (const char $\ast$\-String, unsigned long \-Len=(unsigned long)-\/1)\label{classDynamicMMap_ac69cc52de18350ae2a70ae8e025af9ba}
+
+\item 
+unsigned long {\bfseries \-Write\-String} (const std\-::string \&\-S)\label{classDynamicMMap_a0329447b4c2764617ff943a89213b0c6}
+
+\item 
+void {\bfseries \-Use\-Pools} ({\bf \-Pool} \&\-P, unsigned int \-Count)\label{classDynamicMMap_aff9c5ca4c159317274d3ce35f80b70da}
+
+\item 
+{\bfseries \-Dynamic\-M\-Map} ({\bf \-File\-Fd} \&\-F, unsigned long \-Flags, unsigned long const \&\-Work\-Space=2 $\ast$1024 $\ast$1024, unsigned long const \&\-Grow=1024 $\ast$1024, unsigned long const \&\-Limit=0)\label{classDynamicMMap_ad6274529ac74859c33352bec4999489d}
+
+\item 
+{\bfseries \-Dynamic\-M\-Map} (unsigned long \-Flags, unsigned long const \&\-Work\-Space=2 $\ast$1024 $\ast$1024, unsigned long const \&\-Grow=1024 $\ast$1024, unsigned long const \&\-Limit=0)\label{classDynamicMMap_acf6630bc42757dc601a6575acb6a00c2}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Grow} ()\label{classDynamicMMap_a12b70db47502e5451fbe67df100c49ba}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-File\-Fd} $\ast$ {\bfseries \-Fd}\label{classDynamicMMap_a2d52c12bc66139451dca7d4c7cf3f02a}
+
+\item 
+unsigned long {\bfseries \-Work\-Space}\label{classDynamicMMap_a273fa6ca039025ec9c00e71a151704c4}
+
+\item 
+unsigned long const {\bfseries \-Grow\-Factor}\label{classDynamicMMap_a424afe2d1dbcf4c07e99263d23067c91}
+
+\item 
+unsigned long const {\bfseries \-Limit}\label{classDynamicMMap_a4df08c7857ad6dadf80e9c94f7980d96}
+
+\item 
+{\bf \-Pool} $\ast$ {\bfseries \-Pools}\label{classDynamicMMap_aff93882f4b3ecb59f12b8935659d13fb}
+
+\item 
+unsigned int {\bfseries \-Pool\-Count}\label{classDynamicMMap_a36e34398e81cd673816c2e92803b99d8}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/mmap.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/mmap.\-cc\end{DoxyCompactItemize}

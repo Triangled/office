@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>The APT project design document - Requirements</title>
+
+<link href="index.html" rel="start">
+<link href="ch-introduction.html" rel="prev">
+<link href="ch3.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch-introduction.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Requirements">
+<link href="ch3.html" rel="chapter" title="3 Procedural description">
+<link href="ch4.html" rel="chapter" title="4 Modules and interfaces">
+<link href="ch5.html" rel="chapter" title="5 Data flow and conversions analysis.">
+
+</head>
+
+<body>
+
+<p><a name="ch2"></a></p>
+<hr>
+
+<p>
+[ <a href="ch-introduction.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ 2 ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch4.html">4</a> ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch3.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+The APT project design document
+<br>Chapter 2 - Requirements
+</h1>
+
+<hr>
+
+<!-- ol type="1" start="1"  -->
+<li>
+<p>
+APT should be a replacement for dselect.  Therefore it should have all the
+functionality that dselect has currently.  This is the primary means of
+interaction between the user and the package management system, and it should
+be able to handle all tasks involved in installing, upgrading, and routine
+management without having the users take recourse to the underlying management
+system.
+</p>
+</li>
+<li>
+<p>
+It should be easier to use and less confusing for novice users.  The primary
+stimulus for the creation of APT was the perceived intractability, complexity,
+and non-intuitive behavior of the existing user interface, and as such, human
+factors must be a primary mandate of APT.
+</p>
+</li>
+<li>
+<p>
+It should be able to group packages more flexibly, and possibly allow
+operations based on a group.  One should be able to select, or deselect, a
+coherent group of related packages simultaneously, allowing one to add, remove,
+or upgrade functionality to a machine as one step.
+</p>
+</li>
+<li>
+<p>
+This would allow APT to handle <em>standard installations</em>, namely, one
+could then install a set of packages to enable a machine to fulfill specific
+tasks.  Define a few standard installations, and which packages are included
+therein.  The packages should be internally consistent.
+</p>
+</li>
+<li>
+<p>
+Make use of a keywords field in package headers; provide a standard list of
+keywords for people to use.  This could be the underpinning to allow the
+previous two requirements to work (though the developers are not constrained to
+implement the previous requirements using keywords)
+</p>
+</li>
+<li>
+<p>
+Use dependencies, conflicts, and reverse dependencies to properly order
+packages for installation and removal.  This has been a complaint in the past
+that the installation methods do not really understand dependencies, causing
+the upgrade process to break, or allowing the removal of packages that left the
+system in an untenable state by breaking the dependencies on packages that were
+dependent on the package being removed.  A special emphasis is placed on
+handling pre-dependencies correctly; the target of a predependency has to be
+fully configured before attempting to install the pre-dependent package.  Also,
+<em>configure immediately</em> requests mentioned below should be handled.
+</p>
+</li>
+<li>
+<p>
+Handle replacement of a package providing a virtual package with another (for
+example, it has been very difficult replacing <code>sendmail</code> with
+<code>smail</code>, or vice versa), making sure that the dependencies are still
+satisfied.
+</p>
+</li>
+<li>
+<p>
+Handle source lists for updates from multiple sources.  APT should also be able
+to handle diverse methods of acquiring new packages; local filesystem,
+mountable CD-ROM drives, FTP accessible repositories are some of the methods
+that come to mind.  Also, the source lists can be separated into categories,
+such as main, contrib, non-us, non-local, non-free, my-very-own, etc.  APT
+should be set up to retrieve the Packages files from these multiple source
+lists, as well as retrieving the packages themselves.
+</p>
+</li>
+<li>
+<p>
+Handle base of source and acquire all Packages files underneath.  (possibly
+select based on architecture), this should be a simple extension of the
+previous requirement.
+</p>
+</li>
+<li>
+<p>
+Handle remote installation (to be implemented maybe in a future version, it
+still needs to be designed).  This would ease the burden of maintaining
+multiple Debian machines on a site.  In the authors opinion this is a killer
+difference for the distribution, though it may be too hard a problem to be
+implemented with the initial version of APT.  However, some thought must be
+given to this to enable APT to retain hooks for future functionality, or at
+least to refrain from methods that may preclude remote activity.  It is
+desirable that adding remote installation not require a redesign of APT from
+the ground up.
+</p>
+</li>
+<li>
+<p>
+Be scalable.  Dselect worked a lot better with 400 packages, but at last count
+the number of packages was around twelve hundred and climbing.  This also
+requires APT to pay attention to the needs of small machines which are low on
+memory (though this requirement shall diminish as we move towards bigger
+machines, it would still be nice if Debian worked on all old machines where
+Linux itself would work).
+</p>
+</li>
+<li>
+<p>
+Handle install immediately requests.  Some packages, like watchdog, are
+required to be working for the stability of the machine itself.  There are
+others which may be required for the correct functioning of a production
+machine, or which are mission critical applications.  APT should, in these
+cases, upgrade the packages with minimal downtime; allowing these packages to
+be one of potentially hundreds of packages being upgraded concurrently may not
+satisfy the requirements of the package or the site.  (Watchdog, for example,
+if not restarted quickly, may cause the machine to reboot in the midst of
+installation, which may cause havoc on the machine)
+</p>
+</li>
+</ol>
+
+<hr>
+
+<p>
+[ <a href="ch-introduction.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ 2 ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch4.html">4</a> ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch3.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+The APT project design document
+</p>
+
+<address>
+$Id: design.sgml,v 1.4 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Manoj Srivastava <code><a href="mailto:srivasta@debian.org">srivasta@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

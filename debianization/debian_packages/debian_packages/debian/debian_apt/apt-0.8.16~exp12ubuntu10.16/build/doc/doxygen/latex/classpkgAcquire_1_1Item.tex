@@ -1,0 +1,546 @@
+\section{pkg\-Acquire\-:\-:\-Item \-Class \-Reference}
+\label{classpkgAcquire_1_1Item}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}
+
+
+\-Represents the process by which a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object should \{\{\{ retrieve a file or a collection of files.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acquire\-:\-:\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcquire_1_1Item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acquire\-:\-:\-Item\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcquire_1_1Item__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf \-Item\-State} \{ \*
+{\bf \-Stat\-Idle}, 
+{\bf \-Stat\-Fetching}, 
+{\bf \-Stat\-Done}, 
+{\bf \-Stat\-Error}, 
+\*
+{\bf \-Stat\-Auth\-Error}, 
+{\bf \-Stat\-Transient\-Network\-Error}
+ \}
+\begin{DoxyCompactList}\small\item\em \-The current status of this item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} (std\-::string \-Message, unsigned long long \-Size, std\-::string \-Hash, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object was fetched successfully. \end{DoxyCompactList}\item 
+virtual void {\bf \-Start} (std\-::string \-Message, unsigned long long \-Size)
+\begin{DoxyCompactList}\small\item\em \-Invoked when the worker starts to fetch this object. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Custom600\-Headers} ()
+\begin{DoxyCompactList}\small\item\em \-Custom headers to be sent to the fetch process. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Desc\-U\-R\-I} ()=0
+\begin{DoxyCompactList}\small\item\em \-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Short\-Desc} ()
+\begin{DoxyCompactList}\small\item\em \-Short item description. \end{DoxyCompactList}\item 
+virtual void {\bf \-Finished} ()\label{classpkgAcquire_1_1Item_a2977f974805071d438df8dd73292fe72}
+
+\begin{DoxyCompactList}\small\item\em \-Invoked by the worker when the download is completely done. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Hash\-Sum} ()
+\begin{DoxyCompactList}\small\item\em \-Hash\-Sum. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire} $\ast$ {\bf \-Get\-Owner} ()
+\item 
+virtual bool {\bf \-Is\-Trusted} ()
+\item 
+void {\bf \-Report\-Mirror\-Failure} (std\-::string \-Fail\-Code)
+\begin{DoxyCompactList}\small\item\em \-Report mirror problem. \end{DoxyCompactList}\item 
+{\bf \-Item} ({\bf pkg\-Acquire} $\ast${\bf \-Owner})
+\begin{DoxyCompactList}\small\item\em \-Initialize an item. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Item} ()\label{classpkgAcquire_1_1Item_a85bc7807ee78093afc1904df470b2b79}
+
+\begin{DoxyCompactList}\small\item\em \-Remove this item from its owner's queue by invoking \doxyref{pkg\-Acquire\-::\-Remove}{p.}{classpkgAcquire_ae3e5902c5c7d0b5c6856e6761205a39c}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf pkg\-Acquire\-::\-Item\-::\-Item\-State} {\bfseries \-Status}\label{classpkgAcquire_1_1Item_a6f8730a7c4e8b306f7a953a239ac97a0}
+
+\item 
+std\-::string {\bf \-Error\-Text}\label{classpkgAcquire_1_1Item_ab2638de684977037618d65aa009384b1}
+
+\begin{DoxyCompactList}\small\item\em \-Contains a textual description of the error encountered if \#\-Status is \doxyref{\-Stat\-Error}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a8523989e15c68262bb5469f61fbe72ba} or \doxyref{\-Stat\-Auth\-Error}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a19728efb594f55c57218604ad77b25db}. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-File\-Size}\label{classpkgAcquire_1_1Item_a8798fd49b6306cde3810ff5744d8bfc2}
+
+\begin{DoxyCompactList}\small\item\em \-The size of the object to fetch. \end{DoxyCompactList}\item 
+unsigned long long {\bf \-Partial\-Size}\label{classpkgAcquire_1_1Item_a2b86900df4f7c4f7fc44f4c2bc888827}
+
+\begin{DoxyCompactList}\small\item\em \-How much of the object was already fetched. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf \-Mode}\label{classpkgAcquire_1_1Item_a037fef483ec7b07ac1b31993b712de48}
+
+\begin{DoxyCompactList}\small\item\em \-If not {\bfseries \-N\-U\-L\-L}, contains the name of a subprocess that is operating on this object (for instance, \char`\"{}gzip\char`\"{} or \char`\"{}gpgv\char`\"{}). \end{DoxyCompactList}\item 
+unsigned long {\bf \-I\-D}
+\begin{DoxyCompactList}\small\item\em \-A client-\/supplied unique identifier. \end{DoxyCompactList}\item 
+bool {\bf \-Complete}
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the entire object has been successfully fetched. \end{DoxyCompactList}\item 
+bool {\bf \-Local}
+\begin{DoxyCompactList}\small\item\em \-If {\bfseries true}, the \doxyref{\-U\-R\-I}{p.}{classURI} of this object is \char`\"{}local\char`\"{}. \end{DoxyCompactList}\item 
+std\-::string {\bfseries \-Used\-Mirror}\label{classpkgAcquire_1_1Item_a0fc192c0b613d93b4ed6ddf53d2b011d}
+
+\item 
+unsigned int {\bf \-Queue\-Counter}
+\begin{DoxyCompactList}\small\item\em \-The number of fetch queues into which this item has been inserted. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Dest\-File}\label{classpkgAcquire_1_1Item_ab4b5e2afff64c51303682cea9243f098}
+
+\begin{DoxyCompactList}\small\item\em \-The name of the file into which the retrieved object will be written. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \-Queue\-U\-R\-I} ({\bf \-Item\-Desc} \&{\bf \-Item})
+\begin{DoxyCompactList}\small\item\em \-Insert this item into its owner's queue. \end{DoxyCompactList}\item 
+void {\bf \-Dequeue} ()\label{classpkgAcquire_1_1Item_a717924cd0aecc1908058a6ed7ffd31f3}
+
+\begin{DoxyCompactList}\small\item\em \-Remove this item from its owner's queue. \end{DoxyCompactList}\item 
+void {\bf \-Rename} (std\-::string \-From, std\-::string \-To)
+\begin{DoxyCompactList}\small\item\em \-Rename a file without modifying its timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Acquire} $\ast$ {\bf \-Owner}\label{classpkgAcquire_1_1Item_a76f8c48f1e7f5669a16a9d5e863edd10}
+
+\begin{DoxyCompactList}\small\item\em \-The acquire object with which this item is associated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Represents the process by which a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object should \{\{\{ retrieve a file or a collection of files. 
+
+\-By convention, \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item} subclasses should insert themselves into the acquire queue when they are created by calling \doxyref{\-Queue\-U\-R\-I()}{p.}{classpkgAcquire_1_1Item_ab455ec87a776308e2892d3a383b1c2d2}, and remove themselves by calling \doxyref{\-Dequeue()}{p.}{classpkgAcquire_1_1Item_a717924cd0aecc1908058a6ed7ffd31f3} when either \doxyref{\-Done()}{p.}{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41} or \doxyref{\-Failed()}{p.}{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949} is invoked. \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item} objects are also responsible for notifying the download progress indicator (accessible via \doxyref{\-Owner}{p.}{classpkgAcquire_1_1Item_a76f8c48f1e7f5669a16a9d5e863edd10}-\/$>$\-Log) of their status.
+
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acquire}{p.}{classpkgAcquire} 
+\end{DoxySeeAlso}
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Item\-State@{\-Item\-State}}
+\index{\-Item\-State@{\-Item\-State}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Item\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Item\-State}}\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9}
+
+
+\-The current status of this item. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Stat\-Idle@{\-Stat\-Idle}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Idle@{\-Stat\-Idle}}\item[{\em 
+\-Stat\-Idle\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9aafe4203baf90d29ba26cdca204795329}
+}]\-The item is waiting to be downloaded. \index{\-Stat\-Fetching@{\-Stat\-Fetching}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Fetching@{\-Stat\-Fetching}}\item[{\em 
+\-Stat\-Fetching\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a2438768d0d80b2bcbf37ffa6bae5d445}
+}]\-The item is currently being downloaded. \index{\-Stat\-Done@{\-Stat\-Done}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Done@{\-Stat\-Done}}\item[{\em 
+\-Stat\-Done\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a875850b5de48d7a0ae71c47fbbef4832}
+}]\-The item has been successfully downloaded. \index{\-Stat\-Error@{\-Stat\-Error}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Error@{\-Stat\-Error}}\item[{\em 
+\-Stat\-Error\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a8523989e15c68262bb5469f61fbe72ba}
+}]\-An error was encountered while downloading this item. \index{\-Stat\-Auth\-Error@{\-Stat\-Auth\-Error}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Auth\-Error@{\-Stat\-Auth\-Error}}\item[{\em 
+\-Stat\-Auth\-Error\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a19728efb594f55c57218604ad77b25db}
+}]\-The item was downloaded but its authenticity could not be verified. \index{\-Stat\-Transient\-Network\-Error@{\-Stat\-Transient\-Network\-Error}!pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}}\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Stat\-Transient\-Network\-Error@{\-Stat\-Transient\-Network\-Error}}\item[{\em 
+\-Stat\-Transient\-Network\-Error\label{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a29a70e77eba9ee9773d3e6ac26348820}
+}]\-The item was could not be downloaded because of a transient network error (e.\-g. network down) \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Item@{\-Item}}
+\index{\-Item@{\-Item}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Item} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Item_ab67e36773d41f42609709959446c9b9b}
+
+
+\-Initialize an item. 
+
+\-Adds the item to the list of items known to the acquire process, but does not place it into any fetch queues (you must manually invoke \doxyref{\-Queue\-U\-R\-I()}{p.}{classpkgAcquire_1_1Item_ab455ec87a776308e2892d3a383b1c2d2} to do so).
+
+\-Initializes all fields of the item other than \-Owner to 0, false, or the empty string.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner} & \-The new owner of this item. \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Add(), and \-Stat\-Idle.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Custom600\-Headers@{\-Custom600\-Headers}}
+\index{\-Custom600\-Headers@{\-Custom600\-Headers}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Custom600\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Custom600\-Headers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcquire_1_1Item_acf5f0479651c9e527657e5a4e76a35f9}
+
+
+\-Custom headers to be sent to the fetch process. 
+
+\begin{DoxyReturn}{\-Returns}
+a string containing \-R\-F\-C822-\/style headers that are to be inserted into the 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message sent to the fetch subprocess. \-The headers are inserted after a newline-\/less line, so they should (if nonempty) have a leading newline and no trailing newline. 
+\end{DoxyReturn}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-File} \doxyref{}{p.}{classpkgAcqFile_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Meta\-Clear\-Sig} \doxyref{}{p.}{classpkgAcqMetaClearSig_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Meta\-Sig} \doxyref{}{p.}{classpkgAcqMetaSig_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Index\-Trans} \doxyref{}{p.}{classpkgAcqIndexTrans_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_a00fc58f7709000dd60501e4d9034b7b0}, {\bf pkg\-Acq\-Diff\-Index} \doxyref{}{p.}{classpkgAcqDiffIndex_a00fc58f7709000dd60501e4d9034b7b0}, and {\bf pkg\-Acq\-Sub\-Index} \doxyref{}{p.}{classpkgAcqSubIndex_a00fc58f7709000dd60501e4d9034b7b0}.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Queue\-Item().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}}
+\index{\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Desc\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Desc\-U\-R\-I} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classpkgAcquire_1_1Item_a33630be55b62e4648f24c83378105c6f}
+
+
+\-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. 
+
+\begin{DoxyReturn}{\-Returns}
+a \doxyref{\-U\-R\-I}{p.}{classURI} that should be used to describe what is being fetched. 
+\end{DoxyReturn}
+
+
+\-Implemented in {\bf pkg\-Acq\-File} \doxyref{}{p.}{classpkgAcqFile_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Meta\-Sig} \doxyref{}{p.}{classpkgAcqMetaSig_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Index\-Diffs} \doxyref{}{p.}{classpkgAcqIndexDiffs_a853c32904fff75b1a5d2c68441f41cad}, {\bf pkg\-Acq\-Diff\-Index} \doxyref{}{p.}{classpkgAcqDiffIndex_a853c32904fff75b1a5d2c68441f41cad}, and {\bf pkg\-Acq\-Sub\-Index} \doxyref{}{p.}{classpkgAcqSubIndex_a853c32904fff75b1a5d2c68441f41cad}.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages(), and \-Short\-Desc().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Done@{\-Done}}
+\index{\-Done@{\-Done}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Hash, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41}
+
+
+\-Invoked by the acquire worker when the object was fetched successfully. 
+
+\-Note that the object might {\itshape not\/} have been written to \-Dest\-File; check for the presence of an \-Alt-\/\-Filename entry in \-Message to find the file to which it was really written.
+
+\-Done is often used to switch from one stage of the processing to the next (e.\-g. fetching, unpacking, copying). \-It is one branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-Data from the acquire method. \-Use \-Lookup\-Tag() to parse it. \\
+\hline
+{\em \-Size} & \-The size of the object that was fetched. \\
+\hline
+{\em \-Hash} & \-The \-Hash\-Sum of the object that was fetched. \\
+\hline
+{\em \-Cnf} & \-The method via which the object was fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-File} \doxyref{}{p.}{classpkgAcqFile_ac71dc7046004c78e0a799eb6484160e7}, {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_a688635545a65b9a4bebed86627574d41}, {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_a688635545a65b9a4bebed86627574d41}, {\bf pkg\-Acq\-Meta\-Sig} \doxyref{}{p.}{classpkgAcqMetaSig_aa3ae904a406da88bc67dd2e9e556dffa}, {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_aa3ae904a406da88bc67dd2e9e556dffa}, {\bf pkg\-Acq\-Index\-Diffs} \doxyref{}{p.}{classpkgAcqIndexDiffs_aa3ae904a406da88bc67dd2e9e556dffa}, {\bf pkg\-Acq\-Diff\-Index} \doxyref{}{p.}{classpkgAcqDiffIndex_aa3ae904a406da88bc67dd2e9e556dffa}, and {\bf pkg\-Acq\-Sub\-Index} \doxyref{}{p.}{classpkgAcqSubIndex_aa3ae904a406da88bc67dd2e9e556dffa}.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-File} \doxyref{}{p.}{classpkgAcqFile_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Meta\-Clear\-Sig} \doxyref{}{p.}{classpkgAcqMetaClearSig_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Meta\-Sig} \doxyref{}{p.}{classpkgAcqMetaSig_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Index\-Trans} \doxyref{}{p.}{classpkgAcqIndexTrans_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Index\-Diffs} \doxyref{}{p.}{classpkgAcqIndexDiffs_ad7c33b8520f000b8dfdf48431ddf2949}, {\bf pkg\-Acq\-Diff\-Index} \doxyref{}{p.}{classpkgAcqDiffIndex_ad7c33b8520f000b8dfdf48431ddf2949}, and {\bf pkg\-Acq\-Sub\-Index} \doxyref{}{p.}{classpkgAcqSubIndex_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References pkg\-Acquire\-::\-Dequeue(), and pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Get\-Owner@{\-Get\-Owner}}
+\index{\-Get\-Owner@{\-Get\-Owner}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Get\-Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire}$\ast$ {\bf \-Get\-Owner} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classpkgAcquire_1_1Item_a339a346401c534f8aaf10125f1d06228}
+\begin{DoxyReturn}{\-Returns}
+the acquire process with which this item is associated. 
+\end{DoxyReturn}
+
+
+\-References \-Owner.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Hash\-Sum@{\-Hash\-Sum}}
+\index{\-Hash\-Sum@{\-Hash\-Sum}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Hash\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Hash\-Sum} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcquire_1_1Item_a3547c3b8f6427183a8720ef931e5510d}
+
+
+\-Hash\-Sum. 
+
+\begin{DoxyReturn}{\-Returns}
+the \-Hash\-Sum of this object, if applicable; otherwise, an empty string. 
+\end{DoxyReturn}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-File} \doxyref{}{p.}{classpkgAcqFile_a3547c3b8f6427183a8720ef931e5510d}, {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_a3547c3b8f6427183a8720ef931e5510d}, and {\bf pkg\-Acq\-Index} \doxyref{}{p.}{classpkgAcqIndex_a3547c3b8f6427183a8720ef931e5510d}.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Is\-Trusted@{\-Is\-Trusted}}
+\index{\-Is\-Trusted@{\-Is\-Trusted}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Is\-Trusted}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-Is\-Trusted} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcquire_1_1Item_a2edc43e22068002b21864bad8444d0f7}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if this object is being fetched from a trusted source. 
+\end{DoxyReturn}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_a47df43e8b22e5a598039f068d8f6aff3}.
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Queue\-U\-R\-I@{\-Queue\-U\-R\-I}}
+\index{\-Queue\-U\-R\-I@{\-Queue\-U\-R\-I}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Queue\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Queue\-U\-R\-I} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Item\-Desc} \&}]{\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classpkgAcquire_1_1Item_ab455ec87a776308e2892d3a383b1c2d2}
+
+
+\-Insert this item into its owner's queue. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \doxyref{\-Item\-Desc}{p.}{structpkgAcquire_1_1ItemDesc}} & \-Metadata about this item (its \doxyref{\-U\-R\-I}{p.}{classURI} and description). \\
+\hline
+\end{DoxyParams}
+
+
+\-References pkg\-Acquire\-::\-Enqueue(), and \-Owner.
+
+
+
+\-Referenced by pkg\-Acq\-Sub\-Index\-::\-Done(), pkg\-Acq\-Index\-Diffs\-::\-Done(), pkg\-Acq\-Index\-::\-Done(), pkg\-Acq\-Meta\-Sig\-::\-Done(), pkg\-Acq\-Meta\-Index\-::\-Done(), pkg\-Acq\-File\-::\-Done(), pkg\-Acq\-File\-::\-Failed(), pkg\-Acq\-Diff\-Index\-::pkg\-Acq\-Diff\-Index(), pkg\-Acq\-File\-::pkg\-Acq\-File(), pkg\-Acq\-Meta\-Index\-::pkg\-Acq\-Meta\-Index(), pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig(), pkg\-Acq\-Sub\-Index\-::pkg\-Acq\-Sub\-Index(), pkg\-Acq\-Archive\-::\-Queue\-Next(), and pkg\-Acq\-Meta\-Index\-::\-Retrieval\-Done().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Rename@{\-Rename}}
+\index{\-Rename@{\-Rename}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Rename}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rename} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-From, }
+\item[{std\-::string}]{\-To}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Item_ae7cc109fe71557b04619356903267877}
+
+
+\-Rename a file without modifying its timestamp. 
+
+\-Many item methods call this as their final action.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-From} & \-The file to be renamed.\\
+\hline
+{\em \-To} & \-The new name of \#\-From. \-If \#\-To exists it will be overwritten. \\
+\hline
+\end{DoxyParams}
+
+
+\-Referenced by pkg\-Acq\-Meta\-Index\-::\-Auth\-Done(), pkg\-Acq\-Sub\-Index\-::\-Done(), pkg\-Acq\-Diff\-Index\-::\-Done(), pkg\-Acq\-Index\-Diffs\-::\-Done(), pkg\-Acq\-Index\-::\-Done(), pkg\-Acq\-Meta\-Sig\-::\-Done(), pkg\-Acq\-Meta\-Index\-::\-Done(), pkg\-Acq\-Archive\-::\-Done(), pkg\-Acq\-File\-::\-Done(), pkg\-Acq\-Meta\-Sig\-::\-Failed(), pkg\-Acq\-Meta\-Index\-::\-Failed(), and pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Report\-Mirror\-Failure@{\-Report\-Mirror\-Failure}}
+\index{\-Report\-Mirror\-Failure@{\-Report\-Mirror\-Failure}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Report\-Mirror\-Failure}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Report\-Mirror\-Failure} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Fail\-Code}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Item_a239c465dd134d912a3926d44fe3552f1}
+
+
+\-Report mirror problem. 
+
+\-This allows reporting mirror failures back to a centralized server. \-The apt-\/report-\/mirror-\/failure script is called for this
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Fail\-Code} & \-A short failure string that is send \\
+\hline
+\end{DoxyParams}
+
+
+\-Referenced by pkg\-Acq\-Index\-::\-Done(), and pkg\-Acq\-Meta\-Index\-::\-Failed().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Short\-Desc@{\-Short\-Desc}}
+\index{\-Short\-Desc@{\-Short\-Desc}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Short\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Short\-Desc} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcquire_1_1Item_a0fc996230e235126c070608a0e170fe5}
+
+
+\-Short item description. 
+
+\begin{DoxyReturn}{\-Returns}
+a brief description of the object being fetched. 
+\end{DoxyReturn}
+
+
+\-Reimplemented in {\bf pkg\-Acq\-Archive} \doxyref{}{p.}{classpkgAcqArchive_a0fc996230e235126c070608a0e170fe5}.
+
+
+
+\-References \-Desc\-U\-R\-I().
+
+
+
+\-Referenced by pkg\-Acq\-Index\-::\-Custom600\-Headers(), pkg\-Acq\-Diff\-Index\-::pkg\-Acq\-Diff\-Index(), pkg\-Acq\-File\-::pkg\-Acq\-File(), pkg\-Acq\-Index\-Diffs\-::pkg\-Acq\-Index\-Diffs(), pkg\-Acq\-Meta\-Index\-::pkg\-Acq\-Meta\-Index(), pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig(), and pkg\-Acq\-Sub\-Index\-::pkg\-Acq\-Sub\-Index().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Start@{\-Start}}
+\index{\-Start@{\-Start}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Start} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_1_1Item_aa2defeee26a310745909e456a14954ef}
+
+
+\-Invoked when the worker starts to fetch this object. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-R\-F\-C822-\/formatted data from the worker process. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Size} & \-The size of the object being fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Referenced by pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Complete@{\-Complete}}
+\index{\-Complete@{\-Complete}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Complete}}\label{classpkgAcquire_1_1Item_a886f6c17d366793eb6202ba2482372f5}
+
+
+\-If {\bfseries true}, the entire object has been successfully fetched. 
+
+\-Subclasses should set this to {\bfseries true} when appropriate. 
+
+\-Referenced by pkg\-Acq\-Sub\-Index\-::\-Done(), pkg\-Acq\-Diff\-Index\-::\-Done(), pkg\-Acq\-Index\-::\-Done(), pkg\-Acq\-Meta\-Sig\-::\-Done(), pkg\-Acq\-Meta\-Index\-::\-Done(), pkg\-Acq\-Archive\-::\-Done(), pkg\-Acq\-File\-::\-Done(), pkg\-Acquire\-::\-Enqueue(), pkg\-Acq\-Sub\-Index\-::\-Failed(), pkg\-Acq\-Diff\-Index\-::\-Failed(), pkg\-Acq\-Index\-Trans\-::\-Failed(), pkg\-Acq\-Meta\-Sig\-::\-Failed(), pkg\-Acq\-Archive\-::\-Finished(), pkg\-Acq\-Diff\-Index\-::\-Parse\-Diff\-Index(), pkg\-Acq\-Archive\-::\-Queue\-Next(), and pkg\-Acq\-Meta\-Index\-::\-Retrieval\-Done().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-I\-D@{\-I\-D}}
+\index{\-I\-D@{\-I\-D}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf \-I\-D}}\label{classpkgAcquire_1_1Item_a7fc877a36248a6101304994352d1ad87}
+
+
+\-A client-\/supplied unique identifier. 
+
+\-This field is initalized to 0; it is meant to be filled in by clients that wish to use it to uniquely identify items.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]it's unused in apt itself \end{DoxyRefDesc}
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Local@{\-Local}}
+\index{\-Local@{\-Local}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Local}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Local}}\label{classpkgAcquire_1_1Item_a98d3c89be817752144bb35823e365fec}
+
+
+\-If {\bfseries true}, the \doxyref{\-U\-R\-I}{p.}{classURI} of this object is \char`\"{}local\char`\"{}. 
+
+\-The only effect of this field is to exclude the object from the download progress indicator's overall statistics. 
+
+\-Referenced by pkg\-Acq\-Sub\-Index\-::\-Done(), pkg\-Acq\-Index\-Diffs\-::\-Done(), pkg\-Acq\-Index\-::\-Done(), pkg\-Acq\-Meta\-Sig\-::\-Done(), pkg\-Acq\-Archive\-::\-Done(), pkg\-Acq\-File\-::\-Done(), pkg\-Acquire\-::\-Enqueue(), pkg\-Acq\-Archive\-::\-Queue\-Next(), and pkg\-Acq\-Meta\-Index\-::\-Retrieval\-Done().
+
+\index{pkg\-Acquire\-::\-Item@{pkg\-Acquire\-::\-Item}!\-Queue\-Counter@{\-Queue\-Counter}}
+\index{\-Queue\-Counter@{\-Queue\-Counter}!pkgAcquire::Item@{pkg\-Acquire\-::\-Item}}
+\subsubsection[{\-Queue\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Queue\-Counter}}\label{classpkgAcquire_1_1Item_a1d1d5538b9875279b01b81e1ef494601}
+
+
+\-The number of fetch queues into which this item has been inserted. 
+
+\-There is one queue for each source from which an item could be downloaded.
+
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acquire}{p.}{classpkgAcquire} 
+\end{DoxySeeAlso}
+
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Dequeue(), pkg\-Acquire\-::\-Queue\-::\-Enqueue(), and pkg\-Acquire\-::\-Queue\-::\-Item\-Done().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+'\" t
+.\"     Title: apt-config
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 29
+de Febrero de 2004
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-CONFIG" "8" "29 de Febrero de 2004" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-config \- Programa para consultar la configuración de APT
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-config\fR\ 'u
+\fBapt\-config\fR [\fB\-hv\fR] [\fB\-o=\fR\fB\fIcadena\-de\-configuración\fR\fR] [\fB\-c=\fR\fB\fIfichero\fR\fR] {[shell] | [dump]}
+.SH "DESCRIPCIóN"
+.PP
+\fBapt\-config\fR
+es un programa interno que usan varios programas del conjunto de herramientas de APT para ofrecer un método de configuración sólido\&. Este programa accede al fichero principal de configuración
+/etc/apt/apt\&.conf
+de forma que resulta sencillo de usar por aplicaciones con scripts\&.
+.PP
+Se debe proporcionar alguna de las siguientes órdenes, a menos que se proporcione una de las opciones
+\fB\-h\fR
+o
+\fB\-\-help\fR\&.
+.PP
+shell
+.RS 4
+Se usa para acceder a la información de la configuración mediante un script\&. Se proporcionan parejas de argumentos, el primero es una variable del intérprete de órdenes y el segundo el valor de la configuración a consultar\&. Como salida muestra una serie de listas de órdenes asignadas al intérprete de órdenes para cada valor presente\&. Ésto se debería usar de la siguiente manera en un script:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+OPTS="\-f"
+RES=`apt\-config shell OPTS MiAplicación::opciones`
+eval $RES
+.fi
+.if n \{\
+.RE
+.\}
+Esto define la variable de entorno del intérprete de órdenes $OPTS con el valor de MyApp::Opciones, y con
+\fB\-f\fR
+por omisión\&.
+.sp
+La opción de configuración se puede corregir posteriormente con un \(Fo/[fdbi]\(Fc\&. El parámetro \(Fof\(Fc devuelve nombres de fichero, \(Fod\(Fc devuelve los directorios, \(Fob\(Fc devuelve verdadero o falso, e \(Foi\(Fc devuelve un número entero\&. Cada uno de los valores devueltos se normaliza y se verifica internamente\&.
+.RE
+.PP
+dump
+.RS 4
+Sólo muestra el contenido del espacio de configuración\&.
+.RE
+.SH "OPCIONES"
+.PP
+Todas las opciones de la línea de órdenes se pueden definir mediante el fichero de configuración, las descripciones indican la opción de la configuración a definir\&. Para opciones de tipo \(Foboolean\(Fc puede invalidar el fichero de configuración utilizando algo como
+\fB\-f\-\fR,\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+u otras muchas variaciones\&.
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Muestra un mensaje corto sobre el uso\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Muestra la versión del programa\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Fichero de configuración: Especifica el fichero de configuración a usar\&. El programa leerá el fichero de configuración predeterminado y, después, este fichero de configuración\&. Si necesita que ciertas opciones de configuración se definan antes que el análisis de los de los ficheros de configuración predeterminados, defina un fichero con la variable de entorno
+\fBAPT_CONFIG\fR\&. Consulte
+\fBapt.conf\fR(5)
+para información sobre la sintaxis\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Define una opción de configuración: Esto definirá una opción arbitraria de configuración\&. La sintaxis es
+\fB\-o Algo::Cosa=cosa\fR\&.
+\fB\-o\fR
+y
+\fB\-\-option\fR
+se pueden usar varias veces para definir diferentes opciones\&.
+.RE
+.SH "VéASE TAMBIéN"
+.PP
+\fBapt.conf\fR(5)
+.SH "DIAGNóSTICOS"
+.PP
+\fBapt\-config\fR
+devuelve cero si no hay ningún error, y el valor 100 en caso de error\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBPágina de errores de APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Si quiere informar de un error en APT, consulte
+/usr/share/doc/debian/bug\-reporting\&.txt
+o use la orden
+\fBreportbug\fR(1)\&.
+.SH "TRADUCCIÓN"
+.PP
+La traducción al español la realizaron Ismael Fanlo, Carlos Mestre, Rudy Godoy, Gustavo Saldumbide, Javier Fernández\-Sanguino y Rubén Porras Campo entre los años 2003 y 2004\&. La traducción fue actualizada por Francisco Javier Cuadrado y Omar Campagne Polaino entre los años 2009 y 2010\&.
+.PP
+Tenga en cuenta que este documento puede contener secciones sin traducir\&. Esto es intencionado para evitar perder contenido cuando la traducción no está actualizada con respecto al documento original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBEquipo de APT\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+Página de errores de APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

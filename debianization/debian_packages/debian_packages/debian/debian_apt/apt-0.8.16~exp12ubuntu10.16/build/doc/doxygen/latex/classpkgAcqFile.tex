@@ -1,0 +1,237 @@
+\section{pkg\-Acq\-File \-Class \-Reference}
+\label{classpkgAcqFile}\index{pkg\-Acq\-File@{pkg\-Acq\-File}}
+
+
+\-Retrieve an arbitrary file to the current directory. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classpkgAcqFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual void {\bf \-Done} (std\-::string \-Message, unsigned long long \-Size, std\-::string \-Calc\-Hash, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object was fetched successfully. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Desc\-U\-R\-I} ()
+\begin{DoxyCompactList}\small\item\em \-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Hash\-Sum} ()
+\begin{DoxyCompactList}\small\item\em \-Hash\-Sum. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Custom600\-Headers} ()
+\begin{DoxyCompactList}\small\item\em \-Custom headers to be sent to the fetch process. \end{DoxyCompactList}\item 
+{\bf pkg\-Acq\-File} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, std\-::string {\bf \-U\-R\-I}, std\-::string \-Hash, unsigned long long \-Size, std\-::string \-Desc, std\-::string {\bf \-Short\-Desc}, const std\-::string \&\-Dest\-Dir=\char`\"{}\char`\"{}, const std\-::string \&\-Dest\-Filename=\char`\"{}\char`\"{}, bool \-Is\-Index\-File=false)
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{pkg\-Acq\-File}{p.}{classpkgAcqFile} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Retrieve an arbitrary file to the current directory. \{\{\{. 
+
+\-The file is retrieved even if it is accessed via a \-U\-R\-L type that normally is a \-N\-O\-P, such as \char`\"{}file\char`\"{}. \-If the download fails, the partial file is renamed to get a \char`\"{}.\-F\-A\-I\-L\-E\-D\char`\"{} extension. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!pkg\-Acq\-File@{pkg\-Acq\-File}}
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{pkg\-Acq\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acq\-File} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner, }
+\item[{std\-::string}]{\-U\-R\-I, }
+\item[{std\-::string}]{\-Hash, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Desc, }
+\item[{std\-::string}]{\-Short\-Desc, }
+\item[{const std\-::string \&}]{\-Dest\-Dir = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\-::string \&}]{\-Dest\-Filename = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{\-Is\-Index\-File = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classpkgAcqFile_aff17c7679226351732ddf579713885a5}
+
+
+\-Create a new \doxyref{pkg\-Acq\-File}{p.}{classpkgAcqFile} object. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Owner} & \-The \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object with which this object is associated.\\
+\hline
+{\em \doxyref{\-U\-R\-I}{p.}{classURI}} & \-The \doxyref{\-U\-R\-I}{p.}{classURI} to download.\\
+\hline
+{\em \-Hash} & \-The hashsum of the file to download, if it is known; otherwise \char`\"{}\char`\"{}.\\
+\hline
+{\em \-Size} & \-The size of the file to download, if it is known; otherwise 0.\\
+\hline
+{\em \-Desc} & \-A description of the file being downloaded.\\
+\hline
+{\em \-Short\-Desc} & \-A brief description of the file being downloaded.\\
+\hline
+{\em \-Dest\-Dir} & \-The directory the file should be downloaded into.\\
+\hline
+{\em \-Dest\-Filename} & \-The filename+path the file is downloaded to.\\
+\hline
+{\em \-Is\-Index\-File} & \-The file is considered a \-Index\-File and cache-\/control headers like \char`\"{}cache-\/control\-: max-\/age=0\char`\"{} are send\\
+\hline
+\end{DoxyParams}
+\-If \-Dest\-Filename is empty, download to \-Dest\-Dir/$<$basename$>$ if \-Dest\-Dir is non-\/empty, \$\-C\-W\-D/$<$basename$>$ otherwise. \-If \-Dest\-Filename is \-N\-O\-T empty, \-Dest\-Dir is ignored and \-Dest\-Filename is the absolute name to which the file should be downloaded. 
+
+\-References pkg\-Acquire\-::\-Item\-Desc\-::\-Description, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-File\-Size, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-::\-Item\-::\-Partial\-Size, pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I(), pkg\-Acquire\-::\-Item\-::\-Short\-Desc(), pkg\-Acquire\-::\-Item\-Desc\-::\-Short\-Desc, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!\-Custom600\-Headers@{\-Custom600\-Headers}}
+\index{\-Custom600\-Headers@{\-Custom600\-Headers}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{\-Custom600\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Custom600\-Headers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqFile_a00fc58f7709000dd60501e4d9034b7b0}
+
+
+\-Custom headers to be sent to the fetch process. 
+
+\begin{DoxyReturn}{\-Returns}
+a string containing \-R\-F\-C822-\/style headers that are to be inserted into the 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message sent to the fetch subprocess. \-The headers are inserted after a newline-\/less line, so they should (if nonempty) have a leading newline and no trailing newline. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_acf5f0479651c9e527657e5a4e76a35f9}.
+
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}}
+\index{\-Desc\-U\-R\-I@{\-Desc\-U\-R\-I}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{\-Desc\-U\-R\-I}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Desc\-U\-R\-I} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqFile_a853c32904fff75b1a5d2c68441f41cad}
+
+
+\-A \char`\"{}descriptive\char`\"{} \-U\-R\-I-\/like string. 
+
+\begin{DoxyReturn}{\-Returns}
+a \doxyref{\-U\-R\-I}{p.}{classURI} that should be used to describe what is being fetched. 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a33630be55b62e4648f24c83378105c6f}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!\-Done@{\-Done}}
+\index{\-Done@{\-Done}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{\-Done}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Done} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{unsigned long long}]{\-Size, }
+\item[{std\-::string}]{\-Hash, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqFile_ac71dc7046004c78e0a799eb6484160e7}
+
+
+\-Invoked by the acquire worker when the object was fetched successfully. 
+
+\-Note that the object might {\itshape not\/} have been written to \-Dest\-File; check for the presence of an \-Alt-\/\-Filename entry in \-Message to find the file to which it was really written.
+
+\-Done is often used to switch from one stage of the processing to the next (e.\-g. fetching, unpacking, copying). \-It is one branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-Data from the acquire method. \-Use \-Lookup\-Tag() to parse it. \\
+\hline
+{\em \-Size} & \-The size of the object that was fetched. \\
+\hline
+{\em \-Hash} & \-The \-Hash\-Sum of the object that was fetched. \\
+\hline
+{\em \-Cnf} & \-The method via which the object was fetched.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a688635545a65b9a4bebed86627574d41}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Complete, pkg\-Acquire\-::\-Item\-::\-Dest\-File, pkg\-Acquire\-::\-Item\-::\-Error\-Text, pkg\-Acquire\-::\-Item\-::\-Local, pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I(), pkg\-Acquire\-::\-Method\-Config\-::\-Removable, pkg\-Acquire\-::\-Item\-::\-Rename(), pkg\-Acquire\-::\-Item\-::\-Stat\-Error, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqFile_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References pkg\-Acquire\-::\-Item\-::\-Error\-Text, pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only, and pkg\-Acquire\-::\-Item\-::\-Queue\-U\-R\-I().
+
+\index{pkg\-Acq\-File@{pkg\-Acq\-File}!\-Hash\-Sum@{\-Hash\-Sum}}
+\index{\-Hash\-Sum@{\-Hash\-Sum}!pkgAcqFile@{pkg\-Acq\-File}}
+\subsubsection[{\-Hash\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf \-Hash\-Sum} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classpkgAcqFile_a3547c3b8f6427183a8720ef931e5510d}
+
+
+\-Hash\-Sum. 
+
+\begin{DoxyReturn}{\-Returns}
+the \-Hash\-Sum of this object, if applicable; otherwise, an empty string. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acquire\-::\-Item} \doxyref{}{p.}{classpkgAcquire_1_1Item_a3547c3b8f6427183a8720ef931e5510d}.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

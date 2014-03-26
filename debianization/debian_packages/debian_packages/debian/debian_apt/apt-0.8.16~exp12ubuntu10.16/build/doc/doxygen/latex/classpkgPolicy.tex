@@ -1,0 +1,80 @@
+\section{pkg\-Policy \-Class \-Reference}
+\label{classpkgPolicy}\index{pkg\-Policy@{pkg\-Policy}}
+
+
+\-Inheritance diagram for pkg\-Policy\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=104pt]{classpkgPolicy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Policy\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgPolicy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Pin}
+\item 
+struct {\bf \-Pkg\-Pin}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries \-Create\-Pin} (pkg\-Version\-Match\-::\-Match\-Type \-Type, std\-::string \-Pkg, std\-::string \-Data, signed short \-Priority)\label{classpkgPolicy_a334fcf0b5ebed2da32ff2d126918ba95}
+
+\item 
+{\bf pkg\-Cache\-::\-Ver\-Iterator} {\bfseries \-Get\-Match} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classpkgPolicy_a07c99d9e5269027d7184581c36cc5803}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bfseries \-Get\-Candidate\-Ver} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classpkgPolicy_a4ac1c4559a4c789e53abb28fe8786c0c}
+
+\item 
+virtual signed short {\bfseries \-Get\-Priority} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classpkgPolicy_a68252ad1c70cfa8a84ba2471cd314e39}
+
+\item 
+virtual signed short {\bfseries \-Get\-Priority} ({\bf pkg\-Cache\-::\-Pkg\-File\-Iterator} const \&\-File)\label{classpkgPolicy_a005eb2274a6e24f178525d5b81c3c6ec}
+
+\item 
+bool {\bfseries \-Init\-Defaults} ()\label{classpkgPolicy_abff56c2533aa0185a7c2bc344fc68916}
+
+\item 
+{\bfseries pkg\-Policy} ({\bf pkg\-Cache} $\ast$\-Owner)\label{classpkgPolicy_a09125a1b5560d8c43c8e669560663a7d}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Pin} $\ast$ {\bfseries \-Pins}\label{classpkgPolicy_ab6e547b6c94c8b367dacd2641198822c}
+
+\item 
+signed short $\ast$ {\bfseries \-P\-F\-Priority}\label{classpkgPolicy_afa4b38370d0caa9db2e8573824943fbe}
+
+\item 
+std\-::vector$<$ {\bf \-Pin} $>$ {\bfseries \-Defaults}\label{classpkgPolicy_a2261f88b5cea770400db122518897cb1}
+
+\item 
+std\-::vector$<$ {\bf \-Pkg\-Pin} $>$ {\bfseries \-Unmatched}\label{classpkgPolicy_aea39fd6037d54b0feda46e49a35cfa23}
+
+\item 
+{\bf pkg\-Cache} $\ast$ {\bfseries \-Cache}\label{classpkgPolicy_a200f99ff6c297b73a2e9302d95ca7a87}
+
+\item 
+bool {\bfseries \-Status\-Override}\label{classpkgPolicy_ad3b12d92507111c100a4821e02f6a30c}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/policy.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/policy.\-cc\end{DoxyCompactItemize}

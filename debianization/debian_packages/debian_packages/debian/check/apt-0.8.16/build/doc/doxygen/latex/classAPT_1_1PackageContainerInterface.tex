@@ -1,0 +1,72 @@
+\section{\-Package\-Container\-Interface \-Class \-Reference}
+\label{classAPT_1_1PackageContainerInterface}\index{\-Package\-Container\-Interface@{\-Package\-Container\-Interface}}
+
+
+\-Inheritance diagram for \-Package\-Container\-Interface\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classAPT_1_1PackageContainerInterface__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf const\-\_\-iterator}
+\item 
+struct {\bf \-Modifier}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Constructor} \{ {\bfseries \-U\-N\-K\-N\-O\-W\-N}, 
+{\bfseries \-R\-E\-G\-E\-X}, 
+{\bfseries \-T\-A\-S\-K}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries insert} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-P)=0\label{classAPT_1_1PackageContainerInterface_a3af7ce44ca2fd592bc5ea3cfe1cdd738}
+
+\item 
+virtual bool {\bfseries empty} () const =0\label{classAPT_1_1PackageContainerInterface_ae22f66718bb2160cb671c4355ceeb1a2}
+
+\item 
+virtual void {\bfseries clear} ()=0\label{classAPT_1_1PackageContainerInterface_a5eeb94d22b8366d1b68d0614384802fe}
+
+\item 
+virtual void {\bfseries set\-Constructor} (\-Constructor const \&con)=0\label{classAPT_1_1PackageContainerInterface_a89796ec9878d04cf60a6a033999dfb3e}
+
+\item 
+virtual \-Constructor {\bfseries get\-Constructor} () const =0\label{classAPT_1_1PackageContainerInterface_abb3e417a6379a97a15763fc9a764beae}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries \-From\-Task} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string pattern, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_a16cb5b96236de4a8ab72d1a6aabd1b08}
+
+\item 
+static bool {\bfseries \-From\-Reg\-Ex} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string pattern, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_aaefa144c45b4268979140612d5259a2b}
+
+\item 
+static {\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bfseries \-From\-Name} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_a1c485e0fdaa90c1f089ef5d97668df4d}
+
+\item 
+static bool {\bfseries \-From\-String} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_ae690083263e27b78a034a30855a1dbf9}
+
+\item 
+static bool {\bfseries \-From\-Command\-Line} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_a67672d23a14e49d59153c10bcd15c972}
+
+\item 
+static bool {\bfseries \-From\-Modifier\-Command\-Line} (unsigned short \&mod\-I\-D, {\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$cmdline, std\-::list$<$ {\bf \-Modifier} $>$ const \&mods, {\bf \-Cache\-Set\-Helper} \&helper)\label{classAPT_1_1PackageContainerInterface_a50268bdc6ac7b73ef0a253353c9c1fcb}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf cacheset.\-h}\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheset.\-cc\end{DoxyCompactItemize}

@@ -1,0 +1,86 @@
+\section{/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.8.16$\sim$exp12ubuntu10.16/apt-\/pkg/cacheset.h \-File \-Reference}
+\label{cacheset_8h}\index{/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheset.\-h@{/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheset.\-h}}
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$fstream$>$}\*
+{\ttfamily \#include $<$list$>$}\*
+{\ttfamily \#include $<$map$>$}\*
+{\ttfamily \#include $<$set$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$iterator$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/error.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/pkgcache.\-h$>$}\*
+{\ttfamily \#include $<$apt-\/pkg/cachefile.\-h$>$}\*
+\-Include dependency graph for cacheset.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cacheset_8h__incl}
+\end{center}
+\end{figure}
+\-This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cacheset_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf \-Cache\-Set\-Helper}
+\item 
+class {\bf \-Package\-Container\-Interface}
+\item 
+class {\bf \-Package\-Container\-Interface\-::const\-\_\-iterator}
+\item 
+struct {\bf \-Package\-Container\-Interface\-::\-Modifier}
+\item 
+class {\bf \-Package\-Container$<$ Container $>$}
+\item 
+class {\bf \-Package\-Container$<$ Container $>$\-::const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em smell like a \doxyref{pkg\-Cache\-::\-Pkg\-Iterator}{p.}{classpkgCache_1_1PkgIterator} \end{DoxyCompactList}\item 
+class {\bf \-Package\-Container$<$ Container $>$\-::iterator}
+\item 
+class {\bf \-Version\-Container\-Interface}
+\item 
+class {\bf \-Version\-Container\-Interface\-::const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em smell like a \doxyref{pkg\-Cache\-::\-Ver\-Iterator}{p.}{classpkgCache_1_1VerIterator} \end{DoxyCompactList}\item 
+struct {\bf \-Version\-Container\-Interface\-::\-Modifier}
+\item 
+class {\bf \-Version\-Container$<$ Container $>$}
+\item 
+class {\bf \-Version\-Container$<$ Container $>$\-::const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em smell like a \doxyref{pkg\-Cache\-::\-Ver\-Iterator}{p.}{classpkgCache_1_1VerIterator} \end{DoxyCompactList}\item 
+class {\bf \-Version\-Container$<$ Container $>$\-::iterator}
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \-Package\-Container\*
+$<$ std\-::set\*
+$<$ {\bf pkg\-Cache\-::\-Pkg\-Iterator} $>$ $>$ {\bfseries \-Package\-Set}\label{namespaceAPT_a61b2ac5c1be8ce0d395b7bec479497c6}
+
+\item 
+typedef \-Package\-Container\*
+$<$ std\-::list\*
+$<$ {\bf pkg\-Cache\-::\-Pkg\-Iterator} $>$ $>$ {\bfseries \-Package\-List}\label{namespaceAPT_af7f88bf1a5ee4e210421280a038bc56a}
+
+\item 
+typedef \-Version\-Container\*
+$<$ std\-::set\*
+$<$ {\bf pkg\-Cache\-::\-Ver\-Iterator} $>$ $>$ {\bfseries \-Version\-Set}\label{namespaceAPT_ae64095324b38671c8c32feec65aeee61}
+
+\item 
+typedef \-Version\-Container\*
+$<$ std\-::list\*
+$<$ {\bf pkg\-Cache\-::\-Ver\-Iterator} $>$ $>$ {\bfseries \-Version\-List}\label{namespaceAPT_a4f377029243711e44b7c8b39a7806bab}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Wrappers around std\-::set to have set\-::iterators which behave similar to the \-Iterators of the cache structures.
+
+\-Provides also a few helper methods which work with these sets 

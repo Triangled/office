@@ -1,0 +1,63 @@
+\section{pkg\-Cache\-:\-:\-Dependency \-Struct \-Reference}
+\label{structpkgCache_1_1Dependency}\index{pkg\-Cache\-::\-Dependency@{pkg\-Cache\-::\-Dependency}}
+
+
+information for a single dependency record  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-Version}\label{structpkgCache_1_1Dependency_a97bd57cd8f5c8df5fd909f8b59f0b71c}
+
+\begin{DoxyCompactList}\small\item\em string of the version the dependency is applied against \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Package}
+\begin{DoxyCompactList}\small\item\em index of the package this depends applies to \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Depends}\label{structpkgCache_1_1Dependency_a7d4d8077c6c68703126e2785fb2ec7ee}
+
+\begin{DoxyCompactList}\small\item\em next dependency of this version \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Next\-Rev\-Depends}\label{structpkgCache_1_1Dependency_a67910351cd81079401bbc02407c79a75}
+
+\begin{DoxyCompactList}\small\item\em next reverse dependency of this package \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Parent\-Ver}\label{structpkgCache_1_1Dependency_a52f779a20efcbb37dccfbc495750adb5}
+
+\begin{DoxyCompactList}\small\item\em version of the package which has the reverse depends \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-I\-D}\label{structpkgCache_1_1Dependency_accaa4003a30cf028eef17d75edb28002}
+
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\item 
+unsigned char {\bf \-Type}\label{structpkgCache_1_1Dependency_aa8450776ab620f8870aaee14ac1747fe}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{\-Dependency}{p.}{structpkgCache_1_1Dependency} type -\/ \-Depends, \-Recommends, \-Conflicts, etc. \end{DoxyCompactList}\item 
+unsigned char {\bf \-Compare\-Op}
+\begin{DoxyCompactList}\small\item\em comparison operator specified on the depends line \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+information for a single dependency record 
+
+\-The records are split up like this to ease processing by the client. \-The base of the linked list is \doxyref{pkg\-Cache\-::\-Version\-::\-Depends\-List}{p.}{structpkgCache_1_1Version_a604d41df003f11e2242e61913e154059}. \-All forms of dependencies are recorded here including \-Depends, \-Recommends, \-Suggests, \-Enhances, \-Conflicts, \-Replaces and \-Breaks. 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Dependency@{pkg\-Cache\-::\-Dependency}!\-Compare\-Op@{\-Compare\-Op}}
+\index{\-Compare\-Op@{\-Compare\-Op}!pkgCache::Dependency@{pkg\-Cache\-::\-Dependency}}
+\subsubsection[{\-Compare\-Op}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf \-Compare\-Op}}\label{structpkgCache_1_1Dependency_a1710777a084deafa2b3022a64cd2f7a4}
+
+
+comparison operator specified on the depends line 
+
+\-If the high bit is set then it is a logical \-O\-R with the previous record. \index{pkg\-Cache\-::\-Dependency@{pkg\-Cache\-::\-Dependency}!\-Package@{\-Package}}
+\index{\-Package@{\-Package}!pkgCache::Dependency@{pkg\-Cache\-::\-Dependency}}
+\subsubsection[{\-Package}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Package}}\label{structpkgCache_1_1Dependency_a381dc2fed51edd65eb2193f8a4c42cc1}
+
+
+index of the package this depends applies to 
+
+\-The generator will -\/ if the package does not already exist -\/ create a blank (no version records) package. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

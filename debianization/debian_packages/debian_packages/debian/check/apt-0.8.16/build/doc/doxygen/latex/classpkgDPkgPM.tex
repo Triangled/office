@@ -1,0 +1,112 @@
+\section{pkg\-D\-Pkg\-P\-M \-Class \-Reference}
+\label{classpkgDPkgPM}\index{pkg\-D\-Pkg\-P\-M@{pkg\-D\-Pkg\-P\-M}}
+
+
+\-Inheritance diagram for pkg\-D\-Pkg\-P\-M\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classpkgDPkgPM__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-D\-Pkg\-P\-M\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgDPkgPM__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Dpkg\-State}
+\item 
+struct {\bf \-Item}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries pkg\-D\-Pkg\-P\-M} ({\bf pkg\-Dep\-Cache} $\ast$\-Cache)\label{classpkgDPkgPM_ae29383cddb81e16ced7d45d1bb76ddc5}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Run\-Scripts\-With\-Pkgs} (const char $\ast$\-Cnf)\label{classpkgDPkgPM_af5f09e66635bc2b4224eb1ef28fb6941}
+
+\item 
+bool {\bfseries \-Send\-V2\-Pkgs} (\-F\-I\-L\-E $\ast$\-F)\label{classpkgDPkgPM_aaa42ce922816957c1c2ddf42b74cfc41}
+
+\item 
+void {\bfseries \-Write\-History\-Tag} (std\-::string const \&tag, std\-::string value)\label{classpkgDPkgPM_a966afa9f2b64d0312b08b5691434801e}
+
+\item 
+void {\bfseries \-Write\-Apport\-Report} (const char $\ast$pkgpath, const char $\ast$errormsg)\label{classpkgDPkgPM_aac638e474068d15daf05e53ee784b0c6}
+
+\item 
+bool {\bfseries \-Open\-Log} ()\label{classpkgDPkgPM_a367828235aced7bf124b0cd6827d9a2d}
+
+\item 
+bool {\bfseries \-Close\-Log} ()\label{classpkgDPkgPM_aa19957b6584dcb60312e625fc5c9dc88}
+
+\item 
+void {\bfseries \-Do\-Stdin} (int master)\label{classpkgDPkgPM_afda8f279f3446d6b9ca0788643a12aae}
+
+\item 
+void {\bfseries \-Do\-Terminal\-Pty} (int master)\label{classpkgDPkgPM_a1290ff9fc293b3678930c1e52015a4ae}
+
+\item 
+void {\bfseries \-Do\-Dpkg\-Status\-Fd} (int statusfd, int \-Out\-Status\-Fd)\label{classpkgDPkgPM_a94882957a3cc63d55b7d999c3606244c}
+
+\item 
+void {\bfseries \-Process\-Dpkg\-Status\-Line} (int \-Out\-Status\-Fd, char $\ast$line)\label{classpkgDPkgPM_a48cf719e90d112bdc2a2f450dab3f745}
+
+\item 
+virtual bool {\bfseries \-Install} ({\bf \-Pkg\-Iterator} \-Pkg, std\-::string \-File)\label{classpkgDPkgPM_a7ee4c25b06686737612d9e9b032f3809}
+
+\item 
+virtual bool {\bfseries \-Configure} ({\bf \-Pkg\-Iterator} \-Pkg)\label{classpkgDPkgPM_a690a971db6740b8b46028b681bff0224}
+
+\item 
+virtual bool {\bfseries \-Remove} ({\bf \-Pkg\-Iterator} \-Pkg, bool \-Purge=false)\label{classpkgDPkgPM_a0fc997d1b3b078d21271df1c16813479}
+
+\item 
+virtual bool {\bfseries \-Go} (int \-Status\-Fd=-\/1)\label{classpkgDPkgPM_aab500dc5936894f0c526222ad491a0f6}
+
+\item 
+virtual void {\bfseries \-Reset} ()\label{classpkgDPkgPM_a372de693ad40b3f42839c8ec6ac845f4}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries pkg\-Failures}\label{classpkgDPkgPM_a70d3397a28f7837466efc1caa9cc27b7}
+
+\item 
+std\-::map$<$ std\-::string, \*
+std\-::vector$<$ struct {\bf \-Dpkg\-State} $>$ $>$ {\bfseries \-Package\-Ops}\label{classpkgDPkgPM_ab75bd21bb6014527bebc76fb12a7a2bb}
+
+\item 
+std\-::map$<$ std\-::string, \*
+unsigned int $>$ {\bfseries \-Package\-Ops\-Done}\label{classpkgDPkgPM_a2dd96d391e75d5246f339975c3ea8c4f}
+
+\item 
+unsigned int {\bfseries \-Packages\-Done}\label{classpkgDPkgPM_a14269522f51e4bfd222ea4aa06df49df}
+
+\item 
+unsigned int {\bfseries \-Packages\-Total}\label{classpkgDPkgPM_abfc859389195c81801fa7fcae30ddb5f}
+
+\item 
+std\-::vector$<$ {\bf \-Item} $>$ {\bfseries \-List}\label{classpkgDPkgPM_a0e2503fb8602a7183931947a2981a333}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/dpkgpm.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/dpkgpm.\-cc\end{DoxyCompactItemize}

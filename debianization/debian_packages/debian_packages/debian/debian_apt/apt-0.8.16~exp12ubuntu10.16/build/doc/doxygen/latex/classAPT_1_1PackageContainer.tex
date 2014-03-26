@@ -1,0 +1,282 @@
+\section{\-Package\-Container$<$ \-Container $>$ \-Class \-Template \-Reference}
+\label{classAPT_1_1PackageContainer}\index{\-Package\-Container$<$ Container $>$@{\-Package\-Container$<$ Container $>$}}
+
+
+\-Inheritance diagram for \-Package\-Container$<$ \-Container $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classAPT_1_1PackageContainer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for \-Package\-Container$<$ \-Container $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classAPT_1_1PackageContainer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf const\-\_\-iterator}
+\begin{DoxyCompactList}\small\item\em smell like a \doxyref{pkg\-Cache\-::\-Pkg\-Iterator}{p.}{classpkgCache_1_1PkgIterator} \end{DoxyCompactList}\item 
+class {\bf iterator}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries insert} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-P)\label{classAPT_1_1PackageContainer_acf82958ac6fdd2fa274525ca1d10f22e}
+
+\item 
+{\footnotesize template$<$class Cont $>$ }\\void {\bfseries insert} ({\bf \-Package\-Container}$<$ \-Cont $>$ const \&pkgcont)\label{classAPT_1_1PackageContainer_a71a82c8e35731f91cdbc91d6d749e9e6}
+
+\item 
+void {\bfseries insert} ({\bf const\-\_\-iterator} begin, {\bf const\-\_\-iterator} end)\label{classAPT_1_1PackageContainer_a35b8e90fde468e389c3ac0f2dbd40ba6}
+
+\item 
+bool {\bfseries empty} () const \label{classAPT_1_1PackageContainer_ac6e61de369e994009e36f344f99c15ad}
+
+\item 
+void {\bfseries clear} ()\label{classAPT_1_1PackageContainer_ac8bb3912a3ce86b15842e79d0b421204}
+
+\item 
+void {\bfseries erase} ({\bf iterator} position)\label{classAPT_1_1PackageContainer_aff88043b8fd94b37279562c24739d9e5}
+
+\item 
+size\-\_\-t {\bfseries erase} (const {\bf pkg\-Cache\-::\-Pkg\-Iterator} x)\label{classAPT_1_1PackageContainer_a967b07d5384e34932584a998135f9a6a}
+
+\item 
+void {\bfseries erase} ({\bf iterator} first, {\bf iterator} last)\label{classAPT_1_1PackageContainer_a44333fb0e829973f9df46bc7230996ff}
+
+\item 
+size\-\_\-t {\bfseries size} () const \label{classAPT_1_1PackageContainer_aac782da1f912bceb5d8ad00c8dc892ac}
+
+\item 
+{\bf const\-\_\-iterator} {\bfseries begin} () const \label{classAPT_1_1PackageContainer_aa4b02d4f1a8500fb07a551069060709f}
+
+\item 
+{\bf const\-\_\-iterator} {\bfseries end} () const \label{classAPT_1_1PackageContainer_a350132543d80a1c1e5be844e6d2878ea}
+
+\item 
+{\bf iterator} {\bfseries begin} ()\label{classAPT_1_1PackageContainer_ad69bd11391be1a1dba5c8202259664f8}
+
+\item 
+{\bf iterator} {\bfseries end} ()\label{classAPT_1_1PackageContainer_acad38d52497a975bfb6f2f6acd76631f}
+
+\item 
+{\bf const\-\_\-iterator} {\bfseries find} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-P) const \label{classAPT_1_1PackageContainer_adbe17e07d3554ae74c043cad11edee3f}
+
+\item 
+void {\bfseries set\-Constructor} (\-Constructor const \&by)\label{classAPT_1_1PackageContainer_a171c32aac3600d3d58649c68593d0e5c}
+
+\item 
+\-Constructor {\bfseries get\-Constructor} () const \label{classAPT_1_1PackageContainer_ad04e44c47fa92c98e2f63cd3aed5f9eb}
+
+\item 
+{\bfseries \-Package\-Container} (\-Constructor const \&by)\label{classAPT_1_1PackageContainer_a933a629f4b46546431b044a62d4918fc}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries insert} ({\bf \-Package\-Container}$<$ \-Cont $>$ const \&pkgcont)\label{classAPT_1_1PackageContainer_af953fea9944d230face3f32b09db548e}
+
+\item 
+{\footnotesize template$<$$>$ }\\bool {\bfseries insert} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-P)\label{classAPT_1_1PackageContainer_a322f61735111fc3346ead5687bae7ff9}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries insert} ({\bf const\-\_\-iterator} begin, {\bf const\-\_\-iterator} end)\label{classAPT_1_1PackageContainer_a00d18415e845758422bcd39bc37b2692}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf \-Package\-Container} {\bf \-From\-Task} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns all packages in the cache who belong to the given task \end{DoxyCompactList}\item 
+static {\bf \-Package\-Container} {\bfseries \-From\-Task} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern)\label{classAPT_1_1PackageContainer_a08de0ba03ca5b4bae640bfe67e1a540c}
+
+\item 
+static {\bf \-Package\-Container} {\bf \-From\-Reg\-Ex} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string pattern, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns all packages in the cache whose name matchs a given pattern \end{DoxyCompactList}\item 
+static {\bf \-Package\-Container} {\bfseries \-From\-Reg\-Ex} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern)\label{classAPT_1_1PackageContainer_afe116ef8f64a47eb5aee21f41db136da}
+
+\item 
+static {\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bf \-From\-Name} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns a package specified by a string \end{DoxyCompactList}\item 
+static {\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bfseries \-From\-Name} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern)\label{classAPT_1_1PackageContainer_a4ecc91e895759ea73d1b278a21ada4ed}
+
+\item 
+static {\bf \-Package\-Container} {\bf \-From\-String} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns all packages specified by a string \end{DoxyCompactList}\item 
+static {\bf \-Package\-Container} {\bfseries \-From\-String} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&pattern)\label{classAPT_1_1PackageContainer_ac77cded29920d20083221e37640cd865}
+
+\item 
+static {\bf \-Package\-Container} {\bf \-From\-Command\-Line} ({\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em returns all packages specified on the commandline \end{DoxyCompactList}\item 
+static {\bf \-Package\-Container} {\bfseries \-From\-Command\-Line} ({\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline)\label{classAPT_1_1PackageContainer_afd489307037f28979c4f49bbaf59550c}
+
+\item 
+static std\-::map$<$ unsigned \*
+short, {\bf \-Package\-Container} $>$ {\bf \-Grouped\-From\-Command\-Line} ({\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline, std\-::list$<$ {\bf \-Modifier} $>$ const \&mods, unsigned short const \&fallback, {\bf \-Cache\-Set\-Helper} \&helper)
+\begin{DoxyCompactList}\small\item\em group packages by a action modifiers \end{DoxyCompactList}\item 
+static std\-::map$<$ unsigned \*
+short, {\bf \-Package\-Container} $>$ {\bfseries \-Grouped\-From\-Command\-Line} ({\bf pkg\-Cache\-File} \&\-Cache, const char $\ast$$\ast$cmdline, std\-::list$<$ {\bf \-Modifier} $>$ const \&mods, unsigned short const \&fallback)\label{classAPT_1_1PackageContainer_a7a1e94525ae38066a061eace59a0d3bb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-Container$>$class A\-P\-T\-::\-Package\-Container$<$ Container $>$}
+
+\-Simple wrapper around a container class like std\-::set to provide a similar interface to a set of packages as to the complete set of all packages in the \doxyref{pkg\-Cache}{p.}{classpkgCache}. 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-From\-Command\-Line@{\-From\-Command\-Line}}
+\index{\-From\-Command\-Line@{\-From\-Command\-Line}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-From\-Command\-Line}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Package\-Container} {\bf \-From\-Command\-Line} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{const char $\ast$$\ast$}]{cmdline, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_a8804a892e26929ba7bcbfcc949d567e5}
+
+
+returns all packages specified on the commandline 
+
+\-Get all package names from the commandline and executes regex's if needed. \-No special package command is supported, just plain names. 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the packages are in \\
+\hline
+{\em cmdline} & \-Command line the package names should be extracted from \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-From\-Name@{\-From\-Name}}
+\index{\-From\-Name@{\-From\-Name}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-From\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bf \-From\-Name} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{std\-::string const \&}]{pattern, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_a1cb88f925ac9d396f33a84553c9b38cf}
+
+
+returns a package specified by a string 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the package is in \\
+\hline
+{\em pattern} & \-String the package name should be extracted from \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+
+
+\-Reimplemented from {\bf \-Package\-Container\-Interface} \doxyref{}{p.}{classAPT_1_1PackageContainerInterface}.
+
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-From\-Reg\-Ex@{\-From\-Reg\-Ex}}
+\index{\-From\-Reg\-Ex@{\-From\-Reg\-Ex}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-From\-Reg\-Ex}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Package\-Container} {\bf \-From\-Reg\-Ex} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{std\-::string}]{pattern, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_a6f977417b24a48f1d91ef7e1fe0ce370}
+
+
+returns all packages in the cache whose name matchs a given pattern 
+
+\-A simple helper responsible for executing a regular expression on all package names in the cache. \-Optional it prints a a notice about the packages chosen cause of the given package. 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the packages are in \\
+\hline
+{\em pattern} & regular expression for package names \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-From\-String@{\-From\-String}}
+\index{\-From\-String@{\-From\-String}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-From\-String}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Package\-Container} {\bf \-From\-String} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{std\-::string const \&}]{pattern, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_a401b518a044bc6539a04f5449b0b45e4}
+
+
+returns all packages specified by a string 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the packages are in \\
+\hline
+{\em pattern} & \-String the package name(s) should be extracted from \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-From\-Task@{\-From\-Task}}
+\index{\-From\-Task@{\-From\-Task}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-From\-Task}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf \-Package\-Container} {\bf \-From\-Task} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{std\-::string const \&}]{pattern, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_aaf37c00a6a9f729a1e761125c22d3d84}
+
+
+returns all packages in the cache who belong to the given task 
+
+\-A simple helper responsible for search for all members of a task in the cache. \-Optional it prints a a notice about the packages chosen cause of the given task. 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the packages are in \\
+\hline
+{\em pattern} & name of the task \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+\index{\-A\-P\-T\-::\-Package\-Container@{\-A\-P\-T\-::\-Package\-Container}!\-Grouped\-From\-Command\-Line@{\-Grouped\-From\-Command\-Line}}
+\index{\-Grouped\-From\-Command\-Line@{\-Grouped\-From\-Command\-Line}!APT::PackageContainer@{\-A\-P\-T\-::\-Package\-Container}}
+\subsubsection[{\-Grouped\-From\-Command\-Line}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::map$<$unsigned short, {\bf \-Package\-Container}$>$ {\bf \-Grouped\-From\-Command\-Line} (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-File} \&}]{\-Cache, }
+\item[{const char $\ast$$\ast$}]{cmdline, }
+\item[{std\-::list$<$ {\bf \-Modifier} $>$ const \&}]{mods, }
+\item[{unsigned short const \&}]{fallback, }
+\item[{{\bf \-Cache\-Set\-Helper} \&}]{helper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classAPT_1_1PackageContainer_a68c51aa3849e97e4abcc9c61b4457756}
+
+
+group packages by a action modifiers 
+
+\-At some point it is needed to get from the same commandline different package sets grouped by a modifier. \-Take apt-\/get install apt awesome-\/ as an example. 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cache} & the packages are in \\
+\hline
+{\em cmdline} & \-Command line the package names should be extracted from \\
+\hline
+{\em mods} & list of modifiers the method should accept \\
+\hline
+{\em fallback} & the default modifier group for a package \\
+\hline
+{\em helper} & responsible for error and message handling \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf cacheset.\-h}\end{DoxyCompactItemize}

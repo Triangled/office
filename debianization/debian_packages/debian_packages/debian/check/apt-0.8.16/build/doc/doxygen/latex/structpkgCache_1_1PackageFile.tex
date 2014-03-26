@@ -1,0 +1,90 @@
+\section{pkg\-Cache\-:\-:\-Package\-File \-Struct \-Reference}
+\label{structpkgCache_1_1PackageFile}\index{pkg\-Cache\-::\-Package\-File@{pkg\-Cache\-::\-Package\-File}}
+
+
+stores information about the files used to generate the cache  
+
+
+
+
+{\ttfamily \#include $<$pkgcache.\-h$>$}
+
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map\-\_\-ptrloc {\bf \-File\-Name}\label{structpkgCache_1_1PackageFile_a7aead2c7e2505c014da71f5a5039d9af}
+
+\begin{DoxyCompactList}\small\item\em physical disk file that this \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} represents \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Archive}
+\begin{DoxyCompactList}\small\item\em the release information \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bfseries \-Codename}\label{structpkgCache_1_1PackageFile_ad95ddc3380840beed4c652b0d3667907}
+
+\item 
+map\-\_\-ptrloc {\bfseries \-Component}\label{structpkgCache_1_1PackageFile_af274f4ac1f76093aa50e372aae6cc463}
+
+\item 
+map\-\_\-ptrloc {\bfseries \-Version}\label{structpkgCache_1_1PackageFile_a97bd57cd8f5c8df5fd909f8b59f0b71c}
+
+\item 
+map\-\_\-ptrloc {\bfseries \-Origin}\label{structpkgCache_1_1PackageFile_aad50fbc02429bd84afc224c7941483eb}
+
+\item 
+map\-\_\-ptrloc {\bfseries \-Label}\label{structpkgCache_1_1PackageFile_ab52e798fbba2af260f7e04a52fd60d3d}
+
+\item 
+map\-\_\-ptrloc {\bfseries \-Architecture}\label{structpkgCache_1_1PackageFile_a10f1e4fdcbbe55cb6a13376e7e9b6b8e}
+
+\item 
+map\-\_\-ptrloc {\bf \-Site}\label{structpkgCache_1_1PackageFile_a2d3aa95903bf6c602018636f73836df0}
+
+\begin{DoxyCompactList}\small\item\em \-The site the index file was fetched from. \end{DoxyCompactList}\item 
+map\-\_\-ptrloc {\bf \-Index\-Type}
+\begin{DoxyCompactList}\small\item\em indicates what sort of index file this is \end{DoxyCompactList}\item 
+unsigned long {\bf \-Size}
+\begin{DoxyCompactList}\small\item\em \-Size of the file. \end{DoxyCompactList}\item 
+time\-\_\-t {\bf mtime}\label{structpkgCache_1_1PackageFile_a4a2d3a53446ef3217564ced73636f9bf}
+
+\begin{DoxyCompactList}\small\item\em \-Modification time for the file. \end{DoxyCompactList}\item 
+unsigned long {\bfseries \-Flags}\label{structpkgCache_1_1PackageFile_a15eb852dd5568416ca012c6dcbff021b}
+
+\item 
+map\-\_\-ptrloc {\bf \-Next\-File}\label{structpkgCache_1_1PackageFile_a834318688de732bfd0e8c1a1e79c44be}
+
+\begin{DoxyCompactList}\small\item\em \-Link to the next \doxyref{\-Package\-File}{p.}{structpkgCache_1_1PackageFile} in the \-Cache. \end{DoxyCompactList}\item 
+unsigned int {\bf \-I\-D}\label{structpkgCache_1_1PackageFile_a0dd14fb57e3d3cc6b6fc5633c6ce65d5}
+
+\begin{DoxyCompactList}\small\item\em unique sequel \-I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+stores information about the files used to generate the cache 
+
+\doxyref{\-Package}{p.}{structpkgCache_1_1Package} files are referenced by \doxyref{\-Version}{p.}{structpkgCache_1_1Version} structures to be able to know after the generation still from which \-Packages file includes this \doxyref{\-Version}{p.}{structpkgCache_1_1Version} as we need this information later on e.\-g. for pinning. 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Cache\-::\-Package\-File@{pkg\-Cache\-::\-Package\-File}!\-Archive@{\-Archive}}
+\index{\-Archive@{\-Archive}!pkgCache::PackageFile@{pkg\-Cache\-::\-Package\-File}}
+\subsubsection[{\-Archive}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Archive}}\label{structpkgCache_1_1PackageFile_a6d67934dc136a22e6fb46b59c04e30f7}
+
+
+the release information 
+
+\-Please see the files document for a description of what the release information means. \index{pkg\-Cache\-::\-Package\-File@{pkg\-Cache\-::\-Package\-File}!\-Index\-Type@{\-Index\-Type}}
+\index{\-Index\-Type@{\-Index\-Type}!pkgCache::PackageFile@{pkg\-Cache\-::\-Package\-File}}
+\subsubsection[{\-Index\-Type}]{\setlength{\rightskip}{0pt plus 5cm}map\-\_\-ptrloc {\bf \-Index\-Type}}\label{structpkgCache_1_1PackageFile_acfb626396ca6145d7ad40913ae1e5e30}
+
+
+indicates what sort of index file this is 
+
+enumerate at least the possible indexes \index{pkg\-Cache\-::\-Package\-File@{pkg\-Cache\-::\-Package\-File}!\-Size@{\-Size}}
+\index{\-Size@{\-Size}!pkgCache::PackageFile@{pkg\-Cache\-::\-Package\-File}}
+\subsubsection[{\-Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf \-Size}}\label{structpkgCache_1_1PackageFile_adc25a45dd4fc0985b33c968068f749c4}
+
+
+\-Size of the file. 
+
+\-Used together with the modification time as a simple check to ensure that the \-Packages file has not been altered since \-Cache generation. 
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf pkgcache.\-h}\end{DoxyCompactItemize}

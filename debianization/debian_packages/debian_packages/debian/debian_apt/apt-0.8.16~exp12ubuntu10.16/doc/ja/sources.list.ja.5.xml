@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>29
+February 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>sources.list</refentrytitle>
+   <manvolnum>5</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>sources.list</refname>
+    <refpurpose>APT 用パッケージリソースリスト</refpurpose>
+ </refnamediv>
+ 
+ <refsect1><title>説明</title>
+   <para>このパッケージリソースリストは、システムで使用するパッケージの保管場所を特定するのに使用されます。今回このマニュアルページには、Debian
+GNU/Linux
+システムで使用するパッケージシステムについてのみ記述します。この制御ファイルは、<filename>/etc/apt/sources.list</filename>
+にあります。</para>
+
+   <para>ソースリストは複数の有効な取得元と、様々な取得メディアをサポートしています。ファイルには 1
+行ごと取得元を列挙し、上の方にあるものから使用します。行のフォーマットは、<literal>タイプ uri 引数</literal> となります。先頭の
+<literal>タイプ</literal> で、<literal>引数</literal>
+のフォーマットを決定します。<literal>uri</literal> は Universal Resource Identifier (URI)
+で、よく知られた Universal Resource Locator (URL) のスーパーセットです。行の残りに # を付けて、コメントにできます。</para>
+ </refsect1>
+ 
+ <refsect1><title>sources.list.d</title>
+   <para>The <filename>/etc/apt/sources.list.d</filename> directory provides a way to
+add sources.list entries in separate files.  The format is the same as for
+the regular <filename>sources.list</filename> file.  File names need to end
+with <filename>.list</filename> and may only contain letters (a-z and A-Z),
+digits (0-9), underscore (_), hyphen (-) and period (.) characters.
+Otherwise APT will print a notice that it has ignored a file if the file
+doesn't match a pattern in the <literal>Dir::Ignore-Files-Silently</literal>
+configuration list - in this case it will be silently ignored.</para>
+ </refsect1>
+
+ <refsect1><title>deb タイプと deb-src タイプ</title>
+   <para>The <literal>deb</literal> type describes a typical two-level Debian
+archive, <filename>distribution/component</filename>. Typically,
+<literal>distribution</literal> is generally an archivename like
+<literal>stable</literal> or <literal>testing</literal> or a codename like
+<literal>&stable-codename;</literal> or
+<literal>&testing-codename;</literal> while component is one of
+<literal>main</literal> <literal>contrib</literal> or
+<literal>non-free</literal>. The <literal>deb-src</literal> type describes a
+debian distribution's source code in the same form as the
+<literal>deb</literal> type.  A <literal>deb-src</literal> line is required
+to fetch source indexes.</para>
+
+
+   <para><literal>deb</literal> タイプと <literal>deb-src</literal> タイプで使用する
+<filename>sources.list</filename> エントリのフォーマットは、以下のようになります。</para>
+
+   <literallayout>deb [ options ] uri distribution [component1] [component2] [...]</literallayout>
+
+   <para><literal>deb</literal> タイプの URI は、APT が必要な情報を見つけられるように、Debian
+ディストリビューションの基底を指定しなければなりません。<literal>distribution</literal>
+には正確なパスを指定できます。その場合 component を省略し、<literal>distribution</literal> はスラッシュ
+(/) で終わらなくてはなりません。これは URL
+で指定されたアーカイブの、特定のサブセクションのみに関心があるときに役に立ちます。<literal>distribution</literal>
+に正確なパスを指定しないのなら、少なくともひとつは <literal>component</literal> を指定しなければなりません。</para>
+
+   <para><literal>distribution</literal> は、<literal>$(ARCH)</literal>
+変数を含む場合があります。<literal>$(ARCH)</literal> 変数は、システムで使用している Debian アーキテクチャ
+(i386, m68k, powerpc, ...) に展開されます。これにより、アーキテクチャに依存しない
+<filename>sources.list</filename>
+ファイルを使用できます。一般的に、これは正しいパスを指定するときに気にするだけです。そうでない場合は、<literal>APT</literal>
+は現在のアーキテクチャで URI を自動的に生成します。</para>
+
+   <para>有効な全 distribution, component の場所から、一部が必要な場合、1 行につき 1 distribution
+しか指定できないため、同じ URI の行を複数記述することになるでしょう。APT は内部で URI
+リストを生成してから、並べ替えます。そして、同じインターネットホストに対しては複数の参照をまとめます。例えば FTP
+接続後、切断してからまた同じホストに再接続するといった、効率の悪いことをせずに、1
+接続にまとめます。この機能は、同時接続匿名ユーザ数を制限している、混んでいる FTP サイトにアクセスするのに便利です。APT
+は、帯域の狭いサイトを効率よく扱うのに、異なるホストへは、接続を並行して行うようにもしています。</para>
+
+   <para><literal>options</literal> is always optional and needs to be surounded by
+square brackets. It can consist of multiple settings in the form
+<literal><replaceable>setting</replaceable>=<replaceable>value</replaceable></literal>.
+Multiple settings are separated by spaces. The following settings are
+supported by APT, note though that unsupported settings will be ignored
+silently:
+   <itemizedlist><listitem><para><literal>arch=<replaceable>arch1</replaceable>,<replaceable>arch2</replaceable>,…</literal>
+can be used to specify for which architectures packages information should
+be downloaded. If this option is not set all architectures defined by the
+<literal>APT::Architectures</literal> option will be downloaded.</para></listitem>
+   <listitem><para><literal>trusted=yes</literal> can be set to indicate that packages from
+this source are always authenificated even if the
+<filename>Release</filename> file is not signed or the signature can't be
+checked. This disables parts of &apt-secure; and should therefore only be
+used in a local and trusted context. <literal>trusted=no</literal> is the
+opposite which handles even correctly authenificated sources as not
+authenificated.</para></listitem>
+   </itemizedlist></para>
+
+   <para>最優先する取得元を最初に記述するというように、優先順に取得元を記述するのは重要です。一般的には、スピードの速い順に並べることになる
+(例えば、CD-ROM に続いてローカルネットワークのホスト、さらに続いて彼方のインターネットホスト) でしょう。</para>
+
+   <para>例:</para>
+   <literallayout>
+deb http://ftp.debian.org/debian &stable-codename; main contrib non-free
+deb http://security.debian.org/ &stable-codename;/updates main contrib non-free
+   </literallayout>
+
+ </refsect1>
+
+ <refsect1><title>URI の仕様</title>
+
+   <para>現在認識する URI タイプは、cdrom, file, http, ftp, copy, ssh, rsh です。<variablelist>
+    <varlistentry><term>ファイル</term>
+    <listitem><para>
+    file スキームは、システム内の任意のディレクトリを、アーカイブとして扱えるようにします。これは NFS マウントやローカルミラーで便利です。</para></listitem>
+    </varlistentry>
+    
+    <varlistentry><term>cdrom</term>
+    <listitem><para>
+    cdrom スキームは、APT がローカル CD-ROM ドライブを、メディア交換しながら使えるようにします。取得元リストに cdrom
+エントリを追加するには、&apt-cdrom; プログラムを使用してください。</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>http</term>
+    <listitem><para>
+    http スキームはアーカイブとして、HTTP サーバを指定します。環境変数 <envar>http_proxy</envar>
+が、http://server:port/ と言った形で指定されていれば、<envar>http_proxy</envar>
+で指定したプロキシサーバを使用します。ユーザ認証が必要な HTTP/1.1 プロキシの場合、http://user:pass@server:port/
+という形で指定してください。この認証方法は安全ではないことに注意してください。</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>ftp</term>
+    <listitem><para>
+    ftp スキームは、アーカイブに FTP サーバを指定します。APT の FTP の振る舞いは、高度に設定できます。詳細は、&apt-conf;
+のマニュアルページをご覧ください。ftp プロキシは、<envar>ftp_proxy</envar>
+環境変数で指定することに注意してください。この方法用に、さらにこの方法でしか使用しないのに、http プロキシを使用することができます (http
+プロキシサーバは大抵 ftp urlも理解できます)。設定ファイルで http を使用する際に、ftp
+プロキシを使用するよう設定してあっても無視されます。</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>copy</term>
+    <listitem><para>
+    copy スキームは、file スキームと同様ですが、パッケージをその場で使用せず、キャッシュディレクトリにコピーするところが違います。zip
+ディスクを使用していて、APT でコピーを行う場合に便利です。</para></listitem>
+    </varlistentry>
+    
+    <varlistentry><term>rsh</term><term>ssh</term>
+    <listitem><para>
+    rsh/ssh メソッドは、与えられたユーザでリモートホストに接続し、ファイルにアクセスするのに rsh/ssh を使用します。あらかじめ RSA
+キーや rhosts の配置しておくと良いでしょう。リモートホストのファイルへのアクセスの際、ファイル転送に標準の
+<command>find</command> コマンドや <command>dd</command> コマンドを使用します。</para></listitem>
+    </varlistentry>
+
+    <varlistentry><term>さらに認識できる URI タイプ</term>
+    <listitem><para>
+    APT can be extended with more methods shipped in other optional packages
+which should follow the nameing scheme
+<literal>apt-transport-<replaceable>method</replaceable></literal>.  The APT
+team e.g. maintains also the <literal>apt-transport-https</literal> package
+which provides access methods for https-URIs with features similar to the
+http method, but other methods for using e.g. debtorrent are also available,
+see <citerefentry>
+<refentrytitle><filename>apt-transport-debtorrent</filename></refentrytitle>
+<manvolnum>1</manvolnum></citerefentry>.
+    </para></listitem>
+    </varlistentry>
+  </variablelist>
+ </para>
+ </refsect1>
+ 
+ <refsect1><title>サンプル</title>
+   <para>/home/jason/debian に格納されている stable/main, stable/contrib, stable/non-free
+用のローカル (または NFS) アーカイブを使用します。</para>
+   <literallayout>deb file:/home/jason/debian stable main contrib non-free</literallayout>
+
+   <para>上記同様ですが、不安定版 (開発版) を使用します。</para>
+   <literallayout>deb file:/home/jason/debian unstable main contrib non-free</literallayout>
+
+   <para>上記のソース行</para>
+   <literallayout>deb-src file:/home/jason/debian unstable main contrib non-free</literallayout>
+
+   <para>The first line gets package information for the architectures in
+<literal>APT::Architectures</literal> while the second always retrieves
+<literal>amd64</literal> and <literal>armel</literal>.</para>
+   <literallayout>deb http://ftp.debian.org/debian &stable-codename; main
+deb [ arch=amd64,armel ] http://ftp.debian.org/debian &stable-codename; main</literallayout>
+
+   <para>archive.debian.org のアーカイブに HTTP アクセスし、hamm/main のみを使用します。</para>
+   <literallayout>deb http://archive.debian.org/debian-archive hamm main</literallayout>
+
+   <para>ftp.debian.org のアーカイブに FTP アクセスし、debian ディレクトリ以下の &stable-codename;/contrib
+のみを使用します。</para>
+   <literallayout>deb ftp://ftp.debian.org/debian &stable-codename; contrib</literallayout>
+
+   <para>ftp.debian.org のアーカイブに FTP アクセスし、debian ディレクトリ以下の unstable/contrib
+のみを使用します。<filename>sources.list</filename> に上記サンプルと一緒に指定された場合、両方のリソース行に対応する
+FTP セッションはひとつだけになります。</para>
+   <literallayout>deb ftp://ftp.debian.org/debian unstable contrib</literallayout>
+
+   <para>Uses HTTP to access the archive at ftp.tlh.debian.org, under the universe
+directory, and uses only files found under
+<filename>unstable/binary-i386</filename> on i386 machines,
+<filename>unstable/binary-amd64</filename> on amd64, and so forth for other
+supported architectures. [Note this example only illustrates how to use the
+substitution variable; official debian archives are not structured like
+this] <literallayout>deb http://ftp.tlh.debian.org/universe unstable/binary-$(ARCH)/</literallayout>
+   </para>
+ </refsect1>
+ 
+ <refsect1><title>関連項目</title>
+   <para>&apt-cache; &apt-conf;
+   </para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

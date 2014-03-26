@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.team; &apt-email; &apt-product; <date>16 February 2010</date></refentryinfo>
+
+ <refmeta>
+   <refentrytitle>apt_preferences</refentrytitle>
+   <manvolnum>5</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt_preferences</refname>
+    <refpurpose>APT 用選択制御ファイル</refpurpose>
+ </refnamediv>
+
+<refsect1>
+<title>説明</title>
+<para>APT 選択ファイル <filename>/etc/apt/preferences</filename> と
+<filename>/etc/apt/preferences.d/</filename>
+フォルダにある断片ファイルは、インストールするパッケージのバージョンを制御するのに使用します。</para>
+
+<para>&sources-list; ファイルに複数のディストリビューション (<literal>stable</literal> と
+<literal>testing</literal> など)
+が指定されていて、パッケージに対し複数のバージョンがインストールできることがあります。このとき APT
+は、利用できるバージョンごとに優先度を割り当てます。依存関係規則を条件として、<command>apt-get</command>
+は、最も高い優先度を持つバージョンをインストールするよう選択します。APT 選択ファイルは、APT
+がデフォルトで割り当てた、パッケージのバージョンの優先度を上書きします。その結果インストールするものの選択を、ユーザが選択できるようになります。</para>
+
+<para>&sources-list;
+ファイルに複数の参照が書かれている場合、パッケージの同じバージョンのインスタンスが複数利用できる可能性があります。この場合、<command>apt-get</command>
+は &sources-list; ファイルの初めの方に指定されているところからダウンロードします。APT
+選択ファイルはバージョンの選択にのみ影響し、インスタンスの選択には影響しません。</para>
+
+<para>Preferences are a strong power in the hands of a system administrator but
+they can become also their biggest nightmare if used without care! APT will
+not questioning the preferences so wrong settings will therefore lead to
+uninstallable packages or wrong decisions while upgrading packages.  Even
+more problems will arise if multiply distribution releases are mixed without
+a good understanding of the following paragraphs.  Packages included in a
+specific release aren't tested in and therefore doesn't always work as
+expected in older or newer releases or together with other packages from
+different releases.  You have been warned.</para>
+
+<para>Note that the files in the <filename>/etc/apt/preferences.d</filename>
+directory are parsed in alphanumeric ascending order and need to obey the
+following naming convention: The files have either no or
+"<literal>pref</literal>" as filename extension and only contain
+alphanumeric, hyphen (-), underscore (_) and period (.) characters.
+Otherwise APT will print a notice that it has ignored a file if the file
+doesn't match a pattern in the <literal>Dir::Ignore-Files-Silently</literal>
+configuration list - in this case it will be silently ignored.</para>
+
+<refsect2><title>APT のデフォルト優先度の割り当て</title>
+
+<para>設定ファイルがなかったり、設定ファイルに特定のパッケージを割り当てるエントリがない場合、そのバージョンの優先度は、そのバージョンが属しているディストリビューションの優先度となります。デフォルトで他のディストリビューションより高い優先度を持つ、特定のディストリビューションを「ターゲットリリース」としておけます。後述する
+<filename>/etc/apt/preferences</filename> ファイルで設定した一般優先度よりもこれは優先されますが、pin
+止めしたパッケージには及ばないことに注意してください。例えば以下のようになります。<programlisting>
+<command>apt-get install -t testing <replaceable>some-package</replaceable></command>
+
+</programlisting> <programlisting>
+APT::Default-Release "stable";
+
+</programlisting>
+</para>
+
+<para>ターゲットリリースが指定されると、APT
+は以下のアルゴリズムで、パッケージのバージョンの優先度を設定します。以下のように割り当てます。<variablelist>
+<varlistentry>
+<term>priority 1</term>
+<listitem><simpara>to the versions coming from archives which in their
+<filename>Release</filename> files are marked as "NotAutomatic: yes" but
+<emphasis>not</emphasis> as "ButAutomaticUpgrades: yes" like the debian
+<literal>experimental</literal> archive.</simpara></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>priority 100</term>
+<listitem><simpara>to the version that is already installed (if any) and to the versions coming
+from archives which in their <filename>Release</filename> files are marked
+as "NotAutomatic: yes" and "ButAutomaticUpgrades: yes" like the debian
+backports archive since <literal>squeeze-backports</literal>.
+</simpara></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>priority 500</term>
+<listitem><simpara>インストールされておらず、ターゲットリリースに含まれないバージョン。</simpara></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>priority 990</term>
+<listitem><simpara>インストールされておらず、ターゲットリリースに含まれるバージョン。</simpara></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>If the target release has not been specified then APT simply assigns
+priority 100 to all installed package versions and priority 500 to all
+uninstalled package versions, except versions coming from archives which in
+their <filename>Release</filename> files are marked as "NotAutomatic: yes" -
+these versions get the priority 1 or priority 100 if it is additionally
+marked as "ButAutomaticUpgrades: yes".</para>
+
+<para>APT は、インストールするパッケージのバージョンを決定するために、以下のルールを上から順番に適用します。
+<itemizedlist>
+<listitem><simpara>有効なバージョンの優先度が 1000
+を越えない場合、決してダウングレードしません。(「ダウングレード」は、現在のパッケージのバージョンよりも、小さいバージョンのものをインストールします。APT
+のデフォルト優先度が 1000
+を越えないことに注意してください。そのような優先度は設定ファイルでのみ設定できます。また、パッケージのダウングレードは危険であることにも注意してください)</simpara></listitem>
+<listitem><simpara>最も高い優先度のバージョンをインストールします。</simpara></listitem>
+<listitem><simpara>同じ優先度のバージョンが複数存在する場合、最も新しいもの (最もバージョン番号が高いもの) をインストールします。</simpara></listitem>
+<listitem><simpara>優先度・バージョン番号が同じものが複数存在し、そのパッケージのメタデータが異なるか <literal>--reinstall</literal>
+オプションが与えられている場合、インストールされていないものをインストールします。</simpara></listitem>
+</itemizedlist>
+</para>
+
+<para>よくある状況として、あるインストールされているパッケージのバージョン (優先度 100) が、&sources-list;
+ファイルのリストから得られるバージョン (優先度 500 か 990) よりも新しくないということがあります。この場合、<command>apt-get
+install <replaceable>some-package</replaceable></command> や <command>apt-get
+upgrade</command> を実行するとパッケージが更新されます。
+</para>
+
+<para>まれに、インストールされているパッケージのバージョンが、<emphasis>他の有効なバージョンよりも</emphasis>新しい場合があります。この時
+<command>apt-get install <replaceable>some-package</replaceable></command> や
+<command>apt-get upgrade</command> を実行しても、ダウングレードしません。</para>
+
+<para>時々、インストールしているパッケージのバージョンが、ターゲットリリースに属するバージョンよりも新しく、他のディストリビューションよりも古い場合があります。そのようなパッケージに対して
+<command>apt-get install <replaceable>some-package</replaceable></command> や
+<command>apt-get upgrade</command>
+を実行すると、パッケージは更新されます。この場合、インストールされているバージョンよりも、少なくとも<emphasis>ひとつ</emphasis>は、高い優先度を持つ有効なパッケージがあるからです。</para>
+</refsect2>
+
+<refsect2><title>APT 設定の効果</title>
+
+<para>APT
+選択ファイルを使うと、システム管理者が優先度を割り当てられるようになります。ファイルは、空白行で区切られた、複数行からなるレコードで構成されています。レコードは特定形式か、汎用形式のどちらかの形式をとります。
+<itemizedlist>
+<listitem>
+<simpara>特定形式は、優先度 ("Pin-Priority") を、指定したパッケージの指定したバージョン (範囲)
+について割り当てます。例えば以下のレコードは、"<literal>5.8</literal>" で始まる
+<filename>perl</filename> パッケージを、高い優先度に設定します。</simpara>
+
+<programlisting>
+Package: perl
+Pin: version 5.8*
+Pin-Priority: 1001
+
+</programlisting>
+</listitem>
+
+<listitem><simpara>汎用形式は、与えられたディストリビューションにある、すべてのパッケージ (<filename>Release</filename>
+ファイルに列挙したパッケージ) の優先度や、FQDNで指定した、特定のインターネットサイトから取得するパッケージの優先度を割り当てます。</simpara>
+
+<simpara>APT
+選択ファイルに書かれている汎用形式のエントリは、パッケージのグループについてのみ適用されます。例えば以下のレコードは、ローカルサイトにある全パッケージについて、高い優先度を割り当てます。</simpara>
+
+<programlisting>
+Package: *
+Pin: origin ""
+Pin-Priority: 999
+
+</programlisting>
+
+<simpara>A note of caution: the keyword used here is "<literal>origin</literal>"
+which can be used to match a hostname. The following record will assign a
+high priority to all versions available from the server identified by the
+hostname "ftp.de.debian.org"</simpara>
+<programlisting>
+Package: *
+Pin: origin "ftp.de.debian.org"
+Pin-Priority: 999
+</programlisting>
+<simpara>This should <emphasis>not</emphasis> be confused with the Origin of a
+distribution as specified in a <filename>Release</filename> file.  What
+follows the "Origin:" tag in a <filename>Release</filename> file is not an
+Internet address but an author or vendor name, such as "Debian" or "Ximian".</simpara>
+
+<simpara>以下のレコードは、アーカイブ名が "<literal>unstable</literal>"
+となっているディストリビューションに属するパッケージを、すべて低い優先度に割り当てます。</simpara>
+
+<programlisting>
+Package: *
+Pin: release a=unstable
+Pin-Priority: 50
+
+</programlisting>
+
+<simpara>The following record assigns a high priority to all package versions
+belonging to any distribution whose Codename is
+"<literal>&testing-codename;</literal>".</simpara>
+
+<programlisting>
+Package: *
+Pin: release n=&testing-codename;
+Pin-Priority: 900
+</programlisting>
+
+<simpara>以下のレコードは、アーカイブ名が "<literal>stable</literal>" で、リリースバージョン番号が
+"<literal>3.0</literal>" となっているリリースに属するパッケージを、すべて高い優先度に割り当てます。</simpara>
+
+<programlisting>
+Package: *
+Pin: release a=stable, v=3.0
+Pin-Priority: 500
+
+</programlisting>
+</listitem>
+</itemizedlist>
+</para>
+
+</refsect2>
+
+<refsect2><title>Regular expressions and glob() syntax</title>
+<para>
+APT also supports pinning by glob() expressions and regular expressions
+surrounded by /. For example, the following example assigns the priority 500
+to all packages from experimental where the name starts with gnome (as a
+glob()-like expression) or contains the word kde (as a POSIX extended
+regular expression surrounded by slashes).
+</para>
+
+<programlisting>
+Package: gnome* /kde/
+Pin: release n=experimental
+Pin-Priority: 500
+</programlisting>
+
+<para>
+The rule for those expressions is that they can occur anywhere where a
+string can occur. Thus, the following pin assigns the priority 990 to all
+packages from a release starting with karmic.
+</para>
+
+<programlisting>
+Package: *
+Pin: release n=karmic*
+Pin-Priority: 990
+</programlisting>
+
+If a regular expression occurs in a <literal>Package</literal> field,
+the behavior is the same as if this regular expression were replaced
+with a list of all package names it matches. It is undecided whether
+this will change in the future, thus you should always list wild-card
+pins first, so later specific pins override it.
+
+The pattern "<literal>*</literal>" in a Package field is not considered
+a glob() expression in itself.
+
+</refsect2>
+
+
+
+
+
+<refsect2>
+<title>APT が優先度に割り込む方法</title>
+
+<para>
+APT 選択ファイルで割り当てた優先度 (P) は、正負の整数でなくてはなりません。これは (おおざっぱにいうと)
+以下のように解釈されます。<variablelist>
+<varlistentry>
+<term>P &gt; 1000</term>
+<listitem><simpara>パッケージがダウングレードしても、このバージョンのパッケージをインストール</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>990 &lt; P &lt;=1000</term>
+<listitem><simpara>インストールされているバージョンの方が新しいことを除き、ターゲットリリースに含まれなくても、このバージョンのパッケージをインストール</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>500 &lt; P &lt;=990</term>
+<listitem><simpara>ターゲットリリースに属するバージョンがあったり、インストールされているバージョンの方が新しいのでなければ、このバージョンのパッケージをインストール</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>100 &lt; P &lt;=500</term>
+<listitem><simpara>他のディストリビューションに属するバージョンがあったり、インストールされているバージョンの方が新しいのでなければ、このバージョンのパッケージをインストール</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>0 &lt; P &lt;=100</term>
+<listitem><simpara>このパッケージがインストールされていない場合、このバージョンのパッケージをインストール</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>P &lt; 0</term>
+<listitem><simpara>このバージョンのインストール禁止</simpara></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>特定形式のレコードが利用可能パッケージバージョンに一致した場合、最初のレコードが、パッケージバージョンの優先度を決定します。失敗して、汎用形式のレコードが利用可能パッケージバージョンに一致した場合、最初のレコードが、パッケージバージョンの優先度を決定します。</para>
+
+<para>例えば、APT 選択ファイルの上の方に、以下のレコードが書かれていると仮定してください。</para>
+
+<programlisting>
+Package: perl
+Pin: version 5.8*
+Pin-Priority: 1001
+
+Package: *
+Pin: origin ""
+Pin-Priority: 999
+
+Package: *
+Pin: release unstable
+Pin-Priority: 50
+
+</programlisting>
+
+<para>すると、以下のように動作します。
+<itemizedlist>
+<listitem><simpara>バージョン番号が "<literal>5.8</literal>" で始まっていれば、<literal>perl</literal>
+の最新の利用可能パッケージがインストールされます。バージョン 5.8* が利用可能で、バージョン 5.9*
+がインストールされている場合、<literal>perl</literal> はダウングレードされます。</simpara></listitem>
+<listitem><simpara>ローカルシステムで有効な、<literal>perl</literal> 以外のどんなパッケージでも、他のバージョンより
+(たとえターゲットリリースに属していても) 優先度が高くなります。
+</simpara></listitem>
+<listitem><simpara>ローカルシステムにはなくても &sources-list; に列挙されたサイトにあるバージョンで、<literal>unstable</literal>
+ディストリビューションに属しているパッケージは、インストールするよう選択され、既にインストールされているバージョンがない場合にのみインストールされます。
+</simpara></listitem>
+</itemizedlist>
+</para>
+</refsect2>
+
+<refsect2>
+<title>パッケージのバージョンとディストリビューションプロパティの決定</title>
+
+<para>&sources-list;
+ファイルに列挙した場所では、その場所で利用できるパッケージを記述した、<filename>Packages</filename> ファイルや
+<filename>Release</filename> ファイルを提供します。 </para>
+
+<para><filename>Packages</filename> ファイルは通常
+<filename>.../dists/<replaceable>dist-name</replaceable>/<replaceable>component</replaceable>/<replaceable>arch</replaceable></filename>
+ディレクトリにあります。例えば、<filename>.../dists/stable/main/binary-i386/Packages</filename>
+です。これは、ディレクトリにある利用可能パッケージごとに、複数行のレコードからできています。APT 優先度の設定は、レコードごとに以下の 2
+行だけです。<variablelist>
+<varlistentry>
+<term><literal>Package:</literal> 行</term>
+<listitem><simpara>パッケージ名</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><literal>Version:</literal> 行</term>
+<listitem><simpara>その名前のパッケージのバージョン番号</simpara></listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>The <filename>Release</filename> file is normally found in the directory
+<filename>.../dists/<replaceable>dist-name</replaceable></filename>: for
+example, <filename>.../dists/stable/Release</filename>, or
+<filename>.../dists/&stable-codename;/Release</filename>.  It consists of a
+single multi-line record which applies to <emphasis>all</emphasis> of the
+packages in the directory tree below its parent.  Unlike the
+<filename>Packages</filename> file, nearly all of the lines in a
+<filename>Release</filename> file are relevant for setting APT priorities:
+<variablelist>
+<varlistentry>
+<term><literal>Archive:</literal> 行や <literal>Suite:</literal> 行</term>
+<listitem><simpara>このディレクトリツリーに属する全パッケージのアーカイブ名です。例えば、"Archive: stable" や "Suite: stable"
+という行は、<filename>Release</filename>
+ファイルの親ディレクトリツリー以下にある全パッケージが、<literal>stable</literal> アーカイブだと指定します。APT
+選択ファイルでこの値を指定するには、以下の行が必要になります。
+</simpara>
+<programlisting>
+Pin: release a=stable
+</programlisting>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><literal>Codename:</literal> 行</term>
+<listitem><simpara>names the codename to which all the packages in the directory tree belong.
+For example, the line "Codename: &testing-codename;" specifies that all of
+the packages in the directory tree below the parent of the
+<filename>Release</filename> file belong to a version named
+<literal>&testing-codename;</literal>.  Specifying this value in the APT
+preferences file would require the line:
+</simpara>
+<programlisting>
+Pin: release n=&testing-codename;
+</programlisting>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><literal>Version:</literal> 行</term>
+<listitem><simpara>リリースバージョン名です。例えば、このツリーのパッケージが、GNU/Linux リリースバージョン 3.0 に属するとします。通常
+<literal>testing</literal> ディストリビューションや <literal>unstable</literal>
+ディストリビューションには、まだリリースされていないので、バージョン番号が付きません。APT
+選択ファイルでこれを指定するには、以下の行のいずれかが必要になります。
+</simpara>
+
+<programlisting>
+Pin: release v=3.0
+Pin: release a=stable, v=3.0
+Pin: release 3.0
+
+</programlisting>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><literal>Component:</literal> 行</term>
+<listitem><simpara><filename>Release</filename>
+ファイルの、ディレクトリツリーにあるパッケージのライセンスコンポーネント名です。例えば、"Component: main"
+という行は、このディレクトリ以下の全ファイルが、<literal>main</literal> コンポーネント (Debian
+フリーソフトウェアガイドラインの元でライセンスされている) であることを表します。APT
+選択ファイルでこのコンポーネントを指定するには、以下の行が必要になります。
+</simpara>
+<programlisting>
+Pin: release c=main
+</programlisting>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><literal>Origin:</literal> 行</term>
+<listitem><simpara><filename>Release</filename>
+ファイルのディレクトリツリーにあるパッケージの提供者名です。ほとんど共通で、<literal>Debian</literal> です。APT
+選択ファイルでこの提供者を指定するには、以下の行が必要になります。
+</simpara>
+<programlisting>
+Pin: release o=Debian
+
+</programlisting>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><literal>Label:</literal> 行</term>
+<listitem><simpara><filename>Release</filename> ファイルのディレクトリツリーにあるパッケージのラベル名です。ほとんど共通で
+<literal>Debian</literal> です。APT 選択ファイルでこのラベルを指定するには、以下の行が必要になります。
+</simpara>
+<programlisting>
+Pin: release l=Debian
+
+</programlisting>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>&sources-list; ファイルに列挙された場所から取得した <filename>Packages</filename> ファイルや
+<filename>Release</filename>
+ファイルはすべて、<filename>/var/lib/apt/lists</filename>
+ディレクトリや、<filename>apt.conf</filename> ファイルの
+<literal>Dir::State::Lists</literal>
+変数で指定した場所に取得されます。例えば、<filename>debian.lcs.mit.edu_debian_dists_unstable_contrib_binary-i386_Release</filename>
+ファイルは、<literal>debian.lcs.mit.edu</literal>
+から取得した、<literal>unstable</literal> ディストリビューションで、<literal>contrib</literal>
+コンポーネントな、<literal>binary-i386</literal> アーキテクチャ用の
+<filename>Release</filename> ファイルを含んでいます。</para>
+</refsect2>
+
+<refsect2>
+<title>APT 設定レコードのオプション行</title>
+
+<para>APT 選択ファイルのレコードごとに、任意で <literal>Explanation:</literal>
+で始まる行を持てます。これは、コメント用の場所を確保します。</para>
+</refsect2>
+</refsect1>
+
+<refsect1>
+<title>サンプル</title>
+<refsect2>
+<title>安定版の追跡</title>
+
+<para>以下の APT 選択ファイルは、<literal>stable</literal>
+ディストリビューションに属する全てのパッケージのバージョンに、デフォルト (500) より高い優先度を割り当て、他の
+<literal>Debian</literal>
+ディストリビューションのパッケージのバージョンには、低くてインストールできないような優先度を割り当てます。<programlisting>
+Explanation: Uninstall or do not install any Debian-originated
+Explanation: package versions other than those in the stable distro
+Package: *
+Pin: release a=stable
+Pin-Priority: 900
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: -10
+
+</programlisting>
+</para>
+
+<para>適切な &sources-list; ファイルと上記の選択ファイルにより、以下のコマンドで最新の <literal>stable</literal>
+バージョンにアップグレードできます。<programlisting>
+apt-get install <replaceable>package-name</replaceable>
+apt-get upgrade
+apt-get dist-upgrade
+</programlisting>
+</para>
+
+<para>以下のコマンドで、指定したパッケージを <literal>testing</literal>
+ディストリビューションの最新バージョンにアップグレードします。このパッケージは、再度このコマンドを発行しないとアップグレードされません。<programlisting>
+apt-get install <replaceable>package</replaceable>/testing
+</programlisting>
+</para>
+</refsect2>
+
+ <refsect2>
+ <title>テスト版や不安定版の追跡</title>
+
+<para>以下の APT 選択ファイルは、<literal>testing</literal>
+ディストリビューションのパッケージのバージョンに高い優先度を割り当て、<literal>unstable</literal>
+ディストリビューションのパッケージのバージョンには低い優先度を割り当てます。また他の <literal>Debian</literal>
+ディストリビューションのパッケージのバージョンには、低くてインストールできないような優先度を割り当てます。<programlisting>
+Package: *
+Pin: release a=testing
+Pin-Priority: 900
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 800
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: -10
+</programlisting>
+</para>
+
+<para>適切な &sources-list; ファイルと上記の選択ファイルにより、以下のコマンドで最新の <literal>testing</literal>
+バージョンにアップグレードできます。<programlisting>
+apt-get install <replaceable>package-name</replaceable>
+apt-get upgrade
+apt-get dist-upgrade
+</programlisting>
+</para>
+
+<para>以下のコマンドで、指定したパッケージを <literal>unstable</literal>
+ディストリビューションの最新バージョンにアップグレードします。それ以降、<command>apt-get upgrade</command> は
+<literal>testing</literal> バージョンのパッケージが更新されていれば <literal>testing</literal>
+の最新版に、<literal>unstable</literal> バージョンのパッケージが更新されていれば
+<literal>unstable</literal> の最新版にアップグレードします。<programlisting>
+apt-get install <replaceable>package</replaceable>/unstable
+</programlisting>
+</para>
+</refsect2>
+
+
+<refsect2>
+<title>コード名リリースの進化の追跡</title>
+
+<para>以下の APT 選択ファイルは、指定したコードネームのディストリビューションに属する全てのパッケージのバージョンに、デフォルト (500)
+より高い優先度を割り当て、他の <literal>Debian</literal>
+ディストリビューション、コード名、アーカイブのパッケージのバージョンには、低くてインストールできないような優先度を割り当てます。この APT
+選択ファイルにより、APT は <literal>testing</literal> アーカイブから、<literal>stable</literal>
+や最新の <literal>oldstable</literal> へ移行できます。コード名の変更に関係なく
+<literal>testing</literal> を追跡したい場合は、上記の設定例を使用するべきです。<programlisting>
+Explanation: Uninstall or do not install any Debian-originated package versions
+Explanation: other than those in the distribution codenamed with &testing-codename; or sid
+Package: *
+Pin: release n=&testing-codename;
+Pin-Priority: 900
+
+Explanation: Debian unstable is always codenamed with sid
+Package: *
+Pin: release n=sid
+Pin-Priority: 800
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: -10
+</programlisting>
+</para>
+
+<para>適切な &sources-list; ファイルと上記の選択ファイルにより、以下のコマンドで、リリースコード名が
+<literal>&testing-codename;</literal> である最新バージョンにアップグレードできます。<programlisting>
+apt-get install <replaceable>package-name</replaceable>
+apt-get upgrade
+apt-get dist-upgrade
+</programlisting>
+</para>
+
+<para>The following command will cause APT to upgrade the specified package to the
+latest version from the <literal>sid</literal> distribution.  Thereafter,
+<command>apt-get upgrade</command> will upgrade the package to the most
+recent <literal>&testing-codename;</literal> version if that is more recent
+than the installed version, otherwise, to the most recent
+<literal>sid</literal> version if that is more recent than the installed
+version.  <programlisting>
+apt-get install <replaceable>package</replaceable>/sid
+</programlisting>
+</para>
+</refsect2>
+</refsect1>
+
+<refsect1>
+<title>ファイル</title>
+  <variablelist>
+&file-preferences;</variablelist>
+</refsect1>
+
+<refsect1>
+<title>関連項目</title>
+<para>&apt-get; &apt-cache; &apt-conf; &sources-list;
+</para>
+</refsect1>
+
+ &manbugs;
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

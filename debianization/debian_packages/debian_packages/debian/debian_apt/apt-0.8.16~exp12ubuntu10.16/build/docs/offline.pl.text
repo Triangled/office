@@ -1,0 +1,263 @@
+
+                      Używanie APT w trybie offline
+                      ------------------------------
+
+                     Jason Gunthorpe <jgg@debian.org>
+
+         $Id: offline.sgml,v 1.8 2003/02/12 15:06:41 doogie Exp $
+
+
+-------------------------------------------------------------------------------
+
+
+Abstract
+--------
+
+     Dokument ten opisuje używanie programu APT w środowiskach
+     pozbawionych dostępu, do sieci, a w szczególności metodę
+     pozwalającą na przeprowadzanie aktualizacji systemu.
+
+
+Copyright Notice
+----------------
+
+     Copyright (C) Jason Gunthorpe, 1999.
+
+     "APT" i ten dokument są oprogramowaniem wolnodostępnym, które
+     można rozpowszechniać oraz zmieniać zgodnie z postanowieniami
+     drugiej albo (wedle uznania) dowolnej późniejszej wersji "Ogólnej
+     Licencji Publicznej GNU" (GNU General Public License) publikowanej
+     przez "Fundację Wolnego Oprogramowania (Free Software Foundation).
+
+     Więcej szczegółów można uzyskać, przeglądając plik
+     zawierający pełen tekst licencji (w systemach Debian jest to plik
+     /usr/share/common-licenses/GPL).
+
+
+-------------------------------------------------------------------------------
+
+
+Contents
+--------
+
+     1.        Wstęp
+     1.1.      Wprowadzenie
+
+     2.        Używanie programu APT na obu komputerach
+     2.1.      Wprowadzenie
+     2.2.      Plik konfiguracyjny
+
+     3.        Używanie programów APT i wget
+     3.1.      Wprowadzenie
+     3.2.      Kolejne kroki
+
+
+-------------------------------------------------------------------------------
+
+
+1. Wstęp
+---------
+
+
+1.1. Wprowadzenie
+-----------------
+
+     Zazwyczaj APT wymaga bezpośredniego dostępu do archiwów Debiana
+     przez sieć lokalną albo przez sieć internetową.  Kolejną
+     niedogodnością może być fakt, że nasz komputer, który pracuje na
+     powolnym łączu takim jak modem, jest znacznie oddalony od innego
+     komputera z szybkim łączem.
+
+     Rozwiązaniem tego problemu jest użycie pojemnych przenośnych
+     nośników takich jak dyskietka Zip lub dysk SuperDisk.  Nośniki te
+     nie są wystarczająco pojemne, by zgromadzić kompletne archiwum
+     Debiana, ale można śmiało dopasować podzbiór dużego archiwum
+     wystarczający dla większości użytkowników.  Pomysł polega na
+     tym, by użyć programu APT do wygenerowania listy pakietów, które
+     są wymagane, a następnie pobraniu ich na dysk, używając innego
+     komputera z właściwą zwartością.  Jest nawet możliwe, by użyć
+     innego komputera z Debianem z zainstalowanym programem APT lub
+     zupełnie innym systemem operacyjnym i programem narzędziowym do
+     pobierania plików takim jak wget.
+
+     Osiągane jest to przez twórcze manipulowanie plikiem konfiguracyjnym
+     programu APT.  Rzeczą niezbędną jest poinformowanie programu APT,
+     aby wskazywał na dysk z plikami archiwum.  Należy zauważyć, że
+     dysk powinien być sformatowany do obsługi systemu plików
+     pozwalającego posługiwać się długimi nazwami plików (np.  ext2,
+     fat32 albo vfat).
+
+
+-------------------------------------------------------------------------------
+
+
+2. Używanie programu APT na obu komputerach
+--------------------------------------------
+
+
+2.1. Wprowadzenie
+-----------------
+
+     APT dostępny na obu komputerach daje najprostszą kombinację.
+     Zasadniczym pomysłem tej metody jest umieszczenie kopii pliku status
+     na dysku i użycie odległego komputera, aby uzyskać najnowsze pliki
+     pakietów i zdecydować, które pakiety trzeba pobrać.  Struktura
+     katalogów na dysku powinna wyglądać następująco:
+
+            /disc/
+              archives/
+                 partial/
+              lists/
+                 partial/
+              status
+              sources.list
+              apt.conf
+
+
+2.2. Plik konfiguracyjny
+------------------------
+
+     Plik konfiguracyjny powinien informować program APT, aby
+     przechowywał swoje pliki na dysku, a także używał plików
+     konfiguracyjnych z dysku.  Plik sources.list powinien zawierać
+     prawidłowe odnośniki, których należy użyć na zdalnym komputerze,
+     a plik status powinien być kopią _/var/lib/dpkg/status_.  Należy
+     zauważyć, że podczas używania lokalnego archiwum trzeba użyć
+     tych samych odnośników o identycznej składni.
+
+     _apt.conf_ musi zawierać niezbędne wpisy, by APT korzystał z dysku:
+
+ APT
+ {
+   /* Wpis nie jest wymagany, jeśli oba komputery mają tę samą architekturę;
+    podaje architekturę naszego komputera programowi APT na odległym komputerze */
+   Architecture "i386";
+
+   Get::Download-Only "true";
+ };
+
+ Dir
+ {
+   /* Używaj katalogu disc na informacje stanu i przekieruj plik status
+      z domyślnego /var/lib/dpkg */
+   State "/disc/";
+   State::status "status";
+
+   // Katalog lokalnie przechowywanych pakietów binarnych
+   Cache::archives "/disc/archives/";
+   Cache "/tmp/";
+
+   // Lokalizacja pliku sources.list.
+   Etc "/disc";
+ };
+
+     Więcej szczegółów można zobaczyć w stronie podręcznika apt.conf
+     i w przykładowym pliku konfiguracyjnym
+     _/usr/share/doc/apt/examples/apt.conf_.
+
+     Pierwszą rzeczą, jaką należy zrobić na oddalonym komputerze z
+     Debianem to zamontować dysk i przekopiować na niego plik
+     _/var/lib/dpkg/status_.  Trzeba także utworzyć strukturę katalogów
+     przedstawioną we "Wprowadzeniu": _archives/partial/_ i
+     _lists/partial/_.  Następnie należy przenieść dysk do oddalonego
+     komputera z szybkim łączem i skonfigurować plik sources.list.  Na
+     oddalonym komputerze wykonujemy kolejno:
+
+ # export APT_CONFIG="/disc/apt.conf"
+ # apt-get update
+ [ APT aktualizuje ustawienia ]
+ # apt-get dist-upgrade
+ [ APT pobiera wszystkie pakiety potrzebne do aktualizacji Twojego systemu ]
+
+     Polecenie dist-upgrade można zastąpić każdym innym podstawowym
+     poleceniem APT, w szczególności dselect-upgrade.  Można nawet
+     użyć APT jako metody dostępu dla _dselect_.  Jednak stworzy to
+     problem w przeniesieniu Twoich operacji wyborów z powrotem na lokalny
+     komputer.
+
+     W tej chwili katalog disc zawiera wszystkie pliki indeksowe oraz
+     archiwa niezbędne do aktualizacji maszyny z Debianem.  Bierzemy dysk
+     z powrotem do siebie i wpisujemy:
+
+  # export APT_CONFIG="/disc/apt.conf"
+  # apt-get check
+  [ APT tworzy lokalną kopię plików cache ]
+  # apt-get --no-d -o dir::state::status=/var/lib/dpkg/status dist-upgrade
+  [ Może też być inne polecenie programu APT ]
+
+     Do prawidłowego działania koniecznie należy podać plik status z
+     lokalnej maszyny.  To jest bardzo ważne!
+
+     Jeśli używasz dselect, możesz wykonać bardzo ryzykowną operację
+     skopiowania disc/status do /var/lib/dpkg/status, tak że wszystkie
+     zmiany, których dokonałeś na odległym komputerze, będą
+     przeniesione.  Mocno zalecam, aby dokonywać doboru pakietów tylko na
+     lokalnym komputerze, ale nie zawsze jest to możliwe.  NIE podmieniaj
+     pliku status, jeśli dpkg lub APT były uruchamiane w międzyczasie!
+
+
+-------------------------------------------------------------------------------
+
+
+3. Używanie programów APT i wget
+----------------------------------
+
+
+3.1. Wprowadzenie
+-----------------
+
+     _wget_ jest popularnym i przenośnym programem narzędziowym
+     pobierania plików, który działa prawie na każdym komputerze.  W
+     przeciwieństwie do metody opisanej powyżej ta wymaga, aby na
+     lokalnym komputerze była aktualna lista dostępnych pakietów.
+
+     Należy stworzyć katalog disc tylko na pakiety do pobrania z innego
+     komputera.  Użyta zostanie do tego opcja --print-uris programu
+     apt-get, a następnie przygotujemy skrypt dla programu wget, który
+     pobierze właściwe pakiety.
+
+
+3.2. Kolejne kroki
+------------------
+
+     W odróżnieniu od poprzedniej metody działania ta nie wymaga
+     specjalnych plików konfiguracyjnych.  Używamy jedynie podstawowych
+     poleceń APT, by wygenerować listę plików.
+
+ # apt-get dist-upgrade
+ [ Wybierz "no" po znaku zachęty, upewnij się, czy to właściwy wybór ]
+ # apt-get -qq --print-uris dist-upgrade > uris
+ # awk '{print "wget -O " $2 " " $1}' < uris > /disc/wget-script
+
+     Można tu użyć także polecenia innego niż dist-upgrade, na
+     przykład dselect-upgrade.
+
+     Plik skryptu /disc/wget-script będzie teraz zawierać listę
+     wywołań programu wget, niezbędnych do pobrania potrzebnych
+     archiwów.  Skrypt ten należy uruchomić w bieżącym katalogu o
+     punkcie montowania disc, tak aby zapisywał dane na tym dysku.
+
+     Na oddalonym komputerze należy wykonać coś takiego
+
+            # cd /disc
+            # sh -x ./wget-script
+            [ czekaj.. ]
+
+     Gdy archiwa zostaną pobrane i dysk wróci do komputera z Debianem,
+     instalowanie można prowadzić dalej poleceniem:
+
+            # apt-get -o dir::cache::archives="/disc/" dist-upgrade
+
+     Które użyje pobranych uprzednio archiwów z dysku.
+
+
+-------------------------------------------------------------------------------
+
+
+     Używanie APT w trybie offline
+
+     Jason Gunthorpe <jgg@debian.org>
+
+
+     $Id: offline.sgml,v 1.8 2003/02/12 15:06:41 doogie Exp $
+

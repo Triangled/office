@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>dpkg technical manual - dpkg internals</title>
+
+<link href="index.html" rel="start">
+<link href="ch2.html" rel="prev">
+<link href="index.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Quick summary of dpkg's external interface">
+<link href="ch2.html" rel="chapter" title="2 dpkg-deb and .deb file internals">
+<link href="ch3.html" rel="chapter" title="3 dpkg internals">
+<link href="ch1.html#s-control" rel="section" title="1.1 Control files">
+<link href="ch1.html#s1.2" rel="section" title="1.2 The dpkg status area">
+<link href="ch1.html#s1.3" rel="section" title="1.3 The dpkg library files">
+<link href="ch1.html#s1.4" rel="section" title="1.4 The &quot;dpkg&quot; command-line utility">
+<link href="ch2.html#s2.1" rel="section" title="2.1 The .deb archive format">
+<link href="ch2.html#s2.2" rel="section" title="2.2 The dpkg-deb command-line">
+<link href="ch3.html#s-updates" rel="section" title="3.1 Updates">
+<link href="ch3.html#s3.2" rel="section" title="3.2 What happens when dpkg reads the database">
+<link href="ch3.html#s3.3" rel="section" title="3.3 How dpkg compares version numbers">
+<link href="ch1.html#s1.4.1" rel="subsection" title="1.4.1 &quot;Documented&quot; command-line interfaces">
+<link href="ch1.html#s1.4.2" rel="subsection" title="1.4.2 Environment variables which dpkg responds to">
+<link href="ch1.html#s1.4.3" rel="subsection" title="1.4.3 Assertions">
+<link href="ch1.html#s1.4.4" rel="subsection" title="1.4.4 --predep-package">
+<link href="ch2.html#s2.2.1" rel="subsection" title="2.2.1 Internal checks used by dpkg-deb when building packages">
+
+</head>
+
+<body>
+
+<p><a name="ch3"></a></p>
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+dpkg technical manual
+<br>Chapter 3 - dpkg internals
+</h1>
+
+<hr>
+
+<p>
+This chapter describes the internals of dpkg itself.  Although the low-level
+formats are quite simple, what dpkg does in certain cases often does not make
+sense.
+</p>
+
+<hr>
+
+<h2><a name="s-updates"></a>3.1 Updates</h2>
+
+<p>
+This describes the /var/lib/dpkg/updates directory.  The function of this
+directory is somewhat strange, and seems only to be used internally.  A
+function called cleanupdates is called whenever the database is scanned.  This
+function in turn uses <code>scandir(3)</code>, to sort the files in this
+directory.  Files who names do not consist entirely of digits are discarded.
+dpkg also causes a fatal error if any of the filenames are different lengths.
+</p>
+
+<p>
+After having scanned the directory, dpkg in turn parses each file the same way
+it parses the status file (they are sorted by the scandir to be in numerical
+order).  After having done this, it then writes the status information back to
+the &quot;status&quot; file, and removes all the &quot;updates&quot; files.
+</p>
+
+<p>
+These files are created internally by dpkg's &quot;checkpoint&quot; function,
+and are cleaned up when dpkg exits cleanly.
+</p>
+
+<p>
+Juding by the use of the updates directory I would call it a Journal.  Inorder
+to effeciently ensure the complete integrity of the status file dpkg will
+&quot;checkpoint&quot; or journal all of it's activities in the updates
+directory.  By merging the contents of the updates directory (in order!!)
+against the original status file it can get the precise current state of the
+system, even in the event of a system failure while dpkg is running.
+</p>
+
+<p>
+The other option would be to sync-rewrite the status file after each operation,
+which would kill performance.
+</p>
+
+<p>
+It is very important that any program that uses the status file abort if the
+updates directory is not empty!  The user should be informed to run dpkg
+manually (what options though??) to correct the situation.
+</p>
+
+<hr>
+
+<h2><a name="s3.2"></a>3.2 What happens when dpkg reads the database</h2>
+
+<p>
+First, the status file is read.  This gives dpkg an initial idea of the
+packages that are there.  Next, the updates files are read in, overriding the
+status file, and if necessary, the status file is re-written, and updates files
+are removed.  Finally, the available file is read.  The available file is read
+with flags which preclude dpkg from updating any status information from it,
+though - installed version, etc., and is also told to record that the packages
+it reads this time are available, not installed.
+</p>
+
+<p>
+More information on updates is given above.
+</p>
+
+<hr>
+
+<h2><a name="s3.3"></a>3.3 How dpkg compares version numbers</h2>
+
+<p>
+Version numbers consist of three parts: the epoch, the upstream version, and
+the Debian revision.  Dpkg compares these parts in that order.  If the epochs
+are different, it returns immediately, and so on.
+</p>
+
+<p>
+However, the important part is how it compares the versions which are
+essentially stored as just strings.  These are compared in two distinct parts:
+those consisting of numerical characters (which are evaluated, and then
+compared), and those consisting of other characters.  When comparing
+non-numerical parts, they are compared as the character values (ASCII), but
+non-alphabetical characters are considered &quot;greater than&quot;
+alphabetical ones.  Also note that longer strings (after excluding differences
+where numerical values are equal) are considered &quot;greater than&quot;
+shorter ones.
+</p>
+
+<p>
+Here are a few examples of how these rules apply:-
+</p>
+
+<pre>
+     15 &gt; 10
+     0010 == 10
+     
+     d.r &gt; dsr
+     32.d.r == 0032.d.r
+     d.rnr &lt; d.rnrn
+</pre>
+
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+dpkg technical manual
+</p>
+
+<address>
+$Id: dpkg-tech.sgml,v 1.3 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Tom Lees <code><a href="mailto:tom@lpsg.demon.co.uk">tom@lpsg.demon.co.uk</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

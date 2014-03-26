@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="group__DBusSignature" kind="group">
+    <compoundname>DBusSignature</compoundname>
+    <title>Type signature parsing</title>
+    <innerclass refid="structDBusSignatureIter" prot="public">DBusSignatureIter</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DBusSignature_1gaba53b1756fe7f665d0657cc50253e3c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_signature_iter_init</definition>
+        <argsstring>(DBusSignatureIter *iter, const char *signature)</argsstring>
+        <name>dbus_signature_iter_init</name>
+        <param>
+          <type><ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>signature</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> for reading a type signature. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is not safe to use on invalid signatures; be sure to validate potentially invalid signatures with dbus_signature_validate before using this function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to an iterator to initialize </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signature</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type signature </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="69" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="67" bodyend="75"/>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusSignatureRealIter_1a54aa77a50490febee5d9b1cbce690639" compoundref="dbus-signature_8c" startline="38">DBusSignatureRealIter::finished</references>
+        <references refid="structDBusSignatureRealIter_1a575114ffd9f42eb84909ea6c5d912c75" compoundref="dbus-signature_8c" startline="39">DBusSignatureRealIter::in_array</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DBUS_EXPORT int dbus_signature_iter_get_current_type</definition>
+        <argsstring>(const DBusSignatureIter *iter)</argsstring>
+        <name>dbus_signature_iter_get_current_type</name>
+        <param>
+          <type>const <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Returns the current type pointed to by the iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the iterator is pointing at a type code such as &apos;s&apos;, then it will be returned directly.</para><para>However, when the parser encounters a container type start character such as &apos;(&apos; for a structure, the corresponding type for the container will be returned, e.g. DBUS_TYPE_STRUCT, not &apos;(&apos;. In this case, you should initialize a sub-iterator with <ref refid="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" kindref="member">dbus_signature_iter_recurse()</ref> to parse the container type.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to an iterator </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>current type (e.g. <ref refid="group__DBusProtocol_1ga7eb77066dadf5415896b44c56d93acce" kindref="member">DBUS_TYPE_STRING</ref>, <ref refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" kindref="member">DBUS_TYPE_ARRAY</ref>) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="93" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="92" bodyend="97"/>
+        <references refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1527" endline="1531">_dbus_first_type_in_signature_c_str</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+        <referencedby refid="group__DBusSignature_1gaebb26dbc79dae5e11629f38b2c8277fd" compoundref="dbus-signature_8c" startline="146" endline="153">dbus_signature_iter_get_element_type</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" compoundref="dbus-signature_8c" startline="207" endline="221">dbus_signature_iter_recurse</referencedby>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga898bbc14392cbedc087ce0be68d35c98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>DBUS_EXPORT char * dbus_signature_iter_get_signature</definition>
+        <argsstring>(const DBusSignatureIter *iter)</argsstring>
+        <name>dbus_signature_iter_get_signature</name>
+        <param>
+          <type>const <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Returns the signature of the single complete type starting at the given iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para>For example, if the iterator is pointing at the start of &quot;(ii)ii&quot; (which is &quot;a struct of two ints, followed by an int, followed by an
+ int&quot;), then &quot;(ii)&quot; would be returned. If the iterator is pointing at one of the &quot;i&quot; then just that &quot;i&quot; would be returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to an iterator </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>current signature; or <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> if no memory. Should be freed with <ref refid="group__DBusMemory_1ga34e666b19b015035a9a31e53da84b39a" kindref="member">dbus_free()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="113" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="112" bodyend="132"/>
+        <references refid="group__DBusString_1ga724656b7091b910965bd1af42d0b7bab" compoundref="dbus-string_8c" startline="1308" endline="1317">_dbus_string_append_len</references>
+        <references refid="group__DBusString_1ga781ca91acda49a834dce7d0ed0eef212" compoundref="dbus-string_8c" startline="263" endline="273">_dbus_string_free</references>
+        <references refid="group__DBusString_1ga348252317f7bb8ac43529972945830ae" compoundref="dbus-string_8c" startline="176" endline="179">_dbus_string_init</references>
+        <references refid="group__DBusString_1ga556cc30c3ab032dbc63e217119f0d1f5" compoundref="dbus-string_8c" startline="640" endline="666">_dbus_string_steal_data</references>
+        <references refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="328" endline="409">_dbus_type_signature_next</references>
+        <references refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1gaebb26dbc79dae5e11629f38b2c8277fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DBUS_EXPORT int dbus_signature_iter_get_element_type</definition>
+        <argsstring>(const DBusSignatureIter *iter)</argsstring>
+        <name>dbus_signature_iter_get_element_type</name>
+        <param>
+          <type>const <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Convenience function for returning the element type of an array; This function allows you to avoid initializing a sub-iterator and getting its current type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Undefined behavior results if you invoke this function when the current type of the iterator is not <ref refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" kindref="member">DBUS_TYPE_ARRAY</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to an iterator </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>current array element type </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="147" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="146" bodyend="153"/>
+        <references refid="group__DBusMarshal_1ga61cc8d9c4e4217be654455d8eb45544c" compoundref="dbus-marshal-basic_8c" startline="1527" endline="1531">_dbus_first_type_in_signature_c_str</references>
+        <references refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" compoundref="dbus-signature_8c" startline="92" endline="97">dbus_signature_iter_get_current_type</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_signature_iter_next</definition>
+        <argsstring>(DBusSignatureIter *iter)</argsstring>
+        <name>dbus_signature_iter_next</name>
+        <param>
+          <type><ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Skip to the next value on this &quot;level&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para>e.g. the next field in a struct, the next value in an array. Returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> at the end of the current container.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FALSE if nothing more to read at or below this level </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="165" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="164" bodyend="193"/>
+        <references refid="group__DBusMarshal_1gaf2f5b2f027fa7d24f6179c6dbdf71a83" compoundref="dbus-marshal-recursive_8c" startline="328" endline="409">_dbus_type_signature_next</references>
+        <references refid="group__DBusProtocol_1ga29ad22c7342ead042ae9e55ae20b49f1" compoundref="dbus-protocol_8h" startline="168">DBUS_DICT_ENTRY_END_CHAR</references>
+        <references refid="group__DBusProtocol_1gaeab5ea0def3f587a0ed548b77d5c5cea" compoundref="dbus-protocol_8h" startline="160">DBUS_STRUCT_END_CHAR</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusSignatureRealIter_1a54aa77a50490febee5d9b1cbce690639" compoundref="dbus-signature_8c" startline="38">DBusSignatureRealIter::finished</references>
+        <references refid="structDBusSignatureRealIter_1a575114ffd9f42eb84909ea6c5d912c75" compoundref="dbus-signature_8c" startline="39">DBusSignatureRealIter::in_array</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DBUS_EXPORT void dbus_signature_iter_recurse</definition>
+        <argsstring>(const DBusSignatureIter *iter, DBusSignatureIter *subiter)</argsstring>
+        <name>dbus_signature_iter_recurse</name>
+        <param>
+          <type>const <ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusSignatureIter" kindref="compound">DBusSignatureIter</ref> *</type>
+          <declname>subiter</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a new iterator pointing to the first type in the current container. </para>        </briefdescription>
+        <detaileddescription>
+<para>The results are undefined when calling this if the current type is a non-container (i.e. if <ref refid="group__DBusSignature_1gaa0c4c8aa34fa266daa55bd37bdad39b8" kindref="member">dbus_type_is_container()</ref> returns <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> for the result of <ref refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" kindref="member">dbus_signature_iter_get_current_type()</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current interator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an iterator to initialize pointing to the first child </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="209" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="207" bodyend="221"/>
+        <references refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" compoundref="dbus-signature_8c" startline="92" endline="97">dbus_signature_iter_get_current_type</references>
+        <references refid="group__DBusProtocol_1ga8912f600f81a773066ca03d9163613a9" compoundref="dbus-protocol_8h" startline="120">DBUS_TYPE_ARRAY</references>
+        <references refid="group__DBusSignature_1gaa0c4c8aa34fa266daa55bd37bdad39b8" compoundref="dbus-signature_8c" startline="293" endline="299">dbus_type_is_container</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="structDBusSignatureRealIter_1a575114ffd9f42eb84909ea6c5d912c75" compoundref="dbus-signature_8c" startline="39">DBusSignatureRealIter::in_array</references>
+        <references refid="structDBusSignatureRealIter_1a88eb8e63ea2550b23ab4e5a2056168c5" compoundref="dbus-signature_8c" startline="37">DBusSignatureRealIter::pos</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga0f4b81be4f6193c7d8da0ee214772e02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_signature_validate</definition>
+        <argsstring>(const char *signature, DBusError *error)</argsstring>
+        <name>dbus_signature_validate</name>
+        <param>
+          <type>const char *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check a type signature for validity. </para>        </briefdescription>
+        <detaileddescription>
+<para>Remember that <ref refid="group__DBusMacros_1ga070d2ce7b6bb7e5c05602aa8c308d0c4" kindref="member">NULL</ref> can always be passed instead of a DBusError*, if you don&apos;t care about having an error name and message.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signature</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid type signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if signature is valid or <ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if an error is set </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="236" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="233" bodyend="250"/>
+        <references refid="group__DBusString_1ga374640ddfa2f0b27a8356e2379ba8043" compoundref="dbus-string_8c" startline="210" endline="217">_dbus_string_init_const</references>
+        <references refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</references>
+        <references refid="group__DBusProtocol_1gac4fd50196d0b801a2204ccad4465c74e" compoundref="dbus-protocol_8h" startline="437">DBUS_ERROR_INVALID_SIGNATURE</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="420">dbus_set_error</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" compoundref="dbus-signature_8c" startline="264" endline="280">dbus_signature_validate_single</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1gac375412dd15a7412967a927d17b6f3d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_signature_validate_single</definition>
+        <argsstring>(const char *signature, DBusError *error)</argsstring>
+        <name>dbus_signature_validate_single</name>
+        <param>
+          <type>const char *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type><ref refid="structDBusError" kindref="compound">DBusError</ref> *</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+<para>Check that a type signature is both valid and contains exactly one complete type. </para>        </briefdescription>
+        <detaileddescription>
+<para>&quot;One complete type&quot; means a single basic type, array, struct, or dictionary, though the struct or array may be arbitrarily recursive and complex. More than one complete type would mean for example &quot;ii&quot; or two integers in sequence.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signature</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a potentially invalid type signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error return </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if signature is valid and has exactly one complete type </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="266" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="264" bodyend="280"/>
+        <references refid="group__DBusProtocol_1gac4fd50196d0b801a2204ccad4465c74e" compoundref="dbus-protocol_8h" startline="437">DBUS_ERROR_INVALID_SIGNATURE</references>
+        <references refid="group__DBusErrors_1ga89d2ad4bde21f9e0057fac07a79885e3" compoundref="dbus-errors_8c" startline="354" endline="420">dbus_set_error</references>
+        <references refid="group__DBusSignature_1gac4761ce10d60d7581cfe98beb6a9c57c" compoundref="dbus-signature_8c" startline="92" endline="97">dbus_signature_iter_get_current_type</references>
+        <references refid="group__DBusSignature_1gaba53b1756fe7f665d0657cc50253e3c8" compoundref="dbus-signature_8c" startline="67" endline="75">dbus_signature_iter_init</references>
+        <references refid="group__DBusSignature_1ga90e48ef4b86180ba033727107b03bd29" compoundref="dbus-signature_8c" startline="164" endline="193">dbus_signature_iter_next</references>
+        <references refid="group__DBusSignature_1ga0f4b81be4f6193c7d8da0ee214772e02" compoundref="dbus-signature_8c" startline="233" endline="250">dbus_signature_validate</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1gaa0c4c8aa34fa266daa55bd37bdad39b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_type_is_container</definition>
+        <argsstring>(int typecode)</argsstring>
+        <name>dbus_type_is_container</name>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <briefdescription>
+<para>A &quot;container type&quot; can contain basic types, or nested container types. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" kindref="member">DBUS_TYPE_INVALID</ref> is not a container type.</para><para>It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function. The valid type-codes are defined by <ref refid="dbus-protocol_8h_source" kindref="compound">dbus-protocol.h</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>typecode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>either a valid type-code or DBUS_TYPE_INVALID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if type is a container </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="294" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="293" bodyend="299"/>
+        <references refid="group__DBusMarshal_1gaa1bf18d3c95d4d4632fbdfe3a1d22bed" compoundref="dbus-marshal-basic_8c" startline="1280" endline="1306">_dbus_type_is_valid</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMessage_1ga943150f4e87fd8507da224d22c266100" compoundref="dbus-message_8c" startline="2707" endline="2759">dbus_message_iter_open_container</referencedby>
+        <referencedby refid="group__DBusSignature_1ga0bd324faaf2dad5d075de3ff6c9b6796" compoundref="dbus-signature_8c" startline="207" endline="221">dbus_signature_iter_recurse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga2d8afef7d754cf15d6b9733f00654c0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_type_is_basic</definition>
+        <argsstring>(int typecode)</argsstring>
+        <name>dbus_type_is_basic</name>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <briefdescription>
+<para>A &quot;basic type&quot; is a somewhat arbitrary concept, but the intent is to include those types that are fully-specified by a single typecode, with no additional type information or nested values. </para>        </briefdescription>
+        <detaileddescription>
+<para>So all numbers and strings are basic types and structs, arrays, and variants are not basic types. <ref refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" kindref="member">DBUS_TYPE_INVALID</ref> is not a basic type.</para><para>It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function. The valid type-codes are defined by <ref refid="dbus-protocol_8h_source" kindref="compound">dbus-protocol.h</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>typecode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>either a valid type-code or DBUS_TYPE_INVALID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref> if type is basic </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="317" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="316" bodyend="324"/>
+        <references refid="group__DBusMarshal_1gaa1bf18d3c95d4d4632fbdfe3a1d22bed" compoundref="dbus-marshal-basic_8c" startline="1280" endline="1306">_dbus_type_is_valid</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <referencedby refid="group__DBusMarshal_1gab331e099fa8cf3d94cf33ad7b20c81ae" compoundref="dbus-marshal-basic_8c" startline="541" endline="644">_dbus_marshal_read_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga54323d48921de8c5bd04ae01548312bb" compoundref="dbus-marshal-basic_8c" startline="848" endline="905">_dbus_marshal_write_basic</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="722" endline="928">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1348" endline="1385">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1ga42e50826b5cf62921728432a8e35292c" compoundref="dbus-marshal-validate_8c" startline="51" endline="292">_dbus_validate_signature_with_reason</referencedby>
+        <referencedby refid="group__DBusMessage_1ga106e541001d6b884d1c3cea6044693ab" compoundref="dbus-message_8c" startline="1682" endline="1793">dbus_message_append_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga17491f3b75b3203f6fc47dcc2e3b221b" compoundref="dbus-message_8c" startline="2514" endline="2611">dbus_message_iter_append_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__DBusSignature_1ga2f89962cbd33e4ad843824157bae2093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__DBusTypes_1ga39c9cb0f3a2a8ad6f55cc4855d035349" kindref="member">dbus_bool_t</ref></type>
+        <definition>DBUS_EXPORT dbus_bool_t dbus_type_is_fixed</definition>
+        <argsstring>(int typecode)</argsstring>
+        <name>dbus_type_is_fixed</name>
+        <param>
+          <type>int</type>
+          <declname>typecode</declname>
+        </param>
+        <briefdescription>
+<para>Tells you whether values of this type can change length if you set them to some other value. </para>        </briefdescription>
+        <detaileddescription>
+<para>For this purpose, you assume that the first byte of the old and new value would be in the same location, so alignment padding is not a factor.</para><para>This function is useful to determine whether <ref refid="group__DBusMessage_1gae195a3312ae445e7ef0196854f3523f8" kindref="member">dbus_message_iter_get_fixed_array()</ref> may be used.</para><para>Some structs are fixed-size (if they contain only fixed-size types) but struct is not considered a fixed type for purposes of this function.</para><para>It is an error to pass an invalid type-code, other than DBUS_TYPE_INVALID, to this function. The valid type-codes are defined by <ref refid="dbus-protocol_8h_source" kindref="compound">dbus-protocol.h</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>typecode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>either a valid type-code or DBUS_TYPE_INVALID </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1" kindref="member">FALSE</ref> if the type can occupy different lengths </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" line="347" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-signature.c" bodystart="346" bodyend="368"/>
+        <references refid="group__DBusMarshal_1gaa1bf18d3c95d4d4632fbdfe3a1d22bed" compoundref="dbus-marshal-basic_8c" startline="1280" endline="1306">_dbus_type_is_valid</references>
+        <references refid="group__DBusProtocol_1ga624ecee83984330ad89cbf064a2b28e6" compoundref="dbus-protocol_8h" startline="70">DBUS_TYPE_BOOLEAN</references>
+        <references refid="group__DBusProtocol_1ga355d6d0998164a5eb915a26fb67fce5f" compoundref="dbus-protocol_8h" startline="66">DBUS_TYPE_BYTE</references>
+        <references refid="group__DBusProtocol_1gac30c00bb6de04d0886cfbace276ec353" compoundref="dbus-protocol_8h" startline="98">DBUS_TYPE_DOUBLE</references>
+        <references refid="group__DBusProtocol_1ga49cdd4169af84ed7937f34b31f43e331" compoundref="dbus-protocol_8h" startline="74">DBUS_TYPE_INT16</references>
+        <references refid="group__DBusProtocol_1ga5943b497db2e1dec04fae60584a294bb" compoundref="dbus-protocol_8h" startline="82">DBUS_TYPE_INT32</references>
+        <references refid="group__DBusProtocol_1gabda4301c14b367f151f86769a1c27c5b" compoundref="dbus-protocol_8h" startline="90">DBUS_TYPE_INT64</references>
+        <references refid="group__DBusProtocol_1gaa9588da889743b2119dc6664712ae51e" compoundref="dbus-protocol_8h" startline="60">DBUS_TYPE_INVALID</references>
+        <references refid="group__DBusProtocol_1gad74b8d93a1464182ac1af7e0e2435f46" compoundref="dbus-protocol_8h" startline="78">DBUS_TYPE_UINT16</references>
+        <references refid="group__DBusProtocol_1gaedb1740bd8a9174b98ac593eded25d49" compoundref="dbus-protocol_8h" startline="86">DBUS_TYPE_UINT32</references>
+        <references refid="group__DBusProtocol_1gac59cc8f824813444cc9585effd4770d7" compoundref="dbus-protocol_8h" startline="94">DBUS_TYPE_UINT64</references>
+        <references refid="group__DBusProtocol_1ga59f8acaeb207b182982dfb97174b7f16" compoundref="dbus-protocol_8h" startline="114">DBUS_TYPE_UNIX_FD</references>
+        <references refid="group__DBusMacros_1gaa93f0eb578d23995850d61f7d61c55c1">FALSE</references>
+        <references refid="group__DBusMacros_1gaa8cecfc5c5c054d2875c03e77b7be15d">TRUE</references>
+        <referencedby refid="group__DBusMarshal_1ga990da87b984d8917da26b89a6470fdf5" compoundref="dbus-marshal-basic_8c" startline="1078" endline="1122">_dbus_marshal_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessageInternals_1ga1ae02a435d19c3363e11c74b08c43ab2" compoundref="dbus-message_8c" startline="722" endline="928">_dbus_message_iter_get_args_valist</referencedby>
+        <referencedby refid="group__DBusMarshal_1gae9a65c05e58ace9c83352f65af2fe745" compoundref="dbus-marshal-recursive_8c" startline="911" endline="961">_dbus_type_reader_read_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMarshal_1gaaf11ca429434c2c280f5fad34ed95204" compoundref="dbus-marshal-recursive_8c" startline="1348" endline="1385">_dbus_type_reader_set_basic</referencedby>
+        <referencedby refid="group__DBusMarshal_1gacf99495cbed7462992b6a231563b4528" compoundref="dbus-marshal-recursive_8c" startline="2344" endline="2380">_dbus_type_writer_write_fixed_multi</referencedby>
+        <referencedby refid="group__DBusMessage_1ga106e541001d6b884d1c3cea6044693ab" compoundref="dbus-message_8c" startline="1682" endline="1793">dbus_message_append_args_valist</referencedby>
+        <referencedby refid="group__DBusMessage_1ga6e2d1e936c3c61fe00d80a3f22fd5e76" compoundref="dbus-message_8c" startline="2649" endline="2683">dbus_message_iter_append_fixed_array</referencedby>
+        <referencedby refid="group__DBusMessage_1gae195a3312ae445e7ef0196854f3523f8" compoundref="dbus-message_8c" startline="2251" endline="2265">dbus_message_iter_get_fixed_array</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parsing D-Bus type signatures. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

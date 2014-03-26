@@ -1,0 +1,138 @@
+\section{deb\-List\-Parser \-Class \-Reference}
+\label{classdebListParser}\index{deb\-List\-Parser@{deb\-List\-Parser}}
+
+
+\-Inheritance diagram for deb\-List\-Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{classdebListParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for deb\-List\-Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdebListParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Word\-List}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string {\bfseries \-Package} ()\label{classdebListParser_a0b42356a52e3169904ae52d71934f5c9}
+
+\item 
+virtual std\-::string {\bfseries \-Architecture} ()\label{classdebListParser_a71b60d67125bb5fa8dc6da7544252e7b}
+
+\item 
+virtual bool {\bfseries \-Architecture\-All} ()\label{classdebListParser_a2e8b73423d5e4e54a00f1e44949a2577}
+
+\item 
+virtual std\-::string {\bfseries \-Version} ()\label{classdebListParser_a5db809ed0cf913a48d41fa93ec17e90b}
+
+\item 
+virtual bool {\bfseries \-New\-Version} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)\label{classdebListParser_ab0739a9acf5509c3381d49350f6c4cc0}
+
+\item 
+virtual std\-::string {\bfseries \-Description} ()\label{classdebListParser_ad34624ea7e2500b95e4f44dcffb215c6}
+
+\item 
+virtual std\-::string {\bfseries \-Description\-Language} ()\label{classdebListParser_a84a5d2c87819e93b88e83c6b3afdbe79}
+
+\item 
+virtual {\bf \-M\-D5\-Sum\-Value} {\bfseries \-Description\-\_\-md5} ()\label{classdebListParser_af6e909cae5e99d04567e77aade983b66}
+
+\item 
+virtual unsigned short {\bfseries \-Version\-Hash} ()\label{classdebListParser_a1817727f21ff86bb623fd169cd4bcee0}
+
+\item 
+virtual bool {\bfseries \-Use\-Package} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} \&\-Pkg, {\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)\label{classdebListParser_a856dbb6832b5a820d3fec867298979aa}
+
+\item 
+virtual unsigned long {\bfseries \-Offset} ()\label{classdebListParser_a522e22486c2fd3219fad98a9df5f0ab2}
+
+\item 
+virtual unsigned long {\bfseries \-Size} ()\label{classdebListParser_ae515cee0e23177097ae899aa6249d3f3}
+
+\item 
+virtual bool {\bfseries \-Step} ()\label{classdebListParser_a01c3fd4b023ba615710fdf31e11a7be1}
+
+\item 
+bool {\bfseries \-Load\-Release\-Info} ({\bf pkg\-Cache\-::\-Pkg\-File\-Iterator} \&\-File\-I, {\bf \-File\-Fd} \&\-File, std\-::string section)\label{classdebListParser_a045594301522e29d4764ab65e214b727}
+
+\item 
+{\bfseries deb\-List\-Parser} ({\bf \-File\-Fd} $\ast$\-File, std\-::string const \&\-Arch=\char`\"{}\char`\"{})\label{classdebListParser_ae5cc1f214108960c86c23a97b094e9d1}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char {\bfseries \-Get\-Prio} (std\-::string \-Str)\label{classdebListParser_a0dad6b7b64cf47f4b2e3c37d91936d86}
+
+\item 
+static const char $\ast$ {\bfseries \-Parse\-Depends} (const char $\ast$\-Start, const char $\ast$\-Stop, std\-::string \&\-Package, std\-::string \&\-Ver, unsigned int \&\-Op, bool const \&\-Parse\-Arch\-Flags=false, bool const \&\-Strip\-Multi\-Arch=true)\label{classdebListParser_a1cafb6944a4188116e531eaf6b9af72b}
+
+\item 
+static const char $\ast$ {\bfseries \-Convert\-Relation} (const char $\ast$\-I, unsigned int \&\-Op)\label{classdebListParser_af750b129745fa9af327045eff83a89e9}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bfseries \-Uniq\-Find\-Tag\-Write} (const char $\ast$\-Tag)\label{classdebListParser_a26ad3fcf81e736c9d4105e568641ad5b}
+
+\item 
+virtual bool {\bfseries \-Parse\-Status} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} \&\-Pkg, {\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)\label{classdebListParser_a0086e995b5bccf24c99c487d5081f3f2}
+
+\item 
+bool {\bfseries \-Parse\-Depends} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver, const char $\ast$\-Tag, unsigned int \-Type)\label{classdebListParser_ad1a900475e4f7dd9f7afd7f24cdc406a}
+
+\item 
+bool {\bfseries \-Parse\-Provides} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver)\label{classdebListParser_a21ffb9af13cac1ea9733e756760aa636}
+
+\item 
+bool {\bfseries \-New\-Provides\-All\-Arch} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \&\-Ver, std\-::string const \&\-Package, std\-::string const \&\-Version)\label{classdebListParser_a9dc4c3191f201da455ce88f93485bcac}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries \-Grab\-Word} (std\-::string \-Word, {\bf \-Word\-List} $\ast$\-List, unsigned char \&\-Out)\label{classdebListParser_a9988289674a07dff4ff3b63ce9dbd0f0}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Tag\-File} {\bfseries \-Tags}\label{classdebListParser_a56fb4a3ec342b9f491120135aa74923d}
+
+\item 
+{\bf pkg\-Tag\-Section} {\bfseries \-Section}\label{classdebListParser_a1826b1e33f5fa7e90d6ff86fea78e88b}
+
+\item 
+unsigned long {\bfseries i\-Offset}\label{classdebListParser_abfc00c1dd769d9b55665cbea01ed6cf3}
+
+\item 
+std\-::string {\bfseries \-Arch}\label{classdebListParser_ad2f7761f18ebac2e10b9aafca47806c0}
+
+\item 
+std\-::vector$<$ std\-::string $>$ {\bfseries \-Architectures}\label{classdebListParser_afd0b978645ca79fcb0653a0d3ecda7de}
+
+\item 
+bool {\bfseries \-Multi\-Arch\-Enabled}\label{classdebListParser_aad93bdcb19eb95fd0aaadadae2a67485}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/deblistparser.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/deb/deblistparser.\-cc\end{DoxyCompactItemize}

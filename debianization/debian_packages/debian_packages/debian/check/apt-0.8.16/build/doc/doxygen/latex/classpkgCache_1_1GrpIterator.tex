@@ -1,0 +1,105 @@
+\section{pkg\-Cache\-:\-:\-Grp\-Iterator \-Class \-Reference}
+\label{classpkgCache_1_1GrpIterator}\index{pkg\-Cache\-::\-Grp\-Iterator@{pkg\-Cache\-::\-Grp\-Iterator}}
+
+
+\-Inheritance diagram for pkg\-Cache\-:\-:\-Grp\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classpkgCache_1_1GrpIterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Cache\-:\-:\-Grp\-Iterator\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgCache_1_1GrpIterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \-Grp\-Iterator} ({\bf pkg\-Cache} \&\-Owner)\label{classpkgCache_1_1GrpIterator_abc256dfc26d4184123209c9baf04a980}
+
+\item 
+virtual void {\bfseries operator++} (int)\label{classpkgCache_1_1GrpIterator_a2aefc5a84a51687145f8514f4029c26c}
+
+\item 
+virtual void {\bfseries operator++} ()\label{classpkgCache_1_1GrpIterator_a45329dfbd811324028e4db55ee992599}
+
+\item 
+const char $\ast$ {\bfseries \-Name} () const \label{classpkgCache_1_1GrpIterator_a6f8ea4f3037e8339cbd3e55d97ed08a9}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Package\-List} () const \label{classpkgCache_1_1GrpIterator_a425b6d9961abb920de4453806354368e}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Find\-Pkg} (std\-::string \-Arch=\char`\"{}any\char`\"{}) const \label{classpkgCache_1_1GrpIterator_aee01d609e94d703dc952ed5b4b626727}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bf \-Find\-Preferred\-Pkg} (bool const \&\-Prefer\-Non\-Virtual=true) const 
+\begin{DoxyCompactList}\small\item\em find the package with the \char`\"{}best\char`\"{} architecture \end{DoxyCompactList}\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Next\-Pkg} ({\bf \-Pkg\-Iterator} const \&\-Pkg) const \label{classpkgCache_1_1GrpIterator_a363adce5964c0df999372426950c3e65}
+
+\item 
+{\bfseries \-Grp\-Iterator} ({\bf pkg\-Cache} \&\-Owner, {\bf \-Group} $\ast$\-Trg)\label{classpkgCache_1_1GrpIterator_ab8b2740bcc231979ee94428811fbfad7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-Group} $\ast$ {\bf \-Owner\-Pointer} () const 
+\begin{DoxyCompactList}\small\item\em \-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Cache\-::\-Grp\-Iterator@{pkg\-Cache\-::\-Grp\-Iterator}!\-Find\-Preferred\-Pkg@{\-Find\-Preferred\-Pkg}}
+\index{\-Find\-Preferred\-Pkg@{\-Find\-Preferred\-Pkg}!pkgCache::GrpIterator@{pkg\-Cache\-::\-Grp\-Iterator}}
+\subsubsection[{\-Find\-Preferred\-Pkg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bf \-Find\-Preferred\-Pkg} (
+\begin{DoxyParamCaption}
+\item[{bool const \&}]{\-Prefer\-Non\-Virtual = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}\label{classpkgCache_1_1GrpIterator_a98f2f26c25e18247f674d7be4537b841}
+
+
+find the package with the \char`\"{}best\char`\"{} architecture 
+
+\-The best architecture is either the \char`\"{}native\char`\"{} or the first in the list of \-Architectures which is not an end-\/\-Pointer
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Prefer\-Non\-Virtual} & tries to respond with a non-\/virtual package and only if this fails returns the best virtual package \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Configuration\-::get\-Architectures().
+
+\index{pkg\-Cache\-::\-Grp\-Iterator@{pkg\-Cache\-::\-Grp\-Iterator}!\-Owner\-Pointer@{\-Owner\-Pointer}}
+\index{\-Owner\-Pointer@{\-Owner\-Pointer}!pkgCache::GrpIterator@{pkg\-Cache\-::\-Grp\-Iterator}}
+\subsubsection[{\-Owner\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Group}$\ast$ {\bf \-Owner\-Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classpkgCache_1_1GrpIterator_a70e5123456c1a2d4f4b211bb74764c0e}
+
+
+\-Returns the \-Pointer for this struct in the owner \-The implementation of this method should be pretty short as it will only return the \-Pointer into the mmap stored in the owner but the name of this pointer is different for each stucture and we want to abstract here at least for the basic methods from the actual structure. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pointer to the first structure of this type 
+\end{DoxyReturn}
+
+
+\-Implements {\bf pkg\-Cache\-::\-Iterator$<$ Group, Grp\-Iterator $>$} \doxyref{}{p.}{classpkgCache_1_1Iterator_ac5f859168a3ef5a04d97c141fdb6d80d}.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheiterators.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/pkgcache.\-cc\end{DoxyCompactItemize}

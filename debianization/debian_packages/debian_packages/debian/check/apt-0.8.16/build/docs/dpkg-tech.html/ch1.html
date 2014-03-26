@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>dpkg technical manual - Quick summary of dpkg's external interface</title>
+
+<link href="index.html" rel="start">
+<link href="index.html" rel="prev">
+<link href="ch2.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Quick summary of dpkg's external interface">
+<link href="ch2.html" rel="chapter" title="2 dpkg-deb and .deb file internals">
+<link href="ch3.html" rel="chapter" title="3 dpkg internals">
+<link href="ch1.html#s-control" rel="section" title="1.1 Control files">
+<link href="ch1.html#s1.2" rel="section" title="1.2 The dpkg status area">
+<link href="ch1.html#s1.3" rel="section" title="1.3 The dpkg library files">
+<link href="ch1.html#s1.4" rel="section" title="1.4 The &quot;dpkg&quot; command-line utility">
+<link href="ch2.html#s2.1" rel="section" title="2.1 The .deb archive format">
+<link href="ch2.html#s2.2" rel="section" title="2.2 The dpkg-deb command-line">
+<link href="ch3.html#s-updates" rel="section" title="3.1 Updates">
+<link href="ch3.html#s3.2" rel="section" title="3.2 What happens when dpkg reads the database">
+<link href="ch3.html#s3.3" rel="section" title="3.3 How dpkg compares version numbers">
+<link href="ch1.html#s1.4.1" rel="subsection" title="1.4.1 &quot;Documented&quot; command-line interfaces">
+<link href="ch1.html#s1.4.2" rel="subsection" title="1.4.2 Environment variables which dpkg responds to">
+<link href="ch1.html#s1.4.3" rel="subsection" title="1.4.3 Assertions">
+<link href="ch1.html#s1.4.4" rel="subsection" title="1.4.4 --predep-package">
+<link href="ch2.html#s2.2.1" rel="subsection" title="2.2.1 Internal checks used by dpkg-deb when building packages">
+
+</head>
+
+<body>
+
+<p><a name="ch1"></a></p>
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch2.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+dpkg technical manual
+<br>Chapter 1 - Quick summary of dpkg's external interface
+</h1>
+
+<hr>
+
+<h2><a name="s-control"></a>1.1 Control files</h2>
+
+<p>
+The basic dpkg package control file supports the following major features:-
+</p>
+<ul>
+<li>
+<p>
+5 types of dependencies:-
+</p>
+<ul>
+<li>
+<p>
+Pre-Depends, which must be satisfied before a package may be unpacked
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Depends, which must be satisfied before a package may be configured
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Recommends, to specify a package which if not installed may severely limit the
+usefulness of the package
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Suggests, to specify a package which may increase the productivity of the
+package
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Conflicts, to specify a package which must NOT be installed in order for the
+package to be configured
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Breaks, to specify a package which is broken by the package and which should
+therefore not be configured while broken
+</p>
+</li>
+</ul>
+
+<p>
+Each of these dependencies can specify a version and a depedency on that
+version, for example &quot;&lt;= 0.5-1&quot;, &quot;== 2.7.2-1&quot;, etc.  The
+comparators available are:-
+</p>
+<ul>
+<li>
+<p>
+&quot;&lt;&lt;&quot; - less than
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+&quot;&lt;=&quot; - less than or equal to
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+&quot;&gt;&gt;&quot; - greater than
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+&quot;&gt;=&quot; - greater than or equal to
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+&quot;==&quot; - equal to
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+The concept of &quot;virtual packages&quot;, which many other packages may
+provide, using the Provides mechanism.  An example of this is the
+&quot;httpd&quot; virtual package, which all web servers should provide.
+Virtual package names may be used in dependency headers.  However, current
+policy is that virtual packages do not support version numbers, so dependencies
+on virtual packages with versions will always fail.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Several other control fields, such as Package, Version, Description, Section,
+Priority, etc., which are mainly for classification purposes.  The package name
+must consist entirely of lowercase characters, plus the characters '+', '-',
+and '.'.  Fields can extend across multiple lines - on the second and
+subsequent lines, there is a space at the beginning instead of a field name and
+a ':'.  Empty lines must consist of the text &quot; .&quot;, which will be
+ignored, as will the initial space for other continuation lines.  This feature
+is usually only used in the Description field.
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h2><a name="s1.2"></a>1.2 The dpkg status area</h2>
+
+<p>
+The &quot;dpkg status area&quot; is the term used to refer to the directory
+where dpkg keeps its various status files (GNU would have you call it the dpkg
+shared state directory).  This is always, on Debian systems, /var/lib/dpkg.
+However, the default directory name should not be hard-coded, but #define'd, so
+that alteration is possible (it is available via configure in dpkg 1.4.0.9 and
+above).  Of course, in a library, code should be allowed to override the
+default directory, but the default should be part of the library (so that the
+user may change the dpkg admin dir simply by replacing the library).
+</p>
+
+<p>
+Dpkg keeps a variety of files in its status area.  These are discussed later on
+in this document, but a quick summary of the files is here:-
+</p>
+<ul>
+<li>
+<p>
+available - this file contains a concatenation of control information from all
+the packages which dpkg knows about.  This is updated using the dpkg commands
+&quot;--update-avail &lt;file&gt;&quot;, &quot;--merge-avail
+&lt;file&gt;&quot;, and &quot;--clear-avail&quot;.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+status - this file contains information on the following things for every
+package:-
+</p>
+<ul>
+<li>
+<p>
+Whether it is installed, not installed, unpacked, removed, failed
+configuration, or half-installed (deconfigured in favour of another package).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Whether it is selected as install, hold, remove, or purge.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+If it is &quot;ok&quot; (no installation problems), or &quot;not-ok&quot;.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+It usually also contains the section and priority (so that dselect may classify
+packages not in available)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+For packages which did not initially appear in the &quot;available&quot; file
+when they were installed, the other control information for them.
+</p>
+</li>
+</ul>
+
+<p>
+The exact format for the &quot;Status:&quot; field is:
+</p>
+
+<pre>
+           Status: Want Flag Status
+</pre>
+
+<p>
+Where <var>Want</var> may be one of <em>unknown</em>, <em>install</em>,
+<em>hold</em>, <em>deinstall</em>, <em>purge</em>.  <var>Flag</var> may be one
+of <em>ok</em>, <em>reinstreq</em>, <em>hold</em>, <em>hold-reinstreq</em>.
+<var>Status</var> may be one of <em>not-installed</em>, <em>unpacked</em>,
+<em>half-configured</em>, <em>installed</em>, <em>half-installed</em>
+<em>config-files</em>, <em>post-inst-failed</em>, <em>removal-failed</em>.  The
+states are as follows:-
+</p>
+<dl>
+<dt>not-installed</dt>
+<dd>
+<p>
+No files are installed from the package, it has no config files left, it
+uninstalled cleanly if it ever was installed.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>unpacked</dt>
+<dd>
+<p>
+The basic files have been unpacked (and are listed in
+/var/lib/dpkg/info/[package].list.  There are config files present, but the
+postinst script has _NOT_ been run.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>half-configured</dt>
+<dd>
+<p>
+The package was installed and unpacked, but the postinst script failed in some
+way.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>installed</dt>
+<dd>
+<p>
+All files for the package are installed, and the configuration was also
+successful.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>half-installed</dt>
+<dd>
+<p>
+An attempt was made to remove the packagem but there was a failure in the prerm
+script.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>config-files</dt>
+<dd>
+<p>
+The package was &quot;removed&quot;, not &quot;purged&quot;.  The config files
+are left, but nothing else.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>post-inst-failed</dt>
+<dd>
+<p>
+Old name for half-configured.  Do not use.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>removal-failed</dt>
+<dd>
+<p>
+Old name for half-installed.  Do not use.
+</p>
+</dd>
+</dl>
+
+<p>
+The two last items are only left in dpkg for compatibility - they are
+understood by it, but never written out in this form.
+</p>
+
+<p>
+Please see the dpkg source code, <samp>lib/parshelp.c</samp>,
+<em>statusinfos</em>, <em>eflaginfos</em> and <em>wantinfos</em> for more
+details.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+info - this directory contains files from the control archive of every package
+currently installed.  They are installed with a prefix of
+&quot;&lt;packagename&gt;.&quot;.  In addition to this, it also contains a file
+called &lt;package&gt;.list for every package, which contains a list of files.
+Note also that the control file is not copied into here; it is instead found as
+part of status or available.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+methods - this directory is reserved for &quot;method&quot;-specific files -
+each &quot;method&quot; has a subdirectory underneath this directory (or at
+least, it can have).  In addition, there is another subdirectory
+&quot;mnt&quot;, where misc.  filesystems (floppies, CDROMs, etc.) are mounted.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+alternatives - directory used by the &quot;update-alternatives&quot; program.
+It contains one file for each &quot;alternatives&quot; interface, which
+contains information about all the needed symlinked files for each alternative.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+diversions - file used by the &quot;dpkg-divert&quot; program.  Each diversion
+takes three lines.  The first is the package name (or &quot;:&quot; for user
+diversion), the second the original filename, and the third the diverted
+filename.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+updates - directory used internally by dpkg.  This is discussed later, in the
+section <a href="ch3.html#s-updates">Updates, Section 3.1</a>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+parts - temporary directory used by dpkg-split
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h2><a name="s1.3"></a>1.3 The dpkg library files</h2>
+
+<p>
+These files are installed under /usr/lib/dpkg (usually), but
+/usr/local/lib/dpkg is also a possibility (as Debian policy dictates).  Under
+this directory, there is a &quot;methods&quot; subdirectory.  The methods
+subdirectory in turn contains any number of subdirectories for each general
+method processor (note that one set of method scripts can, and is, used for
+more than one of the methods listed under dselect).
+</p>
+
+<p>
+The following files may be found in each of these subdirectories:-
+</p>
+<ul>
+<li>
+<p>
+names - One line per method, two-digit priority to appear on menu at beginning,
+followed by a space, the name, and then another space and the short
+description.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+desc.&lt;name&gt; - Contains the long description displayed by dselect when the
+cursor is put over the &lt;name&gt; method.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+setup - Script or program which sets up the initial values to be used by this
+method.  Called with first argument as the status area directory
+(/var/lib/dpkg), second argument as the name of the method (as in the directory
+name), and the third argument as the option (as in the names file).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+install - Script/program called when the &quot;install&quot; option of dselect
+is run with this method.  Same arguments as for setup.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+update - Script/program called when the &quot;update&quot; option of dselect is
+run.  Same arguments as for setup/install.
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h2><a name="s1.4"></a>1.4 The &quot;dpkg&quot; command-line utility</h2>
+
+<hr>
+
+<h3><a name="s1.4.1"></a>1.4.1 &quot;Documented&quot; command-line interfaces</h3>
+
+<p>
+As yet unwritten.  You can refer to the other manuals for now.  See
+<code>dpkg(8)</code>.
+</p>
+
+<hr>
+
+<h3><a name="s1.4.2"></a>1.4.2 Environment variables which dpkg responds to</h3>
+<ul>
+<li>
+<p>
+DPKG_NO_TSTP - if set to a non-null value, this variable causes dpkg to run a
+child shell process instead of sending itself a SIGTSTP, when the user selects
+to background the dpkg process when it asks about conffiles.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+SHELL - used to determine which shell to run in the case when DPKG_NO_TSTP is
+set.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+CC - used as the C compiler to call to determine the target architecture.  The
+default is &quot;gcc&quot;.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+PATH - dpkg checks that it can find at least the following files in the path
+when it wants to run package installation scripts, and gives an error if it
+cannot find all of them:-
+</p>
+<ul>
+<li>
+<p>
+ldconfig
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+start-stop-daemon
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+install-info
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+update-rc.d
+</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<h3><a name="s1.4.3"></a>1.4.3 Assertions</h3>
+
+<p>
+The dpkg utility itself is required for quite a number of packages, even if
+they have been installed with a tool totally separate from dpkg.  The reason
+for this is that some packages, in their pre-installation scripts, check that
+your version of dpkg supports certain features.  This was broken from the
+start, and it should have actually been a control file header
+&quot;Dpkg-requires&quot;, or similar.  What happens is that the configuration
+scripts will abort or continue according to the exit code of a call to dpkg,
+which will stop them from being wrongly configured.
+</p>
+
+<p>
+These special command-line options, which simply return as true or false are
+all prefixed with &quot;--assert-&quot;.  Here is a list of them (without the
+prefix):-
+</p>
+<ul>
+<li>
+<p>
+support-predepends - Returns success or failure according to whether a version
+of dpkg which supports predepends properly (1.1.0 or above) is installed,
+according to the database.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+working-epoch - Return success or failure according to whether a version of
+dpkg which supports epochs in version properly (1.4.0.7 or above) is installed,
+according to the database.
+</p>
+</li>
+</ul>
+
+<p>
+Both these options check the status database to see what version of the
+&quot;dpkg&quot; package is installed, and check it against a known working
+version.
+</p>
+
+<hr>
+
+<h3><a name="s1.4.4"></a>1.4.4 --predep-package</h3>
+
+<p>
+This strange option is described as follows in the source code:
+</p>
+
+<pre>
+     /* Print a single package which:
+      *  (a) is the target of one or more relevant predependencies.
+      *  (b) has itself no unsatisfied pre-dependencies.
+      * If such a package is present output is the Packages file entry,
+      *  which can be massaged as appropriate.
+      * Exit status:
+      *  0 = a package printed, OK
+      *  1 = no suitable package available
+      *  2 = error
+      */
+</pre>
+
+<p>
+On further inspection of the source code, it appears that what is does is
+this:-
+</p>
+<ul>
+<li>
+<p>
+Looks at the packages in the database which are selected as
+&quot;install&quot;, and are installed.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+It then looks at the Pre-Depends information for each of these packages from
+the available file.  When it find a package for which any of the
+pre-dependencies are not satisfied, it breaks from the loop through the
+packages.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+It then looks through the unsatisfied pre-dependencies, and looks for packages
+which would satisfy this pre-dependency, stopping on the first it finds.  If it
+finds none, it bombs out with an error.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+It then continues this for every dependency of the initial package.
+</p>
+</li>
+</ul>
+
+<p>
+Eventually, it writes out the record of all the packages to satisfy the
+pre-dependencies.  This is used by the disk method to make sure that its
+dependency ordering is correct.  What happens is that all pre-depending
+packages are first installed, then it runs dpkg -iGROEB on the directory, which
+installs in the order package files are found.  Since pre-dependencies mean
+that a package may not even be unpacked unless they are satisfied, it is
+necessary to do this (usually, since all the package files are unpacked in one
+phase, the configured in another, this is not needed).
+</p>
+
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ <a href="ch2.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+dpkg technical manual
+</p>
+
+<address>
+$Id: dpkg-tech.sgml,v 1.3 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Tom Lees <code><a href="mailto:tom@lpsg.demon.co.uk">tom@lpsg.demon.co.uk</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

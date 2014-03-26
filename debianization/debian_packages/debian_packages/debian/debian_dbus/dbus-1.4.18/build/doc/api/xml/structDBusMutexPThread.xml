@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structDBusMutexPThread" kind="struct" prot="public">
+    <compoundname>DBusMutexPThread</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusMutexPThread_1ad097a06cc5cb97e56e85ea425621a328" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t DBusMutexPThread::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>lock protecting count field </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" line="47" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMutexPThread_1ac53a4fdd03e2e3aaee31816f956cfe07" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>volatile int DBusMutexPThread::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+<para>count of how many times lock holder has recursively locked </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" line="48" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDBusMutexPThread_1af8ac6434d7f058be9beb73fc4a8bef47" prot="public" static="no" mutable="no">
+        <type>pthread_t</type>
+        <definition>volatile pthread_t DBusMutexPThread::holder</definition>
+        <argsstring></argsstring>
+        <name>holder</name>
+        <briefdescription>
+<para>holder of the lock if count &gt;0, valid but arbitrary thread if count has ever been &gt;0, uninitialized memory if count has never been &gt;0 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" line="52" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" line="46" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-pthread.c" bodystart="46" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structDBusMutexPThread_1ac53a4fdd03e2e3aaee31816f956cfe07" prot="public" virt="non-virtual"><scope>DBusMutexPThread</scope><name>count</name></member>
+      <member refid="structDBusMutexPThread_1af8ac6434d7f058be9beb73fc4a8bef47" prot="public" virt="non-virtual"><scope>DBusMutexPThread</scope><name>holder</name></member>
+      <member refid="structDBusMutexPThread_1ad097a06cc5cb97e56e85ea425621a328" prot="public" virt="non-virtual"><scope>DBusMutexPThread</scope><name>lock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

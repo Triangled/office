@@ -1,0 +1,62 @@
+\section{pkg\-Udev\-Cdrom\-Devices \-Class \-Reference}
+\label{classpkgUdevCdromDevices}\index{pkg\-Udev\-Cdrom\-Devices@{pkg\-Udev\-Cdrom\-Devices}}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Dlopen} ()\label{classpkgUdevCdromDevices_a70e611741eb3b38af020883f41a183c0}
+
+\item 
+std\-::vector$<$ {\bf \-Cdrom\-Device} $>$ {\bfseries \-Scan} ()\label{classpkgUdevCdromDevices_a104f64a93476cc61efa85c838c2378e6}
+
+\item 
+std\-::vector$<$ {\bf \-Cdrom\-Device} $>$ {\bfseries \-Scan\-For\-Removable} (bool \-Cdrom\-Only)\label{classpkgUdevCdromDevices_acfcd0fc1e3531af17e08d136184fddf5}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bfseries libudev\-\_\-handle}\label{classpkgUdevCdromDevices_af45e77087fe65829bc11408e2c81256e}
+
+\item 
+struct udev $\ast$($\ast$ {\bfseries udev\-\_\-new} )(void)\label{classpkgUdevCdromDevices_a8b52d42dd549097f93ba221f196f8334}
+
+\item 
+int($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-add\-\_\-match\-\_\-property} )(struct udev\-\_\-enumerate $\ast$udev\-\_\-enumerate, const char $\ast$property, const char $\ast$value)\label{classpkgUdevCdromDevices_a088ecb9fcbc828d82e94fbecf8191c46}
+
+\item 
+int($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-scan\-\_\-devices} )(struct udev\-\_\-enumerate $\ast$udev\-\_\-enumerate)\label{classpkgUdevCdromDevices_ad5da393a67efd3a486a981abc7911b31}
+
+\item 
+struct udev\-\_\-list\-\_\-entry $\ast$($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-get\-\_\-list\-\_\-entry} )(struct udev\-\_\-enumerate $\ast$udev\-\_\-enumerate)\label{classpkgUdevCdromDevices_a01c8a895f51879d3d96d1c67485873ac}
+
+\item 
+struct udev\-\_\-device $\ast$($\ast$ {\bfseries udev\-\_\-device\-\_\-new\-\_\-from\-\_\-syspath} )(struct udev $\ast$udev, const char $\ast$syspath)\label{classpkgUdevCdromDevices_ac069520527237fd6ccad9f6e9ee36bc2}
+
+\item 
+struct udev $\ast$($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-get\-\_\-udev} )(struct udev\-\_\-enumerate $\ast$udev\-\_\-enumerate)\label{classpkgUdevCdromDevices_a40919cfa390a44c07de96fa0c4e8af3c}
+
+\item 
+const char $\ast$($\ast$ {\bfseries udev\-\_\-list\-\_\-entry\-\_\-get\-\_\-name} )(struct udev\-\_\-list\-\_\-entry $\ast$list\-\_\-entry)\label{classpkgUdevCdromDevices_adea5822099d32eaa2a880ad29a2046b6}
+
+\item 
+const char $\ast$($\ast$ {\bfseries udev\-\_\-device\-\_\-get\-\_\-devnode} )(struct udev\-\_\-device $\ast$udev\-\_\-device)\label{classpkgUdevCdromDevices_a346c643fe7dcfbe1f4337415ce22399a}
+
+\item 
+struct udev\-\_\-enumerate $\ast$($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-new} )(struct udev $\ast$udev)\label{classpkgUdevCdromDevices_aff73c68f8683b9c1d4136a2c82d84105}
+
+\item 
+struct udev\-\_\-list\-\_\-entry $\ast$($\ast$ {\bfseries udev\-\_\-list\-\_\-entry\-\_\-get\-\_\-next} )(struct udev\-\_\-list\-\_\-entry $\ast$list\-\_\-entry)\label{classpkgUdevCdromDevices_a1162b93bffe87f21c9433d377f40e525}
+
+\item 
+const char $\ast$($\ast$ {\bfseries udev\-\_\-device\-\_\-get\-\_\-property\-\_\-value} )(struct udev\-\_\-device $\ast$udev\-\_\-device, const char $\ast$key)\label{classpkgUdevCdromDevices_a530c0819879a8bcca0a752da9608d91c}
+
+\item 
+int($\ast$ {\bfseries udev\-\_\-enumerate\-\_\-add\-\_\-match\-\_\-sysattr} )(struct udev\-\_\-enumerate $\ast$udev\-\_\-enumerate, const char $\ast$property, const char $\ast$value)\label{classpkgUdevCdromDevices_ace6968bb05ca644e040f16e82bca6edb}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cdrom.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cdrom.\-cc\end{DoxyCompactItemize}

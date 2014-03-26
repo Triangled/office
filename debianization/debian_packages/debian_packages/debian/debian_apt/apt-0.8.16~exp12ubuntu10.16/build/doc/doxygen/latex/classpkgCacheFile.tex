@@ -1,0 +1,135 @@
+\section{pkg\-Cache\-File \-Class \-Reference}
+\label{classpkgCacheFile}\index{pkg\-Cache\-File@{pkg\-Cache\-File}}
+
+
+\-Collaboration diagram for pkg\-Cache\-File\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgCacheFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries operator pkg\-Cache \&} ()\label{classpkgCacheFile_a08cfc55b07758c6a3419691c47800471}
+
+\item 
+{\bfseries operator pkg\-Cache $\ast$} ()\label{classpkgCacheFile_a728a4a05b882103e11e2fee3e3b8c813}
+
+\item 
+{\bfseries operator pkg\-Dep\-Cache \&} ()\label{classpkgCacheFile_ad42e955d9ecb7a2de0c8450694fc4cdd}
+
+\item 
+{\bfseries operator pkg\-Dep\-Cache $\ast$} ()\label{classpkgCacheFile_aeff27b91c41808b55251eae73a37fb2b}
+
+\item 
+{\bfseries operator pkg\-Policy \&} ()\label{classpkgCacheFile_a01101577df0829bb7a3d315d5014f820}
+
+\item 
+{\bfseries operator pkg\-Policy $\ast$} ()\label{classpkgCacheFile_a49b3ee9bb477740de07fbb8818d7b8b2}
+
+\item 
+{\bfseries operator pkg\-Source\-List \&} ()\label{classpkgCacheFile_af1ce8a8111bf1a2139e4b1878c8622fb}
+
+\item 
+{\bfseries operator pkg\-Source\-List $\ast$} ()\label{classpkgCacheFile_aaf2523bf4ff15eb0c55b58aeeb6c9b8e}
+
+\item 
+{\bf pkg\-Dep\-Cache} $\ast$ {\bfseries operator-\/$>$} ()\label{classpkgCacheFile_a1a59779e7145d664811cb1e4f5f25100}
+
+\item 
+{\bf pkg\-Dep\-Cache} \& {\bfseries operator$\ast$} ()\label{classpkgCacheFile_a584ffeef1be3f32b171e6edf6489706b}
+
+\item 
+{\bf pkg\-Dep\-Cache\-::\-State\-Cache} \& {\bfseries operator[$\,$]} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-I)\label{classpkgCacheFile_a4b9c29f69a0e4b4d2f19263341033a31}
+
+\item 
+unsigned char \& {\bfseries operator[$\,$]} ({\bf pkg\-Cache\-::\-Dep\-Iterator} const \&\-I)\label{classpkgCacheFile_ad87abad344e372110dfc134f5bb38bb1}
+
+\item 
+bool {\bfseries \-Build\-Caches} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L, bool \-With\-Lock=true)\label{classpkgCacheFile_ae17521c1566d7f7d902352b96114e14e}
+
+\item 
+\-\_\-\-\_\-deprecated bool {\bfseries \-Build\-Caches} ({\bf \-Op\-Progress} \&\-Progress, bool const \&\-With\-Lock=true)\label{classpkgCacheFile_ab03847ba597b29423a98e1a7c40284b9}
+
+\item 
+bool {\bfseries \-Build\-Source\-List} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)\label{classpkgCacheFile_a26f8e9107e1c40e1d12522618ed0b9a3}
+
+\item 
+bool {\bfseries \-Build\-Policy} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)\label{classpkgCacheFile_a40ee2c13fa1449a2ee3525d28f7723ef}
+
+\item 
+bool {\bfseries \-Build\-Dep\-Cache} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)\label{classpkgCacheFile_a8ac9974762b6a23a6ac99eb0164f97e5}
+
+\item 
+bool {\bfseries \-Open} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L, bool \-With\-Lock=true)\label{classpkgCacheFile_ad191678b9795ac52f6895031ad9181f3}
+
+\item 
+bool {\bfseries \-Read\-Only\-Open} ({\bf \-Op\-Progress} $\ast$\-Progress=\-N\-U\-L\-L)\label{classpkgCacheFile_af14baeae61d7a068e5522c22d20aedfb}
+
+\item 
+\-\_\-\-\_\-deprecated bool {\bfseries \-Open} ({\bf \-Op\-Progress} \&\-Progress, bool const \&\-With\-Lock=true)\label{classpkgCacheFile_ad7020c02cd74d694c11a426b66dacf59}
+
+\item 
+void {\bfseries \-Close} ()\label{classpkgCacheFile_a7f7a3199c392465d0767c6506c1af5b4}
+
+\item 
+{\bf pkg\-Cache} $\ast$ {\bfseries \-Get\-Pkg\-Cache} ()\label{classpkgCacheFile_aa049501b926c4401f8525309151251a2}
+
+\item 
+{\bf pkg\-Dep\-Cache} $\ast$ {\bfseries \-Get\-Dep\-Cache} ()\label{classpkgCacheFile_a1cd37af7e49c280f162ed58bfb38e9c4}
+
+\item 
+{\bf pkg\-Policy} $\ast$ {\bfseries \-Get\-Policy} ()\label{classpkgCacheFile_a0d8cd917b9ec9112475caf778beb46fc}
+
+\item 
+{\bf pkg\-Source\-List} $\ast$ {\bfseries \-Get\-Source\-List} ()\label{classpkgCacheFile_a326a379c424f9b5c4c417718a281115f}
+
+\item 
+bool {\bfseries \-Is\-Pkg\-Cache\-Built} () const \label{classpkgCacheFile_aa6257a4f6e0e883214f9b50af37cbc10}
+
+\item 
+bool {\bfseries \-Is\-Dep\-Cache\-Built} () const \label{classpkgCacheFile_aa9edc0d158daf715ee4ead9f4c4de8af}
+
+\item 
+bool {\bfseries \-Is\-Policy\-Built} () const \label{classpkgCacheFile_a830f161a18e8ab8e73ccfc0b1ae3549d}
+
+\item 
+bool {\bfseries \-Is\-Src\-List\-Built} () const \label{classpkgCacheFile_a79dffe119e9840baa5169c5dae7a857a}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries \-Remove\-Caches} ()\label{classpkgCacheFile_a86d7cc75baaa970be833d9830200a9d2}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Policy} $\ast$ {\bfseries \-Policy}\label{classpkgCacheFile_ab6770868fbbfaabc0888c2e440385768}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \-M\-Map} $\ast$ {\bfseries \-Map}\label{classpkgCacheFile_a41fdcc4129a1c81d78aad32c7bef5f73}
+
+\item 
+{\bf pkg\-Cache} $\ast$ {\bfseries \-Cache}\label{classpkgCacheFile_a200f99ff6c297b73a2e9302d95ca7a87}
+
+\item 
+{\bf pkg\-Dep\-Cache} $\ast$ {\bfseries \-D\-Cache}\label{classpkgCacheFile_a1fe619a9c0b3bc8770268fd8aae45b97}
+
+\item 
+{\bf pkg\-Source\-List} $\ast$ {\bfseries \-Src\-List}\label{classpkgCacheFile_a490173727d58a7ff97bcb583c64776a3}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cachefile.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cachefile.\-cc\end{DoxyCompactItemize}

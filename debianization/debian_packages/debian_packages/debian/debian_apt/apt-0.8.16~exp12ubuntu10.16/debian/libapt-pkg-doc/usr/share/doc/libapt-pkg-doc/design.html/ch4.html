@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>The APT project design document - Modules and interfaces</title>
+
+<link href="index.html" rel="start">
+<link href="ch3.html" rel="prev">
+<link href="ch5.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch-introduction.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Requirements">
+<link href="ch3.html" rel="chapter" title="3 Procedural description">
+<link href="ch4.html" rel="chapter" title="4 Modules and interfaces">
+<link href="ch5.html" rel="chapter" title="5 Data flow and conversions analysis.">
+
+</head>
+
+<body>
+
+<p><a name="ch4"></a></p>
+<hr>
+
+<p>
+[ <a href="ch3.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ 4 ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch5.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+The APT project design document
+<br>Chapter 4 - Modules and interfaces
+</h1>
+
+<hr>
+<dl>
+<dt>The user interface module</dt>
+<dd>
+<p>
+Look at Behan Webster's documentation.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Widget set</dt>
+<dd>
+<p>
+Related closely to above Could some one present design decisions of the widget
+set here?
+</p>
+</dd>
+</dl>
+<dl>
+<dt>pdate Module</dt>
+<dd>
+<p>
+Distinct versions of the same package are recorded separately, but if multiple
+Packages files contain the same version of a package, then only the first one
+is recorded.  For this reason, the least expensive update source should be
+listed first (local file system is better than a remote ftp site)
+</p>
+
+<p>
+This module should interact with the user interface module to set and change
+configuration parameters for the modules listed below.  It needs to record that
+information in an on disk data file, to be read on future invocations.
+</p>
+<ol type="1" start="1" >
+<li>
+<p>
+FTP methods
+</p>
+</li>
+</ol>
+<ol type="1" start="2" >
+<li>
+<p>
+mount and file traversal module(s)?
+</p>
+</li>
+</ol>
+<ol type="1" start="3" >
+<li>
+<p>
+Other methods ???
+</p>
+</li>
+</ol>
+</dd>
+</dl>
+<dl>
+<dt>Status file parser/generator</dt>
+<dd>
+<p>
+The status file records the current state of the system, listing the packages
+installed, etc.  The status file is also one method of communicating with dpkg,
+since it is perfectly permissible for the user to use APT to request packages
+be updated, put others on hold, mark other for removal, etc, and then run
+<samp>dpkg -BORGiE</samp> on a file system.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Package file parser/generator</dt>
+<dd>
+<p>
+Related to above.  Handle multiple Packages files, from different sources.
+Each package contains a link back to the packages file structure that contains
+details about the origin of the data.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Dependency module</dt>
+<dd>
+<ul>
+<li>
+<p>
+dependency/conflict determination and linking
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+reverse dependency generator.  Maybe merged with above
+</p>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Package ordering Module</dt>
+<dd>
+<p>
+Create an ordering of the actions to be taken.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Event generator</dt>
+<dd>
+<p>
+module to interact with dpkg
+</p>
+</dd>
+</dl>
+
+<hr>
+
+<p>
+[ <a href="ch3.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch3.html">3</a> ]
+[ 4 ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch5.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+The APT project design document
+</p>
+
+<address>
+$Id: design.sgml,v 1.4 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Manoj Srivastava <code><a href="mailto:srivasta@debian.org">srivasta@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

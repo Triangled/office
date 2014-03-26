@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+ &apt-docinfo;
+ 
+ <refmeta>
+   <refentrytitle>apt-key</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-key</refname>
+    <refpurpose>Utilitaire de gestion des clés d'APT</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-key</command> <arg><option>--keyring
+<replaceable>fichier</replaceable></option></arg>
+<arg><replaceable>commande</replaceable></arg> <arg
+rep="repeat"><option><replaceable>paramètres</replaceable></option></arg></cmdsynopsis>
+ </refsynopsisdiv>
+
+ <refsect1><title>Description</title>
+   <para>
+   <command>apt-key</command> gère les clés dont se sert apt pour authentifier
+les paquets. Les paquets authentifiés par ces clés seront réputés fiables.
+   </para>
+</refsect1>
+
+<refsect1><title>Commandes</title>
+   <variablelist>
+     <varlistentry><term>add <replaceable>fichier</replaceable></term>
+     <listitem>
+     <para>
+
+       Ajouter une clé à la liste des clés fiables. La clé est lue dans
+<replaceable>fichier</replaceable>, ou sur l'entrée standard si
+<replaceable>fichier</replaceable> est <literal>-</literal>.
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>del <replaceable>clé</replaceable></term>
+     <listitem>
+     <para>
+
+       Supprimer une clé de la liste des clés fiables.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>export <replaceable>clé</replaceable></term>
+     <listitem>
+     <para>
+
+        Afficher la clé <replaceable>clé</replaceable> sur la sortie standard.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>exportall</term>
+     <listitem>
+     <para>
+
+        Afficher toutes les clés fiables sur la sortie standard.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>list</term>
+     <listitem>
+     <para>
+
+       Afficher la liste des clés fiables.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+	 <varlistentry><term>finger</term>
+     <listitem>
+     <para>
+
+     Afficher les empreintes des clés fiables.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+	 <varlistentry><term>adv</term>
+     <listitem>
+     <para>
+
+     Passer des options avancées à gpg. Avec la commande adv --recv-key, il est
+possible de télécharger une clé publique.  
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term>update</term>
+     <listitem>
+     <para>
+
+       Update the local keyring with the archive keyring and remove from the local
+keyring the archive keys which are no longer valid.  The archive keyring is
+shipped in the <literal>archive-keyring</literal> package of your
+distribution, e.g. the <literal>ubuntu-archive-keyring</literal> package in
+Ubuntu.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term>net-update</term>
+     <listitem>
+     <para>
+
+       Work similar to the <command>update</command> command above, but get the
+archive keyring from an URI instead and validate it against a master key.
+This requires an installed &wget; and an APT build configured to have a
+server to fetch from and a master keyring to validate.  APT in Debian does
+not support this command and relies on <command>update</command> instead,
+but Ubuntu's APT does.
+
+     </para>
+
+     </listitem>
+     </varlistentry>
+   </variablelist>
+</refsect1>
+
+ <refsect1><title>Options</title>
+<para>Veuillez noter que les options doivent être utilisées avant les commandes
+décrites dans la section suivante.</para>
+   <variablelist>
+      <varlistentry><term>--keyring <replaceable>fichier</replaceable></term>
+      <listitem><para>With this option it is possible to specify a specific keyring file the
+command should operate on. The default is that a command is executed on the
+<filename>trusted.gpg</filename> file as well as on all parts in the
+<filename>trusted.gpg.d</filename> directory, though
+<filename>trusted.gpg</filename> is the primary keyring which means that
+e.g. new keys are added to this one.
+      </para></listitem>
+      </varlistentry>
+   </variablelist>
+ </refsect1>
+
+ <refsect1><title>Fichiers</title>
+   <variablelist>
+
+     &file-trustedgpg;
+
+     <varlistentry><term><filename>/etc/apt/trustdb.gpg</filename></term>
+     <listitem><para>Base de données locale de fiabilité des clés de l'archive.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/usr/share/keyrings/ubuntu-archive-keyring.gpg</filename></term>
+     <listitem><para>Keyring of Ubuntu archive trusted keys.</para></listitem>
+     </varlistentry>
+
+     <varlistentry><term><filename>/usr/share/keyrings/ubuntu-archive-removed-keys.gpg</filename></term>
+     <listitem><para>Keyring of Ubuntu archive removed trusted keys.</para></listitem>
+     </varlistentry>
+
+   </variablelist>
+
+</refsect1>
+
+<refsect1><title>Voir aussi</title>
+<para>
+&apt-get;, &apt-secure;
+</para>
+</refsect1>
+
+ &manbugs;
+ &manauthor;
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+

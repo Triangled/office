@@ -1,0 +1,352 @@
+\section{pkg\-Acquire\-:\-:\-Queue \-Class \-Reference}
+\label{classpkgAcquire_1_1Queue}\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}}
+
+
+\-A single download queue in a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire.\-h$>$}
+
+
+
+\-Collaboration diagram for pkg\-Acquire\-:\-:\-Queue\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcquire_1_1Queue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \-Q\-Item}
+\begin{DoxyCompactList}\small\item\em \-A single item placed in this queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \-Enqueue} ({\bf \-Item\-Desc} \&{\bf \-Item})
+\begin{DoxyCompactList}\small\item\em \-Insert the given fetch request into this queue. \end{DoxyCompactList}\item 
+bool {\bf \-Dequeue} ({\bf \-Item} $\ast${\bf \-Owner})
+\begin{DoxyCompactList}\small\item\em \-Remove all fetch requests for the given item from this queue. \end{DoxyCompactList}\item 
+{\bf \-Q\-Item} $\ast$ {\bf \-Find\-Item} (std\-::string {\bf \-U\-R\-I}, {\bf pkg\-Acquire\-::\-Worker} $\ast${\bf \-Owner})
+\begin{DoxyCompactList}\small\item\em \-Locate an item in this queue. \end{DoxyCompactList}\item 
+bool {\bf \-Item\-Start} ({\bf \-Q\-Item} $\ast$\-Itm, unsigned long long \-Size)
+\item 
+bool {\bf \-Item\-Done} ({\bf \-Q\-Item} $\ast$\-Itm)
+\begin{DoxyCompactList}\small\item\em \-Remove the given item from this queue and set its state to \doxyref{pkg\-Acquire\-::\-Item\-::\-Stat\-Done}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a875850b5de48d7a0ae71c47fbbef4832}. \end{DoxyCompactList}\item 
+bool {\bf \-Startup} ()
+\begin{DoxyCompactList}\small\item\em \-Start the worker process associated with this queue. \end{DoxyCompactList}\item 
+bool {\bf \-Shutdown} (bool \-Final)
+\begin{DoxyCompactList}\small\item\em \-Shut down the worker process associated with this queue. \end{DoxyCompactList}\item 
+bool {\bf \-Cycle} ()
+\begin{DoxyCompactList}\small\item\em \-Send idle items to the worker process. \end{DoxyCompactList}\item 
+void {\bf \-Bump} ()
+\begin{DoxyCompactList}\small\item\em \-Check for items that could be enqueued. \end{DoxyCompactList}\item 
+{\bf \-Queue} (std\-::string {\bf \-Name}, {\bf pkg\-Acquire} $\ast${\bf \-Owner})
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue}. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Queue} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf \-Name}\label{classpkgAcquire_1_1Queue_adc852f586959ce13117d737cf3f14899}
+
+\begin{DoxyCompactList}\small\item\em \-The name of this queue. \end{DoxyCompactList}\item 
+{\bf \-Q\-Item} $\ast$ {\bf \-Items}
+\begin{DoxyCompactList}\small\item\em \-The head of the list of items contained in this queue. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire\-::\-Worker} $\ast$ {\bf \-Workers}
+\begin{DoxyCompactList}\small\item\em \-The head of the list of workers associated with this queue. \end{DoxyCompactList}\item 
+{\bf pkg\-Acquire} $\ast$ {\bf \-Owner}\label{classpkgAcquire_1_1Queue_a76f8c48f1e7f5669a16a9d5e863edd10}
+
+\begin{DoxyCompactList}\small\item\em the download scheduler with which this queue is associated. \end{DoxyCompactList}\item 
+signed long {\bf \-Pipe\-Depth}\label{classpkgAcquire_1_1Queue_a9221078b3948388493f1b8360589b6e1}
+
+\begin{DoxyCompactList}\small\item\em \-The number of entries in this queue that are currently being downloaded. \end{DoxyCompactList}\item 
+unsigned long {\bf \-Max\-Pipe\-Depth}\label{classpkgAcquire_1_1Queue_afe522e42f9b11c8444f4a35369b8b16c}
+
+\begin{DoxyCompactList}\small\item\em \-The maximum number of entries that this queue will attempt to download at once. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries pkg\-Acquire}\label{classpkgAcquire_1_1Queue_ae9e04de9ce779a3c0ad0b7142f7332d7}
+
+\item 
+class {\bfseries pkg\-Acquire\-::\-Uri\-Iterator}\label{classpkgAcquire_1_1Queue_a8f3074688254f637a6916a11ffdf045e}
+
+\item 
+class {\bfseries pkg\-Acquire\-::\-Worker}\label{classpkgAcquire_1_1Queue_a98fe6798c77be5d7d2d21d21b650d860}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A single download queue in a \doxyref{pkg\-Acquire}{p.}{classpkgAcquire} object. \{\{\{. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why so many protected values? \end{DoxyRefDesc}
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Queue@{\-Queue}}
+\index{\-Queue@{\-Queue}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Queue} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Name, }
+\item[{{\bf pkg\-Acquire} $\ast$}]{\-Owner}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a5910193ab81fcc3e1d940ae25f30e9a4}
+
+
+\-Create a new \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Name} & \-The name of the new queue. \\
+\hline
+{\em \-Owner} & \-The download process that owns the new queue. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Items, \-Max\-Pipe\-Depth, \-Pipe\-Depth, and \-Workers.
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!$\sim$\-Queue@{$\sim$\-Queue}}
+\index{$\sim$\-Queue@{$\sim$\-Queue}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{$\sim$\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}$\sim${\bf \-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcquire_1_1Queue_a240bdcfcc136e53aeaac3aa454cc26bf}
+\-Shut down all the worker processes associated with this queue and empty the queue. 
+
+\-References pkg\-Acquire\-::\-Items, and pkg\-Acquire\-::\-Shutdown().
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Bump@{\-Bump}}
+\index{\-Bump@{\-Bump}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Bump}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Bump} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_abf4fe627ab803887ecd2a8af30f17147}
+
+
+\-Check for items that could be enqueued. 
+
+\-Call this after an item placed in multiple queues has gone from the \doxyref{pkg\-Acquire\-::\-Item\-::\-Stat\-Fetching}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a2438768d0d80b2bcbf37ffa6bae5d445} state to the \doxyref{pkg\-Acquire\-::\-Item\-::\-Stat\-Idle}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9aafe4203baf90d29ba26cdca204795329} state, to possibly refill an empty queue. \-This is an alias for \doxyref{\-Cycle()}{p.}{classpkgAcquire_1_1Queue_a5b2dd956b1adc90b13d47e26121d5486}.
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why both this and \doxyref{\-Cycle()}{p.}{classpkgAcquire_1_1Queue_a5b2dd956b1adc90b13d47e26121d5486}? \-Are they expected to be different someday? \end{DoxyRefDesc}
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Cycle@{\-Cycle}}
+\index{\-Cycle@{\-Cycle}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Cycle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a5b2dd956b1adc90b13d47e26121d5486}
+
+
+\-Send idle items to the worker process. 
+
+\-Fills up the pipeline by inserting idle items into the worker's queue. 
+
+\-References pkg\-Acquire\-::\-Items, pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::\-Next, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-::\-Worker\-::\-Queue\-Item(), pkg\-Acquire\-::\-Item\-::\-Stat\-Fetching, pkg\-Acquire\-::\-Item\-::\-Stat\-Idle, pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::\-Worker, and pkg\-Acquire\-::\-Workers.
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Dequeue@{\-Dequeue}}
+\index{\-Dequeue@{\-Dequeue}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Dequeue}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Dequeue} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Item} $\ast$}]{\-Owner}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a875744fa53902d8821377a9222166a47}
+
+
+\-Remove all fetch requests for the given item from this queue. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if at least one request was removed from the queue. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Items, pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::\-Next, pkg\-Acquire\-::\-Item\-::\-Queue\-Counter, and pkg\-Acquire\-::\-Item\-::\-Stat\-Fetching.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Dequeue().
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Enqueue@{\-Enqueue}}
+\index{\-Enqueue@{\-Enqueue}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Enqueue} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Item\-Desc} \&}]{\-Item}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a2af342681f220fe125323f83c45dd074}
+
+
+\-Insert the given fetch request into this queue. 
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the queuing was successful. \-May return {\bfseries false} if the \doxyref{\-Item}{p.}{classpkgAcquire_1_1Item} is already in the queue 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Items, pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::\-Next, pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-::\-Item\-::\-Queue\-Counter, pkg\-Acquire\-::\-Item\-::\-Stat\-Done, and pkg\-Acquire\-::\-Item\-Desc\-::\-U\-R\-I.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Enqueue().
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Find\-Item@{\-Find\-Item}}
+\index{\-Find\-Item@{\-Find\-Item}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Find\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Queue\-::\-Q\-Item} $\ast$ {\bf \-Find\-Item} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-U\-R\-I, }
+\item[{{\bf pkg\-Acquire\-::\-Worker} $\ast$}]{\-Owner}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a93dd0d56b754871c7df506b719f2eff0}
+
+
+\-Locate an item in this queue. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \doxyref{\-U\-R\-I}{p.}{classURI}} & \-A \doxyref{\-U\-R\-I}{p.}{classURI} to match against. \\
+\hline
+{\em \-Owner} & \-A \doxyref{pkg\-Acquire\-::\-Worker}{p.}{classpkgAcquire_1_1Worker} to match against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the first item in the queue whose \doxyref{\-U\-R\-I}{p.}{classURI} is \doxyref{\-U\-R\-I}{p.}{classURI} and that is being downloaded by \doxyref{\-Owner}{p.}{classpkgAcquire_1_1Queue_a76f8c48f1e7f5669a16a9d5e863edd10}. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Items.
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Item\-Done@{\-Item\-Done}}
+\index{\-Item\-Done@{\-Item\-Done}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Item\-Done}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Item\-Done} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Q\-Item} $\ast$}]{\-Itm}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a6dc41a112e43fd568e47e7a9c682112c}
+
+
+\-Remove the given item from this queue and set its state to \doxyref{pkg\-Acquire\-::\-Item\-::\-Stat\-Done}{p.}{classpkgAcquire_1_1Item_abd4abbf0fe1f8b5299675b590315b4b9a875850b5de48d7a0ae71c47fbbef4832}. 
+
+\-If this is the only queue containing the item, the item is also removed from the main queue by calling \doxyref{pkg\-Acquire\-::\-Dequeue}{p.}{classpkgAcquire_ad88e269d0297439604f25eb9c1309286}.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Itm} & \-The item to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if no errors are encountered. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Dequeue(), pkg\-Acquire\-::\-Item\-Desc\-::\-Owner, pkg\-Acquire\-::\-Item\-::\-Queue\-Counter, pkg\-Acquire\-::\-Item\-::\-Stat\-Done, and pkg\-Acquire\-::\-Item\-::\-Stat\-Fetching.
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Item\-Start@{\-Item\-Start}}
+\index{\-Item\-Start@{\-Item\-Start}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Item\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Item\-Start} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Q\-Item} $\ast$}]{\-Itm, }
+\item[{unsigned long long}]{\-Size}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a76f3403ec41517cce48d96a5b1f54e1e}
+\-Presumably this should start downloading an item?
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Unimplemented. \-Implement it or remove? \end{DoxyRefDesc}
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Shutdown@{\-Shutdown}}
+\index{\-Shutdown@{\-Shutdown}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Shutdown} (
+\begin{DoxyParamCaption}
+\item[{bool}]{\-Final}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_a0483a6e5db0c15e5445bcc6a00262204}
+
+
+\-Shut down the worker process associated with this queue. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Final} & \-If {\bfseries true}, then the process is stopped unconditionally. \-Otherwise, it is only stopped if it does not need cleanup as indicated by the pkg\-Acq\-Method\-::\-Needs\-Cleanup member of its configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true}. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Worker\-::\-Get\-Conf(), pkg\-Acquire\-::\-Method\-Config\-::\-Needs\-Cleanup, pkg\-Acquire\-::\-Worker\-::\-Next\-Queue, and pkg\-Acquire\-::\-Workers.
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Startup@{\-Startup}}
+\index{\-Startup@{\-Startup}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Startup}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Startup} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpkgAcquire_1_1Queue_ab4442bc1bb880bd798d3c08a153364b8}
+
+
+\-Start the worker process associated with this queue. 
+
+\-If a worker process is already associated with this queue, this is equivalent to calling \doxyref{\-Cycle()}{p.}{classpkgAcquire_1_1Queue_a5b2dd956b1adc90b13d47e26121d5486}.
+
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the startup was successful. 
+\end{DoxyReturn}
+
+
+\-References pkg\-Acquire\-::\-Method\-Config\-::\-Pipeline, pkg\-Acquire\-::\-Worker\-::\-Start(), and pkg\-Acquire\-::\-Workers.
+
+
+
+\-Referenced by pkg\-Acquire\-::\-Enqueue().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Items@{\-Items}}
+\index{\-Items@{\-Items}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Items}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Q\-Item}$\ast$ {\bf \-Items}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Queue_a2f4e8b582eeece0747d3fee5858b1a27}
+
+
+\-The head of the list of items contained in this queue. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]why a by-\/hand list instead of an \-S\-T\-L structure? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Queue(), and pkg\-Acquire\-::\-Uri\-Iterator\-::\-Uri\-Iterator().
+
+\index{pkg\-Acquire\-::\-Queue@{pkg\-Acquire\-::\-Queue}!\-Workers@{\-Workers}}
+\index{\-Workers@{\-Workers}!pkgAcquire::Queue@{pkg\-Acquire\-::\-Queue}}
+\subsubsection[{\-Workers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Acquire\-::\-Worker}$\ast$ {\bf \-Workers}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgAcquire_1_1Queue_ae49de4816f8591cf1ccb70329d4dcb8c}
+
+
+\-The head of the list of workers associated with this queue. 
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-This is plural because support exists in \doxyref{\-Queue}{p.}{classpkgAcquire_1_1Queue} for multiple workers. \-However, it does not appear that there is any way to actually associate more than one worker with a queue.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Why not just use a std\-::set? \end{DoxyRefDesc}
+
+
+\-Referenced by \-Queue().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire.\-cc\end{DoxyCompactItemize}

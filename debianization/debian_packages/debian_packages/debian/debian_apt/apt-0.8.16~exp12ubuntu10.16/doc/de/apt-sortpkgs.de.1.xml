@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+<!-- The last update date -->
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product;
+<date>29. Februar 2004</date></refentryinfo>
+ 
+ <refmeta>
+   <refentrytitle>apt-sortpkgs</refentrytitle>
+   <manvolnum>1</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-sortpkgs</refname>
+    <refpurpose>Werkzeug zum Sortieren von Paketindexdateien</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-sortpkgs</command> <arg><option>-hvs</option></arg>
+<arg><option>-o=<replaceable>Konfigurationszeichenkette</replaceable></option></arg>
+<arg><option>-c=<replaceable>Datei</replaceable></option></arg> <arg
+choice="plain" rep="repeat"><replaceable>Datei</replaceable></arg></cmdsynopsis>
+ </refsynopsisdiv>
+ 
+ <refsect1><title>Beschreibung</title>
+   <para><command>apt-sortpkgs</command> nimmt eine Indexdatei (Quell- oder
+Paketindex) und sortiert die Datensätze nach Paketnamen. Es wird außerdem
+die internen Felder jedes Datensatzes gemäß interner Sortierregeln
+sortieren.</para>
+
+   <para>
+   Alle Ausgaben werden an stdout gesendet, die Eingabe muss eine durchsuchbare
+Datei sein.</para>
+ </refsect1>
+ 
+ <refsect1><title>Optionen</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+     <varlistentry><term><option>-s</option></term><term><option>--source</option></term>
+     <listitem><para>
+     Quellindexfeldanordnung benutzen. Konfigurationselement:
+<literal>APT::SortPkgs::Source</literal>.</para></listitem>
+     </varlistentry>
+   
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>Siehe auch</title>
+   <para>&apt-conf;</para>
+ </refsect1>
+
+ <refsect1><title>Diagnose</title>
+   <para><command>apt-sortpkgs</command> gibt bei normalen Operationen 0 zurück,
+dezimal 100 bei Fehlern.</para>
+ </refsect1>
+
+ &manbugs;
+ 
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>

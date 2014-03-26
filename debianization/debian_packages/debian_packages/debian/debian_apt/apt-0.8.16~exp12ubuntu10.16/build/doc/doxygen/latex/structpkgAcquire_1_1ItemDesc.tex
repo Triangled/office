@@ -1,0 +1,77 @@
+\section{pkg\-Acquire\-:\-:\-Item\-Desc \-Struct \-Reference}
+\label{structpkgAcquire_1_1ItemDesc}\index{pkg\-Acquire\-::\-Item\-Desc@{pkg\-Acquire\-::\-Item\-Desc}}
+
+
+\-Represents a single download source from which an item should be downloaded.  
+
+
+
+
+{\ttfamily \#include $<$acquire.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acquire\-:\-:\-Item\-Desc\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{structpkgAcquire_1_1ItemDesc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acquire\-:\-:\-Item\-Desc\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structpkgAcquire_1_1ItemDesc__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf \-U\-R\-I}\label{structpkgAcquire_1_1ItemDesc_aaf8eea5037c53d12d3f31ab9e032712c}
+
+\begin{DoxyCompactList}\small\item\em \-The \doxyref{\-U\-R\-I}{p.}{classURI} from which to download this item. \end{DoxyCompactList}\item 
+std\-::string {\bf \-Description}
+\item 
+std\-::string {\bf \-Short\-Desc}
+\item 
+{\bf \-Item} $\ast$ {\bf \-Owner}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Represents a single download source from which an item should be downloaded. 
+
+\-An item may have several assocated \-Item\-Descs over its lifetime. 
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Acquire\-::\-Item\-Desc@{pkg\-Acquire\-::\-Item\-Desc}!\-Description@{\-Description}}
+\index{\-Description@{\-Description}!pkgAcquire::ItemDesc@{pkg\-Acquire\-::\-Item\-Desc}}
+\subsubsection[{\-Description}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Description}}\label{structpkgAcquire_1_1ItemDesc_a72a1a381861908396ddca53a1fa28f97}
+brief \-A description of this item. 
+
+\-Referenced by pkg\-Acq\-Sub\-Index\-::\-Failed(), pkg\-Acq\-Index\-::\-Failed(), pkg\-Acq\-Index\-Trans\-::\-Failed(), pkg\-Acq\-Meta\-Index\-::\-Failed(), pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::operator=(), pkg\-Acq\-Diff\-Index\-::pkg\-Acq\-Diff\-Index(), pkg\-Acq\-File\-::pkg\-Acq\-File(), pkg\-Acq\-Meta\-Index\-::pkg\-Acq\-Meta\-Index(), pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig(), pkg\-Acq\-Sub\-Index\-::pkg\-Acq\-Sub\-Index(), pkg\-Acq\-Archive\-::\-Queue\-Next(), pkg\-Acquire\-::\-Worker\-::\-Run\-Messages(), and pkg\-Acq\-Meta\-Index\-::\-Verify\-Vendor().
+
+\index{pkg\-Acquire\-::\-Item\-Desc@{pkg\-Acquire\-::\-Item\-Desc}!\-Owner@{\-Owner}}
+\index{\-Owner@{\-Owner}!pkgAcquire::ItemDesc@{pkg\-Acquire\-::\-Item\-Desc}}
+\subsubsection[{\-Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Item}$\ast$ {\bf \-Owner}}\label{structpkgAcquire_1_1ItemDesc_a991ea711651b5d291202505da64e379c}
+brief \-The underlying item which is to be downloaded. 
+
+\-Referenced by pkg\-Acquire\-::\-Queue\-::\-Cycle(), pkg\-Acquire\-::\-Enqueue(), pkg\-Acquire\-::\-Queue\-::\-Enqueue(), pkg\-Acquire\-::\-Queue\-::\-Item\-Done(), pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::operator=(), pkg\-Acq\-Diff\-Index\-::pkg\-Acq\-Diff\-Index(), pkg\-Acq\-File\-::pkg\-Acq\-File(), pkg\-Acq\-Index\-Diffs\-::pkg\-Acq\-Index\-Diffs(), pkg\-Acq\-Meta\-Index\-::pkg\-Acq\-Meta\-Index(), pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig(), pkg\-Acq\-Sub\-Index\-::pkg\-Acq\-Sub\-Index(), pkg\-Acquire\-::\-Worker\-::\-Queue\-Item(), pkg\-Acq\-Archive\-::\-Queue\-Next(), and pkg\-Acquire\-::\-Worker\-::\-Run\-Messages().
+
+\index{pkg\-Acquire\-::\-Item\-Desc@{pkg\-Acquire\-::\-Item\-Desc}!\-Short\-Desc@{\-Short\-Desc}}
+\index{\-Short\-Desc@{\-Short\-Desc}!pkgAcquire::ItemDesc@{pkg\-Acquire\-::\-Item\-Desc}}
+\subsubsection[{\-Short\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Short\-Desc}}\label{structpkgAcquire_1_1ItemDesc_a9248dc77e748314774ae2c9b1618e6a9}
+brief \-A shorter description of this item. 
+
+\-Referenced by pkg\-Acq\-Index\-Diffs\-::\-Done(), pkg\-Acq\-Diff\-Index\-::\-Failed(), pkg\-Acq\-Index\-Diffs\-::\-Failed(), pkg\-Acq\-Index\-::\-Failed(), pkg\-Acq\-Index\-Trans\-::\-Failed(), pkg\-Acquire\-::\-Queue\-::\-Q\-Item\-::operator=(), pkg\-Acq\-Diff\-Index\-::\-Parse\-Diff\-Index(), pkg\-Acq\-Diff\-Index\-::pkg\-Acq\-Diff\-Index(), pkg\-Acq\-File\-::pkg\-Acq\-File(), pkg\-Acq\-Index\-Diffs\-::pkg\-Acq\-Index\-Diffs(), pkg\-Acq\-Meta\-Index\-::pkg\-Acq\-Meta\-Index(), pkg\-Acq\-Meta\-Sig\-::pkg\-Acq\-Meta\-Sig(), pkg\-Acq\-Sub\-Index\-::pkg\-Acq\-Sub\-Index(), pkg\-Acq\-Archive\-::\-Queue\-Next(), and pkg\-Acq\-Archive\-::\-Short\-Desc().
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire.\-h}\end{DoxyCompactItemize}

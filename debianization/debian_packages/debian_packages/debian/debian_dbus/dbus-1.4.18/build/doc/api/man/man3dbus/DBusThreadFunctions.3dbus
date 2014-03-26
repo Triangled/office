@@ -1,0 +1,147 @@
+.TH "DBusThreadFunctions" 3dbus "Wed Mar 26 2014" "Version 1.4.18" "D-Bus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DBusThreadFunctions \- 
+.PP
+Functions that must be implemented to make the D-Bus library thread-aware\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dbus-threads\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBmask\fP"
+.br
+.RI "\fIMask indicating which functions are present\&. \fP"
+.ti -1c
+.RI "\fBDBusMutexNewFunction\fP \fBmutex_new\fP"
+.br
+.RI "\fIFunction to create a mutex; optional and deprecated\&. \fP"
+.ti -1c
+.RI "\fBDBusMutexFreeFunction\fP \fBmutex_free\fP"
+.br
+.RI "\fIFunction to free a mutex; optional and deprecated\&. \fP"
+.ti -1c
+.RI "\fBDBusMutexLockFunction\fP \fBmutex_lock\fP"
+.br
+.RI "\fIFunction to lock a mutex; optional and deprecated\&. \fP"
+.ti -1c
+.RI "\fBDBusMutexUnlockFunction\fP \fBmutex_unlock\fP"
+.br
+.RI "\fIFunction to unlock a mutex; optional and deprecated\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarNewFunction\fP \fBcondvar_new\fP"
+.br
+.RI "\fIFunction to create a condition variable\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarFreeFunction\fP \fBcondvar_free\fP"
+.br
+.RI "\fIFunction to free a condition variable\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarWaitFunction\fP \fBcondvar_wait\fP"
+.br
+.RI "\fIFunction to wait on a condition\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarWaitTimeoutFunction\fP \fBcondvar_wait_timeout\fP"
+.br
+.RI "\fIFunction to wait on a condition with a timeout\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarWakeOneFunction\fP \fBcondvar_wake_one\fP"
+.br
+.RI "\fIFunction to wake one thread waiting on the condition\&. \fP"
+.ti -1c
+.RI "\fBDBusCondVarWakeAllFunction\fP \fBcondvar_wake_all\fP"
+.br
+.RI "\fIFunction to wake all threads waiting on the condition\&. \fP"
+.ti -1c
+.RI "\fBDBusRecursiveMutexNewFunction\fP \fBrecursive_mutex_new\fP"
+.br
+.RI "\fIFunction to create a recursive mutex\&. \fP"
+.ti -1c
+.RI "\fBDBusRecursiveMutexFreeFunction\fP \fBrecursive_mutex_free\fP"
+.br
+.RI "\fIFunction to free a recursive mutex\&. \fP"
+.ti -1c
+.RI "\fBDBusRecursiveMutexLockFunction\fP \fBrecursive_mutex_lock\fP"
+.br
+.RI "\fIFunction to lock a recursive mutex\&. \fP"
+.ti -1c
+.RI "\fBDBusRecursiveMutexUnlockFunction\fP \fBrecursive_mutex_unlock\fP"
+.br
+.RI "\fIFunction to unlock a recursive mutex\&. \fP"
+.ti -1c
+.RI "void(* \fBpadding1\fP )(void)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBpadding2\fP )(void)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBpadding3\fP )(void)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.ti -1c
+.RI "void(* \fBpadding4\fP )(void)"
+.br
+.RI "\fIReserved for future expansion\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions that must be implemented to make the D-Bus library thread-aware\&. 
+
+The recursive mutex functions should be specified rather than the old, deprecated nonrecursive ones\&.
+.PP
+The condition variable functions have to work with recursive mutexes if you provide those, or with nonrecursive mutexes if you provide those\&.
+.PP
+If implementing threads using pthreads, be aware that PTHREAD_MUTEX_RECURSIVE is broken in combination with condition variables\&. libdbus relies on the Java-style behavior that when waiting on a condition, the recursion count is saved and restored, and the mutex is completely unlocked, not just decremented one level of recursion\&.
+.PP
+Thus with pthreads you probably have to roll your own emulated recursive mutexes, you can't use PTHREAD_MUTEX_RECURSIVE\&. This is what \fBdbus_threads_init_default()\fP does on platforms that use pthreads\&. 
+.PP
+Definition at line 161 of file dbus-threads\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "unsigned int \fBDBusThreadFunctions::mask\fP"
+.PP
+Mask indicating which functions are present\&. 
+.PP
+Definition at line 163 of file dbus-threads\&.h\&.
+.PP
+Referenced by dbus_threads_init()\&.
+.SS "\fBDBusMutexFreeFunction\fP \fBDBusThreadFunctions::mutex_free\fP"
+.PP
+Function to free a mutex; optional and deprecated\&. 
+.PP
+Definition at line 166 of file dbus-threads\&.h\&.
+.PP
+Referenced by _dbus_mutex_free(), and dbus_threads_init()\&.
+.SS "\fBDBusMutexLockFunction\fP \fBDBusThreadFunctions::mutex_lock\fP"
+.PP
+Function to lock a mutex; optional and deprecated\&. 
+.PP
+Definition at line 167 of file dbus-threads\&.h\&.
+.PP
+Referenced by _dbus_mutex_lock(), and dbus_threads_init()\&.
+.SS "\fBDBusMutexNewFunction\fP \fBDBusThreadFunctions::mutex_new\fP"
+.PP
+Function to create a mutex; optional and deprecated\&. 
+.PP
+Definition at line 165 of file dbus-threads\&.h\&.
+.PP
+Referenced by _dbus_mutex_new(), and dbus_threads_init()\&.
+.SS "\fBDBusMutexUnlockFunction\fP \fBDBusThreadFunctions::mutex_unlock\fP"
+.PP
+Function to unlock a mutex; optional and deprecated\&. 
+.PP
+Definition at line 168 of file dbus-threads\&.h\&.
+.PP
+Referenced by _dbus_mutex_unlock(), and dbus_threads_init()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for D-Bus from the source code\&.

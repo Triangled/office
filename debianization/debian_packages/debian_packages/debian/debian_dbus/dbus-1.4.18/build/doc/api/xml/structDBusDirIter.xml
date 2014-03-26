@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structDBusDirIter" kind="struct" prot="public">
+    <compoundname>DBusDirIter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDBusDirIter_1a8e13e4d8bd6d55387d91cfe32ca84040" prot="public" static="no" mutable="no">
+        <type><ref refid="structDIR" kindref="compound">DIR</ref> *</type>
+        <definition>DIR * DBusDirIter::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <briefdescription>
+<para>The DIR* from opendir() </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-util-unix.c" line="636" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-util-unix.c" bodystart="636" bodyend="-1"/>
+        <referencedby refid="group__DBusSysdeps_1gaaf6eb8179fb6ea2175ed9742a0c8be68" compoundref="dbus-sysdeps-util-unix_8c" startline="648" endline="680">_dbus_directory_open</referencedby>
+        <referencedby refid="group__DBusSysdeps_1gab9a2ddb130da035d6186f2d96bf37cb4" compoundref="dbus-sysdeps-util-unix_8c" startline="696" endline="738">_dbus_directory_get_next_file</referencedby>
+        <referencedby refid="group__DBusSysdeps_1ga1821b64302fe8e12278fa227eb11d393" compoundref="dbus-sysdeps-util-unix_8c" startline="744" endline="748">_dbus_directory_close</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internals of directory iterator. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="150">
+        <label>dirent</label>
+        <link refid="structdirent"/>
+      </node>
+      <node id="149">
+        <label>DIR</label>
+        <link refid="structDIR"/>
+        <childnode refid="150" relation="usage">
+          <edgelabel>dent</edgelabel>
+        </childnode>
+      </node>
+      <node id="148">
+        <label>DBusDirIter</label>
+        <link refid="structDBusDirIter"/>
+        <childnode refid="149" relation="usage">
+          <edgelabel>d</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-util-unix.c" line="635" bodyfile="/home/rpmuser/debian/debian_dbus/dbus-1.4.18/dbus/dbus-sysdeps-util-unix.c" bodystart="634" bodyend="638"/>
+    <listofallmembers>
+      <member refid="structDBusDirIter_1a8e13e4d8bd6d55387d91cfe32ca84040" prot="public" virt="non-virtual"><scope>DBusDirIter</scope><name>d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

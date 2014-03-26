@@ -1,0 +1,184 @@
+\section{\-File\-Fd \-Class \-Reference}
+\label{classFileFd}\index{\-File\-Fd@{\-File\-Fd}}
+
+
+\-Collaboration diagram for \-File\-Fd\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classFileFd__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Open\-Mode} \{ \*
+{\bfseries \-Read\-Only} =  (1 $<$$<$ 0), 
+{\bfseries \-Write\-Only} =  (1 $<$$<$ 1), 
+{\bfseries \-Read\-Write} =  \-Read\-Only $|$ \-Write\-Only, 
+{\bfseries \-Create} =  (1 $<$$<$ 2), 
+\*
+{\bfseries \-Exclusive} =  (1 $<$$<$ 3), 
+{\bfseries \-Atomic} =  \-Exclusive $|$ (1 $<$$<$ 4), 
+{\bfseries \-Empty} =  (1 $<$$<$ 5), 
+{\bfseries \-Write\-Empty} =  \-Read\-Write $|$ \-Create $|$ \-Empty, 
+\*
+{\bfseries \-Write\-Exists} =  \-Read\-Write, 
+{\bfseries \-Write\-Any} =  \-Read\-Write $|$ \-Create, 
+{\bfseries \-Write\-Temp} =  \-Read\-Write $|$ \-Create $|$ \-Exclusive, 
+{\bfseries \-Read\-Only\-Gzip}, 
+\*
+{\bfseries \-Write\-Atomic} =  \-Read\-Write $|$ \-Create $|$ \-Atomic
+ \}
+\item 
+enum {\bfseries \-Compress\-Mode} \{ \*
+{\bfseries \-Auto} =  '\-A', 
+{\bfseries \-None} =  '\-N', 
+{\bfseries \-Extension} =  '\-E', 
+{\bfseries \-Gzip} =  '\-G', 
+\*
+{\bfseries \-Bzip2} =  '\-B', 
+{\bfseries \-Lzma} =  '\-L', 
+{\bfseries \-Xz} =  '\-X'
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Read} (void $\ast$\-To, unsigned long long \-Size, bool \-Allow\-Eof)\label{classFileFd_acc1df883c5d1e2881c25e1beb7f40202}
+
+\item 
+bool {\bfseries \-Read} (void $\ast$\-To, unsigned long long \-Size, unsigned long long $\ast$\-Actual=0)\label{classFileFd_a533e66bc902c528c0710a477c886b9a3}
+
+\item 
+char $\ast$ {\bfseries \-Read\-Line} (char $\ast$\-To, unsigned long long const \-Size)\label{classFileFd_ab38ee7facb05c4733b5e27ee15f9c6e5}
+
+\item 
+bool {\bfseries \-Write} (const void $\ast$\-From, unsigned long long \-Size)\label{classFileFd_a7bc53dcd0f697a3584fb5ee40f236ccc}
+
+\item 
+bool {\bfseries \-Seek} (unsigned long long \-To)\label{classFileFd_a7f475414ba8b8b863a2e9e9eea0c720d}
+
+\item 
+bool {\bfseries \-Skip} (unsigned long long \-To)\label{classFileFd_a1cd68ef7ac85a03816110b883d0f716d}
+
+\item 
+bool {\bfseries \-Truncate} (unsigned long long \-To)\label{classFileFd_a8c2631a696f6ac7d39e7d909cd4956a6}
+
+\item 
+unsigned long long {\bfseries \-Tell} ()\label{classFileFd_a7bf212ea2604e780ef1e68ec06827b34}
+
+\item 
+unsigned long long {\bfseries \-Size} ()\label{classFileFd_aed932b1aeb338009c8390f5322ac228a}
+
+\item 
+unsigned long long {\bfseries \-File\-Size} ()\label{classFileFd_a49f682f3c92761067ce1829a78d21909}
+
+\item 
+time\-\_\-t {\bfseries \-Modification\-Time} ()\label{classFileFd_ac3ef41c2b15c1d57fd9bcf913ccc5aa0}
+
+\item 
+\-\_\-\-\_\-deprecated bool {\bfseries \-Read} (void $\ast$\-To, unsigned long long \-Size, unsigned long $\ast$\-Actual)\label{classFileFd_a1f0bff0a95ba8f6f456d9ed8fb66e089}
+
+\item 
+bool {\bfseries \-Open} (std\-::string \-File\-Name, unsigned int const \-Mode, \-Compress\-Mode \-Compress, unsigned long const \-Perms=0666)\label{classFileFd_aa599bb47c4170160fca202c44bc35fa6}
+
+\item 
+bool {\bfseries \-Open} (std\-::string \-File\-Name, unsigned int const \-Mode, {\bf \-A\-P\-T\-::\-Configuration\-::\-Compressor} const \&compressor, unsigned long const \-Perms=0666)\label{classFileFd_aebbc7c1063ea37ad75450bbde60e05eb}
+
+\item 
+bool {\bfseries \-Open} (std\-::string const \&\-File\-Name, unsigned int const \-Mode, unsigned long const \-Perms=0666)\label{classFileFd_a694bf39a8eabb34606f3d80c25054479}
+
+\item 
+bool {\bfseries \-Open\-Descriptor} (int \-Fd, unsigned int const \-Mode, \-Compress\-Mode \-Compress, bool \-Auto\-Close=false)\label{classFileFd_a06cdd9982425e1924a8601182ed9ab88}
+
+\item 
+bool {\bfseries \-Open\-Descriptor} (int \-Fd, unsigned int const \-Mode, {\bf \-A\-P\-T\-::\-Configuration\-::\-Compressor} const \&compressor, bool \-Auto\-Close=false)\label{classFileFd_a1da39c4012d04d006a7bd0a07b22b3c8}
+
+\item 
+bool {\bfseries \-Open\-Descriptor} (int \-Fd, unsigned int const \-Mode, bool \-Auto\-Close=false)\label{classFileFd_ad9a41d7782c99ce88e44c874965454a8}
+
+\item 
+bool {\bfseries \-Close} ()\label{classFileFd_aef7e3d18ef267f23f64ad397fa359cc1}
+
+\item 
+bool {\bfseries \-Sync} ()\label{classFileFd_a071d010e76ac762ffab420fcf90656a4}
+
+\item 
+int {\bfseries \-Fd} ()\label{classFileFd_ac100e6a92976247aa28eaeea810018d1}
+
+\item 
+void {\bfseries \-Fd} (int fd)\label{classFileFd_a447843c42b0eb8b762097bce70468a77}
+
+\item 
+\-\_\-\-\_\-deprecated gz\-File {\bfseries gz\-Fd} ()\label{classFileFd_a32d09f7b1f9db749c85269c2b44f5550}
+
+\item 
+bool {\bfseries \-Is\-Open} ()\label{classFileFd_a1822528b9d87e3897acff000f0ef4629}
+
+\item 
+bool {\bfseries \-Failed} ()\label{classFileFd_aa09ac85e9653ed2208a6365c36dd3e28}
+
+\item 
+void {\bfseries \-Erase\-On\-Failure} ()\label{classFileFd_a9df6dc5d9567d755018a22373a27315f}
+
+\item 
+void {\bfseries \-Op\-Fail} ()\label{classFileFd_a8808458007a65049c7d06dc97a957d13}
+
+\item 
+bool {\bfseries \-Eof} ()\label{classFileFd_ab44d5d527208dc2d4d7efd3e12277aa7}
+
+\item 
+bool {\bfseries \-Is\-Compressed} ()\label{classFileFd_a87d9479c04906ff821f1267f31487066}
+
+\item 
+std\-::string \& {\bfseries \-Name} ()\label{classFileFd_af92f87c82d1e15a9d059e27fab9fe0bf}
+
+\item 
+{\bfseries \-File\-Fd} (std\-::string \-File\-Name, unsigned int const \-Mode, unsigned long \-Perms=0666)\label{classFileFd_aa7bbbf2d42bd8654f92d87c41739ea47}
+
+\item 
+{\bfseries \-File\-Fd} (std\-::string \-File\-Name, unsigned int const \-Mode, \-Compress\-Mode \-Compress, unsigned long \-Perms=0666)\label{classFileFd_a43ae0eef5d1a5f30b03bb93f25b1ec64}
+
+\item 
+{\bfseries \-File\-Fd} (int const \-Fd, unsigned int const \-Mode=\-Read\-Write, \-Compress\-Mode \-Compress=\-None)\label{classFileFd_a26e246da293f081191c5bfd3e951ecbc}
+
+\item 
+{\bfseries \-File\-Fd} (int const \-Fd, bool const \-Auto\-Close)\label{classFileFd_ac88979222cd2d9bdbbfe9b44dfab0db0}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Local\-Flags} \{ \*
+{\bfseries \-Auto\-Close} =  (1$<$$<$0), 
+{\bfseries \-Fail} =  (1$<$$<$1), 
+{\bfseries \-Del\-On\-Fail} =  (1$<$$<$2), 
+{\bfseries \-Hit\-Eof} =  (1$<$$<$3), 
+\*
+{\bfseries \-Replace} =  (1$<$$<$4), 
+{\bfseries \-Compressed} =  (1$<$$<$5)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries i\-Fd}\label{classFileFd_af5d4caeb119a4aa84f6b7ff10caa9665}
+
+\item 
+unsigned long {\bfseries \-Flags}\label{classFileFd_a15eb852dd5568416ca012c6dcbff021b}
+
+\item 
+std\-::string {\bfseries \-File\-Name}\label{classFileFd_a21d40ee67459129a67fe0d8941c5b7c8}
+
+\item 
+std\-::string {\bfseries \-Temporary\-File\-Name}\label{classFileFd_a49180629bb18774fa01525c47ab60e33}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/fileutl.\-h\item 
+/home/rpmuser/debian/check/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/contrib/fileutl.\-cc\end{DoxyCompactItemize}

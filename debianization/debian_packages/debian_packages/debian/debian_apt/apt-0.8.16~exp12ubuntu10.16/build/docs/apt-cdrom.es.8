@@ -1,0 +1,180 @@
+'\" t
+.\"     Title: apt-cdrom
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 14
+de Febrero de 2004
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-CDROM" "8" "14 de Febrero de 2004" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-cdrom \- Herramienta de APT para la gestión de discos ópticos
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-cdrom\fR\ 'u
+\fBapt\-cdrom\fR [\fB\-hvrmfan\fR] [\fB\-d=\fR\fB\fIpunto\-de\-montaje\fR\fR] [\fB\-o=\fR\fB\fIcadena\-de\-configuración\fR\fR] [\fB\-c=\fR\fB\fIfichero\fR\fR] [[add] | [ident]]
+.SH "DESCRIPCIóN"
+.PP
+\fBapt\-cdrom\fR
+se usa para añadir un disco óptico a la lista de fuentes disponibles de APT\&.
+\fBapt\-cdrom\fR
+examina la estructura del disco, corrige los posibles errores de grabación y verifica los ficheros de índice\&.
+.PP
+Es necesario usar
+\fBapt\-cdrom\fR
+para añadir los discos al sistema APT, no se puede hacer manualmente\&. Además, debe insertar y analizar cada disco de un conjunto de discos por separado, para poder detectar los posibles errores de grabación\&.
+.PP
+Se debe proporcionar alguna de las siguientes órdenes, a menos que se proporcione una de las opciones
+\fB\-h\fR
+o
+\fB\-\-help\fR\&.
+.PP
+add
+.RS 4
+add
+añade un disco nuevo a la lista de fuentes\&. Desmontará el dispositivo del disco y pedirá que se inserte un disco para iniciar el análisis y copiado de los ficheros de índice\&. Si el disco no contiene un directorio
+disk
+apropiado, se le pedirá un título descriptivo\&.
+.sp
+APT usa un identificador de CDROM para reconocer qué disco está actualmente en la unidad lectora y mantiene una lista de estos identificadores en
+/var/lib/apt/cdroms\&.list
+.RE
+.PP
+ident
+.RS 4
+Una herramienta de depuración para informar de la identidad del disco actual así como del nombre del fichero guardado\&.
+.RE
+.SH "OPCIONES"
+.PP
+Todas las opciones de la línea de órdenes se pueden definir mediante el fichero de configuración, las descripciones indican la opción de la configuración a definir\&. Para opciones de tipo \(Foboolean\(Fc puede invalidar el fichero de configuración utilizando algo como
+\fB\-f\-\fR,\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+u otras muchas variaciones\&.
+.PP
+\fB\-d\fR, \fB\-\-cdrom\fR
+.RS 4
+Punto de montaje\&. Define el lugar donde se debe montar el disco óptico\&. El punto de montaje debe aparecer en
+/etc/fstab
+y estar correctamente configurado\&. Opción de configuración:
+Acquire::cdrom::mount\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-rename\fR
+.RS 4
+Renombra un disco\&. Cambia la etiqueta de un disco o invalida la etiqueta del disco\&. Esta opción hará que
+\fBapt\-cdrom\fR
+solicite una etiqueta nueva\&. Opción de configuración:
+APT::CDROM::Rename\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-\-no\-mount\fR
+.RS 4
+No montar\&. Evita que
+\fBapt\-cdrom\fR
+monte y desmonte el punto de montaje\&. Opción de configuración:
+APT::CDROM::NoMount\&.
+.RE
+.PP
+\fB\-f\fR, \fB\-\-fast\fR
+.RS 4
+Crea una copia rápida\&. Asume que los ficheros de paquete son válidos y no comprueba cada paquete\&. Esta opción sólo se debe usar si
+\fBapt\-cdrom\fR
+comprobó el disco anteriormente y no detectó ningún error\&. Opción de configuración:
+APT::CDROM::Fast\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-thorough\fR
+.RS 4
+Comprobación meticulosa de los paquetes\&. Esta opción puede ser necesaria con algunos discos viejos de Debian 1\&.1/1\&.2, que tienen los ficheros de paquete en lugares extraños\&. El análisis del disco óptico lleva mucho más tiempo, pero encontrará todo el contenido\&.
+.RE
+.PP
+\fB\-n\fR, \fB\-\-just\-print\fR, \fB\-\-recon\fR, \fB\-\-no\-act\fR
+.RS 4
+Sin cambios\&. No cambia el fichero
+\fBsources.list\fR(5)
+y no escribe los ficheros de índice\&. Aun así, se revisará todo\&. Opción de configuración:
+APT::CDROM::NoAct\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Muestra un mensaje corto sobre el uso\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Muestra la versión del programa\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Fichero de configuración: Especifica el fichero de configuración a usar\&. El programa leerá el fichero de configuración predeterminado y, después, este fichero de configuración\&. Si necesita que ciertas opciones de configuración se definan antes que el análisis de los de los ficheros de configuración predeterminados, defina un fichero con la variable de entorno
+\fBAPT_CONFIG\fR\&. Consulte
+\fBapt.conf\fR(5)
+para información sobre la sintaxis\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Define una opción de configuración: Esto definirá una opción arbitraria de configuración\&. La sintaxis es
+\fB\-o Algo::Cosa=cosa\fR\&.
+\fB\-o\fR
+y
+\fB\-\-option\fR
+se pueden usar varias veces para definir diferentes opciones\&.
+.RE
+.SH "VéASE TAMBIéN"
+.PP
+\fBapt.conf\fR(5),
+\fBapt-get\fR(8),
+\fBsources.list\fR(5)
+.SH "DIAGNóSTICOS"
+.PP
+\fBapt\-cdrom\fR
+devuelve cero si no hay ningún error y el valor 100 en caso de error\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBPágina de errores de APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Si quiere informar de un error en APT, consulte
+/usr/share/doc/debian/bug\-reporting\&.txt
+o use la orden
+\fBreportbug\fR(1)\&.
+.SH "TRADUCCIÓN"
+.PP
+La traducción al español la realizaron Ismael Fanlo, Carlos Mestre, Rudy Godoy, Gustavo Saldumbide, Javier Fernández\-Sanguino y Rubén Porras Campo entre los años 2003 y 2004\&. La traducción fue actualizada por Francisco Javier Cuadrado y Omar Campagne Polaino entre los años 2009 y 2010\&.
+.PP
+Tenga en cuenta que este documento puede contener secciones sin traducir\&. Esto es intencionado para evitar perder contenido cuando la traducción no está actualizada con respecto al documento original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBEquipo de APT\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+Página de errores de APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

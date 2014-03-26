@@ -1,0 +1,458 @@
+\section{pkg\-Dep\-Cache \-Class \-Reference}
+\label{classpkgDepCache}\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}}
+
+
+\-Inheritance diagram for pkg\-Dep\-Cache\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{classpkgDepCache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Dep\-Cache\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgDepCache__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf \-Action\-Group}
+\begin{DoxyCompactList}\small\item\em \-Represents an active action group. \end{DoxyCompactList}\item 
+class {\bf \-Default\-Root\-Set\-Func}
+\begin{DoxyCompactList}\small\item\em \-Returns {\bfseries true} for packages matching a regular expression in \-A\-P\-T\-::\-Never\-Auto\-Remove. \end{DoxyCompactList}\item 
+class {\bf \-In\-Root\-Set\-Func}
+\begin{DoxyCompactList}\small\item\em \-An arbitrary predicate on packages. \end{DoxyCompactList}\item 
+class {\bf \-Policy}
+\item 
+struct {\bf \-State\-Cache}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Dep\-Flags} \{ \*
+{\bfseries \-Dep\-Now} =  (1 $<$$<$ 0), 
+{\bfseries \-Dep\-Install} =  (1 $<$$<$ 1), 
+{\bfseries \-Dep\-C\-Ver} =  (1 $<$$<$ 2), 
+{\bfseries \-Dep\-G\-Now} =  (1 $<$$<$ 3), 
+\*
+{\bfseries \-Dep\-G\-Install} =  (1 $<$$<$ 4), 
+{\bfseries \-Dep\-G\-C\-Ver} =  (1 $<$$<$ 5)
+ \}
+\item 
+enum {\bfseries \-Dep\-State\-Flags} \{ \*
+{\bfseries \-Dep\-Now\-Policy} =  (1 $<$$<$ 0), 
+{\bfseries \-Dep\-Now\-Min} =  (1 $<$$<$ 1), 
+{\bfseries \-Dep\-Inst\-Policy} =  (1 $<$$<$ 2), 
+{\bfseries \-Dep\-Inst\-Min} =  (1 $<$$<$ 3), 
+\*
+{\bfseries \-Dep\-Cand\-Policy} =  (1 $<$$<$ 4), 
+{\bfseries \-Dep\-Cand\-Min} =  (1 $<$$<$ 5)
+ \}
+\item 
+enum {\bfseries \-Internal\-Flags} \{ {\bfseries \-Auto\-Kept} =  (1 $<$$<$ 0), 
+{\bfseries \-Purge} =  (1 $<$$<$ 1), 
+{\bfseries \-Re\-Install} =  (1 $<$$<$ 2), 
+{\bfseries \-Protected} =  (1 $<$$<$ 3)
+ \}
+\item 
+enum {\bfseries \-Version\-Types} \{ {\bfseries \-Now\-Version}, 
+{\bfseries \-Install\-Version}, 
+{\bfseries \-Candidate\-Version}
+ \}
+\item 
+enum {\bfseries \-Mode\-List} \{ {\bfseries \-Mode\-Delete} =  0, 
+{\bfseries \-Mode\-Keep} =  1, 
+{\bfseries \-Mode\-Install} =  2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries \-Build\-Group\-Ors} ({\bf \-Ver\-Iterator} const \&\-V)\label{classpkgDepCache_a3ec0051a89777102d929dcc8921cf529}
+
+\item 
+void {\bfseries \-Update\-Ver\-State} ({\bf \-Pkg\-Iterator} \-Pkg)\label{classpkgDepCache_adfe7878da9cb6683fea7a8b7fb620fa4}
+
+\item 
+{\bfseries operator pkg\-Cache \&} ()\label{classpkgDepCache_a08cfc55b07758c6a3419691c47800471}
+
+\item 
+{\bf \-Header} \& {\bfseries \-Head} ()\label{classpkgDepCache_af5a108652a9ac34318c144fae4b2cffb}
+
+\item 
+{\bf \-Grp\-Iterator} {\bfseries \-Grp\-Begin} ()\label{classpkgDepCache_af208c0af741d8ee6f4fc34132f88cfbe}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Pkg\-Begin} ()\label{classpkgDepCache_ab23bcc37bffca9923a6a7caa18fb42a5}
+
+\item 
+{\bf \-Grp\-Iterator} {\bfseries \-Find\-Grp} (std\-::string const \&\-Name)\label{classpkgDepCache_a84c3d37d3814b26638b91c58a6ca9e5e}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Find\-Pkg} (std\-::string const \&\-Name)\label{classpkgDepCache_a770cc01acba1e49a2285720039cb9cd8}
+
+\item 
+{\bf \-Pkg\-Iterator} {\bfseries \-Find\-Pkg} (std\-::string const \&\-Name, std\-::string const \&\-Arch)\label{classpkgDepCache_a9c521dfa3e33431082f9017e8adce7ea}
+
+\item 
+{\bf pkg\-Cache} \& {\bfseries \-Get\-Cache} ()\label{classpkgDepCache_ab7db5f7135c4de2154b90ce5c4c326af}
+
+\item 
+{\bf pkg\-Versioning\-System} \& {\bfseries \-V\-S} ()\label{classpkgDepCache_afc2087c8b2d0be34d37331e0856eaf92}
+
+\item 
+{\bf \-Ver\-Iterator} {\bfseries \-Get\-Candidate\-Ver} ({\bf \-Pkg\-Iterator} const \&\-Pkg)\label{classpkgDepCache_a97b1c53f6751e3dba07831d0d5e51c0e}
+
+\item 
+bool {\bfseries \-Is\-Important\-Dep} ({\bf \-Dep\-Iterator} {\bf \-Dep})\label{classpkgDepCache_a894570f7b6df7fefa6cae4ac10947e43}
+
+\item 
+{\bf \-Policy} \& {\bfseries \-Get\-Policy} ()\label{classpkgDepCache_a2bc06b5b49530d68d2401cd91a096da7}
+
+\item 
+{\bf \-State\-Cache} \& {\bfseries operator[$\,$]} ({\bf \-Pkg\-Iterator} const \&\-I)\label{classpkgDepCache_ac3a4f0f44c166d7439ddf605e087515d}
+
+\item 
+unsigned char \& {\bfseries operator[$\,$]} ({\bf \-Dep\-Iterator} const \&\-I)\label{classpkgDepCache_a77d9224d8c8a82dff82b15c2fe78706b}
+
+\item 
+virtual {\bf \-In\-Root\-Set\-Func} $\ast$ {\bf \-Get\-Root\-Set\-Func} ()
+\item 
+virtual bool {\bf \-Mark\-Follows\-Recommends} ()
+\item 
+virtual bool {\bf \-Mark\-Follows\-Suggests} ()
+\item 
+bool {\bf \-Mark\-And\-Sweep} ({\bf \-In\-Root\-Set\-Func} \&root\-Func)
+\begin{DoxyCompactList}\small\item\em \-Update the \-Marked and \-Garbage fields of all packages. \end{DoxyCompactList}\item 
+bool {\bfseries \-Mark\-And\-Sweep} ()\label{classpkgDepCache_abfce9e49e56a627fee33de9c8495cf0c}
+
+\item 
+virtual bool {\bf \-Is\-Install\-Ok} (const {\bf \-Pkg\-Iterator} \&\-Pkg, bool \-Auto\-Inst=true, unsigned long \-Depth=0, bool \-From\-User=true)
+\item 
+virtual bool {\bf \-Is\-Delete\-Ok} (const {\bf \-Pkg\-Iterator} \&\-Pkg, bool \-Mark\-Purge=false, unsigned long \-Depth=0, bool \-From\-User=true)
+\item 
+bool {\bfseries read\-State\-File} ({\bf \-Op\-Progress} $\ast$prog)\label{classpkgDepCache_ad6e01a8c3a2a2a596f4a91b95c6e7261}
+
+\item 
+bool {\bfseries write\-State\-File} ({\bf \-Op\-Progress} $\ast$prog, bool \-Installed\-Only=true)\label{classpkgDepCache_ada888d6cafdc9dcbae928a600099c529}
+
+\item 
+signed long long {\bfseries \-Usr\-Size} ()\label{classpkgDepCache_a5bb66e6baed11c3718622746a36d4ef3}
+
+\item 
+unsigned long long {\bfseries \-Deb\-Size} ()\label{classpkgDepCache_a68f76ea8b9dd781f14b749e6c1621542}
+
+\item 
+unsigned long {\bfseries \-Del\-Count} ()\label{classpkgDepCache_aac06eaa702ffb7d36454dee784906c94}
+
+\item 
+unsigned long {\bfseries \-Keep\-Count} ()\label{classpkgDepCache_a24f8a5c28993e10a0df0f5752062eaf6}
+
+\item 
+unsigned long {\bfseries \-Inst\-Count} ()\label{classpkgDepCache_a92742197b4afece4f856191aad8decb5}
+
+\item 
+unsigned long {\bfseries \-Broken\-Count} ()\label{classpkgDepCache_ac669d690954abec7015a70f29ce08498}
+
+\item 
+unsigned long {\bfseries \-Policy\-Broken\-Count} ()\label{classpkgDepCache_adc24611b2720f0d732a9ebfe2ac80fa1}
+
+\item 
+unsigned long {\bfseries \-Bad\-Count} ()\label{classpkgDepCache_a8178d0cf40a3f313404647583783ced4}
+
+\item 
+bool {\bfseries \-Init} ({\bf \-Op\-Progress} $\ast$\-Prog)\label{classpkgDepCache_a6e0f7fe2c5111fcdaf5370a1bc3eed0f}
+
+\item 
+void {\bfseries \-Update} ({\bf \-Op\-Progress} $\ast$\-Prog=0)\label{classpkgDepCache_ac1dfc66b92657554872b5ab657ec6f1c}
+
+\item 
+{\bfseries pkg\-Dep\-Cache} ({\bf pkg\-Cache} $\ast$\-Cache, {\bf \-Policy} $\ast$\-Plcy=0)\label{classpkgDepCache_a87a059faabbe3d967a6d0d09aff1cff1}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf \-State \-Manipulators}\par
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Mark\-Keep} ({\bf \-Pkg\-Iterator} const \&\-Pkg, bool \-Soft=false, bool \-From\-User=true, unsigned long \-Depth=0)\label{classpkgDepCache_a2eb1021952d387cdb68ab2771f4d2d91}
+
+\item 
+bool {\bfseries \-Mark\-Delete} ({\bf \-Pkg\-Iterator} const \&\-Pkg, bool \-Mark\-Purge=false, unsigned long \-Depth=0, bool \-From\-User=true)\label{classpkgDepCache_ac984518664a8bdfefdd8f8ed6dff993d}
+
+\item 
+bool {\bfseries \-Mark\-Install} ({\bf \-Pkg\-Iterator} const \&\-Pkg, bool \-Auto\-Inst=true, unsigned long \-Depth=0, bool \-From\-User=true, bool \-Force\-Important\-Deps=false)\label{classpkgDepCache_aab6b1c53f7766ad618b80ebee701b60d}
+
+\item 
+void {\bfseries \-Mark\-Protected} ({\bf \-Pkg\-Iterator} const \&\-Pkg)\label{classpkgDepCache_a783fde482496fd35f35ec9ea4153b497}
+
+\item 
+void {\bfseries \-Set\-Re\-Install} ({\bf \-Pkg\-Iterator} const \&\-Pkg, bool \-To)\label{classpkgDepCache_a56a53877725646f2cb1f4b7268f3feab}
+
+\item 
+void {\bfseries \-Set\-Candidate\-Version} ({\bf \-Ver\-Iterator} \-Target\-Ver)\label{classpkgDepCache_a88c149d44447f7a56da1412631ea4d85}
+
+\item 
+bool {\bfseries \-Set\-Candidate\-Release} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \-Target\-Ver, std\-::string const \&\-Target\-Rel)\label{classpkgDepCache_aadeec91272816d10f774eaf5cbae7f23}
+
+\item 
+bool {\bf \-Set\-Candidate\-Release} ({\bf pkg\-Cache\-::\-Ver\-Iterator} \-Target\-Ver, std\-::string const \&\-Target\-Rel, std\-::list$<$ std\-::pair$<$ {\bf pkg\-Cache\-::\-Ver\-Iterator}, {\bf pkg\-Cache\-::\-Ver\-Iterator} $>$ $>$ \&\-Changed)
+\item 
+void {\bf \-Mark\-Auto} (const {\bf \-Pkg\-Iterator} \&\-Pkg, bool \-Auto)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Check\-Dep} ({\bf \-Dep\-Iterator} {\bf \-Dep}, int \-Type, {\bf \-Pkg\-Iterator} \&\-Res)\label{classpkgDepCache_a4ac8c39bcf47d41ade92a47b101bb9c6}
+
+\item 
+bool {\bfseries \-Check\-Dep} ({\bf \-Dep\-Iterator} {\bf \-Dep}, int \-Type)\label{classpkgDepCache_a459453421e954538a390fecee48baa00}
+
+\item 
+unsigned char {\bfseries \-Dependency\-State} ({\bf \-Dep\-Iterator} \&\-D)\label{classpkgDepCache_a5974a9b716321b17fc0f4e21990098ec}
+
+\item 
+unsigned char {\bfseries \-Version\-State} ({\bf \-Dep\-Iterator} \-D, unsigned char \-Check, unsigned char \-Set\-Min, unsigned char \-Set\-Policy)\label{classpkgDepCache_a661e6b59c94bd56f6d5ce8f9c9a370df}
+
+\item 
+void {\bfseries \-Update} ({\bf \-Dep\-Iterator} {\bf \-Dep})\label{classpkgDepCache_a817157c618c0f2b7d02eb0561bc84721}
+
+\item 
+void {\bfseries \-Update} ({\bf \-Pkg\-Iterator} const \&\-P)\label{classpkgDepCache_ac924a556145ff26389501a737781fde1}
+
+\item 
+void {\bfseries \-Add\-Sizes} (const {\bf \-Pkg\-Iterator} \&\-Pkg, bool const \-Invert=false)\label{classpkgDepCache_a6f758ac05cf7541f1e903eed00a3a6e6}
+
+\item 
+void {\bfseries \-Remove\-Sizes} (const {\bf \-Pkg\-Iterator} \&\-Pkg)\label{classpkgDepCache_a2e6d82c083a82abcb6f636d90f3fbe98}
+
+\item 
+void {\bfseries \-Add\-States} (const {\bf \-Pkg\-Iterator} \&\-Pkg, bool const \-Invert=false)\label{classpkgDepCache_ae86dfb81731b0fda8fbf590b54c146b9}
+
+\item 
+void {\bfseries \-Remove\-States} (const {\bf \-Pkg\-Iterator} \&\-Pkg)\label{classpkgDepCache_a14c83982265b4ce13066e9cd899ae5f7}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf pkg\-Cache} $\ast$ {\bfseries \-Cache}\label{classpkgDepCache_a200f99ff6c297b73a2e9302d95ca7a87}
+
+\item 
+{\bf \-State\-Cache} $\ast$ {\bfseries \-Pkg\-State}\label{classpkgDepCache_ae98129877cbf5e3d35c8ab71c8c08b64}
+
+\item 
+unsigned char $\ast$ {\bfseries \-Dep\-State}\label{classpkgDepCache_a24ef796239e9921fddc2974bf1a708ce}
+
+\item 
+signed long long {\bf i\-Usr\-Size}
+\item 
+unsigned long long {\bf i\-Download\-Size}
+\item 
+unsigned long {\bfseries i\-Inst\-Count}\label{classpkgDepCache_a1c054b91eda75206627bd305dc8835c1}
+
+\item 
+unsigned long {\bfseries i\-Del\-Count}\label{classpkgDepCache_a01d253ba70446abb3a1b77ee5c6a58e4}
+
+\item 
+unsigned long {\bfseries i\-Keep\-Count}\label{classpkgDepCache_a21161319dbfeb59d74566240a5cd4772}
+
+\item 
+unsigned long {\bfseries i\-Broken\-Count}\label{classpkgDepCache_a87327598883af09e1ebfa55e5fbece07}
+
+\item 
+unsigned long {\bfseries i\-Policy\-Broken\-Count}\label{classpkgDepCache_a058cf6e58db72a8f93cf2a34c79c3466}
+
+\item 
+unsigned long {\bfseries i\-Bad\-Count}\label{classpkgDepCache_a3904a62c84d87614d6393e5b7cea51b4}
+
+\item 
+bool {\bfseries \-Debug\-Marker}\label{classpkgDepCache_a18028515af60951416c0c7db1f45bb5c}
+
+\item 
+bool {\bfseries \-Debug\-Auto\-Install}\label{classpkgDepCache_aca4bf3af34238db029bcb2536a46ef23}
+
+\item 
+{\bf \-Policy} $\ast$ {\bfseries del\-Local\-Policy}\label{classpkgDepCache_ad1835f63551e4cb11499603226fb3ee2}
+
+\item 
+{\bf \-Policy} $\ast$ {\bfseries \-Local\-Policy}\label{classpkgDepCache_ab5c2aa77488fc2914352b7a6cf9becff}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries \-Action\-Group}\label{classpkgDepCache_a5228b26b7cff7de52d288c7989b26d46}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Get\-Root\-Set\-Func@{\-Get\-Root\-Set\-Func}}
+\index{\-Get\-Root\-Set\-Func@{\-Get\-Root\-Set\-Func}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Get\-Root\-Set\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pkg\-Dep\-Cache\-::\-In\-Root\-Set\-Func} $\ast$ {\bf \-Get\-Root\-Set\-Func} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgDepCache_a1ab9378572dc74fc8088fd690d494570}
+\begin{DoxyReturn}{\-Returns}
+\-A function identifying packages in the root set other than manually installed packages and essential packages, or {\bfseries \-N\-U\-L\-L} if an error occurs.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Todo}
+\item[{\bf \-Todo}]\-Is this the best place for this function? \-Perhaps the settings for mark-\/and-\/sweep should be stored in a single external class? \end{DoxyRefDesc}
+
+
+\-References \-Configuration\-::\-Match\-Against\-Config\-::was\-Constructed\-Successfully().
+
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Is\-Delete\-Ok@{\-Is\-Delete\-Ok}}
+\index{\-Is\-Delete\-Ok@{\-Is\-Delete\-Ok}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Is\-Delete\-Ok}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Is\-Delete\-Ok} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pkg\-Iterator} \&}]{\-Pkg, }
+\item[{bool}]{\-Mark\-Purge = {\ttfamily false}, }
+\item[{unsigned long}]{\-Depth = {\ttfamily 0}, }
+\item[{bool}]{\-From\-User = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgDepCache_a9889a8e869ac184b4366c8bfb1846225}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if it's \-O\-K for \-Mark\-Delete to remove the given package.
+\end{DoxyReturn}
+\-See the default implementation for a simple example how this method can be used. \-Overriding implementations should use the hold-\/state-\/flag to cache results from previous checks of this package -\/ also it should be used if the default resolver implementation is also used to ensure that these packages are handled like \char`\"{}normal\char`\"{} dpkg holds.
+
+\-The parameters are the same as in the calling \-Mark\-Delete\-: 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Pkg} & the package that \-Mark\-Delete wants to remove. \\
+\hline
+{\em \-Purge} & should we purge instead of \char`\"{}only\char`\"{} remove? \\
+\hline
+{\em \-Depth} & recursive deep of this \-Marker call \\
+\hline
+{\em \-From\-User} & was the remove requested by the user? \\
+\hline
+\end{DoxyParams}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Is\-Install\-Ok@{\-Is\-Install\-Ok}}
+\index{\-Is\-Install\-Ok@{\-Is\-Install\-Ok}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Is\-Install\-Ok}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Is\-Install\-Ok} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pkg\-Iterator} \&}]{\-Pkg, }
+\item[{bool}]{\-Auto\-Inst = {\ttfamily true}, }
+\item[{unsigned long}]{\-Depth = {\ttfamily 0}, }
+\item[{bool}]{\-From\-User = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgDepCache_a5fdeb68216c5ff24d05181afa44e9e4b}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if it's \-O\-K for \-Mark\-Install to install the given package.
+\end{DoxyReturn}
+\-See the default implementation for a simple example how this method can be used. \-Overriding implementations should use the hold-\/state-\/flag to cache results from previous checks of this package -\/ also it should be used if the default resolver implementation is also used to ensure that these packages are handled like \char`\"{}normal\char`\"{} dpkg holds.
+
+\-The parameters are the same as in the calling \-Mark\-Install\-: 
+\begin{DoxyParams}{\-Parameters}
+{\em \-Pkg} & the package that \-Mark\-Install wants to install. \\
+\hline
+{\em \-Auto\-Inst} & needs a previous \-Mark\-Install this package? \\
+\hline
+{\em \-Depth} & recursive deep of this \-Marker call \\
+\hline
+{\em \-From\-User} & was the install requested by the user? \\
+\hline
+\end{DoxyParams}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Mark\-And\-Sweep@{\-Mark\-And\-Sweep}}
+\index{\-Mark\-And\-Sweep@{\-Mark\-And\-Sweep}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Mark\-And\-Sweep}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Mark\-And\-Sweep} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-In\-Root\-Set\-Func} \&}]{root\-Func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classpkgDepCache_ac23028ed7e8f73b492717b077b3b52e8}
+
+
+\-Update the \-Marked and \-Garbage fields of all packages. 
+
+\-This routine is implicitly invoked after all state manipulators and when an \doxyref{\-Action\-Group}{p.}{classpkgDepCache_1_1ActionGroup} is destroyed. \-It invokes \#\-Mark\-Required and \#\-Sweep to do its dirty work.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em root\-Func} & \-A predicate that returns {\bfseries true} for packages that should be added to the root set. \\
+\hline
+\end{DoxyParams}
+
+
+\-References \-Mark\-And\-Sweep().
+
+
+
+\-Referenced by \-Mark\-And\-Sweep().
+
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Mark\-Auto@{\-Mark\-Auto}}
+\index{\-Mark\-Auto@{\-Mark\-Auto}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Mark\-Auto}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Mark\-Auto} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pkg\-Iterator} \&}]{\-Pkg, }
+\item[{bool}]{\-Auto}
+\end{DoxyParamCaption}
+)}\label{classpkgDepCache_a88a05f968ff34a58f71a896ad15dea4d}
+\-Set the \char`\"{}is automatically installed\char`\"{} flag of \-Pkg. \index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Mark\-Follows\-Recommends@{\-Mark\-Follows\-Recommends}}
+\index{\-Mark\-Follows\-Recommends@{\-Mark\-Follows\-Recommends}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Mark\-Follows\-Recommends}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Mark\-Follows\-Recommends} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgDepCache_af3287419f765a35b0f1f25e449167718}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the garbage collector should follow recommendations. 
+\end{DoxyReturn}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Mark\-Follows\-Suggests@{\-Mark\-Follows\-Suggests}}
+\index{\-Mark\-Follows\-Suggests@{\-Mark\-Follows\-Suggests}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Mark\-Follows\-Suggests}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Mark\-Follows\-Suggests} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgDepCache_a9890f74f3e35a54ac7d4f3b5ab00aeb2}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the garbage collector should follow suggestions. 
+\end{DoxyReturn}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!\-Set\-Candidate\-Release@{\-Set\-Candidate\-Release}}
+\index{\-Set\-Candidate\-Release@{\-Set\-Candidate\-Release}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{\-Set\-Candidate\-Release}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Set\-Candidate\-Release (
+\begin{DoxyParamCaption}
+\item[{{\bf pkg\-Cache\-::\-Ver\-Iterator}}]{\-Target\-Ver, }
+\item[{std\-::string const \&}]{\-Target\-Rel, }
+\item[{std\-::list$<$ std\-::pair$<$ {\bf pkg\-Cache\-::\-Ver\-Iterator}, {\bf pkg\-Cache\-::\-Ver\-Iterator} $>$ $>$ \&}]{\-Changed}
+\end{DoxyParamCaption}
+)}\label{classpkgDepCache_a878855a1fdfa710a75c1251d33b0a32d}
+\-Set the candidate version for dependencies too if needed.
+
+\-Sets not only the candidate version as \-Set\-Candidate\-Version does, but walks also down the dependency tree and checks if it is required to set the candidate of the dependency to a version from the given release, too.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+ & {\em \-Target\-Ver} & new candidate version of the package \\
+\hline
+ & {\em \-Target\-Rel} & try to switch to this release if needed \\
+\hline
+\mbox{\tt out}  & {\em \-Changed} & a list of pairs consisting of the {\bfseries old} version of the changed package and the version which required the switch of this dependency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\bfseries true} if the switch was successful, {\bfseries false} otherwise 
+\end{DoxyReturn}
+
+
+\subsection{\-Member \-Data \-Documentation}
+\index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!i\-Download\-Size@{i\-Download\-Size}}
+\index{i\-Download\-Size@{i\-Download\-Size}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{i\-Download\-Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long {\bf i\-Download\-Size}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgDepCache_a3d3b83546b872ad372361b470d463f45}
+\-Stores how much we need to download to get the packages \index{pkg\-Dep\-Cache@{pkg\-Dep\-Cache}!i\-Usr\-Size@{i\-Usr\-Size}}
+\index{i\-Usr\-Size@{i\-Usr\-Size}!pkgDepCache@{pkg\-Dep\-Cache}}
+\subsubsection[{i\-Usr\-Size}]{\setlength{\rightskip}{0pt plus 5cm}signed long long {\bf i\-Usr\-Size}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classpkgDepCache_ab49a20f20f37cf4879e2ee750220e285}
+\-Stores the space changes after installation 
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/depcache.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/depcache.\-cc\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+\section{pkg\-Acq\-Meta\-Clear\-Sig \-Class \-Reference}
+\label{classpkgAcqMetaClearSig}\index{pkg\-Acq\-Meta\-Clear\-Sig@{pkg\-Acq\-Meta\-Clear\-Sig}}
+
+
+\-An item repsonsible for downloading clearsigned metaindexes \{\{\{.  
+
+
+
+
+{\ttfamily \#include $<$acquire-\/item.\-h$>$}
+
+
+
+\-Inheritance diagram for pkg\-Acq\-Meta\-Clear\-Sig\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classpkgAcqMetaClearSig__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Acq\-Meta\-Clear\-Sig\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpkgAcqMetaClearSig__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \-Failed} (std\-::string \-Message, {\bf pkg\-Acquire\-::\-Method\-Config} $\ast$\-Cnf)
+\begin{DoxyCompactList}\small\item\em \-Invoked by the acquire worker when the object couldn't be fetched. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf \-Custom600\-Headers} ()
+\begin{DoxyCompactList}\small\item\em \-Custom headers to be sent to the fetch process. \end{DoxyCompactList}\item 
+{\bf pkg\-Acq\-Meta\-Clear\-Sig} ({\bf pkg\-Acquire} $\ast${\bf \-Owner}, std\-::string const \&{\bf \-U\-R\-I}, std\-::string const \&\-U\-R\-I\-Desc, std\-::string const \&{\bf \-Short\-Desc}, std\-::string const \&\-Meta\-Index\-U\-R\-I, std\-::string const \&\-Meta\-Index\-U\-R\-I\-Desc, std\-::string const \&\-Meta\-Index\-Short\-Desc, std\-::string const \&\-Meta\-Sig\-U\-R\-I, std\-::string const \&\-Meta\-Sig\-U\-R\-I\-Desc, std\-::string const \&\-Meta\-Sig\-Short\-Desc, const std\-::vector$<$ struct {\bf \-Index\-Target} $\ast$ $>$ $\ast${\bf \-Index\-Targets}, {\bf index\-Records} $\ast${\bf \-Meta\-Index\-Parser})\label{classpkgAcqMetaClearSig_a733baf56f8fb85c989388681f309a15f}
+
+\begin{DoxyCompactList}\small\item\em \-Create a new \doxyref{pkg\-Acq\-Meta\-Clear\-Sig}{p.}{classpkgAcqMetaClearSig}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An item repsonsible for downloading clearsigned metaindexes \{\{\{. 
+
+\subsection{\-Member \-Function \-Documentation}
+\index{pkg\-Acq\-Meta\-Clear\-Sig@{pkg\-Acq\-Meta\-Clear\-Sig}!\-Custom600\-Headers@{\-Custom600\-Headers}}
+\index{\-Custom600\-Headers@{\-Custom600\-Headers}!pkgAcqMetaClearSig@{pkg\-Acq\-Meta\-Clear\-Sig}}
+\subsubsection[{\-Custom600\-Headers}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Custom600\-Headers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqMetaClearSig_a00fc58f7709000dd60501e4d9034b7b0}
+
+
+\-Custom headers to be sent to the fetch process. 
+
+\begin{DoxyReturn}{\-Returns}
+a string containing \-R\-F\-C822-\/style headers that are to be inserted into the 600 \doxyref{\-U\-R\-I}{p.}{classURI} \-Acquire message sent to the fetch subprocess. \-The headers are inserted after a newline-\/less line, so they should (if nonempty) have a leading newline and no trailing newline. 
+\end{DoxyReturn}
+
+
+\-Reimplemented from {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_a00fc58f7709000dd60501e4d9034b7b0}.
+
+
+
+\-References pkg\-Acq\-Meta\-Index\-::\-Real\-U\-R\-I.
+
+\index{pkg\-Acq\-Meta\-Clear\-Sig@{pkg\-Acq\-Meta\-Clear\-Sig}!\-Failed@{\-Failed}}
+\index{\-Failed@{\-Failed}!pkgAcqMetaClearSig@{pkg\-Acq\-Meta\-Clear\-Sig}}
+\subsubsection[{\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Failed} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{\-Message, }
+\item[{{\bf pkg\-Acquire\-::\-Method\-Config} $\ast$}]{\-Cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classpkgAcqMetaClearSig_ad7c33b8520f000b8dfdf48431ddf2949}
+
+
+\-Invoked by the acquire worker when the object couldn't be fetched. 
+
+\-This is a branch of the continuation of the fetch process.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Message} & \-An \-R\-F\-C822-\/formatted message from the acquire method describing what went wrong. \-Use \-Lookup\-Tag() to parse it.\\
+\hline
+{\em \-Cnf} & \-The method via which the worker tried to fetch this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{\-See also}
+\doxyref{pkg\-Acq\-Method}{p.}{classpkgAcqMethod} 
+\end{DoxySeeAlso}
+
+
+\-Reimplemented from {\bf pkg\-Acq\-Meta\-Index} \doxyref{}{p.}{classpkgAcqMetaIndex_ad7c33b8520f000b8dfdf48431ddf2949}.
+
+
+
+\-References pkg\-Acq\-Meta\-Index\-::\-Auth\-Pass, pkg\-Acquire\-::\-Item\-::\-Dequeue(), pkg\-Acq\-Meta\-Index\-::\-Index\-Targets, pkg\-Acquire\-::\-Method\-Config\-::\-Local\-Only, and pkg\-Acq\-Meta\-Index\-::\-Real\-U\-R\-I.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf acquire-\/item.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/acquire-\/item.\-cc\end{DoxyCompactItemize}

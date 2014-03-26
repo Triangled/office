@@ -1,0 +1,182 @@
+'\" t
+.\"     Title: apt-cdrom
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 14 lutego 2004
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-CDROM" "8" "14 lutego 2004" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-cdrom \- Narzędzie APT do zarządzania źródłami typu CDROM
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-cdrom\fR\ 'u
+\fBapt\-cdrom\fR [\fB\-hvrmfan\fR] [\fB\-d=\fR\fB\fIpunkt\ montowania\ CD\-ROM\-u\fR\fR] [\fB\-o=\fR\fB\fIopcja\ konfiguracji\fR\fR] [\fB\-c=\fR\fB\fIplik\fR\fR] [[add] | [identyfikator]]
+.SH "OPIS"
+.PP
+\fBapt\-cdrom\fR
+jest używany w celu dodania nowego CD\-ROM\-u do listy dostępnych źródeł programu APT\&.
+\fBapt\-cdrom\fR
+określa strukturę dysku, poprawia ewentualne błędy powstałe podczas produkcji CD\-ROM\-u i weryfikuje pliki indeksów\&.
+.PP
+Dodanie nowych CD do systemu APT nie może być zrobione ręcznie, tak więc używanie
+\fBapt\-cdrom\fR
+jest konieczne\&. Co więcej, każdy dysk w wielodyskowym archiwum musi być włożony i zeskanowany oddzielnie\&.
+.PP
+Jedno z poniższych poleceń musi być użyte, chyba że została podana opcja
+\fB\-h\fR
+lub
+\fB\-\-help\fR\&.
+.PP
+add
+.RS 4
+add
+is used to add a new disc to the source list\&. It will unmount the CDROM device, prompt for a disk to be inserted and then proceed to scan it and copy the index files\&. If the disc does not have a proper
+disk
+directory you will be prompted for a descriptive title\&.
+.sp
+APT używa identyfikatora CDROM\-u do określenia, który dysk obecnie znajduje się w napędzie, oraz przechowuje bazę tych identyfikatorów w pliku
+/var/lib/apt/cdroms\&.list
+.RE
+.PP
+ident
+.RS 4
+Narzędzie debugujące, wyświetlające identyfikator włożonego dysku oraz nazwę pliku, w którym jest przechowywany\&.
+.RE
+.SH "OPCJE"
+.PP
+Wszystkie opcje linii poleceń mogą być ustawione w pliku konfiguracyjnym\&. Poniższe opisy wskazują, którą opcję w pliku konfiguracyjnym należy ustawić\&. W przypadku opcji logicznych, można unieważnić ustawienia pliku konfiguracyjnego, używając
+\fB\-f\-\fR,
+\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+albo czegoś podobnego\&.
+.PP
+\fB\-d\fR, \fB\-\-cdrom\fR
+.RS 4
+Punkt montowania\&. Podaje lokalizację katalogu, w którym będzie zamontowany cdrom\&. Musi istnieć odpowiednia konfiguracja dla tego punktu montowania w pliku
+/etc/fstab\&. Pozycja w pliku konfiguracyjnym:
+Acquire::cdrom::mount\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-rename\fR
+.RS 4
+Przemianuj dysk\&. Zmienia etykietę dysku lub unieważnia etykietę wcześniej daną dyskowi\&. Podanie tej opcji spowoduje, że
+\fBapt\-cdrom\fR
+spyta się o nową etykietę\&. Pozycja w pliku konfiguracyjnym:
+APT::CDROM::Rename\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-\-no\-mount\fR
+.RS 4
+Nie montuj\&. Uniemożliwia programowi
+\fBapt\-cdrom\fR
+montowanie i odmontowywanie CDROM\-u\&. Pozycja w pliku konfiguracyjnym:
+APT::CDROM::NoMount\&.
+.RE
+.PP
+\fB\-f\fR, \fB\-\-fast\fR
+.RS 4
+Szybkie kopiowanie\&. Zakłada, że pliki z pakietami są poprawne i nie sprawdza każdego pakietu\&. Ta opcja powinna być używana tylko wtedy, jeżeli
+\fBapt\-cdrom\fR
+był już uruchomiony na danym dysku i nie wykrył na nim żadnych błędów\&. Pozycja w pliku konfiguracyjnym:
+APT::CDROM::Fast\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-thorough\fR
+.RS 4
+Gruntowne przeglądanie pakietów\&. Ta opcja może być potrzebna do indeksowania starych dysków z Debianem 1\&.1/1\&.2, w których pliki Package były umieszczone w dziwnych miejscach\&. Indeksowanie całego CD zabiera więcej czasu, ale znajdzie wszystkie takie pliki\&.
+.RE
+.PP
+\fB\-n\fR, \fB\-\-just\-print\fR, \fB\-\-recon\fR, \fB\-\-no\-act\fR
+.RS 4
+Bez zmian\&. Nie zmienia pliku
+\fBsources.list\fR(5)
+i nie zapisuje pików indeksowych\&. Jednakże nadal wszystko jest sprawdzane\&. Pozycja w pliku konfiguracyjnym:
+APT::CDROM::NoAct\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Wyświetla krótkie informacje o użyciu\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Wyświetla wersję programu\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Configuration File; Specify a configuration file to use\&. The program will read the default configuration file and then this configuration file\&. If configuration settings need to be set before the default configuration files are parsed specify a file with the
+\fBAPT_CONFIG\fR
+environment variable\&. See
+\fBapt.conf\fR(5)
+for syntax information\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Ustawia opcję konfiguracji\&. Pozwala ustawić dowolną opcję konfiguracji\&. Składnia jest następująca:
+\fB\-o Foo::Bar=bar\fR\&.
+\fB\-o\fR
+i
+\fB\-\-option\fR
+można podać wielokrotnie \- do ustawiania różnych opcji\&.
+.RE
+.SH "ZOBACZ TAKżE"
+.PP
+\fBapt.conf\fR(5),
+\fBapt-get\fR(8),
+\fBsources.list\fR(5)
+.SH "DIAGNOSTYKA"
+.PP
+\fBapt\-cdrom\fR
+zwraca zero, gdy zakończyło się pomyślnie, 100 \- w przypadku błędu\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBStrona błędów APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Aby zgłosić błąd w APT, proszę przeczytać
+/usr/share/doc/debian/bug\-reporting\&.txt
+lub opis polecenia
+\fBreportbug\fR(1)\&.
+.SH "TŁUMACZENIE"
+.PP
+Tłumaczenie stron podręcznika: Robert Luberda
+<robert@debian\&.org>, 2000\-2010\&. Tłumaczenie przewodnika offline: Krzysztof Fiertek
+<akfedux@megapolis\&.pl>, 2004
+.PP
+Proszę zauważyć, że przetłumaczony dokument może zawierać fragmenty nieprzetłumaczone\&. Ma to na celu uniknięcie utracenia istotnych informacji, w przypadkach gdy oryginał zostanie zaktualizowany, a tłumaczenie \- nie\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBzespół APT\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+Strona błędów APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

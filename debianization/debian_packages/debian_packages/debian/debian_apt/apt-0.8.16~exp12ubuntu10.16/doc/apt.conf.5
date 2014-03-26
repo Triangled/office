@@ -1,0 +1,1128 @@
+'\" t
+.\"     Title: apt.conf
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 16 January 2010
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\&.CONF" "5" "16 January 2010" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt.conf \- Configuration file for APT
+.SH "DESCRIPTION"
+.PP
+apt\&.conf
+is the main configuration file for the APT suite of tools, but by far not the only place changes to options can be made\&. All tools therefore share the configuration files and also use a common command line parser to provide a uniform environment\&.
+.PP
+When an APT tool starts up it will read the configuration files in the following order:
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+the file specified by the
+\fBAPT_CONFIG\fR
+environment variable (if any)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+all files in
+Dir::Etc::Parts
+in alphanumeric ascending order which have either no or "conf" as filename extension and which only contain alphanumeric, hyphen (\-), underscore (_) and period (\&.) characters\&. Otherwise APT will print a notice that it has ignored a file if the file doesn\*(Aqt match a pattern in the
+Dir::Ignore\-Files\-Silently
+configuration list \- in this case it will be silently ignored\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+the main configuration file specified by
+Dir::Etc::main
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+the command line options are applied to override the configuration directives or to load even more configuration files\&.
+.RE
+.SH "SYNTAX"
+.PP
+The configuration file is organized in a tree with options organized into functional groups\&. Option specification is given with a double colon notation, for instance
+APT::Get::Assume\-Yes
+is an option within the APT tool group, for the Get tool\&. Options do not inherit from their parent groups\&.
+.PP
+Syntactically the configuration language is modeled after what the ISC tools such as bind and dhcp use\&. Lines starting with
+//
+are treated as comments (ignored), as well as all text between
+/*
+and
+*/, just like C/C++ comments\&. Each line is of the form
+APT::Get::Assume\-Yes "true";\&. The trailing semicolon and the quotes are required\&. The value must be on one line, and there is no kind of string concatenation\&. It must not include inside quotes\&. The behavior of the backslash "\e" and escaped characters inside a value is undefined and it should not be used\&. An option name may include alphanumerical characters and the "/\-:\&._+" characters\&. A new scope can be opened with curly braces, like:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+   
+APT {
+  Get {
+    Assume\-Yes "true";
+    Fix\-Broken "true";
+  };
+};
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+with newlines placed to make it more readable\&. Lists can be created by opening a scope and including a single string enclosed in quotes followed by a semicolon\&. Multiple entries can be included, each separated by a semicolon\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+   
+DPkg::Pre\-Install\-Pkgs {"/usr/sbin/dpkg\-preconfigure \-\-apt";};
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+In general the sample configuration file in
+/usr/share/doc/apt/examples/apt\&.conf
+/usr/share/doc/apt/examples/configure\-index\&.gz
+is a good guide for how it should look\&.
+.PP
+The names of the configuration items are not case\-sensitive\&. So in the previous example you could use
+dpkg::pre\-install\-pkgs\&.
+.PP
+Names for the configuration items are optional if a list is defined as it can be see in the
+DPkg::Pre\-Install\-Pkgs
+example above\&. If you don\*(Aqt specify a name a new entry will simply add a new option to the list\&. If you specify a name you can override the option as every other option by reassigning a new value to the option\&.
+.PP
+Two specials are allowed,
+#include
+(which is deprecated and not supported by alternative implementations) and
+#clear:
+#include
+will include the given file, unless the filename ends in a slash, then the whole directory is included\&.
+#clear
+is used to erase a part of the configuration tree\&. The specified element and all its descendants are erased\&. (Note that these lines also need to end with a semicolon\&.)
+.PP
+The #clear command is the only way to delete a list or a complete scope\&. Reopening a scope or the ::\-style described below will
+\fInot\fR
+override previously written entries\&. Only options can be overridden by addressing a new value to it \- lists and scopes can\*(Aqt be overridden, only cleared\&.
+.PP
+All of the APT tools take a \-o option which allows an arbitrary configuration directive to be specified on the command line\&. The syntax is a full option name (APT::Get::Assume\-Yes
+for instance) followed by an equals sign then the new value of the option\&. Lists can be appended too by adding a trailing :: to the list name\&. (As you might suspect: The scope syntax can\*(Aqt be used on the command line\&.)
+.PP
+Note that you can use :: only for appending one item per line to a list and that you should not use it in combination with the scope syntax\&. (The scope syntax implicit insert ::) Using both syntaxes together will trigger a bug which some users unfortunately relay on: An option with the unusual name "::" which acts like every other option with a name\&. These introduces many problems including that a user who writes multiple lines in this
+\fIwrong\fR
+syntax in the hope to append to a list will gain the opposite as only the last assignment for this option "::" will be used\&. Upcoming APT versions will raise errors and will stop working if they encounter this misuse, so please correct such statements now as long as APT doesn\*(Aqt complain explicit about them\&.
+.SH "THE APT GROUP"
+.PP
+This group of options controls general APT behavior as well as holding the options for all of the tools\&.
+.PP
+Architecture
+.RS 4
+System Architecture; sets the architecture to use when fetching files and parsing package lists\&. The internal default is the architecture apt was compiled for\&.
+.RE
+.PP
+Architectures
+.RS 4
+All Architectures the system supports\&. Processors implementing the
+amd64
+are e\&.g\&. also able to execute binaries compiled for
+i386; This list is use when fetching files and parsing package lists\&. The internal default is always the native architecture (APT::Architecture) and all foreign architectures it can retrieve by calling
+\fBdpkg \-\-print\-foreign\-architectures\fR\&.
+.RE
+.PP
+Default\-Release
+.RS 4
+Default release to install packages from if more than one version available\&. Contains release name, codename or release version\&. Examples: \*(Aqstable\*(Aq, \*(Aqtesting\*(Aq, \*(Aqunstable\*(Aq, \*(Aqsqueeze\*(Aq, \*(Aqwheezy\*(Aq, \*(Aq4\&.0\*(Aq, \*(Aq5\&.0*\*(Aq\&. See also
+\fBapt_preferences\fR(5)\&.
+.RE
+.PP
+Ignore\-Hold
+.RS 4
+Ignore Held packages; This global option causes the problem resolver to ignore held packages in its decision making\&.
+.RE
+.PP
+Clean\-Installed
+.RS 4
+Defaults to on\&. When turned on the autoclean feature will remove any packages which can no longer be downloaded from the cache\&. If turned off then packages that are locally installed are also excluded from cleaning \- but note that APT provides no direct means to reinstall them\&.
+.RE
+.PP
+Immediate\-Configure
+.RS 4
+Defaults to on which will cause APT to install essential and important packages as fast as possible in the install/upgrade operation\&. This is done to limit the effect of a failing
+\fBdpkg\fR(1)
+call: If this option is disabled APT does treat an important package in the same way as an extra package: Between the unpacking of the important package A and his configuration can then be many other unpack or configuration calls, e\&.g\&. for package B which has no relation to A, but causes the dpkg call to fail (e\&.g\&. because maintainer script of package B generates an error) which results in a system state in which package A is unpacked but unconfigured \- each package depending on A is now no longer guaranteed to work as their dependency on A is not longer satisfied\&. The immediate configuration marker is also applied to all dependencies which can generate a problem if the dependencies e\&.g\&. form a circle as a dependency with the immediate flag is comparable with a Pre\-Dependency\&. So in theory it is possible that APT encounters a situation in which it is unable to perform immediate configuration, errors out and refers to this option so the user can deactivate the immediate configuration temporarily to be able to perform an install/upgrade again\&. Note the use of the word "theory" here as this problem was only encountered by now in real world a few times in non\-stable distribution versions and was caused by wrong dependencies of the package in question or by a system in an already broken state, so you should not blindly disable this option as the mentioned scenario above is not the only problem immediate configuration can help to prevent in the first place\&. Before a big operation like
+dist\-upgrade
+is run with this option disabled it should be tried to explicitly
+install
+the package APT is unable to configure immediately, but please make sure to report your problem also to your distribution and to the APT team with the buglink below so they can work on improving or correcting the upgrade process\&.
+.RE
+.PP
+Force\-LoopBreak
+.RS 4
+Never Enable this option unless you \-really\- know what you are doing\&. It permits APT to temporarily remove an essential package to break a Conflicts/Conflicts or Conflicts/Pre\-Depend loop between two essential packages\&. SUCH A LOOP SHOULD NEVER EXIST AND IS A GRAVE BUG\&. This option will work if the essential packages are not tar, gzip, libc, dpkg, bash or anything that those packages depend on\&.
+.RE
+.PP
+Cache\-Start, Cache\-Grow and Cache\-Limit
+.RS 4
+APT uses since version 0\&.7\&.26 a resizable memory mapped cache file to store the \*(Aqavailable\*(Aq information\&.
+Cache\-Start
+acts as a hint to which size the Cache will grow and is therefore the amount of memory APT will request at startup\&. The default value is 20971520 bytes (~20 MB)\&. Note that these amount of space need to be available for APT otherwise it will likely fail ungracefully, so for memory restricted devices these value should be lowered while on systems with a lot of configured sources this might be increased\&.
+Cache\-Grow
+defines in byte with the default of 1048576 (~1 MB) how much the Cache size will be increased in the event the space defined by
+Cache\-Start
+is not enough\&. These value will be applied again and again until either the cache is big enough to store all information or the size of the cache reaches the
+Cache\-Limit\&. The default of
+Cache\-Limit
+is 0 which stands for no limit\&. If
+Cache\-Grow
+is set to 0 the automatic grow of the cache is disabled\&.
+.RE
+.PP
+Build\-Essential
+.RS 4
+Defines which package(s) are considered essential build dependencies\&.
+.RE
+.PP
+Get
+.RS 4
+The Get subsection controls the
+\fBapt-get\fR(8)
+tool, please see its documentation for more information about the options here\&.
+.RE
+.PP
+Cache
+.RS 4
+The Cache subsection controls the
+\fBapt-cache\fR(8)
+tool, please see its documentation for more information about the options here\&.
+.RE
+.PP
+CDROM
+.RS 4
+The CDROM subsection controls the
+\fBapt-cdrom\fR(8)
+tool, please see its documentation for more information about the options here\&.
+.RE
+.SH "THE ACQUIRE GROUP"
+.PP
+The
+Acquire
+group of options controls the download of packages and the URI handlers\&.
+.PP
+Check\-Valid\-Until
+.RS 4
+Security related option defaulting to true as an expiring validation for a Release file prevents longtime replay attacks and can e\&.g\&. also help users to identify no longer updated mirrors \- but the feature depends on the correctness of the time on the user system\&. Archive maintainers are encouraged to create Release files with the
+Valid\-Until
+header, but if they don\*(Aqt or a stricter value is volitional the following
+Max\-ValidTime
+option can be used\&.
+.RE
+.PP
+Max\-ValidTime
+.RS 4
+Seconds the Release file should be considered valid after it was created (indicated by the
+Date
+header)\&. If the Release file itself includes a
+Valid\-Until
+header the earlier date of the two is used as the expiration date\&. The default value is
+0
+which stands for "for ever"\&. Archive specific settings can be made by appending the label of the archive to the option name\&.
+.RE
+.PP
+Min\-ValidTime
+.RS 4
+Minimum of seconds the Release file should be considered valid after it was created (indicated by the
+Date
+header)\&. Use this if you need to use a seldomly updated (local) mirror of a more regular updated archive with a
+Valid\-Until
+header instead of completely disabling the expiration date checking\&. Archive specific settings can and should be used by appending the label of the archive to the option name\&.
+.RE
+.PP
+PDiffs
+.RS 4
+Try to download deltas called
+PDiffs
+for Packages or Sources files instead of downloading whole ones\&. True by default\&.
+.sp
+Two sub\-options to limit the use of PDiffs are also available: With
+FileLimit
+can be specified how many PDiff files are downloaded at most to patch a file\&.
+SizeLimit
+on the other hand is the maximum percentage of the size of all patches compared to the size of the targeted file\&. If one of these limits is exceeded the complete file is downloaded instead of the patches\&.
+.RE
+.PP
+Queue\-Mode
+.RS 4
+Queuing mode;
+Queue\-Mode
+can be one of
+host
+or
+access
+which determines how APT parallelizes outgoing connections\&.
+host
+means that one connection per target host will be opened,
+access
+means that one connection per URI type will be opened\&.
+.RE
+.PP
+Retries
+.RS 4
+Number of retries to perform\&. If this is non\-zero APT will retry failed files the given number of times\&.
+.RE
+.PP
+Source\-Symlinks
+.RS 4
+Use symlinks for source archives\&. If set to true then source archives will be symlinked when possible instead of copying\&. True is the default\&.
+.RE
+.PP
+http
+.RS 4
+HTTP URIs; http::Proxy is the default http proxy to use\&. It is in the standard form of
+http://[[user][:pass]@]host[:port]/\&. Per host proxies can also be specified by using the form
+http::Proxy::<host>
+with the special keyword
+DIRECT
+meaning to use no proxies\&. If no one of the above settings is specified,
+\fBhttp_proxy\fR
+environment variable will be used\&.
+.sp
+Three settings are provided for cache control with HTTP/1\&.1 compliant proxy caches\&.
+No\-Cache
+tells the proxy to not use its cached response under any circumstances,
+Max\-Age
+is sent only for index files and tells the cache to refresh its object if it is older than the given number of seconds\&. Debian updates its index files daily so the default is 1 day\&.
+No\-Store
+specifies that the cache should never store this request, it is only set for archive files\&. This may be useful to prevent polluting a proxy cache with very large \&.deb files\&. Note: Squid 2\&.0\&.2 does not support any of these options\&.
+.sp
+The option
+timeout
+sets the timeout timer used by the method, this applies to all things including connection timeout and data timeout\&.
+.sp
+One setting is provided to control the pipeline depth in cases where the remote server is not RFC conforming or buggy (such as Squid 2\&.0\&.2)\&.
+Acquire::http::Pipeline\-Depth
+can be a value from 0 to 5 indicating how many outstanding requests APT should send\&. A value of zero MUST be specified if the remote host does not properly linger on TCP connections \- otherwise data corruption will occur\&. Hosts which require this are in violation of RFC 2068\&.
+.sp
+The used bandwidth can be limited with
+Acquire::http::Dl\-Limit
+which accepts integer values in kilobyte\&. The default value is 0 which deactivates the limit and tries uses as much as possible of the bandwidth (Note that this option implicit deactivates the download from multiple servers at the same time\&.)
+.sp
+Acquire::http::User\-Agent
+can be used to set a different User\-Agent for the http download method as some proxies allow access for clients only if the client uses a known identifier\&.
+.RE
+.PP
+https
+.RS 4
+HTTPS URIs\&. Cache\-control, Timeout, AllowRedirect, Dl\-Limit and proxy options are the same as for
+http
+method and will also default to the options from the
+http
+method if they are not explicitly set for https\&.
+Pipeline\-Depth
+option is not supported yet\&.
+.sp
+CaInfo
+suboption specifies place of file that holds info about trusted certificates\&.
+<host>::CaInfo
+is corresponding per\-host option\&.
+Verify\-Peer
+boolean suboption determines whether verify server\*(Aqs host certificate against trusted certificates or not\&.
+<host>::Verify\-Peer
+is corresponding per\-host option\&.
+Verify\-Host
+boolean suboption determines whether verify server\*(Aqs hostname or not\&.
+<host>::Verify\-Host
+is corresponding per\-host option\&.
+SslCert
+determines what certificate to use for client authentication\&.
+<host>::SslCert
+is corresponding per\-host option\&.
+SslKey
+determines what private key to use for client authentication\&.
+<host>::SslKey
+is corresponding per\-host option\&.
+SslForceVersion
+overrides default SSL version to use\&. Can contain \*(AqTLSv1\*(Aq or \*(AqSSLv3\*(Aq string\&.
+<host>::SslForceVersion
+is corresponding per\-host option\&.
+.RE
+.PP
+ftp
+.RS 4
+FTP URIs; ftp::Proxy is the default ftp proxy to use\&. It is in the standard form of
+ftp://[[user][:pass]@]host[:port]/\&. Per host proxies can also be specified by using the form
+ftp::Proxy::<host>
+with the special keyword
+DIRECT
+meaning to use no proxies\&. If no one of the above settings is specified,
+\fBftp_proxy\fR
+environment variable will be used\&. To use a ftp proxy you will have to set the
+ftp::ProxyLogin
+script in the configuration file\&. This entry specifies the commands to send to tell the proxy server what to connect to\&. Please see
+/usr/share/doc/apt/examples/configure\-index\&.gz
+for an example of how to do this\&. The substitution variables available are
+$(PROXY_USER)
+$(PROXY_PASS)
+$(SITE_USER)
+$(SITE_PASS)
+$(SITE)
+and
+$(SITE_PORT)
+Each is taken from it\*(Aqs respective URI component\&.
+.sp
+The option
+timeout
+sets the timeout timer used by the method, this applies to all things including connection timeout and data timeout\&.
+.sp
+Several settings are provided to control passive mode\&. Generally it is safe to leave passive mode on, it works in nearly every environment\&. However some situations require that passive mode be disabled and port mode ftp used instead\&. This can be done globally, for connections that go through a proxy or for a specific host (See the sample config file for examples)\&.
+.sp
+It is possible to proxy FTP over HTTP by setting the
+\fBftp_proxy\fR
+environment variable to a http url \- see the discussion of the http method above for syntax\&. You cannot set this in the configuration file and it is not recommended to use FTP over HTTP due to its low efficiency\&.
+.sp
+The setting
+ForceExtended
+controls the use of RFC2428
+EPSV
+and
+EPRT
+commands\&. The default is false, which means these commands are only used if the control connection is IPv6\&. Setting this to true forces their use even on IPv4 connections\&. Note that most FTP servers do not support RFC2428\&.
+.RE
+.PP
+cdrom
+.RS 4
+CDROM URIs; the only setting for CDROM URIs is the mount point,
+cdrom::Mount
+which must be the mount point for the CDROM drive as specified in
+/etc/fstab\&. It is possible to provide alternate mount and unmount commands if your mount point cannot be listed in the fstab (such as an SMB mount and old mount packages)\&. The syntax is to put
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+/cdrom/::Mount "foo";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+within the cdrom block\&. It is important to have the trailing slash\&. Unmount commands can be specified using UMount\&.
+.RE
+.PP
+gpgv
+.RS 4
+GPGV URIs; the only option for GPGV URIs is the option to pass additional parameters to gpgv\&.
+gpgv::Options
+Additional options passed to gpgv\&.
+.RE
+.PP
+CompressionTypes
+.RS 4
+List of compression types which are understood by the acquire methods\&. Files like
+Packages
+can be available in various compression formats\&. Per default the acquire methods can decompress
+\fBbzip2\fR,
+\fBlzma\fR
+and
+\fBgzip\fR
+compressed files, with this setting more formats can be added on the fly or the used method can be changed\&. The syntax for this is:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::\fIFileExtension\fR "\fIMethodname\fR";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Also the
+Order
+subgroup can be used to define in which order the acquire system will try to download the compressed files\&. The acquire system will try the first and proceed with the next compression type in this list on error, so to prefer one over the other type simple add the preferred type at first \- not already added default types will be added at run time to the end of the list, so e\&.g\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::Order:: "gz";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+can be used to prefer
+\fBgzip\fR
+compressed files over
+\fBbzip2\fR
+and
+\fBlzma\fR\&. If
+\fBlzma\fR
+should be preferred over
+\fBgzip\fR
+and
+\fBbzip2\fR
+the configure setting should look like this
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::CompressionTypes::Order { "lzma"; "gz"; };
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+
+It is not needed to add
+bz2
+explicit to the list as it will be added automatic\&.
+.sp
+Note that at run time the
+Dir::Bin::\fIMethodname\fR
+will be checked: If this setting exists the method will only be used if this file exists, e\&.g\&. for the bzip2 method (the inbuilt) setting is:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Dir::Bin::bzip2 "/bin/bzip2";
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Note also that list entries specified on the command line will be added at the end of the list specified in the configuration files, but before the default entries\&. To prefer a type in this case over the ones specified in the configuration files you can set the option direct \- not in list style\&. This will not override the defined list, it will only prefix the list with this type\&.
+.sp
+The special type
+uncompressed
+can be used to give uncompressed files a preference, but note that most archives don\*(Aqt provide uncompressed files so this is mostly only useable for local mirrors\&.
+.RE
+.PP
+GzipIndexes
+.RS 4
+When downloading
+gzip
+compressed indexes (Packages, Sources, or Translations), keep them gzip compressed locally instead of unpacking them\&. This saves quite a lot of disk space at the expense of more CPU requirements when building the local package caches\&. False by default\&.
+.RE
+.PP
+Languages
+.RS 4
+The Languages subsection controls which
+Translation
+files are downloaded and in which order APT tries to display the Description\-Translations\&. APT will try to display the first available Description in the Language which is listed at first\&. Languages can be defined with their short or long Languagecodes\&. Note that not all archives provide
+Translation
+files for every Language \- especially the long Languagecodes are rare, so please inform you which ones are available before you set here impossible values\&.
+.sp
+The default list includes "environment" and "en"\&. "environment" has a special meaning here: It will be replaced at runtime with the languagecodes extracted from the
+LC_MESSAGES
+environment variable\&. It will also ensure that these codes are not included twice in the list\&. If
+LC_MESSAGES
+is set to "C" only the
+Translation\-en
+file (if available) will be used\&. To force apt to use no Translation file use the setting
+Acquire::Languages=none\&. "none" is another special meaning code which will stop the search for a fitting
+Translation
+file\&. This can be used by the system administrator to let APT know that it should download also this files without actually use them if the environment doesn\*(Aqt specify this languages\&. So the following example configuration will result in the order "en, de" in an english and in "de, en" in a german localization\&. Note that "fr" is downloaded, but not used if APT is not used in a french localization, in such an environment the order would be "fr, de, en"\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Acquire::Languages { "environment"; "de"; "en"; "none"; "fr"; };
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SH "DIRECTORIES"
+.PP
+The
+Dir::State
+section has directories that pertain to local state information\&.
+lists
+is the directory to place downloaded package lists in and
+status
+is the name of the dpkg status file\&.
+preferences
+is the name of the APT preferences file\&.
+Dir::State
+contains the default directory to prefix on all sub items if they do not start with
+/
+or
+\&./\&.
+.PP
+Dir::Cache
+contains locations pertaining to local cache information, such as the two package caches
+srcpkgcache
+and
+pkgcache
+as well as the location to place downloaded archives,
+Dir::Cache::archives\&. Generation of caches can be turned off by setting their names to be blank\&. This will slow down startup but save disk space\&. It is probably preferred to turn off the pkgcache rather than the srcpkgcache\&. Like
+Dir::State
+the default directory is contained in
+Dir::Cache
+.PP
+Dir::Etc
+contains the location of configuration files,
+sourcelist
+gives the location of the sourcelist and
+main
+is the default configuration file (setting has no effect, unless it is done from the config file specified by
+\fBAPT_CONFIG\fR)\&.
+.PP
+The
+Dir::Parts
+setting reads in all the config fragments in lexical order from the directory specified\&. After this is done then the main config file is loaded\&.
+.PP
+Binary programs are pointed to by
+Dir::Bin\&.
+Dir::Bin::Methods
+specifies the location of the method handlers and
+gzip,
+bzip2,
+lzma,
+dpkg,
+apt\-get
+dpkg\-source
+dpkg\-buildpackage
+and
+apt\-cache
+specify the location of the respective programs\&.
+.PP
+The configuration item
+RootDir
+has a special meaning\&. If set, all paths in
+Dir::
+will be relative to
+RootDir,
+\fIeven paths that are specified absolutely\fR\&. So, for instance, if
+RootDir
+is set to
+/tmp/staging
+and
+Dir::State::status
+is set to
+/var/lib/dpkg/status, then the status file will be looked up in
+/tmp/staging/var/lib/dpkg/status\&.
+.PP
+The
+Ignore\-Files\-Silently
+list can be used to specify which files APT should silently ignore while parsing the files in the fragment directories\&. Per default a file which end with
+\&.disabled,
+~,
+\&.bak
+or
+\&.dpkg\-[a\-z]+
+is silently ignored\&. As seen in the last default value these patterns can use regular expression syntax\&.
+.SH "APT IN DSELECT"
+.PP
+When APT is used as a
+\fBdselect\fR(1)
+method several configuration directives control the default behaviour\&. These are in the
+DSelect
+section\&.
+.PP
+Clean
+.RS 4
+Cache Clean mode; this value may be one of always, prompt, auto, pre\-auto and never\&. always and prompt will remove all packages from the cache after upgrading, prompt (the default) does so conditionally\&. auto removes only those packages which are no longer downloadable (replaced with a new version for instance)\&. pre\-auto performs this action before downloading new packages\&.
+.RE
+.PP
+options
+.RS 4
+The contents of this variable is passed to
+\fBapt-get\fR(8)
+as command line options when it is run for the install phase\&.
+.RE
+.PP
+Updateoptions
+.RS 4
+The contents of this variable is passed to
+\fBapt-get\fR(8)
+as command line options when it is run for the update phase\&.
+.RE
+.PP
+PromptAfterUpdate
+.RS 4
+If true the [U]pdate operation in
+\fBdselect\fR(1)
+will always prompt to continue\&. The default is to prompt only on error\&.
+.RE
+.SH "HOW APT CALLS DPKG"
+.PP
+Several configuration directives control how APT invokes
+\fBdpkg\fR(1)\&. These are in the
+DPkg
+section\&.
+.PP
+options
+.RS 4
+This is a list of options to pass to dpkg\&. The options must be specified using the list notation and each list item is passed as a single argument to
+\fBdpkg\fR(1)\&.
+.RE
+.PP
+Pre\-Invoke, Post\-Invoke
+.RS 4
+This is a list of shell commands to run before/after invoking
+\fBdpkg\fR(1)\&. Like
+options
+this must be specified in list notation\&. The commands are invoked in order using
+/bin/sh, should any fail APT will abort\&.
+.RE
+.PP
+Pre\-Install\-Pkgs
+.RS 4
+This is a list of shell commands to run before invoking dpkg\&. Like
+options
+this must be specified in list notation\&. The commands are invoked in order using
+/bin/sh, should any fail APT will abort\&. APT will pass to the commands on standard input the filenames of all \&.deb files it is going to install, one per line\&.
+.sp
+Version 2 of this protocol dumps more information, including the protocol version, the APT configuration space and the packages, files and versions being changed\&. Version 2 is enabled by setting
+DPkg::Tools::options::cmd::Version
+to 2\&.
+cmd
+is a command given to
+Pre\-Install\-Pkgs\&.
+.RE
+.PP
+Run\-Directory
+.RS 4
+APT chdirs to this directory before invoking dpkg, the default is
+/\&.
+.RE
+.PP
+Build\-options
+.RS 4
+These options are passed to
+\fBdpkg-buildpackage\fR(1)
+when compiling packages, the default is to disable signing and produce all binaries\&.
+.RE
+.SS "dpkg trigger usage (and related options)"
+.PP
+APT can call dpkg in a way so it can make aggressive use of triggers over multiple calls of dpkg\&. Without further options dpkg will use triggers only in between his own run\&. Activating these options can therefore decrease the time needed to perform the install / upgrade\&. Note that it is intended to activate these options per default in the future, but as it changes the way APT calling dpkg drastically it needs a lot more testing\&.
+\fIThese options are therefore currently experimental and should not be used in productive environments\&.\fR
+Also it breaks the progress reporting so all frontends will currently stay around half (or more) of the time in the 100% state while it actually configures all packages\&.
+.PP
+Note that it is not guaranteed that APT will support these options or that these options will not cause (big) trouble in the future\&. If you have understand the current risks and problems with these options, but are brave enough to help testing them create a new configuration file and test a combination of options\&. Please report any bugs, problems and improvements you encounter and make sure to note which options you have used in your reports\&. Asking dpkg for help could also be useful for debugging proposes, see e\&.g\&.
+\fBdpkg \-\-audit\fR\&. A defensive option combination would be
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+DPkg::NoTriggers "true";
+PackageManager::Configure "smart";
+DPkg::ConfigurePending "true";
+DPkg::TriggersPending "true";
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+DPkg::NoTriggers
+.RS 4
+Add the no triggers flag to all dpkg calls (except the ConfigurePending call)\&. See
+\fBdpkg\fR(1)
+if you are interested in what this actually means\&. In short: dpkg will not run the triggers when this flag is present unless it is explicitly called to do so in an extra call\&. Note that this option exists (undocumented) also in older apt versions with a slightly different meaning: Previously these option only append \-\-no\-triggers to the configure calls to dpkg \- now apt will add these flag also to the unpack and remove calls\&.
+.RE
+.PP
+PackageManager::Configure
+.RS 4
+Valid values are "all", "smart" and "no"\&. "all" is the default value and causes APT to configure all packages explicit\&. The "smart" way is it to configure only packages which need to be configured before another package can be unpacked (Pre\-Depends) and let the rest configure by dpkg with a call generated by the next option\&. "no" on the other hand will not configure anything and totally rely on dpkg for configuration (which will at the moment fail if a Pre\-Depends is encountered)\&. Setting this option to another than the all value will implicitly activate also the next option per default as otherwise the system could end in an unconfigured status which could be unbootable!
+.RE
+.PP
+DPkg::ConfigurePending
+.RS 4
+If this option is set apt will call
+\fBdpkg \-\-configure \-\-pending\fR
+to let dpkg handle all required configurations and triggers\&. This option is activated automatic per default if the previous option is not set to
+all, but deactivating could be useful if you want to run APT multiple times in a row \- e\&.g\&. in an installer\&. In these sceneries you could deactivate this option in all but the last run\&.
+.RE
+.PP
+DPkg::TriggersPending
+.RS 4
+Useful for
+smart
+configuration as a package which has pending triggers is not considered as
+installed
+and dpkg treats them as
+unpacked
+currently which is a dealbreaker for Pre\-Dependencies (see debbugs #526774)\&. Note that this will process all triggers, not only the triggers needed to configure this package\&.
+.RE
+.PP
+PackageManager::UnpackAll
+.RS 4
+As the configuration can be deferred to be done at the end by dpkg it can be tried to order the unpack series only by critical needs, e\&.g\&. by Pre\-Depends\&. Default is true and therefore the "old" method of ordering in various steps by everything\&. While both method were present in earlier APT versions the
+OrderCritical
+method was unused, so this method is very experimental and needs further improvements before becoming really useful\&.
+.RE
+.PP
+OrderList::Score::Immediate
+.RS 4
+Essential packages (and there dependencies) should be configured immediately after unpacking\&. It will be a good idea to do this quite early in the upgrade process as these these configure calls require currently also
+DPkg::TriggersPending
+which will run quite a few triggers (which maybe not needed)\&. Essentials get per default a high score but the immediate flag is relatively low (a package which has a Pre\-Depends is higher rated)\&. These option and the others in the same group can be used to change the scoring\&. The following example shows the settings with there default values\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+OrderList::Score {
+	Delete 500;
+	Essential 200;
+	Immediate 10;
+	PreDepends 50;
+};
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.RE
+.SH "PERIODIC AND ARCHIVES OPTIONS"
+.PP
+APT::Periodic
+and
+APT::Archives
+groups of options configure behavior of apt periodic updates, which is done by
+/etc/cron\&.daily/apt
+script\&. See header of this script for the brief documentation of these options\&.
+.SH "DEBUG OPTIONS"
+.PP
+Enabling options in the
+Debug::
+section will cause debugging information to be sent to the standard error stream of the program utilizing the
+apt
+libraries, or enable special program modes that are primarily useful for debugging the behavior of
+apt\&. Most of these options are not interesting to a normal user, but a few may be:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::pkgProblemResolver
+enables output about the decisions made by
+dist\-upgrade, upgrade, install, remove, purge\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::NoLocking
+disables all file locking\&. This can be used to run some operations (for instance,
+apt\-get \-s install) as a non\-root user\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::pkgDPkgPM
+prints out the actual command line each time that
+apt
+invokes
+\fBdpkg\fR(1)\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
+Debug::IdentCdrom
+disables the inclusion of statfs data in CDROM IDs\&.
+.RE
+.PP
+A full list of debugging options to apt follows\&.
+.PP
+Debug::Acquire::cdrom
+.RS 4
+Print information related to accessing
+cdrom://
+sources\&.
+.RE
+.PP
+Debug::Acquire::ftp
+.RS 4
+Print information related to downloading packages using FTP\&.
+.RE
+.PP
+Debug::Acquire::http
+.RS 4
+Print information related to downloading packages using HTTP\&.
+.RE
+.PP
+Debug::Acquire::https
+.RS 4
+Print information related to downloading packages using HTTPS\&.
+.RE
+.PP
+Debug::Acquire::gpgv
+.RS 4
+Print information related to verifying cryptographic signatures using
+gpg\&.
+.RE
+.PP
+Debug::aptcdrom
+.RS 4
+Output information about the process of accessing collections of packages stored on CD\-ROMs\&.
+.RE
+.PP
+Debug::BuildDeps
+.RS 4
+Describes the process of resolving build\-dependencies in
+\fBapt-get\fR(8)\&.
+.RE
+.PP
+Debug::Hashes
+.RS 4
+Output each cryptographic hash that is generated by the
+apt
+libraries\&.
+.RE
+.PP
+Debug::IdentCDROM
+.RS 4
+Do not include information from
+statfs, namely the number of used and free blocks on the CD\-ROM filesystem, when generating an ID for a CD\-ROM\&.
+.RE
+.PP
+Debug::NoLocking
+.RS 4
+Disable all file locking\&. For instance, this will allow two instances of
+\(lqapt\-get update\(rq
+to run at the same time\&.
+.RE
+.PP
+Debug::pkgAcquire
+.RS 4
+Log when items are added to or removed from the global download queue\&.
+.RE
+.PP
+Debug::pkgAcquire::Auth
+.RS 4
+Output status messages and errors related to verifying checksums and cryptographic signatures of downloaded files\&.
+.RE
+.PP
+Debug::pkgAcquire::Diffs
+.RS 4
+Output information about downloading and applying package index list diffs, and errors relating to package index list diffs\&.
+.RE
+.PP
+Debug::pkgAcquire::RRed
+.RS 4
+Output information related to patching apt package lists when downloading index diffs instead of full indices\&.
+.RE
+.PP
+Debug::pkgAcquire::Worker
+.RS 4
+Log all interactions with the sub\-processes that actually perform downloads\&.
+.RE
+.PP
+Debug::pkgAutoRemove
+.RS 4
+Log events related to the automatically\-installed status of packages and to the removal of unused packages\&.
+.RE
+.PP
+Debug::pkgDepCache::AutoInstall
+.RS 4
+Generate debug messages describing which packages are being automatically installed to resolve dependencies\&. This corresponds to the initial auto\-install pass performed in, e\&.g\&.,
+apt\-get install, and not to the full
+apt
+dependency resolver; see
+Debug::pkgProblemResolver
+for that\&.
+.RE
+.PP
+Debug::pkgDepCache::Marker
+.RS 4
+Generate debug messages describing which package is marked as keep/install/remove while the ProblemResolver does his work\&. Each addition or deletion may trigger additional actions; they are shown indented two additional space under the original entry\&. The format for each line is
+MarkKeep,
+MarkDelete
+or
+MarkInstall
+followed by
+package\-name <a\&.b\&.c \-> d\&.e\&.f | x\&.y\&.z> (section)
+where
+a\&.b\&.c
+is the current version of the package,
+d\&.e\&.f
+is the version considered for installation and
+x\&.y\&.z
+is a newer version, but not considered for installation (because of a low pin score)\&. The later two can be omitted if there is none or if it is the same version as the installed\&.
+section
+is the name of the section the package appears in\&.
+.RE
+.PP
+Debug::pkgInitConfig
+.RS 4
+Dump the default configuration to standard error on startup\&.
+.RE
+.PP
+Debug::pkgDPkgPM
+.RS 4
+When invoking
+\fBdpkg\fR(1), output the precise command line with which it is being invoked, with arguments separated by a single space character\&.
+.RE
+.PP
+Debug::pkgDPkgProgressReporting
+.RS 4
+Output all the data received from
+\fBdpkg\fR(1)
+on the status file descriptor and any errors encountered while parsing it\&.
+.RE
+.PP
+Debug::pkgOrderList
+.RS 4
+Generate a trace of the algorithm that decides the order in which
+apt
+should pass packages to
+\fBdpkg\fR(1)\&.
+.RE
+.PP
+Debug::pkgPackageManager
+.RS 4
+Output status messages tracing the steps performed when invoking
+\fBdpkg\fR(1)\&.
+.RE
+.PP
+Debug::pkgPolicy
+.RS 4
+Output the priority of each package list on startup\&.
+.RE
+.PP
+Debug::pkgProblemResolver
+.RS 4
+Trace the execution of the dependency resolver (this applies only to what happens when a complex dependency problem is encountered)\&.
+.RE
+.PP
+Debug::pkgProblemResolver::ShowScores
+.RS 4
+Display a list of all installed packages with their calculated score used by the pkgProblemResolver\&. The description of the package is the same as described in
+Debug::pkgDepCache::Marker
+.RE
+.PP
+Debug::sourceList
+.RS 4
+Print information about the vendors read from
+/etc/apt/vendors\&.list\&.
+.RE
+.SH "EXAMPLES"
+.PP
+/usr/share/doc/apt/examples/configure\-index\&.gz
+is a configuration file showing example values for all possible options\&.
+.SH "FILES"
+.PP
+/etc/apt/apt\&.conf
+.RS 4
+APT configuration file\&. Configuration Item:
+Dir::Etc::Main\&.
+.RE
+.PP
+/etc/apt/apt\&.conf\&.d/
+.RS 4
+APT configuration file fragments\&. Configuration Item:
+Dir::Etc::Parts\&.
+.RE
+.SH "SEE ALSO"
+.PP
+\fBapt-cache\fR(8),
+\fBapt-config\fR(8),
+\fBapt_preferences\fR(5)\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBAPT bug page\fR\m[]\&\s-2\u[1]\d\s+2\&. If you wish to report a bug in APT, please see
+/usr/share/doc/debian/bug\-reporting\&.txt
+or the
+\fBreportbug\fR(1)
+command\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBAPT team\fR
+.RS 4
+.RE
+.PP
+\fBDaniel Burrows\fR <\&dburrows@debian\&.org\&>
+.RS 4
+Initial documentation of Debug::*\&.
+.RE
+.SH "NOTES"
+.IP " 1." 4
+APT bug page
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

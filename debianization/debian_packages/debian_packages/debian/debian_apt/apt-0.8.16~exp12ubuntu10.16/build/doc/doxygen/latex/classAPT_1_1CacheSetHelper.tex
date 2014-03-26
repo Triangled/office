@@ -1,0 +1,79 @@
+\section{\-Cache\-Set\-Helper \-Class \-Reference}
+\label{classAPT_1_1CacheSetHelper}\index{\-Cache\-Set\-Helper@{\-Cache\-Set\-Helper}}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \-Cache\-Set\-Helper} (bool const \-Show\-Error=true, {\bf \-Global\-Error\-::\-Msg\-Type} \-Error\-Type={\bf \-Global\-Error\-::\-E\-R\-R\-O\-R})\label{classAPT_1_1CacheSetHelper_ad9104132376837f10466a56b2df310be}
+
+\item 
+virtual void {\bfseries show\-Task\-Selection} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&pkg, std\-::string const \&pattern)\label{classAPT_1_1CacheSetHelper_a8526549a27e24f72c7ef03e629175862}
+
+\item 
+virtual void {\bfseries show\-Reg\-Ex\-Selection} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&pkg, std\-::string const \&pattern)\label{classAPT_1_1CacheSetHelper_a526e0225aa2674c8fb405fdc2be3e3f9}
+
+\item 
+virtual void {\bfseries show\-Selected\-Version} ({\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg, {\bf pkg\-Cache\-::\-Ver\-Iterator} const \-Ver, std\-::string const \&ver, bool const ver\-Is\-Rel)\label{classAPT_1_1CacheSetHelper_aef92ec834773a43566f671e2e3912dd2}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-Task} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string pattern)\label{classAPT_1_1CacheSetHelper_ad6e77e23e60c741a0667ad81b77f19ac}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-Reg\-Ex} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string pattern)\label{classAPT_1_1CacheSetHelper_a437d8b499171c26f40484470a5491eb8}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-Package} ({\bf \-Package\-Container\-Interface} $\ast$const pci, {\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&str)\label{classAPT_1_1CacheSetHelper_acb46260b77e03d642087c6c4c0234927}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-All\-Ver} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_a4ea3067ebab52cd5eded9812a0d85ba8}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-Inst\-Cand\-Ver} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_a6137aeea15fc1f3b23a2540a7ab91160}
+
+\item 
+virtual void {\bfseries can\-Not\-Find\-Cand\-Inst\-Ver} ({\bf \-Version\-Container\-Interface} $\ast$const vci, {\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_a93d33933d207a6300e520d600ff2bb8a}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Pkg\-Iterator} {\bfseries can\-Not\-Find\-Pkg\-Name} ({\bf pkg\-Cache\-File} \&\-Cache, std\-::string const \&str)\label{classAPT_1_1CacheSetHelper_ac9f48773f94e547962061b785976726f}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bfseries can\-Not\-Find\-Newest\-Ver} ({\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_a9dc7b1a2dfba561c75aeed6495217ac1}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bfseries can\-Not\-Find\-Candidate\-Ver} ({\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_ab5c6b13308b12b8c9eed683b8fdb7824}
+
+\item 
+virtual {\bf pkg\-Cache\-::\-Ver\-Iterator} {\bfseries can\-Not\-Find\-Installed\-Ver} ({\bf pkg\-Cache\-File} \&\-Cache, {\bf pkg\-Cache\-::\-Pkg\-Iterator} const \&\-Pkg)\label{classAPT_1_1CacheSetHelper_a5f398d661df5655a08aaa5e0d0936903}
+
+\item 
+bool {\bfseries show\-Errors} () const \label{classAPT_1_1CacheSetHelper_a1881294baa887d4cca7a5b2d72077570}
+
+\item 
+bool {\bfseries show\-Errors} (bool const new\-Value)\label{classAPT_1_1CacheSetHelper_af3e4da4882d0fd6437fceb486c3dbf35}
+
+\item 
+{\bf \-Global\-Error\-::\-Msg\-Type} {\bfseries error\-Type} () const \label{classAPT_1_1CacheSetHelper_af487be30dcad800b9d21f2c840502ae2}
+
+\item 
+{\bf \-Global\-Error\-::\-Msg\-Type} {\bfseries error\-Type} ({\bf \-Global\-Error\-::\-Msg\-Type} const \&new\-Value)\label{classAPT_1_1CacheSetHelper_ad9b98257e25d1bc37b95ef49dcf3dc7f}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \-Show\-Error}\label{classAPT_1_1CacheSetHelper_ac8a78ec3420af78bc9c267037796ae30}
+
+\item 
+{\bf \-Global\-Error\-::\-Msg\-Type} {\bfseries \-Error\-Type}\label{classAPT_1_1CacheSetHelper_a87f795887eac5fd7f1db494585de5681}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Simple base class with a lot of virtual methods which can be overridden to alter the behavior or the output of the \-Cache\-Sets.
+
+\-This helper is passed around by the static methods in the \-Cache\-Sets and used every time they hit an error condition or something could be printed out. 
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/{\bf cacheset.\-h}\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/cacheset.\-cc\end{DoxyCompactItemize}

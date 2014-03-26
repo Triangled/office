@@ -1,0 +1,73 @@
+\section{pkg\-Versioning\-System \-Class \-Reference}
+\label{classpkgVersioningSystem}\index{pkg\-Versioning\-System@{pkg\-Versioning\-System}}
+
+
+\-Inheritance diagram for pkg\-Versioning\-System\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classpkgVersioningSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\-Collaboration diagram for pkg\-Versioning\-System\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classpkgVersioningSystem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries \-Do\-Cmp\-Version} (const char $\ast$\-A, const char $\ast$\-Aend, const char $\ast$\-B, const char $\ast$\-Bend)=0\label{classpkgVersioningSystem_aa12f8673c7c8bf90f8c9e65626de02b4}
+
+\item 
+virtual bool {\bfseries \-Check\-Dep} (const char $\ast$\-Pkg\-Ver, int \-Op, const char $\ast$\-Dep\-Ver)=0\label{classpkgVersioningSystem_a56de086fbab9f702d2ac912e7610fd2e}
+
+\item 
+virtual int {\bfseries \-Do\-Cmp\-Release\-Ver} (const char $\ast$\-A, const char $\ast$\-Aend, const char $\ast$\-B, const char $\ast$\-Bend)=0\label{classpkgVersioningSystem_afa29e1051ece88f8c122003168dc4902}
+
+\item 
+virtual std\-::string {\bfseries \-Upstream\-Version} (const char $\ast$\-A)=0\label{classpkgVersioningSystem_accd366fa398592726d8dca05a7e92cd1}
+
+\item 
+virtual bool {\bfseries \-Test\-Compatibility} ({\bf pkg\-Versioning\-System} const \&\-Against)\label{classpkgVersioningSystem_a69b2d44675cd1acca46fe6f7c0a92f14}
+
+\item 
+{\bfseries \-A\-P\-T\-\_\-\-M\-K\-S\-T\-R\-C\-M\-P} (\-Cmp\-Version, \-Do\-Cmp\-Version)\label{classpkgVersioningSystem_aca57c70f8fe224ab7a4d01648c95c9d8}
+
+\item 
+{\bfseries \-A\-P\-T\-\_\-\-M\-K\-S\-T\-R\-C\-M\-P} (\-Cmp\-Release\-Ver, \-Do\-Cmp\-Release\-Ver)\label{classpkgVersioningSystem_a0fd8b1db51b2e96ea997c18bc19eaac6}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pkg\-Versioning\-System} $\ast$ {\bfseries \-Get\-V\-S} (const char $\ast$\-Label)\label{classpkgVersioningSystem_a3523022827eb95609c05b338a8c751c4}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bfseries \-Label}\label{classpkgVersioningSystem_a2c28600dbc88e9535c6e44b111829cc2}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pkg\-Versioning\-System} $\ast$$\ast$ {\bfseries \-Global\-List} = \-V\-S\-List\label{classpkgVersioningSystem_a10ad0ee37c2b6d25736b4c604b9f7fb5}
+
+\item 
+static unsigned long {\bfseries \-Global\-List\-Len} = 0\label{classpkgVersioningSystem_acdd1750df964c2a94afe622abfe15d7b}
+
+\end{DoxyCompactItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/version.\-h\item 
+/home/rpmuser/debian/debian\-\_\-apt/apt-\/0.\-8.\-16$\sim$exp12ubuntu10.\-16/apt-\/pkg/version.\-cc\end{DoxyCompactItemize}

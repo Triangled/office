@@ -1,0 +1,665 @@
+'\" t
+.\"     Title: apt-ftparchive
+.\"    Author: Jason Gunthorpe
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 17
+Agosto 2009
+.\"    Manual: APT
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "APT\-FTPARCHIVE" "1" "17 Agosto 2009" "Linux" "APT"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+apt-ftparchive \- Utilitário para gerar ficheiros de índice
+.SH "SYNOPSIS"
+.HP \w'\fBapt\-ftparchive\fR\ 'u
+\fBapt\-ftparchive\fR [\fB\-hvdsq\fR] [\fB\-\-md5\fR] [\fB\-\-delink\fR] [\fB\-\-readonly\fR] [\fB\-\-contents\fR] [\fB\-\-arch\ \fR\fB\fIarquitectura\fR\fR] [\fB\-o\ \fR\fB\fIconfiguração\fR\fR\fB=\fR\fB\fIstring\fR\fR] [\fB\-c=\fR\fB\fIficheiro\fR\fR] {[packages\ \fIcaminho\fR...\ [\fIoverride\fR\ [\fIprefixo\-de\-caminho\fR]]] | [sources\ \fIcaminho\fR...\ [\fIsobrepor\fR\ [\fIprefixo\-de\-caminho\fR]]] | [contents\ \fIcaminho\fR] | [release\ \fIcaminho\fR] | [generate\ \fIficheiro\-de\-configuração\fR\ \fIsecção\fR...] | [clean\ \fIficheiro\-de\-configuração\fR]}
+.SH "DESCRIçãO"
+.PP
+\fBapt\-ftparchive\fR
+é a ferramenta de linha de comandos que cria os ficheiros índice que o APT usa para aceder a uma fonte de distribuição\&. Os ficheiros índice devem ser gerados no site de origem baseados no conteúdo desse site\&.
+.PP
+\fBapt\-ftparchive\fR
+é um super conjunto do programa
+\fBdpkg-scanpackages\fR(1), incorporando todas as suas funcionalidades através do comando
+packages\&. Também contém um gerador de ficheiro de conteúdos,
+contents, e um meio elaborado de colocar em script o processo de geração para um arquivo completo\&.
+.PP
+Internamente o
+\fBapt\-ftparchive\fR
+pode fazer uso de bases de dados binárias para por em cache os conteúdos de um ficheiro \&.deb e não precisa de nenhum programa externo à excepção do
+\fBgzip\fR(1)\&. Quando faz uma geração completa, executa automaticamente verificações de alterações de ficheiros e constrói os ficheiros comprimidos desejados\&.
+.PP
+A menos que a opção
+\fB\-h\fR, ou
+\fB\-\-help\fR
+seja fornecida, um dos comandos abaixo têm que estar presentes\&.
+.PP
+packages
+.RS 4
+O comando packages gera um ficheiro pacote a partir duma árvore de directórios\&. Recebe um dado directório e procura recursivamente por ficheiros \&.deb, emitindo um registo de pacote para o stdout por cada um\&. Este comando é aproximadamente equivalente ao
+\fBdpkg-scanpackages\fR(1)\&.
+.sp
+A opção
+\fB\-\-db\fR
+pode ser usada para especificar uma base de dados de cache binária\&.
+.RE
+.PP
+sources
+.RS 4
+O comando
+sources
+gera um índice de fonte a partir duma árvore de directórios\&. Recebe um dado directório e procura recursivamente por ficheiros \&.dsc, emitindo um registo de fonte para o stdout por cada um\&. Este comando é aproximadamente equivalente ao
+\fBdpkg-scansources\fR(1)\&.
+.sp
+Se for especificado um ficheiro de sobreposição então será procurado um ficheiro de sobreposição de fonte com uma extensão de \&.src\&. A opção \-\-source\-override pode ser usada para alterar o ficheiro de sobreposição de fonte que irá ser usado\&.
+.RE
+.PP
+contents
+.RS 4
+O comandocontents
+gera um ficheiro de conteúdos a partir duma árvore de directórios\&. Recebe um dado directório e procura recursivamente por ficheiros \&.deb, e lê a lista de ficheiros de cada ficheiro\&. Então organiza e escreve para o stdout a lista de ficheiros correspondente a pacotes\&. Os directórios não são escritos no saída\&. Se múltiplos pacotes possuírem o mesmo ficheiro então cada pacote é separado por uma vírgula na saída\&.
+.sp
+A opção
+\fB\-\-db\fR
+pode ser usada para especificar uma base de dados de cache binária\&.
+.RE
+.PP
+release
+.RS 4
+The
+release
+command generates a Release file from a directory tree\&. It recursively searches the given directory for uncompressed
+Packages
+and
+Sources
+files and the ones compressed with
+\fBgzip\fR,
+\fBbzip2\fR
+or
+\fBlzma\fR
+as well as
+Release
+and
+md5sum\&.txt
+files by default (APT::FTPArchive::Release::Default\-Patterns)\&. Additional filename patterns can be added by listing them in
+APT::FTPArchive::Release::Patterns\&. It then writes to stdout a Release file containing a MD5, SHA1 and SHA256 digest for each file\&.
+.sp
+Valores para os campos de metadados adicionais no ficheiro Release são tomados a partir das variáveis correspondentes sob
+APT::FTPArchive::Release, ex\&.
+APT::FTPArchive::Release::Origin\&. Os campos suportados são:
+Origin,
+Label,
+Suite,
+Version,
+Codename,
+Date,
+Architectures,
+Components,
+Description\&.
+.RE
+.PP
+generate
+.RS 4
+O comando
+generate
+é desenhado para ser executado a partir dum script cron e constrói índices de acordo com o ficheiro de configuração fornecido\&. A linguagem de configuração disponibiliza um meio flexível de de especificar quais ficheiros índice são construídos a partir de quais directórios, assim como disponibilizar um meio simples de manter as definições requeridas\&.
+.RE
+.PP
+clean
+.RS 4
+O comando
+clean
+arruma as bases de dados usadas pelo ficheiro de configuração fornecido ao remover quaisquer registos que já não são necessários\&.
+.RE
+.SH "A CONFIGURAçãO DO GENERATE"
+.PP
+O comando
+generate
+usa um ficheiro de configuração para descrever os arquivos que vão ser gerados\&. Segue o formato típico de configuração ISC como visto em ferramentas ISC como o bind 8 e dhcpd\&.
+\fBapt.conf\fR(5)
+contém uma descrição da sintaxe\&. Note que a configuração gerada é analisada de maneira seccional, mas o
+\fBapt.conf\fR(5)
+é analisado numa maneira de árvore\&. Isto apenas afecta o modo de como a etiqueta scope é manuseada\&.
+.PP
+A configuração do generate tem 4 secções separadas, cada uma descrita mais abaixo\&.
+.SS "Secção Dir"
+.PP
+A secção
+Dir
+define os directórios standard necessários para localizar os ficheiros requisitados durante o processo de geração\&. Estes directórios precedem a certos caminhos relativos definidos em secções posteriores para produzir um caminho completo e absoluto\&.
+.PP
+ArchiveDir
+.RS 4
+Especifica a raiz do arquivo FTP, numa configuração Debian standard este é o directório que contém o
+ls\-LR
+e nós da distribuição\&.
+.RE
+.PP
+OverrideDir
+.RS 4
+Especifica a localização dos ficheiros de sobrepor\&.
+.RE
+.PP
+CacheDir
+.RS 4
+Especifica a localização dos ficheiros de cache
+.RE
+.PP
+FileListDir
+.RS 4
+Especifica a localização dos ficheiros de listas de ficheiros, se a definição
+FileList
+for usada mais abaixo\&.
+.RE
+.SS "Secção Default"
+.PP
+A secção
+Default
+especifica valores predefinidos, e definições que controlam a operação do gerador\&. Outras secções podem sobrepor estas predefinições em uma definição por\-secção\&.
+.PP
+Packages::Compress
+.RS 4
+Define os esquemas de compressão predefinidos a usar para os ficheiros de índice Package\&. É uma string que contém uma lista separada por espaços de pelo menos um de: \*(Aq\&.\*(Aq (nenhuma compressão), \*(Aqgzip\*(Aq and \*(Aqbzip2\*(Aq\&. A predefinição para todos os esquemas de compressão é \*(Aq\&. gzip\*(Aq\&.
+.RE
+.PP
+Packages::Extensions
+.RS 4
+Define a lista predefinida das extensões de ficheiros que são ficheiros pacote\&. A predefinição é \*(Aq\&.deb\*(Aq\&.
+.RE
+.PP
+Sources::Compress
+.RS 4
+Isto é semelhante a
+Packages::Compress
+excepto que controla a compressão para os ficheiros das Fontes\&.
+.RE
+.PP
+Sources::Extensions
+.RS 4
+Define a lista predefinida das extensões de ficheiros que são ficheiros de fontes\&. A predefinição é \*(Aq\&.dsc\*(Aq\&.
+.RE
+.PP
+Contents::Compress
+.RS 4
+Isto é semelhante a
+Packages::Compress
+excepto que controla a compressão para os ficheiros de Conteúdos\&.
+.RE
+.PP
+Translation::Compress
+.RS 4
+Isto é semelhante a
+Packages::Compress
+excepto que controla a compressão para o ficheiro mestre Translation\-en\&.
+.RE
+.PP
+DeLinkLimit
+.RS 4
+Especifica o número de kilobytes para delink (e substitui com hard links) por execução\&. Isto é usado em conjunto com a definição
+External\-Links
+por secção\&.
+.RE
+.PP
+FileMode
+.RS 4
+Especifica o modo de todos os ficheiros índice criados\&. A predefinição é 0644\&. Todos os ficheiros índice são definidos para este modo independentemente do umask\&.
+.RE
+.PP
+LongDescription
+.RS 4
+Define se as descrições longas devem ser incluídas no ficheiro Packages ou divididas em um ficheiro Translation\-en mestre\&.
+.RE
+.SS "Secção TreeDefault"
+.PP
+Define predefinições específicas para as secções
+Tree\&. Todas estas variáveis são variáveis de substituição e têm as strings $(DIST), $(SECTION) e $(ARCH) substituídas pelos seus respectivos valores\&.
+.PP
+MaxContentsChange
+.RS 4
+Define o número de kilobytes dos ficheiros de conteúdo que são gerados a cada dia\&. Os ficheiros de conteúdo são re\-circulados para que ao fim de alguns dias todos sejam reconstruídos\&.
+.RE
+.PP
+ContentsAge
+.RS 4
+Controla o número de dias que se permite a um ficheiro de conteúdo ser verificado sem alteração\&. Se este limite for ultrapassado o mtime do ficheiro de conteúdo é actualizado\&. Este caso pode ocorrer se o ficheiro de pacote é alterado num modo que não resulta num novo ficheiro de conteúdo [por exemplo uma edição de sobreposição]\&. É permitido um soltar na esperança que novos \&.debs sejam instalados, requerendo um novo ficheiro de qualquer modo\&. A predefinição é 10, as unidades são em dias\&.
+.RE
+.PP
+Directory
+.RS 4
+Define o topo da árvore de directórios \&.deb\&. A predefinição é
+$(DIST)/$(SECTION)/binary\-$(ARCH)/
+.RE
+.PP
+SrcDirectory
+.RS 4
+Define o topo da árvore de directórios de pacotes fonte\&. A predefinição é
+$(DIST)/$(SECTION)/source/
+.RE
+.PP
+Packages
+.RS 4
+Define o ficheiro Packages de saída\&. A predefinição é
+$(DIST)/$(SECTION)/binary\-$(ARCH)/Packages
+.RE
+.PP
+Sources
+.RS 4
+Define o ficheiro Sources de saída\&. A predefinição é
+$(DIST)/$(SECTION)/source/Sources
+.RE
+.PP
+Translation
+.RS 4
+Define se o ficheiro mestre Translation\-en de saída com as descrições longas não deve ser incluído no ficheiro Packages\&. A predefinição é
+$(DIST)/$(SECTION)/i18n/Translation\-en
+.RE
+.PP
+InternalPrefix
+.RS 4
+Define o prefixo de caminho que causa que um symlink seja considerado um link interno em vez de um link externo\&. A predefinição é
+$(DIST)/$(SECTION)/
+.RE
+.PP
+Contents
+.RS 4
+Define a saída do ficheiro Contents\&. A predefinição é
+$(DIST)/Contents\-$(ARCH)\&. Se esta definição causar múltiplos ficheiros Packages para mapear em um único ficheiro Contents (tal como a predefinição) então o
+\fBapt\-ftparchive\fR
+irá automaticamente integrar esses ficheiros pacotes todos juntos\&.
+.RE
+.PP
+Contents::Header
+.RS 4
+Define o ficheiro cabeçalho para prefixar a saída de conteúdos\&.
+.RE
+.PP
+BinCacheDB
+.RS 4
+Define a base de dados de cache binária a usar para esta secção\&. Múltiplas secções podem partilhar a mesma base de dados\&.
+.RE
+.PP
+FileList
+.RS 4
+Especifica que em vez de navegar na árvore de directórios, o
+\fBapt\-ftparchive\fR
+deverá ler a lista de ficheiros a partir do ficheiro fornecido\&. Nomes de ficheiros relativos são prefixados com o directório de arquivo\&.
+.RE
+.PP
+SourceFileList
+.RS 4
+Especifica que em vez de navegar na árvore de directórios, o
+\fBapt\-ftparchive\fR
+deverá ler a lista de ficheiros a partir do ficheiro fornecido\&. Nomes de ficheiros relativos são prefixados com o directório de arquivo\&. Isto é usado quando se processa índices de fonte\&.
+.RE
+.SS "Secção Tree"
+.PP
+A secção
+Tree
+define uma árvore de ficheiros Debian standard que consiste de um directório base, depois múltiplas secções nesse directório base e finalmente múltiplas Arquitecturas em cada secção\&. O caminho exacto usado é definido pela variável de substituição
+Directory\&.
+.PP
+A secção
+Tree
+recebe uma etiqueta scope que define a variável
+$(DIST)
+e define a raiz da árvore (o caminho é prefixado por
+ArchiveDir)\&. Tipicamente esta é uma definição tal como
+dists/squeeze\&.
+.PP
+Todas as definições definidas na secção
+TreeDefault
+podem ser usadas na secção
+Tree
+assim como as novas três variáveis\&.
+.PP
+Quando processa uma secção
+Tree, o
+\fBapt\-ftparchive\fR
+executa uma operação semelhante a:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+for i in Sections do 
+   for j in Architectures do
+      Generate for DIST=scope SECTION=i ARCH=j
+     
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Sections
+.RS 4
+Isto é uma lista de secções separada por espaços que aparece sob a distribuição, tipicamente isto é algo como
+main contrib non\-free
+.RE
+.PP
+Architectures
+.RS 4
+Isto é uma lista separada por espaços de todas as arquitecturas que aparecem sob a secção de buscas\&. A arquitectura especial \*(Aqsource\*(Aq é usada para indicar que esta árvore tem um arquivo fonte\&.
+.RE
+.PP
+LongDescription
+.RS 4
+Define se as descrições longas devem ser incluídas no ficheiro Packages ou divididas em um ficheiro Translation\-en mestre\&.
+.RE
+.PP
+BinOverride
+.RS 4
+Define o ficheiro de sobreposição binário\&. O ficheiro de sobreposição informação de secção, prioridade e endereço do responsável\&.
+.RE
+.PP
+SrcOverride
+.RS 4
+Define o ficheiro de sobreposição fonte\&. O ficheiro de sobreposição informação de secção\&.
+.RE
+.PP
+ExtraOverride
+.RS 4
+Define o ficheiro de sobreposição extra binário\&.
+.RE
+.PP
+SrcExtraOverride
+.RS 4
+Define o ficheiro de sobreposição extra fonte\&.
+.RE
+.SS "Secção BinDirectory"
+.PP
+A secção
+bindirectory
+define uma árvore de directórios binários sem nenhuma estrutura especial\&. A etiqueta scope especifica a localização do directório binário e as definições são semelhantes às da secção
+Tree
+sem nenhumas variáveis de substituição ou definições
+SectionArchitecture\&.
+.PP
+Packages
+.RS 4
+Define a saída do ficheiro Packages\&.
+.RE
+.PP
+Sources
+.RS 4
+Define a saída do ficheiro Sources\&. É necessário pelo menos um de
+Packages
+ou
+Sources\&.
+.RE
+.PP
+Contents
+.RS 4
+Define a saída do ficheiro Contents (opcional)
+.RE
+.PP
+BinOverride
+.RS 4
+Define o ficheiro de sobreposição binário\&.
+.RE
+.PP
+SrcOverride
+.RS 4
+Define o ficheiro de sobreposição fonte\&.
+.RE
+.PP
+ExtraOverride
+.RS 4
+Define o ficheiro de sobreposição extra binário\&.
+.RE
+.PP
+SrcExtraOverride
+.RS 4
+Define o ficheiro de sobreposição extra fonte\&.
+.RE
+.PP
+BinCacheDB
+.RS 4
+Define a base de dados de cache\&.
+.RE
+.PP
+PathPrefix
+.RS 4
+Acrescenta um caminho a todos os caminhos de saída\&.
+.RE
+.PP
+FileList, SourceFileList
+.RS 4
+Especifica o ficheiro de lista de ficheiros\&.
+.RE
+.SH "O FICHEIRO BINARY OVERRIDE"
+.PP
+O ficheiro de sobreposição binário é totalmente compatível com
+\fBdpkg-scanpackages\fR(1)\&. Contém 4 campos separados por espaços\&. O primeiro campo é o nome do pacote, o segundo é a prioridade a qual forçar esse pacote, o terceiro é a secção onde forçar esse pacote e o último campo é o campo de permutação do responsável\&.
+.PP
+O formato geral do campo do responsável é:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+old [// oldn]* => new
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+ou simplesmente,
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+new
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+\&. O primeiro formato permite uma lista separada por um duplo slash (//) de antigos endereços e email a serem especificados\&. Se nenhum destes for encontrado então \*(Aqnew\*(Aq é substituído para o campo do responsável\&. O segundo formato substitui incondicionalmente o campo do responsável\&.
+.SH "O FICHEIRO SOURCE OVERRIDE"
+.PP
+O ficheiro de sobreposição de fonte é totalmente compatível com
+\fBdpkg-scansources\fR(1)\&. Contém dois campos separados por espaços\&. O primeiro campo é o nome de pacote fonte, o segundo é a secção onde o atribuir\&.
+.SH "O FICHEIRO EXTRA OVERRIDE"
+.PP
+O ficheiro de sobreposição extra permite que qualquer etiqueta arbitrária seja adicionada ou substituída na saída\&. Tem 3 colunas, a primeira é o pacote, a segunda é a etiqueta e restante da linha é o novo valor\&.
+.SH "OPçõES"
+.PP
+Todas as opções de linha de comandos podem ser definidas usando o ficheiro de configuração, as descrições indicam a opção de configuração a definir\&. Para opções booleanas você pode sobre por o ficheiro de configuração usando algo como
+\fB\-f\-\fR,\fB\-\-no\-f\fR,
+\fB\-f=no\fR
+ou várias outras variantes\&.
+.PP
+\fB\-\-md5\fR, \fB\-\-sha1\fR, \fB\-\-sha256\fR
+.RS 4
+Generate the given checksum\&. These options default to on, when turned off the generated index files will not have the checksum fields where possible\&. Configuration Items:
+APT::FTPArchive::\fIChecksum\fR
+and
+APT::FTPArchive::\fIIndex\fR::\fIChecksum\fR
+where
+\fIIndex\fR
+can be
+Packages,
+Sources
+or
+Release
+and
+\fIChecksum\fR
+can be
+MD5,
+SHA1
+or
+SHA256\&.
+.RE
+.PP
+\fB\-d\fR, \fB\-\-db\fR
+.RS 4
+Usa uma base de dados de cache binária\&. Isto não tem efeito no comando generate\&. Item de configuração:
+APT::FTPArchive::DB\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Silencioso; produz saída apropriada para registar em logs, omitindo indicadores de progresso\&. Mais q\*(Aqs irão produzir mais silencio até um máximo de 2\&. Você também pode usar
+\fB\-q=#\fR
+para definir o nível de silêncio, sobrepondo o ficheiro de configuração\&. Item de Configuração:
+quiet\&.
+.RE
+.PP
+\fB\-\-delink\fR
+.RS 4
+Executa Dissociação\&. Se é usada a definição
+External\-Links
+então esta opção activa a dissociação dos ficheiros\&. A sua predefinição é ligada e e pode ser desligada com
+\fB\-\-no\-delink\fR\&. Item de Configuração:
+APT::FTPArchive::DeLinkAct\&.
+.RE
+.PP
+\fB\-\-contents\fR
+.RS 4
+Executa a geração de conteúdos\&. Quando esta opção está definida e os índices de pacotes são gerados com um base de dados cache então a listagem de ficheiros também será extraída e guardada na base de dados para utilização posterior\&. Quando se usa o comando generate, esta opção também permite a criação de quaisquer ficheiros de Conteúdos\&. A predefinição é ligado\&. Item de Configuração:
+APT::FTPArchive::Contents\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-source\-override\fR
+.RS 4
+Selecciona o ficheiro de sobreposição de fonte a usar com o comando
+sources\&. Item de Configuração:
+APT::FTPArchive::SourceOverride\&.
+.RE
+.PP
+\fB\-\-readonly\fR
+.RS 4
+Torna as bases de dados de cache apenas de leitura\&. Item de Configuração:
+APT::FTPArchive::ReadOnlyDB\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-arch\fR
+.RS 4
+Aceita nos comandos
+packages
+e
+contents
+apenas ficheiros de pacotes que condizem com
+*_arch\&.deb
+ou
+*_all\&.deb
+em vez de todos os ficheiros de pacotes presentes no caminho fornecido\&. Item de Configuração:
+APT::FTPArchive::Architecture\&.
+.RE
+.PP
+\fBAPT::FTPArchive::AlwaysStat\fR
+.RS 4
+
+\fBapt-ftparchive\fR(1)
+põe em cache o máximo possível de metadados numa base de dados de cache\&. Se os pacotes forem recompilados e/ou republicados de novo com a mesma versão, irá originar problemas porque serão usados os metadados desactualizados em cache como o tamanho e sumários de verificação\&. Com esta opção activa isto não irá mais acontecer porque será verificado se o ficheiro foi alterado\&. Note que esta opção vem regulada para "false" por predefinição pois não é recomendado disponibilizar múltiplas versões/compilações de um pacote com o mesmo número de versão, portanto em teoria ninguém irá ter estes problemas e então todas as verificações extras serão desnecessárias\&.
+.RE
+.PP
+\fBAPT::FTPArchive::LongDescription\fR
+.RS 4
+Esta opção de configuração tem a predefinição de "true" e deve apenas ser definida para
+"false"
+se o Arquivo gerado com
+\fBapt-ftparchive\fR(1)
+também disponibilizar ficheiros
+Translation\&. Note que o ficheiro mestre
+Translation\-en
+só pode ser criado no comando generate\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Mostra um sumário curto da utilização\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Mostra a versão do programa\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\-file\fR
+.RS 4
+Ficheiro de Configuração; Especifica o ficheiro de configuração a usar\&. O programa irá ler o ficheiro de configuração predefinido e depois este ficheiro de configuração\&. Se as definições de configuração precisarem de ser definidas antes, os ficheiros de configuração predefinidos são analisados especificando um ficheiro com a variável de ambiente
+\fBAPT_CONFIG\fR\&. Veja
+\fBapt.conf\fR(5)
+para informação de sintaxe\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-option\fR
+.RS 4
+Define uma Opção de Configuração; Isto irá definir uma opção de configuração arbitrária\&. A sintaxe é
+\fB\-o Foo::Bar=bar\fR\&.
+\fB\-o\fR
+e
+\fB\-\-option\fR
+podem ser usadas várias vezes para definir opções diferentes\&.
+.RE
+.SH "EXAMPLES"
+.PP
+Para criar um ficheiro Packages comprimido para um directório que contém pacotes binários (\&.deb):
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+\fBapt\-ftparchive\fR pacotes \fIdirectório\fR | \fBgzip\fR > Packages\&.gz
+.fi
+.if n \{\
+.RE
+.\}
+.SH "VEJA TAMBéM"
+.PP
+\fBapt.conf\fR(5)
+.SH "DIAGNóSTICO"
+.PP
+\fBapt\-ftparchive\fR
+devolve zero na operação normal, 100 decimal em erro\&.
+.SH "BUGS"
+.PP
+\m[blue]\fBpágina de bugs do APT\fR\m[]\&\s-2\u[1]\d\s+2\&. Se deseja reportar um bug no APT, por favor veja
+/usr/share/doc/debian/bug\-reporting\&.txt
+ou o comando
+\fBreportbug\fR(1)\&.
+.SH "TRADUÇÃO"
+.PP
+A tradução Portuguesa foi feita por Américo Monteiro
+<a_monteiro@netcabo\&.pt>
+em 2009, 2010\&. A tradução foi revista pela equipa de traduções portuguesas da Debian
+<traduz@debianpt\&.org>\&.
+.PP
+Note que este documento traduzido pode conter partes não traduzidas\&. Isto é feito propositadamente, para evitar perdas de conteúdo quando a tradução está atrasada relativamente ao conteúdo original\&.
+.SH "AUTHORS"
+.PP
+\fBJason Gunthorpe\fR
+.RS 4
+.RE
+.PP
+\fBAPT team\fR
+.RS 4
+.RE
+.SH "NOTES"
+.IP " 1." 4
+página de bugs do APT
+.RS 4
+\%http://bugs.debian.org/src:apt
+.RE

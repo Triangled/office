@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>The APT project design document - Procedural description</title>
+
+<link href="index.html" rel="start">
+<link href="ch2.html" rel="prev">
+<link href="ch4.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch-introduction.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Requirements">
+<link href="ch3.html" rel="chapter" title="3 Procedural description">
+<link href="ch4.html" rel="chapter" title="4 Modules and interfaces">
+<link href="ch5.html" rel="chapter" title="5 Data flow and conversions analysis.">
+
+</head>
+
+<body>
+
+<p><a name="ch3"></a></p>
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="ch4.html">4</a> ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch4.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+The APT project design document
+<br>Chapter 3 - Procedural description
+</h1>
+
+<hr>
+<dl>
+<dt>Set Options</dt>
+<dd>
+<p>
+This process handles setting of user or site options, and configuration of all
+aspects of APT.  It allows the user to set the location and order of package
+sources, allowing them to set up source list details, like ftp site locations,
+passwords, etc.  Display options may also be set.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Updates</dt>
+<dd>
+<p>
+Build a list of available packages, using source lists or a base location and
+trawling for Packages files (needs to be aware of architecture).  This may
+involve finding and retrieving Packages files, storing them locally for
+efficiency, and parsing the data for later use.  This would entail contacting
+various underlying access modules (ftp, cdrom mounts, etc) Use a backing store
+for speed.  This may also require downloading the actual package files locally
+for speed.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Local status</dt>
+<dd>
+<p>
+Build up a list of packages already installed.  This requires reading and
+writing the local??  status file.  For remote installation, this should
+probably use similar mechanisms as the Packages file retrieval does.  Use the
+backing store for speed.  One should consider multiple backing stores, one for
+each machine.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Relationship determination</dt>
+<dd>
+<p>
+Determine forward and reverse dependencies.  All known dependency fields should
+be acted upon, since it is fairly cheap to do so.  Update the backing store
+with this information.
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Selection</dt>
+<dd>
+<p>
+Present the data to the user.  Look at Behan Webster's documentation for the
+user interface procedures.  (Note: In the authors opinion deletions and reverse
+dependencies should also be presented to the user, in a strictly symmetric
+fashion; this may make it easier to prevent a package being removed that breaks
+dependencies)
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Ordering of package installations and configuration</dt>
+<dd>
+<p>
+Build a list of events.  Simple topological sorting gives order of packages in
+dependency order.  At certain points in this ordering,
+predependencies/immediate configure directives cause an break in normal
+ordering.  We need to insert the uninstall/purge directive in the stream
+(default: as early as possible).
+</p>
+</dd>
+</dl>
+<dl>
+<dt>Action</dt>
+<dd>
+<p>
+Take the order of installations and removals and build up a stream of events to
+send to the packaging system (dpkg).  Execute the list of events if successful.
+Do not partially install packages and leave system in broken state.  Go to The
+Selection step as needed.
+</p>
+</dd>
+</dl>
+
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-introduction.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="ch4.html">4</a> ]
+[ <a href="ch5.html">5</a> ]
+[ <a href="ch4.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+The APT project design document
+</p>
+
+<address>
+$Id: design.sgml,v 1.4 2003/02/12 15:05:45 doogie Exp $<br>
+<br>
+Manoj Srivastava <code><a href="mailto:srivasta@debian.org">srivasta@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

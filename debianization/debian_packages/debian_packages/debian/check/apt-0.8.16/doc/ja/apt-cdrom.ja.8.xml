@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+
+<!ENTITY % aptent SYSTEM "apt.ent">
+%aptent;
+
+<!ENTITY % aptverbatiment SYSTEM "apt-verbatim.ent">
+%aptverbatiment;
+
+]>
+
+<refentry>
+
+ <refentryinfo>
+&apt-author.jgunthorpe; &apt-author.team; &apt-email; &apt-product; <date>14
+February 2004</date></refentryinfo>
+
+ <refmeta>
+   <refentrytitle>apt-cdrom</refentrytitle>
+   <manvolnum>8</manvolnum>
+   <refmiscinfo class="manual">APT</refmiscinfo>
+ </refmeta>
+ 
+ 
+ <!-- Man page title -->
+<refnamediv>
+    <refname>apt-cdrom</refname>
+    <refpurpose>APT CDROM 管理ユーティリティ</refpurpose>
+ </refnamediv>
+
+ 
+ <!-- Arguments -->
+<refsynopsisdiv>
+   <cmdsynopsis>
+<command>apt-cdrom</command> <arg><option>-hvrmfan</option></arg>
+<arg><option>-d=<replaceable>cdrom mount point</replaceable></option></arg>
+<arg><option>-o=<replaceable>config string</replaceable></option></arg>
+<arg><option>-c=<replaceable>file</replaceable></option></arg> <group>
+<arg>add</arg> <arg>ident</arg> </group></cmdsynopsis>
+ </refsynopsisdiv>
+
+ <refsect1><title>説明</title>
+   <para><command>apt-cdrom</command> は利用可能な取得元として、APT のリストに新しい CDROM
+を追加するのに便利です。<command>apt-cdrom</command>
+は焼き損じを可能な限り補正し、ディスク構造の確認を助けます。また、インデックスファイルの確認を行います。   
+   </para>
+
+   <para>APT システムに手作業で CD を追加するのは難しいため、<command>apt-cdrom</command> が必要になります。その上、CD
+セットのディスクを 1 枚づつ、焼き損じを補正できるか評価しなければなりません。
+   </para>
+
+   <para><option>-h</option> オプションや <option>--help</option>
+オプションを除き、以下に挙げるコマンドが必要です。<variablelist>
+     <varlistentry><term>add</term>
+     <listitem><para><literal>add</literal> は、新しいディスクを取得元リストに追加します。CDROM
+デバイスのアンマウント、ディスク挿入のプロンプト表示の後に、ディスクのスキャンとインデックスファイルのコピーを行います。ディスクに正しい
+<filename>disk</filename> ディレクトリが存在しない場合、タイトルを入力するよう促します。
+     </para>
+
+     <para>APT は、現在ドライブにあるディスクのトラックから取得した、CDROM ID を使用します。またその ID
+を、<filename>&statedir;/cdroms.list</filename> 内のデータベースで管理します。
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term>ident</term>
+     <listitem><para>格納されているファイル名と現在のディスクが同一かどうかをレポートする、デバッグツールです。
+     </para>
+     </listitem>
+     </varlistentry>
+    </variablelist>
+   </para>
+ </refsect1>
+
+ <refsect1><title>オプション</title>
+   &apt-cmdblurb;
+   
+   <variablelist>
+     <varlistentry><term><option>-d</option></term><term><option>--cdrom</option></term>
+     <listitem><para>マウントポイント - cdrom をマウントする場所を指定します。このマウントポイントは、<filename>/etc/fstab</filename>
+に正しく設定されている必要があります。設定項目 - <literal>Acquire::cdrom::mount</literal>
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-r</option></term><term><option>--rename</option></term>
+     <listitem><para>ディスクの名前変更 - 指定した名前でディスクのラベルを変更・更新します。このオプションにより、<command>apt-cdrom</command>
+が新しいラベルを入力するよう促します。設定項目 - <literal>APT::CDROM::Rename</literal>
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-m</option></term><term><option>--no-mount</option></term>
+     <listitem><para>マウントなし - <command>apt-cdrom</command> が、マウントポイントにマウント・アンマウントしないようにします。設定項目 -
+<literal>APT::CDROM::NoMount</literal>
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-f</option></term><term><option>--fast</option></term>
+     <listitem><para>高速コピー - パッケージファイルが妥当であると仮定し、チェックを全く行いません。このオプションは、このディスクで以前
+<command>apt-cdrom</command> を行っており、エラーを検出しなかった場合のみ使用すべきです。設定項目 -
+<literal>APT::CDROM::Fast</literal>
+     </para>
+     </listitem>
+     </varlistentry>
+
+     <varlistentry><term><option>-a</option></term><term><option>--thorough</option></term>
+     <listitem><para>完全パッケージスキャン - 古い Debian 1.1/1.2
+のディスクは、パッケージファイルが違う場所にあるため、このオプションを使う必要があるかもしれません。CD
+をスキャンするのに非常に時間がかかりますが、全パッケージファイルを抽出することができます。
+     </para>
+     </listitem>
+     </varlistentry>
+     
+     <varlistentry><term><option>-n</option></term>
+                   <term><option>--just-print</option></term>
+                   <term><option>--recon</option></term>
+                   <term><option>--no-act</option></term>
+     <listitem><para>変更なし - &sources-list; ファイルの変更や、インデックスファイルの書き込みを行いません。とはいえ、すべてのチェックは行います。設定項目
+- <literal>APT::CDROM::NoAct</literal>
+     </para>
+     </listitem>
+     </varlistentry> 
+
+&apt-commonoptions;</variablelist>
+ </refsect1>
+
+ <refsect1><title>関連項目</title>
+   <para>&apt-conf;, &apt-get;, &sources-list;
+   </para>
+ </refsect1>
+
+ <refsect1><title>診断メッセージ</title>
+   <para><command>apt-cdrom</command> は正常終了時に 0 を返します。エラー時には十進の 100 を返します。
+   </para>
+ </refsect1>
+
+ &manbugs;
+
+ <refsect1><title>&translation-title;</title>
+   <para>&translation-holder;</para>
+   <para>&translation-english;</para>
+ </refsect1>
+</refentry>
+
